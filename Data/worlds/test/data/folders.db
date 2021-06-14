@@ -1,0 +1,33 @@
+{"name":"Night of Blood","type":"Actor","sort":200000,"flags":{},"parent":null,"sorting":"a","color":"#ff0d13","_id":"0XlFJISOvYqPWFKN"}
+{"_id":"3784G8mSl2lktLTV","name":"Politics","type":"JournalEntry","sort":2800000,"flags":{"wfrp4e":{"initialization-parent":"Reikland"}},"parent":"AoPr8am0KDwrIFuP","sorting":"m","color":"#55385f"}
+{"_id":"4hK2PIeeqhvNCT53","name":"The Eight Lores","type":"JournalEntry","sort":2700000,"flags":{"wfrp4e":{"initialization-parent":"Magic"}},"parent":"DcXdTe9KaxFVr1N7","sorting":"m","color":""}
+{"_id":"8SxFqToMPlr9Eg9x","name":"Endeavours","type":"JournalEntry","sort":100000,"flags":{"wfrp4e":{"initialization-parent":"Between Adventures"}},"parent":"LHktvQdl7Ctb2n3c","sorting":"m","color":""}
+{"name":"Reikland","type":"JournalEntry","sort":100000,"flags":{},"parent":null,"sorting":"m","color":"#5c1807","_id":"AoPr8am0KDwrIFuP"}
+{"name":"GM's Guide","type":"JournalEntry","sort":3000000,"flags":{},"parent":null,"sorting":"m","color":"#7b1717","_id":"B2F7rzgiHsTGuQTx"}
+{"_id":"Cve0TiYZSX3J0sYw","name":"Money","type":"JournalEntry","sort":2900000,"flags":{"wfrp4e":{"initialization-parent":"Rules"}},"parent":"PwFMYyAktfnfi8GQ","sorting":"m","color":""}
+{"name":"Magic","type":"JournalEntry","sort":2250000,"flags":{},"parent":null,"sorting":"m","color":"#6c6217","_id":"DcXdTe9KaxFVr1N7"}
+{"_id":"DyxgARVXCYOaGpV7","name":"The Aftermath","type":"Actor","sort":1300000,"flags":{"wfrp4e-night-of-blood":{"initialization-parent":"Night of Blood"},"deprecated":{"initialization-parent":"Night of Blood"}},"parent":"0XlFJISOvYqPWFKN","sorting":"a","color":""}
+{"_id":"Fh2wGlcSHClvyb4E","name":"Combat","type":"JournalEntry","sort":2300000,"flags":{"wfrp4e":{"initialization-parent":"Rules"}},"parent":"PwFMYyAktfnfi8GQ","sorting":"m","color":""}
+{"name":"Religion and Belief","type":"JournalEntry","sort":2200000,"flags":{},"parent":null,"sorting":"m","color":"#835a05","_id":"G4QgtfYBEy4bM0ur"}
+{"_id":"GzNxuuuTJ4BrWi4s","name":"Moving","type":"JournalEntry","sort":2400000,"flags":{"wfrp4e":{"initialization-parent":"Rules"}},"parent":"PwFMYyAktfnfi8GQ","sorting":"m","color":""}
+{"name":"Handouts","type":"JournalEntry","sort":3200000,"flags":{},"parent":null,"sorting":"a","color":"","_id":"H6GOcN1zK3l8Dqrg"}
+{"_id":"JgswVdBxhn7HvAx2","name":"Hooded Man Exterior","type":"JournalEntry","sort":3300000,"flags":{"wfrp4e-night-of-blood":{"initialization-parent":"Night of Blood"},"deprecated":{"initialization-parent":"Night of Blood"}},"parent":"qFuvfMirsaFSH99a","sorting":"a","color":""}
+{"_id":"JgwksAukiVsy8Def","name":"Chaos Hunters","type":"Actor","sort":1100000,"flags":{"wfrp4e-night-of-blood":{"initialization-parent":"Night of Blood"},"deprecated":{"initialization-parent":"Night of Blood"}},"parent":"0XlFJISOvYqPWFKN","sorting":"a","color":""}
+{"_id":"KBDYhMzqwvKg5T0Q","name":"Settlements","type":"JournalEntry","sort":500000,"flags":{"wfrp4e":{"initialization-parent":"Reikland"}},"parent":"AoPr8am0KDwrIFuP","sorting":"m","color":"#534f1e"}
+{"_id":"LFbMZ9PG7yrJHzHE","name":"Character","type":"JournalEntry","sort":2200000,"flags":{"wfrp4e":{"initialization-parent":"Rules"}},"parent":"PwFMYyAktfnfi8GQ","sorting":"m","color":""}
+{"name":"Between Adventures","type":"JournalEntry","sort":1200000,"flags":{},"parent":null,"sorting":"m","color":"#442747","_id":"LHktvQdl7Ctb2n3c"}
+{"_id":"Lqq7ZNwW091NyqfF","name":"Hooded Man Interior","type":"JournalEntry","sort":3200000,"flags":{"wfrp4e-night-of-blood":{"initialization-parent":"Night of Blood"},"deprecated":{"initialization-parent":"Night of Blood"}},"parent":"qFuvfMirsaFSH99a","sorting":"a","color":""}
+{"_id":"OEvjt9cb6fiRn3Hl","name":"Class Endeavours","type":"JournalEntry","sort":2600000,"flags":{"wfrp4e":{"initialization-parent":"Endeavours"}},"parent":"8SxFqToMPlr9Eg9x","sorting":"m","color":""}
+{"_id":"Om2kq16gWFTERoCu","name":"Rivers, Canals, and Lakes","type":"JournalEntry","sort":400000,"flags":{"wfrp4e":{"initialization-parent":"Reikland"}},"parent":"AoPr8am0KDwrIFuP","sorting":"m","color":"#1c3164"}
+{"_id":"P1OkT4GF2tB9LfJF","name":"The Horror","type":"Actor","sort":1200000,"flags":{"wfrp4e-night-of-blood":{"initialization-parent":"Night of Blood"},"deprecated":{"initialization-parent":"Night of Blood"}},"parent":"0XlFJISOvYqPWFKN","sorting":"a","color":""}
+{"name":"Rules","type":"JournalEntry","sort":200000,"flags":{},"parent":null,"sorting":"m","color":"#264a28","_id":"PwFMYyAktfnfi8GQ"}
+{"_id":"XOkvbWwvrHWdH2R8","name":"Mountains, Foothills, and Vorbergland","type":"JournalEntry","sort":100000,"flags":{"wfrp4e":{"initialization-parent":"Reikland"}},"parent":"AoPr8am0KDwrIFuP","sorting":"m","color":"#454547"}
+{"_id":"XxyXTvdRyNPCIC58","name":"General Endeavours","type":"JournalEntry","sort":2500000,"flags":{"wfrp4e":{"initialization-parent":"Endeavours"}},"parent":"8SxFqToMPlr9Eg9x","sorting":"m","color":""}
+{"_id":"bbBlM8d9MCq8VklX","name":"The Grim, Dark Forests","type":"JournalEntry","sort":200000,"flags":{"wfrp4e":{"initialization-parent":"Reikland"}},"parent":"AoPr8am0KDwrIFuP","sorting":"m","color":"#385029"}
+{"_id":"bjDTMC1cEd9NsLR0","name":"Beginning In The Forest","type":"JournalEntry","sort":3500000,"flags":{"wfrp4e-night-of-blood":{"initialization-parent":"Night of Blood"},"deprecated":{"initialization-parent":"Night of Blood"}},"parent":"qFuvfMirsaFSH99a","sorting":"a","color":""}
+{"_id":"cIzodTpPyMcRzaun","name":"Inn Patrons","type":"Actor","sort":1000000,"flags":{"wfrp4e-night-of-blood":{"initialization-parent":"Night of Blood"},"deprecated":{"initialization-parent":"Night of Blood"}},"parent":"0XlFJISOvYqPWFKN","sorting":"a","color":""}
+{"_id":"hh9yrKVedDyiSwCI","name":"Species","type":"JournalEntry","sort":3100000,"flags":{"wfrp4e":{"initialization-parent":"Character"}},"parent":"LFbMZ9PG7yrJHzHE","sorting":"m","color":""}
+{"_id":"n7ljFWRd4pi3ulef","name":"What Lies Beneath the Inn","type":"JournalEntry","sort":3400000,"flags":{"wfrp4e-night-of-blood":{"initialization-parent":"Night of Blood"},"deprecated":{"initialization-parent":"Night of Blood"}},"parent":"qFuvfMirsaFSH99a","sorting":"a","color":""}
+{"name":"Night of Blood","type":"JournalEntry","sort":3100000,"flags":{},"parent":null,"sorting":"a","color":"#ff0d13","_id":"qFuvfMirsaFSH99a"}
+{"_id":"rPj7SmcCjtZnOL0U","name":"The Cursed and Fetid Marshlands","type":"JournalEntry","sort":300000,"flags":{"wfrp4e":{"initialization-parent":"Reikland"}},"parent":"AoPr8am0KDwrIFuP","sorting":"m","color":"#434730"}
+{"name":"Night of Blood","type":"Scene","sort":300000,"flags":{},"parent":null,"sorting":"a","color":"#ff0d13","_id":"rW82FXWxUORe5Awn"}

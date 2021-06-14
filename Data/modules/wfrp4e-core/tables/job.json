@@ -1,0 +1,2511 @@
+{
+    "name": "I Need A Job!",
+    "die" : "1d100",
+    "multi": [
+        "Who",
+        "What",
+        "Why"
+    ],
+    "rows": [
+        {
+            "range": {
+                "Who": [
+                    1,
+                    1
+                ],
+                "What": [
+                    1,
+                    1
+                ],
+                "Why": [
+                    1,
+                    1
+                ]
+            },
+            "Who": {
+                "description": "‘The one that got away’…"
+            },
+            "What": {
+                "description": "…needs the Characters to create an introduction between them and a shadowy figure…"
+            },
+            "Why": {
+                "description": "…so they may perform their heinous researches in secret."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    2,
+                    2
+                ],
+                "What": [
+                    2,
+                    2
+                ],
+                "Why": [
+                    2,
+                    2
+                ]
+            },
+            "Who": {
+                "description": "A bawdy rake with a fake Bretonnian accent…"
+            },
+            "What": {
+                "description": "…needs the Characters to create an introduction between them and a shadowy figure…"
+            },
+            "Why": {
+                "description": "…so they may perform their heinous researches in secret."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    3,
+                    3
+                ],
+                "What": [
+                    3,
+                    3
+                ],
+                "Why": [
+                    3,
+                    3
+                ]
+            },
+            "Who": {
+                "description": "A beleaguered bailiff in the colours of a local Baron…"
+            },
+            "What": {
+                "description": "…needs the Characters to ‘go to the local tavern and wait… you’ll know it when you see it’…"
+            },
+            "Why": {
+                "description": "…so they may increase their station."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    4,
+                    4
+                ],
+                "What": [
+                    4,
+                    4
+                ],
+                "Why": [
+                    4,
+                    4
+                ]
+            },
+            "Who": {
+                "description": "A benevolent Shallyan…"
+            },
+            "What": {
+                "description": "…needs the Characters to ‘go to the local tavern and wait… you’ll know it when you see it’…"
+            },
+            "Why": {
+                "description": "…so they may increase their station."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    5,
+                    5
+                ],
+                "What": [
+                    5,
+                    5
+                ],
+                "Why": [
+                    5,
+                    5
+                ]
+            },
+            "Who": {
+                "description": "A Lowhaven blackmailer who knows something they shouldn’t…"
+            },
+            "What": {
+                "description": "…needs the Characters to blaze a trail through nearby stretch of wilderness…"
+            },
+            "Why": {
+                "description": "…so they may get revenge on a rival."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    6,
+                    6
+                ],
+                "What": [
+                    6,
+                    6
+                ],
+                "Why": [
+                    6,
+                    6
+                ]
+            },
+            "Who": {
+                "description": "A bloody-handed physician in a plague-doctor’s mask…"
+            },
+            "What": {
+                "description": "…needs the Characters to blaze a trail through nearby stretch of wilderness…"
+            },
+            "Why": {
+                "description": "…so they may get revenge on a rival."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    7,
+                    7
+                ],
+                "What": [
+                    7,
+                    7
+                ],
+                "Why": [
+                    7,
+                    7
+                ]
+            },
+            "Who": {
+                "description": "A bored State Soldier…"
+            },
+            "What": {
+                "description": "…needs the Characters to break them out of prison… "
+            },
+            "Why": {
+                "description": "…so they may do some good in this world before they die."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    8,
+                    8
+                ],
+                "What": [
+                    8,
+                    8
+                ],
+                "Why": [
+                    8,
+                    8
+                ]
+            },
+            "Who": {
+                "description": "A Dwarf bounty hunter with a bone to pick…"
+            },
+            "What": {
+                "description": "…needs the Characters to break them out of prison… "
+            },
+            "Why": {
+                "description": "…so they may do some good in this world before they die."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    9,
+                    9
+                ],
+                "What": [
+                    9,
+                    9
+                ],
+                "Why": [
+                    9,
+                    9
+                ]
+            },
+            "Who": {
+                "description": "A brooding Witch Hunter…"
+            },
+            "What": {
+                "description": "…needs the Characters to bring them bonafide Chaos accoutrements, no questions asked…"
+            },
+            "Why": {
+                "description": "…so they may distract the Characters long enough to do something worse."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    10,
+                    10
+                ],
+                "What": [
+                    10,
+                    10
+                ],
+                "Why": [
+                    10,
+                    10
+                ]
+            },
+            "Who": {
+                "description": "A cantankerous agitator clutching copies of the Glorious Revolution of the People…"
+            },
+            "What": {
+                "description": "…needs the Characters to bring them bonafide Chaos accoutrements, no questions asked…"
+            },
+            "Why": {
+                "description": "…so they may distract the Characters long enough to do something worse."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    11,
+                    11
+                ],
+                "What": [
+                    11,
+                    11
+                ],
+                "Why": [
+                    11,
+                    11
+                ]
+            },
+            "Who": {
+                "description": "A charitable charlatan selling trinkets of Ranald…"
+            },
+            "What": {
+                "description": "…needs the Characters to clear their cellar out of, let’s say, ‘rats’… just ‘rats’…"
+            },
+            "Why": {
+                "description": "…so they may change their fortunes, leave their old life behind, and move on to better things. "
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    12,
+                    12
+                ],
+                "What": [
+                    12,
+                    12
+                ],
+                "Why": [
+                    12,
+                    12
+                ]
+            },
+            "Who": {
+                "description": "A childhood flame, fallen on hard times…"
+            },
+            "What": {
+                "description": "…needs the Characters to clear their cellar out of, let’s say, ‘rats’… just ‘rats’…"
+            },
+            "Why": {
+                "description": "…so they may change their fortunes, leave their old life behind, and move on to better things. "
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    13,
+                    13
+                ],
+                "What": [
+                    13,
+                    13
+                ],
+                "Why": [
+                    13,
+                    13
+                ]
+            },
+            "Who": {
+                "description": "A cocky Pistoleer with a Nulner accent…"
+            },
+            "What": {
+                "description": "…needs the Characters to deliver a crate, a keg, and a series of sealed envelopes to a secret location, and don’t drop them whatever they do…"
+            },
+            "Why": {
+                "description": "…so they may avoid a stint in the dungeons."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    14,
+                    14
+                ],
+                "What": [
+                    14,
+                    14
+                ],
+                "Why": [
+                    14,
+                    14
+                ]
+            },
+            "Who": {
+                "description": "A completely, absolutely not suspicious, average citizen…"
+            },
+            "What": {
+                "description": "…needs the Characters to deliver a crate, a keg, and a series of sealed envelopes to a secret location, and don’t drop them whatever they do…"
+            },
+            "Why": {
+                "description": "…so they may avoid a stint in the dungeons."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    15,
+                    15
+                ],
+                "What": [
+                    15,
+                    15
+                ],
+                "Why": [
+                    15,
+                    15
+                ]
+            },
+            "Who": {
+                "description": "A noble connoisseur of the ‘unusual’…"
+            },
+            "What": {
+                "description": "…needs the Characters to deliver a package to one of their contacts…"
+            },
+            "Why": {
+                "description": "…so they may assume another's identity."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    16,
+                    16
+                ],
+                "What": [
+                    16,
+                    16
+                ],
+                "Why": [
+                    16,
+                    16
+                ]
+            },
+            "Who": {
+                "description": "A contemptuous apothecary with Rhyan charms woven through their hair…"
+            },
+            "What": {
+                "description": "…needs the Characters to deliver a package to one of their contacts…"
+            },
+            "Why": {
+                "description": "…so they may assume another's identity."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    17,
+                    17
+                ],
+                "What": [
+                    17,
+                    17
+                ],
+                "Why": [
+                    17,
+                    17
+                ]
+            },
+            "Who": {
+                "description": "A corrupt Handrachian coachman…"
+            },
+            "What": {
+                "description": "…needs the Characters to destroy some incriminating evidence for them…"
+            },
+            "Why": {
+                "description": "…so they may achieve a life-long dream."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    18,
+                    18
+                ],
+                "What": [
+                    18,
+                    18
+                ],
+                "Why": [
+                    18,
+                    18
+                ]
+            },
+            "Who": {
+                "description": "An Ogre crime boss…"
+            },
+            "What": {
+                "description": "…needs the Characters to destroy some incriminating evidence for them…"
+            },
+            "Why": {
+                "description": "…so they may achieve a life-long dream."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    19,
+                    19
+                ],
+                "What": [
+                    19,
+                    19
+                ],
+                "Why": [
+                    19,
+                    19
+                ]
+            },
+            "Who": {
+                "description": "A criminal in shackles, marked for Morr’s Realm…"
+            },
+            "What": {
+                "description": "…needs the Characters to discredit a rival…"
+            },
+            "Why": {
+                "description": "…so they can witness true pandemonium."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    20,
+                    20
+                ],
+                "What": [
+                    20,
+                    20
+                ],
+                "Why": [
+                    20,
+                    20
+                ]
+            },
+            "Who": {
+                "description": "A debauched artist smelling heavily of Cathayan black lotus…"
+            },
+            "What": {
+                "description": "…needs the Characters to discredit a rival…"
+            },
+            "Why": {
+                "description": "…so they can witness true pandemonium."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    21,
+                    21
+                ],
+                "What": [
+                    21,
+                    21
+                ],
+                "Why": [
+                    21,
+                    21
+                ]
+            },
+            "Who": {
+                "description": "A deranged rat catcher and their small but vicious dog…"
+            },
+            "What": {
+                "description": "…needs the Characters to exhume a corpse from the Garden of Morr…"
+            },
+            "Why": {
+                "description": "…so they can win a bet they cannot afford to lose."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    22,
+                    22
+                ],
+                "What": [
+                    22,
+                    22
+                ],
+                "Why": [
+                    22,
+                    22
+                ]
+            },
+            "Who": {
+                "description": "A distraught High Elf artisan…"
+            },
+            "What": {
+                "description": "…needs the Characters to exhume a corpse from the Garden of Morr…"
+            },
+            "Why": {
+                "description": "…so they can win a bet they cannot afford to lose."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    23,
+                    23
+                ],
+                "What": [
+                    23,
+                    23
+                ],
+                "Why": [
+                    23,
+                    23
+                ]
+            },
+            "Who": {
+                "description": "A drunken Dwarf Slayer…"
+            },
+            "What": {
+                "description": "…needs the Characters to fake their death…"
+            },
+            "Why": {
+                "description": "…so they can wile away the boring days of their life."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    24,
+                    24
+                ],
+                "What": [
+                    24,
+                    24
+                ],
+                "Why": [
+                    24,
+                    24
+                ]
+            },
+            "Who": {
+                "description": "A Dwarf who you inadvisably made a deal with…"
+            },
+            "What": {
+                "description": "…needs the Characters to fake their death…"
+            },
+            "Why": {
+                "description": "…so they can wile away the boring days of their life."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    25,
+                    25
+                ],
+                "What": [
+                    25,
+                    25
+                ],
+                "Why": [
+                    25,
+                    25
+                ]
+            },
+            "Who": {
+                "description": "A family member in need…"
+            },
+            "What": {
+                "description": "…needs the Characters to find an Elven Enclave in a nearby wood…"
+            },
+            "Why": {
+                "description": "…so they can uncover an unwelcome truth."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    26,
+                    26
+                ],
+                "What": [
+                    26,
+                    26
+                ],
+                "Why": [
+                    26,
+                    26
+                ]
+            },
+            "Who": {
+                "description": "A fiery Sigmarite warrior priest…"
+            },
+            "What": {
+                "description": "…needs the Characters to find an Elven Enclave in a nearby wood…"
+            },
+            "Why": {
+                "description": "…so they can uncover an unwelcome truth."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    27,
+                    27
+                ],
+                "What": [
+                    27,
+                    27
+                ],
+                "Why": [
+                    27,
+                    27
+                ]
+            },
+            "Who": {
+                "description": "A fishmonger with some decidedly fish-like features…"
+            },
+            "What": {
+                "description": "…needs the Characters to find an heirloom, stolen by a local noble family generations ago…"
+            },
+            "Why": {
+                "description": "…so they can test the Characters’ mettle for a bigger job to come."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    28,
+                    28
+                ],
+                "What": [
+                    28,
+                    28
+                ],
+                "Why": [
+                    28,
+                    28
+                ]
+            },
+            "Who": {
+                "description": "A fishmonger’s jilted lover with a strangely glowing necklace…"
+            },
+            "What": {
+                "description": "…needs the Characters to find an heirloom, stolen by a local noble family generations ago…"
+            },
+            "Why": {
+                "description": "…so they can test the Characters’ mettle for a bigger job to come."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    29,
+                    29
+                ],
+                "What": [
+                    29,
+                    29
+                ],
+                "Why": [
+                    29,
+                    29
+                ]
+            },
+            "Who": {
+                "description": "An Ulrican flagellant with an unsettling smile…"
+            },
+            "What": {
+                "description": "…needs the Characters to find out what that scratching noise in the walls is…"
+            },
+            "Why": {
+                "description": "…so they can take all the credit. "
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    30,
+                    30
+                ],
+                "What": [
+                    30,
+                    30
+                ],
+                "Why": [
+                    30,
+                    30
+                ]
+            },
+            "Who": {
+                "description": "A formidable fence who is playing both sides of the Hook and Fish gang war…"
+            },
+            "What": {
+                "description": "…needs the Characters to find out what that scratching noise in the walls is…"
+            },
+            "Why": {
+                "description": "…so they can take all the credit. "
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    31,
+                    31
+                ],
+                "What": [
+                    31,
+                    31
+                ],
+                "Why": [
+                    31,
+                    31
+                ]
+            },
+            "Who": {
+                "description": "A Halfling who’s willing to share some secrets about things they have no right to know…"
+            },
+            "What": {
+                "description": "…needs the Characters to find out where all the local strays have gone…"
+            },
+            "Why": {
+                "description": "…so they can survive for just one more night."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    32,
+                    32
+                ],
+                "What": [
+                    32,
+                    32
+                ],
+                "Why": [
+                    32,
+                    32
+                ]
+            },
+            "Who": {
+                "description": "A gormless Wood Elf grave robber…"
+            },
+            "What": {
+                "description": "…needs the Characters to find out where all the local strays have gone…"
+            },
+            "Why": {
+                "description": "…so they can survive for just one more night."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    33,
+                    33
+                ],
+                "What": [
+                    33,
+                    33
+                ],
+                "Why": [
+                    33,
+                    33
+                ]
+            },
+            "Who": {
+                "description": "A greedy miner who stole the wrong thing from the wrong Dwarf…"
+            },
+            "What": {
+                "description": "…needs the Characters to gather some scandalous information about the Cult of Manaan…"
+            },
+            "Why": {
+                "description": "…so they can sell the Characters out, and profit off everyone involved."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    34,
+                    34
+                ],
+                "What": [
+                    34,
+                    34
+                ],
+                "Why": [
+                    34,
+                    34
+                ]
+            },
+            "Who": {
+                "description": "A gregarious guard on the secret payroll of a Cult of Tzeentch…"
+            },
+            "What": {
+                "description": "…needs the Characters to gather some scandalous information about the Cult of Manaan…"
+            },
+            "Why": {
+                "description": "…so they can sell the Characters out, and profit off everyone involved."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    35,
+                    35
+                ],
+                "What": [
+                    35,
+                    35
+                ],
+                "Why": [
+                    35,
+                    35
+                ]
+            },
+            "Who": {
+                "description": "A grizzled watchman who sees rat-shaped shadows behind every corner…"
+            },
+            "What": {
+                "description": "…needs the Characters to get them admittance into the local university…"
+            },
+            "Why": {
+                "description": "…so they can seem like a hero without doing all the hard work."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    36,
+                    36
+                ],
+                "What": [
+                    36,
+                    36
+                ],
+                "Why": [
+                    36,
+                    36
+                ]
+            },
+            "Who": {
+                "description": "A haggard peddler who stumbled on a terrible Chaos ritual… "
+            },
+            "What": {
+                "description": "…needs the Characters to get them admittance into the local university…"
+            },
+            "Why": {
+                "description": "…so they can seem like a hero without doing all the hard work."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    37,
+                    37
+                ],
+                "What": [
+                    37,
+                    37
+                ],
+                "Why": [
+                    37,
+                    37
+                ]
+            },
+            "Who": {
+                "description": "A Halfling who you just can’t say no to…"
+            },
+            "What": {
+                "description": "…needs the Characters to humour them, for they (obviously unfoundedly) believe a ghost is haunting their home…"
+            },
+            "Why": {
+                "description": "…so they can seek forgiveness from someone wronged."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    38,
+                    38
+                ],
+                "What": [
+                    38,
+                    38
+                ],
+                "Why": [
+                    38,
+                    38
+                ]
+            },
+            "Who": {
+                "description": "A hawkish Reiksguard knight…"
+            },
+            "What": {
+                "description": "…needs the Characters to humour them, for they (obviously unfoundedly) believe a ghost is haunting their home…"
+            },
+            "Why": {
+                "description": "…so they can seek forgiveness from someone wronged."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    39,
+                    39
+                ],
+                "What": [
+                    39,
+                    39
+                ],
+                "Why": [
+                    39,
+                    39
+                ]
+            },
+            "Who": {
+                "description": "A huffer who has just had the worst day imaginable…"
+            },
+            "What": {
+                "description": "…needs the Characters to hunt down a dangerous criminal…"
+            },
+            "Why": {
+                "description": "…so they can seek absolution from their patron God."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    40,
+                    40
+                ],
+                "What": [
+                    40,
+                    40
+                ],
+                "Why": [
+                    40,
+                    40
+                ]
+            },
+            "Who": {
+                "description": "A jolly chimney sweep covered in Altdorf blackgold…"
+            },
+            "What": {
+                "description": "…needs the Characters to hunt down a dangerous criminal…"
+            },
+            "Why": {
+                "description": "…so they can seek absolution from their patron God."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    41,
+                    41
+                ],
+                "What": [
+                    41,
+                    41
+                ],
+                "Why": [
+                    41,
+                    41
+                ]
+            },
+            "Who": {
+                "description": "A letter, addressed to you, from an unknown source…"
+            },
+            "What": {
+                "description": "…needs the Characters to hunt down a very peculiar plant or animal specimen…"
+            },
+            "Why": {
+                "description": "…so they can save a loved one from the chopping block."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    42,
+                    42
+                ],
+                "What": [
+                    42,
+                    42
+                ],
+                "Why": [
+                    42,
+                    42
+                ]
+            },
+            "Who": {
+                "description": "A local ruler with an unpronounceable name…"
+            },
+            "What": {
+                "description": "…needs the Characters to hunt down a very peculiar plant or animal specimen…"
+            },
+            "Why": {
+                "description": "…so they can save a loved one from the chopping block."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    43,
+                    43
+                ],
+                "What": [
+                    43,
+                    43
+                ],
+                "Why": [
+                    43,
+                    43
+                ]
+            },
+            "Who": {
+                "description": "A long-lost cousin…"
+            },
+            "What": {
+                "description": "…needs the Characters to identify a suspected Cultist of Ranald…"
+            },
+            "Why": {
+                "description": "…so they can save a loved one from a terrible burden."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    44,
+                    44
+                ],
+                "What": [
+                    44,
+                    44
+                ],
+                "Why": [
+                    44,
+                    44
+                ]
+            },
+            "Who": {
+                "description": "A Verenan magistrate and an unjust warrant for your arrest…"
+            },
+            "What": {
+                "description": "…needs the Characters to identify a suspected Cultist of Ranald…"
+            },
+            "Why": {
+                "description": "…so they can save a loved one from a terrible burden."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    45,
+                    45
+                ],
+                "What": [
+                    45,
+                    45
+                ],
+                "Why": [
+                    45,
+                    45
+                ]
+            },
+            "Who": {
+                "description": "A magnanimous hunter covered head-to-foot in charms and icons…"
+            },
+            "What": {
+                "description": "…needs the Characters to infiltrate a rival organisation…"
+            },
+            "Why": {
+                "description": "…so they can return to a peaceful life with the family."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    46,
+                    46
+                ],
+                "What": [
+                    46,
+                    46
+                ],
+                "Why": [
+                    46,
+                    46
+                ]
+            },
+            "Who": {
+                "description": "A marvellous engineer from Altdorf…"
+            },
+            "What": {
+                "description": "…needs the Characters to infiltrate a rival organisation…"
+            },
+            "Why": {
+                "description": "…so they can return to a peaceful life with the family."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    47,
+                    47
+                ],
+                "What": [
+                    47,
+                    47
+                ],
+                "Why": [
+                    47,
+                    47
+                ]
+            },
+            "Who": {
+                "description": "A money-grubbing merchant from Marienburg…"
+            },
+            "What": {
+                "description": "…needs the Characters to interrogate a Doomsayer of Morr to uncover an enemy’s greatest weakness…"
+            },
+            "Why": {
+                "description": "…so they can prove right a doom saying zealot in the town square."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    48,
+                    48
+                ],
+                "What": [
+                    48,
+                    48
+                ],
+                "Why": [
+                    48,
+                    48
+                ]
+            },
+            "Who": {
+                "description": "A much-maligned beggar with a dove tattooed on her cheek…"
+            },
+            "What": {
+                "description": "…needs the Characters to interrogate a Doomsayer of Morr to uncover an enemy’s greatest weakness…"
+            },
+            "Why": {
+                "description": "…so they can prove right a doom saying zealot in the town square."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    49,
+                    49
+                ],
+                "What": [
+                    49,
+                    49
+                ],
+                "Why": [
+                    49,
+                    49
+                ]
+            },
+            "Who": {
+                "description": "A Myrmidian nun of ill-repute…"
+            },
+            "What": {
+                "description": "…needs the Characters to look into a matter of potential mutation…"
+            },
+            "Why": {
+                "description": "…so they can protect their loved ones."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    50,
+                    50
+                ],
+                "What": [
+                    50,
+                    50
+                ],
+                "Why": [
+                    50,
+                    50
+                ]
+            },
+            "Who": {
+                "description": "A once formidable foe…"
+            },
+            "What": {
+                "description": "…needs the Characters to look into a matter of potential mutation…"
+            },
+            "Why": {
+                "description": "…so they can protect their loved ones."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    51,
+                    51
+                ],
+                "What": [
+                    51,
+                    51
+                ],
+                "Why": [
+                    51,
+                    51
+                ]
+            },
+            "Who": {
+                "description": "A pernicious Halfling pit fighter…"
+            },
+            "What": {
+                "description": "…needs the Characters to masquerade as bandits (or worse)… "
+            },
+            "Why": {
+                "description": "…so they can profit from the chaos."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    52,
+                    52
+                ],
+                "What": [
+                    52,
+                    52
+                ],
+                "Why": [
+                    52,
+                    52
+                ]
+            },
+            "Who": {
+                "description": "A pig-headed Ogre protagonist…"
+            },
+            "What": {
+                "description": "…needs the Characters to masquerade as bandits (or worse)… "
+            },
+            "Why": {
+                "description": "…so they can profit from the chaos."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    53,
+                    53
+                ],
+                "What": [
+                    53,
+                    53
+                ],
+                "Why": [
+                    53,
+                    53
+                ]
+            },
+            "Who": {
+                "description": "A rambunctious Strigany riverwoman…"
+            },
+            "What": {
+                "description": "…needs the Characters to perform a very specific series of strange actions on the next night that Morrsleib is full…"
+            },
+            "Why": {
+                "description": "…so they can pay off a debt."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    54,
+                    54
+                ],
+                "What": [
+                    54,
+                    54
+                ],
+                "Why": [
+                    54,
+                    54
+                ]
+            },
+            "Who": {
+                "description": "A rapscallion of the highest order…"
+            },
+            "What": {
+                "description": "…needs the Characters to perform a very specific series of strange actions on the next night that Morrsleib is full…"
+            },
+            "Why": {
+                "description": "…so they can pay off a debt."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    55,
+                    55
+                ],
+                "What": [
+                    55,
+                    55
+                ],
+                "Why": [
+                    55,
+                    55
+                ]
+            },
+            "Who": {
+                "description": "A recent friend…"
+            },
+            "What": {
+                "description": "…needs the Characters to plant some evidence in the Temple of Myrmidia…"
+            },
+            "Why": {
+                "description": "…so they can make enough money to live in luxury for the rest of their life. "
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    56,
+                    56
+                ],
+                "What": [
+                    56,
+                    56
+                ],
+                "Why": [
+                    56,
+                    56
+                ]
+            },
+            "Who": {
+                "description": "A reckless witch flaunting the authority of the Witch Hunters…"
+            },
+            "What": {
+                "description": "…needs the Characters to plant some evidence in the Temple of Myrmidia…"
+            },
+            "Why": {
+                "description": "…so they can make enough money to live in luxury for the rest of their life. "
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    57,
+                    57
+                ],
+                "What": [
+                    57,
+                    57
+                ],
+                "Why": [
+                    57,
+                    57
+                ]
+            },
+            "Who": {
+                "description": "A renowned bawd from Tilea…"
+            },
+            "What": {
+                "description": "…needs the Characters to play a prank on the Cult of Ulric… "
+            },
+            "Why": {
+                "description": "…so they can lose a bet they’d rather not win."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    58,
+                    58
+                ],
+                "What": [
+                    58,
+                    58
+                ],
+                "Why": [
+                    58,
+                    58
+                ]
+            },
+            "Who": {
+                "description": "A rising Reiklander military official…"
+            },
+            "What": {
+                "description": "…needs the Characters to play a prank on the Cult of Ulric… "
+            },
+            "Why": {
+                "description": "…so they can lose a bet they’d rather not win."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    59,
+                    59
+                ],
+                "What": [
+                    59,
+                    59
+                ],
+                "Why": [
+                    59,
+                    59
+                ]
+            },
+            "Who": {
+                "description": "A riverwarden not one week from retirement…"
+            },
+            "What": {
+                "description": "…needs the Characters to pretend to be a ghost, and scare someone…"
+            },
+            "Why": {
+                "description": "…so they can lessen the heat currently directed at them by a dangerous third party."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    60,
+                    60
+                ],
+                "What": [
+                    60,
+                    60
+                ],
+                "Why": [
+                    60,
+                    60
+                ]
+            },
+            "Who": {
+                "description": "A salubrious Norscan seaman…"
+            },
+            "What": {
+                "description": "…needs the Characters to pretend to be a ghost, and scare someone…"
+            },
+            "Why": {
+                "description": "…so they can lessen the heat currently directed at them by a dangerous third party."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    61,
+                    61
+                ],
+                "What": [
+                    61,
+                    61
+                ],
+                "Why": [
+                    61,
+                    61
+                ]
+            },
+            "Who": {
+                "description": "A sanctimonious hedge witch…"
+            },
+            "What": {
+                "description": "…needs the Characters to quietly investigate a murder…"
+            },
+            "Why": {
+                "description": "…so they can keep the Characters busy whilst they enact their final terrible plan!"
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    62,
+                    62
+                ],
+                "What": [
+                    62,
+                    62
+                ],
+                "Why": [
+                    62,
+                    62
+                ]
+            },
+            "Who": {
+                "description": "A scheming lawyer from Salzenmund…"
+            },
+            "What": {
+                "description": "…needs the Characters to quietly investigate a murder…"
+            },
+            "Why": {
+                "description": "…so they can keep the Characters busy whilst they enact their final terrible plan!"
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    63,
+                    63
+                ],
+                "What": [
+                    63,
+                    63
+                ],
+                "Why": [
+                    63,
+                    63
+                ]
+            },
+            "Who": {
+                "description": "A shadowy voice, half-heard through the walls…"
+            },
+            "What": {
+                "description": "…needs the Characters to secure them an invitation to the next society ball…"
+            },
+            "Why": {
+                "description": "…so they can impress a loved one."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    64,
+                    64
+                ],
+                "What": [
+                    64,
+                    64
+                ],
+                "Why": [
+                    64,
+                    64
+                ]
+            },
+            "Who": {
+                "description": "A shifty smuggler with a shark’s tooth necklace…"
+            },
+            "What": {
+                "description": "…needs the Characters to secure them an invitation to the next society ball…"
+            },
+            "Why": {
+                "description": "…so they can impress a loved one."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    65,
+                    65
+                ],
+                "What": [
+                    65,
+                    65
+                ],
+                "Why": [
+                    65,
+                    65
+                ]
+            },
+            "Who": {
+                "description": "A sickly scholar who can’t stop itching…"
+            },
+            "What": {
+                "description": "…needs the Characters to silence someone…"
+            },
+            "Why": {
+                "description": "…so they can fulfill a prophecy given to them as a child."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    66,
+                    66
+                ],
+                "What": [
+                    66,
+                    66
+                ],
+                "Why": [
+                    66,
+                    66
+                ]
+            },
+            "Who": {
+                "description": "A skittish Eonir scout who keeps looking over their shoulder…"
+            },
+            "What": {
+                "description": "…needs the Characters to silence someone…"
+            },
+            "Why": {
+                "description": "…so they can fulfill a prophecy given to them as a child."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    67,
+                    67
+                ],
+                "What": [
+                    67,
+                    67
+                ],
+                "Why": [
+                    67,
+                    67
+                ]
+            },
+            "Who": {
+                "description": "A sly advisor to an Imperial Herald…"
+            },
+            "What": {
+                "description": "…needs the Characters to slip behind enemy lines…"
+            },
+            "Why": {
+                "description": "…so they can fulfill a dark pact with a daemonic patron."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    68,
+                    68
+                ],
+                "What": [
+                    68,
+                    68
+                ],
+                "Why": [
+                    68,
+                    68
+                ]
+            },
+            "Who": {
+                "description": "A spy disguised as (roll again on Who)…"
+            },
+            "What": {
+                "description": "…needs the Characters to slip behind enemy lines…"
+            },
+            "Why": {
+                "description": "…so they can fulfill a dark pact with a daemonic patron."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    69,
+                    69
+                ],
+                "What": [
+                    69,
+                    69
+                ],
+                "Why": [
+                    69,
+                    69
+                ]
+            },
+            "Who": {
+                "description": "A starving urchin with a curious birthmark…"
+            },
+            "What": {
+                "description": "…needs the Characters to smuggle them out of town…"
+            },
+            "Why": {
+                "description": "…so they can frame the Characters for a greater crime."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    70,
+                    70
+                ],
+                "What": [
+                    70,
+                    70
+                ],
+                "Why": [
+                    70,
+                    70
+                ]
+            },
+            "Who": {
+                "description": "A strict servant of the Von Saponatheims…"
+            },
+            "What": {
+                "description": "…needs the Characters to smuggle them out of town…"
+            },
+            "Why": {
+                "description": "…so they can frame the Characters for a greater crime."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    71,
+                    71
+                ],
+                "What": [
+                    71,
+                    71
+                ],
+                "Why": [
+                    71,
+                    71
+                ]
+            },
+            "Who": {
+                "description": "A stuffy noble with an unwieldy powdered wig…"
+            },
+            "What": {
+                "description": "…needs the Characters to sour some of the medicine in the Temple of Shallya…"
+            },
+            "Why": {
+                "description": "…so they can frame a rival organisation for a heinous crime."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    72,
+                    72
+                ],
+                "What": [
+                    72,
+                    72
+                ],
+                "Why": [
+                    72,
+                    72
+                ]
+            },
+            "Who": {
+                "description": "A surprisingly legitimate mystic with azure-coloured eyes…"
+            },
+            "What": {
+                "description": "…needs the Characters to sour some of the medicine in the Temple of Shallya…"
+            },
+            "Why": {
+                "description": "…so they can frame a rival organisation for a heinous crime."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    73,
+                    73
+                ],
+                "What": [
+                    73,
+                    73
+                ],
+                "Why": [
+                    73,
+                    73
+                ]
+            },
+            "Who": {
+                "description": "A talkative thief with many secrets to spill…"
+            },
+            "What": {
+                "description": "…needs the Characters to sow discord between the Cultists of Taal and Rhya…"
+            },
+            "Why": {
+                "description": "…so they can flee from the long arm of the law."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    74,
+                    74
+                ],
+                "What": [
+                    74,
+                    74
+                ],
+                "Why": [
+                    74,
+                    74
+                ]
+            },
+            "Who": {
+                "description": "A thorough scamp and wastrel, recently washed out of Middenheim…"
+            },
+            "What": {
+                "description": "…needs the Characters to sow discord between the Cultists of Taal and Rhya…"
+            },
+            "Why": {
+                "description": "…so they can flee from the long arm of the law."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    75,
+                    75
+                ],
+                "What": [
+                    75,
+                    75
+                ],
+                "Why": [
+                    75,
+                    75
+                ]
+            },
+            "Who": {
+                "description": "A waif in need…"
+            },
+            "What": {
+                "description": "…needs the Characters to sow discord between two neighbourhoods…"
+            },
+            "Why": {
+                "description": "…so they can finally start their glorious revolution."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    76,
+                    76
+                ],
+                "What": [
+                    76,
+                    76
+                ],
+                "Why": [
+                    76,
+                    76
+                ]
+            },
+            "Who": {
+                "description": "A whispering in your head, a compulsion…"
+            },
+            "What": {
+                "description": "…needs the Characters to sow discord between two neighbourhoods…"
+            },
+            "Why": {
+                "description": "…so they can finally start their glorious revolution."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    77,
+                    77
+                ],
+                "What": [
+                    77,
+                    77
+                ],
+                "Why": [
+                    77,
+                    77
+                ]
+            },
+            "Who": {
+                "description": "A Ghyran wizard of dubious legality…"
+            },
+            "What": {
+                "description": "…needs the Characters to spark up a gang war between local criminals…"
+            },
+            "Why": {
+                "description": "…so they can finally leave town, with no loose ends."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    78,
+                    78
+                ],
+                "What": [
+                    78,
+                    78
+                ],
+                "Why": [
+                    78,
+                    78
+                ]
+            },
+            "Who": {
+                "description": "A wizened road warden…"
+            },
+            "What": {
+                "description": "…needs the Characters to spark up a gang war between local criminals…"
+            },
+            "Why": {
+                "description": "…so they can finally leave town, with no loose ends."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    79,
+                    79
+                ],
+                "What": [
+                    79,
+                    79
+                ],
+                "Why": [
+                    79,
+                    79
+                ]
+            },
+            "Who": {
+                "description": "A wounded messenger from the Mootland…"
+            },
+            "What": {
+                "description": "…needs the Characters to spy on a suspicious neighbour…"
+            },
+            "Why": {
+                "description": "…so they can finally learn the truth of their hidden past."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    80,
+                    80
+                ],
+                "What": [
+                    80,
+                    80
+                ],
+                "Why": [
+                    80,
+                    80
+                ]
+            },
+            "Who": {
+                "description": "An abrasive boatman with a curious knowledge of Estalian swears…"
+            },
+            "What": {
+                "description": "…needs the Characters to spy on a suspicious neighbour…"
+            },
+            "Why": {
+                "description": "…so they can finally learn the truth of their hidden past."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    81,
+                    81
+                ],
+                "What": [
+                    81,
+                    81
+                ],
+                "Why": [
+                    81,
+                    81
+                ]
+            },
+            "Who": {
+                "description": "An aggravated newsheet vendor… "
+            },
+            "What": {
+                "description": "…needs the Characters to steal a barge and deliver it to a hidden cove…"
+            },
+            "Why": {
+                "description": "…so they can finally get the upper hand on, ‘those scum what done for me all these years’."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    82,
+                    82
+                ],
+                "What": [
+                    82,
+                    82
+                ],
+                "Why": [
+                    82,
+                    82
+                ]
+            },
+            "Who": {
+                "description": "An annoying hanger-on…"
+            },
+            "What": {
+                "description": "…needs the Characters to steal a barge and deliver it to a hidden cove…"
+            },
+            "Why": {
+                "description": "…so they can finally get the upper hand on, ‘those scum what done for me all these years’."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    83,
+                    83
+                ],
+                "What": [
+                    83,
+                    83
+                ],
+                "Why": [
+                    83,
+                    83
+                ]
+            },
+            "Who": {
+                "description": "An anonymous benefactor… "
+            },
+            "What": {
+                "description": "…needs the Characters to steal a book from the Temple of Verena…"
+            },
+            "Why": {
+                "description": "…so they can elope with their forbidden lover."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    84,
+                    84
+                ],
+                "What": [
+                    84,
+                    84
+                ],
+                "Why": [
+                    84,
+                    84
+                ]
+            },
+            "Who": {
+                "description": "A High Elf who offers much…"
+            },
+            "What": {
+                "description": "…needs the Characters to steal a book from the Temple of Verena…"
+            },
+            "Why": {
+                "description": "…so they can elope with their forbidden lover."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    85,
+                    85
+                ],
+                "What": [
+                    85,
+                    85
+                ],
+                "Why": [
+                    85,
+                    85
+                ]
+            },
+            "Who": {
+                "description": "An enigmatic entertainer wearing a half-moon mask…"
+            },
+            "What": {
+                "description": "…needs the Characters to steal a reliquary from the Temple of Sigmar…"
+            },
+            "Why": {
+                "description": "…so they can discredit a doom saying zealot in the town square."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    86,
+                    86
+                ],
+                "What": [
+                    86,
+                    86
+                ],
+                "Why": [
+                    86,
+                    86
+                ]
+            },
+            "Who": {
+                "description": "An envoy from a Far Cathay…"
+            },
+            "What": {
+                "description": "…needs the Characters to steal a reliquary from the Temple of Sigmar…"
+            },
+            "Why": {
+                "description": "…so they can discredit a doom saying zealot in the town square."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    87,
+                    87
+                ],
+                "What": [
+                    87,
+                    87
+                ],
+                "Why": [
+                    87,
+                    87
+                ]
+            },
+            "Who": {
+                "description": "An honest wrecker…"
+            },
+            "What": {
+                "description": "…needs the Characters to steal some records from the Temple of Morr…"
+            },
+            "Why": {
+                "description": "…so they can catch the eye of a potential employer."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    88,
+                    88
+                ],
+                "What": [
+                    88,
+                    88
+                ],
+                "Why": [
+                    88,
+                    88
+                ]
+            },
+            "Who": {
+                "description": "An investigator who’s onto something…"
+            },
+            "What": {
+                "description": "…needs the Characters to steal some records from the Temple of Morr…"
+            },
+            "Why": {
+                "description": "…so they can catch the eye of a potential employer."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    89,
+                    89
+                ],
+                "What": [
+                    89,
+                    89
+                ],
+                "Why": [
+                    89,
+                    89
+                ]
+            },
+            "Who": {
+                "description": "An obnoxious outlaw with a flare for the dramatic…"
+            },
+            "What": {
+                "description": "…needs the Characters to steal something, no questions asked…"
+            },
+            "Why": {
+                "description": "…so they can catch the eye of a desired lover."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    90,
+                    90
+                ],
+                "What": [
+                    90,
+                    90
+                ],
+                "Why": [
+                    90,
+                    90
+                ]
+            },
+            "Who": {
+                "description": "An obscenely wealthy patron with too much time on their hands…"
+            },
+            "What": {
+                "description": "…needs the Characters to steal something, no questions asked…"
+            },
+            "Why": {
+                "description": "…so they can catch the eye of a desired lover."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    91,
+                    91
+                ],
+                "What": [
+                    91,
+                    91
+                ],
+                "Why": [
+                    91,
+                    91
+                ]
+            },
+            "Who": {
+                "description": "An Ogre who thinks you owe them something (but can’t remember what)…"
+            },
+            "What": {
+                "description": "…needs the Characters to steal trade secrets from a rival…"
+            },
+            "Why": {
+                "description": "…so they can bring some laughter to ‘these old bones of mine’."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    92,
+                    92
+                ],
+                "What": [
+                    92,
+                    92
+                ],
+                "Why": [
+                    92,
+                    92
+                ]
+            },
+            "Who": {
+                "description": "An old acquaintance…"
+            },
+            "What": {
+                "description": "…needs the Characters to steal trade secrets from a rival…"
+            },
+            "Why": {
+                "description": "…so they can bring some laughter to ‘these old bones of mine’."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    93,
+                    93
+                ],
+                "What": [
+                    93,
+                    93
+                ],
+                "Why": [
+                    93,
+                    93
+                ]
+            },
+            "Who": {
+                "description": "An outrageous racketeer with an even more outrageous Bretonnian accent…"
+            },
+            "What": {
+                "description": "…needs the Characters to throw a party for a group of attending dignitaries…"
+            },
+            "Why": {
+                "description": "…so they can betray their own, selling them out to the highest bidder."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    94,
+                    94
+                ],
+                "What": [
+                    94,
+                    94
+                ],
+                "Why": [
+                    94,
+                    94
+                ]
+            },
+            "Who": {
+                "description": "An overly cautious herbalist in a gown sown with black roses…"
+            },
+            "What": {
+                "description": "…needs the Characters to throw a party for a group of attending dignitaries…"
+            },
+            "Why": {
+                "description": "…so they can betray their own, selling them out to the highest bidder."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    95,
+                    95
+                ],
+                "What": [
+                    95,
+                    95
+                ],
+                "Why": [
+                    95,
+                    95
+                ]
+            },
+            "Who": {
+                "description": "An overworked (and underpaid) Ogre stevedore…"
+            },
+            "What": {
+                "description": "…needs the Characters to uncover a hidden cabal…"
+            },
+            "Why": {
+                "description": "…so they can be free of a terrible burden."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    96,
+                    96
+                ],
+                "What": [
+                    96,
+                    96
+                ],
+                "Why": [
+                    96,
+                    96
+                ]
+            },
+            "Who": {
+                "description": "An underworld contact with whom you have a debt to settle…"
+            },
+            "What": {
+                "description": "…needs the Characters to uncover a hidden cabal…"
+            },
+            "Why": {
+                "description": "…so they can be free of a terrible burden."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    97,
+                    97
+                ],
+                "What": [
+                    97,
+                    97
+                ],
+                "Why": [
+                    97,
+                    97
+                ]
+            },
+            "Who": {
+                "description": "An unjustifiably satisfied townsman with far too many ruffles…"
+            },
+            "What": {
+                "description": "…needs the Characters to uncover an artefact of grave power…"
+            },
+            "Why": {
+                "description": "…so that they can upset the local market, and profit."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    98,
+                    98
+                ],
+                "What": [
+                    98,
+                    98
+                ],
+                "Why": [
+                    98,
+                    98
+                ]
+            },
+            "Who": {
+                "description": "An unobservant warden and his pet raven…"
+            },
+            "What": {
+                "description": "…needs the Characters to uncover an artefact of grave power…"
+            },
+            "Why": {
+                "description": "…so that they can upset the local market, and profit."
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    99,
+                    99
+                ],
+                "What": [
+                    99,
+                    99
+                ],
+                "Why": [
+                    99,
+                    99
+                ]
+            },
+            "Who": {
+                "description": "An unusually knowledgeable villager…"
+            },
+            "What": {
+                "description": "…needs the Characters to uncover the truth about an ancient Grudge…"
+            },
+            "Why": {
+                "description": "…so they can finally have the POWER THAT IS RIGHTFULLY THEIRS, MWAHAHAHA!"
+            }
+        },
+        {
+            "range": {
+                "Who": [
+                    100,
+                    100
+                ],
+                "What": [
+                    100,
+                    100
+                ],
+                "Why": [
+                    100,
+                    100
+                ]
+            },
+            "Who": {
+                "description": "Someone you thought long dead…"
+            },
+            "What": {
+                "description": "…needs the Characters to uncover the truth about an ancient Grudge…"
+            },
+            "Why": {
+                "description": "…so they can finally have the POWER THAT IS RIGHTFULLY THEIRS, MWAHAHAHA!"
+            }
+        }
+    ]
+}

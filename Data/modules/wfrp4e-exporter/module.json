@@ -1,0 +1,26 @@
+{
+  "name": "wfrp4e-exporter",
+  "title": "WFRP4e-Statblock Exporter",
+  "description": "Export statblocks into a document-friendly format for publications.",
+  "version": "1.0",
+  "author": "Stu",
+  "systems": ["wfrp4e"],
+  "styles": [
+    "./styles.css"
+  ],
+  "packs": [
+	{
+      "name": "WFRP4E-Exporter",
+      "label": "WFRP4E Exporter",
+      "path": "macro.db",
+      "entity": "Macro",
+      "module": "wfrp4e-exporter",
+      "system": "wfrp4e"
+    }	
+  ],
+  "languages": ["en"],
+  "minimumCoreVersion": "0.7.7",
+  "manifest": "https://raw.githubusercontent.com/CStuartEKerrigan/Exporter/master/module.json",
+  "download": "https://github.com/CStuartEKerrigan/Exporter/archive/master.zip",
+  "url": "https://github.com/CStuartEKerrigan/Exporter/"
+} 

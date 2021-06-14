@@ -1,0 +1,22 @@
+{
+  "name": "Delirium",
+  "die": "1d10",
+  "hide": true,
+  "rows": [{
+    "name": "Lucid Interval",
+    "description": "You have a period of blissful calm. Any Conditions you have previously gained from your Delirium are removed.",
+    "range": [1, 2]
+  }, {
+    "name": "Fitful Sleep",
+    "description": "You toss and turn, asleep but not resting. Gain 1 @Condition[Unconscious] for the next hour, and 1 @Condition[Fatigued] Condition for the next <b>@Roll[1d10]</b> hours.",
+    "range": [3, 5]
+  }, {
+    "name": "Confusion",
+    "description": "Plagued by weird, distorted visions, you gain one @Condition[Stunned] Condition for the next hour",
+    "range": [6, 9]
+  }, {
+    "name": "Hallucinations",
+    "description": "You see strange and terrifying visions, and must make a Test against Terror  3 every 10 minutes for the next hour. You also gain +1 @Condition[Stunned] Condition for the next <b>@Roll[1d10]</b> hours",
+    "range": [10, 10]
+  }]
+}

@@ -1,0 +1,67 @@
+.window-app.dialog.characteristic-roll-dialog .window-content{
+    background: url(art/ui/window-app-dialog-backgrounds-characteristic.png);
+  }
+
+.window-app.dialog.skill-roll-dialog .window-content {
+  background: url(art/ui/window-app-dialog-backgrounds-skill.png);
+}
+.window-app.dialog.weapon-roll-dialog .window-content {
+  background: url(art/ui/window-app-dialog-backgrounds-weapon.png);
+}
+.window-app.dialog.spell-roll-dialog .window-content {
+  background: url(art/ui/window-app-dialog-backgrounds-spell.png);
+  background-size: 102%;
+  background-position: -5px -10px;
+}
+.window-app.dialog.channel-roll-dialog .window-content {
+  background: url(art/ui/window-app-dialog-backgrounds-channel.png);
+  background-size: 102%;
+  background-position: -5px -10px;
+}
+.window-app.dialog.prayer-roll-dialog .window-content {
+  background: url(art/ui/window-app-dialog-backgrounds-prayer.png);
+}
+
+#client-settings {
+    border-width: 10px;
+    border-image: url(art/ui/game-settings-border.png) 5 repeat;
+    border-image-slice: 162 81 67 80;
+    border-image-width: 162px 81px 67px 80px;
+    border-image-outset: 0px;
+  }
+  #client-settings .window-content {
+   background: url(art/ui/game-settings-background.png);
+   background-size: 199%;
+   background-position-x: center;
+  }
+
+  #sidebar {
+    background: url(art/ui/sidebar.png) repeat;
+  }
+
+  #sidebar .sidebar-tab #chat-controls {
+    background: url(art/ui/sidebar-bottom-button-background.png);
+  }
+
+#pause
+{
+  font-family: CaslonAntique;
+  font-size: 20px;
+}
+#pause > h3
+{
+  color: #CCC
+}
+#pause > img {
+  content: url(art/ui/chaos.png);
+  height: 256px;
+  width: 256px;
+  top: -75px;
+  left: calc(50% - 132px);
+}
+
+#logo {
+  content : url("art/ui/logo.png");
+  width: 100px;
+  height: 42px;
+}

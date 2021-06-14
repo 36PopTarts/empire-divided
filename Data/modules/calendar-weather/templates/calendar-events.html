@@ -1,0 +1,509 @@
+<style style="visibility: hidden;">
+  .calendar-season-container {
+    display: inline-flex;
+    width: 100%;
+  }
+
+  .calendar-season-name {
+    display: block;
+    max-width: 20%;
+  }
+
+  .calendar-season-temp {
+    padding: 1px;
+  }
+
+  .calendar-season-humidity {
+    padding: 1px;
+  }
+
+  .calendar-season-light-container {
+    display: inline-flex;
+    width: 100%;
+  }
+
+  .calendar-dusk{
+    text-align: center;
+    max-width: 25px;
+  }
+  .calendar-dawn{
+    text-align: center;
+    max-width: 25px;
+  }
+
+  .calendar-season-month {
+    padding: 1px;
+  }
+
+  .calendar-season-del {
+    margin-left: auto;
+    width: 40px;
+  }
+
+  /* Season Column Labels */
+  .calendar-season-label-name {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  .calendar-season-label-temp {
+    grid-row: 1;
+    grid-column: 2;
+    padding-left: 75px;
+  }
+
+  .calendar-season-label-color {
+    grid-row: 1;
+    grid-column: 3;
+  }
+
+  .calendar-season-label-date {
+    grid-row: 1;
+    grid-column: 4;
+  }
+
+  .calendar-season-label-del {
+    grid-row: 1;
+    grid-column: 5;
+    width: 40px;
+  }
+
+  .calendar-reEvent-item {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    outline-offset: 5px;
+    border-bottom: 1px solid rgb(116, 0, 0);
+  }
+
+  .calendar-reEvent-container {
+    display: grid;
+  }
+
+  .calendar-reEvent-name {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  .calendar-reEvent-month {
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  .calendar-reEvent-del {
+    grid-row: 1;
+    grid-column: 3;
+    justify-self: end;
+    width: 40px;
+  }
+
+  .calendar-event-item {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    outline-offset: 5px;
+    border-bottom: 1px solid rgb(116, 0, 0);
+  }
+
+  .calendar-event-container {
+    display: grid;
+  }
+
+  .calendar-event-name {
+    grid-row: 1;
+    grid-column: 1;
+    width: 33%;
+  }
+
+  .calendar-event-month {
+    grid-row: 1;
+    grid-column: 2;
+    display: inline-flex;
+    height: 25px;
+  }
+
+  .calendar-event-year {
+    width: 50px;
+  }
+
+  .calendar-event-text {
+    margin-top: 3px;
+  }
+
+  .calendar-event-allDay {
+    grid-row: 1;
+    grid-column: 3;
+  }
+
+  .calendar-event-time {
+    grid-row: 1;
+    grid-column: 4;
+    width: 160px;
+    display: inline-flex;
+    vertical-align: middle;
+  }
+
+  .calendar-event-del {
+    grid-row: 1;
+    grid-column: 5;
+    justify-self: end;
+    width: 40px;
+  }
+
+  .calendar-season-text{
+    padding-left: 7px;
+    margin-top: 4px;
+  }
+
+  .calendar-season-listitem{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    outline-offset: 5px;
+    border-bottom: 1px solid rgb(116, 0, 0);
+  }
+
+  .calendar-events-container {
+    background: url(../ui/parchment.jpg) repeat;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: fit-content;
+  }
+
+  .calendar-moon-top {
+    width: 100%;
+    display: inline-flex;
+    height: fit-content;
+    align-items: center;
+  }
+
+  .calendar-moon-bottom {
+    display: inline-flex;
+  }
+
+  .calendar-moon-name-container {
+    width: 33%;
+  }
+
+  .calendar-moon-name {
+    width: 10px;
+  }
+
+  .calendar-moon-length {
+    width: 40px;
+    margin-right: 10px;
+  }
+
+  .calendar-moon-percent {
+    width: 40px;
+    margin-right: 10px;
+  }
+
+  .calendar-moon-leclipse {
+    width: 60px;
+    margin-right: 10px;
+  }
+  .calendar-moon-seclipse {
+    width: 60px;
+    margin-right: 10px;
+  }
+  .calendar-moon-del {
+    width: 40px;
+    margin-left: auto;
+  }
+
+  .calendar-collapsable{
+    background: none;
+    border: none;
+    border-bottom: 2px solid #782e22;
+    font-size: 1.3em;
+    text-align: left;
+    padding-top: 10px;
+  }
+
+  .calendar-collapsable:hover {
+    box-shadow: inset 0 0 7px black!important;
+  }
+  .calendar-collapsable:active {
+    box-shadow: inset 0 0 7px black!important;
+    background: #755f5b3b;
+  }
+
+  .calendar-collapsable-content{
+    display: none;
+    overflow: hidden;
+  }
+
+  #calendar-events-submit{
+    padding-top: 10px;
+  }
+</style>
+<form id="calendar-events-form" autocomplete="off" onsubmit="event.preventDefault();" class="calendar-events-container">
+  <h1>{{localize 'Events'}}</h1>
+  <button class="calendar-collapsable" name="moon">+ {{localize 'CWMOON.Title'}}</button>
+  <div class="calendar-collapsable-content">
+    <p>{{localize 'CWMOON.Intro'}}</p>
+    <ol>
+      {{#each moons as |moon|}}
+      <li class="calendar-season-listitem">
+        <div class="calendar-moon-top">
+          <span class="calendar-moon-name-container">
+            <input class="calendar-moon-name" value="{{moon.name}}" type="text" placeholder="{{localize 'CWMOON.Name'}}"
+            title="{{localize 'CWMOON.NameDesc'}}" id="calendar-moon-{{@index}}">
+          </span>
+          <span class="calendar-moon-length-text">{{localize 'CWMOON.Length'}}</span>
+          <input class="calendar-moon-length" value="{{moon.cycleLength}}" type="number" placeholder="{{localize 'CWMOON.LengthPH'}}"
+          title="{{localize 'CWMOON.LengthDesc'}}" id="calendar-moon-length-{{@index}}">
+          <span class="calendar-moon-percent-text">{{localize 'CWMOON.Percent'}}</span>
+          <input class="calendar-moon-percent" value="{{moon.cyclePercent}}" type="number" placeholder="{{localize 'CWMOON.PercentPH'}}"
+          title="{{localize 'CWMOON.PercentDesc'}}" id="calendar-moon-percent-{{@index}}"> 
+          <span class="calendar-moon-waxing-text">{{localize 'CWMOON.Waxing'}}</span>
+          <input class="calendar-moon-waxing" type="checkbox" id="calendar-moon-waxing-{{@index}}">
+          <button class="calendar-moon-del" id="calendar-moon-del-{{@index}}" name="del-moon-{{@index}}"
+            title="Delete Moon">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </div>
+        <div class="calendar-moon-bottom">
+          <span class="calendar-leclipse-text">{{localize 'CWMOON.LEclipse'}}</span>
+          <input class="calendar-moon-leclipse" value="{{moon.lunarEclipseChance}}" type="number" placeholder="{{localize 'CWMOON.LEclipsePH'}}"
+          title="{{localize 'CWMOON.LEclipseDesc'}}" id="calendar-moon-leclipse-{{@index}}"> 
+          <span class="calendar-seclipse-text">{{localize 'CWMOON.SEclipse'}}</span>
+          <input class="calendar-moon-seclipse" value="{{moon.solarEclipseChance}}" type="number" placeholder="{{localize 'CWMOON.SEclipsePH'}}"
+          title="{{localize 'CWMOON.SEclipseDesc'}}" id="calendar-moon-seclipse-{{@index}}"> 
+        </div>
+      </li>
+      {{/each}}
+    </ol>
+    <button id="calendar-events-add-moon" name="add-moon" title="{{localize 'CWMOON.Add'}}">
+      <i class="fas fa-plus"></i> {{localize 'CWMOON.Add'}}
+    </button>
+  </div>
+  <button class="calendar-collapsable" name="seasons">+ {{localize 'CWSEASONS.Title'}}</button>
+  <div class="calendar-collapsable-content">
+    <p>{{localize 'CWSEASONS.SeasonIntro'}}</p>
+    <ol>
+      {{#each seasons as |season|}}
+      <li class="calendar-season-listitem">
+        <div class="calendar-season-container">
+          <input class="calendar-season-name" value="{{season.name}}" type="text" placeholder="ex. Autumn"
+            title="{{localize 'CWSEASONS.SeasonName'}}" id="calendar-season-{{@index}}">
+          <span class="calendar-season-text">Temperature:</span>
+          <select class="calendar-season-temp" title="{{localize 'CWSEASONS.HotterOrColder'}}"
+            id="calendar-season-temp-{{@index}}">
+            <option value="=">=</option>
+            <option value="+">+</option>
+            <option value="-">-</option>
+          </select>
+          <span class="calendar-season-text">Humidity:</span>
+          <select class="calendar-season-humidity" title="{{localize 'CWSEASONS.DrierOrWetter'}}"
+            id="calendar-season-humidity-{{@index}}">
+            <option value="=">=</option>
+            <option value="+">+</option>
+            <option value="-">-</option>
+          </select>
+          <span class="calendar-season-text">Date:</span>
+          <div class="calendar-season-month">
+            <select class="calendar-season-month-value" title="{{localize 'CWSEASONS.SeasonMonthStart'}}"
+              id="calendar-season-month-{{@index}}" onchange="
+            let id = {{@index}}
+            var element = document.getElementById('calendar-season-day-' + id),
+              frag = document.createDocumentFragment();
+            while(element.firstChild){
+              element.removeChild(element.firstChild);
+            }
+            for(var i = 1, max=parseInt(this.options[this.selectedIndex].attributes['name'].value) + 1; i < max; i++){
+              var option = document.createElement('option');
+              option.value = i;
+              option.appendChild(document.createTextNode(i));
+              frag.appendChild(option);
+            }
+            element.appendChild(frag);
+          ">
+              {{#each ../months as |month|}}
+              <option value="{{month.abbrev}}" title="{{localize 'CWSEASONS.SeasonDayStart'}}" name="{{month.length}}">
+                {{month.abbrev}}</option>
+              {{/each}}
+            </select>
+            <select class="calendar-season-day" id="calendar-season-day-{{@index}}"></select>
+          </div>
+          <button class="calendar-season-del" id="calendar-season-del-{{@index}}" name="del-season-{{@index}}"
+            title="Delete Season">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </div>
+        <div class="calendar-season-light-container">
+          <span class="calendar-season-text">Dawn:</span>
+          <input class="calendar-dawn" value="{{season.dawn}}" type="text" placeholder="6"
+            title="{{localize 'CWSEASONS.SeasonHourBright'}}" id="calendar-dawn-{{@index}}">
+          <select id="calendar-dawn-ampm-{{@index}}" class="calendar-dawn-ampm">
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+          </select>
+          <span class="calendar-season-text">Dusk:</span>
+          <input class="calendar-dusk" value="{{season.dusk}}" type="text" placeholder="6"
+            title="{{localize 'CWSEASONS.SeasonHourDark'}}" id="calendar-dusk-{{@index}}">
+          <select id="calendar-dusk-ampm-{{@index}}" class="calendar-dusk-ampm">
+            <option value="PM">PM</option>
+            <option value="AM">AM</option>
+          </select>
+          <span class="calendar-season-text">Color:</span>
+          <select class="calendar-season-color" title="{{localize 'CWSEASONS.SeasonColor'}}"
+            id="calendar-season-color-{{@index}}">
+            <option value="red" style="background-color: red;">{{localize 'CWSEASONS.ColorRed'}}</option>
+            <option value="orange" style="background-color: orange;">{{localize 'CWSEASONS.ColorOrange'}}</option>
+            <option value="yellow" style="background-color: yellow;">{{localize 'CWSEASONS.ColorYellow'}}</option>
+            <option value="green" style="background-color: green;">{{localize 'CWSEASONS.ColorGreen'}}</option>
+            <option value="blue" style="color:white; background-color: blue;">{{localize 'CWSEASONS.ColorBlue'}}</option>
+            <option value="white" style="background-color: white;">{{localize 'CWSEASONS.ColorWhite'}}</option>
+          </select>
+          <input class="calendar-season-rolltable" value="{{season.rolltable}}" type="text" placeholder="ex. @Rolltable[Weather]"
+            title="{{localize 'CWSEASONS.SeasonRolltable'}}" id="calendar-season-rolltable-{{@index}}">
+        </div>
+      </li>
+      {{/each}}
+    </ol>
+    <button id="calendar-events-add-season" name="add-season" title="{{localize 'CWSEASONS.AddSeason'}}">
+      <i class="fas fa-plus"></i> {{localize 'CWSEASONS.AddSeason'}}
+    </button>
+  </div>
+  <button class="calendar-collapsable" name="reEvents">+ {{localize 'ReoccuringEvents'}}</button>
+  <div class="calendar-collapsable-content">
+    <p>{{localize 'DateReoccuringEvent'}}</p>
+    <ol>
+      {{#each reEvents as |reEvent|}}
+      <li class="calendar-reEvent-item">
+        <div class="calendar-reEvent-container">
+          <input class="calendar-reEvent-name" value="{{reEvent.name}}" type="text" placeholder="{{localize 'exChristmas'}}"
+            title="{{localize 'CWSEASONS.EventName'}}" id="calendar-reEvent-{{@index}}">
+          <div class="calendar-reEvent-month">
+            <span> Date: </span>
+            <select class="calendar-reEvent-month-value" title="{{localize 'EventStartMonth'}}" id="calendar-reEvent-{{@index}}"
+              onchange="
+            let id = {{@index}}
+            var element = document.getElementById('calendar-reEvent-day-' + id),
+              frag = document.createDocumentFragment();
+            while(element.firstChild){
+              element.removeChild(element.firstChild);
+            }
+            for(var i = 1, max=parseInt(this.options[this.selectedIndex].attributes['name'].value) + 1; i < max; i++){
+              var option = document.createElement('option');
+              option.value = i;
+              option.appendChild(document.createTextNode(i));
+              frag.appendChild(option);
+            }
+            element.appendChild(frag);
+          ">
+              {{#each ../months as |month|}}
+              <option value="{{month.abbrev}}" title="{{localize 'EventMonthStart'}}" name="{{month.length}}">
+                {{month.abbrev}}</option>
+              {{/each}}
+            </select>
+            <select class="calendar-reEvent-day" title="{{localize 'EventDayStart'}}" id="calendar-reEvent-day-{{@index}}"></select>
+          </div>
+          <button class="calendar-reEvent-del" id="calendar-reEvent-del-{{@index}}" name="del-reEvent-{{@index}}"
+            title="{{localize 'DeleteREvent'}}">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </div>
+        <input title="{{localize 'EventJournalInfo'}}" class="calendar-reEvent-text" value="{{reEvent.text}}"
+          id="calendar-reEvent-text-{{@index}}" type="text" placeholder="{{localize 'EventJournalInfoEx'}}">
+      </li>
+      {{/each}}
+    </ol>
+    <button id="calendar-events-add-reEvent" name="add-reEvent" title="{{localize 'AddREvent'}}">
+      <i class="fas fa-plus"></i> {{localize 'AddREvent'}}
+    </button>
+  </div>
+  <button class="calendar-collapsable" name="oneTimeEvents">+ {{localize 'OneTimeEvents'}}</button>
+  <div class="calendar-collapsable-content">
+    <p>{{localize 'OneTimeDescr'}}
+    </p>
+    <ol>
+      {{#each events as |event|}}
+      <li class="calendar-event-item">
+        <div class="calendar-event-container">
+          <input class="calendar-event-name" value="{{event.name}}" type="text" placeholder="{{localize 'exChristmas'}}"
+            title="{{localize 'CWSEASONS.EventName'}}" id="calendar-event-{{@index}}">
+          <div class="calendar-event-month">
+            <span class="calendar-event-text"> Date: </span>
+            <select class="calendar-event-month-value" title="{{localize 'EventMonthStart'}}" id="calendar-event-{{@index}}"
+              onchange="
+            let id = {{@index}}
+            var element = document.getElementById('calendar-event-day-' + id),
+              frag = document.createDocumentFragment();
+            while(element.firstChild){
+              element.removeChild(element.firstChild);
+            }
+            for(var i = 1, max=parseInt(this.options[this.selectedIndex].attributes['name'].value) + 1; i < max; i++){
+              var option = document.createElement('option');
+              option.value = i;
+              option.appendChild(document.createTextNode(i));
+              frag.appendChild(option);
+            }
+            element.appendChild(frag);
+          ">
+              {{#each ../months as |month|}}
+              <option value="{{month.abbrev}}" title="{{localize 'EventDayHelp'}}" name="{{month.length}}">
+                {{month.abbrev}}</option>
+              {{/each}}
+            </select>
+            <select class="calendar-event-day" title="{{localize 'EventDayStart'}}" id="calendar-event-day-{{@index}}"></select>
+            <input title="Event start year" class="calendar-event-year" value="{{event.date.year}}"
+              placeholder="ex. 1234" type="number">
+          </div>
+          <input class="calendar-event-allDay" title="{{localize 'AllDayEvent'}}" type="checkbox"
+            id="calendar-event-allDay-{{@index}}" onclick="
+            var hours = document.getElementById('calendar-event-hour-{{@index}}');
+            var min = document.getElementById('calendar-event-minute-{{@index}}');
+            var sec = document.getElementById('calendar-event-second-{{@index}}');
+            var ampm = document.getElementById('calendar-event-ampm-{{@index}}');
+            if(this.checked){
+                hours.disabled = true; 
+                min.disabled = true; 
+                sec.disabled = true;
+                ampm.disabled = true; 
+                
+                hours.style.cursor = 'not-allowed';
+                min.style.cursor = 'not-allowed';
+                sec.style.cursor = 'not-allowed';
+                ampm.style.cursor = 'not-allowed';
+            }else{
+                hours.disabled = false; 
+                min.disabled = false; 
+                sec.disabled = false; 
+                ampm.disabled = false; 
+                
+                hours.style.cursor = 'auto';
+                min.style.cursor = 'auto';
+                sec.style.cursor = 'auto';
+                ampm.style.cursor = 'auto';
+            }">
+          <div class="calendar-event-time">
+            <span class="calendar-event-text">Time: </span>
+            <input class="calendar-event-time-hours" value="{{event.date.hours}}" type="text" placeholder="7"
+              id="calendar-event-hour-{{@index}}" max="24">:
+            <input class="calendar-event-time-min" value="{{event.date.minutes}}" type="text" placeholder="15"
+              id="calendar-event-minute-{{@index}}" max="60">:
+            <input class="calendar-event-time-sec" value="{{event.date.seconds}}" type="text" placeholder="00"
+              id="calendar-event-second-{{@index}}" max="60">
+            <select id="calendar-event-ampm-{{@index}}" class="calendar-event-ampm">
+              <option value="AM">AM</option>
+              <option value="PM">PM</option>
+            </select>
+          </div>
+          <button class="calendar-event-del" id="calendar-event-del-{{@index}}" name="del-event-{{@index}}"
+            title="{{localize 'DeleteREvent'}}">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </div>
+        <input title="{{localize 'EventJournalInfo'}}" class="calendar-event-content" value="{{event.text}}"
+          id="calendar-event-text-{{@index}}" type="text" placeholder="{{localize 'EventJournalInfoEx'}}">
+      </li>
+      {{/each}}
+    </ol>
+    <button id="calendar-events-add-event" name="add-event" title="{{localize 'AddOneTimeEvent'}}">
+      <i class="fas fa-plus"></i> {{localize 'AddOneTimeEvent'}}
+    </button>
+  </div>
+  <button id="calendar-events-submit" type="submit" name="submit" title="{{localize 'SaveEvent'}}">
+    <i class="far fa-save"></i> {{localize 'SaveEvent'}}
+  </button>
+</form>

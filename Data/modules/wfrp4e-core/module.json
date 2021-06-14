@@ -1,0 +1,201 @@
+{
+  "name": "wfrp4e-core",
+  "title": "WFRP4e - Core Content Module",
+  "description": "Official Core Rulebook content for the Warhammer Fantasy 4th Edition System. Includes all the tables, rules, bestiary, and lore you need to immerse your players into the perilous world of Warhammer.",
+  "version": "1.3.1",
+  "author": "Moo Man, Published by Cubicle 7",
+  "systems": [
+      "wfrp4e"
+  ],
+  "scripts": [
+      "wfrp4e.js",
+      "initialization.js"
+  ],
+  "styles": ["styles.css"],
+  "packs": [
+      {
+          "name": "bestiary",
+          "label": "Bestiary",
+          "system": "wfrp4e",
+          "module": "wfrp4e-core",
+          "path": "./packs/bestiary.db",
+          "entity": "Actor",
+          "tags": [
+              "actor"
+          ]
+      },
+      {
+          "name": "careers",
+          "label": "Careers",
+          "system": "wfrp4e",
+          "module": "wfrp4e-core",
+          "path": "./packs/careers.db",
+          "entity": "Item",
+          "tags": [
+              "career"
+          ]
+      },
+      {
+          "name": "criticals",
+          "label": "Criticals",
+          "system": "wfrp4e",
+          "module": "wfrp4e-core",
+          "path": "./packs/criticals.db",
+          "entity": "Item",
+          "tags": [
+              "critical"
+          ]
+      },
+      {
+          "name": "skills",
+          "label": "Skills",
+          "system": "wfrp4e",
+          "module": "wfrp4e-core",
+          "path": "./packs/skills.db",
+          "entity": "Item",
+          "tags": [
+              "skill"
+          ]
+      },
+      {
+          "name": "talents",
+          "label": "Talents",
+          "system": "wfrp4e",
+          "module": "wfrp4e-core",
+          "path": "./packs/talents.db",
+          "entity": "Item",
+          "tags": [
+              "talent"
+          ]
+      },
+      {
+          "name": "traits",
+          "label": "Traits",
+          "system": "wfrp4e",
+          "module": "wfrp4e-core",
+          "path": "./packs/traits.db",
+          "entity": "Item",
+          "tags": [
+              "trait"
+          ]
+      },
+      {
+          "name": "psychologies",
+          "label": "Psychologies",
+          "path": "./packs/psychologies.db",
+          "entity": "Item",
+          "system": "wfrp4e",
+          "module": "wfrp4e-core",
+          "tags": [
+              "pyschology"
+          ]
+      },
+      {
+          "name": "mutations",
+          "label": "Mutations",
+          "path": "./packs/mutations.db",
+          "entity": "Item",
+          "system": "wfrp4e",
+          "module": "wfrp4e-core",
+          "tags": [
+              "mutation"
+          ]
+      },
+      {
+          "name": "injuries",
+          "label": "Injuries",
+          "path": "./packs/injuries.db",
+          "entity": "Item",
+          "system": "wfrp4e",
+          "module": "wfrp4e-core",
+          "tags": [
+              "injury"
+          ]
+      },
+      {
+          "name": "diseases",
+          "label": "Diseases",
+          "path": "./packs/diseases.db",
+          "entity": "Item",
+          "system": "wfrp4e",
+          "module": "wfrp4e-core",
+          "tags": [
+              "disease"
+          ]
+      },
+      {
+          "name": "spells",
+          "label": "Spells",
+          "path": "./packs/spells.db",
+          "entity": "Item",
+          "system": "wfrp4e",
+          "module": "wfrp4e-core",
+          "tags": [
+              "spell"
+          ]
+      },
+      {
+          "name": "prayers",
+          "label": "Prayers",
+          "path": "./packs/prayers.db",
+          "entity": "Item",
+          "system": "wfrp4e",
+          "module": "wfrp4e-core",
+          "tags": [
+              "prayer"
+          ]
+      },
+      {
+          "name": "trappings",
+          "label": "Trappings",
+          "path": "./packs/trappings.db",
+          "entity": "Item",
+          "system": "wfrp4e",
+          "module": "wfrp4e-core",
+          "tags": [
+              "trapping",
+              "money",
+              "container",
+              "armour",
+              "weapon",
+              "ammunition"
+          ]
+      },
+      {
+          "name": "journal-entries",
+          "label": "Journals (Core)",
+          "path": "./packs/journal-entries.db",
+          "entity": "JournalEntry",
+          "system": "wfrp4e",
+          "module": "wfrp4e-core"
+      },
+      {
+          "name": "maps",
+          "label": "Scenes (Core)",
+          "path": "./packs/maps.db",
+          "entity": "Scene",
+          "system": "wfrp4e",
+          "module": "wfrp4e-core"
+      },
+      {
+          "label": "Career Descriptions",
+          "entity": "JournalEntry",
+          "name": "career-descriptions",
+          "path": "packs/career-descriptions.db",
+          "system": "wfrp4e",
+          "mobule": "wfrp4e-core"
+      }
+  ],
+  "languages": [
+      {
+          "lang": "en",
+          "name": "English",
+          "path": "lang/en.json"
+      }
+  ],
+  "minimumCoreVersion": "0.7.4",
+  "compatibleCoreVersion": "0.7.9",
+  "protected" : true,
+  "url": "https://foundryvtt.com/packages/wfrp4e-core/",
+  "manifest": "https://foundry-c7-manifests.s3.us-east-2.amazonaws.com/wfrp4e-core/module.json"
+}

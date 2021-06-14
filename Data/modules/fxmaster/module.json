@@ -1,0 +1,86 @@
+{
+  "name": "fxmaster",
+  "title": "FXMaster",
+  "description": "<p>Adds various weather and filter effects</p>",
+  "version": "1.0.3",
+  "author": "U~man",
+  "scripts": ["libs/filters/pixi-filters.js"],
+  "esmodules": [
+    "greensock/esm/all.js",
+    "effects/BatsWeatherEffect.js",
+    "effects/BubblesWeatherEffect.js",
+    "effects/CloudsWeatherEffect.js",
+    "effects/CrowsWeatherEffect.js",
+    "effects/EmbersWeatherEffect.js",
+    "effects/FogWeatherEffect.js",
+    "effects/FXMasterLayer.js",
+    "effects/RaintopWeatherEffect.js",
+    "effects/SacredFlameEffect.js",
+    "effects/StarsWeatherEffect.js",
+    "module/controls.js",
+    "module/weather-config.js",
+    "module/colorize-config.js",
+    "module/config.js",
+    "module/specials.js",
+    "module/fxmaster.js",
+    "filters/FXUnderwaterFilter.js",
+    "filters/FXBloomFilter.js",
+    "filters/FXOldFilmFilter.js",
+    "filters/FXColorFilter.js",
+    "filters/FXPredatorFilter.js",
+    "filters/FilterManager.js"
+  ],
+  "styles": ["css/weatherconfig.css"],
+  "packs": [
+    {
+      "name": "fxmaster",
+      "label": "FXMaster",
+      "package": "fxmaster",
+      "path": "packs/macros.db",
+      "entity": "Macro"
+    }
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "fr",
+      "name": "French (FRANCE)",
+      "path": "lang/fr.json"
+    },
+    {
+      "lang": "cn",
+      "name": "Chinese",
+      "path": "lang/cn.json"
+    },
+    {
+      "lang": "ca",
+      "name": "Catalan",
+      "path": "lang/ca.json"
+    },
+    {
+      "lang": "ko",
+      "name": "Korean",
+      "path": "lang/ko.json"
+    },
+    {
+      "lang": "es",
+      "name": "Español",
+      "path": "lang/es.json"
+    },
+    {
+      "lang": "pt-BR",
+      "name": "Português (Brasil)",
+      "path": "lang/pt-BR.json"
+    }
+  ],
+  "socket": true,
+  "url": "https://gitlab.com/mesfoliesludiques/foundryvtt-fxmaster",
+  "manifest": "https://gitlab.com/mesfoliesludiques/foundryvtt-fxmaster/-/raw/master/module.json",
+  "download": "https://gitlab.com/mesfoliesludiques/foundryvtt-fxmaster/-/archive/master/foundryvtt-fxmaster-master.zip",
+  "compatibleCoreVersion": "0.7.9",
+  "minimumCoreVersion": "0.7.7"
+}

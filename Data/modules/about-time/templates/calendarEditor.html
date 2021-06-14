@@ -1,0 +1,108 @@
+
+  
+<form autocomplete="off">
+  <div class="about-time">
+    <h2>{{ localize "about-time.current" }}</h2>
+    <div class="flexrow date-entry">
+      <label>{{localize "about-time.Year"}}</label>
+      <div class="form-group">
+        <input type="Number" class="date-field" name="DateYears" value="{{DateYears}}" data-dtype="Number"/>
+        <input type="CheckBox" class="data-format" name="format.year" data-dtype="{{format.year}}" value="1" {{checked format.year}}/>
+      </div>
+      <label>{{localize "about-time.Month"}}</label>
+      <div class="form-group">
+        <input type="Number" class="date-field" name="DateMonths" value="{{DateMonths}}" data-dtype="Number"/>
+        <input type="CheckBox" class="data-format" name="format.month" data-dtype="{{format.month}}" value="1" {{checked format.month}}/>
+      </div>
+      <label>{{localize "about-time.Day"}}</label>
+      <div class="form-group">
+        <input type="Number" class="date-field" name="DateDays" value="{{DateDays}}" data-dtype="Number"/>
+        <input type="CheckBox" class="data-format" name="format.monthDay" data-dtype="{{format.monthDay}}" value="1" {{checked format.monthDay}}/>
+      </div>
+    </div>
+    <div class="flexrow time-entry">
+      <label>{{localize "about-time.Hour"}}</label>
+      <div class="form-group">
+        <input type="Number" class="time-field" name="TimeHours" value="{{TimeHours}}" data-dtype="Number"/>
+      </div>
+      <label>{{localize "about-time.Minute"}}</label>
+      <div class="form-group">
+        <input type="Number" class="time-field" name="TimeMinutes" value="{{TimeMinutes}}" data-dtype="Number"/>
+      </div>
+      <label>{{localize "about-time.Second"}}</label>
+      <div class="form-group">
+        <input type="Number" class="time-field" name="TimeSeconds" value="{{TimeSeconds}}" data-dtype="Number"/>
+      </div>
+    </div>
+    <div class="form-group data-field">
+      <label class="data-field-label">{{localize "DOW"}}</label>
+      <input type="Number" class="data-field-value" name="dow" value="{{dow}}" data-dtype="Number"/>
+      <input type="CheckBox" class="data-format" name="format.day" data-dtype="{{format.day}}" value="1" {{checked format.day}}/>
+    </div>
+
+    <h2>{{ localize "about-time.details" }}</h2>
+
+    <div class="form-group data-field">
+      <labe class="data-field-labe"l>{{localize "Hours per day"}}</label>
+      <input type="Number" class="data-field-value" name="hours_per_day" value="{{object.hours_per_day}}" data-dtype="Number"/>
+    </div>
+    <div class="form-group data-field">
+      <label class="data-field-label">{{localize "Minutes per hour"}}</label>
+      <input class="data-field-value" type="Number" class="data-field" name="minutes_per_hour" value="{{object.minutes_per_hour}}" data-dtype="Number"/>
+      </div>
+    <div class="form-group data-field">
+      <label class="data-field-label">{{localize "Seconds per minute"}}</label>
+      <input class="data-field-value" type="Number" class="data-field" name="seconds_per_minute" value="{{object.seconds_per_minute}}" data-dtype="Number"/>
+    </div>
+
+    <div class="form-group data-field">
+      <label class="data-field-label">{{localize "Has Year 0?"}}</label>
+      <input class ="data-field-value" type="checkbox" name="has_year_0" value="1" data-dtype="{{object.has_year_0}}" {{checked object.has_year_0}}/>
+    </div>
+
+    <h2>{{ localize "about-time.monthDetails" }}</h2>
+    <ol class="months">
+      <li class="flexrow"> 
+          <div class="month-name">{{localize "Name"}}</div>
+          <div class="month-days">{{localize "Non LY"}}</div>
+          <div class="month-days">{{localize "LY"}}</div>
+          <div class="month-intercalary">{{localize "IC"}}</div>
+          <div class="month-controls-header">
+            <a class="month-create" title={{localize Create}} data-type="effect"><i class="fas fa-plus"></i></a>
+          </div>
+      </li>
+
+      {{#each months as |month iid|}}
+      <li class="flexrow month" month-id="{{iid}}">
+          <input type="String" class="month-name" name="months.name" value="{{month.name}}" data-dtype="{{month.name}}" {{month.name}}/>
+          <input type="Number" class="month-days" name="months.days0" value="{{month.days0}}" data-dtype="Number"/>
+          <input type="Number" class="month-days" name="months.days1" value="{{month.days1}}" data-dtype="Number"/>
+          <input type="checkbox" class="month-intercalary-checkbox" name="months.intercalary" value="{{month.intercalary}}" data-dtype="Boolean" {{checked month.intercalary}}/>
+          <div class="month-controls">
+            <a class="month-delete" month-id="{{month.name}}" title={{localize Delete}}><i class="fas fa-trash"></i></a>
+          </div>
+      </li>
+      {{/each}}
+    </ol>
+
+      <h2>{{ localize "about-time.weekDays" }}</h2>
+      <ol class="weekdays">
+        <li class="flexrow day-header">
+            <div class="day-name">{{localize "Name"}}</div>
+            <div class="weekday-controls-header">
+              <a class="weekday-create" title={{localize Create}} data-type="effect"><i class="fas fa-plus"></i> </a>
+            </div>
+        </li>
+    
+        {{#each object.weekdays as |dayname iid|}}
+        <li class="flexrow weekday" weekday-id="{{iid}}">
+              <input type="String" class ="day-name" name="dayname" value="{{dayname}}" data-dtype="{{dayname}}" {{dayname}}/>
+            <div class="weekday-controls">
+              <a class="weekday-delete" title={{localize Delete}}><i class="fas fa-trash"></i></a>
+            </div>
+        </li>
+        {{/each}}
+    </ol>
+    <button type="submit" name="submit" value="1"><i class="far fa-save"></i> {{localize "save calendar"}}</button>
+</div>
+</form>

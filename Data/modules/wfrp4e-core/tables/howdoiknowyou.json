@@ -1,0 +1,356 @@
+{
+    "name": "How Do I Know You Again?",
+    "die": "1d100",
+    "rows": [
+        {
+            "description": "We both served time in one of the Empire’s illustrious prisons.",
+            "range": [
+                1,
+                2
+            ]
+        },
+        {
+            "description": "We used to be lovers, but the whims of Katya pulled us apart.",
+            "range": [
+                3,
+                4
+            ]
+        },
+        {
+            "description": "We are distantly related, through a complex web of bloodlines better left unexamined.",
+            "range": [
+                5,
+                6
+            ]
+        },
+        {
+            "description": "We are childhood friends, who grew up in the same rough neighbourhood.",
+            "range": [
+                7,
+                8
+            ]
+        },
+        {
+            "description": "We were once going to be married, but the Rhyans refused to wed us, and we never learned why.",
+            "range": [
+                9,
+                10
+            ]
+        },
+        {
+            "description": "We grew up in the same town, on the outskirts of the same monster-filled wilderness.",
+            "range": [
+                11,
+                12
+            ]
+        },
+        {
+            "description": "We were rivals for the same position, and butted heads for years.",
+            "range": [
+                13,
+                14
+            ]
+        },
+        {
+            "description": "We were rivals for the same paramour who was cruelly stolen from the world by the machinations of Morr.",
+            "range": [
+                15,
+                16
+            ]
+        },
+        {
+            "description": "One of us was a previous victim of the other’s criminal ways, though, thank Ranald, that the victim doesn’t realise it!",
+            "range": [
+                17,
+                18
+            ]
+        },
+        {
+            "description": "One of us once betrayed the other, though by the grace of Sigmar, that past crime has been forgiven… or has it?",
+            "range": [
+                19,
+                20
+            ]
+        },
+        {
+            "description": "We served in the same conscripted militia, and learned to fear the howling of Ulric’s wolves together.",
+            "range": [
+                21,
+                22
+            ]
+        },
+        {
+            "description": "We were refugees together after a Greenskin attack on our duchy.",
+            "range": [
+                23,
+                24
+            ]
+        },
+        {
+            "description": "We met a long time ago, in a city on the other side of the Old World.",
+            "range": [
+                25,
+                26
+            ]
+        },
+        {
+            "description": "We were both victims of the same misfortune under Morrsleib’s pale-green glow.",
+            "range": [
+                27,
+                28
+            ]
+        },
+        {
+            "description": "We were both embroiled in a brawl together, somewhere on Altdorf ’s Street of a Thousand Taverns, and teamed up for mutual safety.",
+            "range": [
+                29,
+                30
+            ]
+        },
+        {
+            "description": "One of us was mistaken for someone else by the other, and lead on a series of curious events before anyone realised.",
+            "range": [
+                31,
+                32
+            ]
+        },
+        {
+            "description": "We met on the road, travelling in the same direction, and, ‘just got to talking’.",
+            "range": [
+                33,
+                34
+            ]
+        },
+        {
+            "description": "We were both framed by a Roadwarden for a crime we didn’t commit.",
+            "range": [
+                35,
+                36
+            ]
+        },
+        {
+            "description": "We were both sentenced to hang when our convoy was attacked by Beastmen and we escaped together.",
+            "range": [
+                37,
+                38
+            ]
+        },
+        {
+            "description": "One of us married the other’s widowed father or mother.",
+            "range": [
+                39,
+                40
+            ]
+        },
+        {
+            "description": "We were both sick and treated by the same Shallyan Order.",
+            "range": [
+                41,
+                42
+            ]
+        },
+        {
+            "description": "We grew up in the same Sigmarite congregation.",
+            "range": [
+                43,
+                44
+            ]
+        },
+        {
+            "description": "We were childhood sweethearts, until one of us had to leave home forever.",
+            "range": [
+                45,
+                46
+            ]
+        },
+        {
+            "description": "Our families have feuded for generations; indeed, our neighbours called our family disputes the, ‘Little Parravonese Wars’.",
+            "range": [
+                47,
+                48
+            ]
+        },
+        {
+            "description": "One of our father’s murdered the other’s in a vendetta worthy of a Tilean opera.",
+            "range": [
+                49,
+                50
+            ]
+        },
+        {
+            "description": "One of our families adopted the other when their family was burnt for witchcraft.",
+            "range": [
+                51,
+                52
+            ]
+        },
+        {
+            "description": "One of us caught the other red-handed picking their pocket.",
+            "range": [
+                53,
+                54
+            ]
+        },
+        {
+            "description": "We both attended a funeral in the Garden of Morr for a mutual friend.",
+            "range": [
+                55,
+                56
+            ]
+        },
+        {
+            "description": "Our mothers were old travelling companions, before they settled down to their respective families.",
+            "range": [
+                57,
+                58
+            ]
+        },
+        {
+            "description": "We both have siblings who were caught up in the same Chaos Cult.",
+            "range": [
+                59,
+                60
+            ]
+        },
+        {
+            "description": "Our siblings ran off together, causing a scandal in both families.",
+            "range": [
+                61,
+                62
+            ]
+        },
+        {
+            "description": "We share a merchant father who was juggling two families, kept secret from each other.",
+            "range": [
+                63,
+                64
+            ]
+        },
+        {
+            "description": "We were both caught during the same raid on a brothel, and had to explain how we were steadfastly not involved with the Chaos Cult discovered out back.",
+            "range": [
+                65,
+                66
+            ]
+        },
+        {
+            "description": "We used to be roommates in a filthy tenement building.",
+            "range": [
+                67,
+                68
+            ]
+        },
+        {
+            "description": "Somehow, our Doomings demanded we meet up, though we obviously keep them secret from each other.",
+            "range": [
+                69,
+                70
+            ]
+        },
+        {
+            "description": "We grew up in rivalling provinces, despite our villages being less than a mile from each other.",
+            "range": [
+                71,
+                72
+            ]
+        },
+        {
+            "description": "We were once shipwrecked together, and had to spend an uncomfortable few months off the coast of Nordland.",
+            "range": [
+                73,
+                74
+            ]
+        },
+        {
+            "description": "We were both onboard ships that were captured by Sartosan pirates, but managed to escape together.",
+            "range": [
+                75,
+                76
+            ]
+        },
+        {
+            "description": "We both caught the same terrible disease many years ago, and were locked in quarantine together before it mysteriously lifted.",
+            "range": [
+                77,
+                78
+            ]
+        },
+        {
+            "description": "One of us turned up drunk on the other’s doorstep with the homeowner’s name tattooed on their arm. Neither of us know how this could have happened, or why.",
+            "range": [
+                79,
+                80
+            ]
+        },
+        {
+            "description": "We were both invited to the same ‘dinner party’ hosted by an aristocrat in a dusty out-of-fashion doublet with a strange accent.",
+            "range": [
+                81,
+                82
+            ]
+        },
+        {
+            "description": "A letter in one of our fathers’ Last Will and Testaments contained the name and address of the other, and we cannot determine why this is…",
+            "range": [
+                83,
+                84
+            ]
+        },
+        {
+            "description": "We were both forced to flee our hometown when our families were caught between two rival gangs.",
+            "range": [
+                85,
+                86
+            ]
+        },
+        {
+            "description": "We were both caught in a crossfire between two charging armies, and barely escaped the bloodshed.",
+            "range": [
+                87,
+                88
+            ]
+        },
+        {
+            "description": "One of us saved the other from a terrible bully when we were growing up, and we’ve stuck close together ever since.",
+            "range": [
+                89,
+                90
+            ]
+        },
+        {
+            "description": "We found each other after not being able to sleep for several nights in a row… The scratching in the walls just got too much, and we got to talking.",
+            "range": [
+                91,
+                92
+            ]
+        },
+        {
+            "description": "We were both using the same river crossing when we were accosted by a notorious highwayman. Let’s just say it didn’t turn out well for him.",
+            "range": [
+                93,
+                94
+            ]
+        },
+        {
+            "description": "We both attended an uncharacteristically and inexplicably free lecture held in the local university, and it changed how we saw the world from then on.",
+            "range": [
+                95,
+                96
+            ]
+        },
+        {
+            "description": "A witch introduced us to each other, and gave the impression it would be ill-advised for us to split up.",
+            "range": [
+                97,
+                98
+            ]
+        },
+        {
+            "description": "We both received a cryptic letter that lead us to the same place at the same time, but then… nothing happened.",
+            "range": [
+                99,
+                100
+            ]
+        }
+    ]
+}

@@ -1,0 +1,152 @@
+/* ------------------------------------ */
+/*					CSS					*/
+/*  	  Add your styles here			*/
+/* ------------------------------------ */
+
+.about-time-clock-running {
+  color: black;
+}
+
+.about-time-clock-stopped {
+  color: red;
+}
+
+#about-time-calendar{
+	bottom: 75px;
+	left: 223px;
+	min-width: 150px;
+	width: fit-content;
+	height: fit-content;
+	margin: 0;
+  padding: 0;
+  display: grid;
+  grid-column: 1;
+
+}
+
+#about-time-calendar-hdr{
+  display: grid;
+  font-size: 16px;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  height: 20px;
+  width: auto;
+  min-width: 210px;
+  border-bottom: 1px solid #111;
+		grid-row: 1;
+		grid-column: 1;
+		float: left;
+		text-align: center;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		margin-bottom: 5px;
+		color: black;
+		cursor: pointer;
+}
+
+#about-time-calendar-date,
+#about-time-calendar-date-num {
+	transition: 0.2s;
+	grid-row: 1;
+	grid-column: 1;
+}
+
+#about-time-calendar-container{
+		padding-top: 3px;
+		padding-bottom: 10px;
+		grid-row: 1;
+		grid-column: 1;
+}
+
+.about-time-fa-moon,
+.about-time-fa-sun,
+.about-time-long-rest {
+	height: fit-content;
+	float: right;
+	padding: 1px;
+}
+
+.about-time-fa-moon:hover,
+.about-time-fa-sun:hover,
+.about-time-long-rest:hover {
+  color: #FFF;
+  border: 0px solid #000;
+  cursor: pointer;
+}
+
+.about-time-fa-fast-forward,
+.about-time-fa-play,
+.about-time-fa-step-forward {
+	float: left;
+	height: fit-content;
+	padding: 1px;
+}
+.about-time-fa-fast-forward:hover,
+.about-time-fa-play:hover,
+.about-time-fa-step-forward:hover  {
+  color: #FFF;
+  border: 0px solid #000;
+  cursor: pointer;
+}
+
+#about-time-calendar-time{
+		grid-column: 1;
+		grid-row: 1;
+		padding-top: 1px;
+		text-align: center; 
+		margin: auto;
+}
+
+.about-time .date-entry {
+	max-width: 200px;
+	align-items: baseline;
+}
+.about-time .date-field {
+	max-width: 50px;
+}
+.about-time .time-entry {
+	max-width: 200px;
+	align-items: baseline;
+}
+.about-time .time-field {
+	max-width: 50px;
+}
+
+.about-time .data-field {
+	max-width: 200px;
+}
+.about-time .data-field .data-field-value {
+	max-width: 60px;
+}
+.about-time .data-field-label {
+	max-width: 150px;
+}
+.about-time .weekdays,
+.about-time .months {
+	max-width: 500px;
+}
+.about-time .months .month-intercalary,
+.about-time .weekdays .weekday-controls-header,
+.about-time .months .month-controls-header {
+	min-width: 25px;
+	max-width: 25px;
+}
+
+.about-time .months .month-intercalary-checkbox,
+.about-time .weekdays .weekday-controls,
+.about-time .months .month-controls {
+	min-width: 10px;
+	max-width: 10px;
+	margin: 5px;
+}
+.about-time .weekdays .day-name,
+.about-time .months .month-name {
+	min-width: 300px;
+	max-width: 300px;
+	color: green;
+}
+.about-time .months .month-days {
+	max-width: 60px;
+	min-width: 60px;
+}

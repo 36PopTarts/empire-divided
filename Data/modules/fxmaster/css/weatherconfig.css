@@ -1,0 +1,101 @@
+.fxmaster .config.weather {
+  padding: 4px;
+  border-bottom: 1px solid #333;
+  list-style: none;
+}
+
+.fxmaster .config.weather .weather-icon {
+  border: none;
+  flex: 0 0 18px;
+}
+
+.fxmaster .config.weather .weather-collapse {
+  text-indent: 5px;
+}
+
+.fxmaster .directory-header {
+  box-shadow: 0 0 5px black;
+  line-height: 12px;
+  font-size: 12px;
+  margin: 0;
+  padding: 2px 0;
+}
+
+.fxmaster .directory-item.special-effects {
+  line-height: inherit;
+}
+
+.fxmaster .special-effects .description {
+  padding: 4px;
+  overflow: hidden;
+}
+
+.fxmaster .special-effects .description h4 {
+  line-height: 16px;
+  text-indent: 5px;
+  font-size: 14px;
+  height: 32px;
+}
+
+.fxmaster .special-effects .description .author {
+  line-height: 10px;
+  color: grey;
+  text-align: right;
+  font-size: 10px;
+  flex: 0 10px;
+}
+
+.fxmaster .special-effects .controls {
+  padding: 0 3px;
+  line-height: 48px;
+  flex: 0 0 40px;
+  text-align: right;
+}
+
+.fxmaster .preview {
+  height: 48px;
+  flex: 0 0 48px;
+  background: black;
+  border: 1px solid grey;
+}
+
+.fxmaster.effects.directory-list {
+  overflow-y: scroll;
+  height: 370px;
+}
+
+.fxmaster.filters.directory-list {
+  overflow-y: auto;
+  height: 35px;
+}
+
+.fxmaster .config.collapsible {
+  padding: 0;
+}
+
+.fxmaster .config.collapsible.collapsed {
+  display: none;
+  overflow: hidden;
+}
+
+.fxmaster .config label {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.fxmaster .config label:hover {
+  text-shadow: 0 0 4px #ff6400;
+}
+
+.fxmaster .directory-item.active {
+    background: #f56b0066;
+}
+
+.fxmaster .form-footer {
+  padding: 5px;
+}
+
+.fxmaster .form-footer button {
+  background-color: rgba(255, 255, 240, 0.8);
+  border: 1px solid #b5b3a4;
+}

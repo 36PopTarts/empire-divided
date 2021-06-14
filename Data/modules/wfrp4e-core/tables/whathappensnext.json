@@ -1,0 +1,356 @@
+{
+    "name": "You Find Yourself In A Tavern - What Happens Next?",
+    "die": "1d100",
+    "rows": [
+        {
+            "description": "Driving rain forces rats flooding out of the gutters and into the taproom. Folks start screaming, jumping on tables, and general pandemonium ensues.",
+            "range": [
+                1,
+                2
+            ]
+        },
+        {
+            "description": "A Dwarf maiden dressed in flowing robes and an Elven man with a green tunic stare intently at an @Compendium[wfrp4e-rnhd.pubgames.wXi6Aw6shJtHFg4p]{Alvatafl} board. Everyone in the bar watches on with baited breath. They haven’t made a move in at least ten minutes…",
+            "range": [
+                3,
+                4
+            ]
+        },
+        {
+            "description": "An over-eager young man gravitates towards the most heroic-looking of the Characters, badgering them for stories, and tips, and just being a general nuisance.",
+            "range": [
+                5,
+                6
+            ]
+        },
+        {
+            "description": "A party of Dwarfs enter the tavern, and storm towards the bar. They’re looking for rooms, two kegs of ale, and dinner to be sent upstairs. They cast suspicious eyes at everyone else, and grumble under their breath in Khazalid.",
+            "range": [
+                7,
+                8
+            ]
+        },
+        {
+            "description": "Over the general hubbub of the taproom, one of the Characters notices a shadowy figure in one of the corners, smoking a pipe, and staring in their direction. A few moments later, the Character realises similar shadowy figures are sitting in each corner of the pub. They appear to be having a brooding staring contest.",
+            "range": [
+                9,
+                10
+            ]
+        },
+        {
+            "description": "A Bretonnian challenges one of the Characters to a game of @Compendium[wfrp4e-rnhd.pubgames.c9Aw04MKZi0BLRwU]{Mühlen}, betting his party’s tab against the Character’s party’s. Honour, and a not insignificant amount of money, is in the balance!",
+            "range": [
+                11,
+                12
+            ]
+        },
+        {
+            "description": "A woman bursts into the taproom, shrieking that one of the horses has gotten loose. Three off-duty coachmen hastily stand up, knocking over drinks, and shuffle outside with their weapons still resting against the bar. It’s an ambush. A gang of ruffians is waiting outside for them.",
+            "range": [
+                13,
+                14
+            ]
+        },
+        {
+            "description": "To cheers and jeers, two rival Middenball clubs descend on the tavern after a recent match. It’s about to be a warzone…",
+            "range": [
+                15,
+                16
+            ]
+        },
+        {
+            "description": "Off-duty, yet still uniformed and armed, State Army soldiers saunter into the tavern and unceremoniously push several groups from tables that apparently belong to them. In all, the soldiers are outnumbered, and some of the disgruntled patrons are clearly doing the numbers in their heads, but they just need a little extra push for a scuffle to break out.",
+            "range": [
+                17,
+                18
+            ]
+        },
+        {
+            "description": "A young rake bursts into the taproom and declares that he’s ‘celebrating’, though fails to elaborate. He buys the entire room two rounds of drinks, and then settles in to chat with the Characters, as they are the most interesting bunch. Half an hour later, a band of Witch Hunters explode into the room and move to arrest the rake and anyone seen associating with him.",
+            "range": [
+                19,
+                20
+            ]
+        },
+        {
+            "description": "The front door flies open and a Goblin in a black hood charges into the taproom, knocking over tables and chairs, and causing a general scare. The ‘Goblin’ is actually a child playing a prank, but none of the armed patrons know that, and things could get ugly, fast.",
+            "range": [
+                21,
+                22
+            ]
+        },
+        {
+            "description": "During a friendly game of @Compendium[wfrp4e-rnhd.pubgames.rOFawLqmhsLbMsSc]{Darts}, due to far too much Bretonnian brandy, one of the missiles misses its mark and finds purchase in the forehead of one of the Characters. The dart hasn’t hit anything the Character will miss, but it’s stuck firm.",
+            "range": [
+                23,
+                24
+            ]
+        },
+        {
+            "description": "A group of Morrites enters the tavern. Everyone looks concerned that they’re here for a dead body, but they sit down to have a drink. No one knows what to do, and everyone looks around awkwardly.",
+            "range": [
+                25,
+                26
+            ]
+        },
+        {
+            "description": "A scream reverberates throughout the bar as a man falls on his backside, shouting about a Mutant. As he does, a hooded woman he was talking to attempts to make a run for the front door.",
+            "range": [
+                27,
+                28
+            ]
+        },
+        {
+            "description": "A minstrel begins playing the state anthem for a neighbouring province, and none of the patrons are happy about it.",
+            "range": [
+                29,
+                30
+            ]
+        },
+        {
+            "description": "The bartender brings out a keg of her newest experimental brew. It’s free, to whoever is willing to try it out and give their honest opinion. However, none of the regulars seem brave enough…",
+            "range": [
+                31,
+                32
+            ]
+        },
+        {
+            "description": "A table crashes over on its side as a Dwarf accuses a Halfling of cheating at @Compendium[wfrp4e-rnhd.pubgames.opqK7slOrVV50XBR]{Al-Zahr}. Dice and coins fly everywhere as the Dwarf chases the Halfling over and under tables. The Halfling’s dice land in one of the Character’s mugs, where they can clearly see they have two sides with five pips on each.",
+            "range": [
+                33,
+                34
+            ]
+        },
+        {
+            "description": "An Elf minstrel begins to sing a terrifyingly beautiful song, which leaves even the most stoic drunks weeping in their seats.",
+            "range": [
+                35,
+                36
+            ]
+        },
+        {
+            "description": "A Gnome and an Ogre are getting ready for an arm-wrestling contest. Everyone in the bar is betting on the Ogre, for obvious reasons. The Gnome, however, looks cocky… Have they bet against themselves, somehow? Or is there more than meets the eye?",
+            "range": [
+                37,
+                38
+            ]
+        },
+        {
+            "description": "A bunch of wealthy patrons purchase several rounds of drinks before getting unceremoniously thrown out for ‘indecent behaviour’, meaning their drinks are up for grabs to the fastest patron!",
+            "range": [
+                39,
+                40
+            ]
+        },
+        {
+            "description": "A local pusher of weirdroot and worse is moving from table to table, selling their wares cheaper than expected.",
+            "range": [
+                41,
+                42
+            ]
+        },
+        {
+            "description": "Four oddballs — a Human noble, a Halfling with a sly look on his face, a Dwarf Slayer, and an Elf who certainly looks magisterial — walk into the bar. They take a seat at a table furthest from everyone else, and begin to talk. Everyone else in the bar is paying attention to them.",
+            "range": [
+                43,
+                44
+            ]
+        },
+        {
+            "description": "A young man keeps sulkily pushing his way into the pub and ordering a massive round of drinks to the sounds of applause outside. He complains to anyone who will listen that, ‘The blokes out there keep beatin’ me at Bull Ring, so I gots to buy the drinks, I do.’",
+            "range": [
+                45,
+                46
+            ]
+        },
+        {
+            "description": "Someone brings their pigs into the tavern to escape the cold and wet outside. The pigs and drunken patrons don’t mix particularly well.",
+            "range": [
+                47,
+                48
+            ]
+        },
+        {
+            "description": "The door bursts open and a pack of four street dogs chasing a cat charge in. The cat has a very expensive jewelled collar, and is likely owned by a noble who might look favourably on anyone who saves their precious pet.",
+            "range": [
+                49,
+                50
+            ]
+        },
+        {
+            "description": "A young girl walks into the tavern, and everyone goes quiet. Even the meanest looking thugs avert their gaze and look scared of her. She walks to the bar, is handed a sack of coins by the publican, and goes to leave.",
+            "range": [
+                51,
+                52
+            ]
+        },
+        {
+            "description": "An Elf, a Dwarf, and a Halfling walk into the bar, and several tables burst out laughing at jokes the Characters couldn’t overhear.",
+            "range": [
+                53,
+                54
+            ]
+        },
+        {
+            "description": "A Verenan Priest enters the pub with several rolls of parchment under his arm. Some of the travellers in the tavern groan, but the locals all sit up straight with eager expressions. It’s Pub Quiz time.",
+            "range": [
+                55,
+                56
+            ]
+        },
+        {
+            "description": "A group of rakes have been playing back and forth with what they believed was an unloaded pistol, pretending to play a game called ‘Kislevite Roulette.’ An ear-splitting bang and a chorus of screams informs everyone that the rakes were mistaken.",
+            "range": [
+                57,
+                58
+            ]
+        },
+        {
+            "description": "A gang of drunken louts decide to prey on a Halfling couple by picking up the husband and throwing him back and forth. The wife looks on in horror, screaming that the thugs, ‘will be sorry’ if they don’t put him down. The commotion ends up wakening the couple’s Ogre friend sleeping upstairs, who indeed does make the drunks very sorry.",
+            "range": [
+                59,
+                60
+            ]
+        },
+        {
+            "description": "A rowdy crowd of Middenlanders is playing a game of @Compendium[wfrp4e-rnhd.pubgames.EoEqBNREqJKPAY5W]{Beast Among the Tailors}, and a group of Nordlanders are getting uncomfortably close with a precarious platter of pints. It looks like the Nordlanders are trying to get their drinks spilled, just so they have an excuse to brawl.",
+            "range": [
+                61,
+                62
+            ]
+        },
+        {
+            "description": "An Ostlander accuses a small band of High Elves of cheating at a game of @Compendium[wfrp4e-rnhd.pubgames.3QF1dFkMYS7EMf2m]{Stones}. The High Elves look on, laughing to themselves, insulting the man and the Human species in general. No one else in the taproom looks impressed.",
+            "range": [
+                63,
+                64
+            ]
+        },
+        {
+            "description": "A chime sounds somewhere in the back of the tavern, and everyone goes quiet, except for one lecherous old man who winks at the Characters and says, ‘Now’s the good part.’ Six scantily dressed, bawdy men and women emerge from the back room to a billowing cloud of pink incense. Something feels wrong about all of this… but also so right.",
+            "range": [
+                65,
+                66
+            ]
+        },
+        {
+            "description": "A gang of Lowhavens are hustling patron after patron out of their money at a Scarlet Empress table, until the house suddenly loses, and one oblivious-looking farmboy finds himself on the better side of 10 gold crowns (and a group of furious Halflings).",
+            "range": [
+                67,
+                68
+            ]
+        },
+        {
+            "description": "A group of university students is rowdily playing Cerevis at the table. They go one step too far, and make a rather bawdy joke involving ‘Sigmar’s Sausage’ and the Dean of their College… who just happens to walk through the door in a very uncharacteristic attempt to rub elbows with his students.",
+            "range": [
+                69,
+                70
+            ]
+        },
+        {
+            "description": "An old man is offering haircuts to the patrons for a pfennig, and the taproom is full of drunk, poorly shaved individuals.",
+            "range": [
+                71,
+                72
+            ]
+        },
+        {
+            "description": "A Halfling gets up on a table and loudly challenges everyone in the taproom to a game of @Compendium[wfrp4e-rnhd.pubgames.eZ53YTeuuGY0ZRDO]{Dwile Flonking}. Tables and chairs begin to move back, and the landlord rubs her hands together as she prepares keg after keg of ale to be poured.",
+            "range": [
+                73,
+                74
+            ]
+        },
+        {
+            "description": "A ventriloquist begins to perform with a little daemonic-looking puppet dressed as the Emperor. Everyone is whipping into a chorus of laughter. Observant Characters notice, however, that the ventriloquist appears genuinely surprised and horrified by some of the things the puppet is saying.",
+            "range": [
+                75,
+                76
+            ]
+        },
+        {
+            "description": "A group of seven travellers enter the taproom, take off their coats, and stamp their feet of the mud outside. One of them coughs. They spread out, some getting drinks, others warming by the fire, and more justmingling. Another coughs. More begin to cough. They begin to keel over, dead. And then other patrons begin to cough…",
+            "range": [
+                77,
+                78
+            ]
+        },
+        {
+            "description": "A large group of Ulricans enters the pub, and raucously orders round after round of drinks. A few hours later, a handful of Sigmarites storm in, complaining about the noise. The landlord looks to anyone willing to help avert a disaster (whilst still keeping all his customers drinking).",
+            "range": [
+                79,
+                80
+            ]
+        },
+        {
+            "description": "A raggedy old man bumps into one of the Characters as they’re returning to their table with drinks, secretly tipping in a sleeping draught, before giving a signal to a band of ruffians a few tables over.",
+            "range": [
+                81,
+                82
+            ]
+        },
+        {
+            "description": "A troupe of Halflings is celebrating Pie Week, and has set up shop inside the taproom despite the landlord’s objections. Problem is, it’s nowhere near Pie Week.",
+            "range": [
+                83,
+                84
+            ]
+        },
+        {
+            "description": "Two Tileans sit down for a ‘quiet’ game of @Compendium[wfrp4e-rnhd.pubgames.uNthkonWIRQYyDZl]{Dominoes}. Everyone in the taproom starts to file out, terrified of the carnage that’s about to be unleashed.",
+            "range": [
+                85,
+                86
+            ]
+        },
+        {
+            "description": "What begins as a slight disagreement over a spilled drink quickly turns into a fist fight, with eight pugilists going back and forth. The brawl escalates suddenly when one of the brawlers draws a knife and stabs their opponent in the heart. The bar goes quiet except for the brawler’s screams as he continues to stab the dead fighter over and over, growing more and more distressed and unhinged as he does so.",
+            "range": [
+                87,
+                88
+            ]
+        },
+        {
+            "description": "A merchant and a noble are discussing something under their breath, and have to escalate in volume every few moments as the game of @Compendium[wfrp4e-rnhd.pubgames.MyloIzgp0EnMi2rg]{Bowls} outside grows louder and louder. The noble is beginning to lose his temper, and keeps muttering how he should go outside and teach them a lesson.",
+            "range": [
+                89,
+                90
+            ]
+        },
+        {
+            "description": "A strangely proportioned man in a long black coat comes into the bar, and in an oddly squeaky-yet-deep voice, orders a beer. Seconds later, another patron trips over the coat, pulling it off, and revealing three children stacked on top of one another.",
+            "range": [
+                91,
+                92
+            ]
+        },
+        {
+            "description": "One patron, who has been sitting at the bar for hours, nursing the same drink, finally catches the ire of the landlord. They’re unresponsive, so the bouncer moves to throw them out. When they are pulled from their chair, it’s revealed they’ve been stabbed multiple times and bled out on their stool without anyone noticing.",
+            "range": [
+                93,
+                94
+            ]
+        },
+        {
+            "description": "Someone produces a rather well-crafted iron rod they recently purchased on Marktag. Moments later, someone charges through the tavern doors and walks right into it. A minor skirmish begins.",
+            "range": [
+                95,
+                96
+            ]
+        },
+        {
+            "description": "One of the patrons screams that a pickpocket is in the taproom, and when everyone turns to look, there’s no one to be found. Suddenly, everyone is suspicious of everyone else, and no one wants to make the first move.",
+            "range": [
+                97,
+                98
+            ]
+        },
+        {
+            "description": "A gang of nine agitators outside the tavern are shouting about the evils of the landlord’s extortionate lodging and drink prices. Most of the patrons are ignoring them, but a few begin to grumble in agreement. Suddenly, a brick flies through the window, raining glass on those inside.",
+            "range": [
+                99,
+                100
+            ]
+        }
+    ]
+}

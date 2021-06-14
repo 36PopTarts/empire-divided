@@ -1,0 +1,15 @@
+{
+  "name": "Hit Location",
+  "die": "1d100",
+  "hide": true,
+  "rows": [{
+    "description": "Head",
+    "result": "head",
+    "range": [1, 19]
+  },
+  {
+    "description": "Body",
+    "result": "body",
+    "range": [20, 100]
+  }]
+}
