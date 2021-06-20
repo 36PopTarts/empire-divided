@@ -77,6 +77,7 @@
 {"_id":"VH7oDQHaxoBdjlT6","name":"Cheese Cave","type":"Actor","sort":100000,"flags":{},"parent":"kGEh553SL7K4zgmn","sorting":"a","color":""}
 {"name":"Dawihafen","type":"JournalEntry","sort":4500000,"flags":{},"parent":"nYrlPwQwhU9yHNZz","sorting":"a","color":"","_id":"VmNg2NFg4nLcAIjg"}
 {"name":"Altdorf Endeavours","type":"JournalEntry","sort":5700000,"flags":{},"parent":"5PMBVwnydUMSobIr","sorting":"a","color":"#411010","_id":"W7hZ5KseAjno0hrA"}
+{"name":"Blackpowder Nights","type":"JournalEntry","sort":7300000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#404040","_id":"WAxihFsdmCGhdzji"}
 {"name":"Body Armour","type":"Item","sort":400000,"flags":{},"parent":"XCAwjWgOHbC2T263","sorting":"a","color":"#37366d","_id":"WQAhCHZI5iIKEzgV"}
 {"name":"The East End","type":"JournalEntry","sort":3900000,"flags":{},"parent":"PtPHYLSSbcrSJ2ZN","sorting":"a","color":"","_id":"WQm4k9MEuHY8Q0Ct"}
 {"name":"Luitpoldstrasse Blues","type":"JournalEntry","sort":7100000,"flags":{},"parent":null,"sorting":"a","color":"#3b3d63","_id":"WuYKW45XIp1MG94j"}
@@ -113,6 +114,7 @@
 {"_id":"iltPBXW0kOqlZhfA","name":"Settlements","type":"JournalEntry","sort":500000,"flags":{"wfrp4e":{"initialization-parent":"Reikland"}},"parent":"J8dQ6pBcs8qRN8Bk","sorting":"m","color":"#534f1e"}
 {"name":"Artisan's Quarter","type":"JournalEntry","sort":4200000,"flags":{},"parent":"nYrlPwQwhU9yHNZz","sorting":"a","color":"","_id":"jLCpRyf3Tm13Y85D"}
 {"_id":"jOdnLBXpaX7LCdF0","name":"Mountains, Foothills, and Vorbergland","type":"JournalEntry","sort":100000,"flags":{"wfrp4e":{"initialization-parent":"Reikland"}},"parent":"J8dQ6pBcs8qRN8Bk","sorting":"m","color":"#454547"}
+{"name":"Blackpowder Nights","type":"Actor","sort":4600000,"flags":{},"parent":null,"sorting":"a","color":"#404040","_id":"jVq0puTnPsLSgeQe"}
 {"name":"PCs","type":"Actor","sort":4400000,"flags":{},"parent":"vU9LPtmofGv4bHSj","sorting":"a","color":"#802323","_id":"jl1kuRZMHtWfOkLR"}
 {"_id":"jxONpQkr2xVFk5CZ","name":"Walfen","type":"Actor","sort":600000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":""}
 {"_id":"kGEh553SL7K4zgmn","name":"Past Adventures","type":"Actor","sort":400000,"flags":{},"parent":null,"sorting":"a","color":"#263a5f"}
