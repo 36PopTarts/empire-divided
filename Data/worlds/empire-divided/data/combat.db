@@ -1,5 +1,0 @@
-{"permission":{"default":0,"hNHeJbKl47AOkoOO":3},"sort":100001,"flags":{},"scene":"Wev7J6t0FV2XALUl","combatants":[],"active":true,"round":0,"turn":0,"_id":"PJ9ca0nxyR1K4qqU"}
-{"_id":"PJ9ca0nxyR1K4qqU","permission":{"default":0,"hNHeJbKl47AOkoOO":3},"sort":100001,"flags":{},"scene":"Wev7J6t0FV2XALUl","combatants":[{"_id":"tOOTsH7qd2YB9upv","flags":{},"tokenId":"eLQDBxo9J8LlwYns","hidden":false}],"active":true,"round":0,"turn":0}
-{"_id":"PJ9ca0nxyR1K4qqU","permission":{"default":0,"hNHeJbKl47AOkoOO":3},"sort":100001,"flags":{},"scene":"Wev7J6t0FV2XALUl","combatants":[{"_id":"tOOTsH7qd2YB9upv","flags":{},"tokenId":"eLQDBxo9J8LlwYns","hidden":false},{"_id":"cha351rCz3j9WnJk","flags":{},"tokenId":"m2O22wm3Ts9KuxSw","hidden":false}],"active":true,"round":0,"turn":0}
-{"_id":"PJ9ca0nxyR1K4qqU","permission":{"default":0,"hNHeJbKl47AOkoOO":3},"sort":100001,"flags":{},"scene":"Wev7J6t0FV2XALUl","combatants":[{"_id":"tOOTsH7qd2YB9upv","flags":{},"tokenId":"eLQDBxo9J8LlwYns","hidden":false},{"_id":"cha351rCz3j9WnJk","flags":{},"tokenId":"m2O22wm3Ts9KuxSw","hidden":false}],"active":true,"round":1,"turn":0}
-{"$$deleted":true,"_id":"PJ9ca0nxyR1K4qqU"}

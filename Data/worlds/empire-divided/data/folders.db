@@ -36,6 +36,7 @@
 {"name":"I Have No Idea","type":"RollTable","sort":700000,"flags":{},"parent":"tIVl1PXcFSPDwlNN","sorting":"a","color":"","_id":"CzyKUOTTbxfphe0i"}
 {"_id":"DMQs1UveUtlyzPKt","name":"Luitpoldstrasse Blues","type":"JournalEntry","sort":7000000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#26386e"}
 {"name":"Bogenhafen","type":"Scene","sort":700000,"flags":{},"parent":null,"sorting":"a","color":"#4c214f","_id":"DplIEvlQ0WLc5NVF"}
+{"name":"Trotts","type":"Actor","sort":4700000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#6b0a0a","_id":"EFCQWpwIywZCymaB"}
 {"_id":"EHmv3MZ98EtEC2Fy","name":"Shadow Cast","type":"Actor","sort":100000,"flags":{},"parent":"81ZFw4Rjgz144G8Q","sorting":"a","color":"#4f4f4f"}
 {"name":"Images","type":"JournalEntry","sort":5200000,"flags":{},"parent":"qkj3aSI8lXUSVEwD","sorting":"a","color":"#184372","_id":"Esd2DY5bYJdq4Bmw"}
 {"name":"Altdorf Fog","type":"RollTable","sort":300000,"flags":{},"parent":null,"sorting":"a","color":"#41443c","_id":"F70jdHaYsajKf1pv"}
@@ -58,6 +59,7 @@
 {"_id":"NOyJwiypgeV7mEJh","name":"Jousting","type":"JournalEntry","sort":6100000,"flags":{},"parent":null,"sorting":"a","color":"#d18400"}
 {"name":"Misc","type":"Actor","sort":3500000,"flags":{},"parent":"u4zNUifOiBJsiqIc","sorting":"a","color":"","_id":"NiPWMfVhAnbY0oCC"}
 {"name":"Religion and Belief","type":"JournalEntry","sort":2200000,"flags":{},"parent":null,"sorting":"m","color":"#835a05","_id":"NkiXlTQtgNkW3FMs"}
+{"name":"Vassals","type":"Actor","sort":4800000,"flags":{},"parent":"3qMaJLYYtadKbkj4","sorting":"a","color":"","_id":"NtlDsaImpY9QWsEw"}
 {"_id":"OrdQTl1VKXMa8n5S","name":"The Grim, Dark Forests","type":"JournalEntry","sort":200000,"flags":{"wfrp4e":{"initialization-parent":"Reikland"}},"parent":"J8dQ6pBcs8qRN8Bk","sorting":"m","color":"#385029"}
 {"_id":"PXW7cnt4LuAVSEjN","name":"Bar Fight","type":"Actor","sort":1300000,"flags":{},"parent":"a26xT4TcpNe9uhSy","sorting":"a","color":""}
 {"name":"Districts","type":"JournalEntry","sort":3700000,"flags":{},"parent":"wV26wyVeod4mutle","sorting":"a","color":"","_id":"PtPHYLSSbcrSJ2ZN"}
@@ -145,7 +147,6 @@
 {"name":"GM Notes","type":"JournalEntry","sort":6500000,"flags":{},"parent":null,"sorting":"a","color":"#9e0000","_id":"tVm4VHOzL3Kt6qVy"}
 {"name":"Burn After Printing","type":"Actor","sort":3400000,"flags":{},"parent":"0nAbOypVU30zj9hY","sorting":"a","color":"#400d07","_id":"u4zNUifOiBJsiqIc"}
 {"_id":"uKDEacfyOMwXEqZm","name":"Storm Riders","type":"Actor","sort":1300000,"flags":{},"parent":"lWzLTQHnXZft3wzO","sorting":"a","color":"#297ea3"}
-{"_id":"uZ4mthsI6U2V3bl0","name":"Valgeit Holzenauer - Squire","type":"Actor","sort":100000,"flags":{},"parent":"gKCITmniRgrsfVMl","sorting":"a","color":"#6b0000"}
 {"name":"Luitpoldstrasse Blues","type":"Actor","sort":4300000,"flags":{},"parent":null,"sorting":"a","color":"#20417e","_id":"vU9LPtmofGv4bHSj"}
 {"name":"Beyond the Walls","type":"JournalEntry","sort":4300000,"flags":{},"parent":"nYrlPwQwhU9yHNZz","sorting":"a","color":"","_id":"vXrzI9150vVG2zUV"}
 {"name":"Urban","type":"Scene","sort":400000,"flags":{},"parent":"ifqvWppW117y2zyP","sorting":"a","color":"#6f7985","_id":"vegile7w7PJN8ipB"}
