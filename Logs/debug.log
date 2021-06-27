@@ -6430,3 +6430,60 @@
 {"message":"Vending world data to User 0ASvjGC88ifVZG73","level":"info","timestamp":"2021-06-27 11:23:58"}
 {"message":"Shutting down Foundry Virtual Tabletop server","level":"info","timestamp":"2021-06-27 11:26:27"}
 {"message":"Shut-down success. Goodbye!","level":"info","timestamp":"2021-06-27 11:26:27"}
+{"message":"Foundry Virtual Tabletop - Version 0.7.9","level":"info","timestamp":"2021-06-27 11:26:36"}
+{"message":"Running on Node.js - Version 12.14.1","level":"info","timestamp":"2021-06-27 11:26:36"}
+{"message":"Loading data from user directory - /home/crazyeyes/.local/share/FoundryVTT","level":"info","timestamp":"2021-06-27 11:26:36"}
+{"message":"Application Options:\n{\n  \"port\": 30000,\n  \"upnp\": true,\n  \"fullscreen\": false,\n  \"hostname\": null,\n  \"routePrefix\": null,\n  \"sslCert\": null,\n  \"sslKey\": null,\n  \"awsConfig\": null,\n  \"dataPath\": \"/home/crazyeyes/.local/share/FoundryVTT\",\n  \"proxySSL\": false,\n  \"proxyPort\": null,\n  \"minifyStaticFiles\": false,\n  \"updateChannel\": \"release\",\n  \"language\": \"en.core\",\n  \"world\": null,\n  \"serviceConfig\": null,\n  \"isElectron\": true,\n  \"isNode\": false,\n  \"isSSL\": false,\n  \"demo\": false,\n  \"noupdate\": false\n}","level":"info","timestamp":"2021-06-27 11:26:36"}
+{"message":"License verification succeeded","level":"info","timestamp":"2021-06-27 11:26:36"}
+{"message":"Requesting UPnP port forwarding to destination 30000","level":"info","timestamp":"2021-06-27 11:26:36"}
+{"message":"Server started and listening on port 30000","level":"info","timestamp":"2021-06-27 11:26:36"}
+{"message":"Loading http://localhost:30000/ in Electron window","level":"info","timestamp":"2021-06-27 11:26:36"}
+{"message":"Created client session ikn0fdzeg08xpop10i4k6flc","level":"info","timestamp":"2021-06-27 11:26:36"}
+{"message":"Package wfrp4e-e4e declares an invalid language object in its manifest file","level":"error","timestamp":"2021-06-27 11:26:37"}
+{"message":"Package wfrp4e-exporter declares an invalid language object in its manifest file","level":"error","timestamp":"2021-06-27 11:26:37"}
+{"message":"Package wfrp4e-night-of-blood declares an invalid language object in its manifest file","level":"error","timestamp":"2021-06-27 11:26:37"}
+{"message":"Core software release update 0.7.10 is now available!","level":"info","timestamp":"2021-06-27 11:26:37"}
+{"message":"Created client session rqesyc8vqn031ewn5861df5h","level":"info","timestamp":"2021-06-27 11:26:39"}
+{"message":"Created client session s3jldm80h16u2auage4bfg1t","level":"info","timestamp":"2021-06-27 11:26:44"}
+{"message":"User authentication successful for user Crazyeyes","level":"info","timestamp":"2021-06-27 11:26:45"}
+{"message":"Vending world data to User 0ASvjGC88ifVZG73","level":"info","timestamp":"2021-06-27 11:26:46"}
+{"message":"User authentication successful for user Josh","level":"info","timestamp":"2021-06-27 11:26:58"}
+{"message":"User authentication successful for user Ursca","level":"info","timestamp":"2021-06-27 11:27:00"}
+{"message":"Vending world data to User hWNxrHgD6tOVKAVx","level":"info","timestamp":"2021-06-27 11:27:07"}
+{"message":"Vending world data to User hNHeJbKl47AOkoOO","level":"info","timestamp":"2021-06-27 11:27:13"}
+{"message":"Deleted 4 Tokens [66WgRDdfLt1g96aO,KUlMS9omKxrft1RM,ogBQOmuQPhTFrZB6,KfvEWf7H8XcOKLus] from parent Scene Wev7J6t0FV2XALUl","level":"info","timestamp":"2021-06-27 11:27:27"}
+{"message":"Created 4 Tokens [1NP8eq5iGnCVi6rH,LOHeFALGqgiTMD5S,uxBFvSuqkJ3OgYQt,gDk6RAYCNCuZJtcd] in parent Scene Wev7J6t0FV2XALUl","level":"info","timestamp":"2021-06-27 11:27:27"}
+{"message":"Deleted 4 Tokens [QUzGoSTAohz8So0R,5RLZCG7yDfnf4MHL,5Fu4QETtonujJ3r4,xLo0oZ2CLgrIWavp] from parent Scene qYiwQuHGQUZsbXBs","level":"info","timestamp":"2021-06-27 11:27:28"}
+{"message":"Created 4 Tokens [VMGjPctCijneZrGv,c4k7w2udXW9FG8g9,4Ffyv6TRmDtVnInS,aMFuHxe6i2Xnt5Ob] in parent Scene qYiwQuHGQUZsbXBs","level":"info","timestamp":"2021-06-27 11:27:28"}
+{"message":"Deleted 3 Tokens [j3QAoSwZ7zb64UCs,NnF288KS9vr7Ndlg,lPdIyxejWUqaY8mJ] from parent Scene NwDQfNrlp9nwBTkv","level":"info","timestamp":"2021-06-27 11:27:28"}
+{"message":"Created 3 Tokens [aSmbQIo7m4hc8R5S,Y11VV6r5fc2BxDfO,V7cljZYbLPSCJDqX] in parent Scene NwDQfNrlp9nwBTkv","level":"info","timestamp":"2021-06-27 11:27:28"}
+{"message":"Deleted Token xelqaUOzu2zHoBHz from parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-06-27 11:27:28"}
+{"message":"Created Token eV4yXVMtxIZ3awsK in parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-06-27 11:27:29"}
+{"message":"Vending world data to User hWNxrHgD6tOVKAVx","level":"info","timestamp":"2021-06-27 11:27:36"}
+{"message":"Toggling game pause status to false","level":"info","timestamp":"2021-06-27 11:28:19"}
+{"message":"Deleted 4 Tokens [1NP8eq5iGnCVi6rH,LOHeFALGqgiTMD5S,uxBFvSuqkJ3OgYQt,gDk6RAYCNCuZJtcd] from parent Scene Wev7J6t0FV2XALUl","level":"info","timestamp":"2021-06-27 11:33:30"}
+{"message":"Created 4 Tokens [7ZCqWFxvrj0hLxOW,77QnuAV5ysnRjjmo,v0jevV1ZGL5KbiXw,126a3AbWwklGEP7D] in parent Scene Wev7J6t0FV2XALUl","level":"info","timestamp":"2021-06-27 11:33:30"}
+{"message":"Deleted 4 Tokens [VMGjPctCijneZrGv,c4k7w2udXW9FG8g9,4Ffyv6TRmDtVnInS,aMFuHxe6i2Xnt5Ob] from parent Scene qYiwQuHGQUZsbXBs","level":"info","timestamp":"2021-06-27 11:33:30"}
+{"message":"Created 4 Tokens [O75eaNbaafOjM35K,iWHTCU8Pye49WByC,qjQSUIDnQ1R0PcYp,eUXSZDeezBMWSaDt] in parent Scene qYiwQuHGQUZsbXBs","level":"info","timestamp":"2021-06-27 11:33:30"}
+{"message":"Deleted 3 Tokens [aSmbQIo7m4hc8R5S,Y11VV6r5fc2BxDfO,V7cljZYbLPSCJDqX] from parent Scene NwDQfNrlp9nwBTkv","level":"info","timestamp":"2021-06-27 11:33:30"}
+{"message":"Created 3 Tokens [hky5TLP5q8BkXeLT,2yp5pfSvCEeVLYRc,abaAvMDkrjHwfWIb] in parent Scene NwDQfNrlp9nwBTkv","level":"info","timestamp":"2021-06-27 11:33:30"}
+{"message":"Deleted Token eV4yXVMtxIZ3awsK from parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-06-27 11:33:31"}
+{"message":"Created Token iz3Jf6I5QyWFBXeW in parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-06-27 11:33:31"}
+{"message":"Deleted 4 Tokens [7ZCqWFxvrj0hLxOW,77QnuAV5ysnRjjmo,v0jevV1ZGL5KbiXw,126a3AbWwklGEP7D] from parent Scene Wev7J6t0FV2XALUl","level":"info","timestamp":"2021-06-27 11:33:35"}
+{"message":"Created 4 Tokens [hiUNKLncboT2P8v6,iIJUeq6D9xBOFDeD,WA3t5QjS4IsaubC1,Mec1ZpmJgBIVbWuM] in parent Scene Wev7J6t0FV2XALUl","level":"info","timestamp":"2021-06-27 11:33:36"}
+{"message":"Deleted 4 Tokens [O75eaNbaafOjM35K,iWHTCU8Pye49WByC,qjQSUIDnQ1R0PcYp,eUXSZDeezBMWSaDt] from parent Scene qYiwQuHGQUZsbXBs","level":"info","timestamp":"2021-06-27 11:33:36"}
+{"message":"Created 4 Tokens [qxDUN62wGpAV0y2F,cFvsxBKU3x9FzvOp,QEQ3cjMYN4wC9k5x,3RaIBLDmP4z7DLTL] in parent Scene qYiwQuHGQUZsbXBs","level":"info","timestamp":"2021-06-27 11:33:36"}
+{"message":"Deleted 3 Tokens [hky5TLP5q8BkXeLT,2yp5pfSvCEeVLYRc,abaAvMDkrjHwfWIb] from parent Scene NwDQfNrlp9nwBTkv","level":"info","timestamp":"2021-06-27 11:33:36"}
+{"message":"Created 3 Tokens [GDJohOEB8suz9d7x,8DHpoGnXRcz0LKm4,hl3TCGHfP2BPzdsB] in parent Scene NwDQfNrlp9nwBTkv","level":"info","timestamp":"2021-06-27 11:33:36"}
+{"message":"Deleted Token iz3Jf6I5QyWFBXeW from parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-06-27 11:33:37"}
+{"message":"Created Token KGASeSOdYEMvNOQH in parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-06-27 11:33:37"}
+{"message":"Deleted 4 Tokens [hiUNKLncboT2P8v6,iIJUeq6D9xBOFDeD,WA3t5QjS4IsaubC1,Mec1ZpmJgBIVbWuM] from parent Scene Wev7J6t0FV2XALUl","level":"info","timestamp":"2021-06-27 11:33:40"}
+{"message":"Created 4 Tokens [fArWOpbRBLNT088j,GxVj3RYLNfoUXYnm,jqSyfB8mjU11J278,3hNgwG6MK6jiuJtc] in parent Scene Wev7J6t0FV2XALUl","level":"info","timestamp":"2021-06-27 11:33:40"}
+{"message":"Deleted 4 Tokens [qxDUN62wGpAV0y2F,cFvsxBKU3x9FzvOp,QEQ3cjMYN4wC9k5x,3RaIBLDmP4z7DLTL] from parent Scene qYiwQuHGQUZsbXBs","level":"info","timestamp":"2021-06-27 11:33:41"}
+{"message":"Created 4 Tokens [lysOLKFGcbBEGVTr,JziYHbwxyDAAG23L,bbTgWhhyAe3L5gOs,WGfto0dQNEM6N5FS] in parent Scene qYiwQuHGQUZsbXBs","level":"info","timestamp":"2021-06-27 11:33:41"}
+{"message":"Deleted 3 Tokens [GDJohOEB8suz9d7x,8DHpoGnXRcz0LKm4,hl3TCGHfP2BPzdsB] from parent Scene NwDQfNrlp9nwBTkv","level":"info","timestamp":"2021-06-27 11:33:41"}
+{"message":"Created 3 Tokens [WJ3Puf3ZIBQGpMib,qOO6WAbgrr53lJX4,dDYv8ZOV2iAz3NDC] in parent Scene NwDQfNrlp9nwBTkv","level":"info","timestamp":"2021-06-27 11:33:41"}
+{"message":"Deleted Token KGASeSOdYEMvNOQH from parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-06-27 11:33:41"}
+{"message":"Created Token 1A8ei3xZr61tYVAN in parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-06-27 11:33:42"}
+{"message":"Shutting down Foundry Virtual Tabletop server","level":"info","timestamp":"2021-06-27 11:38:36"}
+{"message":"Shut-down success. Goodbye!","level":"info","timestamp":"2021-06-27 11:38:36"}
