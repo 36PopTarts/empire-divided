@@ -6487,3 +6487,188 @@
 {"message":"Created Token 1A8ei3xZr61tYVAN in parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-06-27 11:33:42"}
 {"message":"Shutting down Foundry Virtual Tabletop server","level":"info","timestamp":"2021-06-27 11:38:36"}
 {"message":"Shut-down success. Goodbye!","level":"info","timestamp":"2021-06-27 11:38:36"}
+{"message":"Foundry Virtual Tabletop - Version 0.7.9","level":"info","timestamp":"2021-06-27 11:38:50"}
+{"message":"Running on Node.js - Version 12.14.1","level":"info","timestamp":"2021-06-27 11:38:50"}
+{"message":"Loading data from user directory - /home/crazyeyes/.local/share/FoundryVTT","level":"info","timestamp":"2021-06-27 11:38:50"}
+{"message":"Application Options:\n{\n  \"port\": 30000,\n  \"upnp\": true,\n  \"fullscreen\": false,\n  \"hostname\": null,\n  \"routePrefix\": null,\n  \"sslCert\": null,\n  \"sslKey\": null,\n  \"awsConfig\": null,\n  \"dataPath\": \"/home/crazyeyes/.local/share/FoundryVTT\",\n  \"proxySSL\": false,\n  \"proxyPort\": null,\n  \"minifyStaticFiles\": false,\n  \"updateChannel\": \"release\",\n  \"language\": \"en.core\",\n  \"world\": null,\n  \"serviceConfig\": null,\n  \"isElectron\": true,\n  \"isNode\": false,\n  \"isSSL\": false,\n  \"demo\": false,\n  \"noupdate\": false\n}","level":"info","timestamp":"2021-06-27 11:38:50"}
+{"message":"License verification succeeded","level":"info","timestamp":"2021-06-27 11:38:50"}
+{"message":"Requesting UPnP port forwarding to destination 30000","level":"info","timestamp":"2021-06-27 11:38:50"}
+{"message":"Server started and listening on port 30000","level":"info","timestamp":"2021-06-27 11:38:50"}
+{"message":"Loading http://localhost:30000/ in Electron window","level":"info","timestamp":"2021-06-27 11:38:50"}
+{"message":"Created client session k6y94pwoghce23suxzsmnac3","level":"info","timestamp":"2021-06-27 11:38:50"}
+{"message":"Package wfrp4e-e4e declares an invalid language object in its manifest file","level":"error","timestamp":"2021-06-27 11:38:50"}
+{"message":"Package wfrp4e-exporter declares an invalid language object in its manifest file","level":"error","timestamp":"2021-06-27 11:38:50"}
+{"message":"Package wfrp4e-night-of-blood declares an invalid language object in its manifest file","level":"error","timestamp":"2021-06-27 11:38:50"}
+{"message":"Core software release update 0.7.10 is now available!","level":"info","timestamp":"2021-06-27 11:38:51"}
+{"message":"User authentication successful for user Crazyeyes","level":"info","timestamp":"2021-06-27 11:38:58"}
+{"message":"Vending world data to User 0ASvjGC88ifVZG73","level":"info","timestamp":"2021-06-27 11:38:59"}
+{"message":"Created client session fq4qln27g3t4jr6l2oiebvia","level":"info","timestamp":"2021-06-27 11:39:09"}
+{"message":"User authentication successful for user Ursca","level":"info","timestamp":"2021-06-27 11:39:15"}
+{"message":"Created client session 1tbt10imyamliy2do0pl6ols","level":"info","timestamp":"2021-06-27 11:39:16"}
+{"message":"User authentication successful for user Josh","level":"info","timestamp":"2021-06-27 11:39:25"}
+{"message":"Vending world data to User hWNxrHgD6tOVKAVx","level":"info","timestamp":"2021-06-27 11:39:31"}
+{"message":"Vending world data to User hNHeJbKl47AOkoOO","level":"info","timestamp":"2021-06-27 11:39:32"}
+{"message":"Deleted 4 Tokens [fArWOpbRBLNT088j,GxVj3RYLNfoUXYnm,jqSyfB8mjU11J278,3hNgwG6MK6jiuJtc] from parent Scene Wev7J6t0FV2XALUl","level":"info","timestamp":"2021-06-27 11:40:01"}
+{"message":"Created 4 Tokens [JnOtMrJ6txuKzXPo,OAKF1upNeyZ3NrDF,3INoWjIR4AfU9CUB,qcmYZvfe8i92HV8i] in parent Scene Wev7J6t0FV2XALUl","level":"info","timestamp":"2021-06-27 11:40:02"}
+{"message":"Deleted 4 Tokens [lysOLKFGcbBEGVTr,JziYHbwxyDAAG23L,bbTgWhhyAe3L5gOs,WGfto0dQNEM6N5FS] from parent Scene qYiwQuHGQUZsbXBs","level":"info","timestamp":"2021-06-27 11:40:02"}
+{"message":"Created 4 Tokens [ch6pvBCVFHWzOHjM,TCweBoU2oig4knsO,3fUcIcI2CNdqQQQg,qVNWdaKiqnZAdxxu] in parent Scene qYiwQuHGQUZsbXBs","level":"info","timestamp":"2021-06-27 11:40:02"}
+{"message":"Deleted 3 Tokens [WJ3Puf3ZIBQGpMib,qOO6WAbgrr53lJX4,dDYv8ZOV2iAz3NDC] from parent Scene NwDQfNrlp9nwBTkv","level":"info","timestamp":"2021-06-27 11:40:02"}
+{"message":"Created 3 Tokens [QJgPb2FLCG4dUoM8,PAoXFlQ5Ln8thWOm,Upu86VRBeel7tCwS] in parent Scene NwDQfNrlp9nwBTkv","level":"info","timestamp":"2021-06-27 11:40:02"}
+{"message":"Deleted Token 1A8ei3xZr61tYVAN from parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-06-27 11:40:02"}
+{"message":"Created Token uuOzLGke5A7V5JLX in parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-06-27 11:40:03"}
+{"message":"Toggling game pause status to false","level":"info","timestamp":"2021-06-27 11:48:51"}
+{"message":"Activating scene Dock Watch [S1HXghsoSHjZSPjR]","level":"info","timestamp":"2021-06-27 11:49:55"}
+{"message":"Deleted 4 Tokens [JnOtMrJ6txuKzXPo,OAKF1upNeyZ3NrDF,3INoWjIR4AfU9CUB,qcmYZvfe8i92HV8i] from parent Scene Wev7J6t0FV2XALUl","level":"info","timestamp":"2021-06-27 11:49:55"}
+{"message":"Created 4 Tokens [CdVbMkkA7TQpJybG,Q2ZUgmWjRyJZVRTQ,uZmX25RPIZQbQgMI,rkDFpSwLLcKCdJyd] in parent Scene Wev7J6t0FV2XALUl","level":"info","timestamp":"2021-06-27 11:49:56"}
+{"message":"Deleted 4 Tokens [ch6pvBCVFHWzOHjM,TCweBoU2oig4knsO,3fUcIcI2CNdqQQQg,qVNWdaKiqnZAdxxu] from parent Scene qYiwQuHGQUZsbXBs","level":"info","timestamp":"2021-06-27 11:49:56"}
+{"message":"Created 4 Tokens [nXWZdqMKkxFseRVu,7K401BLI931aO6CE,1utcXhBNZNvCfQJ6,MNJgYTJSTyrprino] in parent Scene qYiwQuHGQUZsbXBs","level":"info","timestamp":"2021-06-27 11:49:56"}
+{"message":"Deleted 3 Tokens [QJgPb2FLCG4dUoM8,PAoXFlQ5Ln8thWOm,Upu86VRBeel7tCwS] from parent Scene NwDQfNrlp9nwBTkv","level":"info","timestamp":"2021-06-27 11:49:56"}
+{"message":"Created 3 Tokens [nhuV5fT0a5Is1Nqb,kbLnZU272dMVRt8U,aUmFZ7fYCaYyLuna] in parent Scene NwDQfNrlp9nwBTkv","level":"info","timestamp":"2021-06-27 11:49:57"}
+{"message":"Deleted Token uuOzLGke5A7V5JLX from parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-06-27 11:49:57"}
+{"message":"Created Token u2jEyXFNLXivXH44 in parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-06-27 11:49:57"}
+{"message":"Created ChatMessage with id kdRv3buO7iU1kuct","level":"info","timestamp":"2021-06-27 11:52:18"}
+{"message":"Created ChatMessage with id Zf1uf2vJDxYPIVx7","level":"info","timestamp":"2021-06-27 12:22:46"}
+{"message":"Created ChatMessage with id lo6uNJU6yVRymly6","level":"info","timestamp":"2021-06-27 12:22:48"}
+{"message":"Created ChatMessage with id 4ctwbNMk6I41g5cc","level":"info","timestamp":"2021-06-27 12:23:50"}
+{"message":"Created ChatMessage with id Rwf7sSNcaqMsY4uN","level":"info","timestamp":"2021-06-27 12:23:51"}
+{"message":"Created ChatMessage with id rQ9w97YvWXmt4CAJ","level":"info","timestamp":"2021-06-27 12:41:06"}
+{"message":"Created ChatMessage with id AChIE2orw5Nj7toG","level":"info","timestamp":"2021-06-27 12:41:10"}
+{"message":"Deleted 4 Tokens [CdVbMkkA7TQpJybG,Q2ZUgmWjRyJZVRTQ,uZmX25RPIZQbQgMI,rkDFpSwLLcKCdJyd] from parent Scene Wev7J6t0FV2XALUl","level":"info","timestamp":"2021-06-27 13:14:40"}
+{"message":"Created 4 Tokens [uLSUUh3yx16eH5pb,HcIhqtXLbz8ycKNe,av5MMVNl9SGYMAis,2xYyScbpTLgf6vLt] in parent Scene Wev7J6t0FV2XALUl","level":"info","timestamp":"2021-06-27 13:14:40"}
+{"message":"Deleted 4 Tokens [nXWZdqMKkxFseRVu,7K401BLI931aO6CE,1utcXhBNZNvCfQJ6,MNJgYTJSTyrprino] from parent Scene qYiwQuHGQUZsbXBs","level":"info","timestamp":"2021-06-27 13:14:40"}
+{"message":"Created 4 Tokens [FP3GdkoCBo7pvOIs,NoSU930E2A1zkLle,JbPswMmVtgmRmbMw,Kx3v243dyarWFlhO] in parent Scene qYiwQuHGQUZsbXBs","level":"info","timestamp":"2021-06-27 13:14:41"}
+{"message":"Deleted 3 Tokens [nhuV5fT0a5Is1Nqb,kbLnZU272dMVRt8U,aUmFZ7fYCaYyLuna] from parent Scene NwDQfNrlp9nwBTkv","level":"info","timestamp":"2021-06-27 13:14:41"}
+{"message":"Created 3 Tokens [rfdafBDTaIUukVtE,BBq0mybItc8mwOJP,iH8bD0vdj186u8u3] in parent Scene NwDQfNrlp9nwBTkv","level":"info","timestamp":"2021-06-27 13:14:42"}
+{"message":"Deleted Token u2jEyXFNLXivXH44 from parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-06-27 13:14:42"}
+{"message":"Created Token iabtoYHRkGD5Qa5R in parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-06-27 13:14:43"}
+{"message":"Deleted 4 Tokens [uLSUUh3yx16eH5pb,HcIhqtXLbz8ycKNe,av5MMVNl9SGYMAis,2xYyScbpTLgf6vLt] from parent Scene Wev7J6t0FV2XALUl","level":"info","timestamp":"2021-06-27 13:14:43"}
+{"message":"Created 4 Tokens [9VLTXEyKMsqEgpM7,ImhXgpTRyPmpkf43,H6fQaGL60JdPQj8x,wVqFF5BPuBhDdk9T] in parent Scene Wev7J6t0FV2XALUl","level":"info","timestamp":"2021-06-27 13:14:44"}
+{"message":"Deleted 4 Tokens [FP3GdkoCBo7pvOIs,NoSU930E2A1zkLle,JbPswMmVtgmRmbMw,Kx3v243dyarWFlhO] from parent Scene qYiwQuHGQUZsbXBs","level":"info","timestamp":"2021-06-27 13:14:44"}
+{"message":"Created 4 Tokens [rkQ97qeDlx0KHSz1,qf5mTJHlQZhxC3pl,D7vxHt9AkRxns01J,qu38XEjmC9aut7b1] in parent Scene qYiwQuHGQUZsbXBs","level":"info","timestamp":"2021-06-27 13:14:45"}
+{"message":"Deleted 3 Tokens [rfdafBDTaIUukVtE,BBq0mybItc8mwOJP,iH8bD0vdj186u8u3] from parent Scene NwDQfNrlp9nwBTkv","level":"info","timestamp":"2021-06-27 13:14:45"}
+{"message":"Created 3 Tokens [DDPokkhv2fCvlL4d,l7gkie2ChYclR4Tf,vJ1maAY2IkJVTNbz] in parent Scene NwDQfNrlp9nwBTkv","level":"info","timestamp":"2021-06-27 13:14:45"}
+{"message":"Deleted Token iabtoYHRkGD5Qa5R from parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-06-27 13:14:45"}
+{"message":"Created Token gOW2A5ysLaOaSz46 in parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-06-27 13:14:46"}
+{"message":"Created ChatMessage with id 7x3s4smmsH2fVPL1","level":"info","timestamp":"2021-06-27 13:17:57"}
+{"message":"Created JournalEntry with id tRnk3YWw06c5tpcc","level":"info","timestamp":"2021-06-27 13:18:58"}
+{"message":"Created ChatMessage with id doDcxZmglsnx5DaH","level":"info","timestamp":"2021-06-27 13:33:56"}
+{"message":"Created ChatMessage with id tGrmBOR5yJfxxBVF","level":"info","timestamp":"2021-06-27 13:34:00"}
+{"message":"Created ChatMessage with id SGbq9xE66GKG8pCh","level":"info","timestamp":"2021-06-27 13:34:15"}
+{"message":"Vending world data to User 0ASvjGC88ifVZG73","level":"info","timestamp":"2021-06-27 13:35:05"}
+{"message":"Created ChatMessage with id sO6vuEzbDbBhIybs","level":"info","timestamp":"2021-06-27 13:39:49"}
+{"message":"Deleted 4 Tokens [9VLTXEyKMsqEgpM7,ImhXgpTRyPmpkf43,H6fQaGL60JdPQj8x,wVqFF5BPuBhDdk9T] from parent Scene Wev7J6t0FV2XALUl","level":"info","timestamp":"2021-06-27 14:00:28"}
+{"message":"Created 4 Tokens [thDWxrP1vfQl9vGk,yfl6CbW28mDs3VhZ,W4b51rDOJvcfIWyA,hciRDfKonTgXQ3wK] in parent Scene Wev7J6t0FV2XALUl","level":"info","timestamp":"2021-06-27 14:00:29"}
+{"message":"Deleted 4 Tokens [rkQ97qeDlx0KHSz1,qf5mTJHlQZhxC3pl,D7vxHt9AkRxns01J,qu38XEjmC9aut7b1] from parent Scene qYiwQuHGQUZsbXBs","level":"info","timestamp":"2021-06-27 14:00:29"}
+{"message":"Created 4 Tokens [yj3d1XWBhnG6q900,YKy2m8NN3faek6o1,4eY5UFS1AmGbYnq3,AJkYM0qHevZmp25P] in parent Scene qYiwQuHGQUZsbXBs","level":"info","timestamp":"2021-06-27 14:00:30"}
+{"message":"Deleted 3 Tokens [DDPokkhv2fCvlL4d,l7gkie2ChYclR4Tf,vJ1maAY2IkJVTNbz] from parent Scene NwDQfNrlp9nwBTkv","level":"info","timestamp":"2021-06-27 14:00:30"}
+{"message":"Created 3 Tokens [EeaavrSM1G3iPqFO,7ewDeVZO4G71w7b8,biCKPS9jHcNa8uXI] in parent Scene NwDQfNrlp9nwBTkv","level":"info","timestamp":"2021-06-27 14:00:30"}
+{"message":"Deleted Token gOW2A5ysLaOaSz46 from parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-06-27 14:00:30"}
+{"message":"Created Token LjN7o0VtHGBYtUWf in parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-06-27 14:00:31"}
+{"message":"Deleted 4 Tokens [thDWxrP1vfQl9vGk,yfl6CbW28mDs3VhZ,W4b51rDOJvcfIWyA,hciRDfKonTgXQ3wK] from parent Scene Wev7J6t0FV2XALUl","level":"info","timestamp":"2021-06-27 14:00:31"}
+{"message":"Created 4 Tokens [YWAidm08cmzbkoxp,bXb5fvH4c729fIbv,d5To5RVVLbzOeWPb,bov2QQZqJCVwb5TR] in parent Scene Wev7J6t0FV2XALUl","level":"info","timestamp":"2021-06-27 14:00:32"}
+{"message":"Deleted 4 Tokens [yj3d1XWBhnG6q900,YKy2m8NN3faek6o1,4eY5UFS1AmGbYnq3,AJkYM0qHevZmp25P] from parent Scene qYiwQuHGQUZsbXBs","level":"info","timestamp":"2021-06-27 14:00:33"}
+{"message":"Created 4 Tokens [WZbabcb75aFNefhQ,VrDoWyd8EPVoizWA,eoopW8x7Fbj2Gbgg,LKoN1u3vROzByM9A] in parent Scene qYiwQuHGQUZsbXBs","level":"info","timestamp":"2021-06-27 14:00:33"}
+{"message":"Deleted 3 Tokens [EeaavrSM1G3iPqFO,7ewDeVZO4G71w7b8,biCKPS9jHcNa8uXI] from parent Scene NwDQfNrlp9nwBTkv","level":"info","timestamp":"2021-06-27 14:00:33"}
+{"message":"Created 3 Tokens [pKWTHdGO8OiuFjGF,Y4O5TS0qxROdMR7X,UAlD6KMrDsbBHjTk] in parent Scene NwDQfNrlp9nwBTkv","level":"info","timestamp":"2021-06-27 14:00:33"}
+{"message":"Deleted Token LjN7o0VtHGBYtUWf from parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-06-27 14:00:33"}
+{"message":"Created Token 7nyOuRnOYFQ56hnr in parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-06-27 14:00:34"}
+{"message":"Compacted database file for scenes","level":"info","timestamp":"2021-06-27 14:00:36"}
+{"message":"Created ChatMessage with id BqB0rsh45SDjNqnn","level":"info","timestamp":"2021-06-27 14:06:21"}
+{"message":"Created ChatMessage with id 9CwLc1B4KMR1YBDE","level":"info","timestamp":"2021-06-27 14:06:22"}
+{"message":"Created ChatMessage with id 3sfoLE6MjOiigezM","level":"info","timestamp":"2021-06-27 14:06:35"}
+{"message":"Created ChatMessage with id BKa07NrdlcTPiNny","level":"info","timestamp":"2021-06-27 14:06:37"}
+{"message":"Created ChatMessage with id jhgvibkUY41Hs2IT","level":"info","timestamp":"2021-06-27 14:08:14"}
+{"message":"Created ChatMessage with id TlO59RehpJHouoWK","level":"info","timestamp":"2021-06-27 14:10:33"}
+{"message":"Created ChatMessage with id qO72TWl87CMX94hs","level":"info","timestamp":"2021-06-27 14:33:31"}
+{"message":"Created ChatMessage with id 31lhbHsmGuhMYn4V","level":"info","timestamp":"2021-06-27 14:33:33"}
+{"message":"Created ChatMessage with id nBXxsuxxTK9YKaDp","level":"info","timestamp":"2021-06-27 15:12:27"}
+{"message":"Created ChatMessage with id d4xUJ0bm0emFWfbT","level":"info","timestamp":"2021-06-27 15:12:38"}
+{"message":"Created ChatMessage with id KxYd6m8C7VsyBpsd","level":"info","timestamp":"2021-06-27 15:21:38"}
+{"message":"Created ChatMessage with id qf61lv4qL6oY4bO6","level":"info","timestamp":"2021-06-27 15:24:17"}
+{"message":"Created ChatMessage with id 5fx3VR7Qqi7LtsmW","level":"info","timestamp":"2021-06-27 15:24:26"}
+{"message":"Created ChatMessage with id e88enbDtvS6nrhSl","level":"info","timestamp":"2021-06-27 15:32:37"}
+{"message":"Created ChatMessage with id 4URNId2s19u5r6De","level":"info","timestamp":"2021-06-27 15:33:25"}
+{"message":"Created ChatMessage with id l8TlfWgGAX1wQP5U","level":"info","timestamp":"2021-06-27 16:11:04"}
+{"message":"Created ChatMessage with id Xsx5RoIKArSY5sAx","level":"info","timestamp":"2021-06-27 16:11:41"}
+{"message":"Created ChatMessage with id Ao0qnJ0yAUyuOuph","level":"info","timestamp":"2021-06-27 16:12:11"}
+{"message":"Created ChatMessage with id pqmw55ZkAB5H8VCz","level":"info","timestamp":"2021-06-27 16:20:12"}
+{"message":"Created ChatMessage with id 31dysRm17sAHLJLl","level":"info","timestamp":"2021-06-27 16:20:18"}
+{"message":"Created ChatMessage with id A8fXGsuvt6pPDw5h","level":"info","timestamp":"2021-06-27 16:20:39"}
+{"message":"Created ChatMessage with id kncz3CgRRWEVEzdA","level":"info","timestamp":"2021-06-27 16:26:16"}
+{"message":"Created ChatMessage with id K6in6V486XarYq6U","level":"info","timestamp":"2021-06-27 16:26:22"}
+{"message":"Created ChatMessage with id xmxdnpClydlYhgHV","level":"info","timestamp":"2021-06-27 16:26:35"}
+{"message":"Created ChatMessage with id z93a9ie2N1D3ke3d","level":"info","timestamp":"2021-06-27 16:28:37"}
+{"message":"Created ChatMessage with id 4pw5e8THAZh2FbZt","level":"info","timestamp":"2021-06-27 16:28:39"}
+{"message":"Created ChatMessage with id vRNds7WRCDgYFhvc","level":"info","timestamp":"2021-06-27 16:31:47"}
+{"message":"Created ChatMessage with id jnKCc6Zy21ZfzF3e","level":"info","timestamp":"2021-06-27 16:31:52"}
+{"message":"Created ChatMessage with id HCyjPAD6PFpMXdcA","level":"info","timestamp":"2021-06-27 16:48:49"}
+{"message":"Created OwnedItem Bsy3b6uvjrwOlyjb in parent Actor 5M7nXIQrbBwl2B5Y","level":"info","timestamp":"2021-06-27 16:51:23"}
+{"message":"Compacted database file for actors","level":"info","timestamp":"2021-06-27 16:52:50"}
+{"message":"Created OwnedItem h8D0dSqjCepZLPnH in parent Actor 8Zy3PDSo4bzHrf3y","level":"info","timestamp":"2021-06-27 17:03:51"}
+{"level":"error","timestamp":"2021-06-27 17:03:51","message":"User Crazyeyes lacks permission to update Actor 8Zy3PDSo4bzHrf3y","stack":"Error: User Crazyeyes lacks permission to update Actor 8Zy3PDSo4bzHrf3y\n    at Function._onUpdate (/home/crazyeyes/foundry/resources/app/dist/database/odm/document.js:1:8099)\n    at async Socket.handleEvent (/home/crazyeyes/foundry/resources/app/dist/sockets.js:1:2262)"}
+{"level":"error","timestamp":"2021-06-27 17:03:51","message":"User Josh lacks permission to update Actor 8Zy3PDSo4bzHrf3y","stack":"Error: User Josh lacks permission to update Actor 8Zy3PDSo4bzHrf3y\n    at Function._onUpdate (/home/crazyeyes/foundry/resources/app/dist/database/odm/document.js:1:8099)\n    at async Socket.handleEvent (/home/crazyeyes/foundry/resources/app/dist/sockets.js:1:2262)"}
+{"message":"Created OwnedItem CI39nnblwhbHxFC6 in parent Actor 8Zy3PDSo4bzHrf3y","level":"info","timestamp":"2021-06-27 17:06:21"}
+{"message":"Created OwnedItem eQbANd3wNAnKOIty in parent Actor 8Zy3PDSo4bzHrf3y","level":"info","timestamp":"2021-06-27 17:06:26"}
+{"message":"Created Token Uv4zorxWZ192CP3k in parent Scene S1HXghsoSHjZSPjR","level":"info","timestamp":"2021-06-27 17:09:09"}
+{"message":"Created Token C0EmcpEamB56NPaB in parent Scene S1HXghsoSHjZSPjR","level":"info","timestamp":"2021-06-27 17:09:12"}
+{"message":"Created Token NbNNzVsUlf4jHMIh in parent Scene S1HXghsoSHjZSPjR","level":"info","timestamp":"2021-06-27 17:09:13"}
+{"message":"Created Token Du3AzSw5YlfeAU0i in parent Scene S1HXghsoSHjZSPjR","level":"info","timestamp":"2021-06-27 17:09:17"}
+{"message":"Created Combat with id pMir7WCXqrECnuYP","level":"info","timestamp":"2021-06-27 17:09:23"}
+{"message":"Created 4 Combatants [tEOJAqKbfQgZKGdU,tYJRawR0c48RV0rS,7fo51vSIxwSeRe5M,AhqgtFVNHt9AvCJA] in parent Combat pMir7WCXqrECnuYP","level":"info","timestamp":"2021-06-27 17:09:23"}
+{"message":"Created ChatMessage with id hRtCc8l5QT1XmziQ","level":"info","timestamp":"2021-06-27 17:09:27"}
+{"message":"Created 3 ChatMessages with ids: [Punw3hzaSZaUdSL7,7kk9OqOU0O8KxxLC,TQ1iM4YZvZCWqhC5]","level":"info","timestamp":"2021-06-27 17:09:28"}
+{"message":"Created ChatMessage with id epcJoEC0nBZPY80J","level":"info","timestamp":"2021-06-27 17:09:35"}
+{"message":"Created ChatMessage with id 4TUbaEhYIItgcopS","level":"info","timestamp":"2021-06-27 17:10:43"}
+{"message":"Created ChatMessage with id vj1DEkdGCyhUT9xl","level":"info","timestamp":"2021-06-27 17:10:43"}
+{"message":"Compacted database file for chat","level":"info","timestamp":"2021-06-27 17:10:45"}
+{"message":"Created ChatMessage with id HFOdQM8h9dXAKd7o","level":"info","timestamp":"2021-06-27 17:10:57"}
+{"message":"Created ChatMessage with id VzcAAh2MMZZQZARP","level":"info","timestamp":"2021-06-27 17:13:33"}
+{"message":"Created ChatMessage with id DHUZroMaIKc4FVLT","level":"info","timestamp":"2021-06-27 17:13:33"}
+{"message":"Created ChatMessage with id qc7Gx7U8mQMmxTH0","level":"info","timestamp":"2021-06-27 17:13:56"}
+{"message":"Created ChatMessage with id Qa4a0X1XQzZZviaa","level":"info","timestamp":"2021-06-27 17:13:57"}
+{"message":"Created ChatMessage with id opxMKksGQ1jJqywb","level":"info","timestamp":"2021-06-27 17:14:45"}
+{"message":"Created ChatMessage with id glqnG1oTmRpMdCII","level":"info","timestamp":"2021-06-27 17:15:02"}
+{"message":"Created ChatMessage with id 7bu0eunJSHn6AC1u","level":"info","timestamp":"2021-06-27 17:15:04"}
+{"message":"Created ChatMessage with id dq87dU3xW1eWhJwc","level":"info","timestamp":"2021-06-27 17:15:34"}
+{"message":"Created ChatMessage with id Ac6Rhe5fifKCt5Jf","level":"info","timestamp":"2021-06-27 17:17:33"}
+{"message":"Created ChatMessage with id gq4amIW1vK2m9qD0","level":"info","timestamp":"2021-06-27 17:17:34"}
+{"message":"Created ChatMessage with id JENa61mn8ElMCukJ","level":"info","timestamp":"2021-06-27 17:19:04"}
+{"message":"Created ChatMessage with id 1KnA87WaXjk7DPeF","level":"info","timestamp":"2021-06-27 17:19:05"}
+{"message":"Deleted ChatMessage with id 1KnA87WaXjk7DPeF","level":"info","timestamp":"2021-06-27 17:19:17"}
+{"message":"Deleted ChatMessage with id gq4amIW1vK2m9qD0","level":"info","timestamp":"2021-06-27 17:19:19"}
+{"message":"Created ChatMessage with id uzFDQoOdL2jeuDUH","level":"info","timestamp":"2021-06-27 17:19:20"}
+{"message":"Created ChatMessage with id UEfCCfqrZ0vawBq1","level":"info","timestamp":"2021-06-27 17:19:53"}
+{"message":"Created ChatMessage with id RZEnkN5TPGWn63pm","level":"info","timestamp":"2021-06-27 17:19:54"}
+{"message":"Created ChatMessage with id spo9gSAw8W9CLOLa","level":"info","timestamp":"2021-06-27 17:20:15"}
+{"message":"Created ChatMessage with id veweebjeCanB4tKn","level":"info","timestamp":"2021-06-27 17:20:20"}
+{"message":"Created ChatMessage with id XdSjfG5BS9GCMKf1","level":"info","timestamp":"2021-06-27 17:20:51"}
+{"message":"Created ChatMessage with id yqoo60v9XXHw8wpm","level":"info","timestamp":"2021-06-27 17:21:11"}
+{"message":"Created ChatMessage with id rAEudA8pE2LDumGq","level":"info","timestamp":"2021-06-27 17:22:53"}
+{"message":"Created ChatMessage with id GwYOADX6G8igHQda","level":"info","timestamp":"2021-06-27 17:22:53"}
+{"message":"Created ChatMessage with id zQ7Ng9oikBjnra4u","level":"info","timestamp":"2021-06-27 17:23:07"}
+{"message":"Created ChatMessage with id 6JlVemzSJ4Kbj9tE","level":"info","timestamp":"2021-06-27 17:23:08"}
+{"message":"Created ChatMessage with id Kw1nGr5C4KVnZ2Xx","level":"info","timestamp":"2021-06-27 17:23:22"}
+{"message":"Created ChatMessage with id siCZl6Iwr1MYUM7P","level":"info","timestamp":"2021-06-27 17:24:12"}
+{"message":"Created ChatMessage with id VwQ54aSLE0r2MKsH","level":"info","timestamp":"2021-06-27 17:24:12"}
+{"message":"Created ChatMessage with id 3fVaB3V1r0xnPYrn","level":"info","timestamp":"2021-06-27 17:24:12"}
+{"message":"Compacted database file for chat","level":"info","timestamp":"2021-06-27 17:24:14"}
+{"message":"Compacted database file for actors","level":"info","timestamp":"2021-06-27 17:24:15"}
+{"message":"Deleted ChatMessage with id VwQ54aSLE0r2MKsH","level":"info","timestamp":"2021-06-27 17:24:16"}
+{"message":"Created ChatMessage with id xc66Uf8aU8Cyc4DW","level":"info","timestamp":"2021-06-27 17:25:32"}
+{"message":"Created ChatMessage with id rzgGUAsu2jVPu05v","level":"info","timestamp":"2021-06-27 17:25:32"}
+{"message":"Created ChatMessage with id kZEC3DzS2XHgkAxI","level":"info","timestamp":"2021-06-27 17:26:21"}
+{"message":"Created ChatMessage with id HTGHqR7EnrNhXlKm","level":"info","timestamp":"2021-06-27 17:26:24"}
+{"message":"Created ChatMessage with id Fg8pnzHo6nGCdS3j","level":"info","timestamp":"2021-06-27 17:27:10"}
+{"message":"Created ChatMessage with id HfP9Rmx9cZ395wsH","level":"info","timestamp":"2021-06-27 17:27:10"}
+{"message":"Created ChatMessage with id yvewrGcwlrLL73fB","level":"info","timestamp":"2021-06-27 17:27:28"}
+{"message":"Created ChatMessage with id AGnn6mTCjHv4UCaW","level":"info","timestamp":"2021-06-27 17:27:29"}
+{"message":"Created ChatMessage with id TyaoUjPA6p40jMTu","level":"info","timestamp":"2021-06-27 17:29:46"}
+{"message":"Created ChatMessage with id dk5UKVDYpIYmvRi4","level":"info","timestamp":"2021-06-27 17:29:46"}
+{"message":"Created ChatMessage with id yRU3OEnWW7Ndrlme","level":"info","timestamp":"2021-06-27 17:29:56"}
+{"message":"Created ChatMessage with id nHEfvsZAbNavXaa7","level":"info","timestamp":"2021-06-27 17:30:08"}
+{"message":"Created ChatMessage with id 58KKHMxeGfw81rZr","level":"info","timestamp":"2021-06-27 17:30:09"}
+{"message":"Created ChatMessage with id UrDcTRUnKWwsIhda","level":"info","timestamp":"2021-06-27 17:31:46"}
+{"message":"Deleted Combat with id pMir7WCXqrECnuYP","level":"info","timestamp":"2021-06-27 17:31:46"}
+{"message":"Deleted 4 Tokens [Uv4zorxWZ192CP3k,C0EmcpEamB56NPaB,NbNNzVsUlf4jHMIh,Du3AzSw5YlfeAU0i] from parent Scene S1HXghsoSHjZSPjR","level":"info","timestamp":"2021-06-27 17:47:31"}
+{"message":"Shutting down Foundry Virtual Tabletop server","level":"info","timestamp":"2021-06-27 17:52:14"}
+{"message":"Shut-down success. Goodbye!","level":"info","timestamp":"2021-06-27 17:52:14"}
