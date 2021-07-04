@@ -66,6 +66,7 @@
 {"_id":"Q0UfttGS2ZpKyqfG","name":"Character","type":"JournalEntry","sort":2200000,"flags":{"wfrp4e":{"initialization-parent":"Rules"}},"parent":"KBFMpqeeMFWhdpSI","sorting":"m","color":""}
 {"_id":"Q4FUto1MM8iMAbNq","name":"Vermintide Weapons","type":"Item","sort":1600000,"flags":{},"parent":"FFQANC5sa5CMDx9k","sorting":"a","color":"#23351c"}
 {"name":"Monster Traits","type":"Item","sort":1100000,"flags":{},"parent":"B1NGEkUpOPYjZbtf","sorting":"a","color":"#4d3d5c","_id":"QcrOaFPGaPLI5M77"}
+{"name":"Templates","type":"Item","sort":1800000,"flags":{},"parent":"FH46SuKDUeaO7cfJ","sorting":"a","color":"","_id":"RBXRWBI253YEeOCn"}
 {"name":"Brute Career","type":"Item","sort":1400000,"flags":{},"parent":"FH46SuKDUeaO7cfJ","sorting":"a","color":"","_id":"RO7uolWbUYQEX3ym"}
 {"name":"Magic","type":"JournalEntry","sort":2250000,"flags":{},"parent":null,"sorting":"m","color":"#6c6217","_id":"SV4wmXUvuCNwQ0Nc"}
 {"name":"Random Equipment","type":"RollTable","sort":null,"flags":{},"parent":null,"sorting":"a","color":"","_id":"SsnU0RAudPtByTXv"}
@@ -93,6 +94,7 @@
 {"name":"The Precinct","type":"JournalEntry","sort":5000000,"flags":{},"parent":"nYrlPwQwhU9yHNZz","sorting":"a","color":"","_id":"ZAXcRRNp4QNjx9YW"}
 {"_id":"ZK9yfI65ezHrdWW1","name":"The Cursed and Fetid Marshlands","type":"JournalEntry","sort":300000,"flags":{"wfrp4e":{"initialization-parent":"Reikland"}},"parent":"J8dQ6pBcs8qRN8Bk","sorting":"m","color":"#434730"}
 {"_id":"a26xT4TcpNe9uhSy","name":"Fishrook Returns","type":"Actor","sort":300000,"flags":{},"parent":"kGEh553SL7K4zgmn","sorting":"a","color":""}
+{"_id":"aRmSqkvVtkWdU9av","name":"Dogs of War","type":"Actor","sort":3000000,"flags":{},"parent":"81ZFw4Rjgz144G8Q","sorting":"a","color":"#db8000"}
 {"_id":"aodo7JMHjKV3BHhd","name":"Saponatheims","type":"Actor","sort":300000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#2a142e"}
 {"_id":"c8pB03MJECRvVVdb","name":"Combat","type":"JournalEntry","sort":2300000,"flags":{"wfrp4e":{"initialization-parent":"Rules"}},"parent":"KBFMpqeeMFWhdpSI","sorting":"m","color":""}
 {"name":"Teubrucke (The Docks)","type":"JournalEntry","sort":4900000,"flags":{},"parent":"nYrlPwQwhU9yHNZz","sorting":"a","color":"","_id":"cD2WV6rmxf2syVjx"}
@@ -116,7 +118,7 @@
 {"_id":"iltPBXW0kOqlZhfA","name":"Settlements","type":"JournalEntry","sort":500000,"flags":{"wfrp4e":{"initialization-parent":"Reikland"}},"parent":"J8dQ6pBcs8qRN8Bk","sorting":"m","color":"#534f1e"}
 {"name":"Artisan's Quarter","type":"JournalEntry","sort":4200000,"flags":{},"parent":"nYrlPwQwhU9yHNZz","sorting":"a","color":"","_id":"jLCpRyf3Tm13Y85D"}
 {"_id":"jOdnLBXpaX7LCdF0","name":"Mountains, Foothills, and Vorbergland","type":"JournalEntry","sort":100000,"flags":{"wfrp4e":{"initialization-parent":"Reikland"}},"parent":"J8dQ6pBcs8qRN8Bk","sorting":"m","color":"#454547"}
-{"name":"Blackpowder Nights","type":"Actor","sort":4600000,"flags":{},"parent":null,"sorting":"a","color":"#404040","_id":"jVq0puTnPsLSgeQe"}
+{"_id":"jVq0puTnPsLSgeQe","name":"Blackpowder Nights","type":"Actor","sort":700000,"flags":{},"parent":"kGEh553SL7K4zgmn","sorting":"a","color":"#404040"}
 {"name":"PCs","type":"Actor","sort":4400000,"flags":{},"parent":"vU9LPtmofGv4bHSj","sorting":"a","color":"#802323","_id":"jl1kuRZMHtWfOkLR"}
 {"_id":"jxONpQkr2xVFk5CZ","name":"Walfen","type":"Actor","sort":600000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":""}
 {"_id":"kGEh553SL7K4zgmn","name":"Past Adventures","type":"Actor","sort":400000,"flags":{},"parent":null,"sorting":"a","color":"#263a5f"}
@@ -147,7 +149,7 @@
 {"name":"GM Notes","type":"JournalEntry","sort":6500000,"flags":{},"parent":null,"sorting":"a","color":"#9e0000","_id":"tVm4VHOzL3Kt6qVy"}
 {"name":"Burn After Printing","type":"Actor","sort":3400000,"flags":{},"parent":"0nAbOypVU30zj9hY","sorting":"a","color":"#400d07","_id":"u4zNUifOiBJsiqIc"}
 {"_id":"uKDEacfyOMwXEqZm","name":"Storm Riders","type":"Actor","sort":1300000,"flags":{},"parent":"lWzLTQHnXZft3wzO","sorting":"a","color":"#297ea3"}
-{"name":"Luitpoldstrasse Blues","type":"Actor","sort":4300000,"flags":{},"parent":null,"sorting":"a","color":"#20417e","_id":"vU9LPtmofGv4bHSj"}
+{"_id":"vU9LPtmofGv4bHSj","name":"Luitpoldstrasse Blues","type":"Actor","sort":600000,"flags":{},"parent":"kGEh553SL7K4zgmn","sorting":"a","color":"#20417e"}
 {"name":"Beyond the Walls","type":"JournalEntry","sort":4300000,"flags":{},"parent":"nYrlPwQwhU9yHNZz","sorting":"a","color":"","_id":"vXrzI9150vVG2zUV"}
 {"name":"Urban","type":"Scene","sort":400000,"flags":{},"parent":"ifqvWppW117y2zyP","sorting":"a","color":"#6f7985","_id":"vegile7w7PJN8ipB"}
 {"_id":"vifFIN67OZxpVSov","name":"Haalsteins","type":"Actor","sort":500000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#7b4e23"}
@@ -159,3 +161,6 @@
 {"_id":"y2b8VuEsVN1UFiv9","name":"Careers","type":"JournalEntry","sort":3500000,"flags":{},"parent":"XfhUxAdPBRN3lgpw","sorting":"a","color":"#694121"}
 {"_id":"yrVnNPRyDRk4Ku57","name":"Travel Endeavours","type":"JournalEntry","sort":5100000,"flags":{},"parent":"tCLFt3MpljAU3OVd","sorting":"a","color":"#634231"}
 {"_id":"zQRDhzWh9uTwnQqe","name":"Class Endeavours","type":"JournalEntry","sort":2600000,"flags":{"wfrp4e":{"initialization-parent":"Endeavours"}},"parent":"5PMBVwnydUMSobIr","sorting":"m","color":""}
+{"name":"Old Scenes","type":"Scene","sort":1200000,"flags":{},"parent":null,"sorting":"a","color":"","_id":"49bbBFQWuWi3jpZC"}
+{"name":"Tomb Blade","type":"JournalEntry","sort":7400000,"flags":{},"parent":"3D5AeQXPQFECRFtw","sorting":"a","color":"#ff9500","_id":"cHczBZFi7MuGKU42"}
+{"_id":"cHczBZFi7MuGKU42","name":"Tomb Blade","type":"JournalEntry","sort":7400000,"flags":{},"parent":"3D5AeQXPQFECRFtw","sorting":"a","color":"#cc6d00"}
