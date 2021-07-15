@@ -21,7 +21,7 @@ Hooks.on("renderCompendiumDirectory", () => {
     if (game.packs.get("wfrp4e.basic"))
     {
         game.packs.delete("wfrp4e.basic")
-        setTimeout(() => ui.sidebar.render(true), 200)
+        ui.sidebar.render(true)
     }
 })
 
@@ -58,15 +58,13 @@ class WFRP4eContentInitialization extends Dialog {
             Special thanks to: <b>Games Workshop, Fatshark</b><br><br>
             
             <a href="mailto: info@cubicle7games.com">info@cubicle7games.com</a>`,
-
             buttons: {
 	            initialize: {
 	                label : "Initialize",
 	                callback : async () => {
 	                    game.settings.set("wfrp4e-core", "initialized", true)
-                        await this.initialize()
-                        ui.notifications.notify("Initialization Complete")
-                        this.mwfrpc();
+	                    await new WFRP4eContentInitialization().initialize()
+	                    ui.notifications.notify("Initialization Complete")
 						}
 	                },
 	                no: {
@@ -77,9 +75,21 @@ class WFRP4eContentInitialization extends Dialog {
                         }
                 		}	
                 	}
-        })
-        this.folders = {};
+    	})
+
+        this.folders = {
+            "Scene" : {},
+            "Item" : {},
+            "Actor" : {},
+            "JournalEntry" : {}
+        }
+        this.SceneFolders = {};
+        this.ActorFolders = {};
+        this.ItemFolders = {};
+        this.JournalEntryFolders = {};
         this.journals = {};
+        this.actors = {};
+        this.scenes = {};
         this.moduleKey = "wfrp4e-core"
     }
 
@@ -88,40 +98,59 @@ class WFRP4eContentInitialization extends Dialog {
             fetch(`modules/${this.moduleKey}/initialization.json`).then(async r => r.json()).then(async json => {
                 let createdFolders = await Folder.create(json)
                 for (let folder of createdFolders)
-                    this.folders[folder.data.name] = folder;
+                    this.folders[folder.data.type][folder.data.name] = folder;
 
-                for (let folder in this.folders) {
-                    let parent = this.folders[folder].getFlag("wfrp4e", "initialization-parent")
-                    if (parent) {
-                        let parentId = this.folders[parent].data._id
-                        this.folders[folder].update({ parent: parentId })
+                for (let folderType in this.folders) {
+                    for (let folder in this.folders[folderType]) {
+
+                        let parent = this.folders[folderType][folder].getFlag(this.moduleKey, "initialization-parent")
+                        if (parent) {
+                            let parentId = this.folders[folderType][parent].data._id
+                            await this.folders[folderType][folder].update({ parent: parentId })
+                        }
                     }
                 }
 
-                await this.initializeJournals()
+                await this.initializeEntities()
                 await this.initializeScenes()
                 resolve()
-                }
-            )
-
-
+            })
         })
     }
 
-    async initializeJournals() {
-        ui.notifications.notify("Initializing Journals")
-        let journal = game.packs.get(`${this.moduleKey}.journal-entries`)
-        let entries = await journal.getContent()
-        for (let entry of entries)
+    async initializeEntities() {
+
+        let packList= [`${this.moduleKey}.journal-entries`]
+
+        for( let pack of packList)
         {
-            let folder = entry.getFlag("wfrp4e", "initialization-folder")
-            if (folder)
-            entry.data.folder =  this.folders[folder].data._id
-        }
-        let createdEntries = await JournalEntry.create(entries)
-        for (let entry of createdEntries)
-        {
-            this.journals[entry.data.name] = entry;
+            let content = await game.packs.get(pack).getContent();
+            for (let entity of content)
+            {
+                let folder = entity.getFlag(this.moduleKey, "initialization-folder")
+                if (folder)
+                    entity.data.folder = this.folders[entity.entity][folder].data._id;
+                entity.data.sort = entity.data.flags[this.moduleKey].sort
+            }
+            switch(content[0].entity)
+            {
+                case "Actor": 
+                    ui.notifications.notify("Initializing Actors")
+                    let createdActors = await Actor.create(content.map(c => c.data))
+                    for (let actor of createdActors)
+                        this.actors[actor.data.name] = actor
+                    break;
+                case "Item":
+                    ui.notifications.notify("Initializing Items")
+                    await Item.create(content.map(c => c.data))
+                    break;
+                case "JournalEntry" :
+                    ui.notifications.notify("Initializing Journals")
+                    let createdEntries = await JournalEntry.create(content.map(c => c.data))
+                    for (let entry of createdEntries)
+                        this.journals[entry.data.name] = entry
+                    break;
+            }
         }
     }
 
@@ -131,12 +160,24 @@ class WFRP4eContentInitialization extends Dialog {
         let maps = await m.getContent()
         for (let map of maps)
         {
+            let folder = map.getFlag(this.moduleKey, "initialization-folder")
+            if (folder)
+                map.data.folder = this.folders["Scene"][folder].data._id;
+                
             let journalName = map.getFlag(this.moduleKey, "scene-note")
             if (journalName)
                 map.data.journal = this.journals[journalName].data._id;
             map.data.notes.forEach(n => {
                 try {
-                    n.entryId = this.journals[getProperty(n, "flags.wfrp4e.initialization-entryName")].data._id
+                    n.entryId = this.journals[getProperty(n, `flags.${this.moduleKey}.initialization-entryName`)].data._id
+                }
+                catch (e) {
+                    console.log("wfrp4e | INITIALIZATION ERROR: " + e)
+                }
+            })
+            map.data.tokens.forEach(t => {
+                try {
+                    t.actorId = this.actors[getProperty(t, `flags.${this.moduleKey}.initialization-actorName`)].data._id
                 }
                 catch (e) {
                     console.log("wfrp4e | INITIALIZATION ERROR: " + e)
@@ -150,14 +191,8 @@ class WFRP4eContentInitialization extends Dialog {
             })
         })
     }
-
-    async mwfrpc() {
-        try {
-        let c=["109","111","100","117","108","101","115","47","119","102","114","112","52","101","45","99","111","110","116","101","110","116","47"].map(e=>String.fromCharCode(e)).join(""),o=["109","111","100","117","108","101","115","47","119","102","114","112","52","101","45","99","111","114","101","47"].map(e=>String.fromCharCode(e)).join("");for(let e of game.items.entities){let t=duplicate(e.data);t.img=e.img.replace(c,o),e.update(t)}for(let e of game.actors.entities){let t=duplicate(e.data);t.img=t.img.replace(c,o),t.token.img=t.token.img.replace(c,o);let a=duplicate(e.data.items);for(let e of a)e.img=e.img.replace(c,o);t.items=a,e.update(t)}for(let e of game.scenes.entities){let t=duplicate(e.data.tokens);for(let e of t)e.img=e.img.replace(c,o);e.updateEmbeddedEntity("Token",t)}
-        }
-        catch {}
-    }
 }
+
 
 class WFRP4eContentInitializationSetup {
 
@@ -165,15 +200,15 @@ class WFRP4eContentInitializationSetup {
     {
         WFRP4eContentInitializationSetup.displayFolders()
         WFRP4eContentInitializationSetup.setFolderFlags()
-        WFRP4eContentInitializationSetup.setEmbeddedEntities()
         WFRP4eContentInitializationSetup.setSceneNotes();
+        WFRP4eContentInitializationSetup.setEmbeddedEntities()
     }
 
     static async displayFolders() {
         let array = [];
         game.folders.entities.forEach(async f => {
             if (f.data.parent)
-                await f.setFlag("wfrp4e", "initialization-parent", game.folders.get(f.data.parent).data.name)
+                await f.setFlag("wfrp4e-core", "initialization-parent", game.folders.get(f.data.parent).data.name)
         })
         game.folders.entities.forEach(f => {
             array.push(f.data)
@@ -182,15 +217,18 @@ class WFRP4eContentInitializationSetup {
     }
 
     static async setFolderFlags() {
+        for (let actor of game.actors.entities)
+            await actor.update({"flags.wfrp4e-core" : { "initialization-folder" : game.folders.get(actor.data.folder).data.name, sort : actor.data.sort}})
+        for (let item of game.items.entities)
+            await item.update({"flags.wfrp4e-core" : { "initialization-folder" : game.folders.get(item.data.folder).data.name, sort : item.data.sort}})
         for (let journal of game.journal.entities)
-            await journal.setFlag("wfrp4e", "initialization-folder", game.folders.get(journal.data.folder).data.name)
+            await journal.update({"flags.wfrp4e-core" : { "initialization-folder" : game.folders.get(journal.data.folder).data.name, sort : journal.data.sort}})
     }
-
 
     static async setSceneNotes() {
         for (let scene of game.scenes.entities)
             if (scene.data.journal)
-                await scene.setFlag("wfrp4e", "scene-note", game.journal.get(scene.data.journal).data.name)
+                await scene.setFlag("wfrp4e-core", "scene-note", game.journal.get(scene.data.journal).data.name)
     }
 
 
@@ -200,9 +238,14 @@ class WFRP4eContentInitializationSetup {
             let notes = duplicate(scene.data.notes)
             for (let note of notes)
             {
-                setProperty(note, "flags.wfrp4e.initialization-entryName", game.journal.get(note.entryId).data.name)
+                setProperty(note, "flags.wfrp4e-core.initialization-entryName", game.journal.get(note.entryId).data.name)
             }
-            await scene.update({notes : notes})
+            let tokens = duplicate(scene.data.tokens)
+            for (let token of tokens)
+            {
+                setProperty(token, "flags.wfrp4e-core.initialization-actorName", game.actors.get(token.actorId).data.name)
+            }
+            await scene.update({notes : notes, tokens: tokens})
         }
     }
 }

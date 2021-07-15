@@ -308,3 +308,16 @@
 {"level":"error","timestamp":"2021-07-11 12:51:02","message":"User Crazyeyes lacks permission to update Combat mhootjByZrZYYYLk","stack":"Error: User Crazyeyes lacks permission to update Combat mhootjByZrZYYYLk\n    at Function._onUpdate (/home/crazyeyes/foundry/resources/app/dist/database/odm/document.js:1:8099)\n    at async Socket.handleEvent (/home/crazyeyes/foundry/resources/app/dist/sockets.js:1:2262)"}
 {"level":"error","timestamp":"2021-07-11 12:51:02","message":"User Terra lacks permission to update Combat mhootjByZrZYYYLk","stack":"Error: User Terra lacks permission to update Combat mhootjByZrZYYYLk\n    at Function._onUpdate (/home/crazyeyes/foundry/resources/app/dist/database/odm/document.js:1:8099)\n    at async Socket.handleEvent (/home/crazyeyes/foundry/resources/app/dist/sockets.js:1:2262)"}
 {"level":"error","timestamp":"2021-07-11 12:51:02","message":"User Josh lacks permission to update Combat mhootjByZrZYYYLk","stack":"Error: User Josh lacks permission to update Combat mhootjByZrZYYYLk\n    at Function._onUpdate (/home/crazyeyes/foundry/resources/app/dist/database/odm/document.js:1:8099)\n    at async Socket.handleEvent (/home/crazyeyes/foundry/resources/app/dist/sockets.js:1:2262)"}
+{"message":"License verification failed. Please confirm your Foundry Virtual Tabletop software license","level":"error","timestamp":"2021-07-15 15:47:57"}
+{"message":"Package wfrp4e-e4e declares an invalid language object in its manifest file","level":"error","timestamp":"2021-07-15 15:47:58"}
+{"message":"Package wfrp4e-exporter declares an invalid language object in its manifest file","level":"error","timestamp":"2021-07-15 15:47:58"}
+{"message":"Package wfrp4e-night-of-blood declares an invalid language object in its manifest file","level":"error","timestamp":"2021-07-15 15:47:58"}
+{"message":"Package wfrp4e-e4e declares an invalid language object in its manifest file","level":"error","timestamp":"2021-07-15 15:51:38"}
+{"message":"Package wfrp4e-exporter declares an invalid language object in its manifest file","level":"error","timestamp":"2021-07-15 15:51:38"}
+{"message":"Package wfrp4e-night-of-blood declares an invalid language object in its manifest file","level":"error","timestamp":"2021-07-15 15:51:38"}
+{"message":"Package wfrp4e-e4e declares an invalid language object in its manifest file","level":"error","timestamp":"2021-07-15 15:53:24"}
+{"message":"Package wfrp4e-exporter declares an invalid language object in its manifest file","level":"error","timestamp":"2021-07-15 15:53:24"}
+{"message":"Package wfrp4e-night-of-blood declares an invalid language object in its manifest file","level":"error","timestamp":"2021-07-15 15:53:24"}
+{"message":"Package wfrp4e-e4e declares an invalid language object in its manifest file","level":"error","timestamp":"2021-07-15 16:44:47"}
+{"message":"Package wfrp4e-exporter declares an invalid language object in its manifest file","level":"error","timestamp":"2021-07-15 16:44:47"}
+{"message":"Package wfrp4e-night-of-blood declares an invalid language object in its manifest file","level":"error","timestamp":"2021-07-15 16:44:47"}

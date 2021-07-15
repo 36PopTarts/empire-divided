@@ -20,6 +20,33 @@ Hooks.on("setup", () => {
         "welf": "Wood Elf",
     };
 
+    WFRP4E.subspecies = {
+        human : {
+            reiklander: {
+                name : "Reiklander",
+                skills : [
+                    "Animal Care",
+                    "Charm",
+                    "Cool",
+                    "Evaluate",
+                    "Gossip",
+                    "Haggle",
+                    "Language (Bretonnian)",
+                    "Language (Wastelander)",
+                    "Leadership",
+                    "Lore (Reikland)",
+                    "Melee (Basic)",
+                    "Ranged (Bow)"
+                ],
+                talents : [
+                    "Doomed",
+                    "Savvy, Suave",
+                    3
+                ]
+            }
+        }
+    }
+
     WFRP4E.speciesCharacteristics = {
         "human": {
             "ws": "2d10+20",
@@ -688,6 +715,276 @@ Hooks.on("setup", () => {
         }
     }
 
+    WFRP4E.symptomEffects = {
+        "blight": {
+            label: "Blight",
+            icon: "modules/wfrp4e-core/icons/diseases/disease.png",
+            transfer: true,
+            flags: {
+                wfrp4e: {
+                    "effectApplication": "actor",
+                    "effectTrigger": "invoke",
+                    "symptom" : true,
+                    "script": `
+                        let difficulty = ""
+                        if (this.effect.label.includes("Moderate"))
+                            difficulty = "easy"
+                        else if (this.effect.label.includes("Severe"))
+                            difficulty = "average"
+                        else
+                            difficulty = "veasy"
+    
+                        if (args.actor.owner)
+                        {
+                            args.actor.setupSkill("Endurance", {absolute: {difficulty}}).then(setupData => {
+                                args.actor.basicTest(setupData).then(test => 
+                                    {
+                                        if (test.result.result == "failure")
+                                            args.actor.addCondition("dead")
+                                    })
+                                })
+                        }`
+                }
+            }
+        },
+        "buboes": {
+            label: "Buboes",
+            icon: "modules/wfrp4e-core/icons/diseases/disease.png",
+            transfer: true,
+            flags: {
+                wfrp4e: {
+                    "effectApplication": "actor",
+                    "effectTrigger": "prefillDialog",
+                    "symptom": true,
+                    "script": `
+                    let applicableCharacteristics = ["ws", "bs", "s", "fel", "ag", "t", "dex"]
+                    if (args.type == "weapon")
+                        args.prefillModifiers.modifier -= 10
+                    else if (args.type == "characteristic")
+                    {
+                        if (applicableCharacteristics.includes(args.item))
+                            args.prefillModifiers.modifier -= 10
+                    }
+                    else if (args.type == "skill")
+                    {
+                        if (applicableCharacteristics.includes(args.item.data.characteristic.value))
+                            args.prefillModifiers.modifier -= 10
+                    }
+            `}
+            }
+        },
+        "convulsions": {
+            label: "Convulsions",
+            icon: "modules/wfrp4e-core/icons/diseases/disease.png",
+            transfer: true,
+            flags: {
+                wfrp4e: {
+                    "effectApplication": "actor",
+                    "effectTrigger": "prefillDialog",
+                    "symptom" : true,
+                    "script": `
+                        let modifier = 0
+                        if (this.effect.label.includes("Moderate"))
+                            modifier = -20
+                        else
+                            modifier = -10
+                        
+                        let applicableCharacteristics = ["ws", "bs", "s", "ag", "t", "dex"]
+                        if (args.type == "weapon")
+                            args.prefillModifiers.modifier += modifier
+                        else if (args.type == "characteristic")
+                        {
+                            if (applicableCharacteristics.includes(args.item))
+                                args.prefillModifiers.modifier += modifier
+                        }
+                        else if (args.type == "skill")
+                        {
+                            if (applicableCharacteristics.includes(args.item.data.characteristic.value))
+                                args.prefillModifiers.modifier += modifier
+                        }
+                    }`
+                }
+            }
+        },
+        "fever": {
+            label: "Fever",
+            icon: "modules/wfrp4e-core/icons/diseases/disease.png",
+            transfer: true,
+            flags: {
+                wfrp4e: {
+                    "effectApplication": "actor",
+                    "effectTrigger": "prefillDialog",
+                    "symptom" : true,
+                    "script": `
+                       
+                    let applicableCharacteristics = ["ws", "bs", "s", "fel", "ag", "t", "dex"]
+    
+                    if (args.type == "weapon")
+                        args.prefillModifiers.modifier -= 10
+                    else if (args.type == "characteristic")
+                    {
+                        if (applicableCharacteristics.includes(args.item))
+                            args.prefillModifiers.modifier -= 10
+                    }
+                    else if (args.type == "skill")
+                    {
+                        if (applicableCharacteristics.includes(args.item.data.characteristic.value))
+                            args.prefillModifiers.modifier -= 10
+                    }`,
+                    "otherEffects" : ["blight", "wounded"]
+                }
+            }
+        },
+        "flux": {
+            label: "Flux",
+            icon: "modules/wfrp4e-core/icons/diseases/disease.png",
+            transfer: true,
+            flags: {
+                wfrp4e: {
+                    "symptom" : true
+                }
+            }
+        },
+        "lingering": {
+            label: "Lingering",
+            icon: "modules/wfrp4e-core/icons/diseases/disease.png",
+            transfer: true,
+            flags: {
+                wfrp4e: {
+                    "symptom" : true
+                }
+            }
+        },
+        "coughsAndSneezes": {
+            label: "Coughs and Sneezes",
+            icon: "modules/wfrp4e-core/icons/diseases/disease.png",
+            transfer: true,
+            flags: {
+                wfrp4e: {
+                    "symptom" : true
+                }
+            }
+        },
+        "gangrene": {
+            label: "Gangrene",
+            icon: "modules/wfrp4e-core/icons/diseases/disease.png",
+            transfer: true,
+            flags: {
+                wfrp4e: {
+                    "effectApplication": "actor",
+                    "effectTrigger": "prefillDialog",
+                    "symptom" : true,
+                    "script": `
+                        if (args.type == "characteristic" && args.item == "fel")
+                        {
+                            if (args.item == "fel")
+                                args.prefillModifiers.modifier -= 10
+                        }
+                        else if (args.type == "skill")
+                        {
+                            if (args.item.data.characteristic.value == "fel")
+                                args.prefillModifiers.modifier -= 10
+                        }
+                    }`
+                }
+            }
+        },
+        "malaise": {
+            label: "Malaise",
+            icon: "modules/wfrp4e-core/icons/diseases/disease.png",
+            transfer: true,
+            flags: {
+                wfrp4e: {
+                    "effectApplication": "actor",
+                    "effectTrigger": "prepareData",
+                    "symptom" : true,
+                    "script": `
+                    if (game.user.isUniqueGM)
+                    {
+                        let fatigued = args.actor.hasCondition("fatigued")
+                        if (!fatigued)
+                        {
+                            args.actor.addCondition("fatigued")
+                            ui.notifications.notify("Fatigued added to " + args.actor.name + " which cannot be removed until the Malaise symptom is gone.")
+                        }
+                    }
+                    `
+                }
+            }
+        },
+        "nausea": {
+            label: "Nausea",
+            icon: "modules/wfrp4e-core/icons/diseases/disease.png",
+            transfer: true,
+            flags: {
+                wfrp4e: {
+                    "effectApplication": "actor",
+                    "effectTrigger": "rollTest",
+                    "symptom" : true,
+                    "script": `
+                    if (this.actor.owner && args.result.result == "failure")
+                    {
+                        let applicableCharacteristics = ["ws", "bs", "s", "fel", "ag", "t", "dex"]
+                        if (applicableCharacteristics.includes(args.result.characteristic))
+                            this.actor.addCondition("stunned")
+                        else if (args.result.skill && applicableCharacteristics.includes(args.result.skill.data.characteristic.value))
+                            this.actor.addCondition("stunned")
+                        else if (args.result.weapon)
+                            this.actor.addCondition("stunned")
+    
+                    }
+                    `
+                }
+            }
+        },
+        "pox": {
+            label: "Pox",
+            icon: "modules/wfrp4e-core/icons/diseases/disease.png",
+            transfer: true,
+            flags: {
+                wfrp4e: {
+                    "effectApplication": "actor",
+                    "effectTrigger": "prefillDialog",
+                    "symptom" : true,
+                    "script": `
+                       
+                        if (args.type == "characteristic" && args.item == "fel")
+                                args.prefillModifiers.modifier -= 10
+                        else if (args.type == "skill")
+                        {
+                            if (args.item.data.characteristic.value == "fel")
+                                args.prefillModifiers.modifier -= 10
+                        }`
+                }
+            }
+        },
+        "wounded": {
+            label: "Wounded",
+            icon: "modules/wfrp4e-core/icons/diseases/disease.png",
+            transfer: true,
+            flags: {
+                wfrp4e: {
+                    "effectApplication": "actor",
+                    "effectTrigger": "invoke",
+                    "symptom" : true,
+                    "script": `
+                        if (args.actor.owner)
+                        {
+                            args.actor.setupSkill("Endurance", {absolute: {difficulty : "average"}}).then(setupData => {
+                                args.actor.basicTest(setupData).then(test => 
+                                    {
+                                        if (test.result.result == "failure")
+                                            fromUuid("Compendium.wfrp4e-core.diseases.kKccDTGzWzSXCBOb").then(disease => {
+                                                args.actor.createEmbeddedEntity("OwnedItem", disease.data)
+                                            })
+                                    })
+                                })
+                        }`
+                }
+            }
+        }
+    }
+
     for (let obj in WFRP4E) {
         for (let el in WFRP4E[obj]) {
             if (typeof WFRP4E[obj][el] === "string") {
@@ -734,13 +1031,11 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
 
 
 async function createCareerJournals() {
-    let eisitems = await game.packs.get("wfrp4e-eis.eisitems").getContent()
-    let careers = await game.packs.get("wfrp4e-core.careers").getContent()
+    let careers = game.items.entities.filter(i => i.data.type=="career")
     let skills = await game.packs.get("wfrp4e-core.skills").getContent()
     let talents = await game.packs.get("wfrp4e-core.talents").getContent()
 
-    careers = eisitems.filter(i => i.data.type == "career")
-    talents = talents.concat(eisitems.filter(i => i.data.type == "talent"))
+    talents = talents.concat(game.items.entities.filter(i => i.data.type == "talent"))
 
     let careerMap = {}
     careers.forEach(career => {
@@ -888,7 +1183,7 @@ function createLink(itemName, list, type) {
     else
         item = list.find(i => i.data.name == itemName)
 
-    let id = item.data._id
+    let id = item?.data?._id
 
     return `@Compendium[wfrp4e-core.${type}.${id}]{${itemName}}`
 }
