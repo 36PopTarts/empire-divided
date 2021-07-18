@@ -1,10 +1,12 @@
 {
   "name": "Random Career",
-  "columns": ["human", "dwarf", "halfling", "helf", "welf"],
+  "columns": ["human-reiklander", "dwarf", "halfling", "helf", "welf"],
+  "die" : "1d100",
   "extend" : true,
   "rows": [
     {
       "range":{
+        "human-reiklander" : [1, 1],
         "human" : [1, 1],
         "dwarf" : [1, 1],
         "halfling" : [1, 1],
@@ -15,6 +17,7 @@
     },
     {
       "range":{
+        "human-reiklander" : [2, 2],
         "human" : [2, 2],
         "dwarf" : [2, 4],
         "halfling" : [2, 2],
@@ -24,6 +27,7 @@
       "name": "Engineer"
     },    {
       "range":{
+        "human-reiklander" : [3, 3],
         "human" : [3, 3],
         "dwarf" : [5, 6],
         "halfling" : [3, 4],
@@ -33,6 +37,7 @@
       "name": "Lawyer"
     },    {
       "range":{
+        "human-reiklander" : [4, 5],
         "human" : [4, 5],
         "dwarf" : [],
         "halfling" : [],
@@ -42,6 +47,7 @@
       "name": "Nun"
     },    {
       "range":{
+        "human-reiklander" : [6, 6],
         "human" : [6, 6],
         "dwarf" : [7, 7],
         "halfling" : [5, 6],
@@ -51,6 +57,7 @@
       "name": "Physician"
     },    {
       "range":{
+        "human-reiklander" : [7, 11],
         "human" : [7, 11],
         "dwarf" : [],
         "halfling" : [],
@@ -60,6 +67,7 @@
       "name": "Priest"
     },    {
       "range":{
+        "human-reiklander" : [12, 13],
         "human" : [12, 13],
         "dwarf" : [8, 9],
         "halfling" : [7, 8],
@@ -69,6 +77,7 @@
       "name": "Scholar"
     },    {
       "range":{
+        "human-reiklander" : [14, 14],
         "human" : [14, 14],
         "dwarf" : [],
         "halfling" : [],
@@ -78,6 +87,7 @@
       "name": "Wizard"
     },    {
       "range":{
+        "human-reiklander" : [15, 15],
         "human" : [15, 15],
         "dwarf" : [10, 11],
         "halfling" : [9, 10],
@@ -87,6 +97,7 @@
       "name": "Agitator"
     },    {
       "range":{
+        "human-reiklander" : [16, 17],
         "human" : [16, 17],
         "dwarf" : [12, 17],
         "halfling" : [11, 15],
@@ -96,8 +107,9 @@
       "name": "Artisan"
     },    {
       "range":{
+        "human-reiklander" : [18, 19],
         "human" : [18, 19],
-        "dwarf" : [18],
+        "dwarf" : [18, 18],
         "halfling" : [16, 19],
         "helf" : [],
         "welf" : []
@@ -105,6 +117,7 @@
       "name": "Beggar"
     },    {
       "range":{
+        "human-reiklander" : [20, 20],
         "human" : [20, 20],
         "dwarf" : [19, 20],
         "halfling" : [20, 21],
@@ -114,6 +127,7 @@
       "name": "Investigator"
     },    {
       "range":{
+        "human-reiklander" : [21, 21],
         "human" : [21, 21],
         "dwarf" : [21, 24],
         "halfling" : [22, 25],
@@ -123,6 +137,7 @@
       "name": "Merchant"
     },    {
       "range":{
+        "human-reiklander" : [22, 23],
         "human" : [22, 23],
         "dwarf" : [25, 25],
         "halfling" : [26, 28],
@@ -132,6 +147,7 @@
       "name": "Rat Catcher"
     },    {
       "range":{
+        "human-reiklander" : [24, 26],
         "human" : [24, 26],
         "dwarf" : [26, 31],
         "halfling" : [29, 31],
@@ -141,6 +157,7 @@
       "name": "Townsman"
     },    {
       "range":{
+        "human-reiklander" : [27, 27],
         "human" : [27, 27],
         "dwarf" : [32, 34],
         "halfling" : [32, 33],
@@ -150,6 +167,7 @@
       "name": "Watchman"
     },    {
       "range":{
+        "human-reiklander" : [28, 28],
         "human" : [28, 28],
         "dwarf" : [35, 36],
         "halfling" : [34, 34],
@@ -159,6 +177,7 @@
       "name": "Advisor"
     },    {
       "range":{
+        "human-reiklander" : [29, 29],
         "human" : [29, 29],
         "dwarf" : [37, 37],
         "halfling" : [35, 36],
@@ -168,6 +187,7 @@
       "name": "Artist"
     },    {
       "range":{
+        "human-reiklander" : [30, 30],
         "human" : [30, 30],
         "dwarf" : [38, 38],
         "halfling" : [],
@@ -177,6 +197,7 @@
       "name": "Duellist"
     },    {
       "range":{
+        "human-reiklander" : [31, 31],
         "human" : [31, 31],
         "dwarf" : [39, 40],
         "halfling" : [37, 37],
@@ -186,6 +207,7 @@
       "name": "Envoy"
     },    {
       "range":{
+        "human-reiklander" : [32, 32],
         "human" : [32, 32],
         "dwarf" : [41, 41],
         "halfling" : [],
@@ -196,6 +218,7 @@
     },
     {
       "range":{
+        "human-reiklander" : [33, 35],
         "human" : [33, 35],
         "dwarf" : [42, 42],
         "halfling" : [38, 43],
@@ -205,6 +228,7 @@
       "name": "Servant"
     },{
       "range":{
+        "human-reiklander" : [36, 36],
         "human" : [36, 36],
         "dwarf" : [43, 43],
         "halfling" : [44, 44],
@@ -214,6 +238,7 @@
       "name": "Spy"
     },{
       "range":{
+        "human-reiklander" : [37, 37],
         "human" : [37, 37],
         "dwarf" : [44, 45],
         "halfling" : [45, 46],
@@ -223,6 +248,7 @@
       "name": "Warden"
     },{
       "range":{
+        "human-reiklander" : [38, 38],
         "human" : [38, 38],
         "dwarf" : [46, 47],
         "halfling" : [47, 47],
@@ -232,6 +258,7 @@
       "name": "Bailiff"
     },{
       "range":{
+        "human-reiklander" : [39, 39],
         "human" : [39, 39],
         "dwarf" : [],
         "halfling" : [],
@@ -241,6 +268,7 @@
       "name": "Hedge Witch"
     },{
       "range":{
+        "human-reiklander" : [40, 40],
         "human" : [40, 40],
         "dwarf" : [],
         "halfling" : [48, 50],
@@ -250,6 +278,7 @@
       "name": "Herbalist"
     },{
       "range":{
+        "human-reiklander" : [41, 42],
         "human" : [41, 42],
         "dwarf" : [48, 49],
         "halfling" : [51, 52],
@@ -259,6 +288,7 @@
       "name": "Hunter"
     },{
       "range":{
+        "human-reiklander" : [43, 43],
         "human" : [43, 43],
         "dwarf" : [50, 54],
         "halfling" : [53, 53],
@@ -268,6 +298,7 @@
       "name": "Miner"
     },{
       "range":{
+        "human-reiklander" : [44, 44],
         "human" : [44, 44],
         "dwarf" : [],
         "halfling" : [],
@@ -277,6 +308,7 @@
       "name": "Mystic"
     },{
       "range":{
+        "human-reiklander" : [45, 45],
         "human" : [45, 45],
         "dwarf" : [55, 55],
         "halfling" : [54, 54],
@@ -286,6 +318,7 @@
       "name": "Scout"
     },{
       "range":{
+        "human-reiklander" : [46, 50],
         "human" : [46, 50],
         "dwarf" : [56, 56],
         "halfling" : [55, 57],
@@ -295,6 +328,7 @@
       "name": "Villager"
     },{
       "range":{
+        "human-reiklander" : [51, 51],
         "human" : [51, 51],
         "dwarf" : [57, 60],
         "halfling" : [58, 58],
@@ -304,6 +338,7 @@
       "name": "Bounty Hunter"
     },{
       "range":{
+        "human-reiklander" : [52, 52],
         "human" : [52, 52],
         "dwarf" : [61, 61],
         "halfling" : [59, 60],
@@ -313,6 +348,7 @@
       "name": "Coachman"
     },{
       "range":{
+        "human-reiklander" : [53, 54],
         "human" : [53, 54],
         "dwarf" : [62, 63],
         "halfling" : [61, 63],
@@ -322,6 +358,7 @@
       "name": "Entertainer"
     },{
       "range":{
+        "human-reiklander" : [55, 56],
         "human" : [55, 56],
         "dwarf" : [],
         "halfling" : [],
@@ -331,6 +368,7 @@
       "name": "Flagellant"
     },{
       "range":{
+        "human-reiklander" : [57, 57],
         "human" : [57, 57],
         "dwarf" : [64, 65],
         "halfling" : [64, 65],
@@ -340,6 +378,7 @@
       "name": "Messenger"
     },{
       "range":{
+        "human-reiklander" : [58, 58],
         "human" : [58, 58],
         "dwarf" : [66, 67],
         "halfling" : [66, 67],
@@ -349,6 +388,7 @@
       "name": "Pedlar"
     },{
       "range":{
+        "human-reiklander" : [59, 59],
         "human" : [59, 59],
         "dwarf" : [],
         "halfling" : [68, 68],
@@ -358,6 +398,7 @@
       "name": "Road warden"
     },{
       "range":{
+        "human-reiklander" : [60, 60],
         "human" : [60, 60],
         "dwarf" : [],
         "halfling" : [],
@@ -367,6 +408,7 @@
       "name": "Witch Hunter"
     },{
       "range":{
+        "human-reiklander" : [61, 62],
         "human" : [61, 62],
         "dwarf" : [68, 69],
         "halfling" : [69, 69],
@@ -376,6 +418,7 @@
       "name": "Boatman"
     },{
       "range":{
+        "human-reiklander" : [63, 63],
         "human" : [63, 63],
         "dwarf" : [70, 70],
         "halfling" : [70, 70],
@@ -385,6 +428,7 @@
       "name": "Huffer"
     },{
       "range":{
+        "human-reiklander" : [64, 65],
         "human" : [64, 65],
         "dwarf" : [],
         "halfling" : [71, 71],
@@ -394,6 +438,7 @@
       "name": "Riverwarden"
     },{
       "range":{
+        "human-reiklander" : [66, 68],
         "human" : [66, 68],
         "dwarf" : [71, 72],
         "halfling" : [72, 74],
@@ -403,6 +448,7 @@
       "name": "Riverwoman"
     },{
       "range":{
+        "human-reiklander" : [69, 70],
         "human" : [69, 70],
         "dwarf" : [73, 73],
         "halfling" : [75, 75],
@@ -412,6 +458,7 @@
       "name": "Seaman"
     },{
       "range":{
+        "human-reiklander" : [71, 71],
         "human" : [71, 71],
         "dwarf" : [74, 75],
         "halfling" : [76, 79],
@@ -421,6 +468,7 @@
       "name": "Smuggler"
     },{
       "range":{
+        "human-reiklander" : [72, 73],
         "human" : [72, 73],
         "dwarf" : [76, 77],
         "halfling" : [80, 82],
@@ -430,6 +478,7 @@
       "name": "Stevedore"
     },{
       "range":{
+        "human-reiklander" : [74, 74],
         "human" : [74, 74],
         "dwarf" : [78, 78],
         "halfling" : [],
@@ -439,6 +488,7 @@
       "name": "Wrecker"
     },{
       "range":{
+        "human-reiklander" : [75, 76],
         "human" : [75, 76],
         "dwarf" : [],
         "halfling" : [83, 85],
@@ -448,6 +498,7 @@
       "name": "Bawd"
     },{
       "range":{
+        "human-reiklander" : [77, 77],
         "human" : [77, 77],
         "dwarf" : [],
         "halfling" : [86, 86],
@@ -457,6 +508,7 @@
       "name": "Charlatan"
     },{
       "range":{
+        "human-reiklander" : [78, 78],
         "human" : [78, 78],
         "dwarf" : [79, 79],
         "halfling" : [87, 87],
@@ -466,6 +518,7 @@
       "name": "Fence"
     },{
       "range":{
+        "human-reiklander" : [79, 79],
         "human" : [79, 79],
         "dwarf" : [],
         "halfling" : [88, 88],
@@ -475,6 +528,7 @@
       "name": "Grave Robber"
     },{
       "range":{
+        "human-reiklander" : [80, 83],
         "human" : [80, 83],
         "dwarf" : [80, 82],
         "halfling" : [89, 89],
@@ -484,6 +538,7 @@
       "name": "Outlaw"
     },{
       "range":{
+        "human-reiklander" : [84, 84],
         "human" : [84, 84],
         "dwarf" : [83, 83],
         "halfling" : [90, 90],
@@ -493,6 +548,7 @@
       "name": "Racketeer"
     },{
       "range":{
+        "human-reiklander" : [85, 87],
         "human" : [85, 87],
         "dwarf" : [84, 84],
         "halfling" : [91, 94],
@@ -502,6 +558,7 @@
       "name": "Thief"
     },{
       "range":{
+        "human-reiklander" : [88, 88],
         "human" : [88, 88],
         "dwarf" : [],
         "halfling" : [],
@@ -511,6 +568,7 @@
       "name": "Witch"
     },{
       "range":{
+        "human-reiklander" : [89, 90],
         "human" : [89, 90],
         "dwarf" : [],
         "halfling" : [],
@@ -521,6 +579,7 @@
     },
     {
       "range":{
+        "human-reiklander" : [91, 92],
         "human" : [91, 92],
         "dwarf" : [85, 87],
         "halfling" : [95, 96],
@@ -530,6 +589,7 @@
       "name": "Guard"
     },{
       "range":{
+        "human-reiklander" : [93, 93],
         "human" : [93, 93],
         "dwarf" : [],
         "halfling" : [],
@@ -539,6 +599,7 @@
       "name": "Knight"
     },{
       "range":{
+        "human-reiklander" : [94, 94],
         "human" : [94, 94],
         "dwarf" : [88, 90],
         "halfling" : [97, 97],
@@ -548,6 +609,7 @@
       "name": "Pit Fighter"
     },{
       "range":{
+        "human-reiklander" : [95, 95],
         "human" : [95, 95],
         "dwarf" : [91, 93],
         "halfling" : [],
@@ -557,6 +619,7 @@
       "name": "Protagonist"
     },{
       "range":{
+        "human-reiklander" : [96, 99],
         "human" : [96, 99],
         "dwarf" : [94, 96],
         "halfling" : [98, 100],
@@ -566,6 +629,7 @@
       "name": "Soldier"
     },{
       "range":{
+        "human-reiklander" : [],
         "human" : [],
         "dwarf" : [97, 100],
         "halfling" : [],
@@ -575,6 +639,7 @@
       "name": "Slayer"
     },{
       "range":{
+        "human-reiklander" : [100, 100],
         "human" : [100, 100],
         "dwarf" : [],
         "halfling" : [],

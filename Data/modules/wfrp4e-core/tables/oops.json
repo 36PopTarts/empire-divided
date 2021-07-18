@@ -8,7 +8,7 @@
     "description": "You catch a part of your anatomy — lose 1 Wound, ignoring Toughness Bonus or Armour Points.",
     "range": [21, 40]
   }, {
-    "description": "Your melee weapon jars badly, or ranged weapon malfunctions or slightly breaks - your weapon suffers 1 Damage. Next round, you will act last regardless of Initiative order, Talents, or special rules as you recover (see page 156).",
+    "description": "Your melee weapon jars badly, or ranged weapon malfunctions or slightly breaks - your weapon suffers 1 Damage. Next round, you will act last regardless of Initiative order, Talents, or special rules as you recover.",
     "range": [41, 60]
   }, {
     "description": "You stumble badly, finding it hard to right yourself. Lose your next Move.",

@@ -1,6 +1,7 @@
 {
     "name": "How Do I Know You Again?",
     "die": "1d100",
+    "hide": true,
     "rows": [
         {
             "description": "We both served time in one of the Empire’s illustrious prisons.",

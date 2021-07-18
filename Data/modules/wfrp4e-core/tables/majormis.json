@@ -71,7 +71,7 @@
     "range": [81, 85]
   }, {
     "name": "Hellish Stench",
-    "description": "You now smell really bad! You gain the Distracting Creature Trait (see page 339), and probably the enmity of anyone with a sense of smell. This lasts for [[1d10]] hours.",
+    "description": "You now smell really bad! You gain the @Compendium[wfrp4e-core.traits.MVI0lXcg6vvtooAF]{Distracting} Creature Trait, and probably the enmity of anyone with a sense of smell. This lasts for [[1d10]] hours.",
     "range": [86, 90]
   }, {
     "name": "Power Drain",

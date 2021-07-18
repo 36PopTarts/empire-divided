@@ -99,7 +99,7 @@
     "range": [116, 120]
   }, {
     "name": "Behold Your Wickedness",
-    "description": "You suffer excruciating visions of all your failures, which seem to take an eternity, but are over in a moment. Discuss with your GM to build a custom Psychology (see page 190) to reflect your character dealing with the traumatic experience.",
+    "description": "You suffer excruciating visions of all your failures, which seem to take an eternity, but are over in a moment. Discuss with your GM to build a custom Psychology (see @JournalEntry[Psychology]) to reflect your character dealing with the traumatic experience.",
     "range": [121, 125]
   }, {
     "name": "Thunderbolts and Lightning",

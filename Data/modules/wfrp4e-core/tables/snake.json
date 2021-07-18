@@ -1,5 +1,5 @@
 {
-  "name": "Hit Location",
+  "name": "Hit Location - Snake",
   "die": "1d100",
   "hide": true,
   "rows": [{

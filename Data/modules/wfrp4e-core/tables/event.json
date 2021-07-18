@@ -1,9 +1,10 @@
 {
   "name": "Events Table",
   "die": "1d100",
+  "hide": true,
   "rows": [{
     "name": "Accused Ally",
-    "description": "One of your allies (GM's choice) is implicated in a terrible crime. A character with a Law Guild Licence can spend an Endeavour to free the ally with a successful Average (+20) Lore (Law) test. Otherwise, 3 Endeavours spent by the party will exonerate their ally (or, if guilty, manufacture an alibi). If the ally is freed, gain a Major Favour (see Do Me a Favour Endeavour on page 198) for future use. If not, their ally hangs!",
+    "description": "One of your allies (GM's choice) is implicated in a terrible crime. A character with a Law Guild Licence can spend an Endeavour to free the ally with a successful Average (+20) Lore (Law) test. Otherwise, 3 Endeavours spent by the party will exonerate their ally (or, if guilty, manufacture an alibi). If the ally is freed, gain a Major Favour (see @JournalEntry[Do Me a Favor!]{Do Me a Favour Endeavour}) for future use. If not, their ally hangs!",
     "range": [1, 3]
   }, {
     "name": "Arcane Auction",
@@ -59,7 +60,7 @@
     "range": [49, 52]
   }, {
     "name": "Malicious Malady",
-    "description": "The Bloody Flux sweeps through town. Make an Easy (+40) Toughness Test. On a success, the Flux passes by. On a failure, you and the Washers Guild are soon to know each other very well. Contract the Bloody Flux see page 186.",
+    "description": "The Bloody Flux sweeps through town. Make an Easy (+40) Toughness Test. On a success, the Flux passes by. On a failure, you and the Washers Guild are soon to know each other very well. Contract the @Compendium[wfrp4e-core.diseases.herUmN51D9TiL2Vn]{The Bloody Flux}.",
     "range": [53, 56]
   }, {
     "name": "Montrous Complications",
@@ -99,7 +100,7 @@
     "range": [77, 79]
   }, {
     "name": "Riots",
-    "description": "The common folk are furious at the high and mighty! Characters of the Courtier Class cannot take the Income Endeavour as, no matter how many bodyguards they hire, it isn't even vaguely safe for them to be abroad on business. Further, any deposits at reputable banks (see page 196) must immediately check to see if the violence and disruption has caused their bank to go out of business. However, players attempting a Foment Dissent Endeavour receive +10 bonus to all related Tests.",
+    "description": "The common folk are furious at the high and mighty! Characters of the Courtier Class cannot take the Income Endeavour as, no matter how many bodyguards they hire, it isn't even vaguely safe for them to be abroad on business. Further, any deposits at reputable banks (see @JournalEntry[Banking]) must immediately check to see if the violence and disruption has caused their bank to go out of business. However, players attempting a Foment Dissent Endeavour receive +10 bonus to all related Tests.",
     "range": [80, 82]
   }, {
     "name": "Sticky Fingers",

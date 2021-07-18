@@ -1,5 +1,6 @@
 {
   "name": "Travel Table",
+  "hide" : true,
   "die": "1d10",
   "rows": [{
     "name": "Even Nature Hates You!",
