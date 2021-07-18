@@ -1,0 +1,6 @@
+{
+  "KEYBINDLIB.ResetKeybind": "Reset keybind",
+  "KEYBINDLIB.ConflictsWith": "Conflicts with: {conflicts}",
+  "KEYBINDLIB.MenuName": "Customize module keybinds",
+  "KEYBINDLIB.MenuLabel": "Edit keybinds"
+}

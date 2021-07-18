@@ -1,0 +1,20 @@
+{
+  "name": "keybind-lib",
+  "title": "Keybind Lib",
+  "description": "",
+  "version": "0.3.2",
+  "author": "Sunspots",
+  "esmodules": ["keybind-lib.js"],
+  "styles": ["./keybind-lib.css"],
+  "packs": [],
+  "languages": [{"lang": "en", "name": "English", "path": "lang/en.json"}],
+  "minimumCoreVersion": "0.7.5",
+  "compatibleCoreVersion": "0.8.6",
+  "url": "https://gitlab.com/fvtt-modules-lab/keybind-lib",
+  "manifest": "https://gitlab.com/fvtt-modules-lab/keybind-lib/-/jobs/artifacts/master/raw/module.json?job=build-release",
+  "download": "https://gitlab.com/fvtt-modules-lab/keybind-lib/-/jobs/artifacts/v0.3.2/raw/keybind-lib-v0.3.2.zip?job=build-release",
+  "license": "MIT",
+  "readme": "https://gitlab.com/fvtt-modules-lab/keybind-lib",
+  "bugs": "https://gitlab.com/fvtt-modules-lab/keybind-lib/-/issues",
+  "changelog": "https://gitlab.com/fvtt-modules-lab/keybind-lib/-/blob/master/CHANGELOG.md"
+}

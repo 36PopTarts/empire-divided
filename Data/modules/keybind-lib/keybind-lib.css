@@ -1,0 +1,72 @@
+#keybind-configurator .form-group {
+  padding: 5px;
+  border-bottom: 1px solid #7a7971;
+  min-height: 52px;
+  align-items: baseline;
+}
+
+#keybind-configurator .form-group:last-child {
+  border-bottom: none;
+}
+
+#keybind-configurator label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#keybind-configurator .bind-list {
+  flex-grow: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#keybind-configurator form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#keybind-configurator .form-group .fa-undo {
+  flex-grow: 0;
+  flex-basis: 20px;
+  visibility: hidden;
+}
+
+#keybind-configurator .form-group:hover .fa-undo {
+  visibility: visible;
+}
+
+#keybind-configurator input {
+  margin: 0 3px 0 0;
+}
+
+.keybind-lib-settings-icon {
+  margin-left: -26px !important;
+  margin-right: 3px !important;
+  pointer-events: none;
+  flex-grow: 0 !important;
+  font-size: 130%;
+}
+
+input.keybind-conflict {
+  border-color: #f4511e;
+  border-width: 2px;
+}
+
+.keybind-fields {
+  position: relative;
+}
+
+form .hint.conflict-info {
+  text-align: end;
+  color: #f4511e;
+  position: absolute;
+  right: 5px;
+  top: 24px;
+  pointer-events: none;
+  background: #dcdace;
+  border-radius: 2px;
+  padding: 1px 6px;
+  border: 1px solid #f4511e;
+}

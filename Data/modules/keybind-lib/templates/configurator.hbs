@@ -1,0 +1,30 @@
+<form action="#">
+  <div class="bind-list">
+    {{#each modules}}
+    <h2>{{title}}</h2>
+    {{#each binds}}
+    <div class="form-group">
+      <label class="title" for="{{../name}}.{{bindName}}">
+        {{localize title}}
+      </label>
+      <div class="form-fields keybind-fields">
+        <i class="fas fa-undo" data-bind="{{../name}}.{{bindName}}" title="{{localize 'KEYBINDLIB.ResetKeybind'}}"></i>
+        <input type="text" class="keybind-input" name="{{../name}}.{{bindName}}" id="{{../name}}.{{bindName}}"
+          value="{{key}}" readonly>
+
+        <i class="far fa-keyboard keybind-lib-settings-icon"></i>
+      </div>
+
+      {{#if hint}}
+      <p class="hint">{{localize hint}}</p>
+      {{/if}}
+    </div>
+    {{/each}}
+    {{/each}}
+  </div>
+
+  <footer class="sheet-footer flexrow">
+    <button type="submit" name="submit"><i class="fas fa-save"></i> {{localize 'SETTINGS.Save'}}</button>
+    <button type="button" name="reset"><i class="fas fa-undo"></i> {{localize 'SETTINGS.Reset'}}</button>
+  </footer>
+</form>
