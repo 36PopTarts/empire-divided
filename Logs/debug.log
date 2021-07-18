@@ -11159,3 +11159,32 @@
 {"message":"Created Token MJ0EM88cNZyBiRyr in parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-07-18 03:18:16"}
 {"message":"Shutting down Foundry Virtual Tabletop server","level":"info","timestamp":"2021-07-18 03:20:20"}
 {"message":"Shut-down success. Goodbye!","level":"info","timestamp":"2021-07-18 03:20:20"}
+{"message":"Foundry Virtual Tabletop - Version 0.7.9","level":"info","timestamp":"2021-07-18 11:11:46"}
+{"message":"Running on Node.js - Version 12.14.1","level":"info","timestamp":"2021-07-18 11:11:46"}
+{"message":"Loading data from user directory - /home/crazyeyes/.local/share/FoundryVTT","level":"info","timestamp":"2021-07-18 11:11:46"}
+{"message":"Application Options:\n{\n  \"port\": 30000,\n  \"upnp\": true,\n  \"fullscreen\": false,\n  \"hostname\": null,\n  \"routePrefix\": null,\n  \"sslCert\": null,\n  \"sslKey\": null,\n  \"awsConfig\": null,\n  \"dataPath\": \"/home/crazyeyes/.local/share/FoundryVTT\",\n  \"proxySSL\": false,\n  \"proxyPort\": null,\n  \"minifyStaticFiles\": false,\n  \"updateChannel\": \"release\",\n  \"language\": \"en.core\",\n  \"world\": null,\n  \"serviceConfig\": null,\n  \"isElectron\": true,\n  \"isNode\": false,\n  \"isSSL\": false,\n  \"demo\": false,\n  \"noupdate\": false\n}","level":"info","timestamp":"2021-07-18 11:11:46"}
+{"message":"License verification succeeded","level":"info","timestamp":"2021-07-18 11:11:46"}
+{"message":"Requesting UPnP port forwarding to destination 30000","level":"info","timestamp":"2021-07-18 11:11:46"}
+{"message":"Server started and listening on port 30000","level":"info","timestamp":"2021-07-18 11:11:46"}
+{"message":"Loading http://localhost:30000/ in Electron window","level":"info","timestamp":"2021-07-18 11:11:46"}
+{"message":"Created client session jqwiyrpa7y7izx14v6p2zrle","level":"info","timestamp":"2021-07-18 11:11:46"}
+{"message":"Invalid signature for protected package wfrp4e-core","level":"warn","timestamp":"2021-07-18 11:11:47"}
+{"message":"Package wfrp4e-e4e declares an invalid language object in its manifest file","level":"error","timestamp":"2021-07-18 11:11:47"}
+{"message":"Package wfrp4e-exporter declares an invalid language object in its manifest file","level":"error","timestamp":"2021-07-18 11:11:47"}
+{"message":"Package wfrp4e-night-of-blood declares an invalid language object in its manifest file","level":"error","timestamp":"2021-07-18 11:11:47"}
+{"message":"Core software stable update 0.7.10 is now available!","level":"info","timestamp":"2021-07-18 11:11:47"}
+{"message":"User authentication successful for user Crazyeyes","level":"info","timestamp":"2021-07-18 11:11:59"}
+{"message":"Vending world data to User 0ASvjGC88ifVZG73","level":"info","timestamp":"2021-07-18 11:12:00"}
+{"message":"Created client session py1o947lgeawjl7wgj2ie5y6","level":"info","timestamp":"2021-07-18 11:12:10"}
+{"message":"User authentication successful for user Ursca","level":"info","timestamp":"2021-07-18 11:12:23"}
+{"message":"Vending world data to User hNHeJbKl47AOkoOO","level":"info","timestamp":"2021-07-18 11:12:31"}
+{"message":"Deleted 12 Tokens from parent Scene Wev7J6t0FV2XALUl","level":"info","timestamp":"2021-07-18 11:12:42"}
+{"message":"Created 12 Tokens in parent Scene Wev7J6t0FV2XALUl","level":"info","timestamp":"2021-07-18 11:12:42"}
+{"message":"Deleted 4 Tokens [OUcDJMymve6NdZxk,jBX5IA956X3KZ7Dz,KX7WpFL2RQTbUcpT,nCmAdphQHzRywAwj] from parent Scene qYiwQuHGQUZsbXBs","level":"info","timestamp":"2021-07-18 11:12:43"}
+{"message":"Created 4 Tokens [X8rtNcsH1RoykiMQ,SX6R2wMmYyZ4wKNx,Y0PWPM884rbxluf2,sSLaaR0foUReU1yL] in parent Scene qYiwQuHGQUZsbXBs","level":"info","timestamp":"2021-07-18 11:12:43"}
+{"message":"Deleted 3 Tokens [orezAL9zLDdvB7Wt,JjUCcZ5WGZSDfPSq,uAVpkjY2dUtmQkzE] from parent Scene NwDQfNrlp9nwBTkv","level":"info","timestamp":"2021-07-18 11:12:43"}
+{"message":"Created 3 Tokens [HfJFkxYH3WKjex4k,Vn7p2qGzjPflZnzs,z4haGY1faCTz5Ld3] in parent Scene NwDQfNrlp9nwBTkv","level":"info","timestamp":"2021-07-18 11:12:43"}
+{"message":"Deleted Token MJ0EM88cNZyBiRyr from parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-07-18 11:12:43"}
+{"message":"Created Token lj5AjSyHqrmkfms6 in parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-07-18 11:12:44"}
+{"message":"Shutting down Foundry Virtual Tabletop server","level":"info","timestamp":"2021-07-18 11:17:55"}
+{"message":"Shut-down success. Goodbye!","level":"info","timestamp":"2021-07-18 11:17:55"}
