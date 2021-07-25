@@ -12583,3 +12583,29 @@
 {"message":"Created client session jn4ox1oef3aj1vnuy476b8h0","level":"info","timestamp":"2021-07-22 00:22:18"}
 {"message":"Shutting down Foundry Virtual Tabletop server","level":"info","timestamp":"2021-07-23 17:01:51"}
 {"message":"Shut-down success. Goodbye!","level":"info","timestamp":"2021-07-23 17:01:51"}
+{"message":"Foundry Virtual Tabletop - Version 0.7.9","level":"info","timestamp":"2021-07-25 03:03:21"}
+{"message":"Running on Node.js - Version 12.14.1","level":"info","timestamp":"2021-07-25 03:03:21"}
+{"message":"Loading data from user directory - D:/empire-divided","level":"info","timestamp":"2021-07-25 03:03:21"}
+{"message":"Application Options:\n{\n  \"port\": 30000,\n  \"upnp\": true,\n  \"fullscreen\": false,\n  \"hostname\": null,\n  \"routePrefix\": null,\n  \"sslCert\": null,\n  \"sslKey\": null,\n  \"awsConfig\": null,\n  \"dataPath\": \"D:/empire-divided\",\n  \"proxySSL\": false,\n  \"proxyPort\": null,\n  \"minifyStaticFiles\": false,\n  \"updateChannel\": \"release\",\n  \"language\": \"en.core\",\n  \"world\": null,\n  \"serviceConfig\": null,\n  \"isElectron\": true,\n  \"isNode\": false,\n  \"isSSL\": false,\n  \"demo\": false,\n  \"noupdate\": false\n}","level":"info","timestamp":"2021-07-25 03:03:21"}
+{"message":"License verification failed. Please confirm your Foundry Virtual Tabletop software license","level":"error","timestamp":"2021-07-25 03:03:21"}
+{"message":"Requesting UPnP port forwarding to destination 30000","level":"info","timestamp":"2021-07-25 03:03:21"}
+{"message":"Server started and listening on port 30000","level":"info","timestamp":"2021-07-25 03:03:21"}
+{"message":"Loading http://localhost:30000/ in Electron window","level":"info","timestamp":"2021-07-25 03:03:21"}
+{"message":"Created client session 4vee7hdlm44zjpjuh8r2r8jd","level":"info","timestamp":"2021-07-25 03:03:21"}
+{"message":"Package wfrp4e-e4e declares an invalid language object in its manifest file","level":"error","timestamp":"2021-07-25 03:03:22"}
+{"message":"Package wfrp4e-exporter declares an invalid language object in its manifest file","level":"error","timestamp":"2021-07-25 03:03:22"}
+{"message":"Package wfrp4e-night-of-blood declares an invalid language object in its manifest file","level":"error","timestamp":"2021-07-25 03:03:22"}
+{"message":"Core software stable update 0.7.10 is now available!","level":"info","timestamp":"2021-07-25 03:03:23"}
+{"message":"License signature successfully created. Thank you and please enjoy Foundry Virtual Tabletop.","level":"info","timestamp":"2021-07-25 03:03:34"}
+{"message":"License verification succeeded","level":"info","timestamp":"2021-07-25 03:03:34"}
+{"message":"User authentication successful for user Ursca","level":"info","timestamp":"2021-07-25 03:03:44"}
+{"message":"Vending world data to User hNHeJbKl47AOkoOO","level":"info","timestamp":"2021-07-25 03:03:46"}
+{"message":"Deleted 12 Tokens from parent Scene Wev7J6t0FV2XALUl","level":"info","timestamp":"2021-07-25 03:03:54"}
+{"message":"Created 12 Tokens in parent Scene Wev7J6t0FV2XALUl","level":"info","timestamp":"2021-07-25 03:03:54"}
+{"message":"Deleted 3 Tokens [nRT9T0CdQCHVPQ10,eOyLeP86RXHLRccq,qJiKUempxeCTEIAL] from parent Scene NwDQfNrlp9nwBTkv","level":"info","timestamp":"2021-07-25 03:03:55"}
+{"message":"Created 3 Tokens [qJSIjlh09OEQFHkY,XvkJQ7UFSZSyLXYd,9OUc52D1kmCgt1f0] in parent Scene NwDQfNrlp9nwBTkv","level":"info","timestamp":"2021-07-25 03:03:55"}
+{"message":"Deleted Token nlZz30lSZs4zv2jL from parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-07-25 03:03:55"}
+{"message":"Created Token wS9gL1FXYEqkUybt in parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-07-25 03:03:55"}
+{"message":"Deleted all ChatMessages","level":"info","timestamp":"2021-07-25 03:04:26"}
+{"message":"Shutting down Foundry Virtual Tabletop server","level":"info","timestamp":"2021-07-25 03:04:34"}
+{"message":"Shut-down success. Goodbye!","level":"info","timestamp":"2021-07-25 03:04:34"}

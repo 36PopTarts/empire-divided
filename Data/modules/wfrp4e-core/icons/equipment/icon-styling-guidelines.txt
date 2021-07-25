@@ -3,13 +3,12 @@ careers ~ Red Border/Blue Background
 conditions ~ Cartoonish
 currency ~ s
 diseases ~ Battle Brothers Style
-equipment ~ Green Border/Brown Background
+equipment ~ Brown Border/Brown Background
 injuries ~ Battle Brothers Style
 mutations ~ Chaos Symbol
 psychologies ~ Darkest Dungeons
-skills ~ Orange Border
+skills ~ TBD
 spells ~ Purple Border
 tables ~ Depends on Tables
 talents ~ Blue Border
 traits ~ Blue Border
-Prayers ~ White Border
