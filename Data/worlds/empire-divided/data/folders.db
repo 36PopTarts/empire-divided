@@ -169,3 +169,24 @@
 {"_id":"y2b8VuEsVN1UFiv9","name":"Careers","type":"JournalEntry","sort":3500000,"flags":{},"parent":"XfhUxAdPBRN3lgpw","sorting":"a","color":"#694121"}
 {"_id":"yrVnNPRyDRk4Ku57","name":"Travel Endeavours","type":"JournalEntry","sort":5100000,"flags":{},"parent":"tCLFt3MpljAU3OVd","sorting":"a","color":"#634231"}
 {"_id":"zQRDhzWh9uTwnQqe","name":"Class Endeavours","type":"JournalEntry","sort":2600000,"flags":{"wfrp4e":{"initialization-parent":"Endeavours"}},"parent":"5PMBVwnydUMSobIr","sorting":"m","color":""}
+{"name":"With A Little Help","type":"Scene","sort":1400000,"flags":{},"parent":null,"sorting":"a","_id":"iQfIjCLacZwHuxpo"}
+{"name":"With A Little Help","type":"Actor","sort":5100000,"flags":{},"parent":null,"sorting":"a","_id":"RSsILpcMb6SUymDR"}
+{"$$deleted":true,"_id":"iQfIjCLacZwHuxpo"}
+{"name":"With A Little Help","type":"Scene","sort":1400000,"flags":{},"parent":null,"sorting":"a","_id":"Csa6c6CcC85YkUJ6"}
+{"name":"With A Little Help","type":"JournalEntry","sort":7600000,"flags":{},"parent":null,"sorting":"a","color":"#415837","_id":"skypR7iRci7o7GRg"}
+{"_id":"tCLFt3MpljAU3OVd","name":"Between Adventures","type":"JournalEntry","sort":300000,"flags":{},"parent":null,"sorting":"m","color":"#442747"}
+{"_id":"NkiXlTQtgNkW3FMs","name":"Religion and Belief","type":"JournalEntry","sort":400000,"flags":{},"parent":null,"sorting":"m","color":"#835a05"}
+{"_id":"SV4wmXUvuCNwQ0Nc","name":"Magic","type":"JournalEntry","sort":500000,"flags":{},"parent":null,"sorting":"m","color":"#6c6217"}
+{"_id":"5lgcrfb3I58JxD8Y","name":"GM's Guide","type":"JournalEntry","sort":600000,"flags":{},"parent":null,"sorting":"m","color":"#7b1717"}
+{"_id":"CDunpeWYhKpJ1Xmy","name":"Maps","type":"JournalEntry","sort":700000,"flags":{},"parent":null,"sorting":"m","color":"#5f5a87"}
+{"_id":"wV26wyVeod4mutle","name":"Altdorf","type":"JournalEntry","sort":800000,"flags":{},"parent":null,"sorting":"a","color":"#7a0000"}
+{"_id":"nYrlPwQwhU9yHNZz","name":"Ubersreik","type":"JournalEntry","sort":900000,"flags":{},"parent":null,"sorting":"a","color":"#2d628b"}
+{"_id":"XfhUxAdPBRN3lgpw","name":"Campaign","type":"JournalEntry","sort":1000000,"flags":{},"parent":null,"sorting":"a","color":"#799a95"}
+{"_id":"NOyJwiypgeV7mEJh","name":"Jousting","type":"JournalEntry","sort":1100000,"flags":{},"parent":null,"sorting":"a","color":"#d18400"}
+{"_id":"fajyhFU9lHRWsMFz","name":"Factions","type":"JournalEntry","sort":1200000,"flags":{},"parent":null,"sorting":"a"}
+{"_id":"3D5AeQXPQFECRFtw","name":"Research","type":"JournalEntry","sort":1300000,"flags":{},"parent":null,"sorting":"a","color":"#544131"}
+{"_id":"skypR7iRci7o7GRg","name":"With A Little Help","type":"JournalEntry","sort":1400000,"flags":{},"parent":null,"sorting":"a","color":"#415837"}
+{"_id":"tVm4VHOzL3Kt6qVy","name":"GM Notes","type":"JournalEntry","sort":1500000,"flags":{},"parent":null,"sorting":"a","color":"#9e0000"}
+{"_id":"skypR7iRci7o7GRg","name":"With A Little Help","type":"JournalEntry","sort":1600000,"flags":{},"parent":null,"sorting":"a","color":"#415837"}
+{"_id":"Csa6c6CcC85YkUJ6","name":"With A Little Help","type":"Scene","sort":1400000,"flags":{},"parent":null,"sorting":"a","color":"#415837"}
+{"_id":"RSsILpcMb6SUymDR","name":"With A Little Help","type":"Actor","sort":5100000,"flags":{},"parent":null,"sorting":"a","color":"#415837"}

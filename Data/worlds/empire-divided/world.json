@@ -35,6 +35,24 @@
       "system": "wfrp4e",
       "package": "world",
       "absPath": "D:\\FoundryVTT\\Data\\worlds\\empire-divided\\packs\\factions.db"
+    },
+    {
+      "label": "street scenes",
+      "entity": "Scene",
+      "name": "street-scenes",
+      "path": "packs/street-scenes.db",
+      "system": "wfrp4e",
+      "package": "world",
+      "absPath": "D:\\empire-divided\\Data\\worlds\\empire-divided\\packs\\street-scenes.db"
+    },
+    {
+      "label": "walhfmy actors",
+      "entity": "Actor",
+      "name": "walhfmy-actors",
+      "path": "packs/walhfmy-actors.db",
+      "system": "wfrp4e",
+      "package": "world",
+      "absPath": "D:\\empire-divided\\Data\\worlds\\empire-divided\\packs\\walhfmy-actors.db"
     }
   ],
   "languages": [],
