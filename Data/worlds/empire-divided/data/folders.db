@@ -160,7 +160,7 @@
 {"_id":"tVm4VHOzL3Kt6qVy","name":"GM Notes","type":"JournalEntry","sort":1500000,"flags":{},"parent":null,"sorting":"a","color":"#9e0000"}
 {"_id":"u4zNUifOiBJsiqIc","name":"Burn After Printing","type":"Actor","sort":900000,"flags":{},"parent":"kGEh553SL7K4zgmn","sorting":"a","color":"#400d07"}
 {"_id":"uKDEacfyOMwXEqZm","name":"Storm Riders","type":"Actor","sort":1300000,"flags":{},"parent":"lWzLTQHnXZft3wzO","sorting":"a","color":"#297ea3"}
-{"_id":"vU9LPtmofGv4bHSj","name":"Luitpoldstrasse Blues","type":"Actor","sort":600000,"flags":{},"parent":"kGEh553SL7K4zgmn","sorting":"a","color":"#20417e"}
+{"_id":"vU9LPtmofGv4bHSj","name":"Luitpoldstrasse Blues","type":"Actor","sort":5200000,"flags":{},"parent":null,"sorting":"a","color":"#20417e"}
 {"name":"Beyond the Walls","type":"JournalEntry","sort":4300000,"flags":{},"parent":"nYrlPwQwhU9yHNZz","sorting":"a","color":"","_id":"vXrzI9150vVG2zUV"}
 {"name":"Urban","type":"Scene","sort":400000,"flags":{},"parent":"ifqvWppW117y2zyP","sorting":"a","color":"#6f7985","_id":"vegile7w7PJN8ipB"}
 {"_id":"vifFIN67OZxpVSov","name":"Haalsteins","type":"Actor","sort":500000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#7b4e23"}
@@ -172,4 +172,3 @@
 {"_id":"y2b8VuEsVN1UFiv9","name":"Careers","type":"JournalEntry","sort":3500000,"flags":{},"parent":"XfhUxAdPBRN3lgpw","sorting":"a","color":"#694121"}
 {"_id":"yrVnNPRyDRk4Ku57","name":"Travel Endeavours","type":"JournalEntry","sort":5100000,"flags":{},"parent":"tCLFt3MpljAU3OVd","sorting":"a","color":"#634231"}
 {"_id":"zQRDhzWh9uTwnQqe","name":"Class Endeavours","type":"JournalEntry","sort":2600000,"flags":{"wfrp4e":{"initialization-parent":"Endeavours"}},"parent":"5PMBVwnydUMSobIr","sorting":"m","color":""}
-{"_id":"vU9LPtmofGv4bHSj","name":"Luitpoldstrasse Blues","type":"Actor","sort":5200000,"flags":{},"parent":null,"sorting":"a","color":"#20417e"}
