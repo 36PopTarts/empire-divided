@@ -430,3 +430,6 @@
 {"message":"Package wfrp4e-e4e declares an invalid language object in its manifest file","level":"error","timestamp":"2021-08-01 11:22:33"}
 {"message":"Package wfrp4e-exporter declares an invalid language object in its manifest file","level":"error","timestamp":"2021-08-01 11:22:33"}
 {"message":"Package wfrp4e-night-of-blood declares an invalid language object in its manifest file","level":"error","timestamp":"2021-08-01 11:22:33"}
+{"message":"Package wfrp4e-e4e declares an invalid language object in its manifest file","level":"error","timestamp":"2021-08-01 11:29:50"}
+{"message":"Package wfrp4e-exporter declares an invalid language object in its manifest file","level":"error","timestamp":"2021-08-01 11:29:50"}
+{"message":"Package wfrp4e-night-of-blood declares an invalid language object in its manifest file","level":"error","timestamp":"2021-08-01 11:29:50"}

@@ -13771,3 +13771,113 @@
 {"message":"Created Token vwryE4gNGi3wJf7G in parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-08-01 11:24:00"}
 {"message":"Shutting down Foundry Virtual Tabletop server","level":"info","timestamp":"2021-08-01 11:25:58"}
 {"message":"Shut-down success. Goodbye!","level":"info","timestamp":"2021-08-01 11:25:58"}
+{"message":"Foundry Virtual Tabletop - Version 0.7.9","level":"info","timestamp":"2021-08-01 11:29:49"}
+{"message":"Running on Node.js - Version 12.14.1","level":"info","timestamp":"2021-08-01 11:29:49"}
+{"message":"Loading data from user directory - /home/crazyeyes/.local/share/FoundryVTT","level":"info","timestamp":"2021-08-01 11:29:49"}
+{"message":"Application Options:\n{\n  \"port\": 30000,\n  \"upnp\": true,\n  \"fullscreen\": false,\n  \"hostname\": null,\n  \"routePrefix\": null,\n  \"sslCert\": null,\n  \"sslKey\": null,\n  \"awsConfig\": null,\n  \"dataPath\": \"/home/crazyeyes/.local/share/FoundryVTT\",\n  \"proxySSL\": false,\n  \"proxyPort\": null,\n  \"minifyStaticFiles\": false,\n  \"updateChannel\": \"release\",\n  \"language\": \"en.core\",\n  \"world\": null,\n  \"serviceConfig\": null,\n  \"isElectron\": true,\n  \"isNode\": false,\n  \"isSSL\": false,\n  \"demo\": false,\n  \"noupdate\": false\n}","level":"info","timestamp":"2021-08-01 11:29:49"}
+{"message":"License verification succeeded","level":"info","timestamp":"2021-08-01 11:29:49"}
+{"message":"Requesting UPnP port forwarding to destination 30000","level":"info","timestamp":"2021-08-01 11:29:49"}
+{"message":"Server started and listening on port 30000","level":"info","timestamp":"2021-08-01 11:29:50"}
+{"message":"Loading http://localhost:30000/ in Electron window","level":"info","timestamp":"2021-08-01 11:29:50"}
+{"message":"Created client session on21n78uy3eg4qqupcau5xy3","level":"info","timestamp":"2021-08-01 11:29:50"}
+{"message":"Package wfrp4e-e4e declares an invalid language object in its manifest file","level":"error","timestamp":"2021-08-01 11:29:50"}
+{"message":"Package wfrp4e-exporter declares an invalid language object in its manifest file","level":"error","timestamp":"2021-08-01 11:29:50"}
+{"message":"Package wfrp4e-night-of-blood declares an invalid language object in its manifest file","level":"error","timestamp":"2021-08-01 11:29:50"}
+{"message":"Core software stable update 0.7.10 is now available!","level":"info","timestamp":"2021-08-01 11:29:50"}
+{"message":"User authentication successful for user Crazyeyes","level":"info","timestamp":"2021-08-01 11:29:56"}
+{"message":"Vending world data to User 0ASvjGC88ifVZG73","level":"info","timestamp":"2021-08-01 11:29:57"}
+{"message":"Created client session 70xjgfr49vkyj2zovzute1qb","level":"info","timestamp":"2021-08-01 11:30:23"}
+{"message":"User authentication successful for user Ursca","level":"info","timestamp":"2021-08-01 11:30:27"}
+{"message":"Vending world data to User hNHeJbKl47AOkoOO","level":"info","timestamp":"2021-08-01 11:30:33"}
+{"message":"Deleted Token F7sSPgGtYhh1Swwv from parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-08-01 11:30:42"}
+{"message":"Created Token rVcCxeFf1AXVuxjY in parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-08-01 11:30:42"}
+{"message":"Created client session 5pxzzxztgy9txq0iwr8yzuh4","level":"info","timestamp":"2021-08-01 11:32:12"}
+{"message":"Created client session uzypzzldo3f4w5c3zd0qptnk","level":"info","timestamp":"2021-08-01 11:32:17"}
+{"message":"User authentication successful for user Josh","level":"info","timestamp":"2021-08-01 11:32:22"}
+{"message":"Vending world data to User hWNxrHgD6tOVKAVx","level":"info","timestamp":"2021-08-01 11:32:32"}
+{"message":"User authentication successful for user Terra","level":"info","timestamp":"2021-08-01 11:32:50"}
+{"message":"Vending world data to User Jvf2teS6cv0359RH","level":"info","timestamp":"2021-08-01 11:32:57"}
+{"message":"Created OwnedItem oyVX3Q5mr7KjVqFp in parent Actor fcIUXb2sCaEDcomN","level":"info","timestamp":"2021-08-01 11:36:05"}
+{"message":"Created OwnedItem skyoR7DCbBCpQRsS in parent Actor 33I1uKhdo2NIan2w","level":"info","timestamp":"2021-08-01 11:37:08"}
+{"message":"Deleted Token rVcCxeFf1AXVuxjY from parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-08-01 11:38:22"}
+{"message":"Created Token tbTHHLwnEEWV99aF in parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-08-01 11:38:22"}
+{"message":"Deleted Token tbTHHLwnEEWV99aF from parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-08-01 11:38:22"}
+{"message":"Created Token 76IcmUalBPTRu0tz in parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-08-01 11:38:22"}
+{"message":"Toggling game pause status to false","level":"info","timestamp":"2021-08-01 11:38:27"}
+{"message":"Created OwnedItem lvGCqbTcyECFZCnt in parent Actor fcIUXb2sCaEDcomN","level":"info","timestamp":"2021-08-01 11:58:20"}
+{"message":"Activating scene Reikland Political Map [ufoe9rog6yJFng7j]","level":"info","timestamp":"2021-08-01 12:01:17"}
+{"message":"Deleted Token 76IcmUalBPTRu0tz from parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-08-01 12:01:17"}
+{"message":"Created Token OWoc6e9edAH0wd2M in parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-08-01 12:01:17"}
+{"message":"Deleted Token OWoc6e9edAH0wd2M from parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-08-01 12:03:09"}
+{"message":"Created Token 1ZHrRz9yz0hxaG1T in parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-08-01 12:03:09"}
+{"message":"Created OwnedItem 3ZgyA8cuQE2v0CFJ in parent Actor BNxW5IDuKy9Yws0J","level":"info","timestamp":"2021-08-01 12:34:43"}
+{"message":"Created OwnedItem vh6M1LjO9P31We1e in parent Actor BNxW5IDuKy9Yws0J","level":"info","timestamp":"2021-08-01 12:34:46"}
+{"message":"Created OwnedItem rTWBPXZZESJs8URD in parent Actor BNxW5IDuKy9Yws0J","level":"info","timestamp":"2021-08-01 12:34:52"}
+{"message":"Created OwnedItem BQ2ITxXwF0hHKALR in parent Actor BNxW5IDuKy9Yws0J","level":"info","timestamp":"2021-08-01 12:35:21"}
+{"message":"Deleted Token 1ZHrRz9yz0hxaG1T from parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-08-01 12:35:25"}
+{"message":"Created Token wcrJWi77snoauM0x in parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-08-01 12:35:25"}
+{"message":"Deleted Token wcrJWi77snoauM0x from parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-08-01 12:35:25"}
+{"message":"Created Token JkRu3ieclcWDRvUq in parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-08-01 12:35:25"}
+{"message":"Created OwnedItem ZKNcxnNHfVdLh1aT in parent Actor 9v2fJg833BjlQRom","level":"info","timestamp":"2021-08-01 12:35:29"}
+{"message":"Deleted OwnedItem Tkflu8EaezkZuW8g from parent Actor BNxW5IDuKy9Yws0J","level":"info","timestamp":"2021-08-01 12:35:37"}
+{"message":"Deleted OwnedItem N7vKfshVacMWvIJq from parent Actor fcIUXb2sCaEDcomN","level":"info","timestamp":"2021-08-01 12:36:08"}
+{"message":"Compacted database file for actors","level":"info","timestamp":"2021-08-01 12:43:39"}
+{"message":"Created ChatMessage with id 6NJLTQgx39aeqjUO","level":"info","timestamp":"2021-08-01 12:52:33"}
+{"message":"Created ChatMessage with id Mi5KgXEQULVA7YNT","level":"info","timestamp":"2021-08-01 12:52:40"}
+{"message":"Deleted OwnedItem rTWBPXZZESJs8URD from parent Actor BNxW5IDuKy9Yws0J","level":"info","timestamp":"2021-08-01 12:53:11"}
+{"message":"Created Token TJAfbqqwrQd99UVW in parent Scene ufoe9rog6yJFng7j","level":"info","timestamp":"2021-08-01 12:59:53"}
+{"message":"Deleted Token TJAfbqqwrQd99UVW from parent Scene ufoe9rog6yJFng7j","level":"info","timestamp":"2021-08-01 13:00:21"}
+{"message":"Activating scene Reikland [gM3hwsmdrTv6pSOC]","level":"info","timestamp":"2021-08-01 13:00:26"}
+{"message":"Deleted Token JkRu3ieclcWDRvUq from parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-08-01 13:00:26"}
+{"message":"Created Token FHm6DARNdoAShkUa in parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-08-01 13:00:26"}
+{"message":"Created JournalEntry with id zA9Xnh1Vr4TMEDyw","level":"info","timestamp":"2021-08-01 13:14:44"}
+{"message":"Created ChatMessage with id XhsAfGdoJkrI86Wi","level":"info","timestamp":"2021-08-01 13:15:14"}
+{"message":"Created ChatMessage with id qthBx15gkyBT5WDx","level":"info","timestamp":"2021-08-01 13:15:15"}
+{"message":"Activating scene Auerswald Streets [Jj8CP8wCgZ1OoGLH]","level":"info","timestamp":"2021-08-01 13:19:16"}
+{"message":"Deleted Token FHm6DARNdoAShkUa from parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-08-01 13:19:16"}
+{"message":"Created Token 2tHdZfJZGSJgwGOf in parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-08-01 13:19:17"}
+{"message":"Created JournalEntry with id TZKV8b8DwL3UawQR","level":"info","timestamp":"2021-08-01 13:23:10"}
+{"message":"Monuments of the Reikland.png saved to Images/Illustrations","level":"info","timestamp":"2021-08-01 13:23:44"}
+{"message":"Activating scene Reikland Political Map [ufoe9rog6yJFng7j]","level":"info","timestamp":"2021-08-01 13:25:56"}
+{"message":"Deleted Token 2tHdZfJZGSJgwGOf from parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-08-01 13:25:56"}
+{"message":"Created Token az60JWfyeDoX7Zqr in parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-08-01 13:25:57"}
+{"message":"Created ChatMessage with id 2VhAXteCKNHQZbhA","level":"info","timestamp":"2021-08-01 13:27:22"}
+{"message":"Deleted ChatMessage with id XhsAfGdoJkrI86Wi","level":"info","timestamp":"2021-08-01 13:27:32"}
+{"message":"Created Token 3SNCHGWwFaHgpU9d in parent Scene uROdYcy6Fw1nEhmZ","level":"info","timestamp":"2021-08-01 13:30:23"}
+{"message":"Created Token v7J30vWm85FYJnky in parent Scene uROdYcy6Fw1nEhmZ","level":"info","timestamp":"2021-08-01 13:30:39"}
+{"message":"Created Token tJEPsJuzVLbnGAiY in parent Scene uROdYcy6Fw1nEhmZ","level":"info","timestamp":"2021-08-01 13:30:47"}
+{"message":"Created Token K42n27Cq2tizGjF6 in parent Scene uROdYcy6Fw1nEhmZ","level":"info","timestamp":"2021-08-01 13:30:50"}
+{"message":"Created Token devI9HdeWq6uvBUO in parent Scene uROdYcy6Fw1nEhmZ","level":"info","timestamp":"2021-08-01 13:43:13"}
+{"message":"Deleted Token az60JWfyeDoX7Zqr from parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-08-01 13:45:56"}
+{"message":"Created Token OH2Zk5rglHn1KWTx in parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-08-01 13:45:56"}
+{"message":"Activating scene Auerswald Streets [Jj8CP8wCgZ1OoGLH]","level":"info","timestamp":"2021-08-01 14:02:29"}
+{"message":"Deleted Token OH2Zk5rglHn1KWTx from parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-08-01 14:02:29"}
+{"message":"Created Token lyExSyIa9qijg5Y6 in parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-08-01 14:02:29"}
+{"message":"Compacted database file for scenes","level":"info","timestamp":"2021-08-01 14:02:31"}
+{"message":"Created Token TIxZnoA0vXixHc0b in parent Scene Jj8CP8wCgZ1OoGLH","level":"info","timestamp":"2021-08-01 14:10:43"}
+{"message":"Created Token I1rbvrWmjGeFVEq0 in parent Scene Jj8CP8wCgZ1OoGLH","level":"info","timestamp":"2021-08-01 14:10:44"}
+{"message":"Created Token FbnFx9Y0I6t5DpxU in parent Scene Jj8CP8wCgZ1OoGLH","level":"info","timestamp":"2021-08-01 14:10:45"}
+{"message":"Created ChatMessage with id hQydqdzAYyBG7DWJ","level":"info","timestamp":"2021-08-01 14:21:31"}
+{"message":"Created ChatMessage with id qNEFrhDGAt5G9wRJ","level":"info","timestamp":"2021-08-01 14:22:00"}
+{"message":"Created ChatMessage with id uY5G0psyp5MVlzau","level":"info","timestamp":"2021-08-01 14:22:02"}
+{"message":"Created ChatMessage with id vOYPRjzWPm9X5DBV","level":"info","timestamp":"2021-08-01 14:30:19"}
+{"message":"Created ChatMessage with id 6TfsFnO6c8vsNRIt","level":"info","timestamp":"2021-08-01 14:30:31"}
+{"message":"Created ChatMessage with id VfFUQK3c0Y3Dq7WI","level":"info","timestamp":"2021-08-01 14:30:41"}
+{"message":"Created ChatMessage with id vwYGnmCspR6UtUTj","level":"info","timestamp":"2021-08-01 14:31:10"}
+{"message":"Created ChatMessage with id S2bTGYWh65bYc159","level":"info","timestamp":"2021-08-01 14:32:56"}
+{"message":"Compacted database file for playlists","level":"info","timestamp":"2021-08-01 14:35:25"}
+{"message":"Created ChatMessage with id jWYMpYGZUvX7ZHpV","level":"info","timestamp":"2021-08-01 14:44:40"}
+{"message":"Created ChatMessage with id UuBZRXJr9Bt0M2Au","level":"info","timestamp":"2021-08-01 14:45:19"}
+{"message":"Created ChatMessage with id ZWZaTT6N2BVZofZR","level":"info","timestamp":"2021-08-01 14:45:36"}
+{"message":"Created ChatMessage with id jyrjQaw3feNxYmTE","level":"info","timestamp":"2021-08-01 14:46:01"}
+{"message":"Deleted 3 Tokens [TIxZnoA0vXixHc0b,I1rbvrWmjGeFVEq0,FbnFx9Y0I6t5DpxU] from parent Scene Jj8CP8wCgZ1OoGLH","level":"info","timestamp":"2021-08-01 14:47:47"}
+{"message":"Compacted database file for settings","level":"info","timestamp":"2021-08-01 14:52:15"}
+{"message":"Compacted database file for actors","level":"info","timestamp":"2021-08-01 14:55:15"}
+{"message":"Compacted database file for playlists","level":"info","timestamp":"2021-08-01 15:01:47"}
+{"message":"Created ChatMessage with id pA1P1Pm7QNx74sBV","level":"info","timestamp":"2021-08-01 15:02:17"}
+{"message":"Activating scene Feast [uROdYcy6Fw1nEhmZ]","level":"info","timestamp":"2021-08-01 15:09:28"}
+{"message":"Deleted Token lyExSyIa9qijg5Y6 from parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-08-01 15:09:28"}
+{"message":"Created Token aoKrWYqDLDY4suqV in parent Scene YnI92BDnak9nezNs","level":"info","timestamp":"2021-08-01 15:09:28"}
+{"message":"Created ChatMessage with id ohhm6Q6ptMzyRb2o","level":"info","timestamp":"2021-08-01 15:14:51"}
+{"message":"Shutting down Foundry Virtual Tabletop server","level":"info","timestamp":"2021-08-01 15:35:17"}
+{"message":"Shut-down success. Goodbye!","level":"info","timestamp":"2021-08-01 15:35:17"}
