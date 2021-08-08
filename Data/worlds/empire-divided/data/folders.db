@@ -10,7 +10,7 @@
 {"_id":"3inZgCNdZwR3yWXW","name":"General Endeavours","type":"JournalEntry","sort":2500000,"flags":{"wfrp4e":{"initialization-parent":"Endeavours"}},"parent":"5PMBVwnydUMSobIr","sorting":"m","color":""}
 {"_id":"3qMaJLYYtadKbkj4","name":"Jungfreuds","type":"Actor","sort":100000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#6c8bbc"}
 {"name":"NPC Talents","type":"Item","sort":2000000,"flags":{},"parent":"B1NGEkUpOPYjZbtf","sorting":"a","color":"#056121","_id":"3x3XrX6xuPBwuvs9"}
-{"_id":"42MP0RQ6zQ5WdDMr","name":"Jousting","type":"Actor","sort":700000,"flags":{},"parent":null,"sorting":"a","color":"#c28400"}
+{"_id":"42MP0RQ6zQ5WdDMr","name":"Jousting","type":"Actor","sort":800000,"flags":{},"parent":null,"sorting":"a","color":"#c28400"}
 {"name":"Old Scenes","type":"Scene","sort":1200000,"flags":{},"parent":null,"sorting":"a","color":"","_id":"49bbBFQWuWi3jpZC"}
 {"name":"Fish","type":"Actor","sort":3900000,"flags":{},"parent":"sAp7iBxhyn1US3Fo","sorting":"a","color":"","_id":"4WUa8ljHnFNXmCbO"}
 {"name":"Merchant Quarter","type":"JournalEntry","sort":4700000,"flags":{},"parent":"nYrlPwQwhU9yHNZz","sorting":"a","color":"","_id":"4pf2l1R05teCWds9"}
@@ -93,7 +93,7 @@
 {"_id":"WuYKW45XIp1MG94j","name":"Luitpoldstrasse Blues","type":"JournalEntry","sort":7400000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#3b3d63"}
 {"_id":"XCAwjWgOHbC2T263","name":"Armour","type":"Item","sort":400000,"flags":{},"parent":null,"sorting":"a","color":"#492262"}
 {"_id":"XLndJ2I3x4vvGyT0","name":"Generic Creatures","type":"Actor","sort":300000,"flags":{},"parent":null,"sorting":"a","color":"#244c26"}
-{"_id":"XPhZMLcw0v6GNj9x","name":"The Imperial Plenipotentiary","type":"Actor","sort":4900000,"flags":{},"parent":null,"sorting":"a","color":"#326234"}
+{"_id":"XPhZMLcw0v6GNj9x","name":"The Imperial Plenipotentiary","type":"Actor","sort":850000,"flags":{},"parent":null,"sorting":"a","color":"#326234"}
 {"_id":"XfhUxAdPBRN3lgpw","name":"Campaign","type":"JournalEntry","sort":1000000,"flags":{},"parent":null,"sorting":"a","color":"#799a95"}
 {"_id":"XjBkMXDDob9J9Ekf","name":"The Eight Lores","type":"JournalEntry","sort":2700000,"flags":{"wfrp4e":{"initialization-parent":"Magic"}},"parent":"SV4wmXUvuCNwQ0Nc","sorting":"m","color":""}
 {"name":"Grauenburg Annotations","type":"JournalEntry","sort":6900000,"flags":{},"parent":"sJsgXlZiMioDgTqH","sorting":"a","color":"","_id":"Xz4TOyQW2CDWU6lJ"}
@@ -163,7 +163,7 @@
 {"_id":"tVm4VHOzL3Kt6qVy","name":"GM Notes","type":"JournalEntry","sort":1500000,"flags":{},"parent":null,"sorting":"a","color":"#9e0000"}
 {"_id":"u4zNUifOiBJsiqIc","name":"Burn After Printing","type":"Actor","sort":900000,"flags":{},"parent":"kGEh553SL7K4zgmn","sorting":"a","color":"#400d07"}
 {"_id":"uKDEacfyOMwXEqZm","name":"Storm Riders","type":"Actor","sort":1300000,"flags":{},"parent":"lWzLTQHnXZft3wzO","sorting":"a","color":"#297ea3"}
-{"_id":"vU9LPtmofGv4bHSj","name":"Luitpoldstrasse Blues","type":"Actor","sort":5200000,"flags":{},"parent":null,"sorting":"a","color":"#20417e"}
+{"_id":"vU9LPtmofGv4bHSj","name":"Luitpoldstrasse Blues","type":"Actor","sort":900000,"flags":{},"parent":null,"sorting":"a","color":"#20417e"}
 {"name":"Beyond the Walls","type":"JournalEntry","sort":4300000,"flags":{},"parent":"nYrlPwQwhU9yHNZz","sorting":"a","color":"","_id":"vXrzI9150vVG2zUV"}
 {"name":"Urban","type":"Scene","sort":400000,"flags":{},"parent":"ifqvWppW117y2zyP","sorting":"a","color":"#6f7985","_id":"vegile7w7PJN8ipB"}
 {"_id":"vifFIN67OZxpVSov","name":"Haalsteins","type":"Actor","sort":500000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#7b4e23"}
@@ -176,7 +176,3 @@
 {"_id":"yrVnNPRyDRk4Ku57","name":"Travel Endeavours","type":"JournalEntry","sort":5100000,"flags":{},"parent":"tCLFt3MpljAU3OVd","sorting":"a","color":"#634231"}
 {"_id":"zQRDhzWh9uTwnQqe","name":"Class Endeavours","type":"JournalEntry","sort":2600000,"flags":{"wfrp4e":{"initialization-parent":"Endeavours"}},"parent":"5PMBVwnydUMSobIr","sorting":"m","color":""}
 {"name":"River Patrol Crew","type":"Actor","sort":5400000,"flags":{},"parent":"XPhZMLcw0v6GNj9x","sorting":"a","color":"#35405a","_id":"zpbMB5khH90d68Lk"}
-{"_id":"XPhZMLcw0v6GNj9x","name":"The Imperial Plenipotentiary","type":"Actor","sort":700000,"flags":{},"parent":null,"sorting":"a","color":"#326234"}
-{"_id":"42MP0RQ6zQ5WdDMr","name":"Jousting","type":"Actor","sort":800000,"flags":{},"parent":null,"sorting":"a","color":"#c28400"}
-{"_id":"vU9LPtmofGv4bHSj","name":"Luitpoldstrasse Blues","type":"Actor","sort":900000,"flags":{},"parent":null,"sorting":"a","color":"#20417e"}
-{"_id":"XPhZMLcw0v6GNj9x","name":"The Imperial Plenipotentiary","type":"Actor","sort":850000,"flags":{},"parent":null,"sorting":"a","color":"#326234"}
