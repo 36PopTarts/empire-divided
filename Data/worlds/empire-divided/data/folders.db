@@ -176,3 +176,7 @@
 {"_id":"yrVnNPRyDRk4Ku57","name":"Travel Endeavours","type":"JournalEntry","sort":5100000,"flags":{},"parent":"tCLFt3MpljAU3OVd","sorting":"a","color":"#634231"}
 {"_id":"zQRDhzWh9uTwnQqe","name":"Class Endeavours","type":"JournalEntry","sort":2600000,"flags":{"wfrp4e":{"initialization-parent":"Endeavours"}},"parent":"5PMBVwnydUMSobIr","sorting":"m","color":""}
 {"name":"River Patrol Crew","type":"Actor","sort":5400000,"flags":{},"parent":"XPhZMLcw0v6GNj9x","sorting":"a","color":"#35405a","_id":"zpbMB5khH90d68Lk"}
+{"_id":"XPhZMLcw0v6GNj9x","name":"The Imperial Plenipotentiary","type":"Actor","sort":700000,"flags":{},"parent":null,"sorting":"a","color":"#326234"}
+{"_id":"42MP0RQ6zQ5WdDMr","name":"Jousting","type":"Actor","sort":800000,"flags":{},"parent":null,"sorting":"a","color":"#c28400"}
+{"_id":"vU9LPtmofGv4bHSj","name":"Luitpoldstrasse Blues","type":"Actor","sort":900000,"flags":{},"parent":null,"sorting":"a","color":"#20417e"}
+{"_id":"XPhZMLcw0v6GNj9x","name":"The Imperial Plenipotentiary","type":"Actor","sort":850000,"flags":{},"parent":null,"sorting":"a","color":"#326234"}
