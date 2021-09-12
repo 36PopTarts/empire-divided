@@ -128,6 +128,7 @@
 {"_id":"iltPBXW0kOqlZhfA","name":"Settlements","type":"JournalEntry","sort":500000,"flags":{"wfrp4e":{"initialization-parent":"Reikland"}},"parent":"J8dQ6pBcs8qRN8Bk","sorting":"m","color":"#534f1e"}
 {"name":"Artisan's Quarter","type":"JournalEntry","sort":4200000,"flags":{},"parent":"nYrlPwQwhU9yHNZz","sorting":"a","color":"","_id":"jLCpRyf3Tm13Y85D"}
 {"_id":"jOdnLBXpaX7LCdF0","name":"Mountains, Foothills, and Vorbergland","type":"JournalEntry","sort":100000,"flags":{"wfrp4e":{"initialization-parent":"Reikland"}},"parent":"J8dQ6pBcs8qRN8Bk","sorting":"m","color":"#454547"}
+{"name":"The Ottinger Papers","type":"Actor","sort":5700000,"flags":{},"parent":"vU9LPtmofGv4bHSj","sorting":"a","color":"#333249","_id":"jOxE5tugYbbl2J0R"}
 {"_id":"jVq0puTnPsLSgeQe","name":"Blackpowder Nights","type":"Actor","sort":700000,"flags":{},"parent":"kGEh553SL7K4zgmn","sorting":"a","color":"#404040"}
 {"name":"PCs","type":"Actor","sort":4400000,"flags":{},"parent":"vU9LPtmofGv4bHSj","sorting":"a","color":"#802323","_id":"jl1kuRZMHtWfOkLR"}
 {"_id":"jxONpQkr2xVFk5CZ","name":"Walfens","type":"Actor","sort":600000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":""}
@@ -142,6 +143,7 @@
 {"_id":"lryP0lc1Adinz7aR","name":"Misc Items","type":"Item","sort":100000,"flags":{},"parent":null,"sorting":"a","color":"#7c1d1d"}
 {"_id":"mPZbMEHqQupSD01M","name":"Head Armour","type":"Item","sort":300000,"flags":{},"parent":"XCAwjWgOHbC2T263","sorting":"a","color":"#2b5e2f"}
 {"name":"Vassals","type":"Actor","sort":5000000,"flags":{},"parent":"7JJvX9ibeSRwPy1t","sorting":"a","color":"","_id":"mxV8BnhQRP4zjmY0"}
+{"name":"The Ottinger Papers","type":"JournalEntry","sort":7800000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#404554","_id":"nIM7VxtzVOzcOrxh"}
 {"_id":"nYrlPwQwhU9yHNZz","name":"Ubersreik","type":"JournalEntry","sort":900000,"flags":{},"parent":null,"sorting":"a","color":"#2d628b"}
 {"name":"Morgenseite","type":"JournalEntry","sort":4800000,"flags":{},"parent":"nYrlPwQwhU9yHNZz","sorting":"a","color":"","_id":"o4GrLOHQYbMCdmoK"}
 {"name":"Flechtben","type":"Actor","sort":5500000,"flags":{},"parent":"XPhZMLcw0v6GNj9x","sorting":"a","color":"#571919","_id":"o847nmNkzoSMz8Uu"}
@@ -179,3 +181,12 @@
 {"_id":"yrVnNPRyDRk4Ku57","name":"Travel Endeavours","type":"JournalEntry","sort":5100000,"flags":{},"parent":"tCLFt3MpljAU3OVd","sorting":"a","color":"#634231"}
 {"_id":"zQRDhzWh9uTwnQqe","name":"Class Endeavours","type":"JournalEntry","sort":2600000,"flags":{"wfrp4e":{"initialization-parent":"Endeavours"}},"parent":"5PMBVwnydUMSobIr","sorting":"m","color":""}
 {"name":"River Patrol Crew","type":"Actor","sort":5400000,"flags":{},"parent":"XPhZMLcw0v6GNj9x","sorting":"a","color":"#35405a","_id":"zpbMB5khH90d68Lk"}
+{"name":"Slaughter in Spittlefeld","type":"Scene","sort":1400000,"flags":{},"parent":null,"sorting":"a","color":"#8a4900","_id":"72qJfcjkeQkjUoVY"}
+{"name":"Slaughter in Spittlefeld","type":"JournalEntry","sort":7900000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#662900","_id":"pdvIHQsjlpM0hC2f"}
+{"name":"Slaughter in Spittlefeld","type":"Actor","sort":5800000,"flags":{},"parent":"vU9LPtmofGv4bHSj","sorting":"a","color":"#3d1500","_id":"bjwkE63kSLgDa09e"}
+{"name":"Slaughter in Spittlefeld Actors","type":"Actor","sort":5900000,"flags":{},"parent":null,"sorting":"a","_id":"cF0xcvbl8VKnU2Bc"}
+{"_id":"cF0xcvbl8VKnU2Bc","name":"Slaughter in Spittlefeld Actors","type":"Actor","sort":5750000,"flags":{},"parent":"vU9LPtmofGv4bHSj","sorting":"a"}
+{"$$deleted":true,"_id":"bjwkE63kSLgDa09e"}
+{"_id":"cF0xcvbl8VKnU2Bc","name":"Slaughter in Spittlefeld Actors","type":"Actor","sort":5750000,"flags":{},"parent":"vU9LPtmofGv4bHSj","sorting":"a","color":"#663100"}
+{"_id":"cF0xcvbl8VKnU2Bc","name":"Slaughter in Spittlefeld","type":"Actor","sort":5750000,"flags":{},"parent":"vU9LPtmofGv4bHSj","sorting":"a","color":"#663100"}
+{"name":"Adventure","type":"JournalEntry","sort":8000000,"flags":{},"parent":"pdvIHQsjlpM0hC2f","sorting":"a","color":"","_id":"RkRpWrZ0t0lnKwu6"}
