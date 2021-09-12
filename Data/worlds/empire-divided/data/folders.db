@@ -20,6 +20,7 @@
 {"name":"Vassals","type":"Actor","sort":4100000,"flags":{},"parent":"aodo7JMHjKV3BHhd","sorting":"a","color":"#392541","_id":"5SHe4s1AbmvxM0vK"}
 {"_id":"5lgcrfb3I58JxD8Y","name":"GM's Guide","type":"JournalEntry","sort":600000,"flags":{},"parent":null,"sorting":"m","color":"#7b1717"}
 {"name":"Disgusting Treasures","type":"Item","sort":null,"flags":{},"parent":"Jr9DZCfP6SV0ZJdg","sorting":"a","color":"#757b1e","_id":"6acWZ0eXgSQy7mDe"}
+{"name":"Slaughter in Spittlefeld","type":"Scene","sort":1400000,"flags":{},"parent":null,"sorting":"a","color":"#8a4900","_id":"72qJfcjkeQkjUoVY"}
 {"_id":"7JJvX9ibeSRwPy1t","name":"Wallensteins","type":"Actor","sort":1000000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#e69d00"}
 {"name":"Ubersreik","type":"Scene","sort":800000,"flags":{},"parent":null,"sorting":"a","color":"#2c4258","_id":"7UbKiipTOP45gltn"}
 {"name":"Loot Tables","type":"RollTable","sort":1100000,"flags":{},"parent":"8quqXmxl5WgxUHgI","sorting":"a","color":"","_id":"7exNT1PyUXvcC4sP"}
@@ -73,6 +74,7 @@
 {"name":"Templates","type":"Item","sort":1800000,"flags":{},"parent":"FH46SuKDUeaO7cfJ","sorting":"a","color":"","_id":"RBXRWBI253YEeOCn"}
 {"name":"Brute Career","type":"Item","sort":1400000,"flags":{},"parent":"FH46SuKDUeaO7cfJ","sorting":"a","color":"","_id":"RO7uolWbUYQEX3ym"}
 {"_id":"RSsILpcMb6SUymDR","name":"With A Little Help","type":"Actor","sort":4600000,"flags":{},"parent":"vU9LPtmofGv4bHSj","sorting":"a","color":"#415837"}
+{"name":"Adventure","type":"JournalEntry","sort":8000000,"flags":{},"parent":"pdvIHQsjlpM0hC2f","sorting":"a","color":"","_id":"RkRpWrZ0t0lnKwu6"}
 {"_id":"SV4wmXUvuCNwQ0Nc","name":"Magic","type":"JournalEntry","sort":500000,"flags":{},"parent":null,"sorting":"m","color":"#6c6217"}
 {"name":"Mutants","type":"Actor","sort":5600000,"flags":{},"parent":"XPhZMLcw0v6GNj9x","sorting":"a","color":"#374b11","_id":"SiKuolzLYctROlhL"}
 {"name":"Random Equipment","type":"RollTable","sort":null,"flags":{},"parent":null,"sorting":"a","color":"","_id":"SsnU0RAudPtByTXv"}
@@ -108,6 +110,7 @@
 {"_id":"aodo7JMHjKV3BHhd","name":"Saponatheims","type":"Actor","sort":300000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#2a142e"}
 {"_id":"c8pB03MJECRvVVdb","name":"Combat","type":"JournalEntry","sort":2300000,"flags":{"wfrp4e":{"initialization-parent":"Rules"}},"parent":"KBFMpqeeMFWhdpSI","sorting":"m","color":""}
 {"name":"Teubrucke (The Docks)","type":"JournalEntry","sort":4900000,"flags":{},"parent":"nYrlPwQwhU9yHNZz","sorting":"a","color":"","_id":"cD2WV6rmxf2syVjx"}
+{"_id":"cF0xcvbl8VKnU2Bc","name":"Slaughter in Spittlefeld","type":"Actor","sort":5750000,"flags":{},"parent":"vU9LPtmofGv4bHSj","sorting":"a","color":"#663100"}
 {"_id":"cHczBZFi7MuGKU42","name":"Tomb Blade","type":"JournalEntry","sort":7400000,"flags":{},"parent":"3D5AeQXPQFECRFtw","sorting":"a","color":"#cc6d00"}
 {"name":"Interior","type":"Scene","sort":600000,"flags":{},"parent":"ifqvWppW117y2zyP","sorting":"a","color":"#9f5c1e","_id":"cMzMOh9NsqnRhjeo"}
 {"_id":"cZf8CCfRbfZcxgzE","name":"Named NPCs","type":"Actor","sort":600000,"flags":{},"parent":null,"sorting":"m","color":"#4b7395"}
@@ -150,6 +153,7 @@
 {"name":"Cult Magus of Tzeentch","type":"Item","sort":1900000,"flags":{},"parent":"FH46SuKDUeaO7cfJ","sorting":"a","color":"#3a3f64","_id":"oi6w4QwvECER3vjX"}
 {"name":"Black Rock","type":"JournalEntry","sort":4400000,"flags":{},"parent":"nYrlPwQwhU9yHNZz","sorting":"a","color":"","_id":"p6fgHx1swSlMc8hH"}
 {"_id":"pBcsC5Tcufh4rpsg","name":"Baldemar - Knight Errant","type":"Actor","sort":3200000,"flags":{},"parent":"42MP0RQ6zQ5WdDMr","sorting":"a","color":"#263450"}
+{"name":"Slaughter in Spittlefeld","type":"JournalEntry","sort":7900000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#662900","_id":"pdvIHQsjlpM0hC2f"}
 {"_id":"qZ0nY1rzfkhj07wW","name":"Loot","type":"Item","sort":1200000,"flags":{},"parent":"lryP0lc1Adinz7aR","sorting":"a","color":"#dba100"}
 {"name":"Extra Material","type":"JournalEntry","sort":3400000,"flags":{},"parent":"XfhUxAdPBRN3lgpw","sorting":"a","color":"#5b0b0b","_id":"qkj3aSI8lXUSVEwD"}
 {"name":"Markplatz","type":"JournalEntry","sort":4600000,"flags":{},"parent":"nYrlPwQwhU9yHNZz","sorting":"a","color":"","_id":"r8mE9PxwULMjaKMt"}
@@ -181,12 +185,3 @@
 {"_id":"yrVnNPRyDRk4Ku57","name":"Travel Endeavours","type":"JournalEntry","sort":5100000,"flags":{},"parent":"tCLFt3MpljAU3OVd","sorting":"a","color":"#634231"}
 {"_id":"zQRDhzWh9uTwnQqe","name":"Class Endeavours","type":"JournalEntry","sort":2600000,"flags":{"wfrp4e":{"initialization-parent":"Endeavours"}},"parent":"5PMBVwnydUMSobIr","sorting":"m","color":""}
 {"name":"River Patrol Crew","type":"Actor","sort":5400000,"flags":{},"parent":"XPhZMLcw0v6GNj9x","sorting":"a","color":"#35405a","_id":"zpbMB5khH90d68Lk"}
-{"name":"Slaughter in Spittlefeld","type":"Scene","sort":1400000,"flags":{},"parent":null,"sorting":"a","color":"#8a4900","_id":"72qJfcjkeQkjUoVY"}
-{"name":"Slaughter in Spittlefeld","type":"JournalEntry","sort":7900000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#662900","_id":"pdvIHQsjlpM0hC2f"}
-{"name":"Slaughter in Spittlefeld","type":"Actor","sort":5800000,"flags":{},"parent":"vU9LPtmofGv4bHSj","sorting":"a","color":"#3d1500","_id":"bjwkE63kSLgDa09e"}
-{"name":"Slaughter in Spittlefeld Actors","type":"Actor","sort":5900000,"flags":{},"parent":null,"sorting":"a","_id":"cF0xcvbl8VKnU2Bc"}
-{"_id":"cF0xcvbl8VKnU2Bc","name":"Slaughter in Spittlefeld Actors","type":"Actor","sort":5750000,"flags":{},"parent":"vU9LPtmofGv4bHSj","sorting":"a"}
-{"$$deleted":true,"_id":"bjwkE63kSLgDa09e"}
-{"_id":"cF0xcvbl8VKnU2Bc","name":"Slaughter in Spittlefeld Actors","type":"Actor","sort":5750000,"flags":{},"parent":"vU9LPtmofGv4bHSj","sorting":"a","color":"#663100"}
-{"_id":"cF0xcvbl8VKnU2Bc","name":"Slaughter in Spittlefeld","type":"Actor","sort":5750000,"flags":{},"parent":"vU9LPtmofGv4bHSj","sorting":"a","color":"#663100"}
-{"name":"Adventure","type":"JournalEntry","sort":8000000,"flags":{},"parent":"pdvIHQsjlpM0hC2f","sorting":"a","color":"","_id":"RkRpWrZ0t0lnKwu6"}
