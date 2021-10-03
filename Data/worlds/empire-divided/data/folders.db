@@ -178,6 +178,7 @@
 {"_id":"vrsSSGXYVnoGWa0s","name":"Politics","type":"JournalEntry","sort":2800000,"flags":{"wfrp4e":{"initialization-parent":"Reikland"}},"parent":"J8dQ6pBcs8qRN8Bk","sorting":"m","color":"#55385f"}
 {"_id":"w32aTNLs5I0hoeXS","name":"Blood on the Reik","type":"Actor","sort":300000,"flags":{},"parent":"81ZFw4Rjgz144G8Q","sorting":"a","color":"#592727"}
 {"_id":"wV26wyVeod4mutle","name":"Altdorf","type":"JournalEntry","sort":800000,"flags":{},"parent":null,"sorting":"a","color":"#7a0000"}
+{"name":"Holswig-Schliesteins","type":"Actor","sort":5850000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#7a0000","_id":"xFWoAQ1YErAhKW2q"}
 {"_id":"xLkqS65tTqXTJiwi","name":"Merchants","type":"Actor","sort":200000,"flags":{},"parent":"81ZFw4Rjgz144G8Q","sorting":"a","color":"#994500"}
 {"_id":"xeg3gSX34lWS8L4B","name":"Moving","type":"JournalEntry","sort":2400000,"flags":{"wfrp4e":{"initialization-parent":"Rules"}},"parent":"KBFMpqeeMFWhdpSI","sorting":"m","color":""}
 {"_id":"xpBRTbE6ztlFrb9a","name":"Ostwald Skeletons","type":"Actor","sort":4450000,"flags":{},"parent":"vU9LPtmofGv4bHSj","sorting":"a","color":"#a45328"}
@@ -185,3 +186,5 @@
 {"_id":"yrVnNPRyDRk4Ku57","name":"Travel Endeavours","type":"JournalEntry","sort":5100000,"flags":{},"parent":"tCLFt3MpljAU3OVd","sorting":"a","color":"#634231"}
 {"_id":"zQRDhzWh9uTwnQqe","name":"Class Endeavours","type":"JournalEntry","sort":2600000,"flags":{"wfrp4e":{"initialization-parent":"Endeavours"}},"parent":"5PMBVwnydUMSobIr","sorting":"m","color":""}
 {"name":"River Patrol Crew","type":"Actor","sort":5400000,"flags":{},"parent":"XPhZMLcw0v6GNj9x","sorting":"a","color":"#35405a","_id":"zpbMB5khH90d68Lk"}
+{"_id":"72qJfcjkeQkjUoVY","name":"Slaughter in Spittlefeld","type":"Scene","sort":100000,"flags":{},"parent":"49bbBFQWuWi3jpZC","sorting":"a","color":"#8a4900"}
+{"name":"Special","type":"Actor","sort":5950000,"flags":{},"parent":"81ZFw4Rjgz144G8Q","sorting":"a","color":"","_id":"eRpdLuCeQQ6am5gc"}
