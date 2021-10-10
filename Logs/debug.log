@@ -19710,3 +19710,18 @@
 {"message":"Created OwnedItem JrSXj7F9merIAkDU in parent Actor KED2PqEyISESi1UH","level":"info","timestamp":"2021-10-03 21:18:15"}
 {"message":"Shutting down Foundry Virtual Tabletop server","level":"info","timestamp":"2021-10-04 17:13:51"}
 {"message":"Shut-down success. Goodbye!","level":"info","timestamp":"2021-10-04 17:13:51"}
+{"message":"Foundry Virtual Tabletop - Version 0.7.9","level":"info","timestamp":"2021-10-10 10:58:58"}
+{"message":"Running on Node.js - Version 12.14.1","level":"info","timestamp":"2021-10-10 10:58:58"}
+{"message":"Loading data from user directory - /home/crazyeyes/.local/share/FoundryVTT","level":"info","timestamp":"2021-10-10 10:58:58"}
+{"message":"Application Options:\n{\n  \"port\": 30000,\n  \"upnp\": true,\n  \"fullscreen\": false,\n  \"hostname\": null,\n  \"routePrefix\": null,\n  \"sslCert\": null,\n  \"sslKey\": null,\n  \"awsConfig\": null,\n  \"dataPath\": \"/home/crazyeyes/.local/share/FoundryVTT\",\n  \"proxySSL\": false,\n  \"proxyPort\": null,\n  \"minifyStaticFiles\": false,\n  \"updateChannel\": \"release\",\n  \"language\": \"en.core\",\n  \"world\": null,\n  \"serviceConfig\": null,\n  \"isElectron\": true,\n  \"isNode\": false,\n  \"isSSL\": false,\n  \"demo\": false,\n  \"noupdate\": false\n}","level":"info","timestamp":"2021-10-10 10:58:58"}
+{"message":"License verification succeeded","level":"info","timestamp":"2021-10-10 10:58:58"}
+{"message":"Requesting UPnP port forwarding to destination 30000","level":"info","timestamp":"2021-10-10 10:58:58"}
+{"message":"Server started and listening on port 30000","level":"info","timestamp":"2021-10-10 10:58:58"}
+{"message":"Loading http://localhost:30000/ in Electron window","level":"info","timestamp":"2021-10-10 10:58:58"}
+{"message":"Created client session wrfn6de539jzy6ik16te4i69","level":"info","timestamp":"2021-10-10 10:58:58"}
+{"message":"Package wfrp4e-e4e declares an invalid language object in its manifest file","level":"error","timestamp":"2021-10-10 10:58:59"}
+{"message":"Package wfrp4e-exporter declares an invalid language object in its manifest file","level":"error","timestamp":"2021-10-10 10:58:59"}
+{"message":"Package wfrp4e-night-of-blood declares an invalid language object in its manifest file","level":"error","timestamp":"2021-10-10 10:58:59"}
+{"message":"Core software stable update 0.7.10 is now available!","level":"info","timestamp":"2021-10-10 10:58:59"}
+{"message":"Shutting down Foundry Virtual Tabletop server","level":"info","timestamp":"2021-10-10 10:59:02"}
+{"message":"Shut-down success. Goodbye!","level":"info","timestamp":"2021-10-10 10:59:02"}
