@@ -194,3 +194,5 @@
 {"_id":"yrVnNPRyDRk4Ku57","name":"Travel Endeavours","type":"JournalEntry","sort":5100000,"flags":{},"parent":"tCLFt3MpljAU3OVd","sorting":"a","color":"#634231"}
 {"_id":"zQRDhzWh9uTwnQqe","name":"Class Endeavours","type":"JournalEntry","sort":2600000,"flags":{"wfrp4e":{"initialization-parent":"Endeavours"}},"parent":"5PMBVwnydUMSobIr","sorting":"m","color":""}
 {"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"XPhZMLcw0v6GNj9x","sorting":"a","color":"#35405a"}
+{"name":"Animals","type":"RollTable","sort":1500000,"flags":{},"parent":"9DljdzPyy67UPIg1","sorting":"a","color":"","_id":"Eeh7NFAyrtL37HYL"}
+{"name":"Music Week","type":"Actor","sort":6050000,"flags":{},"parent":"vU9LPtmofGv4bHSj","sorting":"a","color":"#2c3b72","_id":"vTnyXcPYycO1f0Z9"}
