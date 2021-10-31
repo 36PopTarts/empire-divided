@@ -22,7 +22,6 @@
 {"name":"Vassals","type":"Actor","sort":4100000,"flags":{},"parent":"aodo7JMHjKV3BHhd","sorting":"a","color":"#392541","_id":"5SHe4s1AbmvxM0vK"}
 {"_id":"5lgcrfb3I58JxD8Y","name":"GM's Guide","type":"JournalEntry","sort":600000,"flags":{},"parent":null,"sorting":"m","color":"#7b1717"}
 {"name":"Disgusting Treasures","type":"Item","sort":null,"flags":{},"parent":"Jr9DZCfP6SV0ZJdg","sorting":"a","color":"#757b1e","_id":"6acWZ0eXgSQy7mDe"}
-{"name":"Haalstein","type":"Actor","sort":6450000,"flags":{},"parent":null,"sorting":"a","color":"#c28e00","_id":"6fz8mUcYgWIA39s3"}
 {"_id":"72qJfcjkeQkjUoVY","name":"Slaughter in Spittlefeld","type":"Scene","sort":100000,"flags":{},"parent":"49bbBFQWuWi3jpZC","sorting":"a","color":"#8a4900"}
 {"_id":"7JJvX9ibeSRwPy1t","name":"Wallensteins","type":"Actor","sort":1000000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#e69d00"}
 {"name":"Ubersreik","type":"Scene","sort":800000,"flags":{},"parent":null,"sorting":"a","color":"#2c4258","_id":"7UbKiipTOP45gltn"}
@@ -204,4 +203,5 @@
 {"_id":"yrVnNPRyDRk4Ku57","name":"Travel Endeavours","type":"JournalEntry","sort":5100000,"flags":{},"parent":"tCLFt3MpljAU3OVd","sorting":"a","color":"#634231"}
 {"_id":"zQRDhzWh9uTwnQqe","name":"Class Endeavours","type":"JournalEntry","sort":2600000,"flags":{"wfrp4e":{"initialization-parent":"Endeavours"}},"parent":"5PMBVwnydUMSobIr","sorting":"m","color":""}
 {"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"XPhZMLcw0v6GNj9x","sorting":"a","color":"#35405a"}
-{"$$deleted":true,"_id":"6fz8mUcYgWIA39s3"}
+{"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":450000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#35405a"}
+{"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
