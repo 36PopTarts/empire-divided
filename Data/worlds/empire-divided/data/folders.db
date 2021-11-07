@@ -203,3 +203,13 @@
 {"_id":"yrVnNPRyDRk4Ku57","name":"Travel Endeavours","type":"JournalEntry","sort":5100000,"flags":{},"parent":"tCLFt3MpljAU3OVd","sorting":"a","color":"#634231"}
 {"_id":"zQRDhzWh9uTwnQqe","name":"Class Endeavours","type":"JournalEntry","sort":2600000,"flags":{"wfrp4e":{"initialization-parent":"Endeavours"}},"parent":"5PMBVwnydUMSobIr","sorting":"m","color":""}
 {"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
+{"_id":"42MP0RQ6zQ5WdDMr","name":"Jousting","type":"Actor","sort":700000,"flags":{},"parent":null,"sorting":"a","color":"#c28400"}
+{"_id":"XPhZMLcw0v6GNj9x","name":"The Imperial Plenipotentiary","type":"Actor","sort":800000,"flags":{},"parent":null,"sorting":"a","color":"#326234"}
+{"_id":"DF7lzFgx0WrUhCCi","name":"Jurgen's Birthday","type":"Actor","sort":1000000,"flags":{},"parent":null,"sorting":"a","color":"#af571d"}
+{"_id":"2fIBGDk0pgxCZiri","name":"Horses","type":"Actor","sort":1100000,"flags":{},"parent":null,"sorting":"a","color":""}
+{"_id":"DF7lzFgx0WrUhCCi","name":"Jurgen's Birthday","type":"Actor","sort":350000,"flags":{},"parent":null,"sorting":"a","color":"#af571d"}
+{"_id":"DF7lzFgx0WrUhCCi","name":"Jurgen's Birthday","type":"Actor","sort":1000000,"flags":{},"parent":"kGEh553SL7K4zgmn","sorting":"a","color":"#af571d"}
+{"_id":"2fIBGDk0pgxCZiri","name":"Horses","type":"Actor","sort":650000,"flags":{},"parent":null,"sorting":"a","color":""}
+{"_id":"2fIBGDk0pgxCZiri","name":"Horses","type":"Actor","sort":3400000,"flags":{},"parent":"42MP0RQ6zQ5WdDMr","sorting":"a","color":""}
+{"_id":"k550Bu2pvHs2HAB1","name":"Jurgen's Party","type":"JournalEntry","sort":1400000,"flags":{},"parent":null,"sorting":"a","color":"#995900"}
+{"_id":"k550Bu2pvHs2HAB1","name":"Jurgen's Party","type":"JournalEntry","sort":8300000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#995900"}
