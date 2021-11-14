@@ -26,6 +26,33 @@
       "system": "wfrp4e",
       "package": "world",
       "absPath": "D:\\FoundryVTT\\Data\\worlds\\empire-divided\\packs\\old-journals.db"
+    },
+    {
+      "label": "Generic NPCs",
+      "entity": "Actor",
+      "name": "generic-npcs",
+      "path": "packs/generic-npcs.db",
+      "system": "wfrp4e",
+      "package": "world",
+      "absPath": "D:\\empire-divided\\Data\\worlds\\empire-divided\\packs\\generic-npcs.db"
+    },
+    {
+      "label": "Luitpoldstrasse NPCs",
+      "entity": "Actor",
+      "name": "luitpoldstrasse-npcs",
+      "path": "packs/luitpoldstrasse-npcs.db",
+      "system": "wfrp4e",
+      "package": "world",
+      "absPath": "D:\\empire-divided\\Data\\worlds\\empire-divided\\packs\\luitpoldstrasse-npcs.db"
+    },
+    {
+      "label": "Old NPCs",
+      "entity": "Actor",
+      "name": "old-npcs",
+      "path": "packs/old-npcs.db",
+      "system": "wfrp4e",
+      "package": "world",
+      "absPath": "D:\\empire-divided\\Data\\worlds\\empire-divided\\packs\\old-npcs.db"
     }
   ],
   "languages": [],
@@ -39,7 +66,7 @@
   "readme": "",
   "bugs": "",
   "changelog": "",
-  "background": "Images/Illustrations/ubersreik.jpg",
+  "background": "Images/Illustrations/backgrounds/act-2-background-2.webp",
   "system": "wfrp4e",
   "coreVersion": "0.7.9",
   "systemVersion": "3.4.1",

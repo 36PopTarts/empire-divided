@@ -104,7 +104,7 @@
 {"_id":"WuYKW45XIp1MG94j","name":"Luitpoldstrasse Blues","type":"JournalEntry","sort":7400000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#3b3d63"}
 {"_id":"XCAwjWgOHbC2T263","name":"Armour","type":"Item","sort":400000,"flags":{},"parent":null,"sorting":"a","color":"#492262"}
 {"_id":"XLndJ2I3x4vvGyT0","name":"Generic Creatures","type":"Actor","sort":300000,"flags":{},"parent":null,"sorting":"a","color":"#244c26"}
-{"_id":"XPhZMLcw0v6GNj9x","name":"The Imperial Plenipotentiary","type":"Actor","sort":800000,"flags":{},"parent":null,"sorting":"a","color":"#326234"}
+{"_id":"XPhZMLcw0v6GNj9x","name":"The Imperial Plenipotentiary","type":"Actor","sort":1100000,"flags":{},"parent":"kGEh553SL7K4zgmn","sorting":"a","color":"#326234"}
 {"_id":"XfhUxAdPBRN3lgpw","name":"Campaign","type":"JournalEntry","sort":1000000,"flags":{},"parent":null,"sorting":"a","color":"#799a95"}
 {"_id":"Xj9kKCDM9wWXQ5u4","name":"Magic Items","type":"Item","sort":450000,"flags":{},"parent":null,"sorting":"a","color":"#c28e00"}
 {"_id":"XjBkMXDDob9J9Ekf","name":"The Eight Lores","type":"JournalEntry","sort":2700000,"flags":{"wfrp4e":{"initialization-parent":"Magic"}},"parent":"SV4wmXUvuCNwQ0Nc","sorting":"m","color":""}
@@ -157,7 +157,7 @@
 {"name":"Burn After Printing","type":"JournalEntry","sort":6600000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#7a0000","_id":"ldzUzGoxkrif2YcZ"}
 {"name":"Hand Weapons","type":"Item","sort":null,"flags":{},"parent":"FFQANC5sa5CMDx9k","sorting":"a","color":"#742525","_id":"lpBts3B61tVnFic7"}
 {"_id":"lryP0lc1Adinz7aR","name":"Misc Items","type":"Item","sort":100000,"flags":{},"parent":null,"sorting":"a","color":"#7c1d1d"}
-{"name":"The Imperial Plenipotentiary","type":"JournalEntry","sort":8100000,"flags":{},"parent":null,"sorting":"a","color":"#2f561a","_id":"mDtj9tJuEIkmGvsz"}
+{"_id":"mDtj9tJuEIkmGvsz","name":"The Imperial Plenipotentiary","type":"JournalEntry","sort":1600000,"flags":{},"parent":null,"sorting":"a","color":"#2f561a"}
 {"_id":"mPZbMEHqQupSD01M","name":"Head Armour","type":"Item","sort":300000,"flags":{},"parent":"XCAwjWgOHbC2T263","sorting":"a","color":"#2b5e2f"}
 {"name":"Vassals","type":"Actor","sort":5000000,"flags":{},"parent":"7JJvX9ibeSRwPy1t","sorting":"a","color":"","_id":"mxV8BnhQRP4zjmY0"}
 {"name":"The Ottinger Papers","type":"JournalEntry","sort":7800000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#404554","_id":"nIM7VxtzVOzcOrxh"}
@@ -192,15 +192,46 @@
 {"_id":"vifFIN67OZxpVSov","name":"Haalsteins","type":"Actor","sort":500000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#7b4e23"}
 {"_id":"vrsSSGXYVnoGWa0s","name":"Politics","type":"JournalEntry","sort":2800000,"flags":{"wfrp4e":{"initialization-parent":"Reikland"}},"parent":"J8dQ6pBcs8qRN8Bk","sorting":"m","color":"#55385f"}
 {"_id":"w32aTNLs5I0hoeXS","name":"Blood on the Reik","type":"Actor","sort":300000,"flags":{},"parent":"81ZFw4Rjgz144G8Q","sorting":"a","color":"#592727"}
-{"name":"Jurgen's Horse","type":"Actor","sort":6350000,"flags":{},"parent":"XLndJ2I3x4vvGyT0","sorting":"a","color":"","_id":"wHnwTl2kt3cBlt6M"}
 {"_id":"wSvoD5ncqZC1InsK","name":"The Purple Hand","type":"JournalEntry","sort":8200000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#69008f"}
 {"_id":"wV26wyVeod4mutle","name":"Altdorf","type":"JournalEntry","sort":800000,"flags":{},"parent":null,"sorting":"a","color":"#7a0000"}
 {"_id":"xFWoAQ1YErAhKW2q","name":"Holswig-Schliesteins","type":"Actor","sort":5850000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#40529c"}
 {"_id":"xLkqS65tTqXTJiwi","name":"Merchants","type":"Actor","sort":200000,"flags":{},"parent":"81ZFw4Rjgz144G8Q","sorting":"a","color":"#994500"}
 {"_id":"xeg3gSX34lWS8L4B","name":"Moving","type":"JournalEntry","sort":2400000,"flags":{"wfrp4e":{"initialization-parent":"Rules"}},"parent":"KBFMpqeeMFWhdpSI","sorting":"m","color":""}
+{"name":"Graverobbers","type":"Actor","sort":6750000,"flags":{},"parent":"0nAbOypVU30zj9hY","sorting":"a","color":"","_id":"xgWzEjOk2CyYgybW"}
 {"_id":"xpBRTbE6ztlFrb9a","name":"Ostwald Skeletons","type":"Actor","sort":4450000,"flags":{},"parent":"vU9LPtmofGv4bHSj","sorting":"a","color":"#a45328"}
 {"_id":"y2b8VuEsVN1UFiv9","name":"Careers","type":"JournalEntry","sort":100000,"flags":{},"parent":"Kft8Ng9HfLOd35El","sorting":"a","color":"#694121"}
 {"_id":"yrVnNPRyDRk4Ku57","name":"Travel Endeavours","type":"JournalEntry","sort":5100000,"flags":{},"parent":"tCLFt3MpljAU3OVd","sorting":"a","color":"#634231"}
 {"_id":"zQRDhzWh9uTwnQqe","name":"Class Endeavours","type":"JournalEntry","sort":2600000,"flags":{"wfrp4e":{"initialization-parent":"Endeavours"}},"parent":"5PMBVwnydUMSobIr","sorting":"m","color":""}
 {"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
-{"_id":"XPhZMLcw0v6GNj9x","name":"The Imperial Plenipotentiary","type":"Actor","sort":1100000,"flags":{},"parent":"kGEh553SL7K4zgmn","sorting":"a","color":"#326234"}
+{"$$deleted":true,"_id":"xpBRTbE6ztlFrb9a"}
+{"$$deleted":true,"_id":"IS5ovz25chbBszdx"}
+{"$$deleted":true,"_id":"RSsILpcMb6SUymDR"}
+{"$$deleted":true,"_id":"jOxE5tugYbbl2J0R"}
+{"$$deleted":true,"_id":"cF0xcvbl8VKnU2Bc"}
+{"$$deleted":true,"_id":"vTnyXcPYycO1f0Z9"}
+{"name":"To Use Later","type":"Actor","sort":6850000,"flags":{},"parent":null,"sorting":"a","color":"","_id":"c73wsFFS2dVYSKUP"}
+{"$$deleted":true,"_id":"kGEh553SL7K4zgmn"}
+{"$$deleted":true,"_id":"DF7lzFgx0WrUhCCi"}
+{"$$deleted":true,"_id":"HuwUSimyXpu93JHB"}
+{"$$deleted":true,"_id":"VH7oDQHaxoBdjlT6"}
+{"$$deleted":true,"_id":"XPhZMLcw0v6GNj9x"}
+{"$$deleted":true,"_id":"a26xT4TcpNe9uhSy"}
+{"$$deleted":true,"_id":"fj7wa11dTIa1w9Ph"}
+{"$$deleted":true,"_id":"iDvrkxNnIRehQOFX"}
+{"$$deleted":true,"_id":"jVq0puTnPsLSgeQe"}
+{"$$deleted":true,"_id":"sAp7iBxhyn1US3Fo"}
+{"$$deleted":true,"_id":"u4zNUifOiBJsiqIc"}
+{"$$deleted":true,"_id":"4WUa8ljHnFNXmCbO"}
+{"$$deleted":true,"_id":"C7lVisVGE6XlRTrI"}
+{"$$deleted":true,"_id":"GRVLsfkCvD5t85XN"}
+{"$$deleted":true,"_id":"NiPWMfVhAnbY0oCC"}
+{"$$deleted":true,"_id":"PXW7cnt4LuAVSEjN"}
+{"$$deleted":true,"_id":"SiKuolzLYctROlhL"}
+{"$$deleted":true,"_id":"TUdxEqpb6h798HlC"}
+{"$$deleted":true,"_id":"UupPWHM0DgAFlyVv"}
+{"$$deleted":true,"_id":"aJaGjLYeVWSWvoGH"}
+{"$$deleted":true,"_id":"fRAvW3HDIGUNL4kZ"}
+{"$$deleted":true,"_id":"o847nmNkzoSMz8Uu"}
+{"name":"Past Adventures","type":"Actor","sort":6950000,"flags":{},"parent":null,"sorting":"a","color":"#3e3f65","_id":"JqOpT2NqmpzgvoeG"}
+{"_id":"JqOpT2NqmpzgvoeG","name":"Past Adventures","type":"Actor","sort":400000,"flags":{},"parent":null,"sorting":"a","color":"#3e3f65"}
+{"_id":"c73wsFFS2dVYSKUP","name":"To Use Later","type":"Actor","sort":6850000,"flags":{},"parent":null,"sorting":"m","color":""}
