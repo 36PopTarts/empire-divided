@@ -26024,3 +26024,22 @@
 {"message":"Created Folder with id JqOpT2NqmpzgvoeG","level":"info","timestamp":"2021-11-14 16:49:43"}
 {"message":"Shutting down Foundry Virtual Tabletop server","level":"info","timestamp":"2021-11-14 16:52:15"}
 {"message":"Shut-down success. Goodbye!","level":"info","timestamp":"2021-11-14 16:52:15"}
+{"message":"Foundry Virtual Tabletop - Version 0.7.9","level":"info","timestamp":"2021-11-14 11:16:49"}
+{"message":"Running on Node.js - Version 12.14.1","level":"info","timestamp":"2021-11-14 11:16:49"}
+{"message":"Loading data from user directory - /home/crazyeyes/.local/share/FoundryVTT","level":"info","timestamp":"2021-11-14 11:16:49"}
+{"message":"Application Options:\n{\n  \"port\": 30000,\n  \"upnp\": true,\n  \"fullscreen\": false,\n  \"hostname\": null,\n  \"routePrefix\": null,\n  \"sslCert\": null,\n  \"sslKey\": null,\n  \"awsConfig\": null,\n  \"dataPath\": \"/home/crazyeyes/.local/share/FoundryVTT\",\n  \"proxySSL\": false,\n  \"proxyPort\": null,\n  \"minifyStaticFiles\": false,\n  \"updateChannel\": \"release\",\n  \"language\": \"en.core\",\n  \"world\": null,\n  \"serviceConfig\": null,\n  \"isElectron\": true,\n  \"isNode\": false,\n  \"isSSL\": false,\n  \"demo\": false,\n  \"noupdate\": false\n}","level":"info","timestamp":"2021-11-14 11:16:49"}
+{"message":"License verification failed. Please confirm your Foundry Virtual Tabletop software license","level":"error","timestamp":"2021-11-14 11:16:49"}
+{"message":"Requesting UPnP port forwarding to destination 30000","level":"info","timestamp":"2021-11-14 11:16:49"}
+{"message":"Server started and listening on port 30000","level":"info","timestamp":"2021-11-14 11:16:49"}
+{"message":"Loading http://localhost:30000/ in Electron window","level":"info","timestamp":"2021-11-14 11:16:49"}
+{"message":"Created client session vxnfzh4nsi3tzrddsj3tmfzc","level":"info","timestamp":"2021-11-14 11:16:49"}
+{"message":"Package wfrp4e-e4e declares an invalid language object in its manifest file","level":"error","timestamp":"2021-11-14 11:16:50"}
+{"message":"Package wfrp4e-exporter declares an invalid language object in its manifest file","level":"error","timestamp":"2021-11-14 11:16:50"}
+{"message":"Package wfrp4e-night-of-blood declares an invalid language object in its manifest file","level":"error","timestamp":"2021-11-14 11:16:50"}
+{"message":"Core software stable update 0.7.10 is now available!","level":"info","timestamp":"2021-11-14 11:16:50"}
+{"message":"License signature successfully created. Thank you and please enjoy Foundry Virtual Tabletop.","level":"info","timestamp":"2021-11-14 11:16:53"}
+{"message":"License verification succeeded","level":"info","timestamp":"2021-11-14 11:16:53"}
+{"message":"User authentication successful for user Crazyeyes","level":"info","timestamp":"2021-11-14 11:17:09"}
+{"message":"Vending world data to User 0ASvjGC88ifVZG73","level":"info","timestamp":"2021-11-14 11:17:10"}
+{"message":"Shutting down Foundry Virtual Tabletop server","level":"info","timestamp":"2021-11-14 11:22:35"}
+{"message":"Shut-down success. Goodbye!","level":"info","timestamp":"2021-11-14 11:22:35"}
