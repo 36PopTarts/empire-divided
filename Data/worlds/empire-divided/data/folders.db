@@ -51,6 +51,7 @@
 {"name":"Images","type":"JournalEntry","sort":5200000,"flags":{},"parent":"qkj3aSI8lXUSVEwD","sorting":"a","color":"#184372","_id":"Esd2DY5bYJdq4Bmw"}
 {"_id":"F70jdHaYsajKf1pv","name":"Altdorf Fog","type":"RollTable","sort":100000,"flags":{},"parent":"j6aYmRuuLTSkdIOY","sorting":"a","color":"#41443c"}
 {"name":"Extra","type":"RollTable","sort":800000,"flags":{},"parent":"F70jdHaYsajKf1pv","sorting":"a","color":"","_id":"F8ncr5rwQxiul0pt"}
+{"name":"Saal Village","type":"Actor","sort":7150000,"flags":{},"parent":"WOnrBxROlWST5AbW","sorting":"a","color":"#5a5c42","_id":"FDbHTSRWc372qoEQ"}
 {"_id":"FFQANC5sa5CMDx9k","name":"Weapons","type":"Item","sort":300000,"flags":{},"parent":null,"sorting":"a","color":"#3c719a"}
 {"_id":"FH46SuKDUeaO7cfJ","name":"NPC Careers","type":"Item","sort":1300000,"flags":{},"parent":"B1NGEkUpOPYjZbtf","sorting":"a","color":"#3b1212"}
 {"_id":"IAn7gAevS1Z5CnKd","name":"Travel","type":"JournalEntry","sort":350000,"flags":{},"parent":null,"sorting":"a","color":"#45643a"}
@@ -150,6 +151,7 @@
 {"_id":"mDtj9tJuEIkmGvsz","name":"The Imperial Plenipotentiary","type":"JournalEntry","sort":8400000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#2f561a"}
 {"_id":"mPZbMEHqQupSD01M","name":"Head Armour","type":"Item","sort":300000,"flags":{},"parent":"XCAwjWgOHbC2T263","sorting":"a","color":"#2b5e2f"}
 {"name":"NPC Items","type":"Item","sort":2700000,"flags":{},"parent":"B1NGEkUpOPYjZbtf","sorting":"a","color":"#6a1616","_id":"mSls4f8JbUBSZvVU"}
+{"name":"Villagers","type":"JournalEntry","sort":8600000,"flags":{},"parent":"gfvxW95YPpkwZLnb","sorting":"a","color":"","_id":"mwr83CyCXWfwaJts"}
 {"name":"Vassals","type":"Actor","sort":5000000,"flags":{},"parent":"7JJvX9ibeSRwPy1t","sorting":"a","color":"","_id":"mxV8BnhQRP4zjmY0"}
 {"name":"The Ottinger Papers","type":"JournalEntry","sort":7800000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#404554","_id":"nIM7VxtzVOzcOrxh"}
 {"_id":"nYrlPwQwhU9yHNZz","name":"Ubersreik","type":"JournalEntry","sort":900000,"flags":{},"parent":null,"sorting":"a","color":"#2d628b"}
@@ -190,5 +192,4 @@
 {"_id":"yrVnNPRyDRk4Ku57","name":"Travel Endeavours","type":"JournalEntry","sort":100000,"flags":{},"parent":"IAn7gAevS1Z5CnKd","sorting":"a","color":"#634231"}
 {"_id":"zQRDhzWh9uTwnQqe","name":"Class Endeavours","type":"JournalEntry","sort":2600000,"flags":{"wfrp4e":{"initialization-parent":"Endeavours"}},"parent":"5PMBVwnydUMSobIr","sorting":"m","color":""}
 {"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
-{"name":"Saal Village","type":"Actor","sort":7150000,"flags":{},"parent":"WOnrBxROlWST5AbW","sorting":"a","color":"#5a5c42","_id":"FDbHTSRWc372qoEQ"}
-{"name":"Villagers","type":"JournalEntry","sort":8600000,"flags":{},"parent":"gfvxW95YPpkwZLnb","sorting":"a","color":"","_id":"mwr83CyCXWfwaJts"}
+{"name":"Nurgle","type":"Actor","sort":7250000,"flags":{},"parent":"WOnrBxROlWST5AbW","sorting":"a","color":"#435610","_id":"eNTF9mwEZxxIW5oi"}
