@@ -995,3 +995,20 @@
 {"level":"error","timestamp":"2021-11-21 15:44:38","message":"User Terra lacks permission to update Actor ymBadXPqYRVCj3vQ","stack":"Error: User Terra lacks permission to update Actor ymBadXPqYRVCj3vQ\n    at Function._onUpdate (/home/crazyeyes/foundry/resources/app/dist/database/odm/document.js:1:8099)\n    at async Socket.handleEvent (/home/crazyeyes/foundry/resources/app/dist/sockets.js:1:2262)"}
 {"level":"error","timestamp":"2021-11-21 15:44:38","message":"User Josh lacks permission to update Actor ymBadXPqYRVCj3vQ","stack":"Error: User Josh lacks permission to update Actor ymBadXPqYRVCj3vQ\n    at Function._onUpdate (/home/crazyeyes/foundry/resources/app/dist/database/odm/document.js:1:8099)\n    at async Socket.handleEvent (/home/crazyeyes/foundry/resources/app/dist/sockets.js:1:2262)"}
 {"level":"error","timestamp":"2021-11-22 12:32:02","message":"Required field img not present in Tile.","stack":"Error: Required field img not present in Tile.\n    at Tile._validateRequiredField (/home/crazyeyes/foundry/resources/app/dist/database/odm/abstract.js:1:4323)\n    at Tile.validate (/home/crazyeyes/foundry/resources/app/dist/database/odm/abstract.js:1:3994)\n    at Function._onCreate (/home/crazyeyes/foundry/resources/app/dist/database/odm/embedded.js:1:6490)\n    at async Socket.handleEvent (/home/crazyeyes/foundry/resources/app/dist/sockets.js:1:2262)"}
+{"message":"License verification failed. Please confirm your Foundry Virtual Tabletop software license","level":"error","timestamp":"2021-11-23 02:10:55"}
+{"message":"Package wfrp4e-e4e declares an invalid language object in its manifest file","level":"error","timestamp":"2021-11-23 02:10:56"}
+{"message":"Package wfrp4e-exporter declares an invalid language object in its manifest file","level":"error","timestamp":"2021-11-23 02:10:56"}
+{"message":"Package wfrp4e-night-of-blood declares an invalid language object in its manifest file","level":"error","timestamp":"2021-11-23 02:10:56"}
+{"message":"Package wfrp4e-e4e declares an invalid language object in its manifest file","level":"error","timestamp":"2021-11-23 02:51:36"}
+{"message":"Package wfrp4e-exporter declares an invalid language object in its manifest file","level":"error","timestamp":"2021-11-23 02:51:36"}
+{"message":"Package wfrp4e-night-of-blood declares an invalid language object in its manifest file","level":"error","timestamp":"2021-11-23 02:51:36"}
+{"message":"Package wfrp4e-e4e declares an invalid language object in its manifest file","level":"error","timestamp":"2021-11-23 15:10:55"}
+{"message":"Package wfrp4e-exporter declares an invalid language object in its manifest file","level":"error","timestamp":"2021-11-23 15:10:55"}
+{"message":"Package wfrp4e-night-of-blood declares an invalid language object in its manifest file","level":"error","timestamp":"2021-11-23 15:10:55"}
+{"message":"Package wfrp4e-e4e declares an invalid language object in its manifest file","level":"error","timestamp":"2021-11-24 18:36:59"}
+{"message":"Package wfrp4e-exporter declares an invalid language object in its manifest file","level":"error","timestamp":"2021-11-24 18:36:59"}
+{"message":"Package wfrp4e-night-of-blood declares an invalid language object in its manifest file","level":"error","timestamp":"2021-11-24 18:36:59"}
+{"message":"Package wfrp4e-e4e declares an invalid language object in its manifest file","level":"error","timestamp":"2021-11-28 14:12:31"}
+{"message":"Package wfrp4e-exporter declares an invalid language object in its manifest file","level":"error","timestamp":"2021-11-28 14:12:31"}
+{"message":"Package wfrp4e-night-of-blood declares an invalid language object in its manifest file","level":"error","timestamp":"2021-11-28 14:12:31"}
+{"errno":-4058,"code":"ECOMPROMISED","syscall":"stat","path":"D:\\empire-divided\\Config\\options.json.lock","level":"error","timestamp":"2021-11-28 16:45:36","message":"ENOENT: no such file or directory, stat 'D:\\empire-divided\\Config\\options.json.lock'","stack":"Error: ENOENT: no such file or directory, stat 'D:\\empire-divided\\Config\\options.json.lock'"}

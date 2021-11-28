@@ -30,6 +30,7 @@
 {"name":"Animal Traits","type":"Item","sort":1500000,"flags":{},"parent":"B1NGEkUpOPYjZbtf","sorting":"a","color":"#7a371a","_id":"7ywVkOaViZnEcW13"}
 {"_id":"81ZFw4Rjgz144G8Q","name":"Generic NPCs","type":"Actor","sort":200000,"flags":{},"parent":null,"sorting":"a","color":"#264f21"}
 {"name":"Lore of the Little Waaagh!","type":"Item","sort":2400000,"flags":{},"parent":"YRGW5Jqs9RpDaLqn","sorting":"a","color":"#35531d","_id":"86rogfsOazeuAw3S"}
+{"name":"Ogre Maneater","type":"Item","sort":2900000,"flags":{},"parent":"FH46SuKDUeaO7cfJ","sorting":"a","color":"#5f3f25","_id":"88dHnDtRpYPObKCG"}
 {"name":"Loot","type":"RollTable","sort":100000,"flags":{},"parent":"SsnU0RAudPtByTXv","sorting":"a","color":"","_id":"8quqXmxl5WgxUHgI"}
 {"name":"Downtime Events","type":"RollTable","sort":900000,"flags":{},"parent":null,"sorting":"a","color":"#323e7b","_id":"9DljdzPyy67UPIg1"}
 {"name":"Gems","type":"RollTable","sort":1000000,"flags":{},"parent":"8quqXmxl5WgxUHgI","sorting":"a","color":"","_id":"9HLRrTLXiCxAsRhX"}
@@ -63,6 +64,7 @@
 {"_id":"JqOpT2NqmpzgvoeG","name":"Past Adventures","type":"Actor","sort":400000,"flags":{},"parent":null,"sorting":"a","color":"#3e3f65"}
 {"_id":"Jr9DZCfP6SV0ZJdg","name":"Random 'Treasure'","type":"Item","sort":200000,"flags":{},"parent":null,"sorting":"a","color":"#af9c74"}
 {"name":"Rules","type":"JournalEntry","sort":200000,"flags":{},"parent":null,"sorting":"m","color":"#264a28","_id":"KBFMpqeeMFWhdpSI"}
+{"_id":"KN6Ta1P6q4WGPqtN","name":"Haalstein","type":"Scene","sort":750000,"flags":{},"parent":null,"sorting":"a","color":"#a35f00"}
 {"_id":"Kft8Ng9HfLOd35El","name":"New Animal Rules","type":"JournalEntry","sort":100000,"flags":{},"parent":"NOyJwiypgeV7mEJh","sorting":"a","color":"#6b3000"}
 {"_id":"KpTC0BqE48PAMUSF","name":"Aschaffenbergs","type":"Actor","sort":200000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#e69100"}
 {"_id":"LsKPmbgYSGmbeFvx","name":"Liebwitzs","type":"Actor","sort":1200000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":""}
@@ -94,7 +96,7 @@
 {"name":"Dawihafen","type":"JournalEntry","sort":4500000,"flags":{},"parent":"nYrlPwQwhU9yHNZz","sorting":"a","color":"","_id":"VmNg2NFg4nLcAIjg"}
 {"name":"Altdorf Endeavours","type":"JournalEntry","sort":5700000,"flags":{},"parent":"5PMBVwnydUMSobIr","sorting":"a","color":"#411010","_id":"W7hZ5KseAjno0hrA"}
 {"name":"Blackpowder Nights","type":"JournalEntry","sort":7300000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#404040","_id":"WAxihFsdmCGhdzji"}
-{"name":"Auerswald","type":"Scene","sort":1300000,"flags":{},"parent":null,"sorting":"a","color":"#c79200","_id":"WGZeOxlDHwKWGiCo"}
+{"_id":"WGZeOxlDHwKWGiCo","name":"Auerswald","type":"Scene","sort":1000000,"flags":{},"parent":null,"sorting":"a","color":"#c79200"}
 {"name":"Blessed Saal","type":"Actor","sort":7050000,"flags":{},"parent":null,"sorting":"a","color":"#717326","_id":"WOnrBxROlWST5AbW"}
 {"name":"Body Armour","type":"Item","sort":400000,"flags":{},"parent":"XCAwjWgOHbC2T263","sorting":"a","color":"#37366d","_id":"WQAhCHZI5iIKEzgV"}
 {"name":"The East End","type":"JournalEntry","sort":3900000,"flags":{},"parent":"PtPHYLSSbcrSJ2ZN","sorting":"a","color":"","_id":"WQm4k9MEuHY8Q0Ct"}
@@ -122,6 +124,7 @@
 {"name":"Songs","type":"JournalEntry","sort":5300000,"flags":{},"parent":"qkj3aSI8lXUSVEwD","sorting":"a","color":"","_id":"clNfcmkJx7Pc8RQm"}
 {"name":"Knick-knacks","type":"Item","sort":100000,"flags":{},"parent":"Jr9DZCfP6SV0ZJdg","sorting":"a","color":"#814f09","_id":"dTnfvpoPWryQyQkp"}
 {"name":"Bridges","type":"JournalEntry","sort":5400000,"flags":{},"parent":"PtPHYLSSbcrSJ2ZN","sorting":"a","color":"","_id":"dnJE80atezmxllF1"}
+{"name":"Nurgle","type":"Actor","sort":7250000,"flags":{},"parent":"WOnrBxROlWST5AbW","sorting":"a","color":"#435610","_id":"eNTF9mwEZxxIW5oi"}
 {"name":"Special","type":"Actor","sort":5950000,"flags":{},"parent":"81ZFw4Rjgz144G8Q","sorting":"a","color":"","_id":"eRpdLuCeQQ6am5gc"}
 {"_id":"eUIeajvlSElDvALW","name":"Rivers, Canals, and Lakes","type":"JournalEntry","sort":400000,"flags":{"wfrp4e":{"initialization-parent":"Reikland"}},"parent":"J8dQ6pBcs8qRN8Bk","sorting":"m","color":"#1c3164"}
 {"_id":"elSE3n8tCbnKkmos","name":"Familiars","type":"Actor","sort":1200000,"flags":{},"parent":"lWzLTQHnXZft3wzO","sorting":"a","color":"#14305c"}
@@ -192,4 +195,3 @@
 {"_id":"yrVnNPRyDRk4Ku57","name":"Travel Endeavours","type":"JournalEntry","sort":100000,"flags":{},"parent":"IAn7gAevS1Z5CnKd","sorting":"a","color":"#634231"}
 {"_id":"zQRDhzWh9uTwnQqe","name":"Class Endeavours","type":"JournalEntry","sort":2600000,"flags":{"wfrp4e":{"initialization-parent":"Endeavours"}},"parent":"5PMBVwnydUMSobIr","sorting":"m","color":""}
 {"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
-{"name":"Nurgle","type":"Actor","sort":7250000,"flags":{},"parent":"WOnrBxROlWST5AbW","sorting":"a","color":"#435610","_id":"eNTF9mwEZxxIW5oi"}
