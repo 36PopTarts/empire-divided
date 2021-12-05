@@ -133,6 +133,7 @@
 {"_id":"fajyhFU9lHRWsMFz","name":"Factions","type":"JournalEntry","sort":1200000,"flags":{},"parent":null,"sorting":"a"}
 {"_id":"gKCITmniRgrsfVMl","name":"Holzenauers","type":"Actor","sort":700000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#7d1212"}
 {"name":"Blessed Saal","type":"JournalEntry","sort":8500000,"flags":{},"parent":null,"sorting":"a","color":"#505828","_id":"gfvxW95YPpkwZLnb"}
+{"_id":"hrUr240kVLhmySwb","name":"Parravon","type":"Actor","sort":7350000,"flags":{},"parent":null,"sorting":"a","color":"#990000"}
 {"name":"Rural","type":"Scene","sort":500000,"flags":{},"parent":"ifqvWppW117y2zyP","sorting":"a","color":"#3f6232","_id":"iSmypdWiB2z1UVCM"}
 {"name":"Backgrounds","type":"Scene","sort":100000,"flags":{},"parent":null,"sorting":"a","color":"#335021","_id":"ifqvWppW117y2zyP"}
 {"_id":"iltPBXW0kOqlZhfA","name":"Settlements","type":"JournalEntry","sort":500000,"flags":{"wfrp4e":{"initialization-parent":"Reikland"}},"parent":"J8dQ6pBcs8qRN8Bk","sorting":"m","color":"#534f1e"}
@@ -195,3 +196,4 @@
 {"_id":"yrVnNPRyDRk4Ku57","name":"Travel Endeavours","type":"JournalEntry","sort":100000,"flags":{},"parent":"IAn7gAevS1Z5CnKd","sorting":"a","color":"#634231"}
 {"_id":"zQRDhzWh9uTwnQqe","name":"Class Endeavours","type":"JournalEntry","sort":2600000,"flags":{"wfrp4e":{"initialization-parent":"Endeavours"}},"parent":"5PMBVwnydUMSobIr","sorting":"m","color":""}
 {"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
+{"name":"Trott's Marauders","type":"Actor","sort":7450000,"flags":{},"parent":"EFCQWpwIywZCymaB","sorting":"a","color":"","_id":"N5AgJAocLeWzgiXp"}
