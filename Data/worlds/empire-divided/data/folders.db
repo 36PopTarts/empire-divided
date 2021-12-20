@@ -104,6 +104,7 @@
 {"name":"Blackpowder Nights","type":"JournalEntry","sort":7300000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#404040","_id":"WAxihFsdmCGhdzji"}
 {"_id":"WGZeOxlDHwKWGiCo","name":"Auerswald","type":"Scene","sort":1000000,"flags":{},"parent":null,"sorting":"a","color":"#c79200"}
 {"name":"Blessed Saal","type":"Actor","sort":7050000,"flags":{},"parent":null,"sorting":"a","color":"#717326","_id":"WOnrBxROlWST5AbW"}
+{"_id":"WP8D3DgTaIPSKQ2L","name":"No Strings Attached","type":"JournalEntry","sort":8900000,"flags":{},"parent":null,"sorting":"m","color":"#353664"}
 {"name":"Body Armour","type":"Item","sort":400000,"flags":{},"parent":"XCAwjWgOHbC2T263","sorting":"a","color":"#37366d","_id":"WQAhCHZI5iIKEzgV"}
 {"name":"The East End","type":"JournalEntry","sort":3900000,"flags":{},"parent":"wV26wyVeod4mutle","sorting":"a","color":"","_id":"WQm4k9MEuHY8Q0Ct"}
 {"_id":"WuYKW45XIp1MG94j","name":"Luitpoldstrasse Blues","type":"JournalEntry","sort":7400000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#3b3d63"}
@@ -134,6 +135,7 @@
 {"name":"Nurgle","type":"Actor","sort":7250000,"flags":{},"parent":"WOnrBxROlWST5AbW","sorting":"a","color":"#435610","_id":"eNTF9mwEZxxIW5oi"}
 {"name":"Special","type":"Actor","sort":5950000,"flags":{},"parent":"81ZFw4Rjgz144G8Q","sorting":"a","color":"","_id":"eRpdLuCeQQ6am5gc"}
 {"_id":"eUIeajvlSElDvALW","name":"Rivers, Canals, and Lakes","type":"JournalEntry","sort":400000,"flags":{"wfrp4e":{"initialization-parent":"Reikland"}},"parent":"J8dQ6pBcs8qRN8Bk","sorting":"m","color":"#1c3164"}
+{"name":"No Strings Attached","type":"Actor","sort":7650000,"flags":{},"parent":null,"sorting":"a","color":"#513474","_id":"eeaOzk78BPY9girO"}
 {"_id":"elSE3n8tCbnKkmos","name":"Familiars","type":"Actor","sort":1200000,"flags":{},"parent":"lWzLTQHnXZft3wzO","sorting":"a","color":"#14305c"}
 {"_id":"evoGfpDUlvJxklnA","name":"Cities","type":"JournalEntry","sort":750000,"flags":{},"parent":null,"sorting":"a","color":"#5e5e5e"}
 {"_id":"fJD2A7H0QjVnQKim","name":"The Altdorf Spieler","type":"JournalEntry","sort":100000,"flags":{},"parent":"2Vc3Hl56Nkx9gNaO","sorting":"a","color":""}
@@ -208,6 +210,5 @@
 {"_id":"yrVnNPRyDRk4Ku57","name":"Travel Endeavours","type":"JournalEntry","sort":100000,"flags":{},"parent":"IAn7gAevS1Z5CnKd","sorting":"a","color":"#634231"}
 {"_id":"zQRDhzWh9uTwnQqe","name":"Class Endeavours","type":"JournalEntry","sort":2600000,"flags":{"wfrp4e":{"initialization-parent":"Endeavours"}},"parent":"5PMBVwnydUMSobIr","sorting":"m","color":""}
 {"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
-{"name":"No Strings Attached","type":"Actor","sort":7650000,"flags":{},"parent":null,"sorting":"a","color":"#513474","_id":"eeaOzk78BPY9girO"}
-{"name":"No Strings Attached","type":"JournalEntry","sort":8900000,"flags":{},"parent":null,"sorting":"a","color":"#353664","_id":"WP8D3DgTaIPSKQ2L"}
-{"_id":"WP8D3DgTaIPSKQ2L","name":"No Strings Attached","type":"JournalEntry","sort":8900000,"flags":{},"parent":null,"sorting":"m","color":"#353664"}
+{"_id":"eeaOzk78BPY9girO","name":"No Strings Attached","type":"Actor","sort":750000,"flags":{},"parent":null,"sorting":"a","color":"#513474"}
+{"_id":"eeaOzk78BPY9girO","name":"No Strings Attached","type":"Actor","sort":4500000,"flags":{},"parent":"vU9LPtmofGv4bHSj","sorting":"a","color":"#513474"}
