@@ -1,3 +1,4 @@
+{"name":"Karak Azgaraz","type":"JournalEntry","sort":9200000,"flags":{},"parent":"JV874xxN5HnfZ9US","sorting":"a","color":"","_id":"0MIpj7xvY6NEdtss"}
 {"name":"Images","type":"JournalEntry","sort":8300000,"flags":{},"parent":"mDtj9tJuEIkmGvsz","sorting":"a","color":"","_id":"0hdNTncHGuzeohHo"}
 {"name":"Careers","type":"JournalEntry","sort":7500000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"","_id":"0i9NmuJ8tUuGDGNt"}
 {"_id":"0nAbOypVU30zj9hY","name":"Altdorf","type":"Actor","sort":500000,"flags":{},"parent":null,"sorting":"a","color":"#a20101"}
@@ -64,6 +65,7 @@
 {"name":"Altdorf","type":"Scene","sort":200000,"flags":{},"parent":null,"sorting":"a","color":"#990000","_id":"J3T0xtVGxYvoqBJS"}
 {"_id":"J8dQ6pBcs8qRN8Bk","name":"Reikland","type":"JournalEntry","sort":100000,"flags":{},"parent":"sIr7875W6CLmlLOg","sorting":"m","color":"#5c1807"}
 {"name":"Kazrik's Minions","type":"Actor","sort":6250000,"flags":{},"parent":"CLkaC7gsUPC5R3mN","sorting":"a","color":"","_id":"JB1KOejXgbbfmFEh"}
+{"name":"Grey Mountains","type":"JournalEntry","sort":9000000,"flags":{},"parent":"gfvxW95YPpkwZLnb","sorting":"a","color":"","_id":"JV874xxN5HnfZ9US"}
 {"name":"Images","type":"JournalEntry","sort":8700000,"flags":{},"parent":"2Vc3Hl56Nkx9gNaO","sorting":"a","color":"#1c425f","_id":"JVyzRakqZPZUJqnr"}
 {"_id":"JqOpT2NqmpzgvoeG","name":"Past Adventures","type":"Actor","sort":400000,"flags":{},"parent":null,"sorting":"a","color":"#3e3f65"}
 {"_id":"Jr9DZCfP6SV0ZJdg","name":"Random 'Treasure'","type":"Item","sort":200000,"flags":{},"parent":null,"sorting":"a","color":"#af9c74"}
@@ -71,6 +73,7 @@
 {"_id":"KN6Ta1P6q4WGPqtN","name":"Haalstein","type":"Scene","sort":750000,"flags":{},"parent":null,"sorting":"a","color":"#a35f00"}
 {"name":"Generic","type":"Actor","sort":7550000,"flags":{},"parent":"uJ4pNCMNWb4RPqhb","sorting":"a","color":"","_id":"KQQFc8sKDiBdFZYj"}
 {"_id":"Kft8Ng9HfLOd35El","name":"New Animal Rules","type":"JournalEntry","sort":100000,"flags":{},"parent":"NOyJwiypgeV7mEJh","sorting":"a","color":"#6b3000"}
+{"name":"Frugelhofen","type":"JournalEntry","sort":9100000,"flags":{},"parent":"JV874xxN5HnfZ9US","sorting":"a","color":"","_id":"KgvGPgUgCPwm0TZL"}
 {"_id":"KpTC0BqE48PAMUSF","name":"Aschaffenbergs","type":"Actor","sort":200000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#e69100"}
 {"_id":"LsKPmbgYSGmbeFvx","name":"Liebwitzs","type":"Actor","sort":1200000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":""}
 {"name":"Diseases","type":"Item","sort":2800000,"flags":{},"parent":"B1NGEkUpOPYjZbtf","sorting":"a","color":"#504e16","_id":"Mjig5LaJ7DvQxXbO"}
@@ -81,11 +84,13 @@
 {"_id":"NkiXlTQtgNkW3FMs","name":"Religion and Belief","type":"JournalEntry","sort":300000,"flags":{},"parent":"sIr7875W6CLmlLOg","sorting":"m","color":"#835a05"}
 {"name":"Vassals","type":"Actor","sort":4800000,"flags":{},"parent":"3qMaJLYYtadKbkj4","sorting":"a","color":"","_id":"NtlDsaImpY9QWsEw"}
 {"_id":"OrdQTl1VKXMa8n5S","name":"The Grim, Dark Forests","type":"JournalEntry","sort":200000,"flags":{"wfrp4e":{"initialization-parent":"Reikland"}},"parent":"J8dQ6pBcs8qRN8Bk","sorting":"m","color":"#385029"}
+{"name":"Alcohol","type":"Item","sort":3600000,"flags":{},"parent":"YVIo1XXWiGMTa5kG","sorting":"a","color":"","_id":"OwpreDOBVSjPAjKX"}
 {"name":"Fief Generator","type":"RollTable","sort":1700000,"flags":{},"parent":null,"sorting":"a","color":"","_id":"PJkmJd5XQPdUQpNE"}
 {"name":"Old","type":"RollTable","sort":1800000,"flags":{},"parent":null,"sorting":"a","color":"","_id":"PtRkJeRMkzZU0DYR"}
 {"_id":"Q0UfttGS2ZpKyqfG","name":"Character","type":"JournalEntry","sort":2200000,"flags":{"wfrp4e":{"initialization-parent":"Rules"}},"parent":"KBFMpqeeMFWhdpSI","sorting":"m","color":""}
 {"_id":"Q4FUto1MM8iMAbNq","name":"Vermintide Weapons","type":"Item","sort":1600000,"flags":{},"parent":"FFQANC5sa5CMDx9k","sorting":"a","color":"#23351c"}
 {"name":"Monster Traits","type":"Item","sort":1100000,"flags":{},"parent":"B1NGEkUpOPYjZbtf","sorting":"a","color":"#4d3d5c","_id":"QcrOaFPGaPLI5M77"}
+{"_id":"Qkji9t1b0fCRnfuT","name":"Grey Mountains","type":"Actor","sort":7750000,"flags":{},"parent":null,"sorting":"a","color":"#696969"}
 {"name":"Extended Tests","type":"Item","sort":2300000,"flags":{},"parent":"B1NGEkUpOPYjZbtf","sorting":"a","color":"","_id":"R2E1KiJAJlTeq4W2"}
 {"name":"Templates","type":"Item","sort":1800000,"flags":{},"parent":"FH46SuKDUeaO7cfJ","sorting":"a","color":"","_id":"RBXRWBI253YEeOCn"}
 {"name":"Brute Career","type":"Item","sort":1400000,"flags":{},"parent":"FH46SuKDUeaO7cfJ","sorting":"a","color":"","_id":"RO7uolWbUYQEX3ym"}
@@ -104,7 +109,7 @@
 {"name":"Blackpowder Nights","type":"JournalEntry","sort":7300000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#404040","_id":"WAxihFsdmCGhdzji"}
 {"_id":"WGZeOxlDHwKWGiCo","name":"Auerswald","type":"Scene","sort":1000000,"flags":{},"parent":null,"sorting":"a","color":"#c79200"}
 {"name":"Blessed Saal","type":"Actor","sort":7050000,"flags":{},"parent":null,"sorting":"a","color":"#717326","_id":"WOnrBxROlWST5AbW"}
-{"_id":"WP8D3DgTaIPSKQ2L","name":"No Strings Attached","type":"JournalEntry","sort":8900000,"flags":{},"parent":null,"sorting":"m","color":"#353664"}
+{"_id":"WP8D3DgTaIPSKQ2L","name":"No Strings Attached","type":"JournalEntry","sort":8500000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"m","color":"#353664"}
 {"name":"Body Armour","type":"Item","sort":400000,"flags":{},"parent":"XCAwjWgOHbC2T263","sorting":"a","color":"#37366d","_id":"WQAhCHZI5iIKEzgV"}
 {"name":"The East End","type":"JournalEntry","sort":3900000,"flags":{},"parent":"wV26wyVeod4mutle","sorting":"a","color":"","_id":"WQm4k9MEuHY8Q0Ct"}
 {"_id":"WuYKW45XIp1MG94j","name":"Luitpoldstrasse Blues","type":"JournalEntry","sort":7400000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#3b3d63"}
@@ -115,6 +120,7 @@
 {"_id":"XjBkMXDDob9J9Ekf","name":"The Eight Lores","type":"JournalEntry","sort":2700000,"flags":{"wfrp4e":{"initialization-parent":"Magic"}},"parent":"SV4wmXUvuCNwQ0Nc","sorting":"m","color":""}
 {"name":"Grauenburg Annotations","type":"JournalEntry","sort":6900000,"flags":{},"parent":"sJsgXlZiMioDgTqH","sorting":"a","color":"","_id":"Xz4TOyQW2CDWU6lJ"}
 {"_id":"YRGW5Jqs9RpDaLqn","name":"Spells","type":"Item","sort":1000000,"flags":{},"parent":"B1NGEkUpOPYjZbtf","sorting":"a","color":"#592f6f"}
+{"name":"Dwarf Items","type":"Item","sort":3500000,"flags":{},"parent":"lryP0lc1Adinz7aR","sorting":"a","color":"#747272","_id":"YVIo1XXWiGMTa5kG"}
 {"_id":"YYjrl7JWy5hwE8uQ","name":"Walls and Gates","type":"JournalEntry","sort":5600000,"flags":{},"parent":"wV26wyVeod4mutle","sorting":"a","color":""}
 {"_id":"Z2w8JZNIkjoDMgyU","name":"Rounceys","type":"Actor","sort":200000,"flags":{},"parent":"XLndJ2I3x4vvGyT0","sorting":"a","color":""}
 {"name":"The Precinct","type":"JournalEntry","sort":5000000,"flags":{},"parent":"nYrlPwQwhU9yHNZz","sorting":"a","color":"","_id":"ZAXcRRNp4QNjx9YW"}
@@ -123,6 +129,7 @@
 {"name":"Morrslieb","type":"RollTable","sort":1400000,"flags":{},"parent":"tIVl1PXcFSPDwlNN","sorting":"a","color":"#2d5a20","_id":"ZzLCWpKskz28YO3B"}
 {"_id":"aRmSqkvVtkWdU9av","name":"Dogs of War","type":"Actor","sort":3000000,"flags":{},"parent":"81ZFw4Rjgz144G8Q","sorting":"a","color":"#db8000"}
 {"_id":"aodo7JMHjKV3BHhd","name":"Saponatheims","type":"Actor","sort":300000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#2a142e"}
+{"name":"Monastery of Blessed Saal","type":"Actor","sort":7650000,"flags":{},"parent":"WOnrBxROlWST5AbW","sorting":"a","color":"#34271d","_id":"ay7q1PQ3Pz0f760R"}
 {"_id":"c73wsFFS2dVYSKUP","name":"To Use Later","type":"Actor","sort":6850000,"flags":{},"parent":null,"sorting":"m","color":""}
 {"_id":"c8pB03MJECRvVVdb","name":"Combat","type":"JournalEntry","sort":2300000,"flags":{"wfrp4e":{"initialization-parent":"Rules"}},"parent":"KBFMpqeeMFWhdpSI","sorting":"m","color":""}
 {"name":"Teubrucke (The Docks)","type":"JournalEntry","sort":4900000,"flags":{},"parent":"nYrlPwQwhU9yHNZz","sorting":"a","color":"","_id":"cD2WV6rmxf2syVjx"}
@@ -135,7 +142,7 @@
 {"name":"Nurgle","type":"Actor","sort":7250000,"flags":{},"parent":"WOnrBxROlWST5AbW","sorting":"a","color":"#435610","_id":"eNTF9mwEZxxIW5oi"}
 {"name":"Special","type":"Actor","sort":5950000,"flags":{},"parent":"81ZFw4Rjgz144G8Q","sorting":"a","color":"","_id":"eRpdLuCeQQ6am5gc"}
 {"_id":"eUIeajvlSElDvALW","name":"Rivers, Canals, and Lakes","type":"JournalEntry","sort":400000,"flags":{"wfrp4e":{"initialization-parent":"Reikland"}},"parent":"J8dQ6pBcs8qRN8Bk","sorting":"m","color":"#1c3164"}
-{"name":"No Strings Attached","type":"Actor","sort":7650000,"flags":{},"parent":null,"sorting":"a","color":"#513474","_id":"eeaOzk78BPY9girO"}
+{"_id":"eeaOzk78BPY9girO","name":"No Strings Attached","type":"Actor","sort":4500000,"flags":{},"parent":"vU9LPtmofGv4bHSj","sorting":"a","color":"#513474"}
 {"_id":"elSE3n8tCbnKkmos","name":"Familiars","type":"Actor","sort":1200000,"flags":{},"parent":"lWzLTQHnXZft3wzO","sorting":"a","color":"#14305c"}
 {"_id":"evoGfpDUlvJxklnA","name":"Cities","type":"JournalEntry","sort":750000,"flags":{},"parent":null,"sorting":"a","color":"#5e5e5e"}
 {"_id":"fJD2A7H0QjVnQKim","name":"The Altdorf Spieler","type":"JournalEntry","sort":100000,"flags":{},"parent":"2Vc3Hl56Nkx9gNaO","sorting":"a","color":""}
@@ -156,6 +163,7 @@
 {"_id":"k550Bu2pvHs2HAB1","name":"Jurgen's Party","type":"JournalEntry","sort":8300000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#995900"}
 {"name":"Handouts","type":"JournalEntry","sort":6800000,"flags":{},"parent":"sJsgXlZiMioDgTqH","sorting":"a","color":"","_id":"kO5UH113WA6IVgXl"}
 {"name":"Beggars","type":"Actor","sort":2000000,"flags":{},"parent":"w32aTNLs5I0hoeXS","sorting":"a","color":"","_id":"klG8Icc6PSpHHpUd"}
+{"name":"Grey Mountains","type":"Scene","sort":1500000,"flags":{},"parent":null,"sorting":"a","color":"#636363","_id":"l4jvgEAt5kI2rm4k"}
 {"name":"Special","type":"Scene","sort":1000000,"flags":{},"parent":"ifqvWppW117y2zyP","sorting":"a","color":"","_id":"lAj1myTWNd6cz3c7"}
 {"name":"Outside the Walls","type":"JournalEntry","sort":5500000,"flags":{},"parent":"wV26wyVeod4mutle","sorting":"a","color":"","_id":"lDSzFxqsa5B502Oj"}
 {"_id":"lWzLTQHnXZft3wzO","name":"Monsters","type":"Actor","sort":100000,"flags":{},"parent":"XLndJ2I3x4vvGyT0","sorting":"a","color":"#5e1c49"}
@@ -210,5 +218,3 @@
 {"_id":"yrVnNPRyDRk4Ku57","name":"Travel Endeavours","type":"JournalEntry","sort":100000,"flags":{},"parent":"IAn7gAevS1Z5CnKd","sorting":"a","color":"#634231"}
 {"_id":"zQRDhzWh9uTwnQqe","name":"Class Endeavours","type":"JournalEntry","sort":2600000,"flags":{"wfrp4e":{"initialization-parent":"Endeavours"}},"parent":"5PMBVwnydUMSobIr","sorting":"m","color":""}
 {"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
-{"_id":"eeaOzk78BPY9girO","name":"No Strings Attached","type":"Actor","sort":750000,"flags":{},"parent":null,"sorting":"a","color":"#513474"}
-{"_id":"eeaOzk78BPY9girO","name":"No Strings Attached","type":"Actor","sort":4500000,"flags":{},"parent":"vU9LPtmofGv4bHSj","sorting":"a","color":"#513474"}
