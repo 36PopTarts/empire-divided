@@ -218,3 +218,19 @@
 {"_id":"yrVnNPRyDRk4Ku57","name":"Travel Endeavours","type":"JournalEntry","sort":100000,"flags":{},"parent":"IAn7gAevS1Z5CnKd","sorting":"a","color":"#634231"}
 {"_id":"zQRDhzWh9uTwnQqe","name":"Class Endeavours","type":"JournalEntry","sort":2600000,"flags":{"wfrp4e":{"initialization-parent":"Endeavours"}},"parent":"5PMBVwnydUMSobIr","sorting":"m","color":""}
 {"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
+{"_id":"OwpreDOBVSjPAjKX","name":"Alcohol","type":"Item","sort":3600000,"flags":{},"parent":"lryP0lc1Adinz7aR","sorting":"a","color":""}
+{"name":"Horses","type":"Actor","sort":7850000,"flags":{},"parent":"CLkaC7gsUPC5R3mN","sorting":"a","color":"","_id":"uXfo64lSVu10o1kv"}
+{"name":"Dog Career","type":"Item","sort":3700000,"flags":{},"parent":"B1NGEkUpOPYjZbtf","sorting":"a","color":"#43230e","_id":"oOXl4e5j2ZPMaFeU"}
+{"_id":"uXfo64lSVu10o1kv","name":"Animals","type":"Actor","sort":7850000,"flags":{},"parent":"CLkaC7gsUPC5R3mN","sorting":"a","color":""}
+{"name":"Food & Cooking","type":"Item","sort":3800000,"flags":{},"parent":"lryP0lc1Adinz7aR","sorting":"a","color":"#6c2114","_id":"L3MBpMAwQfSmJt9N"}
+{"name":"Careers","type":"Item","sort":3900000,"flags":{},"parent":null,"sorting":"a","color":"#ad4500","_id":"nG3gkFYEAmqrI5fy"}
+{"name":"Karak Ranger","type":"Item","sort":4000000,"flags":{},"parent":"nG3gkFYEAmqrI5fy","sorting":"a","color":"#2c4b6d","_id":"csviqL8SYxtvFBCt"}
+{"name":"Chef","type":"Item","sort":4100000,"flags":{},"parent":"nG3gkFYEAmqrI5fy","sorting":"a","color":"#740606","_id":"2MTo8MincpKOmfpW"}
+{"name":"Misc Skills","type":"Item","sort":4200000,"flags":{},"parent":"v9tiL1bRoEF5secs","sorting":"a","color":"","_id":"4D5talTJNfpUwFv8"}
+{"name":"Character Creation","type":"JournalEntry","sort":9300000,"flags":{},"parent":null,"sorting":"a","color":"#186766","_id":"ih3cxrqEOwBrx7ls"}
+{"_id":"2MTo8MincpKOmfpW","name":"Cook","type":"Item","sort":4100000,"flags":{},"parent":"nG3gkFYEAmqrI5fy","sorting":"a","color":"#740606"}
+{"name":"New Careers","type":"JournalEntry","sort":9400000,"flags":{},"parent":"NOyJwiypgeV7mEJh","sorting":"a","color":"#561515","_id":"37Ihvki36rUiqOZt"}
+{"name":"Character Creation","type":"RollTable","sort":1900000,"flags":{},"parent":null,"sorting":"a","color":"#325d62","_id":"fuwTWO2bTvMhDGmy"}
+{"_id":"sy9RiKVyVpYfZ9Mh","name":"Horse Career","type":"Item","sort":4200000,"flags":{},"parent":"nG3gkFYEAmqrI5fy","sorting":"a","color":"#5a4830"}
+{"_id":"oOXl4e5j2ZPMaFeU","name":"Dog Career","type":"Item","sort":4300000,"flags":{},"parent":"nG3gkFYEAmqrI5fy","sorting":"a","color":"#43230e"}
+{"name":"Parravon","type":"JournalEntry","sort":9500000,"flags":{},"parent":null,"sorting":"a","color":"#4f4f4f","_id":"hRh4ENgO4oLtD0If"}
