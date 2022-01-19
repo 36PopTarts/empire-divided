@@ -13,7 +13,7 @@ export default class WFRPActiveEffectConfig extends ActiveEffectConfig {
         }
 
         data.effectApplication = duplicate(game.wfrp4e.config.effectApplication)
-        if (this.object.parent.entity == "Item")
+        if (this.object.parent.documentName == "Item")
         {
             if (this.object.parent.type == "weapon" || this.object.parent.type == "armour" || this.object.parent.type=="trapping" || this.object.parent.type=="ammo")
             {
@@ -44,7 +44,6 @@ export default class WFRPActiveEffectConfig extends ActiveEffectConfig {
             data.effect.flags.wfrp4e.effectTrigger = "applyDamage"
             data.disableTrigger = true;
         }
-        data.isGM = game.user.isGM
         return data
     }
 
@@ -61,15 +60,18 @@ export default class WFRPActiveEffectConfig extends ActiveEffectConfig {
         let character = {data : game.system.model.Actor.character};
         let npc = {data : game.system.model.Actor.npc};
         let creature = {data : game.system.model.Actor.creature};
+        let vehicle = {data : game.system.model.Actor.vehicle};
         for (let value of values)
         {
-            let invalidProperty = false;
-            if (!hasProperty(character, value))
-                invalidProperty = true
-            if (!hasProperty(npc, value))
-                invalidProperty = true
-            if (!hasProperty(creature, value))
-                invalidProperty = true
+            let invalidProperty = true;
+            if (hasProperty(character, value))
+                invalidProperty = false
+            if (hasProperty(npc, value))
+                invalidProperty = false
+            if (hasProperty(creature, value))
+                invalidProperty = false
+            if (hasProperty(vehicle, value))
+                invalidProperty = false
 
             if (invalidProperty)
                 return ui.notifications.error("Invalid key detected. Please ensure to input the correct key values to point to existing actor data. Ex. 'data.characteristics.ws.modifier'")

@@ -1,5 +1,5 @@
 {
-  "name": "Body Critical Wounds",
+  "name": "Critical Hits - Body",
   "die": "1d100",
   "rows": [{
     "name": "Tis But A Scratch!",

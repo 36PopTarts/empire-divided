@@ -1,15 +1,16 @@
-import * as MODULE from "../lockview.js";
-import * as MISC from "./misc.js";
+import { moduleName, applySettings, forceConstrain } from "../lockview.js";
+import { getEnable } from "./misc.js";
+import { getViewboxEnable } from "./viewbox.js";
 import * as VIEWBOX from "./viewbox.js";
-import * as SOCKET from "./socket.js";
-import * as BLOCKS from "./blocks.js";
+import { sendUpdate } from "./socket.js";
+import { lockPan, lockZoom, boundingBox, autoScale, forceInit } from "./blocks.js";
 
 /*
  * Initialize all settings
  */
 export const registerSettings = function() {
   //Create the Help button
-  game.settings.registerMenu(MODULE.moduleName, 'helpMenu',{
+  game.settings.registerMenu(moduleName, 'helpMenu',{
     name: "LockView.Sett.HelpMenu",
     label: "LockView.Sett.HelpMenu",
     type: helpMenu,
@@ -17,7 +18,7 @@ export const registerSettings = function() {
   });
 
   //Create the User Configuration button
-  game.settings.registerMenu(MODULE.moduleName, 'enableMenu',{
+  game.settings.registerMenu(moduleName, 'enableMenu',{
     name: "LockView.Sett.EnableMenu",
     label: "LockView.Sett.EnableMenu",
     type: enableMenu,
@@ -25,29 +26,29 @@ export const registerSettings = function() {
   });
 
   //Screen width of TV
-  game.settings.register(MODULE.moduleName, "ScreenWidth", {
+  game.settings.register(moduleName, "ScreenWidth", {
     name: "LockView.Sett.ScreenWidth",
     hint: "LockView.Sett.ScreenWidth_Hint",
     scope: "client",
     config: true,
-    default: 1,
+    default: 930,
     type: Number,
-    onChange: x => MODULE.updateSettings()
+    onChange: x => applySettings()
   });
 
   //Physical Gridsize
-  game.settings.register(MODULE.moduleName, "Gridsize", {
+  game.settings.register(moduleName, "Gridsize", {
     name: "LockView.Sett.Gridsize",
     hint: "LockView.Sett.Gridsize_Hint",
     scope: "client",
     config: true,
     default: 25,
     type: Number,
-    onChange: x => MODULE.updateSettings()
+    onChange: x => applySettings()
   });
 
   
-  game.settings.register(MODULE.moduleName,'viewbox', {
+  game.settings.register(moduleName,'viewbox', {
     name: "LockView.Sett.ForceEnable",
     hint: "LockView.Sett.ForceEnable_Hint",
     scope: "world",
@@ -56,31 +57,16 @@ export const registerSettings = function() {
     type: Boolean,
   });
 
-  game.settings.register(MODULE.moduleName,'updatePopupV1.3.2', {
-    scope: "world",
-    config: false,
-    default: false,
-    type: Boolean,
-  });
-
-  game.settings.register(MODULE.moduleName,'updatePopupV1.4.3', {
-    scope: "world",
-    config: false,
-    default: false,
-    type: Boolean,
-  });
-
   /*
-  game.settings.register(MODULE.moduleName,'lockOverride', {
-    name: "LockView.Sett.LockOverride",
-    hint: "LockView.Sett.LockOverride_Hint",
+  game.settings.register(moduleName,'updatePopupV1.4.3', {
     scope: "world",
-    config: true,
-    default: "Alt + Z",
-    type: window.Azzu.SettingsTypes.KeyBinding,
+    config: false,
+    default: false,
+    type: Boolean,
   });
   */
-  game.settings.register(MODULE.moduleName,'editViewbox', {
+
+  game.settings.register(moduleName,'editViewbox', {
     name: "Viewbox edit mode",
     hint: "",
     scope: "client",
@@ -89,13 +75,21 @@ export const registerSettings = function() {
     type: Boolean
   });
 
-  game.settings.register(MODULE.moduleName, 'userSettings', {
+  game.settings.register(moduleName, 'userSettings', {
     name: "userSettings",
     scope: "world",
     type: Object,
     default: [],
     config: false
-});
+  });
+
+  game.settings.register(moduleName, 'userSettingsOverrides', {
+    name: "userSettingsOverrides",
+    scope: "world",
+    type: Object,
+    default: [],
+    config: false
+  });
 }
 
 export class enableMenu extends FormApplication {
@@ -120,7 +114,7 @@ export class enableMenu extends FormApplication {
    */
   getData() {
     const users = game.users._source;
-    const settings = game.settings.get(MODULE.moduleName,'userSettings');
+    //const settings = game.settings.get(moduleName,'userSettings');
     let data = [];
 
     for (let i=0; i<users.length; i++){
@@ -138,14 +132,57 @@ export class enableMenu extends FormApplication {
         role: role,
         color: userData.color,
         id: userData._id,
-        enable: MISC.getEnable(userData._id),
-        viewbox: VIEWBOX.getViewboxEnable(userData._id)
+        enable: getEnable(userData._id),
+        viewbox: getViewboxEnable(userData._id)
 
       }
       data.push(dataNew);
     }
+
+    let overrideSettings = game.settings.get(moduleName ,'userSettingsOverrides');
+    if (overrideSettings[0] == undefined) {
+      for (let i=0; i<5; i++) {
+        const settingsNew = {
+          role: i,
+          enable: false,
+          viewbox: false
+        }
+        overrideSettings.push(settingsNew);
+      }
+    }
+
+    const overrides = [
+      {
+        role: game.i18n.localize("USER.RoleNone"),
+        roleNr: 0,
+        enable: overrideSettings[0].enable,
+        viewbox: overrideSettings[0].viewbox
+      },{
+        role: game.i18n.localize("USER.RolePlayer"),
+        roleNr: 1,
+        enable: overrideSettings[1].enable,
+        viewbox: overrideSettings[1].viewbox
+      },{
+        role: game.i18n.localize("USER.RoleTrusted"),
+        roleNr: 2,
+        enable: overrideSettings[2].enable,
+        viewbox: overrideSettings[2].viewbox
+      },{
+        role: game.i18n.localize("USER.RoleAssistant"),
+        roleNr: 3,
+        enable: overrideSettings[3].enable,
+        viewbox: overrideSettings[3].viewbox
+      },{
+        role: game.i18n.localize("USER.RoleGamemaster"),
+        roleNr: 4,
+        enable: overrideSettings[4].enable,
+        viewbox: overrideSettings[4].viewbox
+      }
+    ]
+
       return {
-          data: data
+          data: data,
+          overrides
       } 
   }
 
@@ -156,15 +193,31 @@ export class enableMenu extends FormApplication {
    */
   async _updateObject(event, formData) {
     let settings = [];
-    for (let i=0; i<formData.id.length; i++){
-      let settingsNew = {
-        id: formData.id[i],
-        enable: formData.enable[i],
-        viewbox: formData.viewbox[i]
+    let idArray = formData.id;
+    if (Array.isArray(idArray) == false) {
+      idArray = [];
+      idArray[0] = formData.id;
+    }
+    for (let id of idArray) {
+      const settingsNew = {
+        id,
+        enable: formData?.[`enable-${id}`],
+        viewbox: formData?.[`viewbox-${id}`]
       }
       settings.push(settingsNew);
     }
     this.updateSettings(settings);
+
+    let overrides = [];
+    for (let i=0; i<5; i++) {
+      const settingsNew = {
+        role: i,
+        enable: formData?.[`enableOverride-${i}`],
+        viewbox: formData?.[`viewboxOverride-${i}`]
+      }
+      overrides.push(settingsNew);
+    }
+    game.settings.set(moduleName ,'userSettingsOverrides',overrides);
   }
 
   activateListeners(html) {
@@ -173,21 +226,21 @@ export class enableMenu extends FormApplication {
   }
 
   async updateSettings(settings){
-    await game.settings.set(MODULE.moduleName,'userSettings',settings);
+    await game.settings.set(moduleName,'userSettings',settings);
     //if (VIEWBOX.viewboxStorage == undefined || VIEWBOX.viewboxStorage.sceneId == undefined || VIEWBOX.viewboxStorage.sceneId != canvas.scene.data._id) {
       for (let i=0; i< VIEWBOX.viewbox.length; i++)
         if (VIEWBOX.viewbox[i] != undefined)
           VIEWBOX.viewbox[i].hide();
 
-    await SOCKET.sendUpdate( {
-      zoom:BLOCKS.lockZoom,
-      pan:BLOCKS.lockPan,
-      bBox:BLOCKS.boundingBox, 
-      aScale:BLOCKS.autoScale, 
-      fInit:BLOCKS.forceInit
+    await sendUpdate( {
+      zoom:lockZoom,
+      pan:lockPan,
+      bBox:boundingBox, 
+      aScale:autoScale, 
+      fInit:forceInit
       } 
     );
-    MODULE.forceConstrain();
+    forceConstrain();
   }
 }
 

@@ -1,10 +1,11 @@
 import { DiceSFX } from '../DiceSFX.js';
+import { DiceSFXManager } from '../DiceSFXManager.js';
 import * as THREE from '../libs/three.module.js';
-import { GLTFLoader } from '../libs/three-modules/GLTFLoader.js';
+
 
 export class PlayAnimationThormund extends DiceSFX {
     static id = "PlayAnimationThormund";
-    static name = "DICESONICE.PlayAnimationThormund";
+    static specialEffectName = "DICESONICE.PlayAnimationThormund";
     static file = "modules/dice-so-nice/sfx/models/thormund.glb";
     static sound = "modules/dice-so-nice/sfx/sounds/thormund.mp3";
     static model = null;
@@ -14,22 +15,17 @@ export class PlayAnimationThormund extends DiceSFX {
     static up = new THREE.Vector3(0,0,1);
     /**@override init */
     static async init() {
-        let loader = new GLTFLoader();
-
-		loader.load(PlayAnimationThormund.file, gltf => {
-			gltf.scene.traverse(function (node) {
-				if (node.isMesh) {
-					node.castShadow = true; 
-				}
-			});
-            PlayAnimationThormund.model = gltf.scene.children[0];
-        });
         game.audio.pending.push(function(){
-            AudioHelper.play({
-                src: PlayAnimationThormund.sound,
-                autoplay: false
-            }, false);
+            AudioHelper.preloadSound(PlayAnimationThormund.sound);
         }.bind(this));
+
+        let gltf = await this.loadAsset(DiceSFXManager.GLTFLoader, PlayAnimationThormund.file);
+        gltf.scene.traverse(function (node) {
+            if (node.isMesh) {
+                node.castShadow = true; 
+            }
+        });
+        PlayAnimationThormund.model = gltf.scene.children[0];
     }
     /**@override play */
     async play() {
@@ -69,11 +65,14 @@ export class PlayAnimationThormund extends DiceSFX {
         this.box.scene.add(this.thormund);
         AudioHelper.play({
             src: PlayAnimationThormund.sound,
-            volume: this.box.volume
+            volume: this.volume
 		}, false);
+        this.renderReady = true;
     }
 
     render() {
+        if(!this.renderReady)
+            return;
         let duration = this.step == 1? PlayAnimationThormund.duration1:PlayAnimationThormund.duration2;
         let x = 1-((duration - this.clock.getElapsedTime())/duration);
         if(x>1){

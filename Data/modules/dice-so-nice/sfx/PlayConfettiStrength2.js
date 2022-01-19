@@ -2,7 +2,7 @@ import { DiceSFX } from '../DiceSFX.js';
 
 export class PlayConfettiStrength2 extends DiceSFX {
     static id = "PlayConfettiStrength2";
-    static name = "DICESONICE.PlayConfettiStrength2";
+    static specialEffectName = "DICESONICE.PlayConfettiStrength2";
 
     /**@override play */
     async play(){

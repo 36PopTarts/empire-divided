@@ -125,12 +125,10 @@ import * as THREE from '../three.module.js';
          * @name destroy the proton
          */
         destroy: function() {
-            var i = 0,
-                length = this.emitters.length;
+            var i = this.emitters.length;
 
-            for (i; i < length; i++) {
+            while(i--){
                 this.emitters[i].destroy();
-                delete this.emitters[i];
             }
 
             this.emitters.length = 0;
@@ -2469,7 +2467,10 @@ import * as THREE from '../three.module.js';
      */
     Emitter.prototype.removeAllParticles = function() {
         var i = this.particles.length;
-        while (i--) this.particles[i].dead = true;
+        while (i--){
+            this.particles[i].dead = true;
+            this.particles[i].target.parent.remove(this.particles[i].target);
+        }
     };
 
     /**

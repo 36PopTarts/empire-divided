@@ -1,4 +1,140 @@
 # Changelog
+### v1.5.0 - 30-12-2021
+Fixes:
+<ul>
+<li>View no longer resets to the 'Autoscale' setting after interacting with the sidebar</li>
+<li>Fixed console error when the Stream View module was enabled</li>
+</ul>
+
+Additions:
+<ul>
+<li>User Configuration now has a user role specific override. To, for example, enable control for all Trusted Players</li>
+</ul>
+
+Other:
+<ul>
+<li>Made compatible with Foundry v9</li>
+<li>Dropped compatibility with Foundry v0.7</li>
+</ul>
+
+### v1.4.14 - 01-09-2021
+Fixes:
+<ul>
+<li>In the last update, 'Hide UI Elements on Sidebar Collapse' accedentally allowed the GM to hide the sidebar (this could lock the GM out of controlling the software), this has been fixed</li>
+</ul>
+
+<ul>
+<li>Added the 'Ctrl+u' hotkey that can be used to hide/unhide the UI elements that have been configured in the scene config</li>
+</ul>
+
+### v1.4.13 - 30-08-2021
+Fixes:
+<ul>
+<li>If 'Hide UI Elements was enabled', control buttons would not always hide if a scene was changed</li>
+<li>UI elements will now only be unhidden if they have been previously hidden by Lock View, allowing other modules to hide/unhide UI elements without Lock View interfering</li>
+<li>Lock View would cause the view to 'bounce' when combined with 'Always Centered'. This has been fixed.</li>
+<li>When configuring the initial view, dragging the box around could place tokens or templates, depending on what tool was selected, this has been fixed by automatically selecting the Lock View control</li>
+</ul>
+
+### v1.4.12 - 22-06-2021
+Fixes:
+<ul>
+<li>A change in the previous update made the module incompatible with Foundry 0.7, this has been fixed.</li>
+</ul>
+
+### v1.4.11 - 21-06-2021
+Fixes:
+<ul>
+<li>If 'Control' was enabled for the GM, and the sidebar was set to autohide, the GM would be locked out of all controls, essentially bricking the world until Lock View was disabled. To fix this, the sidebar can never be hidden for the GM</li>
+<li>Canvas layers were registered incorrectly, leading to module incompatibilities. This has been fixed thanks to SWW13 on Github</li>
+</ul>
+
+Other:
+<ul>
+<li>Confirmed compatibility with Foundry 0.8.7</li>
+</ul>
+
+### v1.4.10 - 31-05-2021
+Fixes:
+<ul>
+<li>Removed some console errors about the canvas not being initialized</li>
+<li>The previous update didn't properly stop all unintended resets to the initial view</li>
+</ul>
+
+Additions:
+<ul>
+<li>In the scene config, you can now set what UI elements to hide by pressing the button next to the 'Hide UI Elements on Sidebar Collapse' button</li>
+</ul>
+
+Other:
+<ul>
+<li>Confirmed compatibility with Foundry 0.8.6</li>
+</ul>
+
+### v1.4.9 - 14-05-2021
+Fixes:
+<ul>
+<li>Autoscaling using Physical Gridsize was broken</li>
+<li>'Set Initial View' configuration wouldn't work if no initial view position was configured previously</li>
+<li>In the scene config, fixed the hint for 'Force Initial View'. It didn't state that it also works if autoscale is set to 'Physical Gridsize', and added description of the button</li>
+<li>If 'Hide UI on Sidebar Collapse' was on, scene navigation would still be displayed after the GM switched a Lock View function on or off</li>
+<li>Various actions, such as starting combat, would reset the view to the initial view position, if 'Force Initial View' was enabled</li>
+<li>Changes to the scene configuration would not automatically update the control button states</li>
+</ul>
+
+Additions:
+<ul>
+<li>In the 'Set Initial View' configuration, added the option to set the view to the current view of a connected player</li>
+</ul>
+
+### v1.4.8 - 05-05-2021
+Fixes:
+<ul>
+<li>Fixed issue with module settings, where 'Screen Width' and 'Gridsize' wouldn't update immediately</li>
+</ul>
+
+### v1.4.7 - 05-05-2021
+Fixes:
+<ul>
+<li>Increased the Z-index of the viewbox, so it's rendered on top of tiles, drawings, templates, etc</li>
+</ul>
+
+Other:
+<ul>
+<li>Added support for Foundry 0.8.2</li>
+</ul>
+
+### v1.4.6 - 15-04-2021
+Fixes:
+<ul>
+<li>Sidebar collapse option didn't work for players</li>
+</ul>
+
+### v1.4.5 - 14-04-2021
+Fixes:
+<ul>
+<li>Fixed issue where, if 'Collapse Sidebar on Scene Load' was enabled, it would also collapse the sidebar whenever a control button was pressed</li>
+</ul>
+
+### v1.4.4 - 12-04-2021
+Fixes:
+<ul>
+<li>Fixed issue where User Configuration would not be saved if no players were configured.</li>
+<li>Fixed issue with Pathfinder 2e, where the zoom and pan lock would only be applied on the first loaded scene</li>
+<li>Fixed "Cannot read property 'filter' of null" error on first load</li>
+</ul>
+
+Additions:
+<ul>
+<li>Added option to scene configuration to collapse the sidebar when a scene is loaded</li>
+<li>Added option to scene configuration to hide the UI when the sidebar is collapsed</li>
+</ul>
+
+Other:
+<ul>
+<li>Removed popups to notify users of previous breaking setting changes, since I'm assuming all users have updated their settings already</li>
+</ul>
+
 ### v1.4.3 - 28-02-2021
 Additions:
 <ul>

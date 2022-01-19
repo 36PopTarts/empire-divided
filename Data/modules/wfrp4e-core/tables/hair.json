@@ -1,5 +1,5 @@
 {
-  "name": "Random Hair Colour",
+  "name": "Hair Colour",
   "columns": ["human", "dwarf", "halfling", "helf", "welf"],
   "die": "2d10",
   "hide": true,

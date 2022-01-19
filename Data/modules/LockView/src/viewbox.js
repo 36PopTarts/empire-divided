@@ -1,7 +1,5 @@
-import * as MODULE from "../lockview.js";
-import * as CBUTTONS from "./controlButtons.js";
-import * as MISC from "./misc.js";
-import * as BLOCKS from "./blocks.js";
+import { mouseMode } from "./controlButtons.js";
+import { getFlags, excludeSidebar, blackenSidebar } from "./blocks.js";
 import * as VIEWBOX from "./viewbox.js";
 
 export var viewboxStorage; 
@@ -26,6 +24,8 @@ export class Viewbox extends CanvasLayer {
     this.moveOffset = 0;
     this.scaleOffset = 0;
     this.screenWidth;
+    this.zIndex = 500;
+    this.currentPosition;
   }
 
   init() {
@@ -41,6 +41,7 @@ export class Viewbox extends CanvasLayer {
    * Update the viewbox
    */
   updateViewbox(data) {
+    this.currentPosition = data.currentPosition;
     const x = data.x - Math.floor(data.width / 2);
     const y = data.y - Math.floor(data.height / 2);
 
@@ -57,7 +58,6 @@ export class Viewbox extends CanvasLayer {
 
     this.container.removeChildren();
     var drawing = new PIXI.Graphics();
-    //rect.cacheAsBitmap = true;
     drawing.lineStyle(2, data.color, 1);
     drawing.drawRect(0,0,data.width,data.height);
     this.container.addChild(drawing);
@@ -146,7 +146,7 @@ export class Viewbox extends CanvasLayer {
  * Find the correct values for the viewbox, and update the viewbox
  */
 export function drawViewbox(payload){
-  if (game.user.isGM == false || CBUTTONS.mouseMode != null) return;
+  if (game.user.isGM == false || mouseMode != null) return;
   viewboxStorage = payload;
   if(game.settings.get("LockView","viewbox")){
     let senderNumber;
@@ -173,6 +173,8 @@ export function drawViewbox(payload){
       {
         x: payload.viewPosition.x,
         y: payload.viewPosition.y,
+        scale: payload.viewPosition.scale,
+        currentPosition: payload.currentPosition,
         width: payload.viewWidth/payload.viewPosition.scale,
         height: payload.viewHeight/payload.viewPosition.scale,
         color: parseInt(payload.senderColor.replace(/^#/, ''), 16),
@@ -213,6 +215,14 @@ export function initializeViewboxes(users){
  */
 export function getViewboxEnable(userId){
   const settings = game.settings.get("LockView","userSettings");
+  const settingsOverride = game.settings.get("LockView","userSettingsOverrides");
+  const user = game.users.get(userId);
+
+  //if user is undefined, return false
+  if (user == undefined) return false;
+
+  //Check if the user's role has override enabled
+  if (settingsOverride[user.role]?.viewbox) return true;
 
   //Check if the userId matches an existing id in the settings array
   for (let i=0; i<settings.length; i++)
@@ -236,7 +246,7 @@ export function sendViewBox(viewPosition=null){
   if (viewPosition == null) viewPosition=canvas.scene._viewPosition;
   
   //get all flags
-  BLOCKS.getFlags();
+  getFlags();
 
   //New viewbox data
   let viewPositionNew = {
@@ -247,7 +257,7 @@ export function sendViewBox(viewPosition=null){
 
   //Sidebar offset
   let offset = 0;
-  if (ui.sidebar._collapsed == false && BLOCKS.excludeSidebar && BLOCKS.blackenSidebar){
+  if (ui.sidebar._collapsed == false && excludeSidebar && blackenSidebar){
     offset = (window.innerWidth-ui.sidebar._element[0].offsetLeft);
     viewPositionNew.x -= offset/(2*viewPosition.scale);
   }
@@ -261,7 +271,8 @@ export function sendViewBox(viewPosition=null){
     "sceneId": canvas.scene.data._id,
     "viewPosition": viewPositionNew,
     "viewWidth": window.innerWidth-offset,
-    "viewHeight": window.innerHeight
+    "viewHeight": window.innerHeight,
+    "currentPosition": viewPosition
   };
   game.socket.emit(`module.LockView`, payload);
 }

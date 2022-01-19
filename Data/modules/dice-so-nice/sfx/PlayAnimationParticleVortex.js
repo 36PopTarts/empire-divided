@@ -1,15 +1,16 @@
 import { DiceSFX } from '../DiceSFX.js';
 import * as THREE from '../libs/three.module.js';
 import { Proton } from '../libs/three-modules/three.proton.js';
+import { DiceSFXManager } from '../DiceSFXManager.js';
 
 export class PlayAnimationParticleVortex extends DiceSFX {
     static id = "PlayAnimationParticleVortex";
-    static name = "DICESONICE.PlayAnimationParticleVortex";
+    static specialEffectName = "DICESONICE.PlayAnimationParticleVortex";
     static sprite = null;
     static sound = "modules/dice-so-nice/sfx/sounds/vortex.mp3";
     /**@override init */
     static async init() {
-        let map = new THREE.TextureLoader().load("modules/dice-so-nice/sfx/textures/magic01.webp");
+        let map = await this.loadAsset(DiceSFXManager.TextureLoader, "modules/dice-so-nice/sfx/textures/magic01.webp");
         let material = new THREE.MeshBasicMaterial({
             map: map,
             blending:THREE.NormalBlending,
@@ -21,10 +22,7 @@ export class PlayAnimationParticleVortex extends DiceSFX {
         PlayAnimationParticleVortex.sprite = new THREE.Mesh(geometry,material);
         
         game.audio.pending.push(function(){
-            AudioHelper.play({
-                src: PlayAnimationParticleVortex.sound,
-                autoplay: false
-            }, false);
+            AudioHelper.preloadSound(PlayAnimationParticleVortex.sound);
         }.bind(this));
     }
 
@@ -77,11 +75,14 @@ export class PlayAnimationParticleVortex extends DiceSFX {
 
         AudioHelper.play({
             src: PlayAnimationParticleVortex.sound,
-            volume: this.box.volume
+            volume: this.volume
 		}, false);
+        this.renderReady = true;
     }
 
     render() {
+        if(!this.renderReady)
+            return;
         this.proton.update();
         if(this.proton.emitters.length == 0){
             this.destroy();
@@ -89,11 +90,11 @@ export class PlayAnimationParticleVortex extends DiceSFX {
     }
 
     destroy(){
-        if(this.emitter && !this.emitter.dead){
+        if(this.emitter){
+            this.emitter.stopEmit();
             this.emitter.removeAllParticles();
-            this.proton.update();
-            this.emitter.destroy();
         }
+        this.proton.update();
         this.proton.destroy();
         this.destroyed = true;
     }

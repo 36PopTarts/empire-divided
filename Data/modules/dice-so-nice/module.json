@@ -2,9 +2,9 @@
 	"name": "dice-so-nice",
 	"title": "Dice So Nice!",
 	"description": "Adds the ability to show a nice 3D dice simulation when a roll is made.",
-	"version": "3.3.1",
-	"minimumCoreVersion" : "0.7.2",
-	"compatibleCoreVersion" : "0.7.9",
+	"version": "4.3.1",
+	"minimumCoreVersion" : "0.8.4",
+	"compatibleCoreVersion" : "9",
 	"author": "Simone, JDW",
 	"authors": [
 		{
@@ -14,18 +14,21 @@
 		{
 			"name": "JDW",
 			"discord": "JDW#6422",
-			"reddit":"u/jidewe"
+			"reddit":"u/jidewe",
+			"ko-fi":"jdwfvtt"
 		}
 	],
 	"esmodules": [
 		"./main.js"
 	],
 	"scripts": [
-		"./libs/cannon.min.js"
+		"./libs/cannon.min.js",
+		"./libs/select2.min.js"
 	],
 	"socket": true,
 	"styles": [
-		"./style.css"
+		"./css/style.css",
+		"./css/select2.css"
 	],
 	"languages": [{
 		"lang": "en",
@@ -46,9 +49,9 @@
 		"path" : "./lang/ca.json"
 	},
 	{
-		"lang": "cn",
-		"name": "Chinese",
-		"path": "./lang/cn.json"
+		"lang": "zh-tw",
+		"name": "正體中文",
+		"path": "./lang/zh-tw.json"
 	}, {
 		"lang": "ko",
 		"name": "Korean",
@@ -65,6 +68,14 @@
 		"lang": "ja",
 		"name": "日本語",
 		"path": "./lang/ja.json"
+	}, {
+		"lang": "de",
+		"name": "Deutsch",
+		"path": "./lang/de.json"
+	}, {
+		"lang": "cs",
+		"name": "Česky",
+		"path": "./lang/cs.json"
 	}],
 	"media":[
 		{
@@ -98,8 +109,11 @@
 		}
 	],
 	"url": "https://gitlab.com/riccisi/foundryvtt-dice-so-nice",
-	"manifest": "https://gitlab.com/riccisi/foundryvtt-dice-so-nice/raw/master/module/module.json",
-	"download": "https://gitlab.com/riccisi/foundryvtt-dice-so-nice/-/jobs/artifacts/3.3.1/raw/dice-so-nice.zip?job=build",
+	"manifest": "https://gitlab.com/riccisi/foundryvtt-dice-so-nice/-/raw/master/module/module.json",
+	"download": "https://gitlab.com/riccisi/foundryvtt-dice-so-nice/-/jobs/artifacts/4.3.1/raw/dice-so-nice.zip?job=build",
 	"bugs": "https://gitlab.com/riccisi/foundryvtt-dice-so-nice/-/issues",
-	"readme": "https://gitlab.com/riccisi/foundryvtt-dice-so-nice/-/blob/master/README.md"
+	"readme": "https://gitlab.com/riccisi/foundryvtt-dice-so-nice/-/blob/master/README.md",
+	"flags": {
+		"allowBugReporter": true
+	}
 }

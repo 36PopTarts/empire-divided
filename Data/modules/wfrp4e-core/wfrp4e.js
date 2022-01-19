@@ -21,10 +21,10 @@ Hooks.on("setup", () => {
     };
 
     WFRP4E.subspecies = {
-        human : {
+        human: {
             reiklander: {
-                name : "Reiklander",
-                skills : [
+                name: "Reiklander",
+                skills: [
                     "Animal Care",
                     "Charm",
                     "Cool",
@@ -38,7 +38,7 @@ Hooks.on("setup", () => {
                     "Melee (Basic)",
                     "Ranged (Bow)"
                 ],
-                talents : [
+                talents: [
                     "Doomed",
                     "Savvy, Suave",
                     3
@@ -724,7 +724,7 @@ Hooks.on("setup", () => {
                 wfrp4e: {
                     "effectApplication": "actor",
                     "effectTrigger": "invoke",
-                    "symptom" : true,
+                    "symptom": true,
                     "script": `
                         let difficulty = ""
                         if (this.effect.label.includes("Moderate"))
@@ -736,10 +736,10 @@ Hooks.on("setup", () => {
     
                         if (args.actor.owner)
                         {
-                            args.actor.setupSkill("Endurance", {absolute: {difficulty}}).then(setupData => {
+                            args.actor.setupSkill("Endurance", {context : {failure : args.actor.name + " dies from Blight"}, absolute: {difficulty}, appendTitle : " - Blight"}).then(setupData => {
                                 args.actor.basicTest(setupData).then(test => 
                                     {
-                                        if (test.result.result == "failure")
+                                        if (test.result.outcome == "failure")
                                             args.actor.addCondition("dead")
                                     })
                                 })
@@ -762,12 +762,12 @@ Hooks.on("setup", () => {
                         args.prefillModifiers.modifier -= 10
                     else if (args.type == "characteristic")
                     {
-                        if (applicableCharacteristics.includes(args.item))
+                        if (applicableCharacteristics.includes(args.item.key))
                             args.prefillModifiers.modifier -= 10
                     }
                     else if (args.type == "skill")
                     {
-                        if (applicableCharacteristics.includes(args.item.data.characteristic.value))
+                        if (applicableCharacteristics.includes(args.item.characteristic.key))
                             args.prefillModifiers.modifier -= 10
                     }
             `}
@@ -781,7 +781,7 @@ Hooks.on("setup", () => {
                 wfrp4e: {
                     "effectApplication": "actor",
                     "effectTrigger": "prefillDialog",
-                    "symptom" : true,
+                    "symptom": true,
                     "script": `
                         let modifier = 0
                         if (this.effect.label.includes("Moderate"))
@@ -799,10 +799,9 @@ Hooks.on("setup", () => {
                         }
                         else if (args.type == "skill")
                         {
-                            if (applicableCharacteristics.includes(args.item.data.characteristic.value))
+                            if (applicableCharacteristics.includes(args.item.characteristic.key))
                                 args.prefillModifiers.modifier += modifier
-                        }
-                    }`
+                        }`
                 }
             }
         },
@@ -814,7 +813,7 @@ Hooks.on("setup", () => {
                 wfrp4e: {
                     "effectApplication": "actor",
                     "effectTrigger": "prefillDialog",
-                    "symptom" : true,
+                    "symptom": true,
                     "script": `
                        
                     let applicableCharacteristics = ["ws", "bs", "s", "fel", "ag", "t", "dex"]
@@ -828,10 +827,10 @@ Hooks.on("setup", () => {
                     }
                     else if (args.type == "skill")
                     {
-                        if (applicableCharacteristics.includes(args.item.data.characteristic.value))
+                        if (applicableCharacteristics.includes(args.item.characteristic.key))
                             args.prefillModifiers.modifier -= 10
                     }`,
-                    "otherEffects" : ["blight", "wounded"]
+                    "otherEffects": ["blight", "wounded"]
                 }
             }
         },
@@ -841,7 +840,7 @@ Hooks.on("setup", () => {
             transfer: true,
             flags: {
                 wfrp4e: {
-                    "symptom" : true
+                    "symptom": true
                 }
             }
         },
@@ -851,7 +850,7 @@ Hooks.on("setup", () => {
             transfer: true,
             flags: {
                 wfrp4e: {
-                    "symptom" : true
+                    "symptom": true
                 }
             }
         },
@@ -861,7 +860,7 @@ Hooks.on("setup", () => {
             transfer: true,
             flags: {
                 wfrp4e: {
-                    "symptom" : true
+                    "symptom": true
                 }
             }
         },
@@ -873,7 +872,7 @@ Hooks.on("setup", () => {
                 wfrp4e: {
                     "effectApplication": "actor",
                     "effectTrigger": "prefillDialog",
-                    "symptom" : true,
+                    "symptom": true,
                     "script": `
                         if (args.type == "characteristic" && args.item == "fel")
                         {
@@ -882,7 +881,7 @@ Hooks.on("setup", () => {
                         }
                         else if (args.type == "skill")
                         {
-                            if (args.item.data.characteristic.value == "fel")
+                            if (args.item.characteristic.key == "fel")
                                 args.prefillModifiers.modifier -= 10
                         }
                     }`
@@ -897,7 +896,7 @@ Hooks.on("setup", () => {
                 wfrp4e: {
                     "effectApplication": "actor",
                     "effectTrigger": "prepareData",
-                    "symptom" : true,
+                    "symptom": true,
                     "script": `
                     if (game.user.isUniqueGM)
                     {
@@ -920,16 +919,12 @@ Hooks.on("setup", () => {
                 wfrp4e: {
                     "effectApplication": "actor",
                     "effectTrigger": "rollTest",
-                    "symptom" : true,
+                    "symptom": true,
                     "script": `
-                    if (this.actor.owner && args.result.result == "failure")
+                    if (this.actor.owner && args.test.result.outcome == "failure")
                     {
                         let applicableCharacteristics = ["ws", "bs", "s", "fel", "ag", "t", "dex"]
-                        if (applicableCharacteristics.includes(args.result.characteristic))
-                            this.actor.addCondition("stunned")
-                        else if (args.result.skill && applicableCharacteristics.includes(args.result.skill.data.characteristic.value))
-                            this.actor.addCondition("stunned")
-                        else if (args.result.weapon)
+                        if (applicableCharacteristics.includes(args.test.characteristicKey))
                             this.actor.addCondition("stunned")
     
                     }
@@ -945,14 +940,14 @@ Hooks.on("setup", () => {
                 wfrp4e: {
                     "effectApplication": "actor",
                     "effectTrigger": "prefillDialog",
-                    "symptom" : true,
+                    "symptom": true,
                     "script": `
                        
                         if (args.type == "characteristic" && args.item == "fel")
                                 args.prefillModifiers.modifier -= 10
                         else if (args.type == "skill")
                         {
-                            if (args.item.data.characteristic.value == "fel")
+                            if (args.item.characteristic.key == "fel")
                                 args.prefillModifiers.modifier -= 10
                         }`
                 }
@@ -966,16 +961,16 @@ Hooks.on("setup", () => {
                 wfrp4e: {
                     "effectApplication": "actor",
                     "effectTrigger": "invoke",
-                    "symptom" : true,
+                    "symptom": true,
                     "script": `
                         if (args.actor.owner)
                         {
                             args.actor.setupSkill("Endurance", {absolute: {difficulty : "average"}}).then(setupData => {
                                 args.actor.basicTest(setupData).then(test => 
                                     {
-                                        if (test.result.result == "failure")
+                                        if (test.result.outcome == "failure")
                                             fromUuid("Compendium.wfrp4e-core.diseases.kKccDTGzWzSXCBOb").then(disease => {
-                                                args.actor.createEmbeddedEntity("OwnedItem", disease.data)
+                                                args.actor.createEmbeddedDocuments("Item", [disease.toObject])
                                             })
                                     })
                                 })
@@ -999,7 +994,7 @@ Hooks.on("setup", () => {
 
 Hooks.on("ready", () => {
     if (!game.settings.get("wfrp4e-core", "initialized") && game.user.isGM)
-        new WFRP4eContentInitialization().render(true)
+        new WFRP4eCoreInitWrapper().render(true)
 })
 
 Hooks.once('diceSoNiceReady', (dice3d) => {
@@ -1028,162 +1023,3 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
         material: 'metal'
     }, "no");
 })
-
-
-async function createCareerJournals() {
-    let careers = game.items.entities.filter(i => i.data.type=="career")
-    let skills = await game.packs.get("wfrp4e-core.skills").getContent()
-    let talents = await game.packs.get("wfrp4e-core.talents").getContent()
-
-    talents = talents.concat(game.items.entities.filter(i => i.data.type == "talent"))
-
-    let careerMap = {}
-    careers.forEach(career => {
-        if (!careerMap[career.data.data.careergroup.value]) {
-            careerMap[career.data.data.careergroup.value] = [career.data]
-        }
-        else {
-            careerMap[career.data.data.careergroup.value].push(career.data)
-        }
-    })
-    for (careerGroup in careerMap) {
-        careerMap[careerGroup] = careerMap[careerGroup].sort((a, b) => Number(a.data.level.value) - Number(b.data.level.value))
-    }
-
-    let romanNumerals = {
-        1: "I",
-        2: "II",
-        3: "III",
-        4: "IV"
-    }
-    for (careerGroup in careerMap) {
-        console.log(careerGroup)
-        let journalData = {};
-        journalData.name = careerGroup
-
-        let speciesAvailable = [];
-
-        // let ranges = game.wfrp4e.tables.career.rows.find(r => r.name == careerGroup).range
-
-        // for (let species in ranges)
-        // {
-        //     if (ranges[species].length > 0)
-        //         speciesAvailable.push(game.wfrp4e.config.species[species])
-        // }
-
-        journalData.img = `modules/wfrp4e-core/art/careers/${careerGroup.toLowerCase()}.png`
-        journalData.content = `
-        <blockquote>
-        <p>&nbsp;</p>
-        </blockquote>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p><strong>Species:&nbsp;</strong>${speciesAvailable.join(", ")}</p>
-        <p><strong>Class:&nbsp;</strong>${careerMap[careerGroup][0].data.class.value}</p>
-        <h3 style="text-align: center">${careerGroup} Advance Scheme</h3>
-        <table style="height: 34px;" border="1">
-        <tbody>
-        <tr style="height: 17px;">
-        <td style="height: 17px; width: 60px; text-align: center;">WS</td>
-        <td style="height: 17px; width: 60px; text-align: center;">BS</td>
-        <td style="height: 17px; width: 60px; text-align: center;">S</td>
-        <td style="height: 17px; width: 61px; text-align: center;">T</td>
-        <td style="height: 17px; width: 61px; text-align: center;">I</td>
-        <td style="height: 17px; width: 61px; text-align: center;">Agi</td>
-        <td style="height: 17px; width: 61px; text-align: center;">Dex</td>
-        <td style="height: 17px; width: 61px; text-align: center;">Int</td>
-        <td style="height: 17px; width: 61px; text-align: center;">WP</td>
-        <td style="height: 17px; width: 61px; text-align: center;">Fel</td>
-        </tr>
-        <tr style="height: 17px;">
-        <td style="height: 17px; width: 60px; text-align: center;">@ws</td>
-        <td style="height: 17px; width: 60px; text-align: center;">@bs</td>
-        <td style="height: 17px; width: 60px; text-align: center;">@s</td>
-        <td style="height: 17px; width: 61px; text-align: center;">@t</td>
-        <td style="height: 17px; width: 61px; text-align: center;">@i</td>
-        <td style="height: 17px; width: 61px; text-align: center;">@ag</td>
-        <td style="height: 17px; width: 61px; text-align: center;">@dex</td>
-        <td style="height: 17px; width: 61px; text-align: center;">@int</td>
-        <td style="height: 17px; width: 61px; text-align: center;">@wp</td>
-        <td style="height: 17px; width: 61px; text-align: center;">@fel</td>
-        </tr>
-        </tbody>
-        </table>
-        `
-        let characteristicPlaced = [];
-
-        for (career of careerMap[careerGroup]) {
-            for (char in game.wfrp4e.config.characteristics) {
-                if (!characteristicPlaced.includes(char) && career.data.characteristics.includes(char)) {
-                    journalData.content = journalData.content.replace(`@${char}<`, romanNumerals[career.data.level.value] + "<")
-                }
-            }
-            if (career.data.level.value == 4) {
-                for (char in game.wfrp4e.config.characteristics) {
-                    if (!characteristicPlaced.includes(char)) {
-                        journalData.content = journalData.content.replace(`@${char}<`, '&nbsp;<')
-                    }
-                }
-            }
-
-            switch (Number(career.data.level.value)) {
-                case 1:
-                    break;
-                case 2:
-                    career.data.skills = career.data.skills.slice(8, 14)
-                    break;
-                case 3:
-                    career.data.skills = career.data.skills.slice(14, 18)
-                    break;
-                case 4:
-                    career.data.skills = career.data.skills.slice(18, 20)
-                    break;
-            }
-
-            let linkedSkills = career.data.skills.map((sk, i) => {
-                let skillText = createLink(sk, skills, "skills")
-                if (career.data.incomeSkill.includes(i) && career.data.level.value == 1)
-                    skillText = `<i>${skillText}</i>`
-                return skillText
-            }).join(", ")
-
-            console.log(talents)
-            let linkedTalents = career.data.talents.map(t => {
-                return createLink(t, talents, "talents")
-            }).join(", ")
-
-            console.log(linkedSkills)
-            let text =
-                `
-            <h3><b>${romanNumerals[career.data.level.value]}. ${createLink(career.name, careers, "careers")}</b></h3>
-            <b>Status</b>: ${game.wfrp4e.config.statusTiers[career.data.status.tier]} ${career.data.status.standing}<br>
-            <b>Skills</b>: ${linkedSkills}<br>
-            <b>Talents</b>: ${linkedTalents}<br>
-            <b>Trappings</b>: ${career.data.trappings.join(", ")}<br>
-            <br>
-            `
-
-            journalData.content = journalData.content.concat(text)
-        }
-
-        journalData.name = "Cult Magus of Tzeentch"
-        JournalEntry.create(journalData)
-    }
-
-
-}
-
-function createLink(itemName, list, type) {
-    if (type == "talents")
-        console.log(itemName, type)
-    let item;
-    if (!list.find(i => i.data.name == itemName)) {
-        item = list.find(s => s.name.split("(")[0].trim() == itemName.split("(")[0].trim())
-    }
-    else
-        item = list.find(i => i.data.name == itemName)
-
-    let id = item?.data?._id
-
-    return `@Compendium[wfrp4e-core.${type}.${id}]{${itemName}}`
-}

@@ -1,31 +1,41 @@
-import * as MODULE from "../lockview.js";
-import * as MISC from "./misc.js";
+import { compatibleCore, getEnable } from "./misc.js";
+import { getFlags, setBlocks, updatePanLock, updateZoomLock, updateBoundingBox, lockPan, lockZoom, boundingBox, _onMouseWheel_Default } from "./blocks.js";
 import * as VIEWBOX from "./viewbox.js";
-import * as BLOCKS from "./blocks.js";
 
 let oldVB_viewPosition;
 
 export function registerLayer() {
-  const layers = mergeObject(Canvas.layers, {
+  const layers =  compatibleCore("0.9") ? {
+    lockview: {
+          layerClass: LockViewLayer,
+          group: "primary"
+      }
+  }
+  : {
     lockview: LockViewLayer
-  });
-  Object.defineProperty(Canvas, 'layers', {
-    get: function () {
-      return layers
+  }
+
+  CONFIG.Canvas.layers = foundry.utils.mergeObject(Canvas.layers, layers);
+
+    if (!Object.is(Canvas.layers, CONFIG.Canvas.layers)) {
+        const layers = Canvas.layers;
+        Object.defineProperty(Canvas, 'layers', {
+            get: function () {
+                return foundry.utils.mergeObject(layers, CONFIG.Canvas.layers)
+            }
+        })
     }
-  });
 }
 
-class LockViewLayer extends PlaceablesLayer {
+class LockViewLayer extends CanvasLayer {
   constructor() {
     super();
   }
 
   static get layerOptions() {
-    return mergeObject(super.layerOptions, {
-      canDragCreate: false,
-      objectClass: Note,
-      sheetClass: NoteConfig
+    return foundry.utils.mergeObject(super.layerOptions, {
+      name: "lockview",
+      zIndex: 245,
     });
   }
 
@@ -50,13 +60,14 @@ class LockViewLayer extends PlaceablesLayer {
 export function pushControlButtons(controls){
   if (game.user.isGM == false || canvas == null) return;
 
-  BLOCKS.getFlags();
+  getFlags();
 
   controls.push({
     name: "LockView",
     title: "Lock View",
     icon: "fas fa-tv",
-    layer: "LockViewLayer",
+    layer: "lockview",
+    activeTool: "resetView",
     tools: [
       {
         name: "resetView",
@@ -77,11 +88,11 @@ export function pushControlButtons(controls){
           ui.controls.render();
           let currentTool = controls.find(controls => controls.name == "LockView").tools.find(tools => tools.name == "PanLock");
           let currentState = currentTool.active;
-          BLOCKS.updatePanLock(currentState);
+          updatePanLock(currentState);
           currentTool.active = currentState;   
           },
         toggle: true,
-        active: BLOCKS.lockPan
+        active: lockPan
       },
       {
         name: "ZoomLock",
@@ -94,11 +105,11 @@ export function pushControlButtons(controls){
           ui.controls.render();
           let currentTool = controls.find(controls => controls.name == "LockView").tools.find(tools => tools.name == "ZoomLock");
           let currentState = currentTool.active;
-          BLOCKS.updateZoomLock(currentState);
+          updateZoomLock(currentState);
           currentTool.active = currentState;
           },
         toggle: true,
-        active: BLOCKS.lockZoom
+        active: lockZoom
       },
       {
         name: "BoundingBox",
@@ -111,11 +122,11 @@ export function pushControlButtons(controls){
           ui.controls.render();
           let currentTool = controls.find(controls => controls.name == "LockView").tools.find(tools => tools.name == "BoundingBox");
           let currentState = currentTool.active;
-          BLOCKS.updateBoundingBox(currentState);
+          updateBoundingBox(currentState);
           currentTool.active = currentState;
           },
         toggle: true,
-        active: BLOCKS.boundingBox
+        active: boundingBox
       },
       {
         name: "Viewbox",
@@ -162,8 +173,8 @@ export async function viewbox(currentState,currentTool=false){
         VIEWBOX.viewbox[i].hide();
     canvas.scene.setFlag('LockView', 'editViewbox', false);
     ui.controls.controls.find(controls => controls.name == "LockView").tools.find(tools => tools.name == "Viewbox").active = false;
-    BLOCKS.getFlags();
-    BLOCKS.setBlocks();
+    getFlags();
+    setBlocks();
     ui.controls.controls.find(controls => controls.name == "LockView").activeTool = undefined;
     mouseManager(false);
     ui.controls.render();
@@ -179,29 +190,47 @@ let selectedViewbox;
 var mouseDownEvent = function(e) { handleMouseDown(e) };
 var mouseUpEvent = function(e) { handleMouseUp(e) };
 var mouseMoveEvent = function(e) { handleMouseMove(e) };
+//var rightDownEvent = function(e) { handleRightDown(e) };
 
 function mouseManager(en){
   if (en) {
     canvas.mouseInteractionManager.target.addListener("mousedown", mouseDownEvent );
+    //canvas.mouseInteractionManager.target.addListener("rightdown", mouseDownEvent );
   }  
   else {
     canvas.mouseInteractionManager.target.removeListener("mousedown", mouseDownEvent );
     canvas.mouseInteractionManager.target.removeListener("mouseup", mouseUpEvent );
     canvas.mouseInteractionManager.target.removeListener("mousemove", mouseMoveEvent );
+    //canvas.mouseInteractionManager.target.removeListener("rightdown", mouseDownEvent );
+   // canvas.mouseInteractionManager.target.removeListener("rightup", mouseUpEvent );
+    //canvas.mouseInteractionManager.target.removeListener("rightmove", mouseMoveEvent );
     VIEWBOX.getViewboxData();
   }
 }
 
 function handleMouseDown(e){
+  //console.log('e',e.data.button,e)
   let position = e.data.getLocalPosition(canvas.stage);
   const d = canvas.dimensions;
   for (let i=0; i<VIEWBOX.viewbox.length; i++){
     if (VIEWBOX.viewbox[i] == undefined) continue;
     const moveLocation = VIEWBOX.viewbox[i].moveLocation;
     const scaleLocation = VIEWBOX.viewbox[i].scaleLocation;
-
-    if (Math.abs(position.x - moveLocation.x) <= 20 && Math.abs(position.y - moveLocation.y) <= 20) mouseMode = 'move';
-    else if (Math.abs(position.x - scaleLocation.x) <= 20 && Math.abs(position.y - scaleLocation.y) <= 20) mouseMode = 'scale';
+    const currentPosition = {
+      x: VIEWBOX.viewbox[i].currentPosition.x - VIEWBOX.viewbox[i].boxWidth/2,
+      y: VIEWBOX.viewbox[i].currentPosition.y - VIEWBOX.viewbox[i].boxHeight/2
+    }
+    //console.log('viewbox',position,currentPosition,VIEWBOX.viewbox[i])
+    //if mouse over move button
+    if (e.data.button == 0 && Math.abs(position.x - moveLocation.x) <= 20 && Math.abs(position.y - moveLocation.y) <= 20) mouseMode = 'move';
+    //if mouse over scale button
+    else if (e.data.button == 0 && Math.abs(position.x - scaleLocation.x) <= 20 && Math.abs(position.y - scaleLocation.y) <= 20) mouseMode = 'scale';
+    //if mouse within viewbox
+    //else if (e.data.button == 2 && position.x > currentPosition.x && position.x < currentPosition.x+VIEWBOX.viewbox[i].boxWidth && position.y > currentPosition.y && position.y < currentPosition.y+VIEWBOX.viewbox[i].boxHeight) {
+    //  console.log('test')
+    //  mouseMode = 'move';
+      //continue;
+    //}
     else continue;
 
     selectedViewbox = i;
@@ -211,8 +240,14 @@ function handleMouseDown(e){
     }
     viewboxId = VIEWBOX.viewbox[i].userId;
     screenWidth = VIEWBOX.viewbox[i].screenWidth;
-    canvas.mouseInteractionManager.target.addListener("mouseup", mouseUpEvent );
-    canvas.mouseInteractionManager.target.addListener("mousemove", mouseMoveEvent );
+    if (e.data.button == 0) {
+      canvas.mouseInteractionManager.target.addListener("mouseup", mouseUpEvent );
+      canvas.mouseInteractionManager.target.addListener("mousemove", mouseMoveEvent );
+    }
+    else {
+      canvas.mouseInteractionManager.target.addListener("rightup", mouseUpEvent );
+      canvas.mouseInteractionManager.target.addListener("mousemove", mouseMoveEvent );
+    }
     return;
   }
 }
@@ -225,6 +260,7 @@ function handleMouseUp(){
 
 function handleMouseMove(e){
   let position = e.data.getLocalPosition(canvas.stage);
+  //console.log('move',position)
   let width = VIEWBOX.viewbox[selectedViewbox].boxWidth;
   let height = VIEWBOX.viewbox[selectedViewbox].boxHeight;
   
@@ -308,15 +344,15 @@ export async function editViewboxConfig(controls) {
   
   if (currentState) {
     Canvas.prototype.pan = _Override_VB_Pan;
-    Canvas.prototype._onMouseWheel = BLOCKS._onMouseWheel_Default;
+    Canvas.prototype._onMouseWheel = _onMouseWheel_Default;
     oldVB_viewPosition = canvas.scene._viewPosition;
   }
   else {
     //Canvas.prototype.pan = BLOCKS.pan_Default;
     controls.find(controls => controls.name == "LockView").activeTool = undefined;
-    await BLOCKS.getFlags();
-    if (MISC.getEnable(game.userId)) await BLOCKS.setBlocks( {pan:BLOCKS.lockPan, zoom:BLOCKS.lockZoom, bBox: BLOCKS.boundingBox} );
-    else await BLOCKS.setBlocks( {pan:false, zoom:false, bBox:false, force: true} );
+    await getFlags();
+    if (getEnable(game.userId)) await setBlocks( {pan:lockPan, zoom:lockZoom, bBox: boundingBox} );
+    else await setBlocks( {pan:false, zoom:false, bBox:false, force: true} );
   }
   ui.controls.render();
   mouseManager(currentState);

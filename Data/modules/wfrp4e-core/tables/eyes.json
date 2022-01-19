@@ -1,5 +1,5 @@
 {
-  "name": "Random Eye Colour",
+  "name": "Eye Colour",
   "columns": ["human", "dwarf", "halfling", "helf", "welf"],
   "die": "2d10",
   "hide": true,

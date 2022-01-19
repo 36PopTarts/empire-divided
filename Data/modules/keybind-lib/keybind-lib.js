@@ -240,8 +240,8 @@ class KeybindLib {
         return matchEvent(evt, bind.keyBind);
     }
     static register(moduleName, bindName, options) {
-        if (!game.modules.get(moduleName)) {
-            throw new Error(`Module does not exist: ${moduleName}`);
+        if (!game.modules.get(moduleName) && moduleName !== game.system.id) {
+            throw new Error(`Module or system does not exist: ${moduleName}`);
         }
         const fullName = `${moduleName}.${bindName}`;
         const opt = { ...defaultOptions, ...options, fullName };

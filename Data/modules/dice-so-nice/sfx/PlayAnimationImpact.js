@@ -1,9 +1,10 @@
 import { DiceSFX } from '../DiceSFX.js';
+import { DiceSFXManager } from '../DiceSFXManager.js';
 import * as THREE from '../libs/three.module.js';
 
 export class PlayAnimationImpact extends DiceSFX {
     static id = "PlayAnimationImpact";
-    static name = "DICESONICE.PlayAnimationImpact";
+    static specialEffectName = "DICESONICE.PlayAnimationImpact";
     static sound = "modules/dice-so-nice/sfx/sounds/hit_glass.mp3";
     static planeImpact = null;
     static duration = 0.1;
@@ -15,14 +16,13 @@ export class PlayAnimationImpact extends DiceSFX {
     /**@override init */
     static async init() {
         game.audio.pending.push(function () {
-            AudioHelper.play({
-                src: PlayAnimationImpact.sound,
-                autoplay: false
-            }, false);
+            AudioHelper.preloadSound(PlayAnimationImpact.sound);
         }.bind(this));
+            
+        let data = await this.loadAsset(DiceSFXManager.TextureLoader, "modules/dice-so-nice/sfx/textures/glassimpact_color.webp");
         const geometry = new THREE.PlaneGeometry(730, 730);
         const material = new THREE.MeshStandardMaterial({
-            map: new THREE.TextureLoader().load("modules/dice-so-nice/sfx/textures/glassimpact_color.webp"),
+            map: data,
             transparent: true,
             opacity: 2
         });
@@ -65,7 +65,7 @@ export class PlayAnimationImpact extends DiceSFX {
         this.box.scene.add(this.plane);
         AudioHelper.play({
             src: PlayAnimationImpact.sound,
-            volume: this.box.volume
+            volume: this.volume
         }, false);
         this.dicemesh.position.z -= 1;
 

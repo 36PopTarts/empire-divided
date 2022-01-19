@@ -2,35 +2,23 @@
   "name": "fxmaster",
   "title": "FXMaster",
   "description": "<p>Adds various weather and filter effects</p>",
-  "version": "1.0.3",
-  "author": "U~man",
-  "scripts": ["libs/filters/pixi-filters.js"],
-  "esmodules": [
-    "greensock/esm/all.js",
-    "effects/BatsWeatherEffect.js",
-    "effects/BubblesWeatherEffect.js",
-    "effects/CloudsWeatherEffect.js",
-    "effects/CrowsWeatherEffect.js",
-    "effects/EmbersWeatherEffect.js",
-    "effects/FogWeatherEffect.js",
-    "effects/FXMasterLayer.js",
-    "effects/RaintopWeatherEffect.js",
-    "effects/SacredFlameEffect.js",
-    "effects/StarsWeatherEffect.js",
-    "module/controls.js",
-    "module/weather-config.js",
-    "module/colorize-config.js",
-    "module/config.js",
-    "module/specials.js",
-    "module/fxmaster.js",
-    "filters/FXUnderwaterFilter.js",
-    "filters/FXBloomFilter.js",
-    "filters/FXOldFilmFilter.js",
-    "filters/FXColorFilter.js",
-    "filters/FXPredatorFilter.js",
-    "filters/FilterManager.js"
+  "version": "2.2.1",
+  "author": "U~man, Johannes Loher (ghost#2000)",
+  "authors": [
+    {
+      "name": "Emmanuel Ruaud (U~man)",
+      "discord": "U~man"
+    },
+    {
+      "name": "Johannes Loher (ghost)",
+      "email": "johannes.loher@fg4f.de",
+      "discord": "ghost#2000",
+      "ko-fi": "ghostfvtt"
+    }
   ],
-  "styles": ["css/weatherconfig.css"],
+  "scripts": ["libs/filters/pixi-filters.js"],
+  "esmodules": ["module/fxmaster.js"],
+  "styles": ["css/fxmaster.css"],
   "packs": [
     {
       "name": "fxmaster",
@@ -52,9 +40,9 @@
       "path": "lang/fr.json"
     },
     {
-      "lang": "cn",
-      "name": "Chinese",
-      "path": "lang/cn.json"
+      "lang": "zh-tw",
+      "name": "正體中文",
+      "path": "lang/zh-tw.json"
     },
     {
       "lang": "ca",
@@ -75,12 +63,22 @@
       "lang": "pt-BR",
       "name": "Português (Brasil)",
       "path": "lang/pt-BR.json"
+    },
+    {
+      "lang": "ja",
+      "name": "日本語",
+      "path": "lang/ja.json"
     }
   ],
   "socket": true,
-  "url": "https://gitlab.com/mesfoliesludiques/foundryvtt-fxmaster",
-  "manifest": "https://gitlab.com/mesfoliesludiques/foundryvtt-fxmaster/-/raw/master/module.json",
-  "download": "https://gitlab.com/mesfoliesludiques/foundryvtt-fxmaster/-/archive/master/foundryvtt-fxmaster-master.zip",
-  "compatibleCoreVersion": "0.7.9",
-  "minimumCoreVersion": "0.7.7"
+  "url": "https://github.com/ghost-fvtt/fxmaster",
+  "bugs": "https://github.com/ghost-fvtt/fxmaster/issues",
+  "allowBugReporter": true,
+  "manifest": "https://github.com/ghost-fvtt/fxmaster/releases/latest/download/module.json",
+  "download": "https://github.com/ghost-fvtt/fxmaster/releases/download/v2.2.1/module.zip",
+  "license": "https://github.com/ghost-fvtt/fxmaster/blob/master/LICENSE.md",
+  "readme": "https://github.com/ghost-fvtt/fxmaster#readme",
+  "changelog": "https://github.com/ghost-fvtt/fxmaster/blob/master/CHANGELOG.md",
+  "compatibleCoreVersion": "9",
+  "minimumCoreVersion": "0.8.5"
 }

@@ -1,15 +1,15 @@
-<h2 class="note-section label">Biography</h2>
+<h2 class="note-section label">{{localize "Biography"}}</h2>
 <div class="note-section biography">
   {{editor content=data.details.biography.value target="data.details.biography.value" button=true owner=owner editable=editable}}
 </div>
 
 <div class="inventory-header trait-header">
-  <div id="trait-name">Toggle Creature Trait(s)</div>
+  <div id="trait-name">{{localize "SHEET.ToggleTraits"}}</div>
 </div>
 
 <ol class="inventory-list trait-list">
-  {{#each actor.notesTraits as |item i|}}
-  <li class="item" data-item-id="{{item._id}}">
+  {{#each items.traits as |item i|}}
+  <li class="item" data-item-id="{{item.id}}">
     <div class="content">
       {{#if item.included}}
       <div class="item-name trait-name">
@@ -17,10 +17,10 @@
       <div class="excluded-trait item-name trait-name">
       {{/if}}
         <div class="image item-image" style="background-image: url({{item.img}})"></div>
-        <a class = "name trait-include">{{item.displayName}}</a>
+        <a class = "name trait-include">{{item.DisplayName}}</a>
       </div>
 
-      {{#if ../owner}}
+      {{#if ../document.isOwner}}
       <div class="item-controls">
       {{else}}
       <div class="item-controls" style = "visibility : hidden;">

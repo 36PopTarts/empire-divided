@@ -4,7 +4,7 @@ Hooks.on("init", () => {
         let tint = this.data.iconTint ? colorStringToHex(this.data.iconTint) : null;
         let iconData = { texture: this.data.icon, size: this.size, tint: tint };
         let icon;
-        if (this.getFlag("backgroundless-pins", "hasBackground")) {
+        if (this.document.getFlag("backgroundless-pins", "hasBackground")) {
             icon = new ControlIcon(iconData);
         } else {
             icon = new BackgroundlessControlIcon(iconData);
@@ -16,7 +16,7 @@ Hooks.on("init", () => {
 });
 
 Hooks.on("renderNoteConfig", (noteConfig, html, _) => {
-    const hasBackground = noteConfig.object.getFlag("backgroundless-pins", "hasBackground") ?? false;
+    const hasBackground = noteConfig.document.getFlag("backgroundless-pins", "hasBackground") ?? false;
     const iconTintGroup = html.find("[name=iconTint]").closest(".form-group");
     iconTintGroup.after(`
         <div class="form-group">

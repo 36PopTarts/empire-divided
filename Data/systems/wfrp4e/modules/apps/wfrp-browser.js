@@ -174,13 +174,13 @@ export default class BrowserWfrp4e extends Application {
     this.items = [];
     this.filterId = 0;
     for (let p of game.packs) {
-      if (p.metadata.entity == "Item" && (game.user.isGM || !p.private)) {
-        await p.getContent().then(content => {
+      if (p.metadata.type == "Item" && (game.user.isGM || !p.private)) {
+        await p.getDocuments().then(content => {
           this.addItems(content)
         })
       }
     }
-    this.addItems(game.items.entities.filter(i => i.permission > 1));
+    this.addItems(game.items.contents.filter(i => i.permission > 1));
     this.items = this.items.sort((a, b) => (a.name.toLowerCase() > b.name.toLowerCase()) ? 1 : -1);
     this.lores.push("None");
     this.careerGroups.sort((a, b) => (a > b) ? 1 : -1);
@@ -283,9 +283,9 @@ export default class BrowserWfrp4e extends Application {
           case "qualitiesFlaws":
             if (this.filters.dynamic[filter].value.length && this.filters.dynamic[filter].value.some(x => x))
               filteredItems = filteredItems.filter(i => {
-                if (!i.data.data.qualities.value && !i.data.data.flaws.value)
-                  return true;
-                let properties = WFRP_Utility._prepareQualitiesFlaws(i.data, true)
+                if (!i.data.data.qualities.value.length && !i.data.data.flaws.value.length)
+                  return false;
+                let properties = (Object.values(i.properties.qualities).concat(Object.values(i.properties.flaws))).map(i => i.display)
                 if (!properties.length || (properties.length == 1 && properties[0] == "Special"))
                   return;
 
@@ -409,12 +409,12 @@ export default class BrowserWfrp4e extends Application {
   async importResults() {
     let filteredItems = this.applyFilter(this._element).filter(i => i.compendium);
     new Dialog({
-      title: "Import Results",
-      content: `<p>Are you sure you want to import your query result?<br>(${filteredItems.length} items)`,
+      title: game.i18n.localize("Import Results"),
+      content: `<p>${game.i18n.format("ITEM.Import", { number: filteredItems.length })}`,
       buttons: {
         yes:
         {
-          label: "Yes",
+          label: game.i18n.localize("Yes"),
           callback: async html => {
             for (let i of filteredItems)
               await Item.create(i.data, { renderSheet: false });
@@ -422,7 +422,7 @@ export default class BrowserWfrp4e extends Application {
         },
         cancel:
         {
-          label: "Cancel",
+          label: game.i18n.localize("Cancel"),
           callback: html => { return }
         }
       }
@@ -434,22 +434,23 @@ export default class BrowserWfrp4e extends Application {
   activateListeners(html) {
 
     html.find(".browser-item").each((i, li) => {
-      let item = this.items.find(i => i._id == $(li).attr("data-item-id"))
+      let item = this.items.find(i => i.id == $(li).attr("data-item-id"))
 
       li.setAttribute("draggable", true);
       li.addEventListener("dragstart", event => {
-        event.dataTransfer.setData("text/plain", JSON.stringify({
-          type: item.options.compendium.metadata.entity,
-          pack: `${item.options.compendium.metadata.package}.${item.options.compendium.metadata.name}`,
-          id: item._id
-        }))
-
-      })
+        let transfer = {
+          type: "Item",
+          id: item.id
+        }
+        if (item.compendium)
+          transfer.pack = `${item.compendium.metadata.package}.${item.compendium.metadata.name}`;
+        event.dataTransfer.setData("text/plain", JSON.stringify(transfer))
     })
+  })
 
     html.on("click", ".item-name", ev => {
       let itemId = $(ev.currentTarget).parents(".browser-item").attr("data-item-id")
-      this.items.find(i => i._id == itemId).sheet.render(true);
+      this.items.find(i => i.id == itemId).sheet.render(true);
 
     })
 
@@ -526,7 +527,7 @@ export default class BrowserWfrp4e extends Application {
 
 Hooks.on("renderCompendiumDirectory", (app, html, data) => {
   if (game.user.isGM || game.settings.get("wfrp4e", "playerBrowser")) {
-    const button = $(`<button class="browser-btn">Browser</button>`);
+    const button = $(`<button class="browser-btn">${game.i18n.localize("BROWSER.Button")}</button>`);
     html.find(".directory-footer").append(button);
 
     button.click(ev => {

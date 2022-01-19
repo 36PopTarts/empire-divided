@@ -1,22 +1,15 @@
-# Warhammer Fantasy Role-Play 4th Ed. (FoundryVTT)
+# Warhammer Fantasy Roleplay 4th Ed. (FoundryVTT)
 
 ![](https://user-images.githubusercontent.com/28637157/97379891-e4a1cc00-1893-11eb-9e0c-d93b92844d5b.jpg)
-**[Current Version]**: `3.4.1`
+**[Current Version]**: `5.0.5`
 
-**[Compatibility]**: `FoundryVTT 0.7.7+`
+**[Compatibility]**: `FoundryVTT V9`
 
 This system is intended for use with [Foundry Virtual Tabletop](http://foundryvtt.com/) to play in the grim and perilous world of Warhammer.
 
 ## Installation - Auto Installer (Recommended)
 
-1. In the FVTT Game Systems Menu, click `Install System`
-2. Enter into Manifest URL: `https://raw.githubusercontent.com/moo-man/WFRP4e-FoundryVTT/master/system.json`
-
-## Installation - Manual
-
-1. Place the unzipped folder in your `Data/systems` folder
-2. Make sure the folder is named `wfrp4e`
-3. Launch FoundryVTT and create your new world, selecting the Warhammer system.
+You can install the system from the Foundry system installer, simply search for Warhammer Fantasy and it should show in the results.
 
 ## Current State
 
@@ -24,7 +17,12 @@ This system is intended for use with [Foundry Virtual Tabletop](http://foundryvt
 
 **Version 2.0** marked the removal of content due to increasing copyright concerns. Luckily Cubicle 7 was open to supporting Foundry officially, bringing us to 3.0
 
-**Version 3.0**, the current version, is the best Warhammer has ever been. The official modules provided by me working with Cubicle 7 brings the Warhammer system to the forefront of the possibilites of gaming in Foundry VTT and the seamlessness of official content to make the GM's life easier. See below for more details on official modules.
+**Version 3.0** brought back warhammer better than ever, the official modules provided by me working with Cubicle 7 brings the Warhammer system to the forefront of the possibilites of gaming in Foundry VTT and the seamlessness of official content to make the GM's life easier. See below for more details on official modules.
+
+**Version 4.0**, Foundry 0.8.x compatible, major refactoring for cleaner code to take advantage of the Document refactor.
+
+**Version 5.0**, the current version, compatible with Foundry V9
+
 
 Please feel free to message me on Discord - Moo Man#7518
 
@@ -85,19 +83,31 @@ I also wanted to thank the following for the help in continuing to improve the s
 
 - [Ubersreik Adventures I](https://foundryvtt.com/packages/wfrp4e-ua1/) - 6 ready to play adventures within the Duchy of Ubersreik, the best resource to expand Starter Set with.
 
+- [Death on the Reik](https://foundryvtt.com/packages/wfrp4e-dotr/) - The entire Death on the Reik campaign and companion, including tables, mutations, spells, talents, as well as integrated trading rules!
+
+- [Middenheim: City of the White Wolf](https://foundryvtt.com/packages/wfrp4e-middenheim/) - Dive into the centre of Ulrican influence and power in the Old World and explore Middenheim, the heart of the Empire's North.
+
+- [Archives of the Empire: Vol 1.](https://foundryvtt.com/packages/wfrp4e-archives1/) - A fascinating and diverse collection of articles on topics that cover the length and breath of the Old World.
+
+- [Power Behind the Throne](https://foundryvtt.com/packages/wfrp4e-pbtt/) - carrying on from where Death of the Reik left off, Power Behind the Throne takes your brave heroes from Altdorf to the city of Middenheim, a towering city-state in the north of the Empire where trouble brews and a play for power is made.
+
+
 **Unofficial**
 
-- [Arcane Marks & Careers](https://github.com/moo-man/Arcane-Marks-Careers-FVTT) - I've made a module out of my [homebrew supplement](https://drive.google.com/file/d/1uTy2r0EDMdcISFqqyxeIOSadtzz-OTAg/view) which can also serve as an example for others to build off of. It includes a compendium pack of all the careers as well as tables to roll for marks. 
+- [Arcane Marks & Careers](https://foundryvtt.com/packages/arcane-marks-careers) - I've made a module out of my [homebrew supplement](https://drive.google.com/file/d/1uTy2r0EDMdcISFqqyxeIOSadtzz-OTAg/view) which can also serve as an example for others to build off of. It includes a compendium pack of all the careers as well as tables to roll for marks. 
 
-- [Forien's Armoury](https://github.com/Forien/foundryvtt-forien-armoury) - A comprehensive, all-in-one Armoury with tons of custom community made weapons, armour, ammunition and other trappings.
+- [The GM Toolkit](https://foundryvtt.com/packages/wfrp4e-gm-toolkit) - Adds advantage automation, extends the Token HUD for more information, and adds useful macros!
 
-- [The GM Tool Kit](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit) - Extends to the Token HUD for more information and adds useful macros!
-
-- [WFRP Tweaks](https://github.com/DasSauerkraut/wfrp-tweaks) - A small-ish module with optional automation as well as macro support for spells, prayers, and weapons.
+- [Character Detail Generator](https://foundryvtt.com/packages/wfrp4e-character-details) - Adds a generator that details birthday, birthplace, family info, and star sign.
 
 - [Eye for an Eye Adventure](https://github.com/CStuartEKerrigan/WFRP-e4e-4e-FVTT) - Converted 3e adventure complete with tokens, maps, audio, and macros!
 
 - [Night of Blood](https://github.com/CStuartEKerrigan/WFRP-Night-of-Blood-4e-FVTT) - The classic Night of Blood Adventure ready to go!
 
+- [Unofficial Grimoire](https://foundryvtt.com/packages/wfrp4e-unofficial-grimoire) - Adds new spells and an Elementalist and Druid career
+
+- [Character Detail Generator](https://foundryvtt.com/packages/wfrp4e-character-details) - Generates additional information for characters, including birth date and star sign.
+
+- Fan-made Maps for [Ubersreik](https://foundryvtt.com/packages/wfrp4e-ubersreik-maps), [Enemy In Shadows](https://foundryvtt.com/packages/wfrp4e-eis-maps), [Death on the Reik](https://foundryvtt.com/packages/wfrp4e-dotr-maps), and [Power Behind The Throne](https://foundryvtt.com/packages/wfrp4e-pbth-maps)
 
 

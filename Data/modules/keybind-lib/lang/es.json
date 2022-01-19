@@ -1,0 +1,9 @@
+{
+  "I18N.LANGUAGE": "Español",
+  "I18N.MAINTAINERS": "@Viriato139ac#0342",
+
+  "KEYBINDLIB.ResetKeybind": "Reiniciar combinación de teclas",
+  "KEYBINDLIB.ConflictsWith": "Conflicto con: {conflicts}",
+  "KEYBINDLIB.MenuName": "Personalizar combinaciones de teclas del módulo",
+  "KEYBINDLIB.MenuLabel": "Editar combinaciones de teclas"
+}

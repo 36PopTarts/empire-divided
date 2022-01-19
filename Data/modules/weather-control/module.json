@@ -1,0 +1,78 @@
+{
+  "name": "weather-control",
+  "class": "WeatherControl",
+  "title": "Weather Control",
+  "description": "Add dynamic weather to your FoundryVTT world.",
+  "version": "4.1.4",
+  "minimumCoreVersion": "0.7.0",
+  "compatibleCoreVersion": "9",
+  "versionsWithNotices": [
+    "4.0.1"
+  ],
+  "author": "The Bird",
+  "authors": [
+    {
+      "name": "Julien Stébennne",
+      "discord": "The Bird#8334",
+      "patreon": "thebird956"
+    }
+  ],
+  "url": "https://gitlab.com/jstebenne/foundryvtt-weather-control",
+  "manifest": "https://gitlab.com/jstebenne/foundryvtt-weather-control/-/raw/master/static/module.json",
+  "download": "https://gitlab.com/jstebenne/foundryvtt-weather-control/-/jobs/artifacts/v4.1.4/raw/weather-control.zip?job=pack",
+  "esmodules": [
+    "weather-control.js"
+  ],
+  "styles": [
+    "weather-control.css"
+  ],
+  "packs": [],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "fr",
+      "name": "Français",
+      "path": "lang/fr.json"
+    },
+    {
+      "lang": "ko",
+      "name": "Korean",
+      "path": "lang/ko.json"
+    },
+    {
+      "lang": "de",
+      "name": "Deutsch",
+      "path": "lang/de.json"
+    },
+    {
+      "lang": "ja",
+      "name": "日本語",
+      "path": "lang/ja.json"
+    },
+    {
+      "lang": "pt-BR",
+      "name": "Português (Brasil)",
+      "path": "lang/pt-BR.json"
+    },
+    {
+      "lang": "es",
+      "name": "Español",
+      "path": "lang/es.json"
+    },
+    {
+      "lang": "pl",
+      "name": "Polski",
+      "path": "lang/pl.json"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "foundryvtt-simple-calendar",
+      "manifest": "https://github.com/vigoren/foundryvtt-simple-calendar/releases/latest/download/module.json"
+    }
+  ]
+}

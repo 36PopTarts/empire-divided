@@ -3,7 +3,7 @@ import * as THREE from '../libs/three.module.js';
 
 export class PlayAnimationDark extends DiceSFX {
     static id = "PlayAnimationDark";
-    static name = "DICESONICE.PlayAnimationDark";
+    static specialEffectName = "DICESONICE.PlayAnimationDark";
     static darkColor = null;
     static duration = 1.5;
     static sound = "modules/dice-so-nice/sfx/sounds/darkness.mp3";
@@ -11,10 +11,7 @@ export class PlayAnimationDark extends DiceSFX {
     static async init() {
         PlayAnimationDark.darkColor = new THREE.Color(0.1,0.1,0.1);
         game.audio.pending.push(function(){
-            AudioHelper.play({
-                src: PlayAnimationDark.sound,
-                autoplay: false
-            }, false);
+            AudioHelper.preloadSound(PlayAnimationDark.sound);
         }.bind(this));
     }
 
@@ -26,11 +23,14 @@ export class PlayAnimationDark extends DiceSFX {
         this.dicemesh.material = this.baseMaterial.clone();
         AudioHelper.play({
 			src: PlayAnimationDark.sound,
-            volume: this.box.volume
+            volume: this.volume
 		}, false);
+        this.renderReady = true;
     }
 
     render() {
+        if(!this.renderReady)
+            return;
         let x = 1-((PlayAnimationDark.duration - this.clock.getElapsedTime())/PlayAnimationDark.duration);
         if(x>1){
             this.destroy();

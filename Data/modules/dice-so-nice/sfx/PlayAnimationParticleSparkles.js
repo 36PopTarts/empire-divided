@@ -1,15 +1,16 @@
 import { DiceSFX } from '../DiceSFX.js';
 import * as THREE from '../libs/three.module.js';
 import { Proton } from '../libs/three-modules/three.proton.js';
+import { DiceSFXManager } from '../DiceSFXManager.js';
 
 export class PlayAnimationParticleSparkles extends DiceSFX {
     static id = "PlayAnimationParticleSparkles";
-    static name = "DICESONICE.PlayAnimationParticleSparkles";
+    static specialEffectName = "DICESONICE.PlayAnimationParticleSparkles";
     static sprite = null;
     static sound = "modules/dice-so-nice/sfx/sounds/sparkles.mp3";
     /**@override init */
     static async init() {
-        let map = new THREE.TextureLoader().load("modules/dice-so-nice/sfx/textures/glow_point_red_gold.webp");
+        let map = await this.loadAsset(DiceSFXManager.TextureLoader, "modules/dice-so-nice/sfx/textures/glow_point_red_gold.webp");
         let material = new THREE.SpriteMaterial({
             map: map,
             fog: true,
@@ -19,10 +20,7 @@ export class PlayAnimationParticleSparkles extends DiceSFX {
         });
         PlayAnimationParticleSparkles.sprite = new THREE.Sprite(material);
         game.audio.pending.push(function(){
-            AudioHelper.play({
-                src: PlayAnimationParticleSparkles.sound,
-                autoplay: false
-            }, false);
+            AudioHelper.preloadSound(PlayAnimationParticleSparkles.sound);
         }.bind(this));
     }
 
@@ -57,11 +55,14 @@ export class PlayAnimationParticleSparkles extends DiceSFX {
 
         AudioHelper.play({
             src: PlayAnimationParticleSparkles.sound,
-            volume: this.box.volume
+            volume: this.volume
 		}, false);
+        this.renderReady = true;
     }
 
     render() {
+        if(!this.renderReady)
+            return;
         this.proton.update();
         if(this.proton.emitters.length == 0){
             this.destroy();
@@ -69,11 +70,11 @@ export class PlayAnimationParticleSparkles extends DiceSFX {
     }
 
     destroy(){
-        if(this.emitter && !this.emitter.dead){
+        if(this.emitter){
+            this.emitter.stopEmit();
             this.emitter.removeAllParticles();
-            this.proton.update();
-            this.emitter.destroy();
         }
+        this.proton.update();
         this.proton.destroy();
         this.destroyed = true;
     }

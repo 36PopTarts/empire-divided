@@ -1,13 +1,13 @@
 
 export default function () {
 
-    Hooks.on("preCreateActiveEffect", (actor, effect, options, id) => {
+    Hooks.on("preCreateActiveEffect", (effect, options, id) => {
 
         if (getProperty(effect, "flags.wfrp4e.preventDuplicateEffects"))
         {
-            if (actor.data.effects.find(e => e.label == effect.label))
+            if (effect.parent.effects.find(e => e.label == effect.label))
             {
-                ui.notifications.notify(`Prevented adding ${effect.label} effect: Effect already exists`)
+                ui.notifications.notify(`${game.i18n.format("EFFECT.Prevent", { name: effect.label })}`)
                 return false
             }
         }

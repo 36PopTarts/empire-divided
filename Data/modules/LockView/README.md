@@ -57,12 +57,12 @@ but can show some padding)<br>
 
 ## Settings and Controls
 ### Module Settings
-In the module settings, as a GM you will find a button to open the player configuration screen, where you can enable the module and viewbox for each player. By default, both are enabled for non-GM users.<br>
-The module must be enabled for each player if you want to use any of the functions of this module, except for displaying the viewbox, which has its own enable setting.<br>
+In the module settings, as a GM you will find a button to open the user configuration screen, where you can enable control and viewbox for each user. By default, both are enabled for non-GM users.<br>
+Control must be enabled for each user if you want to use any of the functions of this module, except for displaying the viewbox, which has its own enable setting.<br>
+Besides enabling control and viewbox for each specific user, you can also override this and enable them based on their user role.<br>
 <br>
-All connected players will also see two more settings which are only relevant if 'Autoscaling' is set to 'Physical Gridsize' (see below), as these settings allow the module to calculate the correct grid scale.<br>
-<br>
-The settings are:
+All connected users will also see two more settings which are only relevant if 'Autoscaling' is set to 'Physical Gridsize' (see below), as these settings allow the module to calculate the correct grid scale.<br>
+These settings are:
 <ul>
 <li><b>Screen Width</b> - Fill in the physical screen width in mm or inch of the TV</li>
 <li><b>Gridsize</b> - Fill in the desired gridsize in mm or inch (must be the same unit as 'Screen Width'). This is usually 25 mm or 1 inch</li>
@@ -71,8 +71,8 @@ The settings are:
 ![moduleSettings](https://github.com/CDeenen/LockView/blob/master/img/examples/ModuleSettings.png)
 
 #### Configure Initial View Position
-By pressing the 'Congigure Initial View Position' button to the right of the 'Force Initial View' checkbox, a dialog box opens and a red square is drawn on the canvas. 
-This red square corresponds with the 'Initial View Position' as set in the 'Ambience and Atmosphere' section of the 'Scene Configuration Screen'.<br>
+By pressing the 'Congigure Initial View Position' button to the right of the 'Force Initial View' checkbox, a dialog box opens and a red box is drawn on the canvas. 
+This red box corresponds with the 'Initial View Position' as set in the 'Ambience and Atmosphere' section of the 'Scene Configuration Screen'.<br>
 Pressing the 'move' icon at the top left of the red box moves the box around while pressing the 'scale' icon at the right bottom scales the box.
 <br>
 <br>
@@ -81,9 +81,13 @@ In the dialog box, you'll find the following values and buttons:
     <li><b>Old initial view position</b> - The old initial view position as it is currently set in the scene configuration</li>
     <li><b>New initial view position</b> - The new initial view position as displayed by the red box. These values are user editable</li>
     <li><b>Size in grid spaces</b> - The size of the view expressed in grid spaces. These values are user editable</li>
-    <li><b>Set to physical gridscale</b> - Scales the 'new initial view position' to correspond with the physical gridsize as set in the module settings</li>
+    <li><b>Set to physical gridsize</b> - Scales the 'new initial view position' to correspond with the physical gridsize as set in the module settings</li>
+    <li><b>Set to player view</b> - By selecting the name of a player that's currently connected, you can set the initial view position to the view of that player by pressing 'Capture View'</li>
     <li><b>Snap to grid</b> - Snaps the 'new initial view poisition' to the grid. With the dropdown menu you can select which corner of the box should be snapped to the grid</li>
 </ul>
+<b>Note: </b>The displayed red box has the aspect ratio of the your (the GM's) screen. This does not necessary correspond to the aspect ratio of your players' view. The center of the red box
+will correspond with the center of the players' view (it ignores the sidebar).
+<br>
 By pressing the 'Cancel', 'Save', or 'Close' button, you'll return to the scene configuration. Only when the 'Save' button is pressed the initial view position on the scene configuration will be updated.<br>
 Don't forget to save the scene configuration to have the new settings take effect.
 
@@ -92,13 +96,17 @@ Don't forget to save the scene configuration to have the new settings take effec
 ### Scene Settings
 In the scene configuration screen, you'll find a new Lock View section with the following settings:<br>
 <ul>
-<li><b>Pan Lock</b> - Initial 'Pan Lock' setting</li>
-<li><b>Zoom Lock</b> - Initial 'Zoom Lock' setting</li>
-<li><b>Bounding box:</b> Initial 'Bounding Box' settings</li>
-<li><b>Autoscale</b> - Automatically scales the screen</li>
-<li><b>Exclude Sidebar</b> - Exclude the area behind the sidebar from the bounding box or autoscaling. This can be enabled because the sidebar can obscure parts of the map</li>
-<li><b>Blacken Sidebar</b> - Blackens the background of the sidebar to prevent users from seeing outsie of the bounding box or canvas (only works if 'Exclude Sidebar' is enabled)</li>
-<li><b>Force Initial View</b> - Forces the view to the 'Initial View Position' after loading the scene. Only works if 'Autoscale' is set to 'Off'</li>
+  <li><b>Pan Lock</b> - Initial 'Pan Lock' setting</li>
+  <li><b>Zoom Lock</b> - Initial 'Zoom Lock' setting</li>
+  <li><b>Bounding box:</b> Initial 'Bounding Box' settings</li>
+  <li><b>Autoscale</b> - Automatically scales the screen</li>
+  <li><b>Exclude Sidebar</b> - Exclude the area behind the sidebar from the bounding box or autoscaling. This can be enabled because the sidebar can obscure parts of the map</li>
+  <li><b>Blacken Sidebar</b> - Blackens the background of the sidebar to prevent users from seeing outsie of the bounding box or canvas (only works if 'Exclude Sidebar' is enabled)</li>
+  <li><b>Collapse Sidebar on Scene Load</b> - Collapses the sidebar when the scene is loaded, mainly useful in combination with 'Hide UI on Sidebar Collapse'</li>
+  <li><b>Hide UI Elements on Sidebar Collapse</b> - Hides selected UI elements (such as the macro hotbar, scene navigation, etc) when the sidebar is collapsed, great for landing pages or splash screens. You can configure which elements to hide by pressing the 'cog' button next to the checkbox. By default all elements except for the sidebar are enabled.
+  The 'Ctrl+u' hotkey can hide/unhide the elements in case they need to be accessed</li>
+  <li><b>Force Initial View</b> - Forces the view to the 'Initial View Position' after loading the scene. Only works if 'Autoscale' is set to 'Off' or 'Physical Gridsize'</li>
+  <li><b>Configure Initial View Position button</b> - The button is located to the right of the 'Force Initial View' checkbox. Pressing it opens the 'Configure Initial View Position dialog screen (see below)</li>
 </ul>
 Autoscale can be set to the following options:<br>
 <ul>
@@ -146,7 +154,7 @@ After clicking the 'Set View' control button, a dialog box appears that gives mu
 <li><b>Ignore scale</b> - No zooming will occur</li>
 <li><b>Set scale</b> - Zooms to the scale size set in the 'Scale' box</li>
 <li><b>Reset scale</b> - Resets the zoom to the initial zoom factor, as set in the scene configuration screen</li>
-<li><b>Physical gridscale</b> - Automatically scales the gridsize to make it correspond to a physical gridsize (in mm or inch), as set in the module settings </li>
+<li><b>Physical gridsize</b> - Automatically scales the gridsize to make it correspond to a physical gridsize (in mm or inch), as set in the module settings </li>
 </ul>
 
 ![setViewDialog](https://github.com/CDeenen/LockView/blob/master/img/examples/SetViewDialog.png)

@@ -3,16 +3,16 @@ import MarketWfrp4e from "../apps/market-wfrp4e.js";
 import NameGenWfrp from "../apps/name-gen.js";
 import WFRP_Utility from "../system/utility-wfrp4e.js";
 
-import DiceWFRP from "../system/dice-wfrp4e.js";
+import ChatWFRP from "../system/chat-wfrp4e.js";
 import TravelDistanceWfrp4e from "../apps/travel-distance-wfrp4e.js";
+import OpposedWFRP from "../system/opposed-wfrp4e.js";
 
 
 export default function() {
 
-  // Activate chat listeners defined in dice-wfrp4e.js
+  // Activate chat listeners defined in chat-wfrp4e.js
   Hooks.on('renderChatLog', (log, html, data) => {
-    DiceWFRP.chatListeners(html)
-
+    ChatWFRP.chatListeners(html)
   });
 
   /**
@@ -93,7 +93,12 @@ export default function() {
     if (command === "/table") {
       // If no argument, display help menu
       if (commands.length === 1)
-        msg.content = game.wfrp4e.tables.formatChatRoll("menu");
+      {
+        game.wfrp4e.tables.formatChatRoll("menu").then(text => {
+          msg.content = text
+          ChatMessage.create(msg)
+        })
+      }
       else {
         // [0]: /table [1]: <table-name> [2]: argument1 [3]: argument2
         let modifier, column; // Possible arguments
@@ -107,11 +112,11 @@ export default function() {
             column = commands[2]
         }
         // Call tables class to roll and return html
-        msg.content = game.wfrp4e.tables.formatChatRoll(commands[1], { modifier: modifier }, column)
+        game.wfrp4e.tables.formatChatRoll(commands[1], { modifier: modifier }, column).then(text => {
+          msg.content = text
+          ChatMessage.create(msg);
+        })
       }
-      // Create message and return false to not display user input of `/table`
-      if (msg)
-        ChatMessage.create(msg);
       return false;
     }
     // Lookup a condition
@@ -135,7 +140,8 @@ export default function() {
     // Character generation
     else if (command === "/char") {
       // Begin character generation, return false to not display user input of `/char`
-      GeneratorWfrp4e.speciesStage();
+      GeneratorWfrp4e.start()
+      game.wfrp4e.generator.speciesStage();
       return false;
     }
     // Name generation
@@ -171,10 +177,9 @@ export default function() {
       //If the user isnt a GM, he pays a price
       if (!game.user.isGM) {
         let actor = WFRP_Utility.getSpeaker(msg.speaker);
-        let money = duplicate(actor.data.money.coins);
-        money = MarketWfrp4e.payCommand(amount, money);
+        let money = MarketWfrp4e.payCommand(amount, actor);
         if (money)
-          actor.updateEmbeddedEntity("OwnedItem", money);
+          actor.updateEmbeddedDocuments("Item", money);
       } else //If hes a gm, it generate a "Pay" card
         MarketWfrp4e.generatePayCard(amount, player);
       return false;
@@ -199,14 +204,20 @@ export default function() {
       return false;
     }
 
-    
+
     else if (command === "/fear") {
-      WFRP_Utility.postFear(commands[1]);
+      WFRP_Utility.postFear(commands[1], commands.slice(2).join(" "));
       return false;
     }
 
     else if (command === "/terror") {
-      WFRP_Utility.postTerror(commands[1]);
+      WFRP_Utility.postTerror(commands[1], commands.slice(2).join(" "));
+      return false;
+    }
+
+
+    else if (command === "/exp") {
+      WFRP_Utility.postExp(commands[1], commands.slice(2).join(" "));
       return false;
     }
 
@@ -256,7 +267,7 @@ export default function() {
     // If message has the opposed class signifying an opposed result
     if ($(msg.data.content).find(".opposed-card").length && msg.data.flags.startMessageId && (game.user.isUniqueGM)) {
       // Look in the flags for the winner and startMessage
-      let winner = msg.data.flags.opposeData.winner;
+      let winner = msg.data.flags.opposeData.opposeResult.winner;
       let startMessage = game.messages.get(msg.data.flags.startMessageId)
       // The loser is "attacker" or "defender"
       let loser = winner == "attacker" ? "defender" : "attacker"
@@ -268,7 +279,7 @@ export default function() {
 
       // Update card with new content
       let cardData = {
-        user: game.user._id,
+        user: game.user.id,
         content: newContent
       }
       startMessage.update(cardData).then(resultCard => {
@@ -292,6 +303,7 @@ export default function() {
     if (!game.user.isGM) {
       html.find(".chat-button-gm").remove();
       html.find(".unopposed-button").remove();
+      html.find(".haggle-buttons").remove();
       //hide tooltip contextuamneu if not their roll
       if (msg.message.speaker.actor && game.actors.get(msg.message.speaker.actor).permission != 3)
         html.find(".chat-button-player").remove();
@@ -310,20 +322,21 @@ export default function() {
     let postedItem = html.find(".post-item")[0]
     if (postedItem) {
       postedItem.setAttribute("draggable", true);
+      postedItem.classList.add("draggable");
 
       postedItem.addEventListener('dragstart', ev => {
-        if (app.data.flags.postQuantity == -1)
+        if (app.data.flags.postQuantity == "inf" || app.data.flags.postQuantity == undefined)
           return ev.dataTransfer.setData("text/plain", app.data.flags.transfer);
 
 
-        if (game.user.isGM) 
+        if (game.user.isGM)
         {
           ev.dataTransfer.setData("text/plain", app.data.flags.transfer);
           let newQuantity = app.data.flags.postQuantity - 1
           let recreateData = app.data.flags.recreationData
           recreateData.postQuantity = newQuantity;
           renderTemplate("systems/wfrp4e/templates/chat/post-item.html", recreateData).then(html => {
-            app.update({ "flags.postQuantity": newQuantity, content : html })
+            app.update({ "flags.postQuantity": newQuantity, content : TextEditor.enrichHTML(html) })
             if (newQuantity <= 0)
               app.delete();
           })
@@ -356,14 +369,12 @@ export default function() {
                 type: "updateMsg",
                 payload: {
                   "id": app.data._id,
-                  "updateData": { "flags.postQuantity": newQuantity, content: html }
+                  "updateData": { "flags.postQuantity": newQuantity, content: TextEditor.enrichHTML(html) }
                 }
               })
             })
           }
         }
-
-
       })
     }
 
@@ -374,7 +385,7 @@ export default function() {
       woundsHealed.addEventListener('dragstart', ev => {
         let dataTransfer = {
           type : "wounds",
-          payload : app.data.flags.data.postData.woundsHealed
+          payload : app.data.flags.data.testData.result.woundsHealed
         }
         ev.dataTransfer.setData("text/plain", JSON.stringify(dataTransfer));
       })
@@ -464,6 +475,29 @@ export default function() {
           ev.dataTransfer.setData("text/plain", JSON.stringify(dataTransfer));
         })
       })
+  })
+
+  Hooks.on("deleteChatMessage", (message) => {
+    let targeted = message.data.flags.unopposeData // targeted opposed test
+    let manual = message.data.flags.opposedStartMessage // manual opposed test
+    if (!targeted && !manual)
+      return;
+
+    if (targeted) {
+      let target = canvas.tokens.get(message.data.flags.unopposeData.targetSpeaker.token)
+      target.actor.update(
+        {
+          "flags.-=oppose": null
+        }) // After opposing, remove oppose
+    }
+    if (manual && !message.data.flags.opposeResult && OpposedWFRP.attackerMessage) {
+      OpposedWFRP.attackerMessage.update(
+        {
+          "flags.data.isOpposedTest": false
+        });
+      OpposedWFRP.clearOpposed();
+    }
+    ui.notifications.notify(game.i18n.localize("ROLL.CancelOppose"))
   })
 
 }

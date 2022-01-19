@@ -15,19 +15,6 @@ export default function() {
       
     }
 
-    if (app.options.id == "tables")
-    {
-      let button = $(`<button class='wfrp4e-tables'>${game.i18n.localize("WFRP4e Tables")}</button>`)
-  
-      button.click(ev => {
-        ui.sidebar.activateTab("chat")
-        ChatMessage.create({content : game.wfrp4e.tables.tableMenu()})
-      })
-  
-      button.insertAfter(html.find(".header-actions"))
-      
-    }
-
     if (app.options.id == "actors")
     {
       let button = $(`<button class='character-creation'>${game.i18n.localize("BUTTON.CharacterCreation")}</button>`)
@@ -41,8 +28,9 @@ export default function() {
               label : game.i18n.localize("Yes"),
               callback : dlg => {
                 ui.sidebar.activateTab("chat")
-                CONFIG.Actor.entityClass.create({type : "character", name : "New Character"}, {renderSheet: true} )
-                GeneratorWfrp4e.speciesStage();
+                CONFIG.Actor.documentClass.create({type : "character", name : "New Character"}, {renderSheet: true} )
+                GeneratorWfrp4e.start()
+                game.wfrp4e.generator.speciesStage();
               }
             },
             no : {

@@ -159,7 +159,8 @@
           "species": {
             "type": "String",
             "label": "Species",
-            "value": ""
+            "value": "",
+            "subspecies" : ""
           },
           "gender": {
             "type": "String",
@@ -197,7 +198,8 @@
             "type": "String",
             "value": "",
             "standing": "",
-            "tier": 0
+            "tier": 0,
+            "modifier" : 0
           },
           "hitLocationTable": {
             "value": "hitloc",
@@ -240,7 +242,8 @@
           "type": "Number",
           "label": "Experience",
           "total": 0,
-          "spent": 0
+          "spent": 0,
+          "log" : []
         },
         "personal-ambitions": {
           "short-term": "",
@@ -353,6 +356,12 @@
           "label": "Carries",
           "current": 0,
           "max": 10
+        },
+        "encumbrance": {
+          "type": "Number",
+          "label": "Encumbrance",
+          "initial" : 0,
+          "current": 0
         }
       },
       "details" : {
@@ -399,15 +408,10 @@
           "type": "String",
           "label": "Motive Power",
           "value": ""
-        },
-        "encumbrance": {
-          "type": "Number",
-          "label": "Encumbrance",
-          "initial" : 0,
-          "value": 0
         }
       },
-      "passengers" : []
+      "passengers" : [],
+      "roles" : []
     }
   },
   "Item": {
@@ -429,7 +433,9 @@
       "spell",
       "trait",
       "weapon",
-      "extendedTest"
+      "extendedTest",
+      "vehicleMod",
+      "cargo"
     ],
     "templates": {
       "quantity": {
@@ -480,7 +486,14 @@
           "label": "Location",
           "value": 0
         }
-      }
+      },
+      "damageToItem" : {
+        "damageToItem" : {
+          "type" : "Number",
+          "value" : 0,
+          "shield" : 0
+        }
+      } 
     },
     "career": {
       "templates": [
@@ -526,7 +539,8 @@
         "encumbrance",
         "price",
         "availability",
-        "location"
+        "location",
+        "damageToItem"
       ],
       "availability": {
         "type": "String",
@@ -547,6 +561,16 @@
       "range": {
         "type": "String",
         "label": "Range",
+        "value": ""
+      },
+      "skill": {
+        "type": "String",
+        "label": "Skill Override",
+        "value": ""
+      },
+      "modeOverride": {
+        "type": "String",
+        "label": "Mode Override",
         "value": ""
       },
       "twohanded": {
@@ -572,14 +596,12 @@
         "value": "basic"
       },
       "qualities": {
-        "type": "String",
         "label": "Qualities",
-        "value": ""
+        "value": []
       },
       "flaws": {
-        "type": "String",
         "label": "Flaws",
-        "value": ""
+        "value": []
       },
       "special": {
         "type": "String",
@@ -603,7 +625,8 @@
         "encumbrance",
         "price",
         "availability",
-        "location"
+        "location",
+        "damageToItem"
       ],
       "worn": {
         "type": "Boolean",
@@ -623,12 +646,12 @@
       "qualities": {
         "type": "String",
         "label": "Qualities",
-        "value": ""
+        "value": []
       },
       "flaws": {
         "type": "String",
         "label": "Flaws",
-        "value": ""
+        "value": []
       },
       "special": {
         "type": "String",
@@ -685,12 +708,12 @@
       "qualities": {
         "type": "String",
         "label": "Qualities",
-        "value": ""
+        "value": []
       },
       "flaws": {
         "type": "String",
         "label": "Flaws",
-        "value": ""
+        "value": []
       },
       "special": {
         "type": "String",
@@ -765,7 +788,8 @@
       "advances": {
         "type": "Number",
         "label": "Advances",
-        "value": 1
+        "value": 1,
+        "force" : false
       },
       "career": {
         "value": "",
@@ -787,7 +811,7 @@
         "type": "String"
       },
       "grouped": {
-        "value": "",
+        "value": "noSpec",
         "type": "String"
       },
       "characteristic": {
@@ -799,7 +823,8 @@
         "type": "Number",
         "label": "Advances",
         "value": 0,
-        "costModifier": 0
+        "costModifier": 0,
+        "force" : false
       },
       "modifier": {
         "type": "Number",
@@ -864,7 +889,7 @@
       "currentIng": {
         "type": "Number",
         "label": "Ingredient",
-        "value": 0
+        "value": ""
       },
       "wind": {
         "value": ""
@@ -1060,7 +1085,8 @@
         "bonusCharacteristic": "",
         "dice": "",
         "defaultDifficulty": "challenging",
-        "SL": true
+        "SL": true,
+        "attackType": "melee"
       },
       "specification": {
         "value": "",
@@ -1104,6 +1130,35 @@
       "hide" : {
         "test" : false,
         "progress" : false
+      }
+    },
+    "cargo" : {
+      "templates" : [
+        "description",
+        "price",
+        "encumbrance"
+      ],
+      "cargoType" : {
+        "value" : ""
+      },
+      "unitPrice" : {
+        "value" : 0
+      },
+      "origin" : {
+        "value" : ""
+      },
+      "quality" : {
+        "value" : "average"
+      }
+    },
+    "vehicleMod" : {
+      "templates" : [
+        "description",
+        "price",
+        "encumbrance"
+      ],
+      "modType" : {
+        "value" : ""
       }
     }
   }

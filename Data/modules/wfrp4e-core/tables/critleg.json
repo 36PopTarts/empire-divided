@@ -1,5 +1,5 @@
 {
-  "name": "Leg Critical Wounds",
+  "name": "Critical Hits - Leg",
   "die": "1d100",
   "rows": [{
     "name": "Stubbed Toe",

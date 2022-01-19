@@ -16,7 +16,7 @@ import StatBlockParser from "./modules/apps/stat-parser.js";
 import BrowserWfrp4e from "./modules/apps/wfrp-browser.js";
 import WFRP_Audio from "./modules/system/audio-wfrp4e.js";
 import WFRP4E from "./modules/system/config-wfrp4e.js"
-import DiceWFRP from "./modules/system/dice-wfrp4e.js";
+import ChatWFRP from "./modules/system/chat-wfrp4e.js";
 import OpposedWFRP from "./modules/system/opposed-wfrp4e.js";
 import WFRP_Tables from "./modules/system/tables-wfrp4e.js";
 import WFRP_Utility from "./modules/system/utility-wfrp4e.js";
@@ -24,6 +24,24 @@ import AOETemplate from "./modules/system/aoe.js"
 import ActorSettings from "./modules/apps/actor-settings.js";
 import WFRPActiveEffectConfig from "./modules/apps/active-effect.js";
 import Migration from "./modules/system/migrations.js";
+import Wfrp4eTableSheet from "./modules/apps/table-sheet.js";
+import HomebrewSettings from "./modules/apps/homebrew-settings.js"
+import CareerSelector from "./modules/apps/career-selector.js"
+import CombatHelpers from "./modules/system/combat.js"
+import ActiveEffectWfrp4e from "./modules/system/effect-wfrp4e.js"
+import TagManager from "./modules/system/tag-manager.js";
+import ItemProperties from "./modules/apps/item-properties.js"
+import TestWFRP from "./modules/system/rolls/test-wfrp4e.js";
+import CharacteristicTest from "./modules/system/rolls/characteristic-test.js";
+import SkillTest from "./modules/system/rolls/skill-test.js";
+import WeaponTest from "./modules/system/rolls/weapon-test.js";
+import CastTest from "./modules/system/rolls/cast-test.js";
+import ChannelTest from "./modules/system/rolls/channel-test.js";
+import PrayerTest from "./modules/system/rolls/prayer-test.js";
+import TraitTest from "./modules/system/rolls/trait-test.js";
+import ModuleUpdater from "./modules/apps/module-updater.js"
+import ModuleInitializer from "./modules/apps/module-initialization.js";
+import WFRPTableConfig from "./modules/apps/table-config.js";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -39,7 +57,8 @@ Hooks.once("init", async function () {
   Actors.registerSheet("wfrp4e", ActorSheetWfrp4eVehicle, { types: ["vehicle"], makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("wfrp4e", ItemSheetWfrp4e, { makeDefault: true });
-  CONFIG.ActiveEffect.sheetClass = WFRPActiveEffectConfig
+  DocumentSheetConfig.registerSheet(RollTable, "wfrp4e", WFRPTableConfig, {makeDefault: true})
+  DocumentSheetConfig.registerSheet(ActiveEffect, "wfrp4e", WFRPActiveEffectConfig, {makeDefault :true})
 
   game.wfrp4e = {
     apps: {
@@ -53,28 +72,47 @@ Hooks.once("init", async function () {
       StatBlockParser,
       BrowserWfrp4e,
       ActorSettings,
-      WFRPActiveEffectConfig
+      WFRPActiveEffectConfig,
+      Wfrp4eTableSheet,
+      HomebrewSettings,
+      CareerSelector,
+      ItemProperties,
+      ModuleUpdater,
+      ModuleInitializer
     },
     entities: {
       ActorWfrp4e,
       ItemWfrp4e
     },
+    rolls : {
+      TestWFRP,
+      CharacteristicTest,
+      SkillTest,
+      WeaponTest,
+      CastTest,
+      ChannelTest,
+      PrayerTest,
+      TraitTest
+    },
     utility: WFRP_Utility,
     tables: WFRP_Tables,
     config: WFRP4E,
-    dice: DiceWFRP,
+    chat: ChatWFRP,
     market: MarketWfrp4e,
     audio: WFRP_Audio,
     opposed: OpposedWFRP,
     names: NameGenWfrp,
     config: WFRP4E,
+    combat: CombatHelpers,
     aoe: AOETemplate,
-    migration: Migration
+    migration: Migration,
+    tags : new TagManager()
   }
 
   // Assign the actor class to the CONFIG
-  CONFIG.Actor.entityClass = ActorWfrp4e;
-  CONFIG.Item.entityClass = ItemWfrp4e;
+  CONFIG.Actor.documentClass = ActorWfrp4e;
+  CONFIG.Item.documentClass = ItemWfrp4e;
+  CONFIG.ActiveEffect.documentClass = ActiveEffectWfrp4e
 });
 
 registerHooks()

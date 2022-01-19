@@ -1,5 +1,6 @@
 import NameGenWfrp from "../apps/name-gen.js";
 import TravelDistanceWfrp4e from "../apps/travel-distance-wfrp4e.js";
+import HomebrewSettings from "../apps/homebrew-settings.js";
 
 export default function() {
   /**
@@ -9,107 +10,6 @@ export default function() {
 
     TravelDistanceWfrp4e.loadTravelData();
 
-    // load tables from system folder
-    FilePicker.browse("data", "systems/wfrp4e/tables").then(resp => {
-      try {
-        if (resp.error)
-          throw ""
-        for (var file of resp.files) {
-          try {
-            if (!file.includes(".json"))
-              continue
-            let filename = file.substring(file.lastIndexOf("/") + 1, file.indexOf(".json"));
-            fetch(file).then(r => r.json()).then(async records => {
-              game.wfrp4e.tables[filename] = records;
-            })
-          }
-          catch (error) {
-            console.error("Error reading " + file + ": " + error)
-          }
-        }
-      }
-      catch
-      {
-        // Do nothing
-      }
-    })
-    // Create scatter table
-    game.wfrp4e.tables.scatter = {
-      name: "Scatter",
-      die: "1d10",
-      rows: [
-        {
-          name: "Top Left",
-          range: [1, 1]
-        },
-        {
-          name: "Top Middle",
-          range: [2, 2]
-        },
-        {
-          name: "Top Right",
-          range: [3, 3]
-        },
-        {
-          name: "Center Left",
-          range: [4, 4]
-        },
-        {
-          name: "Center Right",
-          range: [5, 5]
-        },
-        {
-          name: "Bottom Left",
-          range: [6, 6]
-        },
-        {
-          name: "Bottom Middle",
-          range: [7, 7]
-        },
-        {
-          name: "Bottom Right",
-          range: [8, 8]
-        },
-        {
-          name: "At your feet",
-          range: [9, 9]
-        },
-        {
-          name: "At the target's feet",
-          range: [10, 10]
-        },
-      ]
-    }
-
-    // Create Winds table
-    game.wfrp4e.tables.winds = {
-      name: "The Swirling Winds",
-      die: "1d10",
-      rows: [
-        {
-          modifier: "-30",
-          range: [1, 1]
-        },
-        {
-          modifier: "-10",
-          range: [2, 3]
-        },
-        {
-          modifier: "0",
-          range: [4, 7]
-        },
-        {
-          modifier: "+10",
-          range: [8, 9]
-        },
-        {
-          modifier: "+30",
-          range: [10, 10]
-        }
-      ]
-    }
-
-
     game.settings.register("wfrp4e", "systemMigrationVersion", {
       name: "System Migration Version",
       scope: "world",
@@ -117,6 +17,14 @@ export default function() {
       type: String,
       default: 0
     });
+
+    game.settings.registerMenu("wfrp4e", "homebrew", {
+      name: "WFRP4e House Rules",
+      label: "WFRP4e Homebrew",
+      hint: "Settings for common homebrew/house rules",
+      type: HomebrewSettings,
+      restricted: true
+  })
 
     // Register initiative rule
     game.settings.register("wfrp4e", "initiativeRule", {
@@ -216,6 +124,16 @@ export default function() {
       type: Boolean
     });
 
+    game.settings.register("wfrp4e", "channelingNegativeSLTests", {
+      name: "SETTINGS.ChannelingNegativeSL",
+      hint: "SETTINGS.ChannelingNegativeSLHint",
+      scope: "world",
+      config: false,
+      homebrew: true,
+      default: false,
+      type: Boolean
+    });
+
     // Limit Equipped Items
     game.settings.register("wfrp4e", "limitEquippedWeapons", {
       name: "SETTINGS.LimitEquippedWeapons",
@@ -225,17 +143,6 @@ export default function() {
       default: true,
       type: Boolean
     });
-
-    // Register Test auto-fill
-    game.settings.register("wfrp4e", "testAutoFill", {
-      name: "SETTINGS.TestDialogAutoPopulate",
-      hint: "SETTINGS.TestDialogAutoPopulateHint",
-      scope: "world",
-      config: true,
-      default: true,
-      type: Boolean
-    });
-
 
     // Register Test auto-fill
     game.settings.register("wfrp4e", "autoFillAdvantage", {
@@ -251,26 +158,6 @@ export default function() {
     game.settings.register("wfrp4e", "testDefaultDifficulty", {
       name: "SETTINGS.TestDialogDefaultDifficulty",
       hint: "SETTINGS.TestDialogDefaultDifficultyHint",
-      scope: "world",
-      config: true,
-      default: false,
-      type: Boolean
-    });
-
-    // Register NPC Species Randomization
-    game.settings.register("wfrp4e", "npcSpeciesCharacteristics", {
-      name: "SETTINGS.NpcAverageChar",
-      hint: "SETTINGS.NpcAverageCharHint",
-      scope: "world",
-      config: true,
-      default: true,
-      type: Boolean
-    });
-
-    // Register Partial Channelling
-    game.settings.register("wfrp4e", "partialChannelling", {
-      name: "SETTINGS.PartialChannelling",
-      hint: "SETTINGS.PartialChannellingHint",
       scope: "world",
       config: true,
       default: false,
@@ -331,11 +218,21 @@ export default function() {
     game.settings.register("wfrp4e", "weaponLength", {
       name: "SETTINGS.WeaponLength",
       hint: "SETTINGS.WeaponLengthHint",
-      scope: "client",
+      scope: "world",
       config: true,
-      default: false,
+      default: true,
       type: Boolean
     });
+
+    game.settings.register("wfrp4e", "rangeAutoCalculation", {
+      name: "SETTINGS.RangeAutoCalculation",
+      hint: "SETTINGS.RangeAutoCalculationHint",
+      scope: "world",
+      config: true,
+      default: true,
+      type: Boolean
+    });
+
 
     game.settings.register("wfrp4e", "playerBrowser", {
       name: "SETTINGS.PlayerBrowser",
@@ -346,14 +243,24 @@ export default function() {
       type: Boolean
     });
 
-    // Register Advantage cap
-    game.settings.register("wfrp4e", "soundEffects", {
-      name: "SETTINGS.SoundEffects",
-      hint: "SETTINGS.SoundEffectsHint",
+    game.settings.register("wfrp4e", "playerExperienceEditing", {
+      name: "SETTINGS.PlayerExperienceEditing",
+      hint: "SETTINGS.PlayerExperienceEditingHint",
       scope: "world",
       config: true,
       default: true,
       type: Boolean
+    });
+
+
+    // Register Advantage cap
+    game.settings.register("wfrp4e", "soundPath", {
+      name: "SETTINGS.SoundEffects",
+      hint: "SETTINGS.SoundEffectsHint",
+      scope: "world",
+      config: true,
+      default: "systems/wfrp4e/sounds/",
+      type: String
     });
 
     game.settings.register("wfrp4e", "customCursor", {
@@ -365,11 +272,32 @@ export default function() {
       type: Boolean
     });
 
+
+    game.settings.register("wfrp4e", "throwMoney", {
+      name: "SETTINGS.ThrowMoney",
+      hint: "SETTINGS.ThrowMoneyHint",
+      scope: "world",
+      config: true,
+      default: true,
+      type: Boolean
+    });
+
+    game.settings.register("wfrp4e", "advantageBonus", {
+      name: "SETTINGS.AdvantageBonus",
+      hint: "SETTINGS.AdvantageBonusHint",
+      scope: "world",
+      config: false,
+      homebrew: true,
+      default: 10,
+      type: Number
+    });
+
     game.settings.register("wfrp4e", "dangerousCrits", {
       name: "SETTINGS.DangerousCrits",
       hint: "SETTINGS.DangerousCritsHint",
       scope: "world",
-      config: true,
+      config: false,
+      homebrew: true,
       default: false,
       type: Boolean
     });
@@ -378,7 +306,8 @@ export default function() {
       name: "SETTINGS.DangerousCritsMod",
       hint: "SETTINGS.DangerousCritsModHint",
       scope: "world",
-      config: true,
+      config: false,
+      homebrew: true,
       default: 10,
       type: Number
     });
@@ -396,6 +325,248 @@ export default function() {
       default: "",
       type: String
     });
+
+    game.settings.register("wfrp4e", "tableVisibility", {
+      scope: "world",
+      config: false,
+      default: {},
+      type: Object
+    });
+
+    
+    game.settings.register("wfrp4e", "tableRollMode", {
+      scope: "client",
+      config: false,
+      default: {},
+      type: Object
+    });
+
+
+
+    game.settings.register("wfrp4e", "mooAdvantage", {
+      name: "SETTINGS.MooAdvantage",
+      hint: "SETTINGS.MooAdvantageHint",
+      scope: "world",
+      config: false,
+      homebrew: true,
+      default: false,
+      type: Boolean
+    });
+
+
+
+    game.settings.register("wfrp4e", "mooDifficulty", {
+      name: "SETTINGS.MooDifficulty",
+      hint: "SETTINGS.MooDifficultyHint",
+      scope: "world",
+      config: false,
+      homebrew: true,
+      default: false,
+      type: Boolean
+    });
+
+
+    
+    // game.settings.register("wfrp4e", "mooCritsFumbles", {
+    //   name: "SETTINGS.MooCritsFumbles",
+    //   hint: "SETTINGS.MooCritsFumblesHint",
+    //   scope: "world",
+    //   config: false,
+    //   homebrew: true,
+    //   default: false,
+    //   type: Boolean
+    // });
+
+
+    game.settings.register("wfrp4e", "mooConditions", {
+      name: "SETTINGS.MooConditions",
+      hint: "SETTINGS.MooConditionsHint",
+      scope: "world",
+      config: false,
+      homebrew: true,
+      default: false,
+      type: Boolean
+    });
+
+    game.settings.register("wfrp4e", "mooConditionTriggers", {
+      name: "SETTINGS.MooConditionTriggers",
+      hint: "SETTINGS.MooConditionTriggersHint",
+      scope: "world",
+      config: false,
+      homebrew: true,
+      default: false,
+      type: Boolean
+    });
+
+    game.settings.register("wfrp4e", "mooCritModifiers", {
+      name: "SETTINGS.MooCritModifiers",
+      hint: "SETTINGS.MooCritMOdifiersHint",
+      scope: "world",
+      config: false,
+      homebrew: true,
+      default: false,
+      type: Boolean
+    });
+
+
+    game.settings.register("wfrp4e", "mooSLDamage", {
+      name: "SETTINGS.MooSLDamage",
+      hint: "SETTINGS.MooSLDamageHint",
+      scope: "world",
+      config: false,
+      homebrew: true,
+      default: false,
+      type: Boolean
+    });
+
+    game.settings.register("wfrp4e", "mooRangedDamage", {
+      name: "SETTINGS.MooRangedDamage",
+      hint: "SETTINGS.MooRangedDamageHint",
+      scope: "world",
+      config: false,
+      homebrew: true,
+      default: false,
+      type: Boolean
+    });
+
+
+    game.settings.register("wfrp4e", "mooMagicAdvantage", {
+      name: "SETTINGS.MooMagicAdvantage",
+      hint: "SETTINGS.MooMagicAdvantageHint",
+      scope: "world",
+      config: false,
+      homebrew: true,
+      default: false,
+      type: Boolean
+    });
+
+    game.settings.register("wfrp4e", "mooOvercasting", {
+      name: "SETTINGS.MooOvercasting",
+      hint: "SETTINGS.MooOvercastingHint",
+      scope: "world",
+      config: false,
+      homebrew: true,
+      default: false,
+      type: Boolean
+    });
+
+    game.settings.register("wfrp4e", "mooCatastrophicMiscasts", {
+      name: "SETTINGS.MooCatastrophicMiscasts",
+      hint: "SETTINGS.MooCatastrophicMiscastsHint",
+      scope: "world",
+      config: false,
+      homebrew: true,
+      default: false,
+      type: Boolean
+    });
+
+      
+    // Register Partial Channelling
+    game.settings.register("wfrp4e", "partialChannelling", {
+      name: "SETTINGS.PartialChannelling",
+      hint: "SETTINGS.PartialChannellingHint",
+      scope: "world",
+      homebrew: true,
+      config: false,
+      default: false,
+      type: Boolean
+    });
+
+
+    game.settings.register("wfrp4e", "mooCriticalChannelling", {
+      name: "SETTINGS.MooCriticalChannelling",
+      hint: "SETTINGS.MooCriticalChannellingHint",
+      scope: "world",
+      config: false,
+      homebrew: true,
+      default: false,
+      type: Boolean
+    });
+
+    game.settings.register("wfrp4e", "mooCastAfterChannelling", {
+      name: "SETTINGS.MooCastAfterChannelling",
+      hint: "SETTINGS.MooCastAfterChannellingHint",
+      scope: "world",
+      config: false,
+      homebrew: true,
+      default: false,
+      type: Boolean
+    });
+
+    game.settings.register("wfrp4e", "mooPenetrating", {
+      name: "SETTINGS.MooPenetrating",
+      hint: "SETTINGS.MooPenetratingHint",
+      scope: "world",
+      config: false,
+      homebrew: true,
+      default: false,
+      type: Boolean
+    });
+
+    game.settings.register("wfrp4e", "mooQualities", {
+      name: "SETTINGS.MooQualities",
+      hint: "SETTINGS.MooQualitiesHint",
+      scope: "world",
+      config: false,
+      homebrew: true,
+      default: false,
+      type: Boolean
+    });
+
+    game.settings.register("wfrp4e", "mooShieldAP", {
+      name: "SETTINGS.MooShieldAP",
+      hint: "SETTINGS.MooShieldAPHint",
+      scope: "world",
+      config: false,
+      homebrew: true,
+      default: false,
+      type: Boolean
+    });
+
+    game.settings.register("wfrp4e", "mooCriticalMitigation", {
+      name: "SETTINGS.MooCriticalMitigation",
+      hint: "SETTINGS.MooCriticalMitigationHint",
+      scope: "world",
+      config: false,
+      homebrew: true,
+      default: false,
+      type: Boolean
+    });
+
+
+    game.settings.register("wfrp4e", "mooRangeBands", {
+      name: "SETTINGS.MooRangeBands",
+      hint: "SETTINGS.MooRangeBandsHint",
+      scope: "world",
+      config: false,
+      homebrew: true,
+      default: false,
+      type: Boolean
+    });
+
+    game.settings.register("wfrp4e", "mooSizeDamage", {
+      name: "SETTINGS.MooSizeDamage",
+      hint: "SETTINGS.MooSizeDamageHint",
+      scope: "world",
+      config: false,
+      homebrew: true,
+      default: false,
+      type: Boolean
+    });
+
+    
+    game.settings.register("wfrp4e", "mooHomebrewItemChanges", {
+      name: "SETTINGS.MooHomebrewItems",
+      hint: "SETTINGS.MooHomebrewItemHint",
+      scope: "world",
+      config: false,
+      homebrew: true,
+      default: false,
+      type: Boolean
+    });
+
+
+
 
 
     // Pre-load templates
@@ -417,6 +588,11 @@ export default function() {
       "systems/wfrp4e/templates/actors/vehicle/vehicle-main.html",
       "systems/wfrp4e/templates/actors/vehicle/vehicle-cargo.html",
       "systems/wfrp4e/templates/actors/vehicle/vehicle-description.html",
+      "systems/wfrp4e/templates/actors/vehicle/vehicle-effects.html",
+      "systems/wfrp4e/templates/partials/armour-location.html",
+      "systems/wfrp4e/templates/partials/item-container.html",
+      "systems/wfrp4e/templates/partials/qualities-flaws.html",
+      "systems/wfrp4e/templates/partials/overcasts.html",
       "systems/wfrp4e/templates/dialog/dialog-constant.html",
       "systems/wfrp4e/templates/chat/roll/test-card.html",
       "systems/wfrp4e/templates/chat/help/chat-command-display-info.html",
@@ -430,12 +606,6 @@ export default function() {
     CONFIG.Morrslieb = new PIXI.filters.AdjustmentFilter({ green: 0.7137, red: 0.302, blue: 0.2275 })
 
     CONFIG.fontFamilies.push("CaslonAntique")
-    FONTS["CaslonAntique"] = {
-      custom: {
-        families: ['CaslonAntique'],
-        urls: ['systems/wfrp4e/fonts/CaslonAntique.ttf  ']
-      }
-    }
 
     CONFIG.canvasTextStyle = new PIXI.TextStyle({
       fontFamily: "CaslonAntique",
@@ -452,10 +622,8 @@ export default function() {
       wordWrap: false
     })
 
-    loadFont("CaslonAntique")
-
     // Keep a list of actors that need to prepareData after 'ready' (generally those that rely on other actor data - passengers/mounts)
-    game.postReadyPrepare = [];
+    game.wfrp4e.postReadyPrepare = [];
 
   });
 }

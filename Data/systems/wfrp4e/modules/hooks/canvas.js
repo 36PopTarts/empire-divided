@@ -6,14 +6,14 @@ export default function() {
 
     if (!(game.modules.get("fxmaster") && game.modules.get("fxmaster").active)) {
       canvas.background.filters = [];
-      canvas.tiles.filters = [];
+      canvas.foreground.filters = [];
       canvas.tokens.filters = [];
     }
     /**
      * Double every other diagonal movement
      */
     SquareGrid.prototype.measureDistances = function (segments, options = {}) {
-      if (!options.gridSpaces) return BaseGrid.prototype.measureDistance.call(this, segments, options);
+      if (!options.gridSpaces) return BaseGrid.prototype.measureDistances(segments, options);
 
       // Track the total number of diagonals
       let nDiagonal = 0;
@@ -47,7 +47,7 @@ export default function() {
       let morrsliebActive = canvas.scene.getFlag("wfrp4e", "morrslieb")
       if (morrsliebActive) {
         canvas.background.filters.push(CONFIG.Morrslieb)
-        canvas.tiles.filters.push(CONFIG.Morrslieb)
+        canvas.foreground.filters.push(CONFIG.Morrslieb)
         canvas.tokens.filters.push(CONFIG.Morrslieb)
       }
     }
