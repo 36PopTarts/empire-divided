@@ -1,4 +1,4 @@
-import { t, v8_t } from "../utils.js";
+import { t } from "../utils.js";
 import { deathMarker } from "../logic.js";
 
 const fraction = function (token) {
@@ -15,10 +15,14 @@ const fraction = function (token) {
 	if (token.actor.data.type === "loot") {
 		return;
 	}
+	let sp = { value: 0, max: 0 };
+	if (game.settings.get("pf2e", "staminaVariant") && token.actor.data.data.attributes.sp) {
+		sp = token.actor.data.data.attributes.sp;
+	}
 	if (game.settings.get("healthEstimate", "core.addTemp") && token.actor.data.type === "character") {
 		temp = hp.temp;
 	}
-	return Math.min((hp.value + temp) / hp.max, 1);
+	return Math.min((hp.value + sp.value + temp) / (hp.max + sp.max), 1);
 };
 const settings = () => {
 	return {
@@ -36,11 +40,11 @@ const settings = () => {
 		},
 		"starfinder.thresholdNames": {
 			type: String,
-			default: v8_t("starfinder.thresholdNames.default").join(", "),
+			default: t("starfinder.thresholdNames.default"),
 		},
 		"starfinder.vehicleNames": {
 			type: String,
-			default: v8_t("dnd5e.vehicleNames.default").join(", "),
+			default: t("dnd5e.vehicleNames.default"),
 			hint: t("dnd5e.vehicleNames.hint"),
 		},
 	};

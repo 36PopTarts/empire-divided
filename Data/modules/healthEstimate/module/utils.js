@@ -22,12 +22,12 @@ export function isEmpty(string) {
  * @param state
  * @returns {String}
  */
-export let descriptions = function (descriptions, stage, token, state = { isDead: false, desc: "" }, fraction) {
+export let descriptions = function (descriptions, stage, token, state = { isDead: false, desc: "" }, fraction, customStages) {
 	if (state.isDead) {
 		return state.desc;
 	}
 	const type = token.actor.data.type;
-	if (type === vehicleType) {
+	if (type === vehicleType && !customStages) {
 		if (game.settings.get("healthEstimate", "starfinder.useThreshold")) {
 			descriptions = game.settings.get("healthEstimate", "starfinder.thresholdNames").split(/[,;]\s*/);
 		} else {
@@ -45,27 +45,6 @@ export let descriptions = function (descriptions, stage, token, state = { isDead
  */
 export function t(key) {
 	return game.i18n.localize(`healthEstimate.${key}`);
-}
-
-// localize(stringId) {
-//     let v = foundry.utils.getProperty(this.translations, stringId);
-//     if ( typeof v === "string" ) return v;
-//     v = foundry.utils.getProperty(this._fallback, stringId);
-//     return typeof v === "string" ? v : stringId;
-//   }
-
-/**
- * Shorthand for localization
- * v8-ish version that can return Arrays.
- * @param {string} key
- * @returns {string}
- */
-export function v8_t(key) {
-	return (
-		foundry.utils.getProperty(game.i18n.translations, `healthEstimate.${key}`) ||
-		foundry.utils.getProperty(game.i18n._fallback, `healthEstimate.${key}`) ||
-		`healthEstimate.${key}`
-	);
 }
 
 // extracts data from an object, and a string path,

@@ -78,6 +78,56 @@ Hooks.once("init", async function () {
 		restricted: true,
 		precedence: CONST.KEYBINDING_PRECEDENCE.NORMAL,
 	});
+	game.keybindings.register("healthEstimate", "customEstimates", {
+		name: game.i18n.localize("healthEstimate.core.keybinds.customEstimates.name"),
+		hint: game.i18n.localize("healthEstimate.core.keybinds.customEstimates.hint"),
+		onDown: (rgs) => {
+			if (!canvas.tokens.controlled.length) {
+				ui.notifications.warn(`You haven't selected any tokens.`);
+				return;
+			}
+
+			function setFlags(flag) {
+				for (let e of canvas.tokens.controlled) {
+					e.actor.setFlag("healthEstimate", "customStages", flag);
+					e.document.setFlag("healthEstimate", "customStages", flag);
+				}
+			}
+			function unsetFlags() {
+				for (let e of canvas.tokens.controlled) {
+					e.actor.unsetFlag("healthEstimate", "customStages");
+					e.document.unsetFlag("healthEstimate", "customStages");
+				}
+			}
+
+			const defaultSettings = game.settings.get("healthEstimate", "core.stateNames");
+			const tokenSettings = canvas.tokens.controlled[0].document.getFlag("healthEstimate", "customStages");
+			const customStages = game.i18n.localize("healthEstimate.core.custom.states");
+
+			new Dialog({
+				title: customStages,
+				content: `${customStages}: <input id="customStages" type="text" value="${tokenSettings || defaultSettings}" />`,
+				buttons: {
+					ok: {
+						label: "OK",
+						callback: (html) => {
+							const value = html.find("input#customStages").val();
+							if (value) setFlags(value);
+							else unsetFlags();
+						},
+					},
+					reset: {
+						label: game.i18n.localize("SETTINGS.Reset"),
+						callback: () => unsetFlags(),
+						icon: `<i class="fas fa-undo"></i>`,
+					},
+				},
+				default: "OK",
+			}).render(true);
+		},
+		restricted: true,
+		precedence: CONST.KEYBINDING_PRECEDENCE.NORMAL,
+	});
 });
 
 /**
@@ -101,7 +151,9 @@ Hooks.on("canvasReady", function () {
 	getCharacters(tokens);
 });
 
-Hooks.on("createToken", function () {
+Hooks.on("createToken", function (tokenDocument, options, userId) {
+	const customStages = tokenDocument.actor.getFlag("healthEstimate", "customStages");
+	if (customStages?.length) tokenDocument.setFlag("healthEstimate", "customStages", customStages);
 	let tokens = canvas.tokens.placeables.filter((e) => e.actor);
 	getCharacters(tokens);
 });
