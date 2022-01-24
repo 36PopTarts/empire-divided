@@ -255,3 +255,4 @@
 {"_id":"zKMCkGWrLS9vlKl7","name":"The Green Man","type":"Actor","parent":"JqOpT2NqmpzgvoeG","sorting":"a","sort":100000,"color":"#2a5531","flags":{}}
 {"_id":"zQRDhzWh9uTwnQqe","name":"Class Endeavours","type":"JournalEntry","sort":2600000,"flags":{"wfrp4e":{"initialization-parent":"Endeavours"}},"parent":"5PMBVwnydUMSobIr","sorting":"m","color":""}
 {"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
+{"_id":"oNByjz8niw2tH2qK","name":"Frida Portraits","type":"JournalEntry","parent":"XfhUxAdPBRN3lgpw","sorting":"a","sort":3600000,"color":null,"flags":{}}
