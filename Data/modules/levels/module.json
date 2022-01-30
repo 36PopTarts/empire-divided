@@ -2,7 +2,7 @@
     "name": "levels",
     "title": "Levels",
     "description": "Add multiple vertical levels to maps",
-    "version": "2.4.7",
+    "version": "2.4.9",
     "author": "theripper93",
     "authors": [
         {
@@ -69,7 +69,7 @@
     "compatibleCoreVersion": "9",
     "url": "https://github.com/theripper93/Levels",
     "manifest": "https://github.com/theripper93/Levels/releases/latest/download/module.json",
-    "download": "https://github.com/theripper93/Levels/releases/download/2.4.7/module.zip",
+    "download": "https://github.com/theripper93/Levels/releases/download/2.4.9/module.zip",
     "dependencies": [
         {
             "name": "betterroofs"
