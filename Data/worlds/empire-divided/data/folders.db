@@ -149,7 +149,6 @@
 {"name":"Random Encounters","type":"RollTable","sort":2100000,"flags":{},"parent":null,"sorting":"a","color":"#a66121","_id":"ZaJDYHtNBQWYr1L1"}
 {"_id":"ZkvGbobsuORkPdgv","name":"The Green Man","type":"JournalEntry","parent":"uaiYhFK8DZbtIU19","sorting":"a","sort":200000,"color":"#304f32","flags":{}}
 {"name":"Morrslieb","type":"RollTable","sort":1400000,"flags":{},"parent":"tIVl1PXcFSPDwlNN","sorting":"a","color":"#2d5a20","_id":"ZzLCWpKskz28YO3B"}
-{"_id":"a8RqRXNj0AC15cPV","name":"The Tournament","type":"Actor","parent":"hrUr240kVLhmySwb","sorting":"a","sort":600000,"color":null,"flags":{}}
 {"_id":"aRmSqkvVtkWdU9av","name":"Dogs of War","type":"Actor","sort":3000000,"flags":{},"parent":"81ZFw4Rjgz144G8Q","sorting":"a","color":"#db8000"}
 {"_id":"aodo7JMHjKV3BHhd","name":"Saponatheims","type":"Actor","sort":300000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#2a142e"}
 {"name":"Wood Elves","type":"Item","parent":"mSls4f8JbUBSZvVU","sorting":"a","sort":0,"color":"#466d31","flags":{},"_id":"bUsBY20KZ55kL0D1"}
@@ -230,7 +229,6 @@
 {"name":"Misc Useful Tables","type":"RollTable","sort":400000,"flags":{},"parent":null,"sorting":"a","color":"","_id":"tIVl1PXcFSPDwlNN"}
 {"_id":"tKJTJLrqdAWRWgGk","name":"The Knights","type":"Actor","parent":"hrUr240kVLhmySwb","sorting":"a","sort":800000,"color":null,"flags":{}}
 {"_id":"tVm4VHOzL3Kt6qVy","name":"GM Notes","type":"JournalEntry","parent":null,"sorting":"a","sort":1200000,"color":"#9e0000","flags":{}}
-{"_id":"uKDEacfyOMwXEqZm","name":"Storm Riders","type":"Actor","sort":1300000,"flags":{},"parent":"lWzLTQHnXZft3wzO","sorting":"a","color":"#297ea3"}
 {"_id":"uXfo64lSVu10o1kv","name":"Animals","type":"Actor","sort":7850000,"flags":{},"parent":"CLkaC7gsUPC5R3mN","sorting":"a","color":""}
 {"_id":"uaiYhFK8DZbtIU19","name":"The Grey Mountains","type":"JournalEntry","parent":null,"sorting":"a","sort":1550000,"color":"#808080","flags":{}}
 {"name":"PC Stuff","type":"Item","sort":3000000,"flags":{},"parent":"B1NGEkUpOPYjZbtf","sorting":"a","color":"#ad6e00","_id":"v9tiL1bRoEF5secs"}
@@ -251,5 +249,5 @@
 {"_id":"yrVnNPRyDRk4Ku57","name":"Travel Endeavours","type":"JournalEntry","sort":100000,"flags":{},"parent":"IAn7gAevS1Z5CnKd","sorting":"a","color":"#634231"}
 {"_id":"zQRDhzWh9uTwnQqe","name":"Class Endeavours","type":"JournalEntry","sort":2600000,"flags":{"wfrp4e":{"initialization-parent":"Endeavours"}},"parent":"5PMBVwnydUMSobIr","sorting":"m","color":""}
 {"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
-{"$$deleted":true,"_id":"a8RqRXNj0AC15cPV"}
-{"$$deleted":true,"_id":"uKDEacfyOMwXEqZm"}
+{"name":"Bretonnian NPCs","type":"Actor","parent":"cZf8CCfRbfZcxgzE","sorting":"a","sort":0,"color":"#5377b2","flags":{},"_id":"MG5gpyUtLHg6OSfG"}
+{"_id":"MG5gpyUtLHg6OSfG","name":"Bretonnian NPCs","type":"Actor","parent":"cZf8CCfRbfZcxgzE","sorting":"a","sort":950000,"color":"#5377b2","flags":{}}
