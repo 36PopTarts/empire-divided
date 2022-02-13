@@ -5,11 +5,10 @@ import { Settings } from './settings.js';
  */
 let actorRequirementSetting = "None";                               // required actor premission to see character art
 let imageHoverActive = true;                                        // Enable/Disable module
-let keybindActive = false;                                          // Enable/Disable keybind requirement while hovering
-let keybindKeySet = 'KeyV'                                          // configurable keybind
 let imagePositionSetting = "Bottom left";                           // location of character art
 let imageSizeSetting = 7;                                           // size of character art
 let imageHoverArt = "character";                                    // Art type on hover (Character art or Token art)
+let imageHoverDelay = 700;                                          // Hover time requirement (miliseconds)
 let DEFAULT_TOKEN = "icons/svg/mystery-man.svg";                    // default token for foundry vtt
 
 /**
@@ -26,11 +25,10 @@ let cacheImageNames = new Object();                                 // url file 
 function registerModuleSettings() {
     actorRequirementSetting = game.settings.get('image-hover', 'permissionOnHover');
     imageHoverActive = game.settings.get('image-hover', 'userEnableModule');
-    keybindActive = game.settings.get('image-hover', 'userEnableKeybind');
-    keybindKeySet = game.settings.get( 'image-hover', 'userKeybindButton');
     imageSizeSetting = game.settings.get('image-hover', 'userImageSize');
     imagePositionSetting = game.settings.get('image-hover', 'userImagePosition');
     imageHoverArt = game.settings.get('image-hover', 'artType');
+    imageHoverDelay = game.settings.get('image-hover', 'userHoverDelay')
 };
 
 /**
@@ -44,7 +42,7 @@ class ImageHoverHUD extends BasePlaceableHUD {
     static get defaultOptions() {
 	return mergeObject(super.defaultOptions, {
             id: "image-hover-hud",
-            classes: [...super.defaultOptions.classes, 'image-hover-hud'],      // Use default "placeable-hud"
+            classes: [...super.defaultOptions.classes, 'image-hover-hud'],
             minimizable: false,
             resizable: true,
 	        template: "modules/image-hover/templates/image-hover-template.html" // HTML template
@@ -57,10 +55,14 @@ class ImageHoverHUD extends BasePlaceableHUD {
     getData() {
         const data = super.getData();
         const tokenObject = this.object;
-        let image = tokenObject.actor.img                   // Character art
+        let image = tokenObject.actor.img                                   // Character art
         const isWildcard = tokenObject.actor.data.token.randomImg;
-	    if (image == DEFAULT_TOKEN || imageHoverArt === "token" || (imageHoverArt === "wildcard" && isWildcard)) {                       // If no character art exists, use token art instead.
-		    image = tokenObject.data.img;
+        const isLinkedActor = tokenObject.data.actorLink;
+        /**
+         * Don't use character art if it doesn't exist or settings are applied.
+         */
+	    if (image == DEFAULT_TOKEN || imageHoverArt === "token" || (imageHoverArt === "wildcard" && isWildcard) || (imageHoverArt == "linked" && !isLinkedActor)) {
+		    image = tokenObject.data.img;                                   // Token art
         }
         data.url = image
         const fileExt = this.fileExtention(image)
@@ -94,10 +96,11 @@ class ImageHoverHUD extends BasePlaceableHUD {
     updatePosition() {
         const center = canvas.scene._viewPosition;                                  // Middle of the screen
         const imageWidthScaled = window.innerWidth/(imageSizeSetting*center.scale); // Scaled width of image to canvas
-        let url = this.object.actor.img;                                            // character art
+        let url = this.object.actor.img;                                            // Character art
         const isWildcard = this.object.actor.data.token.randomImg;
-        if (url == DEFAULT_TOKEN || imageHoverArt === "token" || (imageHoverArt === "wildcard" && isWildcard)) {                                                 // If no character art exists, use token art instead.
-		    url = this.object.data.img;
+        const isLinkedActor = this.object.data.actorLink;
+        if (url == DEFAULT_TOKEN || imageHoverArt === "token" || (imageHoverArt === "wildcard" && isWildcard) || (imageHoverArt == "linked" && !isLinkedActor)) {                                                 // If no character art exists, use token art instead.
+		    url = this.object.data.img;                                             // Token art
         };
 
         if (url in cacheImageNames) {
@@ -205,7 +208,7 @@ class ImageHoverHUD extends BasePlaceableHUD {
             if (imagePositionSetting.includes('Bottom') && sidebarCollapsed) {
                 xAxis = center.x + windowWidthScaled/2 - imageWidthScaled;      // take into account if sidebar is collapsed
             } else {
-                const sidebarWidthScaled = sidebar.offsetWidth/center.scale;
+                const sidebarWidthScaled = sidebar.offsetWidth/center.scale + parseFloat(window.getComputedStyle(sidebar, null).getPropertyValue('margin-right'))/center.scale;
                 xAxis = center.x + windowWidthScaled/2 - imageWidthScaled - sidebarWidthScaled;
             }
         } else {
@@ -218,17 +221,31 @@ class ImageHoverHUD extends BasePlaceableHUD {
      * check requirements then show character art
      * @param {*} token token passed in
      * @param {Boolean} hovered if token is mouseovered
+     * @param {Number} delay hover time requirement (miliseconds) to show art.
      */
-    showArtworkRequirements(token, hovered) {
+    showArtworkRequirements(token, hovered, delay) {
         /**
          * check token is actor, module is enabled, user has permissions to see character art
          */
         if (!token || !token.actor || (imageHoverActive === false) || (token.actor.permission < actorRequirementSetting && token.actor.data.permission['default'] !== -1)) {
             return;
         }
+
+        /**
+         * check flag to hide art for everyone
+         */
+        if (token.document.getFlag('image-hover', 'hideArt')){
+            return;
+        }
         
-        if (hovered && canvas.activeLayer.name == 'TokenLayer') {       // Show token image if hovered, otherwise don't
-            this.bind(token);
+        if (hovered && (canvas.activeLayer.name == 'TokenLayer' || canvas.activeLayer.name == 'TokenLayerPF2e')) {       // Show token image if hovered, otherwise don't
+            setTimeout(function() {
+                if (token == canvas.tokens._hover) {
+                    canvas.hud.imageHover.bind(token);
+                } else {
+                    canvas.hud.imageHover.clear()
+                }
+            }, delay);
         } else {
             this.clear();
         };
@@ -237,7 +254,6 @@ class ImageHoverHUD extends BasePlaceableHUD {
 
 /**
  * Add Image Hover display to html on load.
- * Note: Fix hack - reconfigure and create a new sibling to the current hud element. 
  */
 Hooks.on("renderHeadsUpDisplay", (app, html, data) => {
 
@@ -282,15 +298,38 @@ Hooks.on("createToken", (scene, data) => {
  * @param {Boolean} hovered if token is mouseovered
  */
 Hooks.on('hoverToken', (token, hovered) => {
-    if (!hovered || (event && event.altKey)) {	// alt key in Foundry auto hovers all tokens in Foundry
+    if (!hovered || (game.keyboard.isModifierActive(KeyboardManager.MODIFIER_KEYS.ALT))) {	// alt key in Foundry auto hovers all tokens in Foundry
         canvas.hud.imageHover.clear();
         return;
     }
     
-    if (keybindActive === false) {
-        canvas.hud.imageHover.showArtworkRequirements(token, hovered)
+    /**
+     * Check no keybind requirement set.
+     */
+    if (!game.keybindings.bindings.get("image-hover.userKeybindButton")[0]?.key) {
+        canvas.hud.imageHover.showArtworkRequirements(token, hovered, imageHoverDelay)
     }
 });
+
+/**
+ * Add checkbox option in token configuration to hide image art to all.
+ * Only Game masters can change this setting.
+ */
+ const renderHoverSetting = async (app, html, data) => {
+    /**
+     * Create image hover flag and apply to checkbox in the new created token configuration.
+     * Update flag as token is updated.
+     */
+    if (data.isGM) {
+        let hideImageStatus = app.object.getFlag('image-hover', 'hideArt') ? "checked": "";
+        const nav = html.find(`div[data-tab="appearance"]`);
+        data.hideHoverStatus = hideImageStatus;
+        const contents = await renderTemplate('modules/image-hover/templates/image-hover-token-config.html', data); 
+        nav.append(contents);
+        app.setPosition({ height: 'auto' });
+    };
+};
+Hooks.on("renderTokenConfig", renderHoverSetting);
 
 /**
  * Remove character art when deleting/dragging token (Hover hook doesn't trigger while token movement animation is on).
@@ -327,16 +366,4 @@ Hooks.on("init", function() {
 
 Hooks.on("closeSettingsConfig", function() {
     registerModuleSettings()
-});
-
-/**
- * add event listener when keybind setting is activated
- */
-document.addEventListener('keydown', event => {
-	if (keybindActive && KeybindLib.isBoundTo(event, 'image-hover', 'userKeybindButton')) {
-        const hoveredToken = canvas.tokens._hover
-        if (hoveredToken !== null) {
-            canvas.hud.imageHover.showArtworkRequirements(hoveredToken, true);
-        }
-    }
 });

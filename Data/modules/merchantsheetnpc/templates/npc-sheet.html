@@ -29,6 +29,11 @@
 				</button>
 			</div>
 			<div class="charbutton">
+				<button type="button" class="generator" type="generator" name="generator" value=""><i
+					class="fa fa-random"></i>{{localize "MERCHANTNPC.generator"}}
+				</button>
+			</div>
+			<div class="charbutton">
 				<button type="button" class="change-quantity-all" type="change-quantity-all" name="change-quantity-all" value=""><i
 					class="fa fa-box"></i>Set quantity for items
 				</button>
@@ -53,7 +58,7 @@
 			{{#if isPermissionShown}}
 			<h3 class="gm-section">{{localize "MERCHANTNPC.gm-section"}}</h3>
 			<!-- GM SETTINGS -->
-			<div class="gm-settings" data-group="sidebar" data-tab="gm-settings">
+			<div class="gm-settings expanded" data-group="sidebar" data-tab="gm-settings">
 				<h3 class="gm-header"><a class="permission-proficiency-bulk"
 										 title="{{merchant.playersPermissionDescription}}">{{{merchant.playersPermissionIcon}}}</a>
 					{{localize "MERCHANTNPC.permissions"}} <i class="fas fa-info-circle help"
@@ -72,10 +77,10 @@
 					{{/each}}
 				</ol>
 				{{/if}}
-				<div style="{{editorStyle}}" class="editor">
-					{{editor content=data.data.details.biography.value target="data.details.biography.value" button=true
-					owner=owner editable=isGM}}
-				</div>
+			</div>
+			<div style="{{editorStyle}}" class="editor">
+				{{editor content=data.data.details.biography.value target="data.details.biography.value" button=true
+				owner=owner editable=isGM}}
 			</div>
 		</section>
 
@@ -101,6 +106,7 @@
 					{{/if}}
 				</li>
 				{{/if}}
+				<div class="merchant-items expanded">
 				{{#each section.items as |item iid| }}
 				{{#if ../../isService}}
 				<li class="merchant-item flexrow" data-item-id="{{item.data._id}}"
@@ -133,8 +139,9 @@
 				{{#if (shouldItemBeVisible (getItemQuantity item.data.data.quantity) ../../isGM)}}
 				<li class="merchant-item flexrow" data-item-id="{{item.data._id}}"
 					data-item-stack="{{../../stackModifier}}">
-					<div class="merchant-item-image" style="background-image: url({{item.img}})"></div>
+					<div class="merchant-item-image" style="background-image: url('{{item.img}}')"></div>
 					<div class="item-name">{{item.name}}</div>
+					{{#if (merchantNotInfinity ../../infinity)}}
 					<div class="item-quantity">
 						{{#if ../../isGM}}
 						<a class="item-control change-item-quantity"
@@ -153,10 +160,10 @@
 						{{else}}
 						{{getItemQuantity item.data.data.quantity}}
 						{{/if}}
-
 						{{/if}}
 
 					</div>
+					{{/if}}
 					<div class="item-weight">
 						<i class="fas fa-weight-hanging" title="{{localize 'MERCHANTNPC.weight'}}"></i>
 						{{merchantsheetweight
@@ -176,11 +183,13 @@
 					</div>
 
 					<div class="item-controls">
-						<a class="item-control item-buystack" title="{{localize 'MERCHANTNPC.stack-buy'}}"><i
+						<a class="item-control item-buystack" title="{{localize 'MERCHANTNPC.stack-buy'}}{{../../stackModifier}}"><i
 							class="fas fa-coins"></i></a>
+						&nbsp;&nbsp;
 						<a class="item-control item-buy" title="{{localize 'MERCHANTNPC.item-buy'}}"><i
 							class="fas fa-dollar-sign"></i></a>
 						{{#if ../../isGM}}
+						&nbsp;&nbsp;
 						<a class="item-control item-edit" title='{{localize "MERCHANTNPC.Item-edit"}}'><i class="fas fa-edit"></i></a>
 						<a class="item-control item-delete" title="{{localize 'MERCHANTNPC.item-delete'}}"><i
 							class="fas fa-trash"></i></a>
@@ -191,6 +200,7 @@
 				{{/if}}
 				{{/each}}
 				{{/if}}
+				</div>
 				{{/each}}
 			</ol>
 		</section>

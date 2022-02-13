@@ -1,13 +1,5 @@
 
 Hooks.on("setup", () => {
-    // Register Advantage cap
-    game.settings.register("wfrp4e-core", "initialized", {
-        name: "Initialization",
-        scope: "world",
-        config: false,
-        default: false,
-        type: Boolean
-    });
 
     const WFRP4E = {}
 
@@ -598,7 +590,7 @@ Hooks.on("setup", () => {
                 
                 
                 if (metalValue)
-                    args.messageElements.push("-2 Metal Armour")
+                    args.messageElements.push(\`-\${metalValue} Metal Armour\`)
                 args.totalWoundLoss += metalValue
                 
                 if (applyAP) {

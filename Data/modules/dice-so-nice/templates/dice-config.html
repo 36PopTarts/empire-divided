@@ -139,6 +139,11 @@
                     <label>{{localize "DICESONICE.enableFlavorColorset"}}</label>
                     <input type="checkbox" data-enableFlavorColorset name="enableFlavorColorset" data-dtype="Boolean" {{checked enableFlavorColorset}} />
                 </div>
+
+                <div class="form-group">
+                    <label>{{localize "DICESONICE.immersiveDarkness"}}</label>
+                    <input type="checkbox" data-immersiveDarkness name="immersiveDarkness" data-dtype="Boolean" {{checked immersiveDarkness}} />
+                </div>
             </div>
         </div>
         <div class="tab" data-tab="sfx" data-group="dsn-main">
@@ -163,6 +168,24 @@
         <div class="tab" data-tab="performance" data-group="dsn-main">
             <div class="settings-list">
                 <div class="form-group">
+                    <label>{{localize "DICESONICE.imageQuality"}}</label>
+                    <select data-imageQuality name="imageQuality">
+                        {{#select imageQuality}}
+                        {{#each imageQualityList as |name key|}}
+                        <option value="{{key}}">{{name}}</option>
+                        {{/each}}
+                        {{/select}}
+                    </select>
+                </div>
+
+                <hr/>
+
+                <div class="form-group">
+                    <label>{{localize "DICESONICE.bumpMapping"}}</label>
+                    <input type="checkbox" data-bumpMapping name="bumpMapping" data-dtype="Boolean" {{checked bumpMapping}} />
+                </div>
+
+                <div class="form-group">
                     <label>{{localize "DICESONICE.shadowQuality"}}</label>
                     <select data-shadowQuality name="shadowQuality">
                         {{#select shadowQuality}}
@@ -174,8 +197,19 @@
                 </div>
 
                 <div class="form-group">
-                    <label>{{localize "DICESONICE.bumpMapping"}}</label>
-                    <input type="checkbox" data-bumpMapping name="bumpMapping" data-dtype="Boolean" {{checked bumpMapping}} />
+                    <label>{{localize "DICESONICE.glow"}}</label>
+                    <input type="checkbox" data-glow name="glow" data-dtype="Boolean" {{checked glow}} />
+                </div>
+
+                <div class="form-group">
+                    <label>{{localize "DICESONICE.antialiasing"}}</label>
+                    <select data-antialiasing name="antialiasing">
+                        {{#select antialiasing}}
+                        {{#each antialiasingList as |name key|}}
+                        <option value="{{key}}">{{name}}</option>
+                        {{/each}}
+                        {{/select}}
+                    </select>
                 </div>
 
                 <div class="form-group">

@@ -2,7 +2,7 @@
     "name": "wfrp4e-core",
     "title": "WFRP4e - Core Content Module",
     "description": "Official Core Rulebook content for the Warhammer Fantasy 4th Edition System. Includes all the tables, rules, bestiary, and lore you need to immerse your players into the perilous world of Warhammer.",
-    "version": "2.3.3",
+    "version": "2.4.0",
     "author": "Moo Man, Published by Cubicle 7",
     "system": ["wfrp4e"],
     "scripts": [
@@ -19,7 +19,7 @@
             "system": "wfrp4e",
             "module": "wfrp4e-core",
             "path": "./packs/bestiary.db",
-            "entity": "Actor"
+            "type": "Actor"
         },
         {
             "name": "careers",
@@ -27,7 +27,7 @@
             "system": "wfrp4e",
             "module": "wfrp4e-core",
             "path": "./packs/careers.db",
-            "entity": "Item"
+            "type": "Item"
         },
         {
             "name": "criticals",
@@ -35,7 +35,7 @@
             "system": "wfrp4e",
             "module": "wfrp4e-core",
             "path": "./packs/criticals.db",
-            "entity": "Item"
+            "type": "Item"
         },
         {
             "name": "skills",
@@ -43,7 +43,7 @@
             "system": "wfrp4e",
             "module": "wfrp4e-core",
             "path": "./packs/skills.db",
-            "entity": "Item"
+            "type": "Item"
         },
         {
             "name": "talents",
@@ -51,7 +51,7 @@
             "system": "wfrp4e",
             "module": "wfrp4e-core",
             "path": "./packs/talents.db",
-            "entity": "Item"
+            "type": "Item"
         },
         {
             "name": "traits",
@@ -59,13 +59,13 @@
             "system": "wfrp4e",
             "module": "wfrp4e-core",
             "path": "./packs/traits.db",
-            "entity": "Item"
+            "type": "Item"
         },
         {
             "name": "psychologies",
             "label": "Psychologies",
             "path": "./packs/psychologies.db",
-            "entity": "Item",
+            "type": "Item",
             "system": "wfrp4e",
             "module": "wfrp4e-core"
         },
@@ -73,7 +73,7 @@
             "name": "mutations",
             "label": "Mutations",
             "path": "./packs/mutations.db",
-            "entity": "Item",
+            "type": "Item",
             "system": "wfrp4e",
             "module": "wfrp4e-core"
         },
@@ -81,7 +81,7 @@
             "name": "injuries",
             "label": "Injuries",
             "path": "./packs/injuries.db",
-            "entity": "Item",
+            "type": "Item",
             "system": "wfrp4e",
             "module": "wfrp4e-core"
         },
@@ -89,7 +89,7 @@
             "name": "diseases",
             "label": "Diseases",
             "path": "./packs/diseases.db",
-            "entity": "Item",
+            "type": "Item",
             "system": "wfrp4e",
             "module": "wfrp4e-core"
         },
@@ -97,7 +97,7 @@
             "name": "spells",
             "label": "Spells",
             "path": "./packs/spells.db",
-            "entity": "Item",
+            "type": "Item",
             "system": "wfrp4e",
             "module": "wfrp4e-core"
         },
@@ -105,7 +105,7 @@
             "name": "prayers",
             "label": "Prayers",
             "path": "./packs/prayers.db",
-            "entity": "Item",
+            "type": "Item",
             "system": "wfrp4e",
             "module": "wfrp4e-core"
         },
@@ -113,7 +113,7 @@
             "name": "trappings",
             "label": "Trappings",
             "path": "./packs/trappings.db",
-            "entity": "Item",
+            "type": "Item",
             "system": "wfrp4e",
             "module": "wfrp4e-core"
         },
@@ -121,7 +121,7 @@
             "name": "journal-entries",
             "label": "Journals (Core)",
             "path": "./packs/journal-entries.db",
-            "entity": "JournalEntry",
+            "type": "JournalEntry",
             "system": "wfrp4e",
             "module": "wfrp4e-core"
         },
@@ -129,13 +129,13 @@
             "name": "maps",
             "label": "Scenes (Core)",
             "path": "./packs/maps.db",
-            "entity": "Scene",
+            "type": "Scene",
             "system": "wfrp4e",
             "module": "wfrp4e-core"
         },
         {
             "label": "Career Descriptions",
-            "entity": "JournalEntry",
+            "type": "JournalEntry",
             "name": "career-descriptions",
             "path": "packs/career-descriptions.db",
             "system": "wfrp4e",
@@ -143,7 +143,7 @@
         },
         {
             "label": "Tables (Core)",
-            "entity": "RollTable",
+            "type": "RollTable",
             "name": "tables",
             "path": "packs/tables.db",
             "system": "wfrp4e",

@@ -218,7 +218,6 @@ input#quantity:focus {
   font-size: 12px;
   line-height: 16px;
   padding: 0.25em 0.5em;
-  color: #191813;
   border-top: 1px solid #c9c7b8;
 }
 .merchant-sheet-npc li.item.flexrow.inventory-header {

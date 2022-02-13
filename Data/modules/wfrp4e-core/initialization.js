@@ -20,11 +20,9 @@ Hooks.on("init", () => {
 Hooks.on("renderCompendiumDirectory", async () => {
     if (game.packs.get("wfrp4e.basic")) {
         game.packs.delete("wfrp4e.basic")
-        await ui.sidebar.render(true)
         ui.sidebar.element.find("[data-pack='wfrp4e.basic']").remove()
     }
 })
-
 class WFRP4eCoreInitWrapper extends FormApplication {
     render() {
         let html = `<img src="/modules/wfrp4e-core/art/ui/logo.webp" style="margin-right: auto;margin-left: auto;width: 40%;display: block;"/>

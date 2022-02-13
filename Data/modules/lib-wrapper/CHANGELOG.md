@@ -1,3 +1,31 @@
+# 1.12.3.0 (2022-02-01)
+
+- All API functions now accept disambiguation prefixes as part of their `package_id` parameter, i.e. `module:foobar`, `system:foobar`, or `world:foobar`.
+
+# 1.12.2.0 (2022-01-30)
+
+- Allow integer enum values to be passed to `get` as a string, so that the caller does not need to cast explicitly.
+  - No known issues were caused by this, and this code isn't exposed in the libWrapper API, but the previous behaviour was unintended.
+
+# 1.12.1.0 (2022-01-30)
+
+- Hotfix: Correctly handle malformed log verbosity setting.
+- Disable minification of class names, for more readable error messages.
+
+# 1.12.0.0 (2022-01-29)
+
+- Fix `libWrapper.AlreadyOverriddenError` usage.
+  - Override conflicts were accidentally throwing `libWrapper.PackageError` exceptions instead, which breaks the API.
+- Fix module updated check when `compatibleCoreVersion` contains only the compatible FVTT major version.
+- Allow arguments to be bound when calling `libWrapper.register` ([Issue #58](https://github.com/ruipin/fvtt-lib-wrapper/issues/58))
+  - This allows avoiding an extra function call, for example
+    `libWrapper.register(PACKAGE_ID, "foo", function(wrapped, ...args) { return someFunction.call(this, wrapped, "foo", "bar", ...args) });`
+    becomes
+    `libWrapper.register(PACKAGE_ID, "foo", someFunction, "WRAPPER", {bind: ["foo", "bar"]});`.
+- Implement a logging verbosity setting ([Issue #62](https://github.com/ruipin/fvtt-lib-wrapper/issues/62))
+  - By default, libWrapper will only show warnings or errors in the console.
+
+
 # 1.11.4.0 (2022-01-14)
 
 - Hotfix: Previous update caused significant breakage due to an uninitialised variable not caught by unit tests. Sorry for the inconvenience!

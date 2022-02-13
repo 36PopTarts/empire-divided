@@ -27,7 +27,8 @@ export class Settings {
             choices: {              // Choices
                     "character": "Character art",
                     "token": "Token art",
-                    "wildcard": "Token art if wildcard"
+                    "wildcard": "Token art if wildcard",
+                    "linked": "Token art if unlinked"
             },
             default: "character",   // Default value
             type: String            // Value type
@@ -45,34 +46,19 @@ export class Settings {
         });
 
         // client setting
-        game.settings.register("image-hover", "userEnableKeybind", {
-            name: "Enable/Disable Keybind requirement",                               // Setting name
-            hint: "Check to enable a keybind requirement while hovering a token (per user).",               // Setting description
-            scope: "client",        // client-stored setting
-            config: true,           // Show setting in configuration view
-            type: Boolean,          // Value type
-            default: false,         // The default value for the setting
-        });
-
-        // client setting
-        //game.settings.register("image-hover", "userKeybindButton", {
-        //    name: "Keybind",                                    // Setting name
-        //    hint: "Assign the additional keybind requirement to show a image while hovering a token (per user).",     // Setting description
-        //    type: window.Azzu.SettingsTypes.KeyBinding,
-        //    scope: "client",        // Client-stored setting
-        //    config: true,           // Show setting in configuration view
-        //    default: 'v',           // Default Value
-        //});
-
-        KeybindLib.register("image-hover", "userKeybindButton", {
-            name: "Keybind",                                    // Setting name
-            hint: "Assign the additional keybind requirement to show a image while hovering a token (per user).",     // Setting description
-            scope: "client",        // Client-stored setting
-            default: "KeyV",
-            config: true,
+        game.keybindings.register("image-hover", "userKeybindButton", {
+            name: "Assign a keybind requirement while hovering over a token.",                               // Setting name
+            hint: "Dont use Alt key, it won't work.",               // Setting description
+            editable:[],
+            onDown: () => {
+                const hoveredToken = canvas.tokens._hover
+                if (hoveredToken !== null) {
+                    canvas.hud.imageHover.showArtworkRequirements(hoveredToken, true, 0);
+                }
+            },
+            reservedModifiers: ["ALT"]
         });
         
-
         // client setting
         game.settings.register("image-hover", "userImagePosition", {
             name: "Position of image",                                                                    // Setting name
@@ -101,6 +87,21 @@ export class Settings {
                         step: 0.5
                 },
                 default: 7,             // Default Value
+                type: Number            // Value type
+        });
+
+            // client setting
+            game.settings.register("image-hover", "userHoverDelay", {
+                name: "Hover delay",                                    // Setting name
+                hint: "Required hover time to show art work (miliseconds).",     // Setting description
+                scope: "client",        // Client-stored setting
+                config: true,           // Show setting in configuration view
+                range: {                // Choices
+                        min: 0,
+                        max: 5000,
+                        step: 100
+                },
+                default: 700,           // Default Value
                 type: Number            // Value type
         });
     }
