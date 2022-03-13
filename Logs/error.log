@@ -1435,3 +1435,5 @@
 {"level":"error","message":"Invalid language definition in Package fxmaster: Language JSON path lang/zh-tw.json does not exist","timestamp":"2022-03-12 02:28:20"}
 {"level":"error","message":"Invalid language definition in Package fxmaster: Language JSON path lang/zh-tw.json does not exist","timestamp":"2022-03-12 15:56:02"}
 {"level":"error","message":"Invalid language definition in Package fxmaster: Language JSON path lang/zh-tw.json does not exist","timestamp":"2022-03-12 15:56:17"}
+{"level":"error","message":"Software license verification failed. Please confirm your Foundry Virtual Tabletop software license","timestamp":"2022-03-13 11:48:28"}
+{"level":"error","message":"Invalid language definition in Package fxmaster: Language JSON path lang/zh-tw.json does not exist","timestamp":"2022-03-13 11:48:31"}
