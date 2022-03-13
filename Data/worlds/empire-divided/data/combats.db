@@ -1,6 +1,1 @@
 {"_id":"MgYFBYq39Vz2tlpW","scene":"i00xwv6A1w91z1KW","combatants":[],"active":true,"round":1,"turn":0,"sort":0,"flags":{}}
-{"scene":"ni20huwiXuPDKfhv","combatants":[],"active":true,"round":0,"turn":0,"sort":0,"flags":{},"_id":"7Iy5ZnxzC1jzoPdK"}
-{"_id":"7Iy5ZnxzC1jzoPdK","scene":"ni20huwiXuPDKfhv","combatants":[{"_id":"r1J7UXs9IDprscKM","actorId":"HRjdTLKT9TGFv6v3","tokenId":"UwygeU6qFFOAnIcE","sceneId":"ni20huwiXuPDKfhv","hidden":false,"defeated":false,"flags":{}}],"active":true,"round":0,"turn":0,"sort":0,"flags":{}}
-{"_id":"7Iy5ZnxzC1jzoPdK","scene":"ni20huwiXuPDKfhv","combatants":[{"_id":"r1J7UXs9IDprscKM","actorId":"HRjdTLKT9TGFv6v3","tokenId":"UwygeU6qFFOAnIcE","sceneId":"ni20huwiXuPDKfhv","hidden":false,"defeated":false,"flags":{},"initiative":75.65}],"active":true,"round":0,"turn":0,"sort":0,"flags":{}}
-{"_id":"7Iy5ZnxzC1jzoPdK","scene":"ni20huwiXuPDKfhv","combatants":[{"_id":"r1J7UXs9IDprscKM","actorId":"HRjdTLKT9TGFv6v3","tokenId":"UwygeU6qFFOAnIcE","sceneId":"ni20huwiXuPDKfhv","hidden":false,"defeated":false,"flags":{},"initiative":75.65}],"active":true,"round":1,"turn":0,"sort":0,"flags":{}}
-{"$$deleted":true,"_id":"7Iy5ZnxzC1jzoPdK"}
