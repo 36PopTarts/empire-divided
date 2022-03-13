@@ -30,6 +30,7 @@
 {"_id":"5PMBVwnydUMSobIr","name":"Endeavours","type":"JournalEntry","sort":100000,"flags":{"wfrp4e":{"initialization-parent":"Between Adventures"}},"parent":"tCLFt3MpljAU3OVd","sorting":"m","color":""}
 {"name":"Vassals","type":"Actor","sort":4100000,"flags":{},"parent":"aodo7JMHjKV3BHhd","sorting":"a","color":"#392541","_id":"5SHe4s1AbmvxM0vK"}
 {"_id":"5lgcrfb3I58JxD8Y","name":"GM's Guide","type":"JournalEntry","parent":"KBFMpqeeMFWhdpSI","sorting":"a","sort":3000000,"color":"#7b1717","flags":{}}
+{"name":"Asrai Highborn","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#38581d","flags":{},"_id":"6KB3aDLUypQNLIGC"}
 {"name":"To Export","type":"Scene","parent":"49bbBFQWuWi3jpZC","sorting":"a","sort":0,"color":null,"flags":{},"_id":"6WxTQSZdq156M4BV"}
 {"name":"Disgusting Treasures","type":"Item","sort":null,"flags":{},"parent":"Jr9DZCfP6SV0ZJdg","sorting":"a","color":"#757b1e","_id":"6acWZ0eXgSQy7mDe"}
 {"_id":"7JJvX9ibeSRwPy1t","name":"Wallensteins","type":"Actor","sort":1000000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#e69d00"}
@@ -79,6 +80,7 @@
 {"name":"Kazrik's Minions","type":"Actor","sort":6250000,"flags":{},"parent":"CLkaC7gsUPC5R3mN","sorting":"a","color":"","_id":"JB1KOejXgbbfmFEh"}
 {"name":"Grey Mountains","type":"JournalEntry","sort":9000000,"flags":{},"parent":"gfvxW95YPpkwZLnb","sorting":"a","color":"","_id":"JV874xxN5HnfZ9US"}
 {"name":"Images","type":"JournalEntry","sort":8700000,"flags":{},"parent":"2Vc3Hl56Nkx9gNaO","sorting":"a","color":"#1c425f","_id":"JVyzRakqZPZUJqnr"}
+{"name":"Glade Rider","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#3e4d32","flags":{},"_id":"Jn8BgBORWDi6ZQUI"}
 {"_id":"JqOpT2NqmpzgvoeG","name":"Past Adventures","type":"Actor","sort":400000,"flags":{},"parent":null,"sorting":"a","color":"#3e3f65"}
 {"_id":"Jr9DZCfP6SV0ZJdg","name":"Random 'Treasure'","type":"Item","sort":200000,"flags":{},"parent":null,"sorting":"a","color":"#af9c74"}
 {"_id":"KBFMpqeeMFWhdpSI","name":"Rules","type":"JournalEntry","parent":null,"sorting":"m","sort":400000,"color":"#1b651e","flags":{}}

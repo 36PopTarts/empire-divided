@@ -15,7 +15,7 @@
     <div class="action-toggle" title="{{localize 'FXMASTER.CastRotate'}}">
       <a data-action="cast-rotate"><i class="fas fa-undo"></i></a>
     </div>
-    <div title="{{localize 'FXMASTER.AddEffect'}}">
+    <div title="{{localize 'FXMASTER.AddSpecialEffect'}}">
       <a data-action="add-effect"><i class="fas fa-plus"></i></a>
     </div>
   </header>
@@ -29,7 +29,7 @@
         {{#each folder.effects as |effect effectId|}}
         <li class="directory-item entity flexrow special-effects" data-effect-id="{{effectId}}" draggable="true">
           <div class="preview">
-            <video width="46" height="46" muted>
+            <video preload="none" width="46" height="46" muted>
               <source src="{{effect.file}}">
             </video>
           </div>

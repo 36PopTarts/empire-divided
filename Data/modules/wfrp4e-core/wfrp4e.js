@@ -512,7 +512,7 @@ Hooks.on("setup", () => {
                     "effectTrigger": "oneTime",
                     "lore": true,
                     "script": `
-                    if (args.actor.owner)
+                    if (this.actor.isOwner)
                     {
                         args.actor.addCondition("fatigued")
                     }`
@@ -529,7 +529,7 @@ Hooks.on("setup", () => {
                     "effectTrigger": "oneTime",
                     "lore": true,
                     "script": `
-                    if (args.actor.owner)
+                    if (this.actor.isOwner)
                     {
                         args.actor.addCondition("ablaze")
                     }`
@@ -616,7 +616,7 @@ Hooks.on("setup", () => {
                     "lore": true,
                     "script": `
                     fromUuid(this.effect.origin).then(caster => {
-                        if (this.actor.owner)
+                        if (this.actor.isOwner)
                         {
                             if (!this.actor.has(game.i18n.localize("NAME.Daemonic")) && !this.actor.has(game.i18n.localize("NAME.Undead")))
                             {
@@ -643,7 +643,7 @@ Hooks.on("setup", () => {
                     "lore": true,
                     "script": `
                 fromUuid(this.effect.origin).then(caster => {
-                    if (this.actor.owner)
+                    if (this.actor.isOwner)
                     {
                         let bleeding = this.actor.addCondition("blinded")
                         if (this.actor.has(game.i18n.localize("NAME.Undead")) || this.actor.has(game.i18n.localize("NAME.Daemonic")))
@@ -698,7 +698,7 @@ Hooks.on("setup", () => {
                     "effectTrigger": "oneTime",
                     "lore": true,
                     "script": `
-                    if (args.actor.owner)
+                    if (this.actor.isOwner)
                     {
                         args.actor.addCondition("bleeding")
                     }`
@@ -726,7 +726,7 @@ Hooks.on("setup", () => {
                         else
                             difficulty = "veasy"
     
-                        if (args.actor.owner)
+                        if (this.actor.isOwner)
                         {
                             args.actor.setupSkill("Endurance", {context : {failure : args.actor.name + " dies from Blight"}, absolute: {difficulty}, appendTitle : " - Blight"}).then(setupData => {
                                 args.actor.basicTest(setupData).then(test => 
@@ -913,7 +913,7 @@ Hooks.on("setup", () => {
                     "effectTrigger": "rollTest",
                     "symptom": true,
                     "script": `
-                    if (this.actor.owner && args.test.result.outcome == "failure")
+                    if (this.actor.isOwner && args.test.result.outcome == "failure")
                     {
                         let applicableCharacteristics = ["ws", "bs", "s", "fel", "ag", "t", "dex"]
                         if (applicableCharacteristics.includes(args.test.characteristicKey))
@@ -955,14 +955,14 @@ Hooks.on("setup", () => {
                     "effectTrigger": "invoke",
                     "symptom": true,
                     "script": `
-                        if (args.actor.owner)
+                        if (this.actor.isOwner)
                         {
                             args.actor.setupSkill("Endurance", {absolute: {difficulty : "average"}}).then(setupData => {
                                 args.actor.basicTest(setupData).then(test => 
                                     {
                                         if (test.result.outcome == "failure")
                                             fromUuid("Compendium.wfrp4e-core.diseases.kKccDTGzWzSXCBOb").then(disease => {
-                                                args.actor.createEmbeddedDocuments("Item", [disease.toObject])
+                                                args.actor.createEmbeddedDocuments("Item", [disease.toObject()])
                                             })
                                     })
                                 })

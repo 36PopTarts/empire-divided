@@ -85,7 +85,11 @@ exports.default = Logger;
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
 }) : (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     o[k2] = m[k];
@@ -115,32 +119,32 @@ class MerchantSettings {
         const g = game;
         this.SettingsList = [
             ["buyChat", {
-                    name: "Display chat message for purchases?",
-                    hint: "If enabled, a chat message will display purchases of items from the Merchant sheet.",
+                    name: g.i18n.format("MERCHANTNPC.global-settings.buy-name"),
+                    hint: g.i18n.format("MERCHANTNPC.global-settings.buy-hint"),
                     scope: "world",
                     config: true,
                     default: true,
                     type: Boolean
                 }],
             ["showStackWeight", {
-                    name: "Show Stack Weight?",
-                    hint: "If enabled, shows the weight of the entire stack next to the item weight",
+                    name: g.i18n.format("MERCHANTNPC.global-settings.show-stack-name"),
+                    hint: g.i18n.format("MERCHANTNPC.global-settings.show-stack-hint"),
                     scope: "world",
                     config: true,
                     default: false,
                     type: Boolean
                 }],
             ["reduceUpdateVerbosity", {
-                    name: "Reduce Update Shop Verbosity",
-                    hint: "If enabled, no notifications will be created every time an item is added to the shop.",
+                    name: g.i18n.format("MERCHANTNPC.global-settings.reduce-update-name"),
+                    hint: g.i18n.format("MERCHANTNPC.global-settings.reduce-update-hint"),
                     scope: "world",
                     config: true,
                     default: true,
                     type: Boolean
                 }],
             ["allowNoGM", {
-                    name: "Allow transactions without GM",
-                    hint: "If enabled, transactions can happen even without the GM is active, but quantity on items will not be modified",
+                    name: g.i18n.format("MERCHANTNPC.global-settings.no-gm-name"),
+                    hint: g.i18n.format("MERCHANTNPC.global-settings.no-gm-hint"),
                     scope: "world",
                     config: true,
                     default: false,
@@ -200,6 +204,7 @@ const MerchantSettings_1 = __importDefault(require("./Utils/MerchantSettings"));
 const MerchantSheet_1 = __importDefault(require("./merchant/MerchantSheet"));
 const PreloadTemplates_1 = __importDefault(require("./PreloadTemplates"));
 const MerchantSheetNPCHelper_1 = __importDefault(require("./merchant/MerchantSheetNPCHelper"));
+const MerchantSheetNPCHelper_2 = __importDefault(require("./merchant/MerchantSheetNPCHelper"));
 function getTypesForSheet() {
     if (game.system.id === 'sfrpg') {
         return ['npc', 'npc2'];
@@ -245,6 +250,7 @@ Hooks.once("setup", () => {
 Hooks.once("ready", () => {
     console.log("MERCHANT SHEET SYSTEM: " + game.system.id);
     MerchantSettings_1.default.Get().RegisterSettings();
+    new MerchantSheetNPCHelper_2.default().systemCurrencyCalculator().registerSystemSettings();
     Logger_1.default.Ok("Template module is now ready.");
 });
 
@@ -280,8 +286,8 @@ class MerchantSheet extends ActorSheet {
         Handlebars.registerHelper('editorStyle', function (options) {
             return currencyCalculator.editorStyle();
         });
-        Handlebars.registerHelper('shouldItemBeVisible', function (quantity, isGM, options) {
-            return isGM || quantity > 0;
+        Handlebars.registerHelper('shouldItemBeVisible', function (item, quantity, isGM, options) {
+            return isGM || (merchantSheetNPC.isItemShown(item) && quantity > 0);
         });
         Handlebars.registerHelper('getItemQuantity', function (quantity, options) {
             return currencyCalculator.getQuantity(quantity);
@@ -337,6 +343,9 @@ class MerchantSheet extends ActorSheet {
         Handlebars.registerHelper('merchantsheetweight', function (weight) {
             return (Math.round(weight * 1e5) / 1e5).toString();
         });
+        Handlebars.registerHelper('isItemShow', function (item) {
+            return merchantSheetNPC.isItemShown(item);
+        });
         Handlebars.registerHelper('itemInfinity', function (qty, infinity) {
             return infinity || (qty === Number.MAX_VALUE);
         });
@@ -374,14 +383,12 @@ class MerchantSheet extends ActorSheet {
             sheetData.isGM = false;
         }
         sheetData.isPermissionShown = sheetData.isGM && currencyCalculator.isPermissionShown();
-        let priceModifier = 1.0;
         let moduleName = "merchantsheetnpc";
-        priceModifier = this.actor.getFlag(moduleName, "priceModifier");
+        let priceModifier = this.actor.getFlag(moduleName, "priceModifier");
         sheetData.infinity = this.actor.getFlag(moduleName, "infinity");
         sheetData.isService = this.actor.getFlag(moduleName, "service");
-        let stackModifier = 20;
-        stackModifier = this.actor.getFlag(moduleName, "stackModifier");
-        let totalWeight = 0;
+        sheetData.isBuyStack = !this.actor.getFlag(moduleName, "hideBuyStack");
+        let stackModifier = this.actor.getFlag(moduleName, "stackModifier");
         sheetData.totalItems = this.actor.data.items.size;
         sheetData.priceModifier = priceModifier;
         sheetData.stackModifier = stackModifier;
@@ -499,200 +506,9 @@ class MerchantSheet extends ActorSheet {
         html.find('.gm-section').on('click', event => merchantSheetNPC.onSectionSummary(event));
         html.find(".item-add").on('click', this.onItemCreate.bind(this));
         html.find(".item-edit").on('click', this.onItemEdit.bind(this));
+        html.find(".item-show").on('click', event => merchantSheetNPC.showItemToPlayers(event, this.actor, true));
+        html.find(".item-hide").on('click', event => merchantSheetNPC.showItemToPlayers(event, this.actor, false));
     }
-    // async merchantInventoryUpdate(event: JQuery.ClickEvent) {
-    // 	event.preventDefault();
-    //
-    // 	const moduleNamespace = "merchantsheetnpc";
-    // 	const rolltableName = this.actor.getFlag(moduleNamespace, "rolltable");
-    // 	const shopQtyFormula = this.actor.getFlag(moduleNamespace, "shopQty") || "1";
-    // 	const itemQtyFormula = this.actor.getFlag(moduleNamespace, "itemQty") || "1";
-    // 	const itemQtyLimit = this.actor.getFlag(moduleNamespace, "itemQtyLimit") || "0";
-    // 	const clearInventory = this.actor.getFlag(moduleNamespace, "clearInventory");
-    // 	const itemOnlyOnce = this.actor.getFlag(moduleNamespace, "itemOnlyOnce");
-    // 	const reducedVerbosity = game.settings.get(moduleNamespace, "reduceUpdateVerbosity");
-    //
-    // 	let shopQtyRoll = new Roll(shopQtyFormula);
-    // 	shopQtyRoll.roll();
-    //
-    // 	let rolltable = game.tables.getName(rolltableName);
-    // 	if (!rolltable) {
-    // 		// console.log(`Merchant sheet | No Rollable Table found with name "${rolltableName}".`);
-    // 		return ui.notifications.error(`No Rollable Table found with name "${rolltableName}".`);
-    // 	}
-    //
-    // 	if (itemOnlyOnce) {
-    // 		if (rolltable.results.length < shopQtyRoll.total)  {
-    // 			return ui.notifications.error(`Cannot create a merchant with ${shopQtyRoll.total} unqiue entries if the rolltable only contains ${rolltable.results.length} items`);
-    // 		}
-    // 	}
-    //
-    // 	// console.log(rolltable);
-    //
-    // 	if (clearInventory) {
-    //
-    // 		let currentItems = this.actor.data.items.map(i => i._id);
-    // 		await this.actor.deleteEmbeddedDocuments("Item", currentItems);
-    // 		// console.log(currentItems);
-    // 	}
-    //
-    // 	console.log(`Merchant sheet | Adding ${shopQtyRoll.result} new items`);
-    //
-    // 	if (!itemOnlyOnce) {
-    // 		for (let i = 0; i < shopQtyRoll.total; i++) {
-    // 			const rollResult = rolltable.roll();
-    // 			//console.log(rollResult);
-    // 			let newItem = null;
-    //
-    // 			if (rollResult.results[0].collection === "Item") {
-    // 				newItem = game.items.get(rollResult.results[0].resultId);
-    // 			}
-    // 			else {
-    // 				// Try to find it in the compendium
-    // 				const items = game.packs.get(rollResult.results[0].collection);
-    // 				// console.log(items);
-    // 				// dnd5eitems.getIndex().then(index => console.log(index));
-    // 				// let newItem = dnd5eitems.index.find(e => e.id === rollResult.results[0].resultId);
-    // 				// items.getEntity(rollResult.results[0].resultId).then(i => console.log(i));
-    // 				newItem = await items.getEntity(rollResult.results[0].resultId);
-    // 			}
-    // 			if (!newItem || newItem === null) {
-    // 				// console.log(`Merchant sheet | No item found "${rollResult.results[0].resultId}".`);
-    // 				return ui.notifications.error(`No item found "${rollResult.results[0].resultId}".`);
-    // 			}
-    //
-    // 			if (newItem.type === "spell") {
-    // 				newItem = await Item5e.createScrollFromSpell(newItem)
-    // 			}
-    //
-    // 			let itemQtyRoll = new Roll(itemQtyFormula);
-    // 			itemQtyRoll.roll();
-    // 			console.log(`Merchant sheet | Adding ${itemQtyRoll.total} x ${newItem.name}`)
-    //
-    // 			// newitem.data.data.quantity = itemQtyRoll.result;
-    //
-    // 			let existingItem = this.actor.items.find(item => item.data.name == newItem.name);
-    //
-    // 			if (existingItem === undefined) {
-    // 				await this.actor.createEmbeddedDocuments("Item", newItem);
-    // 				console.log(`Merchant sheet | ${newItem.name} does not exist.`);
-    // 				existingItem = this.actor.items.find(item => item.data.name == newItem.name);
-    //
-    // 				if (itemQtyLimit > 0 && Number(itemQtyLimit) < Number(itemQtyRoll.total)) {
-    // 					await existingItem.update({ "data.quantity": itemQtyLimit });
-    // 					if (!reducedVerbosity) ui.notifications.info(`Added new ${itemQtyLimit} x ${newItem.name}.`);
-    // 				} else {
-    // 					await existingItem.update({ "data.quantity": itemQtyRoll.total });
-    // 					if (!reducedVerbosity) ui.notifications.info(`Added new ${itemQtyRoll.total} x ${newItem.name}.`);
-    // 				}
-    // 			}
-    // 			else {
-    // 				console.log(`Merchant sheet | Item ${newItem.name} exists.`);
-    //
-    // 				let newQty = Number(existingItem.data.data.quantity) + Number(itemQtyRoll.total);
-    //
-    // 				if (itemQtyLimit > 0 && Number(itemQtyLimit) === Number(existingItem.data.data.quantity)) {
-    // 					if (!reducedVerbosity) ui.notifications.info(`${newItem.name} already at maximum quantity (${itemQtyLimit}).`);
-    // 				}
-    // 				else if (itemQtyLimit > 0 && Number(itemQtyLimit) < Number(newQty)) {
-    // 					//console.log("Exceeds existing quantity, limiting");
-    // 					await existingItem.update({ "data.quantity": itemQtyLimit });
-    // 					if (!reducedVerbosity) ui.notifications.info(`Added additional quantity to ${newItem.name} to the specified maximum of ${itemQtyLimit}.`);
-    // 				} else {
-    // 					await existingItem.update({ "data.quantity": newQty });
-    // 					if (!reducedVerbosity) ui.notifications.info(`Added additional ${itemQtyRoll.total} quantity to ${newItem.name}.`);
-    // 				}
-    // 			}
-    // 		}
-    // 	}
-    // 	else {
-    // 		// Get a list which contains indexes of all possible results
-    //
-    // 		const rolltableIndexes = []
-    //
-    // 		// Add one entry for each weight an item has
-    // 		for (let index in [...Array(rolltable.results.length).keys()]) {
-    // 			let numberOfEntries = rolltable.data.results[index].weight
-    // 			for (let i = 0; i < numberOfEntries; i++) {
-    // 				rolltableIndexes.push(index);
-    // 			}
-    // 		}
-    //
-    // 		// Shuffle the list of indexes
-    // 		var currentIndex = rolltableIndexes.length, temporaryValue, randomIndex;
-    //
-    // 		// While there remain elements to shuffle...
-    // 		while (0 !== currentIndex) {
-    //
-    // 			// Pick a remaining element...
-    // 			randomIndex = Math.floor(Math.random() * currentIndex);
-    // 			currentIndex -= 1;
-    //
-    // 			// And swap it with the current element.
-    // 			temporaryValue = rolltableIndexes[currentIndex];
-    // 			rolltableIndexes[currentIndex] = rolltableIndexes[randomIndex];
-    // 			rolltableIndexes[randomIndex] = temporaryValue;
-    // 		}
-    //
-    // 		// console.log(`Rollables: ${rolltableIndexes}`)
-    //
-    // 		let indexesToUse = [];
-    // 		let numberOfAdditionalItems = 0;
-    // 		// Get the first N entries from our shuffled list. Those are the indexes of the items in the roll table we want to add
-    // 		// But because we added multiple entries per index to account for weighting, we need to increase our list length until we got enough unique items
-    // 		while (true)
-    // 		{
-    // 			let usedEntries = rolltableIndexes.slice(0, shopQtyRoll.total + numberOfAdditionalItems);
-    // 			// console.log(`Distinct: ${usedEntries}`);
-    // 			let distinctEntris = [...new Set(usedEntries)];
-    //
-    // 			if (distinctEntris.length < shopQtyRoll.total) {
-    // 				numberOfAdditionalItems++;
-    // 				// console.log(`numberOfAdditionalItems: ${numberOfAdditionalItems}`);
-    // 				continue;
-    // 			}
-    //
-    // 			indexesToUse = distinctEntris
-    // 			// console.log(`indexesToUse: ${indexesToUse}`)
-    // 			break;
-    // 		}
-    //
-    // 		for (const index of indexesToUse)
-    // 		{
-    // 			let itemQtyRoll = new Roll(itemQtyFormula);
-    // 			itemQtyRoll.roll();
-    //
-    // 			let newItem = null
-    //
-    // 			if (rolltable.results[index].collection === "Item") {
-    // 				newItem = game.items.get(rolltable.results[index].resultId);
-    // 			}
-    // 			else {
-    // 				//Try to find it in the compendium
-    // 				const items = game.packs.get(rolltable.results[index].collection);
-    // 				newItem = await items.getEntity(rolltable.results[index].resultId);
-    // 			}
-    // 			if (!newItem || newItem === undefined) {
-    // 				return ui.notifications.error(`No item found "${rolltable.results[index].resultId}".`);
-    // 			}
-    //
-    // 			if (newItem.type === "spell") {
-    // 				newItem = await Item5e.createScrollFromSpell(newItem)
-    // 			}
-    //
-    // 			await this.actor.createEmbeddedDocuments("Item", newItem);
-    // 			let existingItem = this.actor.items.find(item => item.data.name == newItem.name);
-    //
-    // 			if (itemQtyLimit > 0 && Number(itemQtyLimit) < Number(itemQtyRoll.total)) {
-    // 				await existingItem.update({ "data.quantity": itemQtyLimit });
-    // 				if (!reducedVerbosity) ui.notifications.info(`Added new ${itemQtyLimit} x ${newItem.name}.`);
-    // 			} else {
-    // 				await existingItem.update({ "data.quantity": itemQtyRoll.total });
-    // 				if (!reducedVerbosity) ui.notifications.info(`Added new ${itemQtyRoll.total} x ${newItem.name}.`);
-    // 			}
-    // 		}
-    // 	}
-    // }
     async merchantSettingChange(event) {
         event.preventDefault();
         const template_file = "modules/" + Globals_1.default.ModuleName + "/templates/settings.html";
@@ -700,7 +516,9 @@ class MerchantSheet extends ActorSheet {
         const template_data = {
             disableSell: this.actor.getFlag(Globals_1.default.ModuleName, "disableSell") ? "checked" : "",
             keepDepleted: this.actor.getFlag(Globals_1.default.ModuleName, "keepDepleted") ? "checked" : "",
-            service: this.actor.getFlag(Globals_1.default.ModuleName, "service") ? "checked" : ""
+            service: this.actor.getFlag(Globals_1.default.ModuleName, "service") ? "checked" : "",
+            hideBuyStack: this.actor.getFlag(Globals_1.default.ModuleName, "hideBuyStack") ? "checked" : "",
+            maxBuyPercentage: this.actor.getFlag(Globals_1.default.ModuleName, "maxBuyPercentage")
         };
         const rendered_html = await renderTemplate(template_file, template_data);
         let d = new Dialog({
@@ -714,6 +532,8 @@ class MerchantSheet extends ActorSheet {
                         this.actor.setFlag(Globals_1.default.ModuleName, "disableSell", MerchantSheetNPCHelper_1.default.getElementById("disable-sell").checked);
                         this.actor.setFlag(Globals_1.default.ModuleName, "keepDepleted", MerchantSheetNPCHelper_1.default.getElementById("keep-depleted").checked);
                         this.actor.setFlag(Globals_1.default.ModuleName, "service", MerchantSheetNPCHelper_1.default.getElementById("service").checked);
+                        this.actor.setFlag(Globals_1.default.ModuleName, "hideBuyStack", MerchantSheetNPCHelper_1.default.getElementById("hide-buy-stack").checked);
+                        this.actor.setFlag(Globals_1.default.ModuleName, "maxBuyPercentage", MerchantSheetNPCHelper_1.default.getElementById("max-buy-percentage").value);
                     }
                 },
                 two: {
@@ -797,12 +617,17 @@ class MerchantSheet extends ActorSheet {
     async buyFromMerchantModifier(event) {
         event.preventDefault();
         let priceModifier = await this.actor.getFlag(Globals_1.default.ModuleName, "priceModifier");
+        let maxValue = await this.actor.getFlag(Globals_1.default.ModuleName, "maxBuyPercentage");
+        if (maxValue === undefined) {
+            maxValue = 200;
+        }
+        console.log("maxValue", maxValue);
         if (priceModifier === 'undefined')
             priceModifier = 1.0;
         // @ts-ignore
         priceModifier = Math.round(priceModifier * 100);
         const template_file = "modules/" + Globals_1.default.ModuleName + "/templates/buy_from_merchant.html";
-        const template_data = { priceModifier: priceModifier };
+        const template_data = { priceModifier: priceModifier, maxValue: maxValue };
         const rendered_html = await renderTemplate(template_file, template_data);
         let d = new Dialog({
             title: game.i18n.localize('MERCHANTNPC.buyMerchantDialog-title'),
@@ -988,7 +813,8 @@ class MerchantSheet extends ActorSheet {
                     results = rolltable.results.contents;
                 }
                 else {
-                    const rollResult = await rolltable.draw();
+                    // @ts-ignore
+                    const rollResult = await rolltable.draw({ displayChat: false });
                     results = rollResult.results;
                 }
                 for (const drawItem of results) {
@@ -2030,6 +1856,16 @@ class MerchantSheetNPCHelper {
             hideElement.classList.remove("expanded");
         }
     }
+    showItemToPlayers(event, actor, toggle) {
+        let li = $(event.currentTarget).parents(".merchant-item"), item = actor.items.get(li.data("item-id"));
+        let moduleName = "merchantsheetnpc";
+        item === null || item === void 0 ? void 0 : item.setFlag(moduleName, "showItem", toggle);
+    }
+    isItemShown(item) {
+        let moduleName = "merchantsheetnpc";
+        let showItem = item.getFlag(moduleName, "showItem");
+        return (showItem === undefined || showItem);
+    }
 }
 let helper = new MerchantSheetNPCHelper();
 exports.default = MerchantSheetNPCHelper;
@@ -2184,6 +2020,8 @@ class CurrencyCalculator {
     sectionStyle() {
         return "";
     }
+    registerSystemSettings() {
+    }
 }
 exports.default = CurrencyCalculator;
 
@@ -2196,13 +2034,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const CurrencyCalculator_1 = __importDefault(require("./CurrencyCalculator"));
 const Globals_1 = __importDefault(require("../../Globals"));
 let conversionRates = { "pp": 1,
-    "gp": 1,
-    "ep": 1,
-    "sp": 1,
-    "cp": 1
+    "gp": 10,
+    "ep": 2,
+    "sp": 5,
+    "cp": 10
 };
-const compensationCurrency = { "pp": "gp", "gp": "ep", "ep": "sp", "sp": "cp" };
+const convertFromHigherCurrency = { "cp": "sp", "sp": "ep", "ep": "gp", "gp": "pp" };
 class Dnd5eCurrencyCalculator extends CurrencyCalculator_1.default {
+    constructor() {
+        super(...arguments);
+        this.useEP = true;
+    }
     async onDropItemCreate(itemData, caller) {
         // Create a Consumable spell scroll on the Inventory tab
         if ((itemData.type === "spell")) {
@@ -2252,9 +2094,9 @@ class Dnd5eCurrencyCalculator extends CurrencyCalculator_1.default {
         return actor.data.data.currency;
     }
     buyerHaveNotEnoughFunds(itemCostInGold, buyerFunds) {
-        let itemCostInPlatinum = itemCostInGold / conversionRates["gp"];
-        let buyerFundsAsPlatinum = this.convertToPlatinum(buyerFunds);
-        return itemCostInPlatinum > buyerFundsAsPlatinum;
+        let itemCostInCopper = this.convertCurrencyToLowest({ gp: itemCostInGold });
+        let buyerFundsAsCopper = this.convertCurrencyToLowest(buyerFunds);
+        return itemCostInCopper > buyerFundsAsCopper;
     }
     convertToPlatinum(buyerFunds) {
         let buyerFundsAsPlatinum = buyerFunds["pp"];
@@ -2267,138 +2109,143 @@ class Dnd5eCurrencyCalculator extends CurrencyCalculator_1.default {
     updateActorWithNewFunds(buyer, buyerFunds) {
         buyer.update({ "data.currency": buyerFunds });
     }
+    convertCurrencyToLowest(buyerFunds) {
+        let buyerFundsAsCopper = 0;
+        if (buyerFunds["cp"]) {
+            buyerFundsAsCopper += buyerFunds["cp"];
+        }
+        if (buyerFunds["sp"]) {
+            buyerFundsAsCopper += buyerFunds["sp"] * conversionRates["cp"];
+        }
+        if (buyerFunds["ep"]) {
+            buyerFundsAsCopper += buyerFunds["ep"] * conversionRates["sp"] * conversionRates["cp"];
+        }
+        if (buyerFunds["gp"]) {
+            buyerFundsAsCopper += buyerFunds["gp"] * conversionRates["ep"] * conversionRates["sp"] * conversionRates["cp"];
+        }
+        if (buyerFunds["pp"]) {
+            buyerFundsAsCopper += buyerFunds["pp"] * conversionRates["gp"] * conversionRates["ep"] * conversionRates["sp"] * conversionRates["cp"];
+        }
+        return Math.floor(buyerFundsAsCopper);
+    }
     subtractAmountFromActor(buyer, buyerFunds, itemCostInGold) {
-        let itemCostInPlatinum = itemCostInGold / conversionRates["gp"];
-        let buyerFundsAsPlatinum = this.convertToPlatinum(buyerFunds);
-        console.log(`buyerFundsAsPlatinum : ${buyerFundsAsPlatinum}`);
-        let convertCurrency = game.settings.get(Globals_1.default.ModuleName, "convertCurrency");
-        if (convertCurrency) {
-            buyerFundsAsPlatinum -= itemCostInPlatinum;
-            // Remove every coin we have
-            for (let currency in buyerFunds) {
-                buyerFunds[currency] = 0;
-            }
-            // Give us fractions of platinum coins, which will be smoothed out below
-            buyerFunds["pp"] = buyerFundsAsPlatinum;
-        }
-        else {
-            // We just pay in partial platinum.
-            // We dont care if we get partial coins or negative once because we compensate later
-            buyerFunds["pp"] -= itemCostInPlatinum;
-            // Now we exchange all negative funds with coins of lower value
-            // We dont need to care about running out of money because we checked that earlier
-            for (let currency in buyerFunds) {
-                let amount = buyerFunds[currency];
-                // console.log(`${currency} : ${amount}`);
-                if (amount >= 0)
-                    continue;
-                // If we have ever so slightly negative cp, it is likely due to floating point error
-                // We dont care and just give it to the player
-                if (currency == "cp") {
-                    buyerFunds["cp"] = 0;
-                    continue;
-                }
-                // @ts-ignore
-                let compCurrency = compensationCurrency[currency];
-                buyerFunds[currency] = 0;
-                // @ts-ignore
-                buyerFunds[compCurrency] += amount * conversionRates[compCurrency]; // amount is a negative value so we add it
-                // console.log(`Substracted: ${amount * conversionRates[compCurrency]} ${compCurrency}`);
-            }
-        }
-        // console.log(`Smoothing out`);
-        // Finally we exchange partial coins with as little change as possible
-        for (let currency in buyerFunds) {
-            let amount = buyerFunds[currency];
-            // console.log(`${currency} : ${amount}: ${conversionRates[currency]}`);
-            // We round to 5 decimals. 1 pp is 1000cp, so 5 decimals always rounds good enough
-            // We need to round because otherwise we get 15.99999999999918 instead of 16 due to floating point precision
-            // If we would floor 15.99999999999918 everything explodes
-            let newFund = Math.floor(Math.round(amount * 1e5) / 1e5);
-            buyerFunds[currency] = newFund;
-            // console.log(`New Buyer funds ${currency}: ${buyerFunds[currency]}`);
-            // @ts-ignore
-            let compCurrency = compensationCurrency[currency];
-            // We dont care about fractions of CP
-            if (currency != "cp") {
-                // We calculate the amount of lower currency we get for the fraction of higher currency we have
-                // @ts-ignore
-                let toAdd = Math.round((amount - newFund) * 1e5) / 1e5 * conversionRates[compCurrency];
-                buyerFunds[compCurrency] += toAdd;
-                // console.log(`Added ${toAdd} to ${compCurrency} it is now ${buyerFunds[compCurrency]}`);
-            }
+        buyerFunds = this.calculateNewBuyerFunds(itemCostInGold, buyerFunds);
+        if (!this.useEP) {
+            this.convertEP(buyerFunds);
         }
         // buyerFunds = buyerFunds - itemCostInGold;
         this.updateActorWithNewFunds(buyer, buyerFunds);
         console.log(`Merchant sheet | Funds after purchase: ${buyerFunds}`);
     }
+    convertEP(buyerFunds) {
+        if (buyerFunds["ep"] > 0) {
+            let restEP = buyerFunds["ep"] % conversionRates["ep"];
+            if (restEP > 0) {
+                buyerFunds["sp"] = restEP * conversionRates["sp"];
+                buyerFunds["ep"] -= restEP;
+            }
+            let higherFund = Math.floor(buyerFunds["ep"] / conversionRates["ep"]);
+            if (higherFund > 0) {
+                buyerFunds["gp"] += higherFund;
+                buyerFunds["ep"] = 0;
+            }
+        }
+        return buyerFunds;
+    }
+    calculateNewBuyerFunds(itemCostInGold, funds) {
+        let itemCostInCopper = this.convertCurrencyToLowest({ gp: itemCostInGold });
+        let buyerFundsInCopper = this.convertCurrencyToLowest(funds);
+        if ((buyerFundsInCopper - itemCostInCopper) < 0) {
+            throw "Could not do the transaction";
+        }
+        console.log(`buyerFundsInCopper : ${buyerFundsInCopper}`);
+        let buyerFunds = funds;
+        buyerFunds["cp"] -= itemCostInCopper;
+        this.subtractAndConvertToHigherFund(buyerFunds, "cp");
+        return buyerFunds;
+    }
+    calculatePriceToBuyerFunds(itemCostInGold) {
+        let itemCostInCopper = this.convertCurrencyToLowest({ gp: itemCostInGold });
+        let buyerFunds = { pp: 0, gp: 0, ep: 0, sp: 0, cp: itemCostInCopper };
+        this.convertToHigherFund(buyerFunds, "cp");
+        return buyerFunds;
+    }
+    convertToHigherFund(buyerFunds, currency) {
+        let higherCurrency = convertFromHigherCurrency[currency];
+        if (higherCurrency) {
+            let higherCurrencyNeeded = Math.floor((buyerFunds[currency]) / conversionRates[currency]);
+            let rest = (buyerFunds[currency]) % conversionRates[currency];
+            if (rest != 0) {
+                buyerFunds[currency] = rest;
+            }
+            else {
+                buyerFunds[currency] = 0;
+            }
+            if (higherCurrencyNeeded > 0) {
+                buyerFunds[higherCurrency] = higherCurrencyNeeded;
+                this.convertToHigherFund(buyerFunds, higherCurrency);
+            }
+        }
+        return buyerFunds;
+    }
+    subtractAndConvertToHigherFund(buyerFunds, currency) {
+        let higherCurrency = convertFromHigherCurrency[currency];
+        if (higherCurrency && buyerFunds[currency] < 0) {
+            let higherCurrencyNeeded = Math.floor((-1 * buyerFunds[currency]) / conversionRates[currency]);
+            let rest = (-1 * buyerFunds[currency]) % conversionRates[currency];
+            if (rest != 0) {
+                higherCurrencyNeeded += 1;
+                buyerFunds[currency] = (conversionRates[currency] - rest);
+            }
+            else {
+                buyerFunds[currency] = 0;
+            }
+            buyerFunds[higherCurrency] -= higherCurrencyNeeded;
+            if (buyerFunds[higherCurrency] < 0) {
+                this.subtractAndConvertToHigherFund(buyerFunds, higherCurrency);
+            }
+        }
+    }
     addAmountForActor(seller, sellerFunds, itemCostInGold) {
-        let itemCostInPlatinum = itemCostInGold / conversionRates["gp"];
-        let buyerFundsAsPlatinum = this.convertToPlatinum(sellerFunds);
-        console.log(`buyerFundsAsPlatinum : ${buyerFundsAsPlatinum}`);
-        let convertCurrency = game.settings.get(Globals_1.default.ModuleName, "convertCurrency");
-        if (convertCurrency) {
-            buyerFundsAsPlatinum += itemCostInPlatinum;
-            // Remove every coin we have
-            for (let currency in sellerFunds) {
-                sellerFunds[currency] = 0;
-            }
-            // Give us fractions of platinum coins, which will be smoothed out below
-            sellerFunds["pp"] = buyerFundsAsPlatinum;
+        let itemCostInCopper = this.convertCurrencyToLowest({ gp: itemCostInGold });
+        let convertToHigherFund = this.convertToHigherFund({ pp: 0, gp: 0, ep: 0, sp: 0, cp: itemCostInCopper }, "cp");
+        sellerFunds["cp"] += convertToHigherFund["cp"];
+        sellerFunds["sp"] += convertToHigherFund["sp"];
+        sellerFunds["ep"] += convertToHigherFund["ep"];
+        sellerFunds["gp"] += convertToHigherFund["gp"];
+        sellerFunds["pp"] += convertToHigherFund["pp"];
+        if (!this.useEP) {
+            this.convertEP(sellerFunds);
         }
-        else {
-            // We just pay in partial platinum.
-            // We dont care if we get partial coins or negative once because we compensate later
-            sellerFunds["pp"] += itemCostInPlatinum;
-            // Now we exchange all negative funds with coins of lower value
-            // We dont need to care about running out of money because we checked that earlier
-            for (let currency in sellerFunds) {
-                let amount = sellerFunds[currency];
-                // console.log(`${currency} : ${amount}`);
-                if (amount >= 0)
-                    continue;
-                // If we have ever so slightly negative cp, it is likely due to floating point error
-                // We dont care and just give it to the player
-                if (currency == "cp") {
-                    sellerFunds["cp"] = 0;
-                    continue;
-                }
-                // @ts-ignore
-                let compCurrency = compensationCurrency[currency];
-                sellerFunds[currency] = 0;
-                // @ts-ignore
-                sellerFunds[compCurrency] += amount * conversionRates[compCurrency]; // amount is a negative value so we add it
-                // console.log(`Substracted: ${amount * conversionRates[compCurrency]} ${compCurrency}`);
-            }
-        }
-        // console.log(`Smoothing out`);
-        // Finally we exchange partial coins with as little change as possible
-        for (let currency in sellerFunds) {
-            let amount = sellerFunds[currency];
-            // console.log(`${currency} : ${amount}: ${conversionRates[currency]}`);
-            // We round to 5 decimals. 1 pp is 1000cp, so 5 decimals always rounds good enough
-            // We need to round because otherwise we get 15.99999999999918 instead of 16 due to floating point precision
-            // If we would floor 15.99999999999918 everything explodes
-            let newFund = Math.floor(Math.round(amount * 1e5) / 1e5);
-            sellerFunds[currency] = newFund;
-            // console.log(`New Buyer funds ${currency}: ${sellerFunds[currency]}`);
-            // @ts-ignore
-            let compCurrency = compensationCurrency[currency];
-            // We dont care about fractions of CP
-            if (currency != "cp") {
-                // We calculate the amount of lower currency we get for the fraction of higher currency we have
-                // @ts-ignore
-                let toAdd = Math.round((amount - newFund) * 1e5) / 1e5 * conversionRates[compCurrency];
-                sellerFunds[compCurrency] += toAdd;
-                // console.log(`Added ${toAdd} to ${compCurrency} it is now ${sellerFunds[compCurrency]}`);
-            }
-        }
-        // sellerFunds = sellerFunds - itemCostInGold;
         this.updateActorWithNewFunds(seller, sellerFunds);
-        console.log(`Merchant Sheet | Funds after sell: ${sellerFunds}`);
+    }
+    getPriceOutputWithModifier(basePrice, modifier) {
+        return this.priceInText((basePrice * modifier * 100) / 100);
     }
     priceInText(itemCostInGold) {
-        return itemCostInGold + " gp";
+        let priceToBuyerFunds = this.calculatePriceToBuyerFunds(itemCostInGold);
+        let returnValue = '';
+        returnValue += this.getValueIfPresent(priceToBuyerFunds, 'pp');
+        returnValue += this.getValueIfPresent(priceToBuyerFunds, 'gp');
+        if (this.useEP) {
+            returnValue += this.getValueIfPresent(priceToBuyerFunds, 'ep');
+            returnValue += this.getValueIfPresent(priceToBuyerFunds, 'sp');
+        }
+        else if (priceToBuyerFunds['ep'] > 0 || priceToBuyerFunds['sp'] > 0) {
+            let sp = priceToBuyerFunds['sp'];
+            if (priceToBuyerFunds['ep'] > 0) {
+                sp += (priceToBuyerFunds['ep'] * conversionRates['sp']);
+            }
+            returnValue += ' ' + sp + 'sp';
+        }
+        returnValue += this.getValueIfPresent(priceToBuyerFunds, 'cp');
+        return returnValue.trim();
+    }
+    getValueIfPresent(priceToBuyerFunds, currency) {
+        if (priceToBuyerFunds[currency]) {
+            return ' ' + priceToBuyerFunds[currency] + currency;
+        }
+        return '';
     }
     prepareItems(items) {
         console.log("Merchant Sheet | Prepare Features");
@@ -2461,14 +2308,6 @@ class Dnd5eCurrencyCalculator extends CurrencyCalculator_1.default {
         };
     }
     initSettings() {
-        game.settings.register(Globals_1.default.ModuleName, "convertCurrency", {
-            name: "Convert currency after purchases?",
-            hint: "If enabled, all currency will be converted to the highest denomination possible after a purchase. If disabled, currency will subtracted simply.",
-            scope: "world",
-            config: true,
-            default: false,
-            type: Boolean
-        });
         conversionRates = { "pp": 1,
             // @ts-ignore
             "gp": CONFIG.DND5E.currencies.gp.conversion.each,
@@ -2479,7 +2318,19 @@ class Dnd5eCurrencyCalculator extends CurrencyCalculator_1.default {
             // @ts-ignore
             "cp": CONFIG.DND5E.currencies.cp.conversion.each
         };
+        this.registerSystemSettings();
+        this.useEP = game.settings.get(Globals_1.default.ModuleName, "useEP");
         super.initSettings();
+    }
+    registerSystemSettings() {
+        game.settings.register(Globals_1.default.ModuleName, "useEP", {
+            name: game.i18n.format("MERCHANTNPC.global-settings.use-ep-name"),
+            hint: game.i18n.format("MERCHANTNPC.global-settings.use-ep-hint"),
+            scope: "world",
+            config: true,
+            default: true,
+            type: Boolean
+        });
     }
     getPriceFromItem(item) {
         // @ts-ignore
@@ -2752,7 +2603,13 @@ class Wfrp4eCurrencyCalculator extends CurrencyCalculator_1.default {
         // @ts-ignore
         let priceAmount = game.wfrp4e.market.makeSomeChange(priceCalculated, false);
         // @ts-ignore
-        let money = game.wfrp4e.market.payCommand(priceAmount.gc + 'gc ' + priceAmount.ss + 'ss ' + priceAmount.bp + 'bp', buyer, { 'suppressMessage': true });
+        let gc = game.i18n.localize("MARKET.Abbrev.GC").toLowerCase();
+        // @ts-ignore
+        let ss = game.i18n.localize("MARKET.Abbrev.SS").toLowerCase();
+        // @ts-ignore
+        let bp = game.i18n.localize("MARKET.Abbrev.BP").toLowerCase();
+        // @ts-ignore
+        let money = game.wfrp4e.market.payCommand(priceAmount.gc + gc + priceAmount.ss + ss + priceAmount.bp + bp, buyer, { 'suppressMessage': true });
         if (money) {
             buyer.updateEmbeddedDocuments("Item", money);
         }
@@ -3182,7 +3039,7 @@ class GeneratorWindow extends Application {
     static get defaultOptions() {
         const options = super.defaultOptions;
         options.id = "generate-items";
-        options.title = "Generate Items";
+        options.title = game.i18n.localize("MERCHANTNPC.generator-page.window-title");
         options.template = "modules/" + Globals_1.default.ModuleName + "/templates/generator.html";
         options.width = 600;
         options.height = "auto";
@@ -7738,7 +7595,7 @@ function hexDouble(num) {
 	return (str.length < 2) ? '0' + str : str;
 }
 
-},{"color-name":28,"simple-swizzle":40}],30:[function(require,module,exports){
+},{"color-name":28,"simple-swizzle":54}],30:[function(require,module,exports){
 'use strict';
 
 var colorString = require('color-string');
@@ -9563,7 +9420,7 @@ const normalizeColumnsArray = function(columns){
 }
 
 }).call(this)}).call(this,require("buffer").Buffer,require("timers").setImmediate)
-},{"./ResizeableBuffer":31,"buffer":24,"stream":42,"timers":58}],33:[function(require,module,exports){
+},{"./ResizeableBuffer":31,"buffer":24,"stream":56,"timers":58}],33:[function(require,module,exports){
 (function (Buffer){(function (){
 
 const parse = require('.')
@@ -10486,243 +10343,6 @@ process.chdir = function (dir) {
 process.umask = function() { return 0; };
 
 },{}],39:[function(require,module,exports){
-/* eslint-disable node/no-deprecated-api */
-var buffer = require('buffer')
-var Buffer = buffer.Buffer
-
-// alternative to using Object.keys for old browsers
-function copyProps (src, dst) {
-  for (var key in src) {
-    dst[key] = src[key]
-  }
-}
-if (Buffer.from && Buffer.alloc && Buffer.allocUnsafe && Buffer.allocUnsafeSlow) {
-  module.exports = buffer
-} else {
-  // Copy properties from require('buffer')
-  copyProps(buffer, exports)
-  exports.Buffer = SafeBuffer
-}
-
-function SafeBuffer (arg, encodingOrOffset, length) {
-  return Buffer(arg, encodingOrOffset, length)
-}
-
-// Copy static methods from Buffer
-copyProps(Buffer, SafeBuffer)
-
-SafeBuffer.from = function (arg, encodingOrOffset, length) {
-  if (typeof arg === 'number') {
-    throw new TypeError('Argument must not be a number')
-  }
-  return Buffer(arg, encodingOrOffset, length)
-}
-
-SafeBuffer.alloc = function (size, fill, encoding) {
-  if (typeof size !== 'number') {
-    throw new TypeError('Argument must be a number')
-  }
-  var buf = Buffer(size)
-  if (fill !== undefined) {
-    if (typeof encoding === 'string') {
-      buf.fill(fill, encoding)
-    } else {
-      buf.fill(fill)
-    }
-  } else {
-    buf.fill(0)
-  }
-  return buf
-}
-
-SafeBuffer.allocUnsafe = function (size) {
-  if (typeof size !== 'number') {
-    throw new TypeError('Argument must be a number')
-  }
-  return Buffer(size)
-}
-
-SafeBuffer.allocUnsafeSlow = function (size) {
-  if (typeof size !== 'number') {
-    throw new TypeError('Argument must be a number')
-  }
-  return buffer.SlowBuffer(size)
-}
-
-},{"buffer":24}],40:[function(require,module,exports){
-'use strict';
-
-var isArrayish = require('is-arrayish');
-
-var concat = Array.prototype.concat;
-var slice = Array.prototype.slice;
-
-var swizzle = module.exports = function swizzle(args) {
-	var results = [];
-
-	for (var i = 0, len = args.length; i < len; i++) {
-		var arg = args[i];
-
-		if (isArrayish(arg)) {
-			// http://jsperf.com/javascript-array-concat-vs-push/98
-			results = concat.call(results, slice.call(arg));
-		} else {
-			results.push(arg);
-		}
-	}
-
-	return results;
-};
-
-swizzle.wrap = function (fn) {
-	return function () {
-		return fn(swizzle(arguments));
-	};
-};
-
-},{"is-arrayish":41}],41:[function(require,module,exports){
-module.exports = function isArrayish(obj) {
-	if (!obj || typeof obj === 'string') {
-		return false;
-	}
-
-	return obj instanceof Array || Array.isArray(obj) ||
-		(obj.length >= 0 && (obj.splice instanceof Function ||
-			(Object.getOwnPropertyDescriptor(obj, (obj.length - 1)) && obj.constructor.name !== 'String')));
-};
-
-},{}],42:[function(require,module,exports){
-// Copyright Joyent, Inc. and other Node contributors.
-//
-// Permission is hereby granted, free of charge, to any person obtaining a
-// copy of this software and associated documentation files (the
-// "Software"), to deal in the Software without restriction, including
-// without limitation the rights to use, copy, modify, merge, publish,
-// distribute, sublicense, and/or sell copies of the Software, and to permit
-// persons to whom the Software is furnished to do so, subject to the
-// following conditions:
-//
-// The above copyright notice and this permission notice shall be included
-// in all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
-// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
-// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
-// USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-module.exports = Stream;
-
-var EE = require('events').EventEmitter;
-var inherits = require('inherits');
-
-inherits(Stream, EE);
-Stream.Readable = require('readable-stream/lib/_stream_readable.js');
-Stream.Writable = require('readable-stream/lib/_stream_writable.js');
-Stream.Duplex = require('readable-stream/lib/_stream_duplex.js');
-Stream.Transform = require('readable-stream/lib/_stream_transform.js');
-Stream.PassThrough = require('readable-stream/lib/_stream_passthrough.js');
-Stream.finished = require('readable-stream/lib/internal/streams/end-of-stream.js')
-Stream.pipeline = require('readable-stream/lib/internal/streams/pipeline.js')
-
-// Backwards-compat with node 0.4.x
-Stream.Stream = Stream;
-
-
-
-// old-style streams.  Note that the pipe method (the only relevant
-// part of this class) is overridden in the Readable class.
-
-function Stream() {
-  EE.call(this);
-}
-
-Stream.prototype.pipe = function(dest, options) {
-  var source = this;
-
-  function ondata(chunk) {
-    if (dest.writable) {
-      if (false === dest.write(chunk) && source.pause) {
-        source.pause();
-      }
-    }
-  }
-
-  source.on('data', ondata);
-
-  function ondrain() {
-    if (source.readable && source.resume) {
-      source.resume();
-    }
-  }
-
-  dest.on('drain', ondrain);
-
-  // If the 'end' option is not supplied, dest.end() will be called when
-  // source gets the 'end' or 'close' events.  Only dest.end() once.
-  if (!dest._isStdio && (!options || options.end !== false)) {
-    source.on('end', onend);
-    source.on('close', onclose);
-  }
-
-  var didOnEnd = false;
-  function onend() {
-    if (didOnEnd) return;
-    didOnEnd = true;
-
-    dest.end();
-  }
-
-
-  function onclose() {
-    if (didOnEnd) return;
-    didOnEnd = true;
-
-    if (typeof dest.destroy === 'function') dest.destroy();
-  }
-
-  // don't leave dangling pipes when there are errors.
-  function onerror(er) {
-    cleanup();
-    if (EE.listenerCount(this, 'error') === 0) {
-      throw er; // Unhandled stream error in pipe.
-    }
-  }
-
-  source.on('error', onerror);
-  dest.on('error', onerror);
-
-  // remove all the event listeners that were added.
-  function cleanup() {
-    source.removeListener('data', ondata);
-    dest.removeListener('drain', ondrain);
-
-    source.removeListener('end', onend);
-    source.removeListener('close', onclose);
-
-    source.removeListener('error', onerror);
-    dest.removeListener('error', onerror);
-
-    source.removeListener('end', cleanup);
-    source.removeListener('close', cleanup);
-
-    dest.removeListener('close', cleanup);
-  }
-
-  source.on('end', cleanup);
-  source.on('close', cleanup);
-
-  dest.on('close', cleanup);
-
-  dest.emit('pipe', source);
-
-  // Allow for unix-like usage: A.pipe(B).pipe(C)
-  return dest;
-};
-
-},{"events":34,"inherits":36,"readable-stream/lib/_stream_duplex.js":44,"readable-stream/lib/_stream_passthrough.js":45,"readable-stream/lib/_stream_readable.js":46,"readable-stream/lib/_stream_transform.js":47,"readable-stream/lib/_stream_writable.js":48,"readable-stream/lib/internal/streams/end-of-stream.js":52,"readable-stream/lib/internal/streams/pipeline.js":54}],43:[function(require,module,exports){
 'use strict';
 
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
@@ -10851,7 +10471,7 @@ createErrorType('ERR_UNKNOWN_ENCODING', function (arg) {
 createErrorType('ERR_STREAM_UNSHIFT_AFTER_END_EVENT', 'stream.unshift() after end event');
 module.exports.codes = codes;
 
-},{}],44:[function(require,module,exports){
+},{}],40:[function(require,module,exports){
 (function (process){(function (){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -10993,7 +10613,7 @@ Object.defineProperty(Duplex.prototype, 'destroyed', {
   }
 });
 }).call(this)}).call(this,require('_process'))
-},{"./_stream_readable":46,"./_stream_writable":48,"_process":38,"inherits":36}],45:[function(require,module,exports){
+},{"./_stream_readable":42,"./_stream_writable":44,"_process":38,"inherits":36}],41:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -11033,7 +10653,7 @@ function PassThrough(options) {
 PassThrough.prototype._transform = function (chunk, encoding, cb) {
   cb(null, chunk);
 };
-},{"./_stream_transform":47,"inherits":36}],46:[function(require,module,exports){
+},{"./_stream_transform":43,"inherits":36}],42:[function(require,module,exports){
 (function (process,global){(function (){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -12160,7 +11780,7 @@ function indexOf(xs, x) {
   return -1;
 }
 }).call(this)}).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../errors":43,"./_stream_duplex":44,"./internal/streams/async_iterator":49,"./internal/streams/buffer_list":50,"./internal/streams/destroy":51,"./internal/streams/from":53,"./internal/streams/state":55,"./internal/streams/stream":56,"_process":38,"buffer":24,"events":34,"inherits":36,"string_decoder/":57,"util":23}],47:[function(require,module,exports){
+},{"../errors":39,"./_stream_duplex":40,"./internal/streams/async_iterator":45,"./internal/streams/buffer_list":46,"./internal/streams/destroy":47,"./internal/streams/from":49,"./internal/streams/state":51,"./internal/streams/stream":52,"_process":38,"buffer":24,"events":34,"inherits":36,"string_decoder/":57,"util":23}],43:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -12362,7 +11982,7 @@ function done(stream, er, data) {
   if (stream._transformState.transforming) throw new ERR_TRANSFORM_ALREADY_TRANSFORMING();
   return stream.push(null);
 }
-},{"../errors":43,"./_stream_duplex":44,"inherits":36}],48:[function(require,module,exports){
+},{"../errors":39,"./_stream_duplex":40,"inherits":36}],44:[function(require,module,exports){
 (function (process,global){(function (){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -13062,7 +12682,7 @@ Writable.prototype._destroy = function (err, cb) {
   cb(err);
 };
 }).call(this)}).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../errors":43,"./_stream_duplex":44,"./internal/streams/destroy":51,"./internal/streams/state":55,"./internal/streams/stream":56,"_process":38,"buffer":24,"inherits":36,"util-deprecate":59}],49:[function(require,module,exports){
+},{"../errors":39,"./_stream_duplex":40,"./internal/streams/destroy":47,"./internal/streams/state":51,"./internal/streams/stream":52,"_process":38,"buffer":24,"inherits":36,"util-deprecate":59}],45:[function(require,module,exports){
 (function (process){(function (){
 'use strict';
 
@@ -13272,7 +12892,7 @@ var createReadableStreamAsyncIterator = function createReadableStreamAsyncIterat
 
 module.exports = createReadableStreamAsyncIterator;
 }).call(this)}).call(this,require('_process'))
-},{"./end-of-stream":52,"_process":38}],50:[function(require,module,exports){
+},{"./end-of-stream":48,"_process":38}],46:[function(require,module,exports){
 'use strict';
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -13483,7 +13103,7 @@ function () {
 
   return BufferList;
 }();
-},{"buffer":24,"util":23}],51:[function(require,module,exports){
+},{"buffer":24,"util":23}],47:[function(require,module,exports){
 (function (process){(function (){
 'use strict'; // undocumented cb() API, needed for core, not for public API
 
@@ -13591,7 +13211,7 @@ module.exports = {
   errorOrDestroy: errorOrDestroy
 };
 }).call(this)}).call(this,require('_process'))
-},{"_process":38}],52:[function(require,module,exports){
+},{"_process":38}],48:[function(require,module,exports){
 // Ported from https://github.com/mafintosh/end-of-stream with
 // permission from the author, Mathias Buus (@mafintosh).
 'use strict';
@@ -13696,12 +13316,12 @@ function eos(stream, opts, callback) {
 }
 
 module.exports = eos;
-},{"../../../errors":43}],53:[function(require,module,exports){
+},{"../../../errors":39}],49:[function(require,module,exports){
 module.exports = function () {
   throw new Error('Readable.from is not available in the browser')
 };
 
-},{}],54:[function(require,module,exports){
+},{}],50:[function(require,module,exports){
 // Ported from https://github.com/mafintosh/pump with
 // permission from the author, Mathias Buus (@mafintosh).
 'use strict';
@@ -13799,7 +13419,7 @@ function pipeline() {
 }
 
 module.exports = pipeline;
-},{"../../../errors":43,"./end-of-stream":52}],55:[function(require,module,exports){
+},{"../../../errors":39,"./end-of-stream":48}],51:[function(require,module,exports){
 'use strict';
 
 var ERR_INVALID_OPT_VALUE = require('../../../errors').codes.ERR_INVALID_OPT_VALUE;
@@ -13827,10 +13447,250 @@ function getHighWaterMark(state, options, duplexKey, isDuplex) {
 module.exports = {
   getHighWaterMark: getHighWaterMark
 };
-},{"../../../errors":43}],56:[function(require,module,exports){
+},{"../../../errors":39}],52:[function(require,module,exports){
 module.exports = require('events').EventEmitter;
 
-},{"events":34}],57:[function(require,module,exports){
+},{"events":34}],53:[function(require,module,exports){
+/*! safe-buffer. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
+/* eslint-disable node/no-deprecated-api */
+var buffer = require('buffer')
+var Buffer = buffer.Buffer
+
+// alternative to using Object.keys for old browsers
+function copyProps (src, dst) {
+  for (var key in src) {
+    dst[key] = src[key]
+  }
+}
+if (Buffer.from && Buffer.alloc && Buffer.allocUnsafe && Buffer.allocUnsafeSlow) {
+  module.exports = buffer
+} else {
+  // Copy properties from require('buffer')
+  copyProps(buffer, exports)
+  exports.Buffer = SafeBuffer
+}
+
+function SafeBuffer (arg, encodingOrOffset, length) {
+  return Buffer(arg, encodingOrOffset, length)
+}
+
+SafeBuffer.prototype = Object.create(Buffer.prototype)
+
+// Copy static methods from Buffer
+copyProps(Buffer, SafeBuffer)
+
+SafeBuffer.from = function (arg, encodingOrOffset, length) {
+  if (typeof arg === 'number') {
+    throw new TypeError('Argument must not be a number')
+  }
+  return Buffer(arg, encodingOrOffset, length)
+}
+
+SafeBuffer.alloc = function (size, fill, encoding) {
+  if (typeof size !== 'number') {
+    throw new TypeError('Argument must be a number')
+  }
+  var buf = Buffer(size)
+  if (fill !== undefined) {
+    if (typeof encoding === 'string') {
+      buf.fill(fill, encoding)
+    } else {
+      buf.fill(fill)
+    }
+  } else {
+    buf.fill(0)
+  }
+  return buf
+}
+
+SafeBuffer.allocUnsafe = function (size) {
+  if (typeof size !== 'number') {
+    throw new TypeError('Argument must be a number')
+  }
+  return Buffer(size)
+}
+
+SafeBuffer.allocUnsafeSlow = function (size) {
+  if (typeof size !== 'number') {
+    throw new TypeError('Argument must be a number')
+  }
+  return buffer.SlowBuffer(size)
+}
+
+},{"buffer":24}],54:[function(require,module,exports){
+'use strict';
+
+var isArrayish = require('is-arrayish');
+
+var concat = Array.prototype.concat;
+var slice = Array.prototype.slice;
+
+var swizzle = module.exports = function swizzle(args) {
+	var results = [];
+
+	for (var i = 0, len = args.length; i < len; i++) {
+		var arg = args[i];
+
+		if (isArrayish(arg)) {
+			// http://jsperf.com/javascript-array-concat-vs-push/98
+			results = concat.call(results, slice.call(arg));
+		} else {
+			results.push(arg);
+		}
+	}
+
+	return results;
+};
+
+swizzle.wrap = function (fn) {
+	return function () {
+		return fn(swizzle(arguments));
+	};
+};
+
+},{"is-arrayish":55}],55:[function(require,module,exports){
+module.exports = function isArrayish(obj) {
+	if (!obj || typeof obj === 'string') {
+		return false;
+	}
+
+	return obj instanceof Array || Array.isArray(obj) ||
+		(obj.length >= 0 && (obj.splice instanceof Function ||
+			(Object.getOwnPropertyDescriptor(obj, (obj.length - 1)) && obj.constructor.name !== 'String')));
+};
+
+},{}],56:[function(require,module,exports){
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+module.exports = Stream;
+
+var EE = require('events').EventEmitter;
+var inherits = require('inherits');
+
+inherits(Stream, EE);
+Stream.Readable = require('readable-stream/lib/_stream_readable.js');
+Stream.Writable = require('readable-stream/lib/_stream_writable.js');
+Stream.Duplex = require('readable-stream/lib/_stream_duplex.js');
+Stream.Transform = require('readable-stream/lib/_stream_transform.js');
+Stream.PassThrough = require('readable-stream/lib/_stream_passthrough.js');
+Stream.finished = require('readable-stream/lib/internal/streams/end-of-stream.js')
+Stream.pipeline = require('readable-stream/lib/internal/streams/pipeline.js')
+
+// Backwards-compat with node 0.4.x
+Stream.Stream = Stream;
+
+
+
+// old-style streams.  Note that the pipe method (the only relevant
+// part of this class) is overridden in the Readable class.
+
+function Stream() {
+  EE.call(this);
+}
+
+Stream.prototype.pipe = function(dest, options) {
+  var source = this;
+
+  function ondata(chunk) {
+    if (dest.writable) {
+      if (false === dest.write(chunk) && source.pause) {
+        source.pause();
+      }
+    }
+  }
+
+  source.on('data', ondata);
+
+  function ondrain() {
+    if (source.readable && source.resume) {
+      source.resume();
+    }
+  }
+
+  dest.on('drain', ondrain);
+
+  // If the 'end' option is not supplied, dest.end() will be called when
+  // source gets the 'end' or 'close' events.  Only dest.end() once.
+  if (!dest._isStdio && (!options || options.end !== false)) {
+    source.on('end', onend);
+    source.on('close', onclose);
+  }
+
+  var didOnEnd = false;
+  function onend() {
+    if (didOnEnd) return;
+    didOnEnd = true;
+
+    dest.end();
+  }
+
+
+  function onclose() {
+    if (didOnEnd) return;
+    didOnEnd = true;
+
+    if (typeof dest.destroy === 'function') dest.destroy();
+  }
+
+  // don't leave dangling pipes when there are errors.
+  function onerror(er) {
+    cleanup();
+    if (EE.listenerCount(this, 'error') === 0) {
+      throw er; // Unhandled stream error in pipe.
+    }
+  }
+
+  source.on('error', onerror);
+  dest.on('error', onerror);
+
+  // remove all the event listeners that were added.
+  function cleanup() {
+    source.removeListener('data', ondata);
+    dest.removeListener('drain', ondrain);
+
+    source.removeListener('end', onend);
+    source.removeListener('close', onclose);
+
+    source.removeListener('error', onerror);
+    dest.removeListener('error', onerror);
+
+    source.removeListener('end', cleanup);
+    source.removeListener('close', cleanup);
+
+    dest.removeListener('close', cleanup);
+  }
+
+  source.on('end', cleanup);
+  source.on('close', cleanup);
+
+  dest.on('close', cleanup);
+
+  dest.emit('pipe', source);
+
+  // Allow for unix-like usage: A.pipe(B).pipe(C)
+  return dest;
+};
+
+},{"events":34,"inherits":36,"readable-stream/lib/_stream_duplex.js":40,"readable-stream/lib/_stream_passthrough.js":41,"readable-stream/lib/_stream_readable.js":42,"readable-stream/lib/_stream_transform.js":43,"readable-stream/lib/_stream_writable.js":44,"readable-stream/lib/internal/streams/end-of-stream.js":48,"readable-stream/lib/internal/streams/pipeline.js":50}],57:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -14127,7 +13987,7 @@ function simpleWrite(buf) {
 function simpleEnd(buf) {
   return buf && buf.length ? this.write(buf) : '';
 }
-},{"safe-buffer":39}],58:[function(require,module,exports){
+},{"safe-buffer":53}],58:[function(require,module,exports){
 (function (setImmediate,clearImmediate){(function (){
 var nextTick = require('process/browser.js').nextTick;
 var apply = Function.prototype.apply;
