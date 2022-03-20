@@ -1444,3 +1444,22 @@
 {"level":"error","message":"User aomeng lacks permission to update Setting [W0mCfULJXgyg8QSI]","stack":"Error: User aomeng lacks permission to update Setting [W0mCfULJXgyg8QSI]\n    at ServerDatabaseBackend._updateDocuments (file:///home/crazyeyes/foundry/resources/app/dist/database/backend/server-backend.mjs:1:3039)\n    at async Semaphore._try (file:///home/crazyeyes/foundry/resources/app/common/utils/semaphore.mjs:99:17)","timestamp":"2022-03-13 11:51:43"}
 {"level":"error","message":"User Josh lacks permission to update Setting [W0mCfULJXgyg8QSI]","stack":"Error: User Josh lacks permission to update Setting [W0mCfULJXgyg8QSI]\n    at ServerDatabaseBackend._updateDocuments (file:///home/crazyeyes/foundry/resources/app/dist/database/backend/server-backend.mjs:1:3039)\n    at async Semaphore._try (file:///home/crazyeyes/foundry/resources/app/common/utils/semaphore.mjs:99:17)","timestamp":"2022-03-13 11:52:41"}
 {"level":"error","message":"User Terra lacks permission to update Setting [W0mCfULJXgyg8QSI]","stack":"Error: User Terra lacks permission to update Setting [W0mCfULJXgyg8QSI]\n    at ServerDatabaseBackend._updateDocuments (file:///home/crazyeyes/foundry/resources/app/dist/database/backend/server-backend.mjs:1:3039)\n    at async Semaphore._try (file:///home/crazyeyes/foundry/resources/app/common/utils/semaphore.mjs:99:17)","timestamp":"2022-03-13 12:03:54"}
+{"level":"error","message":"Software license verification failed. Please confirm your Foundry Virtual Tabletop software license","timestamp":"2022-03-14 16:45:33"}
+{"level":"error","message":"Invalid language definition in Package fxmaster: Language JSON path lang/zh-tw.json does not exist","timestamp":"2022-03-14 16:45:36"}
+{"level":"error","message":"Invalid language definition in Package fxmaster: Language JSON path lang/zh-tw.json does not exist","timestamp":"2022-03-14 16:45:52"}
+{"level":"error","message":"Invalid language definition in Package fxmaster: Language JSON path lang/zh-tw.json does not exist","timestamp":"2022-03-14 17:08:56"}
+{"level":"error","message":"Invalid language definition in Package fxmaster: Language JSON path lang/zh-tw.json does not exist","timestamp":"2022-03-14 17:09:06"}
+{"level":"error","message":"Invalid language definition in Package fxmaster: Language JSON path lang/zh-tw.json does not exist","timestamp":"2022-03-14 17:34:23"}
+{"level":"error","message":"Invalid language definition in Package fxmaster: Language JSON path lang/zh-tw.json does not exist","timestamp":"2022-03-14 17:34:29"}
+{"level":"error","message":"Invalid language definition in Package fxmaster: Language JSON path lang/zh-tw.json does not exist","timestamp":"2022-03-15 18:00:44"}
+{"level":"error","message":"Invalid language definition in Package fxmaster: Language JSON path lang/zh-tw.json does not exist","timestamp":"2022-03-15 18:00:54"}
+{"level":"error","message":"Invalid language definition in Package fxmaster: Language JSON path lang/zh-tw.json does not exist","timestamp":"2022-03-16 18:02:04"}
+{"level":"error","message":"Invalid language definition in Package fxmaster: Language JSON path lang/zh-tw.json does not exist","timestamp":"2022-03-16 18:03:08"}
+{"level":"error","message":"Invalid language definition in Package fxmaster: Language JSON path lang/zh-tw.json does not exist","timestamp":"2022-03-18 02:58:13"}
+{"level":"error","message":"Invalid language definition in Package fxmaster: Language JSON path lang/zh-tw.json does not exist","timestamp":"2022-03-18 02:58:22"}
+{"level":"error","message":"Invalid language definition in Package fxmaster: Language JSON path lang/zh-tw.json does not exist","timestamp":"2022-03-18 14:56:07"}
+{"level":"error","message":"Invalid language definition in Package fxmaster: Language JSON path lang/zh-tw.json does not exist","timestamp":"2022-03-18 14:56:14"}
+{"level":"error","message":"Invalid language definition in Package fxmaster: Language JSON path lang/zh-tw.json does not exist","timestamp":"2022-03-20 01:00:17"}
+{"level":"error","message":"Invalid language definition in Package fxmaster: Language JSON path lang/zh-tw.json does not exist","timestamp":"2022-03-20 01:00:26"}
+{"level":"error","message":"Invalid language definition in Package fxmaster: Language JSON path lang/zh-tw.json does not exist","timestamp":"2022-03-20 11:40:29"}
+{"level":"error","message":"Invalid language definition in Package fxmaster: Language JSON path lang/zh-tw.json does not exist","timestamp":"2022-03-20 11:40:47"}
