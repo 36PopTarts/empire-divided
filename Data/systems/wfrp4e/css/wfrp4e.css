@@ -158,9 +158,9 @@
     border: none;
     background: none;
     font-family: CaslonAntique;
+    font-variant: small-caps;
     font-weight: bold;
     font-size: 1.7em;
-    /*text-transform: capitalize;*/
     color: black
   }
     #tinymce .mce-content-body h4,
@@ -15821,6 +15821,22 @@ input[name="dd-import.importPath"] {
 .app.window-app.sheet.wfrp4e.actor .window-content .content  {
   height: calc(100% - 10.55%);
   /* background: #ff000047; */
+}
+
+#world-config .form-group-stacked {
+  background: url(../ui/frames/parchment-texture.webp) repeat;
+  border: 2px groove #564d3a;
+  border-image: url(../ui/chat-controls-border.webp) 4 repeat;
+  border-image-width: 4px;
+  border-image-outset: 1px;
+}
+
+#world-config .form-group-stacked .world-desc {
+  font-family: var(--actor-input-font-family);
+  font-size: var(--actor-input-font-size);
+  font-weight: var(--actor-input-font-weight);
+  color: var(--actor-input-color);
+  text-align: center;
 }
 
 

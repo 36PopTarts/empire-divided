@@ -2,7 +2,7 @@
     "name": "wfrp4e-core",
     "title": "WFRP4e - Core Content Module",
     "description": "Official Core Rulebook content for the Warhammer Fantasy 4th Edition System. Includes all the tables, rules, bestiary, and lore you need to immerse your players into the perilous world of Warhammer.",
-    "version": "2.4.1",
+    "version": "2.4.2",
     "author": "Moo Man, Published by Cubicle 7",
     "system": ["wfrp4e"],
     "scripts": [
@@ -139,7 +139,7 @@
             "name": "career-descriptions",
             "path": "packs/career-descriptions.db",
             "system": "wfrp4e",
-            "mobule": "wfrp4e-core"
+            "module": "wfrp4e-core"
         },
         {
             "label": "Tables (Core)",
@@ -147,7 +147,7 @@
             "name": "tables",
             "path": "packs/tables.db",
             "system": "wfrp4e",
-            "mobule": "wfrp4e-core"
+            "module": "wfrp4e-core"
         }
     ],
     "languages": [

@@ -6,12 +6,12 @@
             <option value="{{name}}">{{name}}</option>
             {{/each}}
         </select>
-        <button data-overwrite name="overwrite">{{localize "DICESONICE.Overwrite"}}</button>
-        <button data-delete name="delete" title='{{localize "DICESONICE.Delete"}}'><i class="fas fa-trash"></i></button>
+        <button type="button" data-overwrite name="overwrite">{{localize "DICESONICE.Overwrite"}}</button>
+        <button type="button" data-delete name="delete" title='{{localize "DICESONICE.Delete"}}'><i class="fas fa-trash"></i></button>
     </div>
     <hr/>
     <div class="form-group">
         <input type="text" name="save-name" data-save-name placeholder='{{localize "DICESONICE.SaveAsErrorName"}}'/>
-        <button data-add-new name="add-new">{{localize "DICESONICE.AddNew"}}</button>
+        <button type="button" data-add-new name="add-new">{{localize "DICESONICE.AddNew"}}</button>
     </div>
 </form>

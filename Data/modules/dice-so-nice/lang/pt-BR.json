@@ -43,13 +43,22 @@
     "DICESONICE.colorsetDesc" : "Se você preferir uma cor personalizada, selecione 'Personalizada' na lista",
     "DICESONICE.Low" : "Baixa",
     "DICESONICE.High" : "Alta",
+    "DICESONICE.Medium" : "Médio",
+    "DICESONICE.Custom" : "Personalizado",
+    "DICESONICE.Ultra" : "Ultra",
+    "DICESONICE.antialiasing" : "Anti-aliasing",
+    "DICESONICE.SMAA" : "SMAA (Software)",
+    "DICESONICE.MSAA" : "MSAA (Hardware, Recomendado)",
     "DICESONICE.shadowQuality" : "Qualidade das Sombras",
-    "DICESONICE.bumpMapping" : "Iluminação Avançada",
+    "DICESONICE.imageQuality" : "Qualidade da Imagem",
+    "DICESONICE.glow" : "Luzes brilhantes",
+    "DICESONICE.bumpMapping" : "Iluminação realista",
     "DICESONICE.sounds" : "Efeitos de Som",
     "DICESONICE.soundsSurface" : "Superfície da mesa para sons",
     "DICESONICE.soundsVolume": "Volume do Som",
-    "DICESONICE.muteSoundSecretRolls": "Silencie todos os sons para rolagens de GM/Oculto/Própria",
+    "DICESONICE.muteSoundSecretRolls": "Silencie todos os sons para rolagens de MJ/Cega/Pessoal",
     "DICESONICE.enableFlavorColorset": "Substitua a aparência dos dados quando um tema é passado como um Sabor (ex: 1d20 [ácido])",
+    "DICESONICE.immersiveDarkness": "Ative o modo Escuridão Imersiva (os dados reagem à iluminação da cena)",
     "DICESONICE.system" : "Esquema do Dado (Faces)",
     "DICESONICE.maxDiceNumber" : "Numero Máximo de Dados",
     "DICESONICE.maxDiceNumberHint" : "Numero máximo de dados a serem exibidos em uma animação. Um valor alto irá reduzir a performance",
@@ -72,7 +81,7 @@
     "DICESONICE.immediatelyDisplayChatMessages": "Exiba no bate-papo imediatamente",
     "DICESONICE.immediatelyDisplayChatMessagesHint": "Quando ativado, não espere que a rolagem 3D termine antes de mostrar o cartão de bate-papo da rolagem",
     "DICESONICE.throwingForce" : "Força do arremeço",
-    "DICESONICE.useHighDPI" : "Habilitar suporte de tela de 'alta densidade'",
+    "DICESONICE.useHighDPI" : "Suporte à resolução UDH (4k, Retina...)",
     "DICESONICE.showOthersSFX" : "Mostrar efeitos especiais a outros jogadores",
     "DICESONICE.animateRollTable" : "Ativar dados 3D nas Tabelas de Rolagem",
     "DICESONICE.animateRollTableHint" : "Quando possível, mostre um dado 3D ao rolar em uma Tabela de Rolagem. Certifique-se de desabilitar 'animar tabelas de rolagens' nas configurações principais.",
@@ -137,6 +146,7 @@
     "DICESONICE.TextureBronze3a" : "Bronze - 3 bis",
     "DICESONICE.TextureBronze3b" : "Bronze - 3 ter",
     "DICESONICE.TextureBronze4" : "Bronze - 4",
+    "DICESONICE.TextureStone" : "Concreto",
     "DICESONICE.ColorRadiant" : "Radiante",
     "DICESONICE.ColorFire" : "Ígneo",
     "DICESONICE.ColorIce" : "Gélido",
@@ -170,6 +180,7 @@
     "DICESONICE.ColorDragons" : "Há Dragões",
     "DICESONICE.ColorBirdUp" : "Passáros",
     "DICESONICE.ColorCoinDefault" : "Moeda (interno)",
+    "DICESONICE.ColorPrism" : "Prisma",
 
     "DICESONICE.DamageTypes" : "tipos de Dano",
     "DICESONICE.ThemesSoNice" : "Temas Tão Legais",
@@ -182,6 +193,9 @@
     "DICESONICE.MaterialWood": "Madeira",
     "DICESONICE.MaterialChrome" : "Cromático",
     "DICESONICE.MaterialAuto": "Auto (Tema/Textura)",
+    "DICESONICE.MaterialPristine": "Impecável",
+    "DICESONICE.MaterialIridescent": "Iridescente",
+    "DICESONICE.MaterialStone": "Pedra",
 
     "DICESONICE.FontAuto": "Auto (Tema)",
 
@@ -222,5 +236,15 @@
 
     "DICESONICE.sfxOptionsIsGlobal" : "(DM apenas) Habilite este SFX para todos os jogadores",
     "DICESONICE.sfxOptionsCustomSound" : "Selecione um arquivo de som",
-    "DICESONICE.sfxOptionsMacro" : "Selecione uma macro"
+    "DICESONICE.sfxOptionsMacro" : "Selecione uma macro",
+
+    "DICESONICE.RollableAreaConfig":  "Configurações de Área de Rolagem",
+    "DICESONICE.RollableAreaConfigTitle": "Configurações de Área de Rolagem",
+    "DICESONICE.RollableAreaConfigHint": "Defina a parte da tela que mostra a animação de dados 3D. Esta configuração não afetará outros jogadores.",
+    "DICESONICE.RollableAreaText": "Área de Rolagem",
+    "DICESONICE.RollableAreaConfigDescription1": "Redimensione e/ou mova a área ao lado para definir a \"Área de Rolagem\" dentro da qual a animação 3D dos dados será exibida.",
+    "DICESONICE.RollableAreaConfigDescription3": "Embora tenha uma área de rolagem ativa, redimensionar a janela não redimensionará automaticamente a área de rolagem. Você mesmo terá que restaurar ou redimensionar a área.",
+    "DICESONICE.RollableAreaConfigDescription2": "Pressione \"Aplicar\" para salvar e aplicar suas alterações ou pressione \"Restaurar\" para retornar às configurações automáticas.",
+    "DICESONICE.Restore": "Restaurar"
+    
 }
