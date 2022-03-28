@@ -42,6 +42,7 @@
 {"name":"Lore of the Little Waaagh!","type":"Item","sort":2400000,"flags":{},"parent":"YRGW5Jqs9RpDaLqn","sorting":"a","color":"#35531d","_id":"86rogfsOazeuAw3S"}
 {"name":"Ogre Maneater","type":"Item","sort":2900000,"flags":{},"parent":"FH46SuKDUeaO7cfJ","sorting":"a","color":"#5f3f25","_id":"88dHnDtRpYPObKCG"}
 {"_id":"8Pt4zg6TpxwwIKQb","name":"Alternate Bretonnian Knight","type":"Item","sort":4500000,"flags":{},"parent":"nG3gkFYEAmqrI5fy","sorting":"a","color":"#4f0d0d"}
+{"name":"Spellsinger","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#779169","flags":{},"_id":"8mi9kau8eQuHG1az"}
 {"name":"Loot","type":"RollTable","sort":100000,"flags":{},"parent":"SsnU0RAudPtByTXv","sorting":"a","color":"","_id":"8quqXmxl5WgxUHgI"}
 {"name":"Downtime Events","type":"RollTable","sort":900000,"flags":{},"parent":null,"sorting":"a","color":"#323e7b","_id":"9DljdzPyy67UPIg1"}
 {"name":"Gems","type":"RollTable","sort":1000000,"flags":{},"parent":"8quqXmxl5WgxUHgI","sorting":"a","color":"","_id":"9HLRrTLXiCxAsRhX"}
@@ -265,4 +266,3 @@
 {"_id":"yrVnNPRyDRk4Ku57","name":"Travel Endeavours","type":"JournalEntry","sort":100000,"flags":{},"parent":"IAn7gAevS1Z5CnKd","sorting":"a","color":"#634231"}
 {"_id":"zQRDhzWh9uTwnQqe","name":"Class Endeavours","type":"JournalEntry","sort":2600000,"flags":{"wfrp4e":{"initialization-parent":"Endeavours"}},"parent":"5PMBVwnydUMSobIr","sorting":"m","color":""}
 {"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
-{"name":"Spellsinger","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#779169","flags":{},"_id":"8mi9kau8eQuHG1az"}
