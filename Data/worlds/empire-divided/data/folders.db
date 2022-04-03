@@ -14,6 +14,7 @@
 {"_id":"2Vc3Hl56Nkx9gNaO","name":"Old Handouts","type":"JournalEntry","sort":3500000,"flags":{},"parent":"XfhUxAdPBRN3lgpw","sorting":"a","color":"#bd7b0a"}
 {"_id":"2bNq6ylCsjbXjYBX","name":"Knight of the Realm","type":"Item","sort":4400000,"flags":{},"parent":"nG3gkFYEAmqrI5fy","sorting":"a","color":"#2f5293"}
 {"_id":"2fIBGDk0pgxCZiri","name":"Horses","type":"Actor","sort":3400000,"flags":{},"parent":"42MP0RQ6zQ5WdDMr","sorting":"a","color":""}
+{"_id":"2rLWkx0dlQ5TUaHT","name":"Mirror of Desire","type":"Actor","parent":null,"sorting":"a","sort":7050000,"color":"#a45687","flags":{}}
 {"_id":"36SUbtT2SPMd4EgL","name":"Fey","type":"Actor","parent":"hrUr240kVLhmySwb","sorting":"a","sort":200000,"color":"#3c8b45","flags":{}}
 {"name":"New Careers","type":"JournalEntry","sort":9400000,"flags":{},"parent":"NOyJwiypgeV7mEJh","sorting":"a","color":"#561515","_id":"37Ihvki36rUiqOZt"}
 {"_id":"3D5AeQXPQFECRFtw","name":"Research","type":"JournalEntry","parent":null,"sorting":"a","sort":1100000,"color":"#544131","flags":{}}
