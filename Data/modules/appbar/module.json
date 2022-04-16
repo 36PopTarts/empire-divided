@@ -1,0 +1,27 @@
+{
+  "name": "appbar",
+  "title": "Appbar",
+  "description": "A bar that tracks open windows/apps for Foundry VTT as well as many other ui features",
+  "author": "Xaukael",
+  "authors": [],
+  "url": "https://github.com/xaukael/taskbar/",
+  "flags": {},
+  "version": "0.1.4",
+  "minimumCoreVersion": "0.8.9",
+  "compatibleCoreVersion": "9",
+  "scripts": [
+    "appbar.js"
+  ],
+  "esmodules": [],
+  "styles": [],
+  "languages": [],
+  "packs": [],
+  "system": [],
+  "dependencies": [],
+  "socket": false,
+  "manifest": "https://github.com/xaukael/taskbar/raw/main/module.json",
+  "download": "https://github.com/xaukael/taskbar/raw/main/appbar.zip",
+  "protected": false,
+  "coreTranslation": false,
+  "library": false
+}
