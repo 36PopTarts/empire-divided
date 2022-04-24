@@ -66,6 +66,16 @@
       "absPath": "D:\\empire-divided\\Data\\worlds\\empire-divided\\packs\\old-npcs.db",
       "type": "Actor",
       "private": false
+    },
+    {
+      "label": "Old Monsters",
+      "type": "Actor",
+      "name": "old-monsters",
+      "path": "packs/old-monsters.db",
+      "system": "wfrp4e",
+      "package": "world",
+      "entity": "Actor",
+      "private": false
     }
   ],
   "system": "wfrp4e",

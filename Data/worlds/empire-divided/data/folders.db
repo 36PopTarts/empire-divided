@@ -15,7 +15,6 @@
 {"_id":"2bNq6ylCsjbXjYBX","name":"Knight of the Realm","type":"Item","sort":4400000,"flags":{},"parent":"nG3gkFYEAmqrI5fy","sorting":"a","color":"#2f5293"}
 {"_id":"2fIBGDk0pgxCZiri","name":"Horses","type":"Actor","sort":3400000,"flags":{},"parent":"42MP0RQ6zQ5WdDMr","sorting":"a","color":""}
 {"_id":"2rLWkx0dlQ5TUaHT","name":"Mirror of Desire","type":"Actor","parent":"c73wsFFS2dVYSKUP","sorting":"a","sort":200000,"color":"#a45687","flags":{}}
-{"_id":"36SUbtT2SPMd4EgL","name":"Fey","type":"Actor","parent":"hrUr240kVLhmySwb","sorting":"a","sort":200000,"color":"#3c8b45","flags":{}}
 {"name":"New Careers","type":"JournalEntry","sort":9400000,"flags":{},"parent":"NOyJwiypgeV7mEJh","sorting":"a","color":"#561515","_id":"37Ihvki36rUiqOZt"}
 {"_id":"3D5AeQXPQFECRFtw","name":"Research","type":"JournalEntry","parent":null,"sorting":"a","sort":1100000,"color":"#544131","flags":{}}
 {"_id":"3inZgCNdZwR3yWXW","name":"General Endeavours","type":"JournalEntry","sort":2500000,"flags":{"wfrp4e":{"initialization-parent":"Endeavours"}},"parent":"5PMBVwnydUMSobIr","sorting":"m","color":""}
@@ -121,7 +120,6 @@
 {"name":"Holzenauer Potions","type":"Item","parent":"EbA4zGI5h2S8I6qQ","sorting":"a","sort":0,"color":null,"flags":{},"_id":"RrQ7ZV24F8HRIYO9"}
 {"name":"Horses","type":"RollTable","sort":1600000,"flags":{},"parent":"tIVl1PXcFSPDwlNN","sorting":"a","color":"","_id":"SEtGlOTo2pYJ6w0T"}
 {"_id":"SV4wmXUvuCNwQ0Nc","name":"Magic","type":"JournalEntry","sort":200000,"flags":{},"parent":"sIr7875W6CLmlLOg","sorting":"m","color":"#6c6217"}
-{"_id":"SlxwzuhpKRAzqIBH","name":"Generic","type":"Actor","parent":"hrUr240kVLhmySwb","sorting":"a","sort":300000,"color":"#542121","flags":{}}
 {"name":"Random Equipment","type":"RollTable","sort":null,"flags":{},"parent":null,"sorting":"a","color":"","_id":"SsnU0RAudPtByTXv"}
 {"name":"3e","type":"Actor","sort":2900000,"flags":{},"parent":"81ZFw4Rjgz144G8Q","sorting":"a","color":"","_id":"ThzZuCMjaxBaJ21M"}
 {"name":"Daggers","type":"Item","sort":null,"flags":{},"parent":"FFQANC5sa5CMDx9k","sorting":"a","color":"#617f89","_id":"ToSlsDalJOZgfZta"}
@@ -161,7 +159,6 @@
 {"_id":"aRmSqkvVtkWdU9av","name":"Dogs of War","type":"Actor","sort":3000000,"flags":{},"parent":"81ZFw4Rjgz144G8Q","sorting":"a","color":"#db8000"}
 {"_id":"aodo7JMHjKV3BHhd","name":"Saponatheims","type":"Actor","sort":300000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#2a142e"}
 {"name":"Wood Elves","type":"Item","parent":"mSls4f8JbUBSZvVU","sorting":"a","sort":0,"color":"#466d31","flags":{},"_id":"bUsBY20KZ55kL0D1"}
-{"name":"Spites","type":"Actor","parent":"36SUbtT2SPMd4EgL","sorting":"a","sort":0,"color":null,"flags":{},"_id":"bbtyy2H4TEv1xGOL"}
 {"_id":"bkvAD2bw3nvte6tw","name":"Combat Actions Test","type":"Item","parent":null,"sorting":"a","sort":4000000,"color":"#4f613d","flags":{}}
 {"_id":"c73wsFFS2dVYSKUP","name":"To Use Later","type":"Actor","sort":6850000,"flags":{},"parent":null,"sorting":"m","color":""}
 {"_id":"c8pB03MJECRvVVdb","name":"Combat","type":"JournalEntry","parent":"KBFMpqeeMFWhdpSI","sorting":"a","sort":2300000,"color":"","flags":{"wfrp4e":{"initialization-parent":"Rules"}}}
@@ -193,7 +190,6 @@
 {"_id":"iydq3xyNvZyEGeMV","name":"Monsters","type":"JournalEntry","parent":null,"sorting":"a","sort":1600000,"color":null,"flags":{}}
 {"_id":"j6aYmRuuLTSkdIOY","name":"Weather","type":"RollTable","sort":350000,"flags":{},"parent":null,"sorting":"a","color":"#636363"}
 {"name":"Ogres","type":"Item","sort":3200000,"flags":{},"parent":"mSls4f8JbUBSZvVU","sorting":"a","color":"#452b07","_id":"jA9L6hovfMAmdBS7"}
-{"_id":"jCsq7QcGsc26NyXk","name":"Griscourt","type":"Actor","parent":"hrUr240kVLhmySwb","sorting":"a","sort":400000,"color":"#5c5c5c","flags":{}}
 {"name":"Alcohol Bonuses","type":"Item","parent":"v9tiL1bRoEF5secs","sorting":"a","sort":0,"color":null,"flags":{},"_id":"jFehLs99tHw9sS8j"}
 {"name":"Artisan's Quarter","type":"JournalEntry","sort":4200000,"flags":{},"parent":"nYrlPwQwhU9yHNZz","sorting":"a","color":"","_id":"jLCpRyf3Tm13Y85D"}
 {"_id":"jOdnLBXpaX7LCdF0","name":"Mountains, Foothills, and Vorbergland","type":"JournalEntry","sort":100000,"flags":{"wfrp4e":{"initialization-parent":"Reikland"}},"parent":"J8dQ6pBcs8qRN8Bk","sorting":"m","color":"#454547"}
@@ -227,10 +223,8 @@
 {"_id":"oOXl4e5j2ZPMaFeU","name":"Dog Career","type":"Item","sort":4300000,"flags":{},"parent":"nG3gkFYEAmqrI5fy","sorting":"a","color":"#43230e"}
 {"name":"Cult Magus of Tzeentch","type":"Item","sort":1900000,"flags":{},"parent":"FH46SuKDUeaO7cfJ","sorting":"a","color":"#3a3f64","_id":"oi6w4QwvECER3vjX"}
 {"name":"Black Rock","type":"JournalEntry","sort":4400000,"flags":{},"parent":"nYrlPwQwhU9yHNZz","sorting":"a","color":"","_id":"p6fgHx1swSlMc8hH"}
-{"_id":"pBcsC5Tcufh4rpsg","name":"Baldemar - Knight Errant","type":"Actor","parent":"hrUr240kVLhmySwb","sorting":"a","sort":700000,"color":"#263450","flags":{}}
 {"name":"Loren","type":"Scene","parent":"ZYJs0xuxJXrhmCiw","sorting":"a","sort":0,"color":null,"flags":{},"_id":"pUWNQY1hK2lEepBf"}
 {"name":"Slaughter in Spittlefeld","type":"JournalEntry","sort":7900000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#662900","_id":"pdvIHQsjlpM0hC2f"}
-{"name":"Athel Loren Encounters","type":"Actor","parent":"hrUr240kVLhmySwb","sorting":"a","sort":0,"color":null,"flags":{},"_id":"q8VSdmvfVfYBrVz7"}
 {"_id":"qZ0nY1rzfkhj07wW","name":"Loot","type":"Item","sort":1200000,"flags":{},"parent":"lryP0lc1Adinz7aR","sorting":"a","color":"#dba100"}
 {"name":"Grey Wizard","type":"Item","sort":4800000,"flags":{},"parent":"nG3gkFYEAmqrI5fy","sorting":"a","color":"#4f4f4f","_id":"qbkx51Ly9LkVf0vN"}
 {"name":"Horses","type":"Actor","parent":"MG5gpyUtLHg6OSfG","sorting":"a","sort":0,"color":null,"flags":{},"_id":"qkMMTzLjFiDTDYtu"}
@@ -272,3 +266,4 @@
 {"_id":"yrVnNPRyDRk4Ku57","name":"Travel Endeavours","type":"JournalEntry","sort":100000,"flags":{},"parent":"IAn7gAevS1Z5CnKd","sorting":"a","color":"#634231"}
 {"_id":"zQRDhzWh9uTwnQqe","name":"Class Endeavours","type":"JournalEntry","sort":2600000,"flags":{"wfrp4e":{"initialization-parent":"Endeavours"}},"parent":"5PMBVwnydUMSobIr","sorting":"m","color":""}
 {"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
+{"_id":"lzflRKyLfHkcsNPL","name":"Lord of Ubersreik","type":"JournalEntry","parent":null,"sorting":"m","sort":1700000,"color":"#36317c","flags":{}}
