@@ -207,7 +207,7 @@
 {"name":"Burn After Printing","type":"JournalEntry","sort":6600000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#7a0000","_id":"ldzUzGoxkrif2YcZ"}
 {"name":"Hand Weapons","type":"Item","sort":null,"flags":{},"parent":"FFQANC5sa5CMDx9k","sorting":"a","color":"#742525","_id":"lpBts3B61tVnFic7"}
 {"_id":"lryP0lc1Adinz7aR","name":"Misc Items","type":"Item","sort":100000,"flags":{},"parent":null,"sorting":"a","color":"#7c1d1d"}
-{"_id":"lzflRKyLfHkcsNPL","name":"Lord of Ubersreik","type":"JournalEntry","parent":null,"sorting":"a","sort":1700000,"color":"#36317c","flags":{}}
+{"_id":"lzflRKyLfHkcsNPL","name":"Lord of Ubersreik","type":"JournalEntry","parent":null,"sorting":"m","sort":1700000,"color":"#36317c","flags":{}}
 {"_id":"mDtj9tJuEIkmGvsz","name":"The Imperial Plenipotentiary","type":"JournalEntry","sort":8400000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#2f561a"}
 {"_id":"mF2lmkFMCmamukcB","name":"Athel Loren","type":"JournalEntry","parent":"tVm4VHOzL3Kt6qVy","sorting":"a","sort":8900000,"color":"#2d4724","flags":{}}
 {"_id":"mPZbMEHqQupSD01M","name":"Head Armour","type":"Item","sort":300000,"flags":{},"parent":"XCAwjWgOHbC2T263","sorting":"a","color":"#2b5e2f"}
@@ -266,4 +266,3 @@
 {"_id":"yrVnNPRyDRk4Ku57","name":"Travel Endeavours","type":"JournalEntry","sort":100000,"flags":{},"parent":"IAn7gAevS1Z5CnKd","sorting":"a","color":"#634231"}
 {"_id":"zQRDhzWh9uTwnQqe","name":"Class Endeavours","type":"JournalEntry","sort":2600000,"flags":{"wfrp4e":{"initialization-parent":"Endeavours"}},"parent":"5PMBVwnydUMSobIr","sorting":"m","color":""}
 {"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
-{"_id":"lzflRKyLfHkcsNPL","name":"Lord of Ubersreik","type":"JournalEntry","parent":null,"sorting":"m","sort":1700000,"color":"#36317c","flags":{}}
