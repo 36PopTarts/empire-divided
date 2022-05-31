@@ -2,12 +2,15 @@
   "name": "test",
   "title": "test",
   "description": "",
+  "authors": [],
+  "flags": {},
   "version": "1.0.0",
   "minimumCoreVersion": "0.0.0",
   "compatibleCoreVersion": "1.0.0",
   "scripts": [],
   "esmodules": [],
   "styles": [],
+  "languages": [],
   "packs": [
     {
       "label": "Generic NPCs",
@@ -16,26 +19,18 @@
       "path": "packs/generic-npcs.db",
       "system": "wfrp4e",
       "package": "world",
-      "absPath": "D:\\FoundryVTT\\Data\\worlds\\test\\packs\\generic-npcs.db"
+      "absPath": "D:\\FoundryVTT\\Data\\worlds\\test\\packs\\generic-npcs.db",
+      "type": "Actor",
+      "private": false
     }
   ],
-  "languages": [],
-  "authors": [],
-  "keywords": [],
-  "socket": false,
-  "url": "",
-  "manifest": "",
-  "download": "",
-  "license": "",
-  "readme": "",
-  "bugs": "",
-  "changelog": "",
-  "background": "Images/Illustrations/the-rascals-mapsingame2.jpg",
   "system": "wfrp4e",
-  "coreVersion": "0.7.9",
-  "systemVersion": "3.4.1",
-  "nextSession": null,
-  "availability": 0,
-  "unavailable": false,
-  "id": "test"
+  "dependencies": [],
+  "socket": false,
+  "protected": false,
+  "background": "Images/Illustrations/the-rascals-mapsingame2.jpg",
+  "coreVersion": "9.255",
+  "resetKeys": false,
+  "safeMode": false,
+  "systemVersion": "5.2.0"
 }
