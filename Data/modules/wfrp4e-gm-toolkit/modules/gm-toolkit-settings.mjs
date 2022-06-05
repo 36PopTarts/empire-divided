@@ -3,6 +3,7 @@ import GMToolkitAdvantageSettings from "../apps/gm-toolkit-advantage-settings.js
 import GMToolkitDarkWhispersSettings from "../apps/gm-toolkit-darkwhispers-settings.js";
 import GMToolkitSessionManagementSettings from "../apps/gm-toolkit-session-management-settings.js";
 import GMToolkitVisionSettings from "../apps/gm-toolkit-vision-settings.js";
+import GMToolkitMaintenanceWrapper from "../apps/gm-toolkit-maintenance.js";
 
 export default class GMToolkitSettings {
 
@@ -21,9 +22,43 @@ export default class GMToolkitSettings {
             type: GMToolkitAdvantageSettings,   
             restricted: true                 
         });
+        // Automate advantage for winning or losing an opposed test
+        game.settings.register(GMToolkit.MODULE_ID, "automateOpposedTestAdvantage", {
+            name: "GMTOOLKIT.Settings.Advantage.Automate.OpposedTest.name",
+            hint: "GMTOOLKIT.Settings.Advantage.Automate.OpposedTest.hint",
+            scope: "world",
+            config: false,
+            default: true,
+            type: Boolean,
+            onChange: GMToolkitSettings.debouncedReload,
+            feature: "advantage"  
+        });
+        // Automate advantage for outmanouvring and losing wounds from unopposed tests
         game.settings.register(GMToolkit.MODULE_ID, "automateDamageAdvantage", {
-            name: "GMTOOLKIT.Settings.Advantage.Automate.OpposedDamage.name",
-            hint: "GMTOOLKIT.Settings.Advantage.Automate.OpposedDamage.hint",
+            name: "GMTOOLKIT.Settings.Advantage.Automate.UnopposedDamage.name",
+            hint: "GMTOOLKIT.Settings.Advantage.Automate.UnopposedDamage.hint",
+            scope: "world",
+            config: false,
+            default: true,
+            type: Boolean,
+            onChange: GMToolkitSettings.debouncedReload,
+            feature: "advantage"  
+        });
+        // Clear advantage when suffering a condition
+        game.settings.register(GMToolkit.MODULE_ID, "automateConditionAdvantage", {
+            name: "GMTOOLKIT.Settings.Advantage.Automate.SufferCondition.name",
+            hint: "GMTOOLKIT.Settings.Advantage.Automate.SufferCondition.hint",
+            scope: "world",
+            config: false,
+            default: true,
+            type: Boolean,
+            onChange: GMToolkitSettings.debouncedReload,
+            feature: "advantage"  
+        });
+        // Prompt to lose advantage when not gained in a round
+        game.settings.register(GMToolkit.MODULE_ID, "promptMomentumLoss", {
+            name: "GMTOOLKIT.Settings.Advantage.Automate.LoseMomentum.name",
+            hint: "GMTOOLKIT.Settings.Advantage.Automate.LoseMomentum.hint",
             scope: "world",
             config: false,
             default: true,
@@ -260,6 +295,16 @@ export default class GMToolkitSettings {
             default: false,
             type: Boolean,
             feature: "grouptests" 
+        });
+
+        // Menu for Module Content Management
+        game.settings.registerMenu(GMToolkit.MODULE_ID, "menuMaintenance", {
+            name: "GMTOOLKIT.Settings.Maintenance.menu.name",
+            label: "GMTOOLKIT.Settings.Maintenance.menu.label",      
+            hint: "GMTOOLKIT.Settings.Maintenance.menu.hint",
+            icon: "fas fa-cog",               
+            type: GMToolkitMaintenanceWrapper,   
+            restricted: true                 
         });
  
     }

@@ -65,7 +65,7 @@
 {"_id":"UTfOP9PFgxd7eA23","key":"core.tokenDragPreview","value":"false"}
 {"_id":"VydyA0P3zORcIhCi","key":"wfrp4e.weaponLength","value":"false"}
 {"_id":"W0mCfULJXgyg8QSI","key":"weather-control.weatherData","value":"{\"version\":1,\"currentDate\":{\"raw\":{\"year\":2512,\"month\":8,\"weekdays\":[\"Wellentag\",\"Aubentag\",\"Marktag\",\"Backertag\",\"Bezahltag\",\"Konistag\",\"Angestag\",\"Festag\"],\"currentWeekdayIndex\":4,\"day\":8,\"hour\":22,\"minute\":15,\"second\":42},\"display\":{\"fullDate\":\"Erntezeit 08, 2512 IC\",\"time\":\"22:15:42\"}},\"climate\":{\"isVolcanic\":false,\"name\":\"temperate\",\"humidity\":0,\"baseTemperature\":0,\"temperatureRange\":{\"max\":100,\"min\":-5}},\"tempRange\":{\"max\":90,\"min\":-20},\"temp\":44,\"lastTemp\":44,\"precipitation\":\"<b>Extreme Weather!</b> <hr>Baseball-sized hail\"}"}
-{"_id":"XdF7KActkJ1faUwO","key":"core.time","value":"86835536136"}
+{"_id":"XdF7KActkJ1faUwO","key":"core.time","value":"86835536142"}
 {"_id":"YI1ukkg6FBfdlDTP","key":"combat-carousel.imageType","value":"\"token\""}
 {"key":"wfrp4e.mooConditionTriggers","value":"false","_id":"YOYb3LcFvuoZzfiX"}
 {"_id":"ZKK5KwKolItF0byY","key":"about-time.store","value":"{\"_eventQueue\":{\"size\":0,\"compare\":\"function (a, b) {\\n    if (a._time !== b._time)\\n        return a._time < b._time;\\n    return a._uid < b._uid;\\n}\",\"array\":[]},\"_activeCombats\":[]}"}

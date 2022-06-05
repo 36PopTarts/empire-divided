@@ -1,7 +1,3 @@
-/* Yanks every player into the scene that the GM is on. 
- * Optionally activates the scene, depending on module setting. 
- */
-
 pullEveryoneToScene();
 
 async function pullEveryoneToScene() {
@@ -22,11 +18,11 @@ async function pullEveryoneToScene() {
                     </form>`,
                 buttons: {
                     activate: {
-                        label: "Activate Scene",
+                        label: (game.i18n.localize('GMTOOLKIT.Dialog.ScenePullActivate.ActivateScene')),
                         callback: async () => pullToScene(true)
                         },
                     pull: {
-                        label: "Pull Only",
+                        label: (game.i18n.localize('GMTOOLKIT.Dialog.ScenePullActivate.PullOnly')),
                         callback: async () => pullToScene(false)
                         },
                 },
@@ -61,3 +57,11 @@ async function pullEveryoneToScene() {
         }
     }
 };
+
+/* ==========
+* MACRO: Pull Everyone to Scene
+* VERSION: 0.9.3
+* UPDATED: 2022-05-11
+* DESCRIPTION: Yanks every player into the scene that the GM is on. 
+* TIP: Optionally activate (or prompt to activate) the scene through Configure Session Options in module settings. 
+========== */

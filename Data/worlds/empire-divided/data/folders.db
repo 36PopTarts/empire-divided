@@ -17,6 +17,7 @@
 {"_id":"2rLWkx0dlQ5TUaHT","name":"Mirror of Desire","type":"Actor","parent":"c73wsFFS2dVYSKUP","sorting":"a","sort":200000,"color":"#a45687","flags":{}}
 {"name":"New Careers","type":"JournalEntry","sort":9400000,"flags":{},"parent":"NOyJwiypgeV7mEJh","sorting":"a","color":"#561515","_id":"37Ihvki36rUiqOZt"}
 {"_id":"3D5AeQXPQFECRFtw","name":"Research","type":"JournalEntry","parent":null,"sorting":"a","sort":1100000,"color":"#544131","flags":{}}
+{"name":"Basic","type":"Item","parent":"BT6aLV9abM8rctf2","sorting":"a","sort":0,"color":null,"flags":{},"_id":"3KwkCVJwBmeF6OIM"}
 {"_id":"3inZgCNdZwR3yWXW","name":"General Endeavours","type":"JournalEntry","sort":2500000,"flags":{"wfrp4e":{"initialization-parent":"Endeavours"}},"parent":"5PMBVwnydUMSobIr","sorting":"m","color":""}
 {"_id":"3qMaJLYYtadKbkj4","name":"Jungfreuds","type":"Actor","sort":100000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#6c8bbc"}
 {"name":"NPC Talents","type":"Item","sort":2000000,"flags":{},"parent":"B1NGEkUpOPYjZbtf","sorting":"a","color":"#056121","_id":"3x3XrX6xuPBwuvs9"}
@@ -129,7 +130,9 @@
 {"name":"Jousting","type":"RollTable","sort":1300000,"flags":{},"parent":null,"sorting":"a","color":"#c28400","_id":"U9EnW4uowaJUTjig"}
 {"name":"The South Bank","type":"JournalEntry","sort":3800000,"flags":{},"parent":"wV26wyVeod4mutle","sorting":"a","color":"","_id":"UmSaIJWnFMJOUGYD"}
 {"name":"Ale and Beer","type":"Item","sort":4600000,"flags":{},"parent":"OwpreDOBVSjPAjKX","sorting":"a","color":"#916b40","_id":"Urza34tsordnjRxY"}
+{"name":"Brawling","type":"Item","parent":"BT6aLV9abM8rctf2","sorting":"a","sort":0,"color":null,"flags":{},"_id":"UzmpEMdXwnWZ3iCK"}
 {"name":"Altdorf Entertainments","type":"RollTable","sort":500000,"flags":{},"parent":null,"sorting":"a","color":"#750000","_id":"V8ajfOwSmYQpB3uL"}
+{"name":"Polearms","type":"Item","parent":"BT6aLV9abM8rctf2","sorting":"a","sort":0,"color":null,"flags":{},"_id":"VSX5xd8gmLdKEa3A"}
 {"name":"Dawihafen","type":"JournalEntry","sort":4500000,"flags":{},"parent":"nYrlPwQwhU9yHNZz","sorting":"a","color":"","_id":"VmNg2NFg4nLcAIjg"}
 {"name":"Altdorf Endeavours","type":"JournalEntry","sort":5700000,"flags":{},"parent":"5PMBVwnydUMSobIr","sorting":"a","color":"#411010","_id":"W7hZ5KseAjno0hrA"}
 {"name":"Blackpowder Nights","type":"JournalEntry","sort":7300000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#404040","_id":"WAxihFsdmCGhdzji"}
@@ -159,6 +162,7 @@
 {"name":"Morrslieb","type":"RollTable","sort":1400000,"flags":{},"parent":"tIVl1PXcFSPDwlNN","sorting":"a","color":"#2d5a20","_id":"ZzLCWpKskz28YO3B"}
 {"_id":"aRmSqkvVtkWdU9av","name":"Dogs of War","type":"Actor","sort":3000000,"flags":{},"parent":"81ZFw4Rjgz144G8Q","sorting":"a","color":"#db8000"}
 {"_id":"aodo7JMHjKV3BHhd","name":"Saponatheims","type":"Actor","sort":300000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#2a142e"}
+{"name":"Fencing","type":"Item","parent":"BT6aLV9abM8rctf2","sorting":"a","sort":0,"color":null,"flags":{},"_id":"bBgwK4YjFbasCDZd"}
 {"name":"Wood Elves","type":"Item","parent":"mSls4f8JbUBSZvVU","sorting":"a","sort":0,"color":"#466d31","flags":{},"_id":"bUsBY20KZ55kL0D1"}
 {"_id":"bkvAD2bw3nvte6tw","name":"Combat Actions Test","type":"Item","parent":null,"sorting":"a","sort":4000000,"color":"#4f613d","flags":{}}
 {"_id":"c73wsFFS2dVYSKUP","name":"To Use Later","type":"Actor","sort":6850000,"flags":{},"parent":null,"sorting":"m","color":""}
@@ -183,6 +187,7 @@
 {"_id":"gKCITmniRgrsfVMl","name":"Holzenauers","type":"Actor","sort":700000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#7d1212"}
 {"_id":"gfvxW95YPpkwZLnb","name":"Blessed Saal","type":"JournalEntry","sort":8600000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#505828"}
 {"_id":"hRh4ENgO4oLtD0If","name":"Parravon","type":"JournalEntry","parent":"tVm4VHOzL3Kt6qVy","sorting":"a","sort":8800000,"color":"#4f4f4f","flags":{}}
+{"name":"Parrying","type":"Item","parent":"BT6aLV9abM8rctf2","sorting":"a","sort":0,"color":null,"flags":{},"_id":"hUZtlfW9p5CmQid4"}
 {"_id":"hrUr240kVLhmySwb","name":"Parravon","type":"Actor","parent":null,"sorting":"a","sort":6950000,"color":"#cc8100","flags":{}}
 {"name":"Rural","type":"Scene","sort":500000,"flags":{},"parent":"ifqvWppW117y2zyP","sorting":"a","color":"#3f6232","_id":"iSmypdWiB2z1UVCM"}
 {"name":"Backgrounds","type":"Scene","sort":100000,"flags":{},"parent":null,"sorting":"a","color":"#335021","_id":"ifqvWppW117y2zyP"}
@@ -265,5 +270,6 @@
 {"_id":"y2b8VuEsVN1UFiv9","name":"Careers","type":"JournalEntry","sort":100000,"flags":{},"parent":"Kft8Ng9HfLOd35El","sorting":"a","color":"#694121"}
 {"name":"NPCs","type":"JournalEntry","parent":"jsAKzmzu9XIh3Q9e","sorting":"a","sort":0,"color":null,"flags":{},"_id":"yB7s0OOrS3UGCVZv"}
 {"_id":"yrVnNPRyDRk4Ku57","name":"Travel Endeavours","type":"JournalEntry","sort":100000,"flags":{},"parent":"IAn7gAevS1Z5CnKd","sorting":"a","color":"#634231"}
+{"name":"Cavalry","type":"Item","parent":"BT6aLV9abM8rctf2","sorting":"a","sort":0,"color":null,"flags":{},"_id":"yvb0eUmeiZAZjNWL"}
 {"_id":"zQRDhzWh9uTwnQqe","name":"Class Endeavours","type":"JournalEntry","sort":2600000,"flags":{"wfrp4e":{"initialization-parent":"Endeavours"}},"parent":"5PMBVwnydUMSobIr","sorting":"m","color":""}
 {"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
