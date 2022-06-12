@@ -15,7 +15,7 @@ exports.default = {
 const Assert = (value) => (0, assert_1.default)(value);
 exports.Assert = Assert;
 
-},{"assert":18}],2:[function(require,module,exports){
+},{"assert":23}],2:[function(require,module,exports){
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -33,6 +33,22 @@ const PreloadTemplates = async () => {
 exports.default = PreloadTemplates;
 
 },{"./Globals":1}],3:[function(require,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class HtmlHelpers {
+    static getHtmlInputStringValue(input, document) {
+        return document.getElementById(input).value;
+    }
+    static getHtmlInputNumberValue(input, document) {
+        return parseInt(document.getElementById(input).value, 10);
+    }
+    static getHtmlInputBooleanValue(input, document) {
+        return document.getElementById(input).checked;
+    }
+}
+exports.default = HtmlHelpers;
+
+},{}],4:[function(require,module,exports){
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -81,7 +97,7 @@ const ToConsole = (str, col, bold) => {
 };
 exports.default = Logger;
 
-},{"../Globals":1,"color":30}],4:[function(require,module,exports){
+},{"../Globals":1,"color":35}],5:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -158,8 +174,7 @@ class MerchantSettings {
                     config: true,
                     type: String,
                     choices: MerchantSettings.getCompendiumnsChoices(),
-                    default: "none",
-                    onChange: val => this.changeCompendium(val),
+                    default: "none"
                 }]
         ];
     }
@@ -193,7 +208,7 @@ class MerchantSettings {
 }
 exports.default = MerchantSettings;
 
-},{"../Globals":1,"./Logger":3}],5:[function(require,module,exports){
+},{"../Globals":1,"./Logger":4}],6:[function(require,module,exports){
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -205,6 +220,7 @@ const MerchantSheet_1 = __importDefault(require("./merchant/MerchantSheet"));
 const PreloadTemplates_1 = __importDefault(require("./PreloadTemplates"));
 const MerchantSheetNPCHelper_1 = __importDefault(require("./merchant/MerchantSheetNPCHelper"));
 const MerchantSheetNPCHelper_2 = __importDefault(require("./merchant/MerchantSheetNPCHelper"));
+const PacketType_1 = __importDefault(require("./merchant/model/PacketType"));
 function getTypesForSheet() {
     if (game.system.id === 'sfrpg') {
         return ['npc', 'npc2'];
@@ -238,12 +254,20 @@ Hooks.once("setup", () => {
     console.log(records);
     // @ts-ignore
     socket.on('module.merchantsheetnpc', (packet) => {
+        var _a;
         // @ts-ignore
-        if (!game.user.isGM) {
+        if (!((_a = game.user) === null || _a === void 0 ? void 0 : _a.isGM) || packet === undefined) {
             return;
         }
-        MerchantSheetNPCHelper_1.default.updateActorWithPacket(packet);
-        console.log("test", packet); // expected: "foo bar bat"
+        if (packet.type === PacketType_1.default.MERCHANT_CURRENCY) {
+            let merchantPacket = packet;
+            console.log("currency packet", packet); // expected: "foo bar bat"
+            MerchantSheetNPCHelper_2.default.updateCurrencyWithPacket(merchantPacket);
+        }
+        else if (packet.type === PacketType_1.default.MOVE_ITEMS) {
+            let moveItemsPacket = packet;
+            MerchantSheetNPCHelper_1.default.updateActorWithPacket(moveItemsPacket);
+        }
     });
     Logger_1.default.Log("Template module is being setup.");
 });
@@ -254,7 +278,7 @@ Hooks.once("ready", () => {
     Logger_1.default.Ok("Template module is now ready.");
 });
 
-},{"./PreloadTemplates":2,"./Utils/Logger":3,"./Utils/MerchantSettings":4,"./merchant/MerchantSheet":6,"./merchant/MerchantSheetNPCHelper":7,"csv-parse/lib/sync":33}],6:[function(require,module,exports){
+},{"./PreloadTemplates":2,"./Utils/Logger":4,"./Utils/MerchantSettings":5,"./merchant/MerchantSheet":7,"./merchant/MerchantSheetNPCHelper":8,"./merchant/model/PacketType":14,"csv-parse/lib/sync":38}],7:[function(require,module,exports){
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -383,15 +407,16 @@ class MerchantSheet extends ActorSheet {
             sheetData.isGM = false;
         }
         sheetData.isPermissionShown = sheetData.isGM && currencyCalculator.isPermissionShown();
-        let moduleName = "merchantsheetnpc";
-        let priceModifier = this.actor.getFlag(moduleName, "priceModifier");
-        sheetData.infinity = this.actor.getFlag(moduleName, "infinity");
-        sheetData.isService = this.actor.getFlag(moduleName, "service");
-        sheetData.isBuyStack = !this.actor.getFlag(moduleName, "hideBuyStack");
-        let stackModifier = this.actor.getFlag(moduleName, "stackModifier");
+        sheetData.limitedCurrency = this.actor.getFlag(Globals_1.default.ModuleName, "limitedCurrency");
+        let priceModifier = this.actor.getFlag(Globals_1.default.ModuleName, "priceModifier");
+        sheetData.infinity = this.actor.getFlag(Globals_1.default.ModuleName, "infinity");
+        sheetData.isService = this.actor.getFlag(Globals_1.default.ModuleName, "service");
+        sheetData.isBuyStack = !this.actor.getFlag(Globals_1.default.ModuleName, "hideBuyStack");
+        let stackModifier = this.actor.getFlag(Globals_1.default.ModuleName, "stackModifier");
         sheetData.totalItems = this.actor.data.items.size;
         sheetData.priceModifier = priceModifier;
         sheetData.stackModifier = stackModifier;
+        sheetData.currencies = currencyCalculator.merchantCurrency(this.actor);
         sheetData.sections = currencyCalculator.prepareItems(this.actor.itemTypes);
         sheetData.merchant = merchant;
         sheetData.owner = sheetData.isGM;
@@ -492,6 +517,7 @@ class MerchantSheet extends ActorSheet {
         // @ts-ignore
         html.find('.change-quantity-all').on('click', ev => this.changeQuantityForItems(ev));
         html.find('.merchant-settings').on('click', ev => this.merchantSettingChange(ev));
+        html.find('.currency-update').on('click', ev => this.updateMerchantCurrencies(ev));
         // html.find('.merchant-settings').change(ev => this.merchantSettingChange(ev));
         // html.find('.update-inventory').on('click',ev => this.merchantInventoryUpdate(ev));
         //
@@ -515,6 +541,7 @@ class MerchantSheet extends ActorSheet {
         Logger_1.default.Log("infinity: ", this.actor.getFlag(Globals_1.default.ModuleName, "infinity"), this.actor);
         const template_data = {
             disableSell: this.actor.getFlag(Globals_1.default.ModuleName, "disableSell") ? "checked" : "",
+            limitedCurrency: this.actor.getFlag(Globals_1.default.ModuleName, "limitedCurrency") ? "checked" : "",
             keepDepleted: this.actor.getFlag(Globals_1.default.ModuleName, "keepDepleted") ? "checked" : "",
             service: this.actor.getFlag(Globals_1.default.ModuleName, "service") ? "checked" : "",
             hideBuyStack: this.actor.getFlag(Globals_1.default.ModuleName, "hideBuyStack") ? "checked" : "",
@@ -530,6 +557,7 @@ class MerchantSheet extends ActorSheet {
                     label: game.i18n.localize('MERCHANTNPC.update'),
                     callback: () => {
                         this.actor.setFlag(Globals_1.default.ModuleName, "disableSell", MerchantSheetNPCHelper_1.default.getElementById("disable-sell").checked);
+                        this.actor.setFlag(Globals_1.default.ModuleName, "limitedCurrency", MerchantSheetNPCHelper_1.default.getElementById("limited-currency").checked);
                         this.actor.setFlag(Globals_1.default.ModuleName, "keepDepleted", MerchantSheetNPCHelper_1.default.getElementById("keep-depleted").checked);
                         this.actor.setFlag(Globals_1.default.ModuleName, "service", MerchantSheetNPCHelper_1.default.getElementById("service").checked);
                         this.actor.setFlag(Globals_1.default.ModuleName, "hideBuyStack", MerchantSheetNPCHelper_1.default.getElementById("hide-buy-stack").checked);
@@ -542,36 +570,11 @@ class MerchantSheet extends ActorSheet {
                     callback: () => console.log("Merchant sheet | Stack Modifier Cancelled")
                 }
             },
-            default: "two",
+            default: "one",
             close: () => console.log("Merchant sheet | Stack Modifier Closed")
         });
         d.render(true);
     }
-    // private async merchantSettingChange(event: JQuery.ChangeEvent<any, null, any, any>) {
-    // 	event.preventDefault();
-    // 	console.log("Merchant sheet | Merchant settings changed");
-    //
-    // 	const expectedKeys = ["rolltable", "shopQty", "itemQty", "itemQtyLimit", "clearInventory", "itemOnlyOnce"];
-    //
-    // 	let targetKey = event.target.name.split('.')[3];
-    //
-    //
-    // 	if (expectedKeys.indexOf(targetKey) === -1) {
-    // 		console.log(`Merchant sheet | Error changing stettings for "${targetKey}".`);
-    // 		return ui.notifications?.error((<Game>game).i18n.format("MERCHANTNPC.error-changeSettings", {target: targetKey}))
-    // 	}
-    //
-    // 	if (targetKey == "clearInventory" || targetKey == "itemOnlyOnce") {
-    // 		console.log(targetKey + " set to " + event.target.checked);
-    // 		await this.actor.setFlag(Globals.ModuleName, targetKey, event.target.checked);
-    // 	} else if (event.target.value) {
-    // 		console.log(targetKey + " set to " + event.target.value);
-    // 		await this.actor.setFlag(Globals.ModuleName, targetKey, event.target.value);
-    // 	} else {
-    // 		console.log(targetKey + " set to " + event.target.value);
-    // 		await this.actor.unsetFlag(Globals.ModuleName, targetKey);
-    // 	}
-    // }
     onCyclePermissionProficiency(event) {
         event.preventDefault();
         let actorData = this.actor;
@@ -654,14 +657,14 @@ class MerchantSheet extends ActorSheet {
                     callback: () => Logger_1.default.Log("Price Modifier Cancelled")
                 }
             },
-            default: "two",
+            default: "one",
             close: () => Logger_1.default.Log("Price Modifier Closed")
         });
         d.render(true);
     }
     async sellToMerchantModifier(event) {
         event.preventDefault();
-        let buyModifier = await this.actor.getFlag("merchantsheetnpc", "buyModifier");
+        let buyModifier = await this.actor.getFlag(Globals_1.default.ModuleName, "buyModifier");
         if (buyModifier === 'undefined') {
             buyModifier = 0.5;
         }
@@ -694,7 +697,7 @@ class MerchantSheet extends ActorSheet {
                     callback: () => console.log("Merchant sheet | Buy Modifier Cancelled")
                 }
             },
-            default: "two",
+            default: "one",
             close: () => console.log("Merchant sheet | Buy Modifier Closed")
         });
         d.render(true);
@@ -726,7 +729,7 @@ class MerchantSheet extends ActorSheet {
                     callback: () => console.log("Merchant sheet | Stack Modifier Cancelled")
                 }
             },
-            default: "two",
+            default: "one",
             close: () => console.log("Merchant sheet | Stack Modifier Closed")
         });
         d.render(true);
@@ -771,7 +774,7 @@ class MerchantSheet extends ActorSheet {
                     callback: () => console.log("Merchant sheet | Stack Modifier Cancelled")
                 }
             },
-            default: "two",
+            default: "one",
             close: () => console.log("Merchant sheet | Stack Modifier Closed")
         });
         d.render(true);
@@ -857,28 +860,6 @@ class MerchantSheet extends ActorSheet {
                         this.addItemToCollection(item, generatorInput, createItems);
                     }
                 }
-                // 		results = rolltable.results.contents;
-                // 	} else {
-                // 		const rollResult = await rolltable.draw();
-                // 		results = rollResult.results
-                // 	}
-                //
-                // 	for (const drawItem of results) {
-                // 		let drawItemdata: TableResultData = drawItem.data;
-                // 		let collection: string | undefined = drawItemdata.collection
-                //
-                // 		if (collection === undefined) {
-                // 			continue
-                // 		}
-                // 		let compendium = await (<Game>game).packs?.get(collection);
-                // 		if (compendium === undefined) {
-                // 			continue
-                // 		}
-                // 		// @ts-ignore
-                // 		let item: Item = await compendium.getDocument(drawItemdata.resultId)
-                // 		this.addItemToCollection(item, generatorInput, createItems);
-                // 	}
-                // }
             }
         }
         // @ts-ignore
@@ -1054,12 +1035,11 @@ class MerchantSheet extends ActorSheet {
         console.log("Merchant sheet | Buy Item clicked");
         let targetGm = null;
         (_a = game.users) === null || _a === void 0 ? void 0 : _a.forEach((u) => {
-            var _a;
-            if (u.isGM && u.active && u.viewedScene === ((_a = game.user) === null || _a === void 0 ? void 0 : _a.viewedScene)) {
+            if (u.isGM && u.active) {
                 targetGm = u;
             }
         });
-        let allowNoTargetGM = game.settings.get("merchantsheetnpc", "allowNoGM");
+        let allowNoTargetGM = game.settings.get(Globals_1.default.ModuleName, "allowNoGM");
         let gmId = null;
         if (!allowNoTargetGM && !targetGm) {
             Logger_1.default.Log("No Valid GM", allowNoTargetGM);
@@ -1150,7 +1130,7 @@ class MerchantSheet extends ActorSheet {
                     callback: () => console.log("Merchant sheet | Stack Modifier Cancelled")
                 }
             },
-            default: "two",
+            default: "one",
             close: () => console.log("Merchant sheet | Stack Modifier Closed")
         });
         d.render(true);
@@ -1173,6 +1153,9 @@ class MerchantSheet extends ActorSheet {
             updates.push({ _id: itemId, [currencyCalculator.getQuantityKey()]: total });
         });
         actor.updateEmbeddedDocuments("Item", updates);
+    }
+    updateMerchantCurrencies(ev) {
+        currencyCalculator.updateMerchantCurrency(this.actor);
     }
 }
 class QuantityDialog extends Dialog {
@@ -1276,6 +1259,7 @@ Hooks.on('updateActor', async function (actor, options, data) {
 Hooks.on('createActor', async function (actor, options, data) {
     checkInitModifiers(actor);
 });
+// @ts-ignore
 Hooks.on('dropActorSheetData', async function (target, sheet, dragSource, user) {
     var _a;
     let disableSell = target.getFlag(Globals_1.default.ModuleName, "disableSell");
@@ -1332,12 +1316,16 @@ Hooks.on('dropActorSheetData', async function (target, sheet, dragSource, user) 
                             // @ts-ignore
                             let quantity = MerchantSheet.getHtmlInputStringValue("quantity-modifier", document);
                             let itemId = dragSource.data._id;
-                            // addItemToActor(dragSource,target,quantity);
-                            merchantSheetNPC.moveItems(actor, target, [{ itemId, quantity }], true);
                             // @ts-ignore
                             let value = MerchantSheet.getHtmlInputStringValue("quantity-modifier-total", document);
                             // @ts-ignore
-                            merchantSheetNPC.sellItem(target, dragSource, sourceActor, quantity, value);
+                            merchantSheetNPC.sellItem(target, dragSource, sourceActor, quantity, value).then(() => {
+                                merchantSheetNPC.moveItems(actor, target, [{ itemId, quantity }], true);
+                            }).catch(reason => {
+                                var _a;
+                                (_a = ui.notifications) === null || _a === void 0 ? void 0 : _a.error(reason);
+                                console.error(reason, reason.stack);
+                            });
                         }
                     },
                     two: {
@@ -1346,7 +1334,7 @@ Hooks.on('dropActorSheetData', async function (target, sheet, dragSource, user) 
                         callback: () => console.log("Merchant sheet | Price Modifier Cancelled")
                     }
                 },
-                default: "two",
+                default: "one",
                 close: () => console.log("Merchant sheet | Price Modifier Closed")
             });
             d.render(true);
@@ -1355,7 +1343,7 @@ Hooks.on('dropActorSheetData', async function (target, sheet, dragSource, user) 
 });
 exports.default = MerchantSheet;
 
-},{"../Globals":1,"../Utils/Logger":3,"../Utils/MerchantSettings":4,"./MerchantSheetNPCHelper":7,"./model/QuantityChanger":10,"./windows/GeneratorWindow":17,"csv-parse/lib/sync":33}],7:[function(require,module,exports){
+},{"../Globals":1,"../Utils/Logger":4,"../Utils/MerchantSettings":5,"./MerchantSheetNPCHelper":8,"./model/QuantityChanger":15,"./windows/GeneratorWindow":22,"csv-parse/lib/sync":38}],8:[function(require,module,exports){
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -1370,6 +1358,8 @@ const SwadeCurrencyCalculator_1 = __importDefault(require("./systems/SwadeCurren
 const Logger_1 = __importDefault(require("../Utils/Logger"));
 const Wfrp4eCurrencyCalculator_1 = __importDefault(require("./systems/Wfrp4eCurrencyCalculator"));
 const MoveItemsPacket_1 = __importDefault(require("./model/MoveItemsPacket"));
+const MerchantCurrencyPacket_1 = __importDefault(require("./model/MerchantCurrencyPacket"));
+const CurrencyAction_1 = __importDefault(require("./model/CurrencyAction"));
 let currencyCalculator;
 class MerchantSheetNPCHelper {
     static getElementById(elementId) {
@@ -1482,7 +1472,7 @@ class MerchantSheetNPCHelper {
                     callback: () => console.log("Merchant sheet | Change price Cancelled")
                 }
             },
-            default: "two",
+            default: "one",
             close: () => console.log("Merchant sheet | Change price Closed")
         });
         d.render(true);
@@ -1536,7 +1526,8 @@ class MerchantSheetNPCHelper {
         const quantity = currencyCalculator.getQuantity(item.data.data.quantity);
         const infinityActivated = (quantity === Number.MAX_VALUE ? 'checked' : '');
         // @ts-ignore
-        const template_data = { quantity: quantity,
+        const template_data = {
+            quantity: quantity,
             infinity: infinityActivated
         };
         const rendered_html = await renderTemplate(template_file, template_data);
@@ -1550,7 +1541,10 @@ class MerchantSheetNPCHelper {
                     callback: () => {
                         // @ts-ignore
                         if (document.getElementById("quantity-infinity").checked) {
-                            actor.updateEmbeddedDocuments("Item", [{ _id: itemId, [currencyCalculator.getQuantityKey()]: Number.MAX_VALUE }]);
+                            actor.updateEmbeddedDocuments("Item", [{
+                                    _id: itemId,
+                                    [currencyCalculator.getQuantityKey()]: Number.MAX_VALUE
+                                }]);
                         }
                         else {
                             // @ts-ignore
@@ -1568,17 +1562,10 @@ class MerchantSheetNPCHelper {
                     callback: () => console.log("Merchant sheet | Change quantity Cancelled")
                 }
             },
-            default: "two",
+            default: "one",
             close: () => console.log("Merchant sheet | Change quantity Closed")
         });
         d.render(true);
-    }
-    async sellItem(target, dragSource, sourceActor, quantity, totalItemsPrice) {
-        let sellerFunds = currencyCalculator.actorCurrency(sourceActor);
-        let chatPrice = currencyCalculator.priceInText(totalItemsPrice);
-        currencyCalculator.addAmountForActor(sourceActor, sellerFunds, totalItemsPrice);
-        // @ts-ignore
-        this.chatMessage(sourceActor, target, game.i18n.format('MERCHANTNPC.sellText', { seller: sourceActor.name, quantity: quantity, itemName: dragSource.data.name, chatPrice: chatPrice }), dragSource.data, false);
     }
     async transaction(seller, buyer, itemId, quantity) {
         console.log(`Buying item: ${seller}, ${buyer}, ${itemId}, ${quantity}`);
@@ -1624,12 +1611,24 @@ class MerchantSheetNPCHelper {
             Logger_1.default.Log("keepDepleted", keepItem);
             let moved = await helper.moveItems(seller, buyer, [{ itemId, quantity }], !keepItem);
             for (let m of moved) {
-                this.chatMessage(seller, buyer, game.i18n.format('MERCHANTNPC.buyText', { buyer: buyer.name, quantity: quantity, itemName: m.item.name, chatPrice: chatPrice }), m.item, false);
+                this.chatMessage(seller, buyer, game.i18n.format('MERCHANTNPC.buyText', {
+                    buyer: buyer.name,
+                    quantity: quantity,
+                    itemName: m.item.name,
+                    chatPrice: chatPrice
+                }), m.item, false);
             }
         }
         else {
             // @ts-ignore
-            this.chatMessage(seller, buyer, game.i18n.format('MERCHANTNPC.buyText', { buyer: buyer.name, quantity: quantity, itemName: sellItem.name, chatPrice: chatPrice }), sellItem, service);
+            this.chatMessage(seller, buyer, game.i18n.format('MERCHANTNPC.buyText', {
+                buyer: buyer.name,
+                quantity: quantity,
+                // @ts-ignore
+                itemName: sellItem.name,
+                chatPrice: chatPrice
+                // @ts-ignore
+            }), sellItem, service);
         }
     }
     chatMessage(speaker, owner, message, item, service) {
@@ -1688,6 +1687,62 @@ class MerchantSheetNPCHelper {
             }
         }
     }
+    async sellItem(target, dragSource, sourceActor, quantity, totalItemsPrice) {
+        let sellerFunds = currencyCalculator.actorCurrency(sourceActor);
+        let chatPrice = currencyCalculator.priceInText(totalItemsPrice);
+        if (target.getFlag(Globals_1.default.ModuleName, "limitedCurrency")) {
+            let buyerFunds = duplicate(currencyCalculator.actorCurrency(target));
+            console.log("merchant currency", target, currencyCalculator.actorCurrency(target));
+            if (currencyCalculator.buyerHaveNotEnoughFunds(totalItemsPrice, buyerFunds)) {
+                let message = game.i18n.localize('MERCHANTNPC.merchantNotEnoughMoney');
+                throw message;
+            }
+            else {
+                let allowNoTargetGM = game.settings.get(Globals_1.default.ModuleName, "allowNoGM");
+                let packet;
+                if (!allowNoTargetGM) {
+                    packet = new MerchantCurrencyPacket_1.default();
+                    packet.action = CurrencyAction_1.default.Subtract;
+                    if (target.id) {
+                        packet.actorId = target.id;
+                    }
+                    console.log("Target: ", target);
+                    // @ts-ignore
+                    let tokenActor = target.parent;
+                    if (tokenActor) {
+                        let actorLink = tokenActor.data.actorLink;
+                        if (!actorLink) {
+                            if (tokenActor.parent) {
+                                // @ts-ignore
+                                let sceneId = canvas.scene.id;
+                                // @ts-ignore
+                                Logger_1.default.Log("Scene", canvas.scene.id);
+                                if (sceneId) {
+                                    packet.sceneId = sceneId;
+                                }
+                                packet.tokenId = tokenActor.id;
+                                packet.actorLink = false;
+                            }
+                        }
+                    }
+                    packet.currency = buyerFunds;
+                    packet.price = totalItemsPrice;
+                    if (packet) {
+                        // @ts-ignore
+                        game.socket.emit(Globals_1.default.Socket, packet);
+                    }
+                }
+            }
+        }
+        currencyCalculator.addAmountForActor(sourceActor, sellerFunds, totalItemsPrice);
+        // @ts-ignore
+        this.chatMessage(sourceActor, target, game.i18n.format('MERCHANTNPC.sellText', {
+            seller: sourceActor.name,
+            quantity: quantity,
+            itemName: dragSource.data.name,
+            chatPrice: chatPrice
+        }), dragSource.data, false);
+    }
     async moveItems(source, destination, items, deleteItemFromSource) {
         const updates = [];
         const deletes = [];
@@ -1710,7 +1765,11 @@ class MerchantSheetNPCHelper {
             }
             let newItem = duplicate(item);
             // @ts-ignore
-            const update = { _id: itemId, [currencyCalculator.getQuantityKey()]: currencyCalculator.getQuantity(item.data.data.quantity) >= Number.MAX_VALUE - 10000 || infinity ? Number.MAX_VALUE : currencyCalculator.getQuantity(item.data.data.quantity) - quantity };
+            const update = {
+                _id: itemId,
+                // @ts-ignore
+                [currencyCalculator.getQuantityKey()]: currencyCalculator.getQuantity(item.data.data.quantity) >= Number.MAX_VALUE - 10000 || infinity ? Number.MAX_VALUE : currencyCalculator.getQuantity(item.data.data.quantity) - quantity
+            };
             if (update[currencyCalculator.getQuantityKey()] === 0 && !allowNoTargetGM && deleteItemFromSource) {
                 deletes.push(itemId);
             }
@@ -1736,7 +1795,11 @@ class MerchantSheetNPCHelper {
                     currencyCalculator.setQuantityForItemData(destItem.data.data, 0);
                 }
                 // @ts-ignore
-                const destUpdate = { _id: destItem.id, [currencyCalculator.getQuantityKey()]: currencyCalculator.getQuantity(destItem.data.data.quantity) };
+                const destUpdate = {
+                    _id: destItem.id,
+                    // @ts-ignore
+                    [currencyCalculator.getQuantityKey()]: currencyCalculator.getQuantity(destItem.data.data.quantity)
+                };
                 destUpdates.push(destUpdate);
             }
         }
@@ -1858,19 +1921,73 @@ class MerchantSheetNPCHelper {
     }
     showItemToPlayers(event, actor, toggle) {
         let li = $(event.currentTarget).parents(".merchant-item"), item = actor.items.get(li.data("item-id"));
-        let moduleName = "merchantsheetnpc";
-        item === null || item === void 0 ? void 0 : item.setFlag(moduleName, "showItem", toggle);
+        item === null || item === void 0 ? void 0 : item.setFlag(Globals_1.default.ModuleName, "showItem", toggle);
     }
     isItemShown(item) {
-        let moduleName = "merchantsheetnpc";
-        let showItem = item.getFlag(moduleName, "showItem");
+        let showItem = item.getFlag(Globals_1.default.ModuleName, "showItem");
         return (showItem === undefined || showItem);
+    }
+    static async updateCurrencyWithPacket(packet) {
+        let actor = null;
+        Logger_1.default.Log("Packet updating currency", packet);
+        if (packet.actorLink) {
+            // @ts-ignore
+            actor = await game.actors.get(packet.actorId);
+        }
+        else {
+            // @ts-ignore
+            let scene = await game.scenes.get(packet.sceneId);
+            // @ts-ignore
+            let token = await scene.tokens.get(packet.tokenId);
+            if (token.getActor()) {
+                actor = token.getActor();
+            }
+        }
+        if (!actor) {
+            return;
+        }
+        if (packet.action === CurrencyAction_1.default.Subtract) {
+            currencyCalculator.subtractAmountFromActor(actor, packet.currency, packet.price);
+        }
+        else if (packet.action === CurrencyAction_1.default.Add) {
+            currencyCalculator.addAmountForActor(actor, packet.currency, packet.price);
+        }
     }
 }
 let helper = new MerchantSheetNPCHelper();
 exports.default = MerchantSheetNPCHelper;
 
-},{"../Globals":1,"../Utils/Logger":3,"./model/MoveItemsPacket":9,"./systems/CurrencyCalculator":11,"./systems/Dnd5eCurrencyCalculator":12,"./systems/SfrpgCurrencyCalculator":13,"./systems/SwadeCurrencyCalculator":14,"./systems/Wfrp4eCurrencyCalculator":15,"./systems/World5eCurrencyCalculator":16}],8:[function(require,module,exports){
+},{"../Globals":1,"../Utils/Logger":4,"./model/CurrencyAction":9,"./model/MerchantCurrencyPacket":10,"./model/MoveItemsPacket":12,"./systems/CurrencyCalculator":16,"./systems/Dnd5eCurrencyCalculator":17,"./systems/SfrpgCurrencyCalculator":18,"./systems/SwadeCurrencyCalculator":19,"./systems/Wfrp4eCurrencyCalculator":20,"./systems/World5eCurrencyCalculator":21}],9:[function(require,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var CurrencyAction;
+(function (CurrencyAction) {
+    CurrencyAction[CurrencyAction["Add"] = 0] = "Add";
+    CurrencyAction[CurrencyAction["Subtract"] = 1] = "Subtract";
+})(CurrencyAction || (CurrencyAction = {}));
+exports.default = CurrencyAction;
+
+},{}],10:[function(require,module,exports){
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const CurrencyAction_1 = __importDefault(require("./CurrencyAction"));
+const PacketType_1 = __importDefault(require("./PacketType"));
+class MerchantCurrencyPacket {
+    constructor() {
+        this.action = CurrencyAction_1.default.Add;
+        this.actorId = "";
+        this.sceneId = "";
+        this.actorLink = true;
+        this.tokenId = null;
+        this.type = PacketType_1.default.MERCHANT_CURRENCY;
+    }
+}
+exports.default = MerchantCurrencyPacket;
+
+},{"./CurrencyAction":9,"./PacketType":14}],11:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class MerchantGenerator {
@@ -1888,11 +2005,17 @@ class MerchantGenerator {
 }
 exports.default = MerchantGenerator;
 
-},{}],9:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-class MoveItemsPacket {
+const Packet_1 = __importDefault(require("./Packet"));
+const PacketType_1 = __importDefault(require("./PacketType"));
+class MoveItemsPacket extends Packet_1.default {
     constructor() {
+        super(...arguments);
         this.updates = [];
         this.deletes = [];
         this.additions = [];
@@ -1900,11 +2023,37 @@ class MoveItemsPacket {
         this.sceneId = "";
         this.actorLink = true;
         this.tokenId = null;
+        this.type = PacketType_1.default.MOVE_ITEMS;
     }
 }
 exports.default = MoveItemsPacket;
 
-},{}],10:[function(require,module,exports){
+},{"./Packet":13,"./PacketType":14}],13:[function(require,module,exports){
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const PacketType_1 = __importDefault(require("./PacketType"));
+class Packet {
+    constructor() {
+        this.type = PacketType_1.default.UNKNOWN;
+    }
+}
+exports.default = Packet;
+
+},{"./PacketType":14}],14:[function(require,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var PacketType;
+(function (PacketType) {
+    PacketType[PacketType["UNKNOWN"] = -1] = "UNKNOWN";
+    PacketType[PacketType["MOVE_ITEMS"] = 0] = "MOVE_ITEMS";
+    PacketType[PacketType["MERCHANT_CURRENCY"] = 1] = "MERCHANT_CURRENCY";
+})(PacketType || (PacketType = {}));
+exports.default = PacketType;
+
+},{}],15:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class QuantityChanger {
@@ -1917,13 +2066,14 @@ class QuantityChanger {
 }
 exports.default = QuantityChanger;
 
-},{}],11:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const Logger_1 = __importDefault(require("../../Utils/Logger"));
+const HtmlHelpers_1 = __importDefault(require("../../Utils/HtmlHelpers"));
 class CurrencyCalculator {
     constructor() {
         this.initialized = false;
@@ -2022,10 +2172,17 @@ class CurrencyCalculator {
     }
     registerSystemSettings() {
     }
+    merchantCurrency(actor) {
+        return [{ "Currency": this.actorCurrency(actor) }];
+    }
+    updateMerchantCurrency(actor) {
+        let currency = HtmlHelpers_1.default.getHtmlInputNumberValue("currency-Currency", document);
+        this.updateActorWithNewFunds(actor, currency);
+    }
 }
 exports.default = CurrencyCalculator;
 
-},{"../../Utils/Logger":3}],12:[function(require,module,exports){
+},{"../../Utils/HtmlHelpers":3,"../../Utils/Logger":4}],17:[function(require,module,exports){
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -2033,6 +2190,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const CurrencyCalculator_1 = __importDefault(require("./CurrencyCalculator"));
 const Globals_1 = __importDefault(require("../../Globals"));
+const HtmlHelpers_1 = __importDefault(require("../../Utils/HtmlHelpers"));
 let conversionRates = { "pp": 1,
     "gp": 10,
     "ep": 2,
@@ -2093,9 +2251,34 @@ class Dnd5eCurrencyCalculator extends CurrencyCalculator_1.default {
         // @ts-ignore
         return actor.data.data.currency;
     }
+    merchantCurrency(actor) {
+        return [
+            {
+                name: "pp",
+                value: this.actorCurrency(actor).pp
+            },
+            {
+                name: "gp",
+                value: this.actorCurrency(actor).gp
+            },
+            {
+                name: "ep",
+                value: this.actorCurrency(actor).ep
+            },
+            {
+                name: "sp",
+                value: this.actorCurrency(actor).sp
+            },
+            {
+                name: "cp",
+                value: this.actorCurrency(actor).cp
+            }
+        ];
+    }
     buyerHaveNotEnoughFunds(itemCostInGold, buyerFunds) {
         let itemCostInCopper = this.convertCurrencyToLowest({ gp: itemCostInGold });
         let buyerFundsAsCopper = this.convertCurrencyToLowest(buyerFunds);
+        console.log("item price > buyerFundsInCopper", itemCostInCopper, buyerFundsAsCopper);
         return itemCostInCopper > buyerFundsAsCopper;
     }
     convertToPlatinum(buyerFunds) {
@@ -2215,7 +2398,8 @@ class Dnd5eCurrencyCalculator extends CurrencyCalculator_1.default {
         sellerFunds["gp"] += convertToHigherFund["gp"];
         sellerFunds["pp"] += convertToHigherFund["pp"];
         if (!this.useEP) {
-            this.convertEP(sellerFunds);
+            sellerFunds["sp"] += sellerFunds["ep"] * conversionRates["sp"];
+            sellerFunds["ep"] = 0;
         }
         this.updateActorWithNewFunds(seller, sellerFunds);
     }
@@ -2225,8 +2409,11 @@ class Dnd5eCurrencyCalculator extends CurrencyCalculator_1.default {
     priceInText(itemCostInGold) {
         let priceToBuyerFunds = this.calculatePriceToBuyerFunds(itemCostInGold);
         let returnValue = '';
-        returnValue += this.getValueIfPresent(priceToBuyerFunds, 'pp');
-        returnValue += this.getValueIfPresent(priceToBuyerFunds, 'gp');
+        let gp = priceToBuyerFunds['gp'];
+        if (priceToBuyerFunds['pp'] > 0) {
+            gp += (priceToBuyerFunds['pp'] * conversionRates['gp']);
+        }
+        returnValue += gp + 'gp';
         if (this.useEP) {
             returnValue += this.getValueIfPresent(priceToBuyerFunds, 'ep');
             returnValue += this.getValueIfPresent(priceToBuyerFunds, 'sp');
@@ -2308,7 +2495,8 @@ class Dnd5eCurrencyCalculator extends CurrencyCalculator_1.default {
         };
     }
     initSettings() {
-        conversionRates = { "pp": 1,
+        conversionRates = {
+            "pp": 1,
             // @ts-ignore
             "gp": CONFIG.DND5E.currencies.gp.conversion.each,
             // @ts-ignore
@@ -2342,10 +2530,18 @@ class Dnd5eCurrencyCalculator extends CurrencyCalculator_1.default {
     currency() {
         return 'GP';
     }
+    updateMerchantCurrency(actor) {
+        let pp = HtmlHelpers_1.default.getHtmlInputNumberValue("currency-pp", document);
+        let gp = HtmlHelpers_1.default.getHtmlInputNumberValue("currency-gp", document);
+        let ep = HtmlHelpers_1.default.getHtmlInputNumberValue("currency-ep", document);
+        let sp = HtmlHelpers_1.default.getHtmlInputNumberValue("currency-sp", document);
+        let cp = HtmlHelpers_1.default.getHtmlInputNumberValue("currency-cp", document);
+        this.updateActorWithNewFunds(actor, { pp, gp, ep, sp, cp });
+    }
 }
 exports.default = Dnd5eCurrencyCalculator;
 
-},{"../../Globals":1,"./CurrencyCalculator":11}],13:[function(require,module,exports){
+},{"../../Globals":1,"../../Utils/HtmlHelpers":3,"./CurrencyCalculator":16}],18:[function(require,module,exports){
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -2481,7 +2677,7 @@ class SfrpgCurrencyCalculator extends CurrencyCalculator_1.default {
 }
 exports.default = SfrpgCurrencyCalculator;
 
-},{"./CurrencyCalculator":11}],14:[function(require,module,exports){
+},{"./CurrencyCalculator":16}],19:[function(require,module,exports){
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -2558,7 +2754,7 @@ class SwadeCurrencyCalculator extends CurrencyCalculator_1.default {
 }
 exports.default = SwadeCurrencyCalculator;
 
-},{"./CurrencyCalculator":11}],15:[function(require,module,exports){
+},{"./CurrencyCalculator":16}],20:[function(require,module,exports){
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -2816,7 +3012,7 @@ class Wfrp4eCurrencyCalculator extends CurrencyCalculator_1.default {
 }
 exports.default = Wfrp4eCurrencyCalculator;
 
-},{"../../Utils/Logger":3,"./CurrencyCalculator":11}],16:[function(require,module,exports){
+},{"../../Utils/Logger":4,"./CurrencyCalculator":16}],21:[function(require,module,exports){
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -3017,7 +3213,7 @@ class World5eCurrencyCalculator extends CurrencyCalculator_1.default {
 }
 exports.default = World5eCurrencyCalculator;
 
-},{"../../Globals":1,"./CurrencyCalculator":11}],17:[function(require,module,exports){
+},{"../../Globals":1,"./CurrencyCalculator":16}],22:[function(require,module,exports){
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -3081,7 +3277,7 @@ class GeneratorWindow extends Application {
 }
 exports.GeneratorWindow = GeneratorWindow;
 
-},{"../../Globals":1,"../../Utils/Logger":3,"../../Utils/MerchantSettings":4,"../MerchantSheet":6,"../MerchantSheetNPCHelper":7,"../model/MerchantGenerator":8}],18:[function(require,module,exports){
+},{"../../Globals":1,"../../Utils/Logger":4,"../../Utils/MerchantSettings":5,"../MerchantSheet":7,"../MerchantSheetNPCHelper":8,"../model/MerchantGenerator":11}],23:[function(require,module,exports){
 (function (global){(function (){
 'use strict';
 
@@ -3591,7 +3787,7 @@ var objectKeys = Object.keys || function (obj) {
 };
 
 }).call(this)}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"object-assign":37,"util/":21}],19:[function(require,module,exports){
+},{"object-assign":42,"util/":26}],24:[function(require,module,exports){
 if (typeof Object.create === 'function') {
   // implementation from standard node.js 'util' module
   module.exports = function inherits(ctor, superCtor) {
@@ -3616,14 +3812,14 @@ if (typeof Object.create === 'function') {
   }
 }
 
-},{}],20:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 module.exports = function isBuffer(arg) {
   return arg && typeof arg === 'object'
     && typeof arg.copy === 'function'
     && typeof arg.fill === 'function'
     && typeof arg.readUInt8 === 'function';
 }
-},{}],21:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 (function (process,global){(function (){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -4213,7 +4409,7 @@ function hasOwnProperty(obj, prop) {
 }
 
 }).call(this)}).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./support/isBuffer":20,"_process":38,"inherits":19}],22:[function(require,module,exports){
+},{"./support/isBuffer":25,"_process":43,"inherits":24}],27:[function(require,module,exports){
 'use strict'
 
 exports.byteLength = byteLength
@@ -4365,9 +4561,9 @@ function fromByteArray (uint8) {
   return parts.join('')
 }
 
-},{}],23:[function(require,module,exports){
+},{}],28:[function(require,module,exports){
 
-},{}],24:[function(require,module,exports){
+},{}],29:[function(require,module,exports){
 (function (Buffer){(function (){
 /*!
  * The buffer module from node.js, for the browser.
@@ -6148,7 +6344,7 @@ function numberIsNaN (obj) {
 }
 
 }).call(this)}).call(this,require("buffer").Buffer)
-},{"base64-js":22,"buffer":24,"ieee754":35}],25:[function(require,module,exports){
+},{"base64-js":27,"buffer":29,"ieee754":40}],30:[function(require,module,exports){
 /* MIT license */
 var cssKeywords = require('color-name');
 
@@ -7018,7 +7214,7 @@ convert.rgb.gray = function (rgb) {
 	return [val / 255 * 100];
 };
 
-},{"color-name":28}],26:[function(require,module,exports){
+},{"color-name":33}],31:[function(require,module,exports){
 var conversions = require('./conversions');
 var route = require('./route');
 
@@ -7098,7 +7294,7 @@ models.forEach(function (fromModel) {
 
 module.exports = convert;
 
-},{"./conversions":25,"./route":27}],27:[function(require,module,exports){
+},{"./conversions":30,"./route":32}],32:[function(require,module,exports){
 var conversions = require('./conversions');
 
 /*
@@ -7197,7 +7393,7 @@ module.exports = function (fromModel) {
 };
 
 
-},{"./conversions":25}],28:[function(require,module,exports){
+},{"./conversions":30}],33:[function(require,module,exports){
 'use strict'
 
 module.exports = {
@@ -7351,7 +7547,7 @@ module.exports = {
 	"yellowgreen": [154, 205, 50]
 };
 
-},{}],29:[function(require,module,exports){
+},{}],34:[function(require,module,exports){
 /* MIT license */
 var colorNames = require('color-name');
 var swizzle = require('simple-swizzle');
@@ -7595,7 +7791,7 @@ function hexDouble(num) {
 	return (str.length < 2) ? '0' + str : str;
 }
 
-},{"color-name":28,"simple-swizzle":54}],30:[function(require,module,exports){
+},{"color-name":33,"simple-swizzle":59}],35:[function(require,module,exports){
 'use strict';
 
 var colorString = require('color-string');
@@ -8079,7 +8275,7 @@ function zeroArray(arr, length) {
 
 module.exports = Color;
 
-},{"color-convert":26,"color-string":29}],31:[function(require,module,exports){
+},{"color-convert":31,"color-string":34}],36:[function(require,module,exports){
 (function (Buffer){(function (){
 
 
@@ -8148,7 +8344,7 @@ class ResizeableBuffer{
 module.exports = ResizeableBuffer
 
 }).call(this)}).call(this,require("buffer").Buffer)
-},{"buffer":24}],32:[function(require,module,exports){
+},{"buffer":29}],37:[function(require,module,exports){
 (function (Buffer,setImmediate){(function (){
 
 /*
@@ -9420,7 +9616,7 @@ const normalizeColumnsArray = function(columns){
 }
 
 }).call(this)}).call(this,require("buffer").Buffer,require("timers").setImmediate)
-},{"./ResizeableBuffer":31,"buffer":24,"stream":56,"timers":58}],33:[function(require,module,exports){
+},{"./ResizeableBuffer":36,"buffer":29,"stream":61,"timers":63}],38:[function(require,module,exports){
 (function (Buffer){(function (){
 
 const parse = require('.')
@@ -9449,7 +9645,7 @@ module.exports = function(data, options={}){
 }
 
 }).call(this)}).call(this,require("buffer").Buffer)
-},{".":32,"buffer":24}],34:[function(require,module,exports){
+},{".":37,"buffer":29}],39:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -9948,7 +10144,7 @@ function eventTargetAgnosticAddListener(emitter, name, listener, flags) {
   }
 }
 
-},{}],35:[function(require,module,exports){
+},{}],40:[function(require,module,exports){
 /*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
   var e, m
@@ -10035,7 +10231,7 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
   buffer[offset + i - d] |= s * 128
 }
 
-},{}],36:[function(require,module,exports){
+},{}],41:[function(require,module,exports){
 if (typeof Object.create === 'function') {
   // implementation from standard node.js 'util' module
   module.exports = function inherits(ctor, superCtor) {
@@ -10064,7 +10260,7 @@ if (typeof Object.create === 'function') {
   }
 }
 
-},{}],37:[function(require,module,exports){
+},{}],42:[function(require,module,exports){
 /*
 object-assign
 (c) Sindre Sorhus
@@ -10156,7 +10352,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 	return to;
 };
 
-},{}],38:[function(require,module,exports){
+},{}],43:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -10342,7 +10538,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],39:[function(require,module,exports){
+},{}],44:[function(require,module,exports){
 'use strict';
 
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
@@ -10471,7 +10667,7 @@ createErrorType('ERR_UNKNOWN_ENCODING', function (arg) {
 createErrorType('ERR_STREAM_UNSHIFT_AFTER_END_EVENT', 'stream.unshift() after end event');
 module.exports.codes = codes;
 
-},{}],40:[function(require,module,exports){
+},{}],45:[function(require,module,exports){
 (function (process){(function (){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -10613,7 +10809,7 @@ Object.defineProperty(Duplex.prototype, 'destroyed', {
   }
 });
 }).call(this)}).call(this,require('_process'))
-},{"./_stream_readable":42,"./_stream_writable":44,"_process":38,"inherits":36}],41:[function(require,module,exports){
+},{"./_stream_readable":47,"./_stream_writable":49,"_process":43,"inherits":41}],46:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -10653,7 +10849,7 @@ function PassThrough(options) {
 PassThrough.prototype._transform = function (chunk, encoding, cb) {
   cb(null, chunk);
 };
-},{"./_stream_transform":43,"inherits":36}],42:[function(require,module,exports){
+},{"./_stream_transform":48,"inherits":41}],47:[function(require,module,exports){
 (function (process,global){(function (){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -11780,7 +11976,7 @@ function indexOf(xs, x) {
   return -1;
 }
 }).call(this)}).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../errors":39,"./_stream_duplex":40,"./internal/streams/async_iterator":45,"./internal/streams/buffer_list":46,"./internal/streams/destroy":47,"./internal/streams/from":49,"./internal/streams/state":51,"./internal/streams/stream":52,"_process":38,"buffer":24,"events":34,"inherits":36,"string_decoder/":57,"util":23}],43:[function(require,module,exports){
+},{"../errors":44,"./_stream_duplex":45,"./internal/streams/async_iterator":50,"./internal/streams/buffer_list":51,"./internal/streams/destroy":52,"./internal/streams/from":54,"./internal/streams/state":56,"./internal/streams/stream":57,"_process":43,"buffer":29,"events":39,"inherits":41,"string_decoder/":62,"util":28}],48:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -11982,7 +12178,7 @@ function done(stream, er, data) {
   if (stream._transformState.transforming) throw new ERR_TRANSFORM_ALREADY_TRANSFORMING();
   return stream.push(null);
 }
-},{"../errors":39,"./_stream_duplex":40,"inherits":36}],44:[function(require,module,exports){
+},{"../errors":44,"./_stream_duplex":45,"inherits":41}],49:[function(require,module,exports){
 (function (process,global){(function (){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -12682,7 +12878,7 @@ Writable.prototype._destroy = function (err, cb) {
   cb(err);
 };
 }).call(this)}).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../errors":39,"./_stream_duplex":40,"./internal/streams/destroy":47,"./internal/streams/state":51,"./internal/streams/stream":52,"_process":38,"buffer":24,"inherits":36,"util-deprecate":59}],45:[function(require,module,exports){
+},{"../errors":44,"./_stream_duplex":45,"./internal/streams/destroy":52,"./internal/streams/state":56,"./internal/streams/stream":57,"_process":43,"buffer":29,"inherits":41,"util-deprecate":64}],50:[function(require,module,exports){
 (function (process){(function (){
 'use strict';
 
@@ -12892,7 +13088,7 @@ var createReadableStreamAsyncIterator = function createReadableStreamAsyncIterat
 
 module.exports = createReadableStreamAsyncIterator;
 }).call(this)}).call(this,require('_process'))
-},{"./end-of-stream":48,"_process":38}],46:[function(require,module,exports){
+},{"./end-of-stream":53,"_process":43}],51:[function(require,module,exports){
 'use strict';
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -13103,7 +13299,7 @@ function () {
 
   return BufferList;
 }();
-},{"buffer":24,"util":23}],47:[function(require,module,exports){
+},{"buffer":29,"util":28}],52:[function(require,module,exports){
 (function (process){(function (){
 'use strict'; // undocumented cb() API, needed for core, not for public API
 
@@ -13211,7 +13407,7 @@ module.exports = {
   errorOrDestroy: errorOrDestroy
 };
 }).call(this)}).call(this,require('_process'))
-},{"_process":38}],48:[function(require,module,exports){
+},{"_process":43}],53:[function(require,module,exports){
 // Ported from https://github.com/mafintosh/end-of-stream with
 // permission from the author, Mathias Buus (@mafintosh).
 'use strict';
@@ -13316,12 +13512,12 @@ function eos(stream, opts, callback) {
 }
 
 module.exports = eos;
-},{"../../../errors":39}],49:[function(require,module,exports){
+},{"../../../errors":44}],54:[function(require,module,exports){
 module.exports = function () {
   throw new Error('Readable.from is not available in the browser')
 };
 
-},{}],50:[function(require,module,exports){
+},{}],55:[function(require,module,exports){
 // Ported from https://github.com/mafintosh/pump with
 // permission from the author, Mathias Buus (@mafintosh).
 'use strict';
@@ -13419,7 +13615,7 @@ function pipeline() {
 }
 
 module.exports = pipeline;
-},{"../../../errors":39,"./end-of-stream":48}],51:[function(require,module,exports){
+},{"../../../errors":44,"./end-of-stream":53}],56:[function(require,module,exports){
 'use strict';
 
 var ERR_INVALID_OPT_VALUE = require('../../../errors').codes.ERR_INVALID_OPT_VALUE;
@@ -13447,10 +13643,10 @@ function getHighWaterMark(state, options, duplexKey, isDuplex) {
 module.exports = {
   getHighWaterMark: getHighWaterMark
 };
-},{"../../../errors":39}],52:[function(require,module,exports){
+},{"../../../errors":44}],57:[function(require,module,exports){
 module.exports = require('events').EventEmitter;
 
-},{"events":34}],53:[function(require,module,exports){
+},{"events":39}],58:[function(require,module,exports){
 /*! safe-buffer. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
 /* eslint-disable node/no-deprecated-api */
 var buffer = require('buffer')
@@ -13517,7 +13713,7 @@ SafeBuffer.allocUnsafeSlow = function (size) {
   return buffer.SlowBuffer(size)
 }
 
-},{"buffer":24}],54:[function(require,module,exports){
+},{"buffer":29}],59:[function(require,module,exports){
 'use strict';
 
 var isArrayish = require('is-arrayish');
@@ -13548,7 +13744,7 @@ swizzle.wrap = function (fn) {
 	};
 };
 
-},{"is-arrayish":55}],55:[function(require,module,exports){
+},{"is-arrayish":60}],60:[function(require,module,exports){
 module.exports = function isArrayish(obj) {
 	if (!obj || typeof obj === 'string') {
 		return false;
@@ -13559,7 +13755,7 @@ module.exports = function isArrayish(obj) {
 			(Object.getOwnPropertyDescriptor(obj, (obj.length - 1)) && obj.constructor.name !== 'String')));
 };
 
-},{}],56:[function(require,module,exports){
+},{}],61:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -13690,7 +13886,7 @@ Stream.prototype.pipe = function(dest, options) {
   return dest;
 };
 
-},{"events":34,"inherits":36,"readable-stream/lib/_stream_duplex.js":40,"readable-stream/lib/_stream_passthrough.js":41,"readable-stream/lib/_stream_readable.js":42,"readable-stream/lib/_stream_transform.js":43,"readable-stream/lib/_stream_writable.js":44,"readable-stream/lib/internal/streams/end-of-stream.js":48,"readable-stream/lib/internal/streams/pipeline.js":50}],57:[function(require,module,exports){
+},{"events":39,"inherits":41,"readable-stream/lib/_stream_duplex.js":45,"readable-stream/lib/_stream_passthrough.js":46,"readable-stream/lib/_stream_readable.js":47,"readable-stream/lib/_stream_transform.js":48,"readable-stream/lib/_stream_writable.js":49,"readable-stream/lib/internal/streams/end-of-stream.js":53,"readable-stream/lib/internal/streams/pipeline.js":55}],62:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -13987,7 +14183,7 @@ function simpleWrite(buf) {
 function simpleEnd(buf) {
   return buf && buf.length ? this.write(buf) : '';
 }
-},{"safe-buffer":53}],58:[function(require,module,exports){
+},{"safe-buffer":58}],63:[function(require,module,exports){
 (function (setImmediate,clearImmediate){(function (){
 var nextTick = require('process/browser.js').nextTick;
 var apply = Function.prototype.apply;
@@ -14066,7 +14262,7 @@ exports.clearImmediate = typeof clearImmediate === "function" ? clearImmediate :
   delete immediateIds[id];
 };
 }).call(this)}).call(this,require("timers").setImmediate,require("timers").clearImmediate)
-},{"process/browser.js":38,"timers":58}],59:[function(require,module,exports){
+},{"process/browser.js":43,"timers":63}],64:[function(require,module,exports){
 (function (global){(function (){
 
 /**
@@ -14137,6 +14333,6 @@ function config (name) {
 }
 
 }).call(this)}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}]},{},[5]);
+},{}]},{},[6]);
 
 //# sourceMappingURL=bundle.js.map
