@@ -47,6 +47,7 @@
 {"name":"Downtime Events","type":"RollTable","sort":900000,"flags":{},"parent":null,"sorting":"a","color":"#323e7b","_id":"9DljdzPyy67UPIg1"}
 {"name":"Gems","type":"RollTable","sort":1000000,"flags":{},"parent":"8quqXmxl5WgxUHgI","sorting":"a","color":"","_id":"9HLRrTLXiCxAsRhX"}
 {"name":"Herbs","type":"Item","sort":900000,"flags":{},"parent":"lryP0lc1Adinz7aR","sorting":"a","color":"#24561a","_id":"9IqegRio4J993gPn"}
+{"_id":"9tL8Yy5hMJAy5XXD","name":"Haalstein Silver","type":"Actor","parent":null,"sorting":"a","sort":7250000,"color":"#969696","flags":{}}
 {"_id":"AQNjQbqIwOx2gPyr","name":"Other Associates","type":"Actor","sort":2300000,"flags":{},"parent":"CLkaC7gsUPC5R3mN","sorting":"a","color":""}
 {"name":"Random Meals","type":"RollTable","sort":null,"flags":{},"parent":null,"sorting":"a","color":"","_id":"AmaQItibZsM8zliP"}
 {"name":"Other","type":"Item","sort":500000,"flags":{},"parent":null,"sorting":"a","color":"","_id":"B1NGEkUpOPYjZbtf"}
@@ -65,6 +66,7 @@
 {"name":"Trotts","type":"Actor","sort":4700000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#6b0a0a","_id":"EFCQWpwIywZCymaB"}
 {"_id":"EHmv3MZ98EtEC2Fy","name":"Shadow Cast","type":"Actor","sort":100000,"flags":{},"parent":"81ZFw4Rjgz144G8Q","sorting":"a","color":"#4f4f4f"}
 {"name":"Fief Generation","type":"JournalEntry","sort":8400000,"flags":{},"parent":"NOyJwiypgeV7mEJh","sorting":"a","color":"#346035","_id":"EI3QBoP7myrKeS4p"}
+{"name":"Freelance","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#c76000","flags":{},"_id":"EaYUkgpTIjybPKtf"}
 {"name":"PC Equipment","type":"Item","sort":3400000,"flags":{},"parent":"lryP0lc1Adinz7aR","sorting":"a","color":"","_id":"EbA4zGI5h2S8I6qQ"}
 {"name":"Animals","type":"RollTable","sort":1500000,"flags":{},"parent":"9DljdzPyy67UPIg1","sorting":"a","color":"","_id":"Eeh7NFAyrtL37HYL"}
 {"name":"Images","type":"JournalEntry","sort":5200000,"flags":{},"parent":"qkj3aSI8lXUSVEwD","sorting":"a","color":"#184372","_id":"Esd2DY5bYJdq4Bmw"}
@@ -264,9 +266,3 @@
 {"name":"Cavalry","type":"Item","parent":"BT6aLV9abM8rctf2","sorting":"a","sort":0,"color":null,"flags":{},"_id":"yvb0eUmeiZAZjNWL"}
 {"_id":"zQRDhzWh9uTwnQqe","name":"Class Endeavours","type":"JournalEntry","sort":2600000,"flags":{"wfrp4e":{"initialization-parent":"Endeavours"}},"parent":"5PMBVwnydUMSobIr","sorting":"m","color":""}
 {"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
-{"name":"Freelance","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#c76000","flags":{},"_id":"EaYUkgpTIjybPKtf"}
-{"name":"hjj","type":"Item","parent":"mPZbMEHqQupSD01M","sorting":"a","sort":0,"color":null,"flags":{},"_id":"71VuXd1wzfWspRyy"}
-{"$$deleted":true,"_id":"71VuXd1wzfWspRyy"}
-{"name":"Haalstein Silver","type":"Actor","parent":null,"sorting":"a","sort":0,"color":"#bababa","flags":{},"_id":"9tL8Yy5hMJAy5XXD"}
-{"_id":"9tL8Yy5hMJAy5XXD","name":"Haalstein Silver","type":"Actor","parent":null,"sorting":"a","sort":0,"color":"#969696","flags":{}}
-{"_id":"9tL8Yy5hMJAy5XXD","name":"Haalstein Silver","type":"Actor","parent":null,"sorting":"a","sort":7250000,"color":"#969696","flags":{}}
