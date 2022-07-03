@@ -1,6 +1,6 @@
 {
   "port": 30000,
-  "upnp": true,
+  "upnp": false,
   "fullscreen": false,
   "hostname": null,
   "localHostname": null,
@@ -16,6 +16,6 @@
   "updateChannel": "stable",
   "language": "en.core",
   "upnpLeaseDuration": null,
-  "compressStatic": true,
+  "compressStatic": "true",
   "world": null
 }
