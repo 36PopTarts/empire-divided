@@ -1620,3 +1620,4 @@
 {"level":"error","message":"LightData inside an Token document was incorrectly \n      constructed with a number instead of an object. Attempting to fall back to default values.","timestamp":"2022-06-06 16:52:43"}
 {"level":"error","message":"Software license verification failed. Please confirm your Foundry Virtual Tabletop software license","timestamp":"2022-06-12 11:31:27"}
 {"level":"error","message":"Software license verification failed. Please confirm your Foundry Virtual Tabletop software license","timestamp":"2022-07-02 16:18:19"}
+{"level":"error","message":"Software license verification failed. Please confirm your Foundry Virtual Tabletop software license","timestamp":"2022-07-03 11:03:40"}
