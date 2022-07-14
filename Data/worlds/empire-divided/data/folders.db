@@ -182,6 +182,7 @@
 {"_id":"fajyhFU9lHRWsMFz","name":"Factions","type":"JournalEntry","sort":400000,"flags":{},"parent":"sIr7875W6CLmlLOg","sorting":"a"}
 {"name":"Natural Weapons","type":"Item","parent":"mSls4f8JbUBSZvVU","sorting":"a","sort":0,"color":null,"flags":{},"_id":"ft0FPTbmTzhcLzF7"}
 {"name":"Character Creation","type":"RollTable","sort":1900000,"flags":{},"parent":null,"sorting":"a","color":"#325d62","_id":"fuwTWO2bTvMhDGmy"}
+{"name":"Archer","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#3d5908","flags":{},"_id":"g3314ez3uibBoK0p"}
 {"_id":"gKCITmniRgrsfVMl","name":"Holzenauers","type":"Actor","sort":700000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#7d1212"}
 {"_id":"gfvxW95YPpkwZLnb","name":"Blessed Saal","type":"JournalEntry","sort":8600000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#505828"}
 {"_id":"hRh4ENgO4oLtD0If","name":"Parravon","type":"JournalEntry","parent":"tVm4VHOzL3Kt6qVy","sorting":"a","sort":8800000,"color":"#4f4f4f","flags":{}}
@@ -207,6 +208,7 @@
 {"name":"Burn After Printing","type":"JournalEntry","sort":6600000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#7a0000","_id":"ldzUzGoxkrif2YcZ"}
 {"_id":"lryP0lc1Adinz7aR","name":"Misc Items","type":"Item","sort":100000,"flags":{},"parent":null,"sorting":"a","color":"#7c1d1d"}
 {"_id":"lzflRKyLfHkcsNPL","name":"Lord of Ubersreik","type":"JournalEntry","parent":"tVm4VHOzL3Kt6qVy","sorting":"m","sort":9100000,"color":"#36317c","flags":{}}
+{"_id":"m234dB5Wll2B3B6U","name":"Greatsword","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#c77e00","flags":{}}
 {"_id":"mDtj9tJuEIkmGvsz","name":"The Imperial Plenipotentiary","type":"JournalEntry","sort":8400000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#2f561a"}
 {"_id":"mF2lmkFMCmamukcB","name":"Athel Loren","type":"JournalEntry","parent":"tVm4VHOzL3Kt6qVy","sorting":"a","sort":8900000,"color":"#2d4724","flags":{}}
 {"_id":"mPZbMEHqQupSD01M","name":"Head Armour","type":"Item","sort":300000,"flags":{},"parent":"XCAwjWgOHbC2T263","sorting":"a","color":"#2b5e2f"}
@@ -265,7 +267,7 @@
 {"name":"Cavalry","type":"Item","parent":"BT6aLV9abM8rctf2","sorting":"a","sort":0,"color":null,"flags":{},"_id":"yvb0eUmeiZAZjNWL"}
 {"_id":"zQRDhzWh9uTwnQqe","name":"Class Endeavours","type":"JournalEntry","sort":2600000,"flags":{"wfrp4e":{"initialization-parent":"Endeavours"}},"parent":"5PMBVwnydUMSobIr","sorting":"m","color":""}
 {"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
-{"name":"Archer","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#3d5908","flags":{},"_id":"g3314ez3uibBoK0p"}
-{"name":"Greatsword","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#cca000","flags":{},"_id":"m234dB5Wll2B3B6U"}
-{"_id":"m234dB5Wll2B3B6U","name":"Greatsword","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#8f5a00","flags":{}}
-{"_id":"m234dB5Wll2B3B6U","name":"Greatsword","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#c77e00","flags":{}}
+{"_id":"XfhUxAdPBRN3lgpw","name":"Campaign","type":"JournalEntry","parent":"NOyJwiypgeV7mEJh","sorting":"a","sort":9500000,"color":"#2f6f66","flags":{}}
+{"_id":"XfhUxAdPBRN3lgpw","name":"Campaign","type":"JournalEntry","parent":null,"sorting":"a","sort":650000,"color":"#2f6f66","flags":{}}
+{"_id":"XfhUxAdPBRN3lgpw","name":"Campaign","type":"JournalEntry","parent":null,"sorting":"a","sort":750000,"color":"#2f6f66","flags":{}}
+{"_id":"evoGfpDUlvJxklnA","name":"Cities","type":"JournalEntry","parent":null,"sorting":"a","sort":725000,"color":"#5e5e5e","flags":{}}
