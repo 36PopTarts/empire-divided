@@ -86,6 +86,16 @@
       "package": "world",
       "entity": "Item",
       "private": false
+    },
+    {
+      "label": "Player Macros",
+      "type": "Macro",
+      "name": "player-macros",
+      "path": "packs/player-macros.db",
+      "system": "wfrp4e",
+      "package": "world",
+      "entity": "Macro",
+      "private": false
     }
   ],
   "system": "wfrp4e",
