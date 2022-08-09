@@ -1,4 +1,5 @@
 {"_id":"0MIpj7xvY6NEdtss","name":"Karak Azgaraz","type":"JournalEntry","parent":"uaiYhFK8DZbtIU19","sorting":"a","sort":300000,"color":null,"flags":{}}
+{"_id":"0h2woGqGPI7tYegu","name":"Camp Follower","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#80654d","flags":{}}
 {"name":"Images","type":"JournalEntry","sort":8300000,"flags":{},"parent":"mDtj9tJuEIkmGvsz","sorting":"a","color":"","_id":"0hdNTncHGuzeohHo"}
 {"name":"Careers","type":"JournalEntry","sort":7500000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"","_id":"0i9NmuJ8tUuGDGNt"}
 {"_id":"0nAbOypVU30zj9hY","name":"Altdorf","type":"Actor","sort":500000,"flags":{},"parent":null,"sorting":"a","color":"#a20101"}
@@ -45,7 +46,7 @@
 {"name":"Downtime Events","type":"RollTable","sort":900000,"flags":{},"parent":null,"sorting":"a","color":"#323e7b","_id":"9DljdzPyy67UPIg1"}
 {"name":"Gems","type":"RollTable","sort":1000000,"flags":{},"parent":"8quqXmxl5WgxUHgI","sorting":"a","color":"","_id":"9HLRrTLXiCxAsRhX"}
 {"name":"Herbs","type":"Item","sort":900000,"flags":{},"parent":"lryP0lc1Adinz7aR","sorting":"a","color":"#24561a","_id":"9IqegRio4J993gPn"}
-{"_id":"9tL8Yy5hMJAy5XXD","name":"Haalstein Silver","type":"Actor","parent":null,"sorting":"a","sort":7250000,"color":"#969696","flags":{}}
+{"_id":"9tL8Yy5hMJAy5XXD","name":"Haalstein Silver","type":"Actor","parent":"c73wsFFS2dVYSKUP","sorting":"a","sort":300000,"color":"#969696","flags":{}}
 {"_id":"AQNjQbqIwOx2gPyr","name":"Other Associates","type":"Actor","sort":2300000,"flags":{},"parent":"CLkaC7gsUPC5R3mN","sorting":"a","color":""}
 {"name":"Random Meals","type":"RollTable","sort":null,"flags":{},"parent":null,"sorting":"a","color":"","_id":"AmaQItibZsM8zliP"}
 {"name":"Other","type":"Item","sort":500000,"flags":{},"parent":null,"sorting":"a","color":"","_id":"B1NGEkUpOPYjZbtf"}
@@ -93,6 +94,7 @@
 {"_id":"KgvGPgUgCPwm0TZL","name":"Frugelhofen","type":"JournalEntry","parent":"uaiYhFK8DZbtIU19","sorting":"a","sort":100000,"color":null,"flags":{}}
 {"_id":"KpTC0BqE48PAMUSF","name":"Aschaffenbergs","type":"Actor","sort":200000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#e69100"}
 {"name":"Food & Cooking","type":"Item","sort":3800000,"flags":{},"parent":"lryP0lc1Adinz7aR","sorting":"a","color":"#6c2114","_id":"L3MBpMAwQfSmJt9N"}
+{"name":"Halberdier","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#4f4f4f","flags":{},"_id":"LTtJRkvww0wtpyCb"}
 {"_id":"LsKPmbgYSGmbeFvx","name":"Liebwitzs","type":"Actor","sort":1200000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":""}
 {"_id":"MG5gpyUtLHg6OSfG","name":"Bretonnian NPCs","type":"Actor","parent":"cZf8CCfRbfZcxgzE","sorting":"a","sort":950000,"color":"#5377b2","flags":{}}
 {"name":"Diseases","type":"Item","sort":2800000,"flags":{},"parent":"B1NGEkUpOPYjZbtf","sorting":"a","color":"#504e16","_id":"Mjig5LaJ7DvQxXbO"}
@@ -173,6 +175,7 @@
 {"name":"Songs","type":"JournalEntry","sort":5300000,"flags":{},"parent":"qkj3aSI8lXUSVEwD","sorting":"a","color":"","_id":"clNfcmkJx7Pc8RQm"}
 {"name":"Karak Ranger","type":"Item","sort":4000000,"flags":{},"parent":"nG3gkFYEAmqrI5fy","sorting":"a","color":"#2c4b6d","_id":"csviqL8SYxtvFBCt"}
 {"name":"Knick-knacks","type":"Item","sort":100000,"flags":{},"parent":"Jr9DZCfP6SV0ZJdg","sorting":"a","color":"#814f09","_id":"dTnfvpoPWryQyQkp"}
+{"name":"Boat Equipment","type":"Item","parent":"B1NGEkUpOPYjZbtf","sorting":"a","sort":0,"color":"#5f4725","flags":{},"_id":"dmyvjAyzyj1U6SlF"}
 {"name":"Bridges","type":"JournalEntry","sort":5400000,"flags":{},"parent":"wV26wyVeod4mutle","sorting":"a","color":"","_id":"dnJE80atezmxllF1"}
 {"name":"Special","type":"Actor","sort":5950000,"flags":{},"parent":"81ZFw4Rjgz144G8Q","sorting":"a","color":"","_id":"eRpdLuCeQQ6am5gc"}
 {"_id":"eUIeajvlSElDvALW","name":"Rivers, Canals, and Lakes","type":"JournalEntry","sort":400000,"flags":{"wfrp4e":{"initialization-parent":"Reikland"}},"parent":"J8dQ6pBcs8qRN8Bk","sorting":"m","color":"#1c3164"}
@@ -188,6 +191,7 @@
 {"_id":"hRh4ENgO4oLtD0If","name":"Parravon","type":"JournalEntry","parent":"tVm4VHOzL3Kt6qVy","sorting":"a","sort":8800000,"color":"#4f4f4f","flags":{}}
 {"name":"Parrying","type":"Item","parent":"BT6aLV9abM8rctf2","sorting":"a","sort":0,"color":null,"flags":{},"_id":"hUZtlfW9p5CmQid4"}
 {"name":"Rural","type":"Scene","sort":500000,"flags":{},"parent":"ifqvWppW117y2zyP","sorting":"a","color":"#3f6232","_id":"iSmypdWiB2z1UVCM"}
+{"name":"Boat Crew","type":"Actor","parent":"CLkaC7gsUPC5R3mN","sorting":"a","sort":0,"color":null,"flags":{},"_id":"iSp5XLFoRi5qyyQW"}
 {"name":"Backgrounds","type":"Scene","sort":100000,"flags":{},"parent":null,"sorting":"a","color":"#335021","_id":"ifqvWppW117y2zyP"}
 {"_id":"ih3cxrqEOwBrx7ls","name":"Character Creation","type":"JournalEntry","parent":null,"sorting":"a","sort":1300000,"color":"#186766","flags":{}}
 {"_id":"iltPBXW0kOqlZhfA","name":"Settlements","type":"JournalEntry","sort":500000,"flags":{"wfrp4e":{"initialization-parent":"Reikland"}},"parent":"J8dQ6pBcs8qRN8Bk","sorting":"m","color":"#534f1e"}
@@ -268,12 +272,5 @@
 {"name":"Cavalry","type":"Item","parent":"BT6aLV9abM8rctf2","sorting":"a","sort":0,"color":null,"flags":{},"_id":"yvb0eUmeiZAZjNWL"}
 {"_id":"zQRDhzWh9uTwnQqe","name":"Class Endeavours","type":"JournalEntry","sort":2600000,"flags":{"wfrp4e":{"initialization-parent":"Endeavours"}},"parent":"5PMBVwnydUMSobIr","sorting":"m","color":""}
 {"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
-{"name":"Boat Crew","type":"Actor","parent":"CLkaC7gsUPC5R3mN","sorting":"a","sort":0,"color":null,"flags":{},"_id":"iSp5XLFoRi5qyyQW"}
-{"name":"Boat Equipment","type":"Item","parent":"B1NGEkUpOPYjZbtf","sorting":"a","sort":0,"color":"#5f4725","flags":{},"_id":"dmyvjAyzyj1U6SlF"}
-{"name":"Halberdier","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#4f4f4f","flags":{},"_id":"LTtJRkvww0wtpyCb"}
-{"name":"Camp Follower","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":null,"flags":{},"_id":"0h2woGqGPI7tYegu"}
-{"_id":"0h2woGqGPI7tYegu","name":"Camp Follower","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#80654d","flags":{}}
-{"_id":"9tL8Yy5hMJAy5XXD","name":"Haalstein Silver","type":"Actor","parent":null,"sorting":"a","sort":3875000,"color":"#969696","flags":{}}
-{"_id":"9tL8Yy5hMJAy5XXD","name":"Haalstein Silver","type":"Actor","parent":"c73wsFFS2dVYSKUP","sorting":"a","sort":300000,"color":"#969696","flags":{}}
-{"name":"Dieter","type":"JournalEntry","parent":"3D5AeQXPQFECRFtw","sorting":"a","sort":0,"color":null,"flags":{},"_id":"9lSBBHxDKKzydNBM"}
-{"$$deleted":true,"_id":"9lSBBHxDKKzydNBM"}
+{"name":"Talfwick's Minion","type":"Actor","parent":"CLkaC7gsUPC5R3mN","sorting":"a","sort":0,"color":null,"flags":{},"_id":"THlGerQbFo5oxJon"}
+{"_id":"THlGerQbFo5oxJon","name":"Talfwick's Minions","type":"Actor","parent":"CLkaC7gsUPC5R3mN","sorting":"a","sort":0,"color":"","flags":{}}
