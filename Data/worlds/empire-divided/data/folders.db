@@ -31,7 +31,7 @@
 {"_id":"5lgcrfb3I58JxD8Y","name":"GM's Guide","type":"JournalEntry","parent":"KBFMpqeeMFWhdpSI","sorting":"a","sort":3000000,"color":"#7b1717","flags":{}}
 {"name":"Asrai Highborn","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#38581d","flags":{},"_id":"6KB3aDLUypQNLIGC"}
 {"name":"Disgusting Treasures","type":"Item","sort":null,"flags":{},"parent":"Jr9DZCfP6SV0ZJdg","sorting":"a","color":"#757b1e","_id":"6acWZ0eXgSQy7mDe"}
-{"_id":"6eynqwamadgpzya8","name":"Lowhaven","type":"JournalEntry","parent":null,"sorting":"a","sort":1700000,"color":null,"flags":{}}
+{"_id":"6eynqwamadgpzya8","name":"Lowhaven","type":"JournalEntry","parent":"tVm4VHOzL3Kt6qVy","sorting":"a","sort":9200000,"color":null,"flags":{}}
 {"_id":"7JJvX9ibeSRwPy1t","name":"Wallensteins","type":"Actor","sort":1000000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#e69d00"}
 {"name":"Ubersreik","type":"Scene","sort":800000,"flags":{},"parent":null,"sorting":"a","color":"#2c4258","_id":"7UbKiipTOP45gltn"}
 {"name":"Loot Tables","type":"RollTable","sort":1100000,"flags":{},"parent":"8quqXmxl5WgxUHgI","sorting":"a","color":"","_id":"7exNT1PyUXvcC4sP"}
@@ -72,7 +72,6 @@
 {"name":"Extra","type":"RollTable","sort":800000,"flags":{},"parent":"F70jdHaYsajKf1pv","sorting":"a","color":"","_id":"F8ncr5rwQxiul0pt"}
 {"_id":"FFQANC5sa5CMDx9k","name":"Weapons","type":"Item","sort":300000,"flags":{},"parent":null,"sorting":"a","color":"#3c719a"}
 {"_id":"FH46SuKDUeaO7cfJ","name":"NPC Careers","type":"Item","sort":1300000,"flags":{},"parent":"B1NGEkUpOPYjZbtf","sorting":"a","color":"#3b1212"}
-{"_id":"HXVqNg5OLIKnmuFz","name":"Bretonnian","type":"Item","sort":3900000,"flags":{},"parent":"lryP0lc1Adinz7aR","sorting":"a","color":"#3a4369"}
 {"_id":"IAn7gAevS1Z5CnKd","name":"Travel","type":"JournalEntry","parent":null,"sorting":"a","sort":600000,"color":"#1e6b47","flags":{}}
 {"_id":"IQwilEiSCe8ZjlZf","name":"Karstadt-Stampfs","type":"Actor","sort":400000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#4a582c"}
 {"name":"Carriage","type":"Actor","sort":1800000,"flags":{},"parent":"CLkaC7gsUPC5R3mN","sorting":"a","color":"","_id":"IpI4HOVwjR9a2NNh"}
@@ -89,7 +88,6 @@
 {"_id":"Kft8Ng9HfLOd35El","name":"New Animal Rules","type":"JournalEntry","sort":100000,"flags":{},"parent":"NOyJwiypgeV7mEJh","sorting":"a","color":"#6b3000"}
 {"_id":"KgvGPgUgCPwm0TZL","name":"Frugelhofen","type":"JournalEntry","parent":"uaiYhFK8DZbtIU19","sorting":"a","sort":100000,"color":null,"flags":{}}
 {"_id":"KpTC0BqE48PAMUSF","name":"Aschaffenbergs","type":"Actor","sort":200000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#e69100"}
-{"name":"Food & Cooking","type":"Item","sort":3800000,"flags":{},"parent":"lryP0lc1Adinz7aR","sorting":"a","color":"#6c2114","_id":"L3MBpMAwQfSmJt9N"}
 {"name":"Halberdier","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#4f4f4f","flags":{},"_id":"LTtJRkvww0wtpyCb"}
 {"_id":"LsKPmbgYSGmbeFvx","name":"Liebwitzs","type":"Actor","sort":1200000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":""}
 {"_id":"MG5gpyUtLHg6OSfG","name":"Bretonnian NPCs","type":"Actor","parent":"cZf8CCfRbfZcxgzE","sorting":"a","sort":950000,"color":"#5377b2","flags":{}}
@@ -145,10 +143,9 @@
 {"_id":"Xj9kKCDM9wWXQ5u4","name":"Magic Items","type":"Item","sort":600000,"flags":{},"parent":null,"sorting":"a","color":"#c28e00"}
 {"_id":"XjBkMXDDob9J9Ekf","name":"The Eight Lores","type":"JournalEntry","sort":2700000,"flags":{"wfrp4e":{"initialization-parent":"Magic"}},"parent":"SV4wmXUvuCNwQ0Nc","sorting":"m","color":""}
 {"name":"Grauenburg Annotations","type":"JournalEntry","sort":6900000,"flags":{},"parent":"sJsgXlZiMioDgTqH","sorting":"a","color":"","_id":"Xz4TOyQW2CDWU6lJ"}
-{"_id":"Y4RfG4SneSRP7rX4","name":"Masks","type":"Item","parent":"lryP0lc1Adinz7aR","sorting":"a","sort":4000000,"color":"#54325d","flags":{}}
 {"_id":"YRGW5Jqs9RpDaLqn","name":"Spells","type":"Item","sort":1000000,"flags":{},"parent":"B1NGEkUpOPYjZbtf","sorting":"a","color":"#592f6f"}
-{"name":"Dwarf Items","type":"Item","sort":3500000,"flags":{},"parent":"lryP0lc1Adinz7aR","sorting":"a","color":"#747272","_id":"YVIo1XXWiGMTa5kG"}
 {"_id":"YYjrl7JWy5hwE8uQ","name":"Walls and Gates","type":"JournalEntry","sort":5600000,"flags":{},"parent":"wV26wyVeod4mutle","sorting":"a","color":""}
+{"name":"Strigany","type":"Actor","parent":"kfNvqBQoG0dWhzdm","sorting":"a","sort":0,"color":null,"flags":{},"_id":"Yyc9lLSMjWC4jBcc"}
 {"_id":"Z2w8JZNIkjoDMgyU","name":"Rounceys","type":"Actor","sort":200000,"flags":{},"parent":"XLndJ2I3x4vvGyT0","sorting":"a","color":""}
 {"name":"The Precinct","type":"JournalEntry","sort":5000000,"flags":{},"parent":"nYrlPwQwhU9yHNZz","sorting":"a","color":"","_id":"ZAXcRRNp4QNjx9YW"}
 {"name":"Grey Eminence","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#292929","flags":{},"_id":"ZCqqKwyBJRXXFFa7"}
@@ -229,6 +226,7 @@
 {"name":"Wolf Kin","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#474747","flags":{},"_id":"ojDULVoE8Tn1mZBx"}
 {"name":"Black Rock","type":"JournalEntry","sort":4400000,"flags":{},"parent":"nYrlPwQwhU9yHNZz","sorting":"a","color":"","_id":"p6fgHx1swSlMc8hH"}
 {"name":"Slaughter in Spittlefeld","type":"JournalEntry","sort":7900000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#662900","_id":"pdvIHQsjlpM0hC2f"}
+{"_id":"prP1hk4myftQ3oq7","name":"Grapes","type":"JournalEntry","parent":null,"sorting":"a","sort":1900000,"color":"#6d0c6e","flags":{}}
 {"_id":"qZ0nY1rzfkhj07wW","name":"Loot","type":"Item","sort":1200000,"flags":{},"parent":"lryP0lc1Adinz7aR","sorting":"a","color":"#dba100"}
 {"name":"Grey Wizard","type":"Item","sort":4800000,"flags":{},"parent":"nG3gkFYEAmqrI5fy","sorting":"a","color":"#4f4f4f","_id":"qbkx51Ly9LkVf0vN"}
 {"name":"Horses","type":"Actor","parent":"MG5gpyUtLHg6OSfG","sorting":"a","sort":0,"color":null,"flags":{},"_id":"qkMMTzLjFiDTDYtu"}
@@ -271,19 +269,5 @@
 {"_id":"yrVnNPRyDRk4Ku57","name":"Travel Endeavours","type":"JournalEntry","sort":100000,"flags":{},"parent":"IAn7gAevS1Z5CnKd","sorting":"a","color":"#634231"}
 {"name":"Cavalry","type":"Item","parent":"BT6aLV9abM8rctf2","sorting":"a","sort":0,"color":null,"flags":{},"_id":"yvb0eUmeiZAZjNWL"}
 {"_id":"zQRDhzWh9uTwnQqe","name":"Class Endeavours","type":"JournalEntry","sort":2600000,"flags":{"wfrp4e":{"initialization-parent":"Endeavours"}},"parent":"5PMBVwnydUMSobIr","sorting":"m","color":""}
-{"_id":"zhKNzx21YVsaN3CA","name":"The Road to Middenheim","type":"JournalEntry","parent":null,"sorting":"a","sort":1800000,"color":"#474747","flags":{}}
-{"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
-{"name":"Export","type":"Item","parent":"lryP0lc1Adinz7aR","sorting":"a","sort":0,"color":null,"flags":{},"_id":"i8X42TnnlpZgJWJC"}
-{"$$deleted":true,"_id":"HXVqNg5OLIKnmuFz"}
-{"$$deleted":true,"_id":"YVIo1XXWiGMTa5kG"}
-{"$$deleted":true,"_id":"L3MBpMAwQfSmJt9N"}
-{"$$deleted":true,"_id":"Y4RfG4SneSRP7rX4"}
-{"$$deleted":true,"_id":"i8X42TnnlpZgJWJC"}
-{"name":"Export","type":"Item","parent":null,"sorting":"a","sort":0,"color":null,"flags":{},"_id":"7Y3bkoiF42TAbKjF"}
-{"$$deleted":true,"_id":"7Y3bkoiF42TAbKjF"}
-{"name":"Grapes","type":"JournalEntry","parent":null,"sorting":"a","sort":0,"color":"#6d0c6e","flags":{},"_id":"prP1hk4myftQ3oq7"}
-{"_id":"prP1hk4myftQ3oq7","name":"Grapes","type":"JournalEntry","parent":null,"sorting":"a","sort":1900000,"color":"#6d0c6e","flags":{}}
-{"name":"Strigany","type":"Actor","parent":"kfNvqBQoG0dWhzdm","sorting":"a","sort":0,"color":null,"flags":{},"_id":"Yyc9lLSMjWC4jBcc"}
-{"_id":"6eynqwamadgpzya8","name":"Lowhaven","type":"JournalEntry","parent":null,"sorting":"a","sort":1150000,"color":null,"flags":{}}
-{"_id":"6eynqwamadgpzya8","name":"Lowhaven","type":"JournalEntry","parent":"tVm4VHOzL3Kt6qVy","sorting":"a","sort":9200000,"color":null,"flags":{}}
 {"_id":"zhKNzx21YVsaN3CA","name":"The Road to Middenheim","type":"JournalEntry","parent":"tVm4VHOzL3Kt6qVy","sorting":"a","sort":9300000,"color":"#474747","flags":{}}
+{"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
