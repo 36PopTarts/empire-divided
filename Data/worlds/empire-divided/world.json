@@ -96,6 +96,16 @@
       "package": "world",
       "entity": "Macro",
       "private": false
+    },
+    {
+      "label": "Trappings (Misc)",
+      "type": "Item",
+      "name": "trappings-misc",
+      "path": "packs/trappings-misc.db",
+      "system": "wfrp4e",
+      "package": "world",
+      "entity": "Item",
+      "private": false
     }
   ],
   "system": "wfrp4e",
