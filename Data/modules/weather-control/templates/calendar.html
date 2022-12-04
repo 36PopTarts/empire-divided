@@ -91,19 +91,21 @@
 		<div id="weather-container">
 			<header>
 				<span id="current-temperature">24.5°C</span>
-		    <select id="climate-selection" title="{{localize 'wctrl.weather.SelectClimate'}}">
-		      <option title="{{localize 'wctrl.weather.climate.description.Temperate'}}" value="temperate">{{localize 'wctrl.weather.climate.Temperate'}}</option>
-		      <option title="{{localize 'wctrl.weather.climate.description.TemperateMountain'}}" value="temperateMountain">{{localize 'wctrl.weather.climate.TemperateMountain'}}</option>
-		      <option title="{{localize 'wctrl.weather.climate.description.Desert'}}" value="desert">{{localize 'wctrl.weather.climate.Desert'}}</option>
-		      <option title="{{localize 'wctrl.weather.climate.description.Tundra'}}" value="tundra">{{localize 'wctrl.weather.climate.Tundra'}}</option>
-		      <option title="{{localize 'wctrl.weather.climate.descripton.Tropical'}}" value="tropical">{{localize 'wctrl.weather.climate.Tropical'}}</option>
-		      <option title="{{localize 'wctrl.weather.climate.description.Taiga'}}" value="taiga">{{localize 'wctrl.weather.climate.Taiga'}}</option>
-		      <option title="{{localize 'wctrl.weather.climate.description.Volcanic'}}" value="volcanic">{{localize 'wctrl.weather.climate.Volcanic'}}</option>
-		      <option title="{{localize 'wctrl.weather.climate.description.Polar'}}" value="polar">{{localize 'wctrl.weather.climate.Polar'}}</option>
-		    </select>
-		    <div class="weather-refresh calendar-btn" id="weather-regenerate" title="{{localize 'wctrl.weather.RegenerateWeather'}}">
+				{{#if isGM}}
+				<select id="climate-selection" title="{{localize 'wctrl.weather.SelectClimate'}}">
+				<option title="{{localize 'wctrl.weather.climate.description.Temperate'}}" value="temperate">{{localize 'wctrl.weather.climate.Temperate'}}</option>
+				<option title="{{localize 'wctrl.weather.climate.description.TemperateMountain'}}" value="temperateMountain">{{localize 'wctrl.weather.climate.TemperateMountain'}}</option>
+				<option title="{{localize 'wctrl.weather.climate.description.Desert'}}" value="desert">{{localize 'wctrl.weather.climate.Desert'}}</option>
+				<option title="{{localize 'wctrl.weather.climate.description.Tundra'}}" value="tundra">{{localize 'wctrl.weather.climate.Tundra'}}</option>
+				<option title="{{localize 'wctrl.weather.climate.descripton.Tropical'}}" value="tropical">{{localize 'wctrl.weather.climate.Tropical'}}</option>
+				<option title="{{localize 'wctrl.weather.climate.description.Taiga'}}" value="taiga">{{localize 'wctrl.weather.climate.Taiga'}}</option>
+				<option title="{{localize 'wctrl.weather.climate.description.Volcanic'}}" value="volcanic">{{localize 'wctrl.weather.climate.Volcanic'}}</option>
+				<option title="{{localize 'wctrl.weather.climate.description.Polar'}}" value="polar">{{localize 'wctrl.weather.climate.Polar'}}</option>
+				</select>
+				<div class="weather-refresh calendar-btn" id="weather-regenerate" title="{{localize 'wctrl.weather.RegenerateWeather'}}">
 					<i class="fas fa-redo"></i>
 				</div>
+				{{/if}}
 			</header>
 			<div class="weather-content">
 				<div class="weather-description">

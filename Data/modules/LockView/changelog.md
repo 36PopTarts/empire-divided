@@ -1,4 +1,27 @@
 # Changelog
+### v1.5.4 - 14-09-2022
+Fixes:
+<ul>
+    <li>Fixed error related to canvas.blur, which prevented the canvas from loading in certain situations</li>
+    <li>Fixed errors and warnings when boundingbox was active while panlock was not, and a controlled token moved outside the view (which should cause the canvas to pan automatically)</li>
+    <li>Fixed compatibility warnings when editing drawings (for bounding box purposes)</li>
+</ul>
+
+### v1.5.3 - 31-08-2022
+
+Additions:
+<ul>
+    <li>Added the option for players to control the module through control buttons. This can be enabled in the user configuration with the 'control' setting</li>
+    <li>When using the 'Edit Viewbox' functionality, zooming and panning will only be affected when you hover your mouse over the user's viewbox (it used to affect all users)</li>
+    <li>Added the UI (un)hide hotkey to the core keybinding menu. Defaults to Alt + U</li>
+</ul>
+
+Other:
+<ul>
+    <li>Improved the documentation and naming of things (mainly related to the user config). Please not that the old 'control' setting is renamed to 'enable'</li>
+    <li>Made compatible with Foundry v10, dropped compatibility with Foundry v8</li>
+</ul>
+
 ### v1.5.2 - 22-03-2022
 Fixes:
 <ul>

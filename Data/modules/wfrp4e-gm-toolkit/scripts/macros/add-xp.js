@@ -2,17 +2,17 @@ addXP();
 
 async function addXP() {
 
-  // setup: determine group of actors to be awarded experience
-  let awardees = []
-  if (game.user.targets.size < 1) {
-    // (1) all player characters if no tokens are targeted
-    awardees = game.actors.filter(pc => pc.hasPlayerOwner && pc.type == "character");
+ // setup: determine group of actors to be awarded experience
+ let awardees = []
+ if (game.user.targets.size < 1) {
+   // (1) all assigned player characters 
+    awardees = game.gmtoolkit.utility.getGroup(game.settings.get("wfrp4e-gm-toolkit", "defaultPartyGroupTest")).filter(g => g.type === "character")
   } else {
-    // (2) otherwise, all targeted player character tokens
-    awardees = Array.from(game.user.targets).filter(pc => pc.actor.hasPlayerOwner && pc.actor.type == "character");
+    // (2) all targeted tokens of awardee selection
+    awardees = game.gmtoolkit.utility.getGroup( game.settings.get("wfrp4e-gm-toolkit", "defaultPartyGroupTest"), {interaction : "targeted"}).filter(g => g.type === "character")
   }
-
-  // setup: exit with notice if there are no player-owned characters
+   
+  // setup: exit with notice if there are no player-assigned characters
   if (awardees.length < 1) return ui.notifications.error(game.i18n.localize("GMTOOLKIT.Token.TargetPCs"), {});
 
   // Get  session ID/date, default XP award and default reason
@@ -77,9 +77,9 @@ function updateXP(awardees, XP, reason) {
   // cycle through player characters, gathering experience change data for report message
   awardees.forEach ( pc  => {
     let recipient = pc?.actor?.name || pc.name 
-    let XPTotal = pc?.details?.experience?.total || pc.actor.data.data.details.experience.total; 
+    let XPTotal = pc?.details?.experience?.total; 
     let newXPTotal = Math.max(XPTotal + XP,0);
-    let XPCurrent = pc?.details?.experience?.current  || pc.actor.data.data.details.experience.current; 
+    let XPCurrent = pc?.details?.experience?.current || 0; 
     let newXPCurrent = Math.max(XPCurrent + XP,0);
 
     // update token actor or actor
@@ -100,10 +100,10 @@ function updateXP(awardees, XP, reason) {
 
 /* ==========
  * MACRO: Add XP
- * VERSION: 0.9.3
- * UPDATED: 2022-01-24
- * DESCRIPTION: Adds a set amount of XP to all or targeted player character(s). Adds XP update note to the Chat log.
- * TIP: Characters must have a player assigned. 
+ * VERSION: 0.9.4.3
+ * UPDATED: 2022-07-31
+ * DESCRIPTION: Adds a set amount of XP to all or targeted player character(s). Adds XP update note to the chat log.
+ * TIP: Characters must have a player assigned (if default group is 'party') or be player-owned (if default group is 'company'). 
  * TIP: Default XP amount and reason can be preset in module settings, along with option to bypass prompt for XP amount each time.
  * TIP: Non-whole numbers are rounded off. Negative numbers are subtracted. 
  ========== */

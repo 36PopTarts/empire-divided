@@ -3,13 +3,18 @@ import { Settings } from './settings.js';
 /**
  * Default settings
  */
-let actorRequirementSetting = "None";                               // required actor premission to see character art
+let actorRequirementSetting = "None";                               // required actor permission to see character art
 let imageHoverActive = true;                                        // Enable/Disable module
 let imagePositionSetting = "Bottom left";                           // location of character art
 let imageSizeSetting = 7;                                           // size of character art
 let imageHoverArt = "character";                                    // Art type on hover (Character art or Token art)
-let imageHoverDelay = 700;                                          // Hover time requirement (miliseconds)
+let imageHoverDelay = 0;                                            // Hover time requirement (milliseconds)
 let DEFAULT_TOKEN = "icons/svg/mystery-man.svg";                    // default token for foundry vtt
+let showSpecificArt = false;                                        // track when to show/hide art when GM uses keybind to show art.
+let showArtTimer = 6000;                                            // Time (milliseconds) spent showing art when GM decides to "showSpecificArt" to everyone.
+
+let chatPortraitActive = false;                                     // chat portrait incompatibility check
+
 
 /**
  * Supported Foundry VTT file types
@@ -17,7 +22,9 @@ let DEFAULT_TOKEN = "icons/svg/mystery-man.svg";                    // default t
 const imageFileExtentions = ["jpg", "jpeg", "png", "svg", "webp"];  // image file extentions
 const videoFileExtentions = ["mp4", "ogg", "webm", "m4v"];          // video file extentions
 
-let cacheImageNames = new Object();                                 // url file names cache
+let cacheImageNames = {};                                           // url file names cache
+let timer;                                                          // Timer to reset setTimeout to show all users art. 
+
 
 /**
  * Assign module settings
@@ -28,13 +35,28 @@ function registerModuleSettings() {
     imageSizeSetting = game.settings.get('image-hover', 'userImageSize');
     imagePositionSetting = game.settings.get('image-hover', 'userImagePosition');
     imageHoverArt = game.settings.get('image-hover', 'artType');
-    imageHoverDelay = game.settings.get('image-hover', 'userHoverDelay')
-};
+    imageHoverDelay = game.settings.get('image-hover', 'userHoverDelay');
+    showArtTimer =game.settings.get("image-hover", 'showArtTimer');
+    chatPortraitActive = game.modules.get("chat-portrait")?.active;      // Undefined if module not installed)
+
+}
+
+/**
+ * Add socket to trigger all users to show art.
+ */
+function registerShowArtSocket() {
+    game.socket.on("module.image-hover", (tokenID) => {
+        const token = canvas.tokens.get(tokenID);
+        canvas.hud.imageHover.showToAll(token);
+    });
+}
+
 
 /**
  * Copy Placeable HUD template
  */
 class ImageHoverHUD extends BasePlaceableHUD {
+
 
     /**
      * Retrieve and override default options for BasePlaceableHUD
@@ -47,7 +69,7 @@ class ImageHoverHUD extends BasePlaceableHUD {
             resizable: true,
 	        template: "modules/image-hover/templates/image-hover-template.html" // HTML template
         });
-    };
+    }
 
     /**
      * Get image data for html template
@@ -55,20 +77,30 @@ class ImageHoverHUD extends BasePlaceableHUD {
     getData() {
         const data = super.getData();
         const tokenObject = this.object;
-        let image = tokenObject.actor.img                                   // Character art
+        let image = tokenObject.actor.img;                                   // Character art
         const isWildcard = tokenObject.actor.data.token.randomImg;
         const isLinkedActor = tokenObject.data.actorLink;
+
         /**
          * Don't use character art if it doesn't exist or settings are applied.
          */
 	    if (image == DEFAULT_TOKEN || imageHoverArt === "token" || (imageHoverArt === "wildcard" && isWildcard) || (imageHoverArt == "linked" && !isLinkedActor)) {
 		    image = tokenObject.data.img;                                   // Token art
         }
-        data.url = image
-        const fileExt = this.fileExtention(image)
-        if (videoFileExtentions.includes(fileExt)) data.isVideo = true      // if the file is not a image, we want to use the video html tag
+        
+        /**
+         * Check for show specific art option on token.
+         */
+        const specificArtSelected = tokenObject.document.getFlag('image-hover', 'specificArt');
+        if (specificArtSelected && specificArtSelected != "path/image.png") {
+            image = specificArtSelected;
+        }
+
+        data.url = image;
+        const fileExt = this.fileExtention(image);
+        if (videoFileExtentions.includes(fileExt)) data.isVideo = true;      // if the file is not a image, we want to use the video html tag
         return data;
-    };
+    }
 
     /**
      * Attempts to get the file extention of the string input
@@ -79,7 +111,7 @@ class ImageHoverHUD extends BasePlaceableHUD {
         const endOfFile = file.lastIndexOf('.') + 1;
         if (endOfFile !== undefined) fileExt = file.substring(endOfFile).toLowerCase();
     
-        return fileExt
+        return fileExt;
     }
 
     /**
@@ -88,27 +120,33 @@ class ImageHoverHUD extends BasePlaceableHUD {
     setPosition() {
         if (!this.object) return;
         this.updatePosition();
-    };
+    }
 
     /**
      * While hovering over a token and zooming or moving screen position, we want to reposition the image and scale it.
      */
     updatePosition() {
-        const center = canvas.scene._viewPosition;                                  // Middle of the screen
-        const imageWidthScaled = window.innerWidth/(imageSizeSetting*center.scale); // Scaled width of image to canvas
         let url = this.object.actor.img;                                            // Character art
         const isWildcard = this.object.actor.data.token.randomImg;
         const isLinkedActor = this.object.data.actorLink;
         if (url == DEFAULT_TOKEN || imageHoverArt === "token" || (imageHoverArt === "wildcard" && isWildcard) || (imageHoverArt == "linked" && !isLinkedActor)) {                                                 // If no character art exists, use token art instead.
 		    url = this.object.data.img;                                             // Token art
-        };
+        }
+
+        /**
+         * Check for show specific art option on token and apply correct size.
+         */
+        const specificArtSelected = this.object.document.getFlag('image-hover', 'specificArt')
+        if (specificArtSelected && specificArtSelected != "path/image.png") {
+            url = specificArtSelected;
+        }
 
         if (url in cacheImageNames) {
-            this.applyToCanvas(url, imageWidthScaled, center)
+            this.applyToCanvas(url);
         } else {                                                                    // This only happens when you change a image on the canvas.
-            this.cacheAvailableToken(url, imageWidthScaled,center)
+            this.cacheAvailableToken(url, true);
         }
-    };
+    }
 
     /**
      * Preload the url to find the width and height.
@@ -118,12 +156,12 @@ class ImageHoverHUD extends BasePlaceableHUD {
     loadSourceDimensions(url) {
         return new Promise(resolve => {
 
-            const fileExt = this.fileExtention(url)
+            const fileExt = this.fileExtention(url);
 
             if (videoFileExtentions.includes(fileExt)) {
                 const video = document.createElement('video');                  // create the video element
                 video.addEventListener( "loadedmetadata", function () {         // place a listener on it
-                    resolve({        
+                    resolve({
                         width : this.videoWidth,                                // send back result
                         height : this.videoHeight
                     });
@@ -139,38 +177,35 @@ class ImageHoverHUD extends BasePlaceableHUD {
                     });
                 });
                 img.src = url;
-            };
+            }
         });
-    };
+    }
 
     /** 
      * Add image to cache and show on canvas
      * @param {String} url Url of the image/video to get dimensions from.
-     * @param {Number} imageWidthScaled width of image related to screen size (pixels)
-     * @param {Number} center Middle of the screen with scaling (pixels)
+     * @param {Boolean} applyToScreen Apply image to screen or just cache image.
      */
-    cacheAvailableToken(url, imageWidthScaled, center) {
+    cacheAvailableToken(url, applyToScreen) {
         canvas.hud.imageHover.loadSourceDimensions(url).then(({width, height}) => {
             cacheImageNames[url] = {
                 'width': width,
                 'height': height
+            };
+            if (applyToScreen) {
+                this.applyToCanvas(url);
             }
-            if (imageWidthScaled && center) {
-                this.applyToCanvas(url, imageWidthScaled, center)
-            }
-        })
+        });
     }
 
     /**
      * Rescale image to fit screen size, apply css
      * @param {String} url Url of the image/video to get dimensions from.
-     * @param {Number} imageWidthScaled width of image related to screen size (pixels)
-     * @param {Number} center Middle of the screen with scaling (pixels)
      */
-    applyToCanvas(url, imageWidthScaled, center) {
+    applyToCanvas(url) {
         const imageWidth = cacheImageNames[url].width;                                //width of original image
         const imageHeight = cacheImageNames[url].height;                              //height of original image
-        const [xAxis, yAxis] = this.changePosition(imageWidth, imageHeight, imageWidthScaled, center);   // move image to correct verticle position.
+        const [xAxis, yAxis, imageWidthScaled] = this.changePosition(imageWidth, imageHeight);   // move image to correct verticle position.
         const position = {                                                      // CSS
             width: imageWidthScaled,
             left: xAxis,
@@ -181,49 +216,64 @@ class ImageHoverHUD extends BasePlaceableHUD {
 
     /**
      * Rescale original image and move to correct location within the canvas.
-     * imagePositionSetting options include Bottom right/left and Top right/left
-     * @param {Number} imageWidth width of original image (pixles)
+     * imagePositionSetting options include Bottom right/left, Top right/left and Centre
+     * @param {Number} imageWidth width of original image (pixels)
      * @param {Number} imageHeight height of original image (pixels)
-     * @param {Number} imageWidthScaled width of image related to screen size (pixels)
-     * @param {Number} center Middle of the screen with scaling (pixels)
      */
-    changePosition(imageWidth, imageHeight, imageWidthScaled, center) {
-        const imageWidthRatio = imageWidth/imageWidthScaled;
-        const imageHeightScaled = imageHeight/imageWidthRatio;
-        const windowWidthScaled = window.innerWidth/(center.scale);
-        const windowHeightScaled = window.innerHeight/(center.scale);
+    changePosition(imageWidth, imageHeight) {
+        const centre = canvas.scene._viewPosition;                                  // Middle of the screen
+        let imageWidthScaled = window.innerWidth/(imageSizeSetting*centre.scale);   // Scaled width of image to canvas
+        let imageHeightScaled = imageWidthScaled * (imageHeight/imageWidth);        // Scaled height from width
+        const windowWidthScaled = window.innerWidth/(centre.scale);
+        const windowHeightScaled = window.innerHeight/(centre.scale);
         let xAxis = 0;
         let yAxis = 0;
 
+        if (imageHeightScaled > windowHeightScaled){                            // Height of image bigger than window height
+            imageWidthScaled = (windowHeightScaled/imageHeightScaled) * imageWidthScaled;
+            imageHeightScaled = windowHeightScaled;
+        }
+
         if (imagePositionSetting.includes('Bottom')){                           // move image to bottom of canvas
-            yAxis = center.y + windowHeightScaled/2  - imageHeightScaled;   
+            yAxis = centre.y + windowHeightScaled/2  - imageHeightScaled;   
         }
         else {
-            yAxis = center.y - windowHeightScaled/2;
-        };
+            yAxis = centre.y - windowHeightScaled/2;
+        }
+
+        const sidebar = document.getElementById('sidebar');
+        const sidebarCollapsed = sidebar.classList.contains("collapsed");       // take into account if sidebar is collapsed
+
+        if(imagePositionSetting == "Centre"){
+            if (sidebarCollapsed){
+                return [centre.x-imageWidthScaled/2, centre.y-imageHeightScaled/2, imageWidthScaled];
+            } else {
+                return [centre.x-imageWidthScaled/2 - (sidebar.offsetWidth/centre.scale)/3, centre.y-imageHeightScaled/2, imageWidthScaled];
+            }
+        }
+
 
         if (imagePositionSetting.includes('right')){                            // move image to right of canvas
-            const sidebar = document.getElementById('sidebar');
-            const sidebarCollapsed = sidebar.classList.contains("collapsed");
             if (imagePositionSetting.includes('Bottom') && sidebarCollapsed) {
-                xAxis = center.x + windowWidthScaled/2 - imageWidthScaled;      // take into account if sidebar is collapsed
+                xAxis = centre.x + windowWidthScaled/2 - imageWidthScaled;
             } else {
-                const sidebarWidthScaled = sidebar.offsetWidth/center.scale + parseFloat(window.getComputedStyle(sidebar, null).getPropertyValue('margin-right'))/center.scale;
-                xAxis = center.x + windowWidthScaled/2 - imageWidthScaled - sidebarWidthScaled;
+                const sidebarWidthScaled = sidebar.offsetWidth/centre.scale + parseFloat(window.getComputedStyle(sidebar, null).getPropertyValue('margin-right'))/centre.scale;
+                xAxis = centre.x + windowWidthScaled/2 - imageWidthScaled - sidebarWidthScaled;
             }
         } else {
-            xAxis = center.x - windowWidthScaled/2
+            xAxis = centre.x - windowWidthScaled/2;
         }
-        return [xAxis, yAxis];
-    };
+        return [xAxis, yAxis, imageWidthScaled];
+    }
 
     /**
      * check requirements then show character art
      * @param {*} token token passed in
      * @param {Boolean} hovered if token is mouseovered
-     * @param {Number} delay hover time requirement (miliseconds) to show art.
+     * @param {Number} delay hover time requirement (milliseconds) to show art.
      */
     showArtworkRequirements(token, hovered, delay) {
+
         /**
          * check token is actor, module is enabled, user has permissions to see character art
          */
@@ -237,40 +287,85 @@ class ImageHoverHUD extends BasePlaceableHUD {
         if (token.document.getFlag('image-hover', 'hideArt')){
             return;
         }
-        
+
+        /**
+         * Do not show art for chat portrait module (hover hook doesn't trigger out properly).
+         */
+        if (chatPortraitActive) {    
+            if (event){
+                var x = event.clientX;
+                var y = event.clientY;
+                if (x && y) {
+                    var elementMouseIsOver = document.elementFromPoint(x, y);                       // element where mouse is
+                    if (elementMouseIsOver.classList.contains("message-portrait") || elementMouseIsOver.classList.contains("chat-message") ){
+                        return;
+                    }
+                    if (elementMouseIsOver.classList.value && elementMouseIsOver.classList.value.includes("chat-portrait")) {
+                        return;
+                    }
+                }
+            }
+        } 
+
+        /**
+         * Do not show new art or hide current art if GM has triggerd the "showToAll" option for "showArtTimer" seconds.
+         */
+        if (showSpecificArt) {
+            return;
+        }
+
         if (hovered && (canvas.activeLayer.name == 'TokenLayer' || canvas.activeLayer.name == 'TokenLayerPF2e')) {       // Show token image if hovered, otherwise don't
             setTimeout(function() {
-                if (token == canvas.tokens._hover) {
+                if (token == canvas.tokens._hover && token.actor.img == canvas.tokens._hover.actor.img) {
                     canvas.hud.imageHover.bind(token);
                 } else {
-                    canvas.hud.imageHover.clear()
+                    canvas.hud.imageHover.clear();
                 }
             }, delay);
         } else {
             this.clear();
-        };
+        }
     }
-};
+
+    /**
+     * Triggers the art token to be shown for (set in game settings by GM) seconds.
+     * Only used when GM uses the "show to all" (set in keybind settings).
+     * token is shown to everyone (bypasses all settings apart from if "user disable image hover" setting)
+     * GM and users must be on same scene.
+     * @param {*} token token passed in
+     */
+    showToAll(token) {
+        if (token && imageHoverActive) {
+            showSpecificArt = true;                                     // condition to keep art on screen
+            canvas.hud.imageHover.bind(token);
+            clearTimeout(timer);                                        //reset timer if key is pressed again
+            timer = setTimeout(function() {
+                showSpecificArt = false;
+                canvas.hud.imageHover.clear();
+            }, showArtTimer);                                           //after set amount of time, clear image
+        }
+    }
+}
 
 /**
  * Add Image Hover display to html on load.
  */
 Hooks.on("renderHeadsUpDisplay", (app, html, data) => {
 
-    html[0].style.zIndex = 70;                                      // Sets image to show above other UI. This is definately a hack!
+    html[0].style.zIndex = 70;
     html.append(`<template id="image-hover-hud"></template>`);
     canvas.hud.imageHover = new ImageHoverHUD();
 
     /**
      * renderHeadsUpDisplay is called when changing scene, use this to cache token images on the scene.
      */
-    canvas.hud.imageHover.cacheAvailableToken(DEFAULT_TOKEN, false, false)
+    canvas.hud.imageHover.cacheAvailableToken(DEFAULT_TOKEN, false);
     for (const token of canvas.tokens.placeables){
         if (!token || !token.actor) return;
         if (!(token.actor.img in cacheImageNames)) {
-            canvas.hud.imageHover.cacheAvailableToken(token.actor.img, false, false)
+            canvas.hud.imageHover.cacheAvailableToken(token.actor.img, false);
         } else if (token.actor.img === DEFAULT_TOKEN) {
-            canvas.hud.imageHover.cacheAvailableToken(token.data.img, false, false)
+            canvas.hud.imageHover.cacheAvailableToken(token.data.img, false);
         }
     }
 });
@@ -285,9 +380,9 @@ Hooks.on("createToken", (scene, data) => {
     let imageToCache = tokenId.img;
     if (imageToCache === DEFAULT_TOKEN) {
         imageToCache = data.img;
-    };
+    }
     if (imageToCache && !(imageToCache in cacheImageNames)) {
-        canvas.hud.imageHover.cacheAvailableToken(imageToCache, false, false)
+        canvas.hud.imageHover.cacheAvailableToken(imageToCache, false);
     }
 });
 
@@ -298,6 +393,10 @@ Hooks.on("createToken", (scene, data) => {
  * @param {Boolean} hovered if token is mouseovered
  */
 Hooks.on('hoverToken', (token, hovered) => {
+
+    if (showSpecificArt) {
+        return;
+    }
     if (!hovered || (game.keyboard.isModifierActive(KeyboardManager.MODIFIER_KEYS.ALT))) {	// alt key in Foundry auto hovers all tokens in Foundry
         canvas.hud.imageHover.clear();
         return;
@@ -307,42 +406,64 @@ Hooks.on('hoverToken', (token, hovered) => {
      * Check no keybind requirement set.
      */
     if (!game.keybindings.bindings.get("image-hover.userKeybindButton")[0]?.key) {
-        canvas.hud.imageHover.showArtworkRequirements(token, hovered, imageHoverDelay)
+        canvas.hud.imageHover.showArtworkRequirements(token, hovered, imageHoverDelay);
     }
 });
 
 /**
- * Add checkbox option in token configuration to hide image art to all.
- * Only Game masters can change this setting.
+ * Add extra settings for game masters in the token configuration.
+ * A checkbox option to hide image art to all.
+ * A file picker to show a specific file for that token on hover.
  */
- const renderHoverSetting = async (app, html, data) => {
+const renderHoverSetting = async (app, html, data) => {
     /**
-     * Create image hover flag and apply to checkbox in the new created token configuration.
-     * Update flag as token is updated.
+     * Create flags and apply to token configuration html.
+     * Ensure flag is updated on "update" and correct value is shown when changed.
      */
     if (data.isGM) {
-        let hideImageStatus = app.object.getFlag('image-hover', 'hideArt') ? "checked": "";
-        const nav = html.find(`div[data-tab="appearance"]`);
+        let hideImageStatus = app.token.getFlag('image-hover', 'hideArt') ? "checked": "";
+        let specificImageStatus = app.token.getFlag('image-hover', 'specificArt') ? app.token.getFlag('image-hover', 'specificArt') : "path/image.png";
+
         data.hideHoverStatus = hideImageStatus;
+        data.specificArtStatus = specificImageStatus;
+        
+        const nav = html.find(`div[data-tab="appearance"]`);
         const contents = await renderTemplate('modules/image-hover/templates/image-hover-token-config.html', data); 
         nav.append(contents);
         app.setPosition({ height: 'auto' });
-    };
+
+        html.find("button.image-hover-picker-button").click(async () => {
+            new FilePicker({
+                type: "imagevideo",
+                callback: async (path) => {
+                  html.find("input.specific-image-hover").val(path);
+            }}).render();
+        }) 
+    }
 };
 Hooks.on("renderTokenConfig", renderHoverSetting);
 
 /**
+ * Clear art unless GM is showing users art.
+ */
+ function clearArt() {
+    if (!showSpecificArt){
+        canvas.hud.imageHover.clear();
+    }
+}
+
+/**
  * Remove character art when deleting/dragging token (Hover hook doesn't trigger while token movement animation is on).
  */
-Hooks.on("preUpdateToken", (...args) => canvas.hud.imageHover.clear());
-Hooks.on("deleteToken", (...args) => canvas.hud.imageHover.clear());
+Hooks.on("preUpdateToken", (...args) => clearArt());
+Hooks.on("deleteToken", (...args) => clearArt());
 
 /**
  * Occasions to remove character art from screen due to weird hover hook interaction.
  */
-Hooks.on("closeActorSheet", (...args) => canvas.hud.imageHover.clear());
-Hooks.on("closeSettingsConfig", (...args) => canvas.hud.imageHover.clear());
-Hooks.on("closeApplication", (...args) => canvas.hud.imageHover.clear());
+Hooks.on("closeActorSheet", (...args) => clearArt());
+Hooks.on("closeSettingsConfig", (...args) => clearArt());
+Hooks.on("closeApplication", (...args) => clearArt());
 
 /**
  * When user scrolls/moves the screen position, we want to relocate the image.
@@ -353,17 +474,18 @@ Hooks.on("canvasPan", (...args) => {
             return;
         }
         canvas.hud.imageHover.updatePosition();
-    };
+    }
 });
 
 /**
  * On Foundry world load, register module settings.
  */
 Hooks.on("init", function() {
-    Settings.createSettings()
-    registerModuleSettings()
+    Settings.createSettings();
+    registerModuleSettings();
+    registerShowArtSocket();
 });
 
 Hooks.on("closeSettingsConfig", function() {
-    registerModuleSettings()
+    registerModuleSettings();
 });

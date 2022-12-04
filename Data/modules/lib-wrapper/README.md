@@ -102,15 +102,38 @@ You have multiple options here.
     });
     ```
 
-    Note that if you choose this option and require the user to install this library, you should make sure to list libWrapper as a dependency. This can be done by adding the following to your package's manifest:
+    Note that if you choose this option, i.e. require the user to install this library, you should make sure to list libWrapper as a dependency. This can be done by adding one of the following entries to your package's manifest:
 
-    ```javascript
-    "dependencies": [
-        {
-            "name": "lib-wrapper"
+    1.  Foundry VTT v10 and newer:
+
+        ```javascript
+        "relationships": {
+            "requires": [
+                {
+                    "id": "lib-wrapper",
+                    "type": "module",
+                    "compatibility": {
+                        "minimum": "1.0.0.0",
+                        "verified": "1.12.6.0"
+                    }
+                }
+            ]
         }
-    ]
-    ```
+        ```
+
+        The `"compatibility"` section and all fields within it are optional, and serve to declare the versions of the dependency which your package requires. This can be useful if you rely on libWrapper features added by newer versions (by using `"minimum"`), as well as to communicate to the user what version of the library you tested against (by using `"verified"`).
+
+
+    2.  Foundry VTT v9 and older (forward-compatible with v10):
+
+        ```javascript
+        "dependencies": [
+            {
+                "name": "lib-wrapper",
+                "type": "module"
+            }
+        ]
+        ```
 
 If you pick options #2 or #3 and actively recommend to the user to install libWrapper using e.g. a notification, it is a good idea to give the user a way to permanently dismiss said notification. The provided [shim](#135-compatibility-shim) does this by having a "Don't remind me again" option in the alert dialog.
 
@@ -289,7 +312,7 @@ To register a wrapper function, you should call the method `libWrapper.register(
  *
  * @param {string} package_id  The package identifier, i.e. the 'id' field in your module/system/world's manifest.
  *
- * @param {number|string} target The target identifier, specifying which wrapper should be unregistered.
+ * @param {number|string} target The target identifier, specifying which wrapper should be registered.
  *
  *   This can be either:
  *     1. A unique target identifier obtained from a previous 'libWrapper.register' call.
@@ -330,6 +353,7 @@ To register a wrapper function, you should call the method `libWrapper.register(
  * @param {Object} options [Optional] Additional options to libWrapper.
  *
  * @param {boolean} options.chain [Optional] If 'true', the first parameter to 'fn' will be a function object that can be called to continue the chain.
+ *   This parameter must be 'true' when registering non-OVERRIDE wrappers.
  *   Default is 'false' if type=='OVERRIDE', otherwise 'true'.
  *   First introduced in v1.3.6.0.
  *
@@ -431,7 +455,7 @@ To ask libWrapper to ignore specific conflicts when detected, instead of warning
  *
  * First introduced in v1.7.0.0.
  *
- * @param {string}            package_id  The package identifier, i.e. the 'id' field in your module/system/world's manifest. This will be the module that owns this ignore entry.
+ * @param {string}            package_id  The package identifier, i.e. the 'id' field in your module/system/world's manifest. This will be the package that owns this ignore entry.
  *
  * @param {(string|string[])} ignore_ids  Other package ID(s) with which conflicts should be ignored.
  *
@@ -597,7 +621,7 @@ Since v1.4.0.0, the libWrapper library triggers Hooks for various events, listed
     - No Parameters.
 
 * `libWrapper.Register`:
-    - Triggered when `libWrapper.Register` completes successfully.
+    - Triggered when a `libWrapper.register` call completes successfully.
     - Parameters:
         - `1`: Package ID whose wrapper is being registered (the `package_id` parameter to `libWrapper.register`).
         - `2`: Wrapper target path (the `target` parameter to `libWrapper.register` when it is a string, otherwise the first parameter provided by any module when registering a wrapper to the same method).
@@ -606,14 +630,14 @@ Since v1.4.0.0, the libWrapper library triggers Hooks for various events, listed
         - `5`: Wrapper ID (the return value of `libWrapper.register`).
 
 * `libWrapper.Unregister`:
-    - Triggered when `libWrapper.Unregister` completes successfully.
+    - Triggered when a `libWrapper.unregister` call completes successfully.
     - Parameters:
         - `1`: Package ID whose wrapper is being unregistered (the `package_id` parameter to `libWrapper.unregister`).
         - `2`: Wrapper target (the `target` parameter to `libWrapper.unregister` when it is a string, otherwise the first parameter provided by any module when registering a wrapper to the same method).
         - `3`: Wrapper ID (the return value of `libWrapper.Register`).
 
 * `libWrapper.UnregisterAll`:
-    - Triggered when `libWrapper.unregister_all` completes successfully.
+    - Triggered when a `libWrapper.unregister_all` call completes successfully.
     - Parameters:
         - `1`: Package ID whose wrappers are being unregistered (the `package_id` parameter to `libWrapper.unregister_all`).
 
@@ -644,7 +668,7 @@ For example, instead of using `'OVERRIDE'` in the `libWrapper.register` call, on
 ```javascript
 libWrapper.register('my-fvtt-package', 'Foo.prototype.bar', function (...args) {
     /* ... */
-}, libWrapper.OVERRIDE /* instead of 'OVERRIDE' */>);
+}, libWrapper.OVERRIDE /* instead of 'OVERRIDE' */);
 ```
 
 A full list of the enumeration values provided by libWrapper follows:

@@ -1,0 +1,81 @@
+{
+  "name": "wfrp4e-pbtt",
+  "title": "WFRP4e - Power Behind the Throne",
+  "description": "Welcome to part three of the Enemy Within, carrying on from where Death of the Reik left off, <b>Power Behind the Throne</b> takes your brave heroes from Altdorf to the city of Middenheim, a towering city-state in the north of the Empire where trouble brews and a play for power is made.",
+  "version": "2.2.3",
+  "authors": [
+    {
+      "name": "Moo Man",
+      "email": "russellt@cubicle7games.com",
+      "discord": "Moo Man#7518"
+    },
+    {
+      "name": "Published by Cubicle 7",
+      "url": "https://cubicle7games.com",
+      "email": "info@cubicle7games.com"
+    }
+  ],
+  "system": [
+    "wfrp4e"
+  ],
+  "scripts": [
+    "initialization.js"
+  ],
+  "styles": [],
+  "packs": [
+    {
+      "name": "pbtt-items",
+      "label": "Items (Power Behind the Throne)",
+      "path": "packs/pbttitems.db",
+      "type": "Item",
+      "system": "wfrp4e"
+    },
+    {
+      "name": "pbtt-actors",
+      "label": "Actors (Power Behind the Throne)",
+      "path": "packs/pbttactors.db",
+      "type": "Actor",
+      "system": "wfrp4e"
+    },
+    {
+      "label": "Scenes (Power Behind the Throne)",
+      "type": "Scene",
+      "name": "pbtt-scenes",
+      "path": "packs/pbttscenes.db",
+      "system": "wfrp4e"
+    },
+    {
+      "label": "Journals (Power Behind the Throne)",
+      "type": "JournalEntry",
+      "name": "pbtt-journals",
+      "path": "packs/pbttjournals.db",
+      "system": "wfrp4e"
+    },
+    {
+      "label": "Tables (Power Behind the Throne)",
+      "type": "RollTable",
+      "name": "pbtt-tables",
+      "path": "packs/pbtt-tables.db",
+      "system": "wfrp4e"
+    }
+  ],
+  "flags": {
+    "initializationPacks": [
+      "wfrp4e-pbtt.pbtt-actors",
+      "wfrp4e-pbtt.pbtt-journals",
+      "wfrp4e-pbtt.pbtt-items",
+      "wfrp4e-pbtt.pbtt-scenes",
+      "wfrp4e-pbtt.pbtt-tables"
+    ]
+  },
+  "languages": [],
+  "minimumCoreVersion": "0.8.6",
+  "compatibleCoreVersion": 9,
+  "compatibility": {
+    "minimum": 9,
+    "verified": 9,
+    "maximum": 10
+  },
+  "protected": true,
+  "manifest": "https://foundry-c7-manifests.s3.us-east-2.amazonaws.com/wfrp4e-pbtt/module.json"
+}

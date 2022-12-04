@@ -30,7 +30,7 @@
 				},
 				"dontMarkDead": {
 					"name": "Don't Mark as Dead",
-					"hint": "Makes NPCs to not be shown as Dead when its HP reaches 0 (e.g. it'll show Unconscious). This is only useful if you're \"NPCs die immediately\" setting."
+					"hint": "Makes NPCs to not be shown as Dead when its HP reaches 0 (e.g. it'll show Unconscious). This is only useful if you're using the \"NPCs die immediately\" setting."
 				},
 				"hideEstimates": {
 					"name": "Hide Estimates",
@@ -201,6 +201,18 @@
 				"name": "Estimation Rule",
 				"hint": "The JS formula for calculating the fraction of health token has. Alter with caution. Default assumes simple descending health, e.g. you start with 10/10 in your health field and go down to 0/10 when taking damage.",
 				"default": "const hp = token.actor.data.data.health; return hp.value / hp.max"
+			}
+		},
+		"od6s": {
+			"vehicleNames": {
+				"name": "Vehicle and Starship Stages",
+				"hint": "Descriptions shown for starships and vehicles",
+				"default": "Destroyed, Severely Damaged, Heavily Damaged, Lightly Damaged, Very Lightly Damaged, Undamaged"
+			},
+			"thresholdNames": {
+				"name": "Threshold Stages",
+				"hint": "The amount of stages is limited to 3, arranged from worst to best condition",
+				"default": "Wrecked, Broken, Fully Functional"
 			}
 		}
 	}

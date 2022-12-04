@@ -1,25 +1,33 @@
 /************ CONTENTS ***************/
 /*************************************/
 /* 0. MODULE CONFLICTS
-/*  0.1. Furnace Advanced Macro fills
+/*  0.1. Developer Mode
 /* 1. TOKEN HUD EXTENSIONS           
 /*  1a. Extension Div
 /*  1b. Hud Icons
 /*  1c. Override Core Hud
 /*  1d. Override Status Effects
+/* 2. COMMON CONTROLS
+/* 3. DIALOG / FORM
+/*  3a. List Data
+/*  3b. Select
+/*  3c. Button
+/*  3d. Flex Col
+/*  3e. Flex Row
+/*  3f. Input
 /*************************************/
 
 
 /* 0. MODULE CONFLICTS */
 /***************************/
 
-/* 0.1. Furnace Advanced Macros Fill */
+/* 0.1. Developer Mode */
 
-.macro-sheet .form-group.command .furnace-macro-command textarea {
-	-webkit-text-fill-color: unset;
+.dev-mode-tag {
+	top: -6px;
+    right: -6px;
+    bottom: unset;
 }
-
-
 
 /* 1. TOKEN HUD EXTENSIONS */
 /***************************/
@@ -62,10 +70,6 @@
 	display: inline-flex;
 }
 
-/* .tokenhudext.right {
-	justify-content: flex-start; 
-} */
-
 /*  1b. Hud Icons */
 
 .control-icon.tokenhudicon {
@@ -80,10 +84,6 @@
 	margin-right: 8px;
 	margin-top: auto;  /* Override margin-top for first-child to maintain middle alignment */
 }
-
-/* .control-icon.tokenhudicon.right {
-	margin-left: 8px;
-} */
 
 /* 1c. Override core hud styles to avoid misalignment */ 
 
@@ -107,33 +107,22 @@
 /* 1d. Override Status Effects to avoid overlap */
 
 #token-hud .status-effects {
-    top: unset;
-	bottom: 0;
+    /* top: -36px;  /* Realign to avoid placement conflict wth combat hud extensions */
+	bottom: unset;
 	background: #ececec; /* Change background to improve status effect visibility */
+	width: 144px; /* Accommodate larger (wider) effect controls */
 }
 
+#token-hud .status-effects .effect-control {
+    width: 36px;  /* Accommodate larger effect controls */
+    height: 36px;  /* Accommodate larger (wider) effect controls */
+	opacity: 0.75;  /* Improve visual clarity */
+}
 
 /* 2. COMMON CONTROLS */
 /***************************/
 
-/* 2a. Textarea */
-
-.form-group textarea, 
-.dialog-content textarea { 
-	color: #d6d6d6;
-	padding: 1px 3px;
-	margin: 0;
-	font-family: var(--actor-input-font-family);
-	font-size: var(--actor-input-font-size);
-	font-weight: var(--actor-input-font-weight);
-	color: #d6d6d6;
-	border: 1px solid #736953a6;
-	border-left: none;
-	box-shadow: 0px 0px 10px inset black;
-	background: #352516;
-}
-
-/* 3. DIALOG */
+/* 3. DIALOG / FORM */
 /***************************/
 
 /* 3a. List Data */
@@ -151,4 +140,82 @@
 .gmtoolkit.list-thumbnail {
 	vertical-align: bottom; 
 	max-height: 1.5em;
+}
+
+/* 3b. Select */
+
+.app.window-app .form-group select {
+	height: calc(var(--form-field-height) + 1px);
+}
+
+/* 3c. Button */
+
+button.priority {
+	height: 72px;
+	overflow: hidden;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	background: url(../../../systems/wfrp4e/ui/sidebar_button-background_cyan.webp) repeat!important;
+}
+
+/* 3d. Flex Col */
+
+.gmtoolkit .form-group.flexcol {
+	flex-flow: column;
+	display: flow-root;
+	padding: 0px 4px;
+	align-items: stretch;
+	align-self: start;
+	width: -webkit-fill-available;
+}
+
+/* 3e. Flex Row */
+.gmtoolkit .form-group .flexrow {
+	padding-bottom: 4px;
+	padding-top: 1px;
+	/* align-items: center; */
+}
+
+.gmtoolkit .flexrow .member-list .checkbox-label {
+	border: none;
+	text-align: unset;
+}
+
+.gmtoolkit .flexrow .member-list input[type="checkbox"] {
+	position: inherit;
+}
+
+.gmtoolkit .flexrow.parameter {
+	text-align-last: center;
+	padding-top: 2px;
+}
+
+.gmtoolkit .flexrow.parameter label {
+	text-align-last: start;
+}
+
+.gmtoolkit .flexrow.footer {
+	margin-top: 12px;
+}
+
+.gmtoolkit .member-list {
+	max-height: 240px;
+	overflow-y: auto;
+  align-self: flex-start;
+}
+
+.gmtoolkit .section-title {
+	margin-bottom: 2px;
+	font-variant: small-caps;
+	font-weight: bold;
+}
+
+/* 3f. Input */
+
+.gmtoolkit .form-group input[type="text"] {
+	height: calc(var(--form-field-height) + 1px);
+}
+
+.gmtoolkit input:disabled {
+	opacity: 0.7;
 }

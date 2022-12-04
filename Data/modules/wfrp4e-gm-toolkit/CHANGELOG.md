@@ -4,9 +4,63 @@ All notable changes to this project will be documented in this file.  The format
 ---
 
 ## Unreleased
-See [Issue Backlog](../../issues) and [Roadmap](../../milestones). 
+See [Issue Backlog](../../issues) and [Roadmap](../../milestones).
 
-## Version 0.9.3
+## [Version 0.9.4.4](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/releases/tag/v0.9.4.4)  (2022-08-07)
+- *Fixed* regression that prevented Group Advantage from updating in some cases. It should now update correctly whether using the Advantage macros or completing an automated process, such as outmanoeuvring or winning an opposed test.
+
+## [Version 0.9.4.3](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/releases/tag/v0.9.4.3)  (2022-08-01)
+- *Fixed* issue where players would see permission errors during advantage updates on other users' actors. [#150](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/150) 
+- *Added* new option to set `party` (player-assigned: default) or `company` (player-owned) actors as default group type for **Session Turnover** macros. [#151](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/151)
+  - The **Reset Fortune** and **Add XP** macros use the Session Turnover Default Group Selection option. 
+  - Actors who are not character type, but are player-owned (ie, NPC, vehicle and creature type actors) are ignored whe processing Session Turnover macros.
+- *Added* new option to set `party` (player-assigned: default) or `company` (player-owned) actors as default group type for **Send Dark Whispers** macros. [#151](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/151)
+  - When using `company` as the default group, it is possible to select unassigned players. In this case, no whisper is sent unless the 'Send to player owners' option is selected in the Send Dark Whispers dialog.
+- *Added* new localisation keys to support additional dialog and settings options for default group selections. [#151](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/151)
+
+## [Version 0.9.4.2](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/releases/tag/v0.9.4.2)  (2022-07-29)
+- *Added* localization improvements for Condition Check and Secret Group Test macros. (Thanks @Txus5012!) [[#141](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/141)] 
+- *Added* German localization. (Thanks 24Nomad!) [[#143](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/143)] 
+- *Fixed* compatibilty issue with Babele. [[#135](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/135)] [[#146](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/146)] 
+
+## [Version 0.9.4-1](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/releases/tag/v0.9.4-1)  (2022-07-23)
+- *Fixed* an issue where the Token Hud Extension would not display, even if enabled in module settings. [[#132](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/132)] 
+- *Fixed* an issue where players are blanked by the Chaos Gods and could not respond to Dark Whispers. (Thanks @Yasnen!) [[#137](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/137)] 
+- *Added* Japanese translations for changes up to 0.9.4-1. (Thanks @Yasnen!) [[#134](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/134)] [[#137](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/137)] [[0f620b0](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/commit/0f620b06daf902e0c52bcec03f968ffabed3d6a9)]
+- *Added* new macro to **Check Conditions** at the end of a combat round for tokens in the scene. (Thanks to @Totalgit for the inspiration.) [[#138](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/138)]
+
+~~Known Issue: The Group Test skill list entries are not translated. In some cases this appears to affect Babel translation of compendium skill items. [#135](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/135)~~ Resolved in Version 0.9.4.2. 
+
+## [Version 0.9.4](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/releases/tag/v0.9.4)  (2022-07-22)
+Advantage
+- *Fixed* Advantage updates when an opposed roll is resolved by a player that does not have owner permission on the opposing actor or token. [[#105](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/105)] [[#108](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/108)] [[#109](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/109)]
+- *Added* compatibility with Group Advantage implementation. [[#113](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/113)]
+
+Group and Player Management
+- *Added* error notification on startup if there are players that do not have characters assigned (spectators). [[#102](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/102)]
+- *Added* group selection utility for consistency when setting defaults in macros and other functionality. The utilty returns an array of users, actors, tokens or combatants, and can be filtered by user logged-in status, scene presence, and whether targeted or selected as a token.  [[#61](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/61)]
+
+Group Tests
+- *Fixed* issue where Assistant GMs could not make secret (party) group tests. [[#124](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/124)]
+- *Added* **Group Test** user interface, functionality and module settings, supporting non-player characters, storing  default test parameters and improving user experience. [[#63](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/63)] [[#125](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/125)]
+- *Added* option to step-adjust difficulty of Advanced Skill tests where an actor does not have the required skill, and when falling back to a characteristic test. [[#127](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/127)]
+- *Added* optional summary of Group Test results that are reported in a single GM whisper message to complement individual test cards. [[#128](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/128)]
+- *Changed* Make Secret Party Test macro to **Make Secret Group Test**, overhauling to use group selection functionality and new Group Test user interface. [[#129](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/129)]
+- *Added* support for silent group tests. These bypass the group test user interface and use default test parameters as defined in module settings.  [[#129](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/129)]
+- *Changed* Macro Toolbox to reflect changes to Make Secret Group Test macro name. 
+
+Macros
+- *Fixed* an issue with the **Add XP** macro, where it would fail for a character with 0 XP, who had also never previously had XP.  [[#106](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/106)] [[#114](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/114)]  [[#115](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/115)]
+- *Changed* **Add XP**, **Reset Fortune** and **Send Dark Whispers** macros to use group selection utility. Default "party" selection enforces that a character *must* be assigned to a player. [[#119](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/119)] [[#120](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/120)] [[#121](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/121)]
+- *Changed* **Send Dark Whispers** macro to enable selection by actor rather than player. [[#58](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/58)]
+- *Added* an option to send a Dark Whisper to each player owner rather than just the assigned player. Hovering over the character name lists all player owners as well as the assigned player. [[#121](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/121)]
+- *Removed* the module setting to define default targets for Dark Whispers, in favour of automatic pre-selection based on selected tokens. [[#121](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/121)]
+- *Changed* Make Secret Party Test macro to **Make Secret Group Test**, overhauling to use group selection functionality and new Group Test user interface. [[#129](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/129)]
+
+Other
+- *Added* style overrides to improve presentation for Developer Mode module , macro sheet and form areas, as well as increase condition status icons by 50% in token hud.  [[38492d4](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/commit/38492d40e8ddc9b91630d9d9387a661f8899b965)] [[4018d2b](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/commit/38492d40e8ddc9b91630d9d9387a661f8899b965)]
+- *Changed* various references to use localization keys for skills, talents and status provided by WFRP4e system. [[#110](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/110)]
+## [Version 0.9.3](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/releases/tag/v0.9.3)  (2022-05-25)
 - *Fixed* missing Token Hud Extension options for players who don't have access to configure tokens. The layout of Token Hud Extensions has been reorganised as a result of this change. [[#67](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/67)]
 - *Changed* Advantage automation to represent Outmanoeuvring (WFRP p164). 
   - In Foundry, tests should be targeted and handled as unopposed. 
@@ -55,15 +109,15 @@ See [Issue Backlog](../../issues) and [Roadmap](../../milestones).
   - Setting the `forcePrivate` variable to `true` in the macro will force visibility to hidden, rather than toggle current state.  
 - *Added* development setting to ignore module lock file during.
 
-## Version 0.9.2
+## [Version 0.9.2](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/releases/tag/v0.9.2)  (2021-01-09)
 - *Fixed* duplicate results numbering in Dark Whispers table and localization omission [#79] (Thanks @Txus5012).
 - *Fixed* an issue where Advantage is always handled automatically when applying damage, even if the option is not selected. 
 
-## Version 0.9.1
+## [Version 0.9.1](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/releases/tag/v0.9.1)  (2021-01-03)
 - *Changed* Set Token Vision and Light macro to await token updates, to prevent a conflict or failure when multiple tokens are selected. This will need to be **manually re-imported** from the compendium. 
 - *Added* movement lock to prevent players from moving tokens on the configured holding scene. This allows tokens to be used in fixed locations with all the usual selection, targeting and hud interactions rather than just non-interactive tiles or pictures for character portraits. 
 
-## Version 0.9.0
+## [Version 0.9.0](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/releases/tag/v0.9.0)  (2021-01-03)
 - *Changed* Foundry compatibility to v9. WFRP4e system compatibility is v5. 
 - *Fixed* non-rendered html in Marginal Success roll description.
 - *Fixed* issue where module settings could not be accessed [[#70](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/70)].
@@ -81,7 +135,7 @@ See [Issue Backlog](../../issues) and [Roadmap](../../milestones).
 - *Fixed* issue with Night Vision multiplier being applied to Dim Sight on tokens that do not have Night Vision when multiple tokens are selected. 
 - *Removed* redundant "nochange" processing for light and sight, as this is not triggered. 
 
-## Version 0.8.0
+## [Version 0.8.0](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/releases/tag/v0.8.0)  (2021-12-31)
 - *Changed* Advantage scripts to handle non-token characters. 
 - *Added* option to automate changes to Advantage when a character deals or is dealt combat damage in opposed contests. 
 - *Added* option for sticky notifications for Advantage updates. This is introduced to provide better visibility of automated changes to Advantage, so that any related amendnents are not missed. 
@@ -111,7 +165,7 @@ See [Issue Backlog](../../issues) and [Roadmap](../../milestones).
 - *Added* support for Developer Mode console logging (https://github.com/League-of-Foundry-Developers/foundryvtt-devMode)
 
 
-## Version 0.7.0
+## [Version 0.7.0](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/releases/tag/v0.7.0)  (2021-08-07)
 - *Added* new template macro 'Make Secret Party Test' for GMs to silently or interactively roll tests for party members (such as Perception and Stealth). 
 - *Changed* macros to be compatible with FVTT 0.8.8 and WFRP4e 4.0.x. 
   - Add XP and Reset Fortune. No change is needed for the End of Session Routine macro that uses these.
@@ -134,7 +188,7 @@ See [Issue Backlog](../../issues) and [Roadmap](../../milestones).
 - *Updated* French translations (thanks to @McGregor777).
 
 
-## Version 0.6.3
+## [Version 0.6.3](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/releases/tag/v0.6.3) (2021-07-23)
 - *Changed* Foundry compatibility to up to 0.7.10. WFRP4e system compatibility is up to 3.6.2.  
   - This is the final release of the GM Toolkit to support FVTT 0.7.x and WFRP4e 3.x.
 - *Changed* manifest to point to latest release note for installation file and download link. 
@@ -145,7 +199,7 @@ See [Issue Backlog](../../issues) and [Roadmap](../../milestones).
 - *Added* dramatic test outcome hints (such as "Yes, and ..." or "No, but ...") to roll results descriptions in the chat log, depending on success levels. More information can be found on p152 of the core rulebook. 
 - *Added* links to [ko-fi](https://ko-fi.com/jagusti) for those who may wish to support work on the Toolkit. The module is freeware, and there's no expectation or obligation to make a contribution, but any is welcome. 
 
-## Version 0.6.2
+## Version 0.6.2 (2021-02-28)
 
 General Module Stuff
 - *Added* compatibility updates for WFRP4e version 3 and premium content,
@@ -171,7 +225,7 @@ Dark Whispers
   - the GM rather than the system should make the decision about whether the character has met the terms of the offer.
 - *Added* a new system table with suggestions for Dark Whispers. This is available through a chat command (`/table darkwhispers`) but is also used by the Send Dark Whispers macro to prepopulate the dialog box and to give the GM a starting point for inspiration. 
 
-## Version 0.6
+## [Version 0.6](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/releases/tag/v0.6) (2020-11-02)
 
 General Module Stuff
 - *Changed* minimum core Foundry compatibility to 0.7.5 and minimum WFRP4e system compatibility to 2.2.1 to support animated token light effects. 
@@ -213,10 +267,10 @@ Token Vision and Light
   -  the token itself having some kind of light source (conferring a dimLight setting > 0)
   -  global illumination being enabled on the scene. 
 
-## Version 0.5.1
+## Version 0.5.1  (2020-06-23)
 - *Fixed* typo in Add XP macro
 
-## Version 0.5
+## Version 0.5 (2020-06-09)
 - *Added* shortcut to make Track test (CTRL + SHIFT + Initiative hud extension).
 - *Added* Strong-minded advances for determining maximum Resolve when increasing through Token Hud. 
 - *Fixed* undeclared target error when adding Fortune through Token Hud.
@@ -230,7 +284,7 @@ Token Vision and Light
 - *Added* French translations for enhancements and changes (thanks to @LeRatierBretonnien).
 - *Changed* Foundry 0.6.2 compatibility.
 
-## Version 0.4
+## Version 0.4 (2020-05-22)
 - *Breaking changes* to token selection validation to make compatible with FVTT v0.6.0. All Advantage macros plus Set Token Vision and Light macro should be re-imported from the macro compendium. 
 - *Added* interactions for Token Hud Extension: various skill and characteristic tests, status value adjustments and table rolls. Full details on https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/wiki/token-hud-extensions. 
 - *Added* Perception and Intuition to Token Hud.
@@ -243,7 +297,7 @@ Token Vision and Light
 ## Version 0.3.1
 - *Fixed* Luck Talent translation in French translation file. Thanks to JDW for flagging. 
 
-## Version 0.3
+## Version 0.3 (2020-05-09)
 
 ### Changed
 - Extended and standardised localization strings.
@@ -255,7 +309,7 @@ Token Vision and Light
 ### Added
 - French translation support started. Thanks to @LeRatierBretonnien#2065!
 
-## Version 0.2.1
+## Version 0.2.1  (2020-05-08)
 
 ### Changed
 - Chat log for Add XP macro is reported from player rather than character.
@@ -271,7 +325,7 @@ Token Vision and Light
 - Typo in Set Token and Light macro dropdown options.
 - Macros relying on token selection no longer run when no token is selected. 
 
-## Version 0.2
+## Version 0.2  (2020-04-25)
 
 ### Changed
 - Added feature descriptions to changelog.
@@ -282,7 +336,7 @@ Token Vision and Light
 - Include macro pack and correct script pack for Token Hud Extensions (doh!)
 - Fixed links to wiki and issue backlog.
 
-## Version 0.1
+## Version 0.1  (2020-04-25)
 
 ### Added
 - Token Hud Extension 

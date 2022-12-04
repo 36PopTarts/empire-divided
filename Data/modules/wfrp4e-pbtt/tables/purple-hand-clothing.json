@@ -1,0 +1,75 @@
+{
+    "name": "Purple Hand Clothing",
+    "rows": [
+        {
+            "description": "A distinguished purple hat",
+            "range": [
+                1,
+                10
+            ]
+        },
+        {
+            "description": "An amulet with an inset stone the colour and shape of a plum",
+            "range": [
+                11,
+                20
+            ]
+        },
+        {
+            "description": "A shirt or blouse with periwinkle trim",
+            "range": [
+                21,
+                30
+            ]
+        },
+        {
+            "description": "A hose or skirt with mulberry stitching",
+            "range": [
+                31,
+                40
+            ]
+        },
+        {
+            "description": "A bold magenta ruff, scarf, or steinkirk",
+            "range": [
+                41,
+                50
+            ]
+        },
+        {
+            "description": "A violet patch on their elbow",
+            "range": [
+                51,
+                60
+            ]
+        },
+        {
+            "description": "A bracelet displaying a puce twin-tailed comet",
+            "range": [
+                61,
+                70
+            ]
+        },
+        {
+            "description": "An earring with a burgundy stone",
+            "range": [
+                71,
+                80
+            ]
+        },
+        {
+            "description": "A green vest or blouse, with a motif of heather blossom",
+            "range": [
+                81,
+                90
+            ]
+        },
+        {
+            "description": "Deep-red socks with lavender embroidery",
+            "range": [
+                91,
+                100
+            ]
+        }
+    ]
+}

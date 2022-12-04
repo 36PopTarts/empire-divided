@@ -1,3 +1,47 @@
+# 1.12.11.0 (2022-11-15)
+
+- Fix incorrect formatting of error messages when modules have both an 'info' and 'bugs' URL in their package manifest. ([Issue #73](https://github.com/ruipin/fvtt-lib-wrapper/issues/73))
+
+# 1.12.10.0 (2022-09-19)
+
+- Code refactoring/clean-up (no user-facing changes)
+- Get rid of another FVTT v10 deprecation warning that occurred only when running the development version of the module.
+
+# 1.12.9.0 (2022-09-11)
+
+- Fix incorrect error messages when calling the libWrapper API before the `libWrapper.Ready` hook. ([Issue  #72](https://github.com/ruipin/fvtt-lib-wrapper/issues/72))
+  - Add unit test to catch this issue in the future.
+- Fix accidental 3 consecutive blank lines in error messages when a module has neither an `url` nor a `bugs` entry in its manifest.
+- Update NPM dependencies to latest version.
+
+# 1.12.8.0 (2022-09-04)
+
+- Get rid of FVTT v10 deprecation warnings caused by legacy style package 'data' accesses.
+  - Shim updated to v1.12.2 to also get rid of these warnings when libWrapper is not installed.
+  - Closes [Issue #71](https://github.com/ruipin/fvtt-lib-wrapper/issues/71). Thanks to wickermoon for the issue report and fix proposal!
+
+# 1.12.7.2 (2022-09-02)
+
+- Add `authors` key to the module manifest to avoid compatibility warnings in FVTT v10.
+
+# 1.12.7.1 (2022-08-08)
+
+- Add `compatibility` and `id` keys to the module manifest to avoid compatibility warnings in FVTT v10.
+
+# 1.12.7.0 (2022-06-21)
+
+- Enforce `options.chain == true` when registering non-OVERRIDE wrappers.
+
+# 1.12.6.0 (2022-06-15)
+
+- Add support for reading core compatibility versions for packages using the new Foundry VTT v10 manifest format.
+- Update README with information about the new Foundry VTT v10 manifest format.
+
+# 1.12.5.0 (2022-05-31)
+
+- Fix `options.bind` parameter to `libWrapper.register` for `OVERRIDE` wrappers.
+- Declare compatibility with Foundry v10. It is unlikely a future v10 update will break compatibility.
+
 # 1.12.4.0 (2022-02-14)
 
 - Improve package detection. Will no longer fail if an error's stack trace is empty, which could happen sometimes when browser native code causes a JS exception.
