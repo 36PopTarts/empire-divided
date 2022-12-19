@@ -69,6 +69,7 @@
 {"name":"I Have No Idea","type":"RollTable","sort":700000,"flags":{},"parent":"tIVl1PXcFSPDwlNN","sorting":"a","color":"","_id":"CzyKUOTTbxfphe0i"}
 {"name":"La Maisontaal","type":"JournalEntry","parent":"hRh4ENgO4oLtD0If","sorting":"a","sort":0,"color":"#4c1010","flags":{},"_id":"D1vDuL4u01FZseiM"}
 {"_id":"DMQs1UveUtlyzPKt","name":"Luitpoldstrasse Blues","type":"JournalEntry","sort":7000000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#26386e"}
+{"name":"Oldenhaller","type":"Scene","parent":"J3T0xtVGxYvoqBJS","sorting":"a","sort":0,"color":"#5a6e12","flags":{},"_id":"DNFZTBLDlkiFy8jm"}
 {"name":"Bogenhafen","type":"Scene","sort":700000,"flags":{},"parent":null,"sorting":"a","color":"#4c214f","_id":"DplIEvlQ0WLc5NVF"}
 {"name":"Trotts","type":"Actor","sort":4700000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#6b0a0a","_id":"EFCQWpwIywZCymaB"}
 {"_id":"EHmv3MZ98EtEC2Fy","name":"Shadow Cast","type":"Actor","sort":100000,"flags":{},"parent":"81ZFw4Rjgz144G8Q","sorting":"a","color":"#4f4f4f"}
@@ -255,6 +256,7 @@
 {"_id":"mPZbMEHqQupSD01M","name":"Head Armour","type":"Item","sort":300000,"flags":{},"parent":"XCAwjWgOHbC2T263","sorting":"a","color":"#2b5e2f"}
 {"name":"NPC Items","type":"Item","sort":2700000,"flags":{},"parent":"B1NGEkUpOPYjZbtf","sorting":"a","color":"#6a1616","_id":"mSls4f8JbUBSZvVU"}
 {"_id":"mq6UHTrGdufRtIzg","name":"The Evil Plot","type":"Actor","parent":"fr0DWfQKUuFVhWDL","sorting":"a","sort":300000,"color":"#19215d","flags":{"wfrp4e-pbtt":{"initialization-parent":"Power Behind the Throne"}}}
+{"name":"The Oldenhaller Contract","type":"Actor","parent":null,"sorting":"a","sort":0,"color":"#445700","flags":{},"_id":"mqg2YJow5QV60BUA"}
 {"name":"Villagers","type":"JournalEntry","sort":8600000,"flags":{},"parent":"gfvxW95YPpkwZLnb","sorting":"a","color":"","_id":"mwr83CyCXWfwaJts"}
 {"name":"Vassals","type":"Actor","sort":5000000,"flags":{},"parent":"7JJvX9ibeSRwPy1t","sorting":"a","color":"","_id":"mxV8BnhQRP4zjmY0"}
 {"_id":"nG3gkFYEAmqrI5fy","name":"Careers","type":"Item","sort":3900000,"flags":{},"parent":null,"sorting":"m","color":"#ad4500"}
@@ -322,7 +324,5 @@
 {"_id":"zXyfKrd5bZXrWX2d","name":"Master Attractions Calendar","type":"JournalEntry","parent":"UTvom2QsNE9UCm6u","sorting":"a","sort":100000,"color":null,"flags":{"wfrp4e-pbtt":{"initialization-parent":"Appendices"}}}
 {"_id":"zhKNzx21YVsaN3CA","name":"The Road to Middenheim","type":"JournalEntry","parent":"tVm4VHOzL3Kt6qVy","sorting":"a","sort":9300000,"color":"#474747","flags":{}}
 {"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
-{"name":"The Oldenhaller Contract","type":"Actor","parent":null,"sorting":"a","sort":0,"color":"#445700","flags":{},"_id":"mqg2YJow5QV60BUA"}
-{"name":"Oldenhaller Contract","type":"Actor","parent":null,"sorting":"a","sort":0,"color":null,"flags":{},"_id":"JNbYmq2JscZ3rkS1"}
-{"$$deleted":true,"_id":"JNbYmq2JscZ3rkS1"}
-{"name":"Oldenhaller","type":"Scene","parent":"J3T0xtVGxYvoqBJS","sorting":"a","sort":0,"color":"#5a6e12","flags":{},"_id":"DNFZTBLDlkiFy8jm"}
+{"_id":"cgVwF73JqHGJFy4a","name":"The Ritual","type":"JournalEntry","parent":null,"sorting":"m","sort":1700000,"color":"#a21010","flags":{"wfrp4e-pbtt":{"initialization-parent":"Companion"}}}
+{"_id":"fMPaemyIV1jHtkpL","name":"The Ritual","type":"Actor","parent":null,"sorting":"a","sort":7050000,"color":"#a21010","flags":{"wfrp4e-pbtt":{"initialization-parent":"Companion"}}}
