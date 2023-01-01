@@ -56,7 +56,6 @@
 {"_id":"9l20ogJKAnhkPnIw","name":"Chapter 1: The Road to Middenheim","type":"JournalEntry","parent":"xOq4e4h3j8j4DtZs","sorting":"m","sort":-100000,"color":"#1e524c","flags":{"wfrp4e-pbtt":{"initialization-parent":"Power Behind the Throne"}}}
 {"_id":"9nJ4brecw2MRO3vH","name":"Chapter 6: The Powers That Be","type":"JournalEntry","parent":"xOq4e4h3j8j4DtZs","sorting":"m","sort":0,"color":"#450707","flags":{"wfrp4e-pbtt":{"initialization-parent":"Power Behind the Throne"}}}
 {"_id":"AQNjQbqIwOx2gPyr","name":"Other Associates","type":"Actor","sort":2300000,"flags":{},"parent":"CLkaC7gsUPC5R3mN","sorting":"a","color":""}
-{"_id":"AjgBpjIG2gNp56jX","name":"Some Very Important People","type":"Actor","parent":"7WDyp23c2JEbShCo","sorting":"a","sort":-200000,"color":"#4d2d00","flags":{"wfrp4e-pbtt":{"initialization-parent":"Companion"}}}
 {"name":"Random Meals","type":"RollTable","sort":null,"flags":{},"parent":null,"sorting":"a","color":"","_id":"AmaQItibZsM8zliP"}
 {"name":"Other","type":"Item","sort":500000,"flags":{},"parent":null,"sorting":"a","color":"","_id":"B1NGEkUpOPYjZbtf"}
 {"_id":"BT6aLV9abM8rctf2","name":"Up in Arms","type":"Item","parent":"FFQANC5sa5CMDx9k","sorting":"a","sort":0,"color":"#935601","flags":{}}
@@ -104,6 +103,7 @@
 {"_id":"Kft8Ng9HfLOd35El","name":"New Animal Rules","type":"JournalEntry","sort":100000,"flags":{},"parent":"NOyJwiypgeV7mEJh","sorting":"a","color":"#6b3000"}
 {"_id":"KgvGPgUgCPwm0TZL","name":"Frugelhofen","type":"JournalEntry","parent":"uaiYhFK8DZbtIU19","sorting":"a","sort":100000,"color":null,"flags":{}}
 {"_id":"KpTC0BqE48PAMUSF","name":"Aschaffenbergs","type":"Actor","sort":200000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#e69100"}
+{"name":"Minor Encounters","type":"JournalEntry","parent":"lUyL3SvOXg2BFpv2","sorting":"a","sort":0,"color":null,"flags":{},"_id":"KyRXwOjQ3W4XV30X"}
 {"name":"Halberdier","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#4f4f4f","flags":{},"_id":"LTtJRkvww0wtpyCb"}
 {"_id":"LaUWtwaJi9qsofyf","name":"Events by Day","type":"JournalEntry","parent":"UVKlZleP9AfhqPXy","sorting":"m","sort":0,"color":"","flags":{}}
 {"_id":"LsKPmbgYSGmbeFvx","name":"Liebwitzs","type":"Actor","sort":1200000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":""}
@@ -201,7 +201,7 @@
 {"_id":"cHczBZFi7MuGKU42","name":"Tomb Blade","type":"JournalEntry","sort":7400000,"flags":{},"parent":"3D5AeQXPQFECRFtw","sorting":"a","color":"#cc6d00"}
 {"name":"Interior","type":"Scene","sort":600000,"flags":{},"parent":"ifqvWppW117y2zyP","sorting":"a","color":"#9f5c1e","_id":"cMzMOh9NsqnRhjeo"}
 {"_id":"cZf8CCfRbfZcxgzE","name":"Named NPCs","type":"Actor","sort":600000,"flags":{},"parent":null,"sorting":"m","color":"#4b7395"}
-{"_id":"cgVwF73JqHGJFy4a","name":"The Ritual","type":"JournalEntry","parent":"UcNpjukIpiZkjgIv","sorting":"m","sort":406250,"color":"#a21010","flags":{"wfrp4e-pbtt":{"initialization-parent":"Companion"}}}
+{"_id":"cgVwF73JqHGJFy4a","name":"The Ritual","type":"JournalEntry","parent":"tVm4VHOzL3Kt6qVy","sorting":"m","sort":9600000,"color":"#a21010","flags":{"wfrp4e-pbtt":{"initialization-parent":"Companion"}}}
 {"name":"Songs","type":"JournalEntry","sort":5300000,"flags":{},"parent":"qkj3aSI8lXUSVEwD","sorting":"a","color":"","_id":"clNfcmkJx7Pc8RQm"}
 {"name":"Karak Ranger","type":"Item","sort":4000000,"flags":{},"parent":"nG3gkFYEAmqrI5fy","sorting":"a","color":"#2c4b6d","_id":"csviqL8SYxtvFBCt"}
 {"name":"Knick-knacks","type":"Item","sort":100000,"flags":{},"parent":"Jr9DZCfP6SV0ZJdg","sorting":"a","color":"#814f09","_id":"dTnfvpoPWryQyQkp"}
@@ -210,9 +210,10 @@
 {"name":"Special","type":"Actor","sort":5950000,"flags":{},"parent":"81ZFw4Rjgz144G8Q","sorting":"a","color":"","_id":"eRpdLuCeQQ6am5gc"}
 {"_id":"eUIeajvlSElDvALW","name":"Rivers, Canals, and Lakes","type":"JournalEntry","sort":400000,"flags":{"wfrp4e":{"initialization-parent":"Reikland"}},"parent":"J8dQ6pBcs8qRN8Bk","sorting":"m","color":"#1c3164"}
 {"_id":"evoGfpDUlvJxklnA","name":"Cities","type":"JournalEntry","parent":null,"sorting":"a","sort":725000,"color":"#5e5e5e","flags":{}}
+{"name":"Handouts","type":"JournalEntry","parent":"lUyL3SvOXg2BFpv2","sorting":"a","sort":0,"color":null,"flags":{},"_id":"eyJTpYKBCZ3Lzfet"}
 {"_id":"fCeOooqfh7CvDnfj","name":"To Export","type":"Actor","parent":null,"sorting":"a","sort":6950000,"color":null,"flags":{}}
 {"_id":"fJD2A7H0QjVnQKim","name":"The Altdorf Spieler","type":"JournalEntry","sort":100000,"flags":{},"parent":"2Vc3Hl56Nkx9gNaO","sorting":"a","color":""}
-{"_id":"fMPaemyIV1jHtkpL","name":"The Ritual","type":"Actor","parent":"7WDyp23c2JEbShCo","sorting":"a","sort":-100000,"color":"#a21010","flags":{"wfrp4e-pbtt":{"initialization-parent":"Companion"}}}
+{"_id":"fMPaemyIV1jHtkpL","name":"The Ritual","type":"Actor","parent":"fCeOooqfh7CvDnfj","sorting":"a","sort":100000,"color":"#a21010","flags":{"wfrp4e-pbtt":{"initialization-parent":"Companion"}}}
 {"_id":"fY94Q1dcxw2okwpa","name":"The Cult of Ulric","type":"JournalEntry","parent":"UcNpjukIpiZkjgIv","sorting":"m","sort":300000,"color":"#2c6d33","flags":{"wfrp4e-pbtt":{"initialization-parent":"Companion"}}}
 {"name":"Weapons","type":"RollTable","sort":200000,"flags":{},"parent":"SsnU0RAudPtByTXv","sorting":"a","color":"","_id":"fZVCNzRti50ZaIuV"}
 {"_id":"fajyhFU9lHRWsMFz","name":"Factions","type":"JournalEntry","sort":400000,"flags":{},"parent":"sIr7875W6CLmlLOg","sorting":"a"}
@@ -241,7 +242,7 @@
 {"_id":"jxONpQkr2xVFk5CZ","name":"Walfens","type":"Actor","sort":600000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":""}
 {"_id":"k550Bu2pvHs2HAB1","name":"Jurgen's Party","type":"JournalEntry","sort":8300000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#995900"}
 {"name":"Handouts","type":"JournalEntry","sort":6800000,"flags":{},"parent":"sJsgXlZiMioDgTqH","sorting":"a","color":"","_id":"kO5UH113WA6IVgXl"}
-{"_id":"kfNvqBQoG0dWhzdm","name":"Grapes","type":"Actor","parent":null,"sorting":"a","sort":5362500,"color":"#4a1740","flags":{}}
+{"_id":"kfNvqBQoG0dWhzdm","name":"Grapes","type":"Actor","parent":"c73wsFFS2dVYSKUP","sorting":"a","sort":100000,"color":"#4a1740","flags":{}}
 {"name":"Beggars","type":"Actor","sort":2000000,"flags":{},"parent":"w32aTNLs5I0hoeXS","sorting":"a","color":"","_id":"klG8Icc6PSpHHpUd"}
 {"_id":"l1wMwe07tENDjYkH","name":"Familiar Faces","type":"JournalEntry","parent":"UcNpjukIpiZkjgIv","sorting":"m","sort":375000,"color":"#6c008a","flags":{"wfrp4e-pbtt":{"initialization-parent":"Companion"}}}
 {"name":"Special","type":"Scene","sort":1000000,"flags":{},"parent":"ifqvWppW117y2zyP","sorting":"a","color":"","_id":"lAj1myTWNd6cz3c7"}
@@ -256,7 +257,7 @@
 {"_id":"mPZbMEHqQupSD01M","name":"Head Armour","type":"Item","sort":300000,"flags":{},"parent":"XCAwjWgOHbC2T263","sorting":"a","color":"#2b5e2f"}
 {"name":"NPC Items","type":"Item","sort":2700000,"flags":{},"parent":"B1NGEkUpOPYjZbtf","sorting":"a","color":"#6a1616","_id":"mSls4f8JbUBSZvVU"}
 {"_id":"mq6UHTrGdufRtIzg","name":"The Evil Plot","type":"Actor","parent":"fr0DWfQKUuFVhWDL","sorting":"a","sort":300000,"color":"#19215d","flags":{"wfrp4e-pbtt":{"initialization-parent":"Power Behind the Throne"}}}
-{"name":"The Oldenhaller Contract","type":"Actor","parent":null,"sorting":"a","sort":0,"color":"#445700","flags":{},"_id":"mqg2YJow5QV60BUA"}
+{"_id":"mqg2YJow5QV60BUA","name":"The Oldenhaller Contract","type":"Actor","parent":"c73wsFFS2dVYSKUP","sorting":"a","sort":200000,"color":"#445700","flags":{}}
 {"name":"Villagers","type":"JournalEntry","sort":8600000,"flags":{},"parent":"gfvxW95YPpkwZLnb","sorting":"a","color":"","_id":"mwr83CyCXWfwaJts"}
 {"name":"Vassals","type":"Actor","sort":5000000,"flags":{},"parent":"7JJvX9ibeSRwPy1t","sorting":"a","color":"","_id":"mxV8BnhQRP4zjmY0"}
 {"_id":"nG3gkFYEAmqrI5fy","name":"Careers","type":"Item","sort":3900000,"flags":{},"parent":null,"sorting":"m","color":"#ad4500"}
@@ -324,5 +325,3 @@
 {"_id":"zXyfKrd5bZXrWX2d","name":"Master Attractions Calendar","type":"JournalEntry","parent":"UTvom2QsNE9UCm6u","sorting":"a","sort":100000,"color":null,"flags":{"wfrp4e-pbtt":{"initialization-parent":"Appendices"}}}
 {"_id":"zhKNzx21YVsaN3CA","name":"The Road to Middenheim","type":"JournalEntry","parent":"tVm4VHOzL3Kt6qVy","sorting":"a","sort":9300000,"color":"#474747","flags":{}}
 {"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
-{"_id":"cgVwF73JqHGJFy4a","name":"The Ritual","type":"JournalEntry","parent":null,"sorting":"m","sort":1700000,"color":"#a21010","flags":{"wfrp4e-pbtt":{"initialization-parent":"Companion"}}}
-{"_id":"fMPaemyIV1jHtkpL","name":"The Ritual","type":"Actor","parent":null,"sorting":"a","sort":7050000,"color":"#a21010","flags":{"wfrp4e-pbtt":{"initialization-parent":"Companion"}}}
