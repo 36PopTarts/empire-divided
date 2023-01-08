@@ -11,7 +11,6 @@
 {"name":"Research","type":"Item","sort":1700000,"flags":{},"parent":"B1NGEkUpOPYjZbtf","sorting":"a","color":"#4d4d4d","_id":"1u2wzTkzXmYcmyN5"}
 {"name":"Battle","type":"Scene","sort":900000,"flags":{},"parent":"J3T0xtVGxYvoqBJS","sorting":"a","color":"","_id":"1uBvLxdhnTSSUy7Y"}
 {"name":"Mutations","type":"Item","sort":2200000,"flags":{},"parent":"B1NGEkUpOPYjZbtf","sorting":"a","color":"#364e1d","_id":"1xhakahyIrfij4Ja"}
-{"name":"Roadwardens","type":"Actor","sort":1500000,"flags":{},"parent":"EHmv3MZ98EtEC2Fy","sorting":"a","color":"","_id":"1yepPjUMbwgRTxbZ"}
 {"_id":"2C10yfQayeG43T5f","name":"Base","type":"RollTable","parent":null,"sorting":"a","sort":2200000,"color":null,"flags":{}}
 {"_id":"2HE77EP9XRF0T89I","name":"Lore of Tzeentch","type":"Item","sort":2500000,"flags":{},"parent":"YRGW5Jqs9RpDaLqn","sorting":"a","color":"#3f3993"}
 {"_id":"2MTo8MincpKOmfpW","name":"Cook","type":"Item","sort":4100000,"flags":{},"parent":"nG3gkFYEAmqrI5fy","sorting":"a","color":"#740606"}
@@ -69,9 +68,7 @@
 {"name":"La Maisontaal","type":"JournalEntry","parent":"hRh4ENgO4oLtD0If","sorting":"a","sort":0,"color":"#4c1010","flags":{},"_id":"D1vDuL4u01FZseiM"}
 {"_id":"DMQs1UveUtlyzPKt","name":"Luitpoldstrasse Blues","type":"JournalEntry","sort":7000000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#26386e"}
 {"name":"Oldenhaller","type":"Scene","parent":"J3T0xtVGxYvoqBJS","sorting":"a","sort":0,"color":"#5a6e12","flags":{},"_id":"DNFZTBLDlkiFy8jm"}
-{"name":"Bogenhafen","type":"Scene","sort":700000,"flags":{},"parent":null,"sorting":"a","color":"#4c214f","_id":"DplIEvlQ0WLc5NVF"}
 {"name":"Trotts","type":"Actor","sort":4700000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#6b0a0a","_id":"EFCQWpwIywZCymaB"}
-{"_id":"EHmv3MZ98EtEC2Fy","name":"Shadow Cast","type":"Actor","sort":100000,"flags":{},"parent":"81ZFw4Rjgz144G8Q","sorting":"a","color":"#4f4f4f"}
 {"name":"Fief Generation","type":"JournalEntry","sort":8400000,"flags":{},"parent":"NOyJwiypgeV7mEJh","sorting":"a","color":"#346035","_id":"EI3QBoP7myrKeS4p"}
 {"name":"Freelance","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#c76000","flags":{},"_id":"EaYUkgpTIjybPKtf"}
 {"name":"PC Equipment","type":"Item","sort":3400000,"flags":{},"parent":"lryP0lc1Adinz7aR","sorting":"a","color":"","_id":"EbA4zGI5h2S8I6qQ"}
@@ -136,7 +133,7 @@
 {"name":"Templates","type":"Item","sort":1800000,"flags":{},"parent":"FH46SuKDUeaO7cfJ","sorting":"a","color":"","_id":"RBXRWBI253YEeOCn"}
 {"name":"Brute Career","type":"Item","sort":1400000,"flags":{},"parent":"FH46SuKDUeaO7cfJ","sorting":"a","color":"","_id":"RO7uolWbUYQEX3ym"}
 {"name":"Adventure","type":"JournalEntry","sort":8000000,"flags":{},"parent":"pdvIHQsjlpM0hC2f","sorting":"a","color":"","_id":"RkRpWrZ0t0lnKwu6"}
-{"_id":"Rl69ySRItdzlcGbE","name":"The Graf's Garden Party","type":"JournalEntry","parent":"UcNpjukIpiZkjgIv","sorting":"m","sort":100000,"color":"#132b3a","flags":{"wfrp4e-pbtt":{"initialization-parent":"Companion"}}}
+{"_id":"Rl69ySRItdzlcGbE","name":"The Graf's Garden Party","type":"JournalEntry","parent":"xOq4e4h3j8j4DtZs","sorting":"m","sort":750000,"color":"#132b3a","flags":{"wfrp4e-pbtt":{"initialization-parent":"Companion"}}}
 {"name":"Holzenauer Potions","type":"Item","parent":"EbA4zGI5h2S8I6qQ","sorting":"a","sort":0,"color":null,"flags":{},"_id":"RrQ7ZV24F8HRIYO9"}
 {"name":"Horses","type":"RollTable","sort":1600000,"flags":{},"parent":"tIVl1PXcFSPDwlNN","sorting":"a","color":"","_id":"SEtGlOTo2pYJ6w0T"}
 {"_id":"SV4wmXUvuCNwQ0Nc","name":"Magic","type":"JournalEntry","sort":200000,"flags":{},"parent":"sIr7875W6CLmlLOg","sorting":"m","color":"#6c6217"}
@@ -161,7 +158,6 @@
 {"name":"Dawihafen","type":"JournalEntry","sort":4500000,"flags":{},"parent":"nYrlPwQwhU9yHNZz","sorting":"a","color":"","_id":"VmNg2NFg4nLcAIjg"}
 {"name":"Altdorf Endeavours","type":"JournalEntry","sort":5700000,"flags":{},"parent":"5PMBVwnydUMSobIr","sorting":"a","color":"#411010","_id":"W7hZ5KseAjno0hrA"}
 {"name":"Blackpowder Nights","type":"JournalEntry","sort":7300000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#404040","_id":"WAxihFsdmCGhdzji"}
-{"_id":"WGZeOxlDHwKWGiCo","name":"Auerswald","type":"Scene","sort":1000000,"flags":{},"parent":null,"sorting":"a","color":"#c79200"}
 {"_id":"WP8D3DgTaIPSKQ2L","name":"No Strings Attached","type":"JournalEntry","sort":8500000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"m","color":"#353664"}
 {"name":"Body Armour","type":"Item","sort":400000,"flags":{},"parent":"XCAwjWgOHbC2T263","sorting":"a","color":"#37366d","_id":"WQAhCHZI5iIKEzgV"}
 {"name":"The East End","type":"JournalEntry","sort":3900000,"flags":{},"parent":"wV26wyVeod4mutle","sorting":"a","color":"","_id":"WQm4k9MEuHY8Q0Ct"}
@@ -213,7 +209,6 @@
 {"name":"Handouts","type":"JournalEntry","parent":"lUyL3SvOXg2BFpv2","sorting":"a","sort":0,"color":null,"flags":{},"_id":"eyJTpYKBCZ3Lzfet"}
 {"_id":"fCeOooqfh7CvDnfj","name":"To Export","type":"Actor","parent":null,"sorting":"a","sort":6950000,"color":null,"flags":{}}
 {"_id":"fJD2A7H0QjVnQKim","name":"The Altdorf Spieler","type":"JournalEntry","sort":100000,"flags":{},"parent":"2Vc3Hl56Nkx9gNaO","sorting":"a","color":""}
-{"_id":"fMPaemyIV1jHtkpL","name":"The Ritual","type":"Actor","parent":"fCeOooqfh7CvDnfj","sorting":"a","sort":100000,"color":"#a21010","flags":{"wfrp4e-pbtt":{"initialization-parent":"Companion"}}}
 {"_id":"fY94Q1dcxw2okwpa","name":"The Cult of Ulric","type":"JournalEntry","parent":"UcNpjukIpiZkjgIv","sorting":"m","sort":300000,"color":"#2c6d33","flags":{"wfrp4e-pbtt":{"initialization-parent":"Companion"}}}
 {"name":"Weapons","type":"RollTable","sort":200000,"flags":{},"parent":"SsnU0RAudPtByTXv","sorting":"a","color":"","_id":"fZVCNzRti50ZaIuV"}
 {"_id":"fajyhFU9lHRWsMFz","name":"Factions","type":"JournalEntry","sort":400000,"flags":{},"parent":"sIr7875W6CLmlLOg","sorting":"a"}
@@ -243,7 +238,6 @@
 {"_id":"k550Bu2pvHs2HAB1","name":"Jurgen's Party","type":"JournalEntry","sort":8300000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#995900"}
 {"name":"Handouts","type":"JournalEntry","sort":6800000,"flags":{},"parent":"sJsgXlZiMioDgTqH","sorting":"a","color":"","_id":"kO5UH113WA6IVgXl"}
 {"_id":"kfNvqBQoG0dWhzdm","name":"Grapes","type":"Actor","parent":"c73wsFFS2dVYSKUP","sorting":"a","sort":100000,"color":"#4a1740","flags":{}}
-{"name":"Beggars","type":"Actor","sort":2000000,"flags":{},"parent":"w32aTNLs5I0hoeXS","sorting":"a","color":"","_id":"klG8Icc6PSpHHpUd"}
 {"_id":"l1wMwe07tENDjYkH","name":"Familiar Faces","type":"JournalEntry","parent":"UcNpjukIpiZkjgIv","sorting":"m","sort":375000,"color":"#6c008a","flags":{"wfrp4e-pbtt":{"initialization-parent":"Companion"}}}
 {"name":"Special","type":"Scene","sort":1000000,"flags":{},"parent":"ifqvWppW117y2zyP","sorting":"a","color":"","_id":"lAj1myTWNd6cz3c7"}
 {"name":"Outside the Walls","type":"JournalEntry","sort":5500000,"flags":{},"parent":"wV26wyVeod4mutle","sorting":"a","color":"","_id":"lDSzFxqsa5B502Oj"}
@@ -300,6 +294,7 @@
 {"_id":"uaiYhFK8DZbtIU19","name":"The Grey Mountains","type":"JournalEntry","parent":"tVm4VHOzL3Kt6qVy","sorting":"a","sort":8700000,"color":"#808080","flags":{}}
 {"_id":"ufP7LQgh8ojHBCOk","name":"Cameo Adventures","type":"JournalEntry","parent":"UcNpjukIpiZkjgIv","sorting":"m","sort":200000,"color":"#34053d","flags":{"wfrp4e-pbtt":{"initialization-parent":"Companion"}}}
 {"name":"Power Behind the Throne","type":"RollTable","parent":null,"sorting":"a","sort":0,"color":"#014b2b","flags":{},"_id":"unVlkVIOYDP58XGM"}
+{"name":"Generic","type":"Scene","parent":"Y2EPOyNpGh1pOhQo","sorting":"a","sort":0,"color":null,"flags":{},"_id":"v7LAMjDZOQ0Ycfmn"}
 {"name":"PC Stuff","type":"Item","sort":3000000,"flags":{},"parent":"B1NGEkUpOPYjZbtf","sorting":"a","color":"#ad6e00","_id":"v9tiL1bRoEF5secs"}
 {"_id":"vCynGq9TAr6oaXsY","name":"Handouts","type":"JournalEntry","parent":"UTvom2QsNE9UCm6u","sorting":"a","sort":0,"color":null,"flags":{"wfrp4e-pbtt":{"initialization-parent":"Appendices"}}}
 {"_id":"vRK0IdWfn1Ral4Vj","name":"Greenskins","type":"Item","sort":3100000,"flags":{},"parent":"mSls4f8JbUBSZvVU","sorting":"a","color":"#3f5c00"}
@@ -308,7 +303,6 @@
 {"name":"Urban","type":"Scene","sort":400000,"flags":{},"parent":"ifqvWppW117y2zyP","sorting":"a","color":"#6f7985","_id":"vegile7w7PJN8ipB"}
 {"_id":"vifFIN67OZxpVSov","name":"Haalsteins","type":"Actor","sort":500000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#7b4e23"}
 {"_id":"vrsSSGXYVnoGWa0s","name":"Politics","type":"JournalEntry","sort":2800000,"flags":{"wfrp4e":{"initialization-parent":"Reikland"}},"parent":"J8dQ6pBcs8qRN8Bk","sorting":"m","color":"#55385f"}
-{"_id":"w32aTNLs5I0hoeXS","name":"Blood on the Reik","type":"Actor","sort":300000,"flags":{},"parent":"81ZFw4Rjgz144G8Q","sorting":"a","color":"#592727"}
 {"_id":"wSvoD5ncqZC1InsK","name":"The Purple Hand","type":"JournalEntry","sort":8200000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#69008f"}
 {"_id":"wV26wyVeod4mutle","name":"Altdorf","type":"JournalEntry","sort":100000,"flags":{},"parent":"evoGfpDUlvJxklnA","sorting":"a","color":"#7a0000"}
 {"_id":"whxUvSpE8xWMMftf","name":"The Carnival","type":"Actor","parent":"fr0DWfQKUuFVhWDL","sorting":"m","sort":500000,"color":"#043415","flags":{"wfrp4e-pbtt":{"initialization-parent":"Power Behind the Throne"}}}
