@@ -150,6 +150,7 @@
 {"_id":"TxnJTE7Onz59xko1","name":"Miracles of the Lady","type":"Item","sort":4700000,"flags":{},"parent":"YRGW5Jqs9RpDaLqn","sorting":"a","color":"#5d82a2"}
 {"_id":"U1msc0jUiY0BSKay","name":"Horse Gear","type":"Item","sort":700000,"flags":{},"parent":"lryP0lc1Adinz7aR","sorting":"a","color":"#602c16"}
 {"name":"Jousting","type":"RollTable","sort":1300000,"flags":{},"parent":null,"sorting":"a","color":"#c28400","_id":"U9EnW4uowaJUTjig"}
+{"name":"Vermillion Pawn","type":"Item","parent":"Xj9kKCDM9wWXQ5u4","sorting":"a","sort":0,"color":null,"flags":{},"_id":"UP5ofDDz5eDGikcU"}
 {"_id":"UTvom2QsNE9UCm6u","name":"Appendices","type":"JournalEntry","parent":"xOq4e4h3j8j4DtZs","sorting":"m","sort":625000,"color":"#054d00","flags":{"wfrp4e-pbtt":{"initialization-parent":"Power Behind the Throne"}}}
 {"name":"Middenheim Carnival Programme","type":"JournalEntry","parent":null,"sorting":"a","sort":0,"color":"#0078c2","flags":{},"_id":"UVKlZleP9AfhqPXy"}
 {"_id":"UcNpjukIpiZkjgIv","name":"Companion","type":"JournalEntry","parent":"xOq4e4h3j8j4DtZs","sorting":"m","sort":650000,"color":"#22104c","flags":{"wfrp4e-pbtt":{"initialization-parent":"Power Behind the Throne"}}}
@@ -330,4 +331,3 @@
 {"_id":"zhKNzx21YVsaN3CA","name":"The Road to Middenheim","type":"JournalEntry","parent":"tVm4VHOzL3Kt6qVy","sorting":"a","sort":9300000,"color":"#474747","flags":{}}
 {"name":"Obscure","type":"Scene","parent":"Y2EPOyNpGh1pOhQo","sorting":"a","sort":0,"color":null,"flags":{},"_id":"zpb1LCp1rJv27sjE"}
 {"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
-{"name":"Vermillion Pawn","type":"Item","parent":"Xj9kKCDM9wWXQ5u4","sorting":"a","sort":0,"color":null,"flags":{},"_id":"UP5ofDDz5eDGikcU"}
