@@ -63,7 +63,7 @@
 {"_id":"BrtIycD1u7HxITud","name":"The Consumers' Guide","type":"JournalEntry","parent":null,"sorting":"a","sort":200000,"color":"#852e00","flags":{}}
 {"name":"Saalenschloss","type":"JournalEntry","sort":8800000,"flags":{},"parent":"gfvxW95YPpkwZLnb","sorting":"a","color":"","_id":"BwAbSVnuqqrKxG4Q"}
 {"_id":"CDunpeWYhKpJ1Xmy","name":"Maps","type":"JournalEntry","sort":700000,"flags":{},"parent":null,"sorting":"m","color":"#3f3493"}
-{"_id":"CLkaC7gsUPC5R3mN","name":"PCs","type":"Actor","sort":100000,"flags":{},"parent":null,"sorting":"a","color":"#710e0e"}
+{"_id":"CLkaC7gsUPC5R3mN","name":"PCs","type":"Actor","parent":null,"sorting":"m","sort":100000,"color":"#710e0e","flags":{}}
 {"name":"Dryad Shapeshifting","type":"Item","parent":"QcrOaFPGaPLI5M77","sorting":"a","sort":0,"color":null,"flags":{},"_id":"CW0WiBkXqitLY3mp"}
 {"name":"I Have No Idea","type":"RollTable","sort":700000,"flags":{},"parent":"tIVl1PXcFSPDwlNN","sorting":"a","color":"","_id":"CzyKUOTTbxfphe0i"}
 {"name":"La Maisontaal","type":"JournalEntry","parent":"hRh4ENgO4oLtD0If","sorting":"a","sort":0,"color":"#4c1010","flags":{},"_id":"D1vDuL4u01FZseiM"}
@@ -300,6 +300,7 @@
 {"name":"Misc Useful Tables","type":"RollTable","sort":400000,"flags":{},"parent":null,"sorting":"a","color":"","_id":"tIVl1PXcFSPDwlNN"}
 {"_id":"tVm4VHOzL3Kt6qVy","name":"GM Notes","type":"JournalEntry","parent":null,"sorting":"a","sort":1200000,"color":"#9e0000","flags":{}}
 {"name":"To Export","type":"Scene","parent":"49bbBFQWuWi3jpZC","sorting":"a","sort":0,"color":null,"flags":{},"_id":"uD9tzzGg5uYjVVKy"}
+{"_id":"uHELXta50DYALpUY","name":"Garden Party","type":"Actor","parent":null,"sorting":"a","sort":7050000,"color":null,"flags":{}}
 {"_id":"uXfo64lSVu10o1kv","name":"Animals","type":"Actor","sort":7850000,"flags":{},"parent":"CLkaC7gsUPC5R3mN","sorting":"a","color":""}
 {"_id":"uaiYhFK8DZbtIU19","name":"The Grey Mountains","type":"JournalEntry","parent":"tVm4VHOzL3Kt6qVy","sorting":"a","sort":8700000,"color":"#808080","flags":{}}
 {"_id":"ufP7LQgh8ojHBCOk","name":"Cameo Adventures","type":"JournalEntry","parent":"UcNpjukIpiZkjgIv","sorting":"m","sort":200000,"color":"#34053d","flags":{"wfrp4e-pbtt":{"initialization-parent":"Companion"}}}
@@ -331,7 +332,3 @@
 {"_id":"zhKNzx21YVsaN3CA","name":"The Road to Middenheim","type":"JournalEntry","parent":"tVm4VHOzL3Kt6qVy","sorting":"a","sort":9300000,"color":"#474747","flags":{}}
 {"name":"Obscure","type":"Scene","parent":"Y2EPOyNpGh1pOhQo","sorting":"a","sort":0,"color":null,"flags":{},"_id":"zpb1LCp1rJv27sjE"}
 {"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
-{"_id":"CLkaC7gsUPC5R3mN","name":"PCs","type":"Actor","parent":null,"sorting":"m","sort":100000,"color":"#710e0e","flags":{}}
-{"name":"Garden Party","type":"Actor","parent":null,"sorting":"a","sort":0,"color":null,"flags":{},"_id":"uHELXta50DYALpUY"}
-{"_id":"uHELXta50DYALpUY","name":"Garden Party","type":"Actor","parent":null,"sorting":"a","sort":6900000,"color":null,"flags":{}}
-{"_id":"uHELXta50DYALpUY","name":"Garden Party","type":"Actor","parent":null,"sorting":"a","sort":7050000,"color":null,"flags":{}}
