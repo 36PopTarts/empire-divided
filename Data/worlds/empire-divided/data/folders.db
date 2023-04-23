@@ -138,7 +138,7 @@
 {"name":"Templates","type":"Item","sort":1800000,"flags":{},"parent":"FH46SuKDUeaO7cfJ","sorting":"a","color":"","_id":"RBXRWBI253YEeOCn"}
 {"name":"Brute Career","type":"Item","sort":1400000,"flags":{},"parent":"FH46SuKDUeaO7cfJ","sorting":"a","color":"","_id":"RO7uolWbUYQEX3ym"}
 {"name":"Adventure","type":"JournalEntry","sort":8000000,"flags":{},"parent":"pdvIHQsjlpM0hC2f","sorting":"a","color":"","_id":"RkRpWrZ0t0lnKwu6"}
-{"_id":"Rl69ySRItdzlcGbE","name":"The Graf's Garden Party","type":"JournalEntry","parent":"xOq4e4h3j8j4DtZs","sorting":"m","sort":750000,"color":"#132b3a","flags":{"wfrp4e-pbtt":{"initialization-parent":"Companion"}}}
+{"_id":"Rl69ySRItdzlcGbE","name":"The Graf's Garden Party","type":"JournalEntry","parent":null,"sorting":"m","sort":-100000,"color":"#132b3a","flags":{"wfrp4e-pbtt":{"initialization-parent":"Companion"}}}
 {"name":"Holzenauer Potions","type":"Item","parent":"EbA4zGI5h2S8I6qQ","sorting":"a","sort":0,"color":null,"flags":{},"_id":"RrQ7ZV24F8HRIYO9"}
 {"_id":"S2EfpAaqxRwqUANZ","name":"Navigating the Undercity","type":"JournalEntry","parent":"xOq4e4h3j8j4DtZs","sorting":"a","sort":850000,"color":"#706100","flags":{}}
 {"name":"Horses","type":"RollTable","sort":1600000,"flags":{},"parent":"tIVl1PXcFSPDwlNN","sorting":"a","color":"","_id":"SEtGlOTo2pYJ6w0T"}
@@ -332,5 +332,3 @@
 {"_id":"zhKNzx21YVsaN3CA","name":"The Road to Middenheim","type":"JournalEntry","parent":"tVm4VHOzL3Kt6qVy","sorting":"a","sort":9300000,"color":"#474747","flags":{}}
 {"name":"Obscure","type":"Scene","parent":"Y2EPOyNpGh1pOhQo","sorting":"a","sort":0,"color":null,"flags":{},"_id":"zpb1LCp1rJv27sjE"}
 {"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
-{"_id":"Rl69ySRItdzlcGbE","name":"The Graf's Garden Party","type":"JournalEntry","parent":"xOq4e4h3j8j4DtZs","sorting":"m","sort":950000,"color":"#132b3a","flags":{"wfrp4e-pbtt":{"initialization-parent":"Companion"}}}
-{"_id":"Rl69ySRItdzlcGbE","name":"The Graf's Garden Party","type":"JournalEntry","parent":null,"sorting":"m","sort":-100000,"color":"#132b3a","flags":{"wfrp4e-pbtt":{"initialization-parent":"Companion"}}}
