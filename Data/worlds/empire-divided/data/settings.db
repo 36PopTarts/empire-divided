@@ -73,7 +73,7 @@
 {"_id":"UTfOP9PFgxd7eA23","key":"core.tokenDragPreview","value":"false"}
 {"_id":"VydyA0P3zORcIhCi","key":"wfrp4e.weaponLength","value":"true"}
 {"_id":"W0mCfULJXgyg8QSI","key":"weather-control.weatherData","value":"{\"version\":1,\"climate\":{\"isVolcanic\":false,\"name\":\"temperate\",\"humidity\":0,\"baseTemperature\":0,\"temperatureRange\":{\"max\":90,\"min\":-20}},\"currentDate\":{\"raw\":{\"year\":2512,\"month\":11,\"weekdays\":[\"Wellentag\",\"Aubentag\",\"Marktag\",\"Backertag\",\"Bezahltag\",\"Konistag\",\"Angestag\",\"Festag\"],\"currentWeekdayIndex\":2,\"day\":21,\"hour\":19,\"minute\":31,\"second\":12},\"display\":{\"fullDate\":\"Ulriczeit 21, 2512 IC\",\"time\":\"19:31:12\"}},\"temp\":66,\"lastTemp\":66,\"precipitation\":\"Clear sky today.\"}"}
-{"_id":"XdF7KActkJ1faUwO","key":"core.time","value":"86845289448"}
+{"_id":"XdF7KActkJ1faUwO","key":"core.time","value":"86845289472"}
 {"_id":"YI1ukkg6FBfdlDTP","key":"combat-carousel.imageType","value":"\"token\""}
 {"key":"wfrp4e.mooConditionTriggers","value":"false","_id":"YOYb3LcFvuoZzfiX"}
 {"key":"theatre.theatreStyle","value":"\"clearbox\"","_id":"ZCHB18wbJjHusVa6"}
@@ -128,4 +128,7 @@
 {"key":"fxmaster.specialEffects","value":"[]","_id":"zNtGyKyxQd1XkdZx"}
 {"key":"wfrp4e-gm-toolkit.scenePullActivate","value":"\"never\"","_id":"zfQwGiEfWd5JssWu"}
 {"key":"combat-carousel.bar1Attribute","value":"\"attributes.wounds\"","_id":"zmy4ZEACyGT4niZA"}
-{"_id":"XdF7KActkJ1faUwO","key":"core.time","value":"86845289472"}
+{"_id":"Oqoc5e02J4QdrheU","key":"foundryvtt-simple-calendar.current-date","value":"{\"year\":2512,\"month\":11,\"day\":21,\"seconds\":70278}"}
+{"_id":"W0mCfULJXgyg8QSI","key":"weather-control.weatherData","value":"{\"version\":1,\"climate\":{\"isVolcanic\":false,\"name\":\"temperate\",\"humidity\":0,\"baseTemperature\":0,\"temperatureRange\":{\"max\":90,\"min\":-20}},\"currentDate\":{\"raw\":{\"year\":2512,\"month\":11,\"weekdays\":[\"Wellentag\",\"Aubentag\",\"Marktag\",\"Backertag\",\"Bezahltag\",\"Konistag\",\"Angestag\",\"Festag\"],\"currentWeekdayIndex\":2,\"day\":21,\"hour\":19,\"minute\":31,\"second\":18},\"display\":{\"fullDate\":\"Ulriczeit 21, 2512 IC\",\"time\":\"19:31:18\"}},\"temp\":66,\"lastTemp\":66,\"precipitation\":\"Clear sky today.\"}"}
+{"_id":"Oqoc5e02J4QdrheU","key":"foundryvtt-simple-calendar.current-date","value":"{\"year\":2512,\"month\":11,\"day\":21,\"seconds\":70284}"}
+{"_id":"W0mCfULJXgyg8QSI","key":"weather-control.weatherData","value":"{\"version\":1,\"climate\":{\"isVolcanic\":false,\"name\":\"temperate\",\"humidity\":0,\"baseTemperature\":0,\"temperatureRange\":{\"max\":90,\"min\":-20}},\"currentDate\":{\"raw\":{\"year\":2512,\"month\":11,\"weekdays\":[\"Wellentag\",\"Aubentag\",\"Marktag\",\"Backertag\",\"Bezahltag\",\"Konistag\",\"Angestag\",\"Festag\"],\"currentWeekdayIndex\":2,\"day\":21,\"hour\":19,\"minute\":31,\"second\":24},\"display\":{\"fullDate\":\"Ulriczeit 21, 2512 IC\",\"time\":\"19:31:24\"}},\"temp\":66,\"lastTemp\":66,\"precipitation\":\"Clear sky today.\"}"}

@@ -98,6 +98,7 @@
 {"name":"Glade Rider","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#3e4d32","flags":{},"_id":"Jn8BgBORWDi6ZQUI"}
 {"_id":"Jr9DZCfP6SV0ZJdg","name":"Random 'Treasure'","type":"Item","sort":200000,"flags":{},"parent":null,"sorting":"a","color":"#af9c74"}
 {"_id":"KBFMpqeeMFWhdpSI","name":"Rules","type":"JournalEntry","parent":null,"sorting":"m","sort":400000,"color":"#1b651e","flags":{}}
+{"_id":"KEoilQgmsJuqXzd3","name":"Horse Race","type":"Actor","parent":null,"sorting":"a","sort":7150000,"color":null,"flags":{}}
 {"_id":"KN6Ta1P6q4WGPqtN","name":"Haalstein","type":"Scene","sort":750000,"flags":{},"parent":null,"sorting":"a","color":"#a35f00"}
 {"_id":"KXxwxDsLcPhOIK1h","name":"The Peasants' Tournament","type":"JournalEntry","parent":"hRh4ENgO4oLtD0If","sorting":"a","sort":100000,"color":"#e68600","flags":{}}
 {"_id":"Kft8Ng9HfLOd35El","name":"New Animal Rules","type":"JournalEntry","sort":100000,"flags":{},"parent":"NOyJwiypgeV7mEJh","sorting":"a","color":"#6b3000"}
@@ -300,6 +301,7 @@
 {"name":"Misc Useful Tables","type":"RollTable","sort":400000,"flags":{},"parent":null,"sorting":"a","color":"","_id":"tIVl1PXcFSPDwlNN"}
 {"_id":"tVm4VHOzL3Kt6qVy","name":"GM Notes","type":"JournalEntry","parent":null,"sorting":"a","sort":1200000,"color":"#9e0000","flags":{}}
 {"name":"To Export","type":"Scene","parent":"49bbBFQWuWi3jpZC","sorting":"a","sort":0,"color":null,"flags":{},"_id":"uD9tzzGg5uYjVVKy"}
+{"_id":"uFwXz6MiIQ0SURvC","name":"Sackcloth and Ashes","type":"Actor","parent":"vU9LPtmofGv4bHSj","sorting":"a","sort":4500000,"color":null,"flags":{}}
 {"_id":"uHELXta50DYALpUY","name":"Garden Party","type":"Actor","parent":null,"sorting":"a","sort":7050000,"color":null,"flags":{}}
 {"_id":"uXfo64lSVu10o1kv","name":"Animals","type":"Actor","sort":7850000,"flags":{},"parent":"CLkaC7gsUPC5R3mN","sorting":"a","color":""}
 {"_id":"uaiYhFK8DZbtIU19","name":"The Grey Mountains","type":"JournalEntry","parent":"tVm4VHOzL3Kt6qVy","sorting":"a","sort":8700000,"color":"#808080","flags":{}}
@@ -332,8 +334,3 @@
 {"_id":"zhKNzx21YVsaN3CA","name":"The Road to Middenheim","type":"JournalEntry","parent":"tVm4VHOzL3Kt6qVy","sorting":"a","sort":9300000,"color":"#474747","flags":{}}
 {"name":"Obscure","type":"Scene","parent":"Y2EPOyNpGh1pOhQo","sorting":"a","sort":0,"color":null,"flags":{},"_id":"zpb1LCp1rJv27sjE"}
 {"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
-{"name":"Horse Race","type":"Actor","parent":null,"sorting":"a","sort":0,"color":null,"flags":{},"_id":"KEoilQgmsJuqXzd3"}
-{"name":"Sackcloth and Ashes","type":"Actor","parent":null,"sorting":"a","sort":0,"color":null,"flags":{},"_id":"uFwXz6MiIQ0SURvC"}
-{"_id":"uFwXz6MiIQ0SURvC","name":"Sackcloth and Ashes","type":"Actor","parent":null,"sorting":"a","sort":750000,"color":null,"flags":{}}
-{"_id":"uFwXz6MiIQ0SURvC","name":"Sackcloth and Ashes","type":"Actor","parent":"vU9LPtmofGv4bHSj","sorting":"a","sort":4500000,"color":null,"flags":{}}
-{"_id":"KEoilQgmsJuqXzd3","name":"Horse Race","type":"Actor","parent":null,"sorting":"a","sort":7150000,"color":null,"flags":{}}
