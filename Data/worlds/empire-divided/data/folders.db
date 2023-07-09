@@ -334,3 +334,8 @@
 {"_id":"zhKNzx21YVsaN3CA","name":"The Road to Middenheim","type":"JournalEntry","parent":"tVm4VHOzL3Kt6qVy","sorting":"a","sort":9300000,"color":"#474747","flags":{}}
 {"name":"Obscure","type":"Scene","parent":"Y2EPOyNpGh1pOhQo","sorting":"a","sort":0,"color":null,"flags":{},"_id":"zpb1LCp1rJv27sjE"}
 {"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
+{"name":"Knight of the White Wolf","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#bfbfbf","flags":{},"_id":"rWvEHFb57VSGpuaR"}
+{"_id":"rWvEHFb57VSGpuaR","name":"Knight of the White Wolf","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#969696","flags":{}}
+{"name":"Knight Panther","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#a87b00","flags":{},"_id":"ujmRB1sBRdWxaHNt"}
+{"$$deleted":true,"_id":"VRytseEl7nmbh57F"}
+{"$$deleted":true,"_id":"DNFZTBLDlkiFy8jm"}
