@@ -68,7 +68,6 @@
 {"name":"I Have No Idea","type":"RollTable","sort":700000,"flags":{},"parent":"tIVl1PXcFSPDwlNN","sorting":"a","color":"","_id":"CzyKUOTTbxfphe0i"}
 {"name":"La Maisontaal","type":"JournalEntry","parent":"hRh4ENgO4oLtD0If","sorting":"a","sort":0,"color":"#4c1010","flags":{},"_id":"D1vDuL4u01FZseiM"}
 {"_id":"DMQs1UveUtlyzPKt","name":"Luitpoldstrasse Blues","type":"JournalEntry","sort":7000000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#26386e"}
-{"name":"Oldenhaller","type":"Scene","parent":"J3T0xtVGxYvoqBJS","sorting":"a","sort":0,"color":"#5a6e12","flags":{},"_id":"DNFZTBLDlkiFy8jm"}
 {"name":"Trotts","type":"Actor","sort":4700000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#6b0a0a","_id":"EFCQWpwIywZCymaB"}
 {"name":"Fief Generation","type":"JournalEntry","sort":8400000,"flags":{},"parent":"NOyJwiypgeV7mEJh","sorting":"a","color":"#346035","_id":"EI3QBoP7myrKeS4p"}
 {"name":"Ironbreaker","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#4f4f4f","flags":{},"_id":"EQButtmRNPByxXxb"}
@@ -160,7 +159,6 @@
 {"name":"Brawling","type":"Item","parent":"BT6aLV9abM8rctf2","sorting":"a","sort":0,"color":null,"flags":{},"_id":"UzmpEMdXwnWZ3iCK"}
 {"name":"Altdorf Entertainments","type":"RollTable","sort":500000,"flags":{},"parent":null,"sorting":"a","color":"#750000","_id":"V8ajfOwSmYQpB3uL"}
 {"_id":"VKIwlf1gDLJCs5C4","name":"Middenheim","type":"Actor","parent":"fr0DWfQKUuFVhWDL","sorting":"m","sort":200000,"color":"#102838","flags":{"wfrp4e-pbtt":{"initialization-parent":"Power Behind the Throne"}}}
-{"_id":"VRytseEl7nmbh57F","name":"Grapes","type":"Scene","parent":null,"sorting":"a","sort":1400000,"color":"#582c48","flags":{}}
 {"name":"Polearms","type":"Item","parent":"BT6aLV9abM8rctf2","sorting":"a","sort":0,"color":null,"flags":{},"_id":"VSX5xd8gmLdKEa3A"}
 {"name":"Events by Venue","type":"JournalEntry","parent":"UVKlZleP9AfhqPXy","sorting":"a","sort":0,"color":null,"flags":{},"_id":"VciAMYnuunYhEYcI"}
 {"name":"Dawihafen","type":"JournalEntry","sort":4500000,"flags":{},"parent":"nYrlPwQwhU9yHNZz","sorting":"a","color":"","_id":"VmNg2NFg4nLcAIjg"}
@@ -284,6 +282,7 @@
 {"name":"Extra Material","type":"JournalEntry","sort":3400000,"flags":{},"parent":"XfhUxAdPBRN3lgpw","sorting":"a","color":"#5b0b0b","_id":"qkj3aSI8lXUSVEwD"}
 {"name":"Markplatz","type":"JournalEntry","sort":4600000,"flags":{},"parent":"nYrlPwQwhU9yHNZz","sorting":"a","color":"","_id":"r8mE9PxwULMjaKMt"}
 {"name":"Research","type":"RollTable","sort":600000,"flags":{},"parent":"tIVl1PXcFSPDwlNN","sorting":"a","color":"","_id":"rGIxxhu57f7AIpxj"}
+{"_id":"rWvEHFb57VSGpuaR","name":"Knight of the White Wolf","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#969696","flags":{}}
 {"_id":"sIr7875W6CLmlLOg","name":"Background","type":"JournalEntry","parent":null,"sorting":"m","sort":100000,"color":"#8d0c0c","flags":{}}
 {"name":"Nastassia's Wedding","type":"JournalEntry","sort":6700000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#38213b","_id":"sJsgXlZiMioDgTqH"}
 {"name":"Middenball","type":"RollTable","sort":1200000,"flags":{},"parent":null,"sorting":"a","color":"#363e5e","_id":"sLTWE5j02B4OBPsI"}
@@ -306,6 +305,7 @@
 {"_id":"uXfo64lSVu10o1kv","name":"Animals","type":"Actor","sort":7850000,"flags":{},"parent":"CLkaC7gsUPC5R3mN","sorting":"a","color":""}
 {"_id":"uaiYhFK8DZbtIU19","name":"The Grey Mountains","type":"JournalEntry","parent":"tVm4VHOzL3Kt6qVy","sorting":"a","sort":8700000,"color":"#808080","flags":{}}
 {"_id":"ufP7LQgh8ojHBCOk","name":"Cameo Adventures","type":"JournalEntry","parent":"UcNpjukIpiZkjgIv","sorting":"m","sort":200000,"color":"#34053d","flags":{"wfrp4e-pbtt":{"initialization-parent":"Companion"}}}
+{"name":"Knight Panther","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#a87b00","flags":{},"_id":"ujmRB1sBRdWxaHNt"}
 {"name":"Power Behind the Throne","type":"RollTable","parent":null,"sorting":"a","sort":0,"color":"#014b2b","flags":{},"_id":"unVlkVIOYDP58XGM"}
 {"name":"Generic","type":"Scene","parent":"Y2EPOyNpGh1pOhQo","sorting":"a","sort":0,"color":null,"flags":{},"_id":"v7LAMjDZOQ0Ycfmn"}
 {"name":"PC Stuff","type":"Item","sort":3000000,"flags":{},"parent":"B1NGEkUpOPYjZbtf","sorting":"a","color":"#ad6e00","_id":"v9tiL1bRoEF5secs"}
@@ -334,8 +334,3 @@
 {"_id":"zhKNzx21YVsaN3CA","name":"The Road to Middenheim","type":"JournalEntry","parent":"tVm4VHOzL3Kt6qVy","sorting":"a","sort":9300000,"color":"#474747","flags":{}}
 {"name":"Obscure","type":"Scene","parent":"Y2EPOyNpGh1pOhQo","sorting":"a","sort":0,"color":null,"flags":{},"_id":"zpb1LCp1rJv27sjE"}
 {"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
-{"name":"Knight of the White Wolf","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#bfbfbf","flags":{},"_id":"rWvEHFb57VSGpuaR"}
-{"_id":"rWvEHFb57VSGpuaR","name":"Knight of the White Wolf","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#969696","flags":{}}
-{"name":"Knight Panther","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#a87b00","flags":{},"_id":"ujmRB1sBRdWxaHNt"}
-{"$$deleted":true,"_id":"VRytseEl7nmbh57F"}
-{"$$deleted":true,"_id":"DNFZTBLDlkiFy8jm"}
