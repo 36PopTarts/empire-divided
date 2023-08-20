@@ -316,3 +316,31 @@
 {"_id":"zhKNzx21YVsaN3CA","name":"The Road to Middenheim","type":"JournalEntry","parent":"tVm4VHOzL3Kt6qVy","sorting":"a","sort":9300000,"color":"#474747","flags":{}}
 {"name":"Obscure","type":"Scene","parent":"Y2EPOyNpGh1pOhQo","sorting":"a","sort":0,"color":null,"flags":{},"_id":"zpb1LCp1rJv27sjE"}
 {"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
+{"name":"Pageants and Jousting","type":"Actor","parent":null,"sorting":"a","sort":0,"color":"#0087db","flags":{},"_id":"E0NM0EeSAGx0w5Jp"}
+{"_id":"E0NM0EeSAGx0w5Jp","name":"Pageants and Jousting","type":"Actor","parent":null,"sorting":"a","sort":7150000,"color":"#0087db","flags":{}}
+{"name":"Knight of the Blazing Sun","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#d69200","flags":{},"_id":"cweqWdwTsCGHkVGq"}
+{"_id":"g3314ez3uibBoK0p","name":"Archer","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":100000,"color":"#3d5908","flags":{}}
+{"_id":"6KB3aDLUypQNLIGC","name":"Asrai Highborn","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":200000,"color":"#38581d","flags":{}}
+{"_id":"0h2woGqGPI7tYegu","name":"Camp Follower","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":300000,"color":"#80654d","flags":{}}
+{"_id":"EaYUkgpTIjybPKtf","name":"Freelance","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":400000,"color":"#c76000","flags":{}}
+{"_id":"Jn8BgBORWDi6ZQUI","name":"Glade Rider","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":500000,"color":"#3e4d32","flags":{}}
+{"_id":"m234dB5Wll2B3B6U","name":"Greatsword","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":600000,"color":"#c77e00","flags":{}}
+{"_id":"ZCqqKwyBJRXXFFa7","name":"Grey Eminence","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":700000,"color":"#292929","flags":{}}
+{"_id":"LTtJRkvww0wtpyCb","name":"Halberdier","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":800000,"color":"#4f4f4f","flags":{}}
+{"_id":"EQButtmRNPByxXxb","name":"Ironbreaker","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":900000,"color":"#4f4f4f","flags":{}}
+{"_id":"rWvEHFb57VSGpuaR","name":"Knight of the White Wolf","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":1000000,"color":"#969696","flags":{}}
+{"_id":"ujmRB1sBRdWxaHNt","name":"Knight Panther","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":1100000,"color":"#a87b00","flags":{}}
+{"_id":"cweqWdwTsCGHkVGq","name":"Knight of the Blazing Sun","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":1200000,"color":"#d69200","flags":{}}
+{"_id":"ZOk2UEDxrYsJRAHl","name":"Owler","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":1300000,"color":"#700f0f","flags":{}}
+{"_id":"yjUcXkIxvbKun2dM","name":"Pikeman","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":1400000,"color":"#255674","flags":{}}
+{"_id":"BSU7j1RVItRQRkK4","name":"Sewer Jack","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":1500000,"color":"#6a5301","flags":{}}
+{"_id":"8mi9kau8eQuHG1az","name":"Spellsinger","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":1600000,"color":"#779169","flags":{}}
+{"_id":"ojDULVoE8Tn1mZBx","name":"Wolf Kin","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":1700000,"color":"#474747","flags":{}}
+{"_id":"csviqL8SYxtvFBCt","name":"Karak Ranger","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":1800000,"color":"#2c4b6d","flags":{}}
+{"_id":"2MTo8MincpKOmfpW","name":"Cook","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":1900000,"color":"#740606","flags":{}}
+{"_id":"sy9RiKVyVpYfZ9Mh","name":"Horse Career","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":2000000,"color":"#5a4830","flags":{}}
+{"_id":"oOXl4e5j2ZPMaFeU","name":"Dog Career","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":2100000,"color":"#43230e","flags":{}}
+{"_id":"2bNq6ylCsjbXjYBX","name":"Knight of the Realm","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":2200000,"color":"#2f5293","flags":{}}
+{"_id":"8Pt4zg6TpxwwIKQb","name":"Alternate Bretonnian Knight","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":2300000,"color":"#4f0d0d","flags":{}}
+{"_id":"qbkx51Ly9LkVf0vN","name":"Grey Wizard","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":2400000,"color":"#4f4f4f","flags":{}}
+{"_id":"EaYUkgpTIjybPKtf","name":"Freelance","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":950000,"color":"#c76000","flags":{}}
