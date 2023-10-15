@@ -97,7 +97,7 @@
 {"_id":"KBFMpqeeMFWhdpSI","name":"Rules","type":"JournalEntry","parent":null,"sorting":"m","sort":400000,"color":"#1b651e","flags":{}}
 {"_id":"KN6Ta1P6q4WGPqtN","name":"Haalstein","type":"Scene","sort":750000,"flags":{},"parent":null,"sorting":"a","color":"#a35f00"}
 {"_id":"KXxwxDsLcPhOIK1h","name":"The Peasants' Tournament","type":"JournalEntry","parent":"hRh4ENgO4oLtD0If","sorting":"a","sort":100000,"color":"#e68600","flags":{}}
-{"_id":"KaIcg6ijnAYwqKiS","name":"Sorry Gents","type":"Actor","parent":null,"sorting":"a","sort":6950000,"color":"#731212","flags":{}}
+{"_id":"KaIcg6ijnAYwqKiS","name":"Sorry Gents","type":"Actor","parent":"c73wsFFS2dVYSKUP","sorting":"a","sort":400000,"color":"#731212","flags":{}}
 {"_id":"Kft8Ng9HfLOd35El","name":"New Animal Rules","type":"JournalEntry","sort":100000,"flags":{},"parent":"NOyJwiypgeV7mEJh","sorting":"a","color":"#6b3000"}
 {"_id":"KgvGPgUgCPwm0TZL","name":"Frugelhofen","type":"JournalEntry","parent":"uaiYhFK8DZbtIU19","sorting":"a","sort":100000,"color":null,"flags":{}}
 {"_id":"KpTC0BqE48PAMUSF","name":"Aschaffenbergs","type":"Actor","sort":200000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#e69100"}
@@ -217,6 +217,7 @@
 {"_id":"gBZ8Uj5I2Eca5vgI","name":"Undercity","type":"RollTable","parent":null,"sorting":"m","sort":0,"color":"#423e05","flags":{}}
 {"_id":"gKCITmniRgrsfVMl","name":"Holzenauers","type":"Actor","sort":700000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#7d1212"}
 {"_id":"gfvxW95YPpkwZLnb","name":"Blessed Saal","type":"JournalEntry","sort":8600000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#505828"}
+{"_id":"hPfzr0SvKe42Vr3R","name":"The Affair of the Hidden Jewel","type":"Actor","parent":"c73wsFFS2dVYSKUP","sorting":"a","sort":300000,"color":"#105556","flags":{}}
 {"_id":"hQfHL1VS2zKPRt1T","name":"Some Very Important People","type":"JournalEntry","parent":"UcNpjukIpiZkjgIv","sorting":"m","sort":362500,"color":"#4d2d00","flags":{"wfrp4e-pbtt":{"initialization-parent":"Companion"}}}
 {"_id":"hRh4ENgO4oLtD0If","name":"Parravon","type":"JournalEntry","parent":"tVm4VHOzL3Kt6qVy","sorting":"a","sort":8800000,"color":"#4f4f4f","flags":{}}
 {"name":"Rural","type":"Scene","sort":500000,"flags":{},"parent":"ifqvWppW117y2zyP","sorting":"a","color":"#3f6232","_id":"iSmypdWiB2z1UVCM"}
@@ -235,6 +236,7 @@
 {"_id":"jxONpQkr2xVFk5CZ","name":"Walfens","type":"Actor","sort":600000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":""}
 {"_id":"k550Bu2pvHs2HAB1","name":"Jurgen's Party","type":"JournalEntry","sort":8300000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#995900"}
 {"name":"Handouts","type":"JournalEntry","sort":6800000,"flags":{},"parent":"sJsgXlZiMioDgTqH","sorting":"a","color":"","_id":"kO5UH113WA6IVgXl"}
+{"_id":"kme5dyUoQkYDtfyo","name":"Skaven Careers","type":"Item","parent":"B1NGEkUpOPYjZbtf","sorting":"m","sort":3100000,"color":"","flags":{}}
 {"_id":"l1wMwe07tENDjYkH","name":"Familiar Faces","type":"JournalEntry","parent":"UcNpjukIpiZkjgIv","sorting":"m","sort":375000,"color":"#6c008a","flags":{"wfrp4e-pbtt":{"initialization-parent":"Companion"}}}
 {"name":"Special","type":"Scene","sort":1000000,"flags":{},"parent":"ifqvWppW117y2zyP","sorting":"a","color":"","_id":"lAj1myTWNd6cz3c7"}
 {"name":"Outside the Walls","type":"JournalEntry","sort":5500000,"flags":{},"parent":"wV26wyVeod4mutle","sorting":"a","color":"","_id":"lDSzFxqsa5B502Oj"}
@@ -318,13 +320,3 @@
 {"_id":"zhKNzx21YVsaN3CA","name":"The Road to Middenheim","type":"JournalEntry","parent":"tVm4VHOzL3Kt6qVy","sorting":"a","sort":9300000,"color":"#474747","flags":{}}
 {"name":"Obscure","type":"Scene","parent":"Y2EPOyNpGh1pOhQo","sorting":"a","sort":0,"color":null,"flags":{},"_id":"zpb1LCp1rJv27sjE"}
 {"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
-{"name":"Skaven Careers","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":null,"flags":{},"_id":"kme5dyUoQkYDtfyo"}
-{"_id":"kme5dyUoQkYDtfyo","name":"Skaven Careers","type":"Item","parent":"B1NGEkUpOPYjZbtf","sorting":"a","sort":1200000,"color":null,"flags":{}}
-{"_id":"kme5dyUoQkYDtfyo","name":"Skaven Careers","type":"Item","parent":"FH46SuKDUeaO7cfJ","sorting":"a","sort":3000000,"color":null,"flags":{}}
-{"_id":"kme5dyUoQkYDtfyo","name":"Skaven Careers","type":"Item","parent":"B1NGEkUpOPYjZbtf","sorting":"a","sort":3100000,"color":null,"flags":{}}
-{"_id":"kme5dyUoQkYDtfyo","name":"Skaven Careers","type":"Item","parent":"B1NGEkUpOPYjZbtf","sorting":"m","sort":3100000,"color":"","flags":{}}
-{"name":"The Affair of the Hidden Jewel","type":"Actor","parent":null,"sorting":"a","sort":0,"color":"#105556","flags":{},"_id":"hPfzr0SvKe42Vr3R"}
-{"_id":"hPfzr0SvKe42Vr3R","name":"The Affair of the Hidden Jewel","type":"Actor","parent":null,"sorting":"a","sort":7250000,"color":"#105556","flags":{}}
-{"_id":"hPfzr0SvKe42Vr3R","name":"The Affair of the Hidden Jewel","type":"Actor","parent":null,"sorting":"a","sort":5362500,"color":"#105556","flags":{}}
-{"_id":"hPfzr0SvKe42Vr3R","name":"The Affair of the Hidden Jewel","type":"Actor","parent":"c73wsFFS2dVYSKUP","sorting":"a","sort":300000,"color":"#105556","flags":{}}
-{"_id":"KaIcg6ijnAYwqKiS","name":"Sorry Gents","type":"Actor","parent":"c73wsFFS2dVYSKUP","sorting":"a","sort":400000,"color":"#731212","flags":{}}
