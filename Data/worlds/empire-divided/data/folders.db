@@ -81,6 +81,7 @@
 {"_id":"FFQANC5sa5CMDx9k","name":"Weapons","type":"Item","sort":300000,"flags":{},"parent":null,"sorting":"a","color":"#3c719a"}
 {"_id":"FH46SuKDUeaO7cfJ","name":"NPC Careers","type":"Item","sort":1300000,"flags":{},"parent":"B1NGEkUpOPYjZbtf","sorting":"a","color":"#3b1212"}
 {"name":"Heraldry","type":"JournalEntry","parent":null,"sorting":"a","sort":0,"color":null,"flags":{},"_id":"H21i4Pi4OZYXtQxm"}
+{"name":"The Team","type":"Actor","parent":null,"sorting":"a","sort":0,"color":null,"flags":{},"_id":"HlKrxW53p6ijEbHK"}
 {"_id":"HzlQAaKnrit1MRMs","name":"Initial Inquiries","type":"Actor","parent":"fr0DWfQKUuFVhWDL","sorting":"m","sort":400000,"color":"#5d134d","flags":{"wfrp4e-pbtt":{"initialization-parent":"Power Behind the Throne"}}}
 {"_id":"I3oC0nvgqcMK078b","name":"Chapter 2: Middenheim","type":"JournalEntry","parent":"xOq4e4h3j8j4DtZs","sorting":"a","sort":-50000,"color":"#102838","flags":{"wfrp4e-pbtt":{"initialization-parent":"Power Behind the Throne"}}}
 {"_id":"I7s4hyP4aPeZZl61","name":"Other","type":"Item","parent":"OwpreDOBVSjPAjKX","sorting":"a","sort":0,"color":"#e07800","flags":{}}
@@ -183,6 +184,7 @@
 {"_id":"ZkvGbobsuORkPdgv","name":"The Green Man","type":"JournalEntry","parent":"uaiYhFK8DZbtIU19","sorting":"a","sort":200000,"color":"#304f32","flags":{}}
 {"name":"Morrslieb","type":"RollTable","sort":1400000,"flags":{},"parent":"tIVl1PXcFSPDwlNN","sorting":"a","color":"#2d5a20","_id":"ZzLCWpKskz28YO3B"}
 {"_id":"aRmSqkvVtkWdU9av","name":"Dogs of War","type":"Actor","sort":3000000,"flags":{},"parent":"81ZFw4Rjgz144G8Q","sorting":"a","color":"#db8000"}
+{"_id":"ae2cX1reQTf9yhj7","name":"Drugs","type":"Item","parent":"lryP0lc1Adinz7aR","sorting":"a","sort":3700000,"color":null,"flags":{}}
 {"_id":"aodo7JMHjKV3BHhd","name":"Saponatheims","type":"Actor","sort":300000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#2a142e"}
 {"_id":"bROywhIN6c88SfV9","name":"Appendix","type":"Actor","parent":"fr0DWfQKUuFVhWDL","sorting":"m","sort":537500,"color":"#054d00","flags":{"wfrp4e-pbtt":{"initialization-parent":"Power Behind the Throne"}}}
 {"name":"Wood Elves","type":"Item","parent":"mSls4f8JbUBSZvVU","sorting":"a","sort":0,"color":"#466d31","flags":{},"_id":"bUsBY20KZ55kL0D1"}
@@ -243,7 +245,7 @@
 {"name":"Outside the Walls","type":"JournalEntry","sort":5500000,"flags":{},"parent":"wV26wyVeod4mutle","sorting":"a","color":"","_id":"lDSzFxqsa5B502Oj"}
 {"_id":"lUyL3SvOXg2BFpv2","name":"Chapter 5: The Carnival","type":"JournalEntry","parent":"xOq4e4h3j8j4DtZs","sorting":"m","sort":0,"color":"#043415","flags":{"wfrp4e-pbtt":{"initialization-parent":"Power Behind the Throne"}}}
 {"name":"Burn After Printing","type":"JournalEntry","sort":6600000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#7a0000","_id":"ldzUzGoxkrif2YcZ"}
-{"_id":"lryP0lc1Adinz7aR","name":"Misc Items","type":"Item","sort":100000,"flags":{},"parent":null,"sorting":"a","color":"#7c1d1d"}
+{"_id":"lryP0lc1Adinz7aR","name":"Misc Items","type":"Item","parent":null,"sorting":"a","sort":100000,"color":"#7c1d1d","flags":{}}
 {"_id":"lzflRKyLfHkcsNPL","name":"Lord of Ubersreik","type":"JournalEntry","parent":"tVm4VHOzL3Kt6qVy","sorting":"m","sort":9100000,"color":"#36317c","flags":{}}
 {"_id":"m234dB5Wll2B3B6U","name":"Greatsword","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":600000,"color":"#c77e00","flags":{}}
 {"_id":"mDtj9tJuEIkmGvsz","name":"The Imperial Plenipotentiary","type":"JournalEntry","sort":8400000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#2f561a"}
