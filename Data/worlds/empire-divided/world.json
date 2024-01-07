@@ -106,6 +106,16 @@
       "package": "world",
       "entity": "Item",
       "private": false
+    },
+    {
+      "label": "Taverns of the Old World",
+      "type": "RollTable",
+      "name": "taverns-of-the-old-world",
+      "path": "packs/taverns-of-the-old-world.db",
+      "system": "wfrp4e",
+      "package": "world",
+      "entity": "RollTable",
+      "private": false
     }
   ],
   "system": "wfrp4e",
