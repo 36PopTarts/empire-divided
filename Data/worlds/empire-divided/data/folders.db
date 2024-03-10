@@ -5,6 +5,7 @@
 {"name":"Images","type":"JournalEntry","sort":8300000,"flags":{},"parent":"mDtj9tJuEIkmGvsz","sorting":"a","color":"","_id":"0hdNTncHGuzeohHo"}
 {"name":"Careers","type":"JournalEntry","sort":7500000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"","_id":"0i9NmuJ8tUuGDGNt"}
 {"_id":"10XCsTn30e58M5Mr","name":"Handouts","type":"JournalEntry","parent":null,"sorting":"a","sort":0,"color":"#642a74","flags":{}}
+{"name":"Winged Lancer","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#990f0f","flags":{},"_id":"12CD7vDIVLrLqzSt"}
 {"_id":"1EJzwOS8YKjGYgAI","name":"Misc","type":"Scene","parent":null,"sorting":"a","sort":1300000,"color":null,"flags":{}}
 {"_id":"1HvdFWtLWQboJIY6","name":"Ubersreik NPCs","type":"Actor","sort":800000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#18351e"}
 {"_id":"1k4DLap4gvCypZLg","name":"Carnival Events","type":"JournalEntry","parent":"lUyL3SvOXg2BFpv2","sorting":"m","sort":0,"color":null,"flags":{"wfrp4e-pbtt":{"initialization-parent":"Chapter 5: The Carnival"}}}
@@ -323,4 +324,4 @@
 {"_id":"zhKNzx21YVsaN3CA","name":"The Road to Middenheim","type":"JournalEntry","parent":"tVm4VHOzL3Kt6qVy","sorting":"a","sort":9300000,"color":"#474747","flags":{}}
 {"name":"Obscure","type":"Scene","parent":"Y2EPOyNpGh1pOhQo","sorting":"a","sort":0,"color":null,"flags":{},"_id":"zpb1LCp1rJv27sjE"}
 {"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
-{"name":"NPCs","type":"Actor","parent":"fDv2jPT6OaolEiTN","sorting":"a","sort":0,"color":null,"flags":{},"_id":"Q2GuzSiMXkRNubVz"}
+{"name":"The Lock-Inn","type":"Actor","parent":null,"sorting":"a","sort":0,"color":null,"flags":{},"_id":"VfVqIndp25tonRB3"}
