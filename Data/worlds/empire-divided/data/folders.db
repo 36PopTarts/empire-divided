@@ -159,6 +159,7 @@
 {"name":"Altdorf Entertainments","type":"RollTable","sort":500000,"flags":{},"parent":null,"sorting":"a","color":"#750000","_id":"V8ajfOwSmYQpB3uL"}
 {"_id":"VKIwlf1gDLJCs5C4","name":"Middenheim","type":"Actor","parent":"fr0DWfQKUuFVhWDL","sorting":"m","sort":200000,"color":"#102838","flags":{"wfrp4e-pbtt":{"initialization-parent":"Power Behind the Throne"}}}
 {"name":"Events by Venue","type":"JournalEntry","parent":"UVKlZleP9AfhqPXy","sorting":"a","sort":0,"color":null,"flags":{},"_id":"VciAMYnuunYhEYcI"}
+{"name":"The Lock-Inn","type":"Actor","parent":null,"sorting":"a","sort":0,"color":null,"flags":{},"_id":"VfVqIndp25tonRB3"}
 {"name":"Dawihafen","type":"JournalEntry","sort":4500000,"flags":{},"parent":"nYrlPwQwhU9yHNZz","sorting":"a","color":"","_id":"VmNg2NFg4nLcAIjg"}
 {"name":"Altdorf Endeavours","type":"JournalEntry","sort":5700000,"flags":{},"parent":"5PMBVwnydUMSobIr","sorting":"a","color":"#411010","_id":"W7hZ5KseAjno0hrA"}
 {"name":"Blackpowder Nights","type":"JournalEntry","sort":7300000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#404040","_id":"WAxihFsdmCGhdzji"}
@@ -324,4 +325,3 @@
 {"_id":"zhKNzx21YVsaN3CA","name":"The Road to Middenheim","type":"JournalEntry","parent":"tVm4VHOzL3Kt6qVy","sorting":"a","sort":9300000,"color":"#474747","flags":{}}
 {"name":"Obscure","type":"Scene","parent":"Y2EPOyNpGh1pOhQo","sorting":"a","sort":0,"color":null,"flags":{},"_id":"zpb1LCp1rJv27sjE"}
 {"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
-{"name":"The Lock-Inn","type":"Actor","parent":null,"sorting":"a","sort":0,"color":null,"flags":{},"_id":"VfVqIndp25tonRB3"}
