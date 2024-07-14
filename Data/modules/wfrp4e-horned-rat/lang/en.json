@@ -1,0 +1,19 @@
+{
+  "PROPERTY.Zzap": "ZZAP!",
+  "PROPERTY.Warpstone": "Warpstone",
+
+  "WFRP4E.Properties.Zzap": "These weapons release a burst of electrical or arcane energy. ZZAP! weapons reduce AP by 1 and ignore all APs from metal armour.",
+  "WFRP4E.Properties.Warpstone": "Warpstone weapons are used almost exclusively by the Skaven. In addition to normal damage, any attack that inflicts a Critical Wound also causes a @Corruption[minor]{Minor Exposure to Corruption}",
+  
+  "WFRP4E.MagicLores.Ruin": "Ruin",
+  "WFRP4E.MagicLores.Plague": "Plague",
+  "WFRP4E.MagicLores.Stealth": "Stealth",
+  
+  "WFRP4E.LoreDescription.Ruin": "<p>The Lore of Ruin channels the terrible power of Warpstone to lash out at targets, often incinerating them whole. It is focused on destruction and disintegration, and is feared throughout Skavendom and beyond.</p>  <p>This terrible power is highly invigorating and the sensation of barely restrained energy is almost addictive. Whenever you successfully cast a spell from the Lore of Ruin, you may add +1 SL to any Initiative- or Agility-based Tests for the next [[/br 1d10]] rounds.</p>  <p>Ingredients: Grey Seers use various scraps of fur, hide, bones, and crystalline Warpstone when casting spells from the Lore of Ruin.</p>",
+  "WFRP4E.LoreDescription.Plague": "<p>The Lore of Plague draws its power from rot and decay, focusing raw <em>Dhar </em>into more refined forms of disease and corruption. Its spells corrupt all that they touch, and indeed few become proficient in the Lore of Plague without bearing some of its marks. Most Plague-Priests are covered in sores and pustules: glorious stigmata and a sign of their mastery over the forces of entropy.</p><p>The Lore of Plague infuses the wielder with the essence of rot. Whenever you successfully cast a spell from the Lore of Plague, you may gain the @Compendium[wfrp4e-core.traits.MVI0lXcg6vvtooAF]{Distracting} Creature Trait for the next [[/br 1d10]] rounds.</p><p>Ingredients: Plague-Priests use all manner of vile excreta, odious emissions, and corrupted objects as spell ingredients. Most are squirted into the air and ritually inhaled, or burned inside a Plague Censer.</p>",
+  "WFRP4E.LoreDescription.Stealth": "<p>The Lore of Stealth draws on the power of <em>Dhar</em>, infused with a particularly large portion of <em>Ulgu</em>, to confuse and conceal. It is unclear whether this lore remains similar to how it is practised in Cathay, or if the Sorcerers of Clan Eshin have corrupted a more noble form of stealthy magic. Regardless, spells of this lore specialise in concealing the sorcerer from prying eyes, using magic to distract or diminish signs of the Skaven&rsquo;s presence.</p><p>The Lore of Stealth wreathes the wielder in threads of magic that obfuscate their presence. Whenever you successfully cast a spell from the Lore of Stealth, you gain the @Compendium[wfrp4e-core.traits.OzwDT6kzoLYeeR2d]{Stealthy} Creature Trait for [[/br 1d10]] rounds.</p><p>Ingredients: Clan Eshin Sorcerers use small scraps of paper with assorted runes inscribed on them, which are then coated in powdered Warpstone. When used as an ingredient, the Warpstone powder is consumed, but the scraps of paper remain and can be coated again and reused. The characters used are of no known form of written Queekish, and the Sorcerers of Clan Eshin are in no rush to explain either their meaning or providence.</p>",
+  
+  "WFRP4E.Symptom.OrganFailure": "Organ Failure",
+  "WFRP4E.SymptomDescriptions.OrganFailure": "Part of your body is acutely affected by the disease. During the course of the disease, any Perception Tests that rely on sight suffer a –3 SL penalty.",
+  "WFRP4E.SymptomTreatment.OrganFailure": "Soothing unguents can be bought from all good apothecaries — ten doses for a shilling. Application of a dose alleviates the symptom for [[/r 1d10]] hours."
+}
