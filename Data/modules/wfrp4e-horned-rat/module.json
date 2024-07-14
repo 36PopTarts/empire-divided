@@ -1,0 +1,88 @@
+{
+  "name": "wfrp4e-horned-rat",
+  "title": "WFRP4e - The Horned Rat",
+  "description": "The penultimate volume of the five-part series of the Enemy Within campaign. The Characters cannot afford to relax their guard and celebrate their victories, as a new threat emerges from beneath their feet.",
+  "version": "2.0.1",
+  "authors": [
+    {
+      "name": "Moo Man",
+      "email": "russellt@cubicle7games.com",
+      "discord": "Moo Man#7518"
+    },
+    {
+      "name": "Published by Cubicle 7",
+      "url": "https://cubicle7games.com",
+      "email": "info@cubicle7games.com"
+    }
+  ],
+  "system": [
+    "wfrp4e"
+  ],
+  "scripts": [
+    "initialization.js"
+  ],
+  "styles": [],
+  "packs": [
+    {
+      "name": "items",
+      "label": "Items (The Horned Rat)",
+      "path": "packs/horned-rat-items.db",
+      "type": "Item",
+      "system": "wfrp4e"
+    },
+    {
+      "name": "actors",
+      "label": "Actors (The Horned Rat)",
+      "path": "packs/horned-rat-actors.db",
+      "type": "Actor",
+      "system": "wfrp4e"
+    },
+    {
+      "label": "Scenes (The Horned Rat)",
+      "type": "Scene",
+      "name": "scenes",
+      "path": "packs/horned-rat-scenes.db",
+      "system": "wfrp4e"
+    },
+    {
+      "label": "Journals (The Horned Rat)",
+      "type": "JournalEntry",
+      "name": "journals",
+      "path": "packs/horned-rat-journals.db",
+      "system": "wfrp4e"
+    },
+    {
+      "label": "Tables (The Horned Rat)",
+      "type": "RollTable",
+      "name": "tables",
+      "path": "packs/horned-rat-tables.db",
+      "system": "wfrp4e"
+    }
+  ],
+  "flags": {
+    "initializationPacks": [
+      "wfrp4e-horned-rat.actors",
+      "wfrp4e-horned-rat.journals",
+      "wfrp4e-horned-rat.scenes",
+      "wfrp4e-horned-rat.items",
+      "wfrp4e-horned-rat.tables"
+    ]
+  },
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "minimumCoreVersion": "0.8.6",
+  "compatibleCoreVersion": 9,
+  "compatibility": {
+    "minimum": 9,
+    "verified": 9,
+    "maximum": 11
+  },
+  "protected": true,
+  "url": "https://foundryvtt.com/packages/wfrp4e-horned-rat/",
+  "manifest": "https://foundry-c7-manifests.s3.us-east-2.amazonaws.com/wfrp4e-horned-rat/module.json"
+}
