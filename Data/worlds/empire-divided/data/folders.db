@@ -423,3 +423,6 @@
 {"name":"Obscure","type":"Scene","parent":"Y2EPOyNpGh1pOhQo","sorting":"a","sort":0,"color":null,"flags":{},"_id":"zpb1LCp1rJv27sjE"}
 {"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
 {"_id":"zs8xzPuX0aIpuiCx","name":"Handouts","type":"JournalEntry","parent":"pTj5zPKmfOJPE9a1","sorting":"m","sort":605211,"color":null,"flags":{"wfrp4e-horned-rat":{"initialization-parent":"The Horned Rat"}}}
+{"_id":"E0NM0EeSAGx0w5Jp","name":"Pageants and Jousting","type":"Actor","parent":"cEfyLchMYtoSuKxE","sorting":"a","sort":100000,"color":"#0087db","flags":{}}
+{"name":"Export","type":"Item","parent":null,"sorting":"a","sort":0,"color":null,"flags":{},"_id":"bB6o3qGkN7lcICUh"}
+{"$$deleted":true,"_id":"bB6o3qGkN7lcICUh"}
