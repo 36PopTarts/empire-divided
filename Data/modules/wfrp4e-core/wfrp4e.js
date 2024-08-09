@@ -1,5 +1,15 @@
 
-Hooks.on("setup", () => {
+Hooks.on("init", () => {
+
+    CONFIG.Actor.compendiumBanner = "./modules/wfrp4e-core/assets/banners/undead-fight.webp";
+    CONFIG.Item.compendiumBanner = "./modules/wfrp4e-core/assets/banners/city.webp";
+    CONFIG.JournalEntry.compendiumBanner = "./modules/wfrp4e-core/assets/banners/town-hill.webp";
+    CONFIG.RollTable.compendiumBanner = "./modules/wfrp4e-core/assets/banners/tricksy-halflings.webp";
+    CONFIG.Scene.compendiumBanner = "./modules/wfrp4e-core/assets/banners/town.webp";
+    CONFIG.Macro.compendiumBanner = "./modules/wfrp4e-core/assets/banners/agitator.webp";
+    CONFIG.Playlist.compendiumBanner = "./modules/wfrp4e-core/assets/banners/hut.webp";
+    CONFIG.Adventure.compendiumBanner = "./modules/wfrp4e-core/assets/banners/beastmen-fight.webp";
+    CONFIG.Cards.compendiumBanner = "./modules/wfrp4e-core/assets/banners/forest.webp";
 
     const WFRP4E = {}
 
@@ -285,13 +295,20 @@ Hooks.on("setup", () => {
 
     WFRP4E.classTrappings = {
         "Academics": "ClassTrappings.Academics",
+        "Academic": "ClassTrappings.Academics",
         "Burghers": "ClassTrappings.Burghers",
+        "Burgher": "ClassTrappings.Burghers",
         "Courtiers": "ClassTrappings.Courtiers",
+        "Courtier": "ClassTrappings.Courtiers",
         "Peasants": "ClassTrappings.Peasants",
+        "Peasant": "ClassTrappings.Peasants",
         "Rangers": "ClassTrappings.Rangers",
+        "Ranger": "ClassTrappings.Rangers",
         "Riverfolk": "ClassTrappings.Riverfolk",
         "Rogues": "ClassTrappings.Rogues",
+        "Rogue": "ClassTrappings.Rogues",
         "Warriors": "ClassTrappings.Warriors",
+        "Warrior": "ClassTrappings.Warriors",
     }
 
 
@@ -407,23 +424,22 @@ Hooks.on("setup", () => {
         "unconscious": "WFRP4E.Conditions.Unconscious",
         "grappling": "WFRP4E.Conditions.Grappling",
         "fear": "WFRP4E.Conditions.Fear",
+        "engaged": "WFRP4E.Conditions.Engaged",
     }
 
     WFRP4E.symptoms = {
-        "blight": "Blight",
-        "buboes": "Buboes",
-        "convulsions": "Convulsions",
-        "coughsAndSneezes": "Coughs and Sneezes",
-        "fever": "Fever",
-        "flux": "Flux",
-        "gangrene": "Gangrene",
-        "lingering": "Lingering",
-        "malaise": "Malaise",
-        "nausea": "Nausea",
-        "pox": "Pox",
-        "wounded": "Wounded",
-        "delirium": "Delirium",
-        "swelling": "Swelling"
+        "blight": "WFRP4E.Symptom.Blight",
+        "buboes": "WFRP4E.Symptom.Buboes",
+        "convulsions": "WFRP4E.Symptom.Convulsions",
+        "coughsAndSneezes": "WFRP4E.Symptom.CoughsandSneezes",
+        "fever": "WFRP4E.Symptom.Fever",
+        "flux": "WFRP4E.Symptom.Flux",
+        "gangrene": "WFRP4E.Symptom.Gangrene",
+        "lingering": "WFRP4E.Symptom.Lingering",
+        "malaise": "WFRP4E.Symptom.Malaise",
+        "nausea": "WFRP4E.Symptom.Nausea",
+        "pox": "WFRP4E.Symptom.Pox",
+        "wounded": "WFRP4E.Symptom.Wounded",
     }
 
     WFRP4E.symptomDescriptions = {
@@ -439,7 +455,6 @@ Hooks.on("setup", () => {
         "nausea": "WFRP4E.SymptomDescriptions.Nausea",
         "pox": "WFRP4E.SymptomDescriptions.Pox",
         "wounded": "WFRP4E.SymptomDescriptions.Wounded",
-        "delirium": "WFRP4E.SymptomDescriptions.Delirium",
     }
 
     WFRP4E.symptomTreatment = {
@@ -455,253 +470,256 @@ Hooks.on("setup", () => {
         "nausea": "WFRP4E.SymptomTreatment.Nausea",
         "pox": "WFRP4E.SymptomTreatment.Pox",
         "wounded": "WFRP4E.SymptomTreatment.Wounded",
-        "delirium": "WFRP4E.SymptomTreatment.Delirium",
-    }
-
-    WFRP4E.conditionDescriptions = {
-        "ablaze": "WFRP4E.Conditions.Ablaze",
-        "bleeding": "WFRP4E.Conditions.Bleeding",
-        "blinded": "WFRP4E.Conditions.Blinded",
-        "broken": "WFRP4E.Conditions.Broken",
-        "deafened": "WFRP4E.Conditions.Deafened",
-        "entangled": "WFRP4E.Conditions.Entangled",
-        "fatigued": "WFRP4E.Conditions.Fatigued",
-        "poisoned": "WFRP4E.Conditions.Poisoned",
-        "prone": "WFRP4E.Conditions.Prone",
-        "stunned": "WFRP4E.Conditions.Stunned",
-        "surprised": "WFRP4E.Conditions.Surprised",
-        "unconscious": "WFRP4E.Conditions.Unconscious",
-        "grappling": "WFRP4E.Conditions.Grappling",
-        "fear": "WFRP4E.Conditions.Fear",
     }
 
     WFRP4E.loreEffects = {
         "beasts": {
-            label: "Lore of Beasts",
+            name: "Lore of Beasts",
             icon: "modules/wfrp4e-core/icons/spells/beasts.png",
-            transfer: true,
             flags: {
                 wfrp4e: {
-                    "effectApplication": "actor",
-                    "effectTrigger": "invoke",
-                    "lore": true,
-                    "script": `
-                    let value = 1
-                    let name = this.actor.data.token.name
-                    
-                    if (game.user.isGM) {
-                        game.user.targets.forEach(t => {
-                            t.actor.applyFear(value, name)
-                        })
-                        game.user.updateTokenTargets([]);
-                    }
-                    else {
-                        game.wfrp4e.utility.postFear(value, name)
-                    }
-                `
+                    lore: true,
+                    applicationData : {
+                        type : "document",
+                        documentType : "Item"
+                    },
+                    scriptData: [
+                        {
+                            "label": "Add Fear",
+                            "trigger": "rollCastTest",
+                            "script": "if (args.test.result.castOutcome == \"success\")\n{\n    args.test.result.other.push(`<strong>${this.effect.name}</strong>: @Fear[1,${this.actor.prototypeToken.name}]`)\n\tif (!this.actor.has(game.i18n.localize(\"NAME.Fear\")))\n\t{\n\t\tlet item = await fromUuid(\"Compendium.wfrp4e-core.items.Item.pTorrE0l3VybAbtn\");\n\t\tlet data = item.toObject();\n\t\tdata.system.specification.value = 1\n\t\tthis.actor.createEmbeddedDocuments(\"Item\", [data])\n\t\tthis.script.scriptNotification(\"Fear Trait added\");\n\t}\n}"
+                        }
+                    ]
                 }
             }
         },
         "death": {
-            label: "Lore of Death",
+            name: "Lore of Death",
             icon: "modules/wfrp4e-core/icons/spells/death.png",
-            transfer: true,
             flags: {
                 wfrp4e: {
-                    "effectApplication": "apply",
-                    "effectTrigger": "oneTime",
-                    "lore": true,
-                    "script": `
-                    if (this.actor.isOwner)
-                    {
-                        args.actor.addCondition("fatigued")
-                    }`
+                    lore: true,
+                    applicationData : {
+                        type : "target"
+                    },
+                    scriptData: [
+                        {
+                            trigger: "immediate",
+                            label : "@effect.name",
+                            script : `this.actor.addCondition("fatigued")`,
+                            options : {
+                                immediate : {
+                                    deleteEffect : true
+                                }
+                            }
+                        }
+                    ]
                 }
             }
         },
         "fire": {
-            label: "Lore of Fire",
+            name: "Lore of Fire",
             icon: "modules/wfrp4e-core/icons/spells/fire.png",
-            transfer: true,
             flags: {
                 wfrp4e: {
-                    "effectApplication": "apply",
-                    "effectTrigger": "oneTime",
-                    "lore": true,
-                    "script": `
-                    if (this.actor.isOwner)
-                    {
-                        args.actor.addCondition("ablaze")
-                    }`
+                    lore: true,
+                    applicationData : {
+                        type : "target"
+                    },
+                    scriptData: [
+                        {
+                            trigger: "immediate",
+                            label : "@effect.name",
+                            script : `this.actor.addCondition("ablaze")`,
+                            options : {
+                                immediate : {
+                                    deleteEffect : true
+                                }
+                            }
+                        }
+                    ]
                 }
             }
         },
         "heavens": {
-            label: "Lore of Heavens",
+            name: "Lore of Heavens",
             icon: "modules/wfrp4e-core/icons/spells/heavens.png",
-            transfer: true,
             flags: {
                 wfrp4e: {
-                    "effectApplication": "damage",
-                    "effectTrigger": "applyDamage",
-                    "lore": true,
-                    "script": `
-                let applyAP = (args.damageType == game.wfrp4e.config.DAMAGE_TYPE.IGNORE_TB || args.damageType == game.wfrp4e.config.DAMAGE_TYPE.NORMAL)
-                
-                let AP = args.AP
-                let metalValue = 0;
-                for (let layer of AP.layers) {
-                   if (layer.metal) {
-                      metalValue += layer.value
-                   }
-                }
-                
-                if (applyAP) {
-                
-                   args.totalWoundLoss +=  metalValue
-                   let newUsed = AP.used - metalValue;
-                
-                   let apIndex = args.messageElements.findIndex(i => i.includes(game.i18n.localize("AP")))
-                   args.messageElements[apIndex] = newUsed + "/" + AP.value + " " + game.i18n.localize("AP")
-                }
-                    `
-                }
+                    lore: true,
+                    applicationData : {
+                        type : "document",
+                        documentType : "Item"
+                    },
+                    scriptData: [
+                        {
+                            trigger: "computeApplyDamageModifiers",
+                            label : "@effect.name",
+                            script : `
+                            if (args.applyAP && args.modifiers.ap.metal) 
+                            {
+                                args.modifiers.ap.ignored += args.modifiers.ap.metal
+                                args.modifiers.ap.details.push("<strong>" + this.effect.name + "</strong>: Ignore Metal (" + args.modifiers.ap.metal + ")");
+                                args.modifiers.ap.metal = 0
+                            }
+                            `
+                        }
+                    ]
+                },
             }
         },
         "metal": {
-            label: "Lore of Metal",
+            name: "Lore of Metal",
             icon: "modules/wfrp4e-core/icons/spells/metal.png",
-            transfer: true,
             flags: {
                 wfrp4e: {
-                    "effectApplication": "damage",
-                    "effectTrigger": "applyDamage",
-                    "lore": true,
-                    "script": `
-                let applyAP = (args.damageType == game.wfrp4e.config.DAMAGE_TYPE.IGNORE_TB || args.damageType == game.wfrp4e.config.DAMAGE_TYPE.NORMAL)
-
-                let AP = args.AP
-                let metalValue = 0;
-                for (let layer of AP.layers) {
-                   if (layer.metal) {
-                      metalValue += layer.value
-                   }
-                }
-                
-                
-                if (metalValue)
-                    args.messageElements.push(\`-\${metalValue} Metal Armour\`)
-                args.totalWoundLoss += metalValue
-                
-                if (applyAP) {
-                
-                   args.totalWoundLoss +=  metalValue
-                   let newUsed = AP.used - metalValue;
-                
-                   let apIndex = args.messageElements.findIndex(i => i.includes(game.i18n.localize("AP")))
-                   args.messageElements[apIndex] = newUsed + "/" + AP.value + " " + game.i18n.localize("AP")
-                }
-                `
+                    lore: true,
+                    applicationData : {
+                        type : "document",
+                        documentType : "Item"
+                    },
+                    scriptData: [
+                        {
+                            trigger: "computeApplyDamageModifiers",
+                            label : "@effect.name",
+                            script : `
+                            if (args.applyAP && args.modifiers.ap.metal) 
+                            {
+                                args.modifiers.ap.ignored += args.modifiers.ap.metal
+                                args.modifiers.other.push({value : args.modifiers.ap.metal, label : this.effect.name, details : "Add Metal AP to Damage" })
+                                args.modifiers.ap.details.push("<strong>" + this.effect.name + "</strong>: Ignore Metal (" + args.modifiers.ap.metal + ")");
+                                args.modifiers.ap.metal = 0
+                            }
+                            `
+                        }
+                    ]
                 }
             }
         },
         "life": {
-            label: "Lore of Life",
+            name: "Lore of Life",
             icon: "modules/wfrp4e-core/icons/spells/life.png",
-            transfer: true,
             flags: {
                 wfrp4e: {
-                    "effectApplication": "apply",
-                    "effectTrigger": "oneTime",
-                    "lore": true,
-                    "script": `
-                    fromUuid(this.effect.origin).then(caster => {
-                        if (this.actor.isOwner)
+                    lore: true,
+                    applicationData : {
+                        type : "target"
+                    },
+                    scriptData: [
                         {
+                            trigger: "immediate",
+                            label : "@effect.name",
+                            script : `
+                            let caster = this.effect.sourceActor
                             if (!this.actor.has(game.i18n.localize("NAME.Daemonic")) && !this.actor.has(game.i18n.localize("NAME.Undead")))
                             {
-                                let bleeding = this.actor.hasCondition("bleeding")
-                                let fatigued = this.actor.hasCondition("fatigued")
-                                if (bleeding) this.actor.removeCondition("bleeding", bleeding.flags.wfrp4e.value)
-                                if (fatigued) this.actor.removeCondition("fatigued", fatigued.flags.wfrp4e.value)
+                                await this.actor.hasCondition("bleeding")?.delete();
+                                await this.actor.hasCondition("fatigued")?.delete();
                             }
                             else if (this.actor.has(game.i18n.localize("NAME.Undead")))
-                                this.actor.applyBasicDamage(caster.data.data.characteristics.wp.bonus, {damageType : game.wfrp4e.config.DAMAGE_TYPE.IGNORE_ALL});
+                            {
+                                this.script.scriptMessage(await this.actor.applyBasicDamage(caster.system.characteristics.wp.bonus, {damageType : game.wfrp4e.config.DAMAGE_TYPE.IGNORE_ALL, suppressMsg : true}));
+                            }`,
+                            options : {
+                                immediate : {
+                                    deleteEffect : true
+                                }
+                            }
                         }
-                    })`
+                    ]
                 }
             }
         },
         "light": {
-            label: "Lore of Light",
+            name: "Lore of Light",
             icon: "modules/wfrp4e-core/icons/spells/light.png",
-            transfer: true,
             flags: {
                 wfrp4e: {
-                    "effectApplication": "apply",
-                    "effectTrigger": "oneTime",
-                    "lore": true,
-                    "script": `
-                fromUuid(this.effect.origin).then(caster => {
-                    if (this.actor.isOwner)
-                    {
-                        let bleeding = this.actor.addCondition("blinded")
-                        if (this.actor.has(game.i18n.localize("NAME.Undead")) || this.actor.has(game.i18n.localize("NAME.Daemonic")))
-                            this.actor.applyBasicDamage(caster.data.data.characteristics.int.bonus, {damageType : game.wfrp4e.config.DAMAGE_TYPE.IGNORE_ALL});
-                    }
-                })`
+                    lore: true,
+                    applicationData : {
+                        type : "target"
+                    },
+                    scriptData: [
+                        {
+                            trigger: "immediate",
+                            label : "@effect.name",
+                            script : `
+                            let caster = this.effect.sourceActor
+                            await this.actor.addCondition("blinded")
+                            if (this.actor.has(game.i18n.localize("NAME.Undead")) || this.actor.has(game.i18n.localize("NAME.Daemonic")))
+                            {
+                                this.script.scriptMessage(await this.actor.applyBasicDamage(caster.system.characteristics.int.bonus, {damageType : game.wfrp4e.config.DAMAGE_TYPE.IGNORE_ALL, suppressMsg : true}));
+                            }`,
+                            options : {
+                                immediate : {
+                                    deleteEffect : true
+                                }
+                            }
+                        }
+                    ]
                 }
             }
         },
         "shadow": {
-            label: "Lore of Shadow",
+            name: "Lore of Shadow",
             icon: "modules/wfrp4e-core/icons/spells/shadow.png",
-            transfer: true,
             flags: {
                 wfrp4e: {
-                    "effectApplication": "damage",
-                    "effectTrigger": "applyDamage",
-                    "lore": true,
-                    "script": `
-                let applyAP = (args.damageType == game.wfrp4e.config.DAMAGE_TYPE.IGNORE_TB || args.damageType == game.wfrp4e.config.DAMAGE_TYPE.NORMAL)
-                
-                if (applyAP) {
-                   let AP = args.AP
-                
-                   args.totalWoundLoss += AP.used
-                   let apIndex = args.messageElements.findIndex(i => i.includes(game.i18n.localize("AP")))
-                   args.messageElements[apIndex] = "0/" + AP.value + " " + game.i18n.localize("AP")
-                }`
+                    lore: true,
+                    applicationData : {
+                        type : "document",
+                        documentType : "Item"
+                    },
+                    scriptData: [
+                        {
+                            trigger: "computeApplyDamageModifiers",
+                            label : "@effect.name",
+                            script : `
+                            let nonmagical = args.modifiers.ap.value - args.modifiers.ap.magical
+                            if (args.applyAP && nonmagical) 
+                            {
+                                args.modifiers.ap.ignored += nonmagical
+                                args.modifiers.ap.details.push("<strong>" + this.effect.name + "</strong>: Ignore Non-Magical AP (" + nonmagical + ")");
+                            }
+                            `
+                        }
+                    ]
                 }
             }
         },
         "hedgecraft": {
-            label: "Lore of Hedgecraft",
+            name: "Lore of Hedgecraft",
             icon: "modules/wfrp4e-core/icons/spells/hedgecraft.png",
-            transfer: true,
             flags: {
-                wfrp4e: {
-                    "effectApplication": "actor",
-                    "effectTrigger": "invoke",
-                    "lore": true,
-                    "script": ``
-                }
+                wfrp4e : {
+                    lore: true,
+                    applicationData : {
+                        type : "other"
+                    }
+                },
             }
         },
         "witchcraft": {
-            label: "Lore of Witchcraft",
+            name: "Lore of Witchcraft",
             icon: "modules/wfrp4e-core/icons/spells/witchcraft.png",
-            transfer: true,
             flags: {
                 wfrp4e: {
-                    "effectApplication": "apply",
-                    "effectTrigger": "oneTime",
-                    "lore": true,
-                    "script": `
-                    if (this.actor.isOwner)
-                    {
-                        args.actor.addCondition("bleeding")
-                    }`
+                    lore: true,
+                    applicationData : {
+                        type : "target"
+                    },
+                    scriptData: [
+                        {
+                            trigger: "immediate",
+                            label : "@effect.name",
+                            script : `this.actor.addCondition("bleeding")`,
+                            options : {
+                                immediate : {
+                                    deleteEffect : true
+                                }
+                            }
+                        }
+                    ]
                 }
             }
         }
@@ -709,147 +727,133 @@ Hooks.on("setup", () => {
 
     WFRP4E.symptomEffects = {
         "blight": {
-            label: "Blight",
+            name: "WFRP4E.Symptom.Blight",
             icon: "modules/wfrp4e-core/icons/diseases/disease.png",
-            transfer: true,
             flags: {
                 wfrp4e: {
-                    "effectApplication": "actor",
-                    "effectTrigger": "invoke",
-                    "symptom": true,
-                    "script": `
-                        let difficulty = ""
-                        if (this.effect.label.includes("Moderate"))
-                            difficulty = "easy"
-                        else if (this.effect.label.includes("Severe"))
-                            difficulty = "average"
-                        else
-                            difficulty = "veasy"
-    
-                        if (this.actor.isOwner)
+                    symptom : true,
+                    applicationData : {
+                        type : "document"
+                    },
+                    scriptData: [
                         {
-                            args.actor.setupSkill("Endurance", {context : {failure : args.actor.name + " dies from Blight"}, absolute: {difficulty}, appendTitle : " - Blight"}).then(setupData => {
-                                args.actor.basicTest(setupData).then(test => 
-                                    {
-                                        if (test.result.outcome == "failure")
-                                            args.actor.addCondition("dead")
-                                    })
-                                })
-                        }`
+                            trigger: "manual",
+                            label : "@effect.name",
+                            script : `
+                            let difficulty = ""
+                            if (this.effect.name.includes("Moderate"))
+                                difficulty = "easy"
+                            else if (this.effect.name.includes("Severe"))
+                                difficulty = "average"
+                            else
+                                difficulty = "veasy"
+        
+                            let test = await this.actor.setupSkill(game.i18n.localize("NAME.Endurance"), {context : {failure : this.actor.name + " dies from Blight"}, fields: {difficulty}, appendTitle : " - Blight"})
+                            await test.roll();
+                            if (test.failed)
+                            {
+                                this.actor.addCondition("dead");
+                            }
+                            `,
+                        }
+                    ]
                 }
             }
         },
         "buboes": {
-            label: "Buboes",
+            name: "WFRP4E.Symptom.Buboes",
             icon: "modules/wfrp4e-core/icons/diseases/disease.png",
-            transfer: true,
             flags: {
                 wfrp4e: {
-                    "effectApplication": "actor",
-                    "effectTrigger": "prefillDialog",
-                    "symptom": true,
-                    "script": `
-                    let applicableCharacteristics = ["ws", "bs", "s", "fel", "ag", "t", "dex"]
-                    if (args.type == "weapon")
-                        args.prefillModifiers.modifier -= 10
-                    else if (args.type == "characteristic")
-                    {
-                        if (applicableCharacteristics.includes(args.item.key))
-                            args.prefillModifiers.modifier -= 10
-                    }
-                    else if (args.type == "skill")
-                    {
-                        if (applicableCharacteristics.includes(args.item.characteristic.key))
-                            args.prefillModifiers.modifier -= 10
-                    }
-            `}
+                    symptom : true,
+                    applicationData : {
+                        type : "document"
+                    },
+                    scriptData: [
+                        {
+                            trigger: "dialog",
+                            label : "@effect.name",
+                            script : `args.fields.modifier -= 10`,
+                            options: {
+                                dialog : {
+                                    hideScript : `return !["ws", "bs", "s", "fel", "ag", "t", "dex"].includes(args.characteristic)`,
+                                    activateScript : `return ["ws", "bs", "s", "fel", "ag", "t", "dex"].includes(args.characteristic)`,
+                                }
+                            }
+                        }
+                    ]
+                }
             }
         },
         "convulsions": {
-            label: "Convulsions",
+            name: "WFRP4E.Symptom.Convulsions",
             icon: "modules/wfrp4e-core/icons/diseases/disease.png",
-            transfer: true,
             flags: {
                 wfrp4e: {
-                    "effectApplication": "actor",
-                    "effectTrigger": "prefillDialog",
-                    "symptom": true,
-                    "script": `
-                        let modifier = 0
-                        if (this.effect.label.includes("Moderate"))
-                            modifier = -20
-                        else
-                            modifier = -10
-                        
-                        let applicableCharacteristics = ["ws", "bs", "s", "ag", "t", "dex"]
-                        if (args.type == "weapon")
-                            args.prefillModifiers.modifier += modifier
-                        else if (args.type == "characteristic")
+                    symptom : true,
+                    applicationData : {
+                        type : "document"
+                    },
+                    scriptData: [
                         {
-                            if (applicableCharacteristics.includes(args.item))
-                                args.prefillModifiers.modifier += modifier
+                            trigger: "dialog",
+                            label : "@effect.name",
+                            script : `
+                            let modifier = 0
+                            if (this.effect.name.includes("Moderate"))
+                                modifier = -20
+                            else
+                                modifier = -10
+                            args.fields.modifier += modifier
+                            `,
+                            options: {
+                                dialog : {
+                                    hideScript : `return !["ws", "bs", "s", "ag", "t", "dex"].includes(args.characteristic)`,
+                                    activateScript : `return ["ws", "bs", "s", "ag", "t", "dex"].includes(args.characteristic)`,
+                                }
+                            }
                         }
-                        else if (args.type == "skill")
-                        {
-                            if (applicableCharacteristics.includes(args.item.characteristic.key))
-                                args.prefillModifiers.modifier += modifier
-                        }`
+                    ]
+                }
+            }
+        },
+        "coughsandsneezes": {
+            name: "WFRP4E.Symptom.CoughsandSneezes",
+            icon: "modules/wfrp4e-core/icons/diseases/disease.png",
+            flags: {
+                wfrp4e: {
+                    "symptom": true
                 }
             }
         },
         "fever": {
-            label: "Fever",
+            name: "WFRP4E.Symptom.Fever",
             icon: "modules/wfrp4e-core/icons/diseases/disease.png",
-            transfer: true,
             flags: {
                 wfrp4e: {
-                    "effectApplication": "actor",
-                    "effectTrigger": "prefillDialog",
-                    "symptom": true,
-                    "script": `
-                       
-                    let applicableCharacteristics = ["ws", "bs", "s", "fel", "ag", "t", "dex"]
-    
-                    if (args.type == "weapon")
-                        args.prefillModifiers.modifier -= 10
-                    else if (args.type == "characteristic")
-                    {
-                        if (applicableCharacteristics.includes(args.item))
-                            args.prefillModifiers.modifier -= 10
-                    }
-                    else if (args.type == "skill")
-                    {
-                        if (applicableCharacteristics.includes(args.item.characteristic.key))
-                            args.prefillModifiers.modifier -= 10
-                    }`,
-                    "otherEffects": ["blight", "wounded"]
+                    symptom : true,
+                    applicationData : {
+                        type : "document"
+                    },
+                    scriptData: [
+                        {
+                            trigger: "dialog",
+                            label : "@effect.name",
+                            script : `args.fields.modifier -= 10`,
+                            options: {
+                                dialog : {
+                                    hideScript : `return !["ws", "bs", "s", "fel", "ag", "t", "dex"].includes(args.characteristic)`,
+                                    activateScript : `return ["ws", "bs", "s", "fel", "ag", "t", "dex"].includes(args.characteristic)`,
+                                }
+                            }
+                        }
+                    ]
                 }
             }
         },
         "flux": {
-            label: "Flux",
+            name: "WFRP4E.Symptom.Flux",
             icon: "modules/wfrp4e-core/icons/diseases/disease.png",
-            transfer: true,
-            flags: {
-                wfrp4e: {
-                    "symptom": true
-                }
-            }
-        },
-        "lingering": {
-            label: "Lingering",
-            icon: "modules/wfrp4e-core/icons/diseases/disease.png",
-            transfer: true,
-            flags: {
-                wfrp4e: {
-                    "symptom": true
-                }
-            }
-        },
-        "coughsAndSneezes": {
-            label: "Coughs and Sneezes",
-            icon: "modules/wfrp4e-core/icons/diseases/disease.png",
-            transfer: true,
             flags: {
                 wfrp4e: {
                     "symptom": true
@@ -857,125 +861,178 @@ Hooks.on("setup", () => {
             }
         },
         "gangrene": {
-            label: "Gangrene",
+            name: "WFRP4E.Symptom.Gangrene",
             icon: "modules/wfrp4e-core/icons/diseases/disease.png",
-            transfer: true,
             flags: {
                 wfrp4e: {
-                    "effectApplication": "actor",
-                    "effectTrigger": "prefillDialog",
-                    "symptom": true,
-                    "script": `
-                        if (args.type == "characteristic" && args.item == "fel")
+                    symptom : true,
+                    applicationData : {
+                        type : "document"
+                    },
+                    scriptData: [
                         {
-                            if (args.item == "fel")
-                                args.prefillModifiers.modifier -= 10
-                        }
-                        else if (args.type == "skill")
+                            trigger: "dialog",
+                            label : "@effect.name",
+                            script : `args.fields.modifier -= 10`,
+                            options: {
+                                dialog : {
+                                    hideScript : `return !["fel"].includes(args.characteristic)`,
+                                    activateScript : `return ["fel"].includes(args.characteristic)`,
+                                }
+                            }
+                        },
                         {
-                            if (args.item.characteristic.key == "fel")
-                                args.prefillModifiers.modifier -= 10
+                            trigger: "manual",
+                            label : "Wounded",
+                            script : `
+                            let test = await this.actor.setupSkill(game.i18n.localize("NAME.Endurance"), {fields: {difficulty : "average"}, appendTitle : " - Wounded"})
+                            await test.roll();
+                            if (test.failed)
+                            {
+                                fromUuid("Compendium.wfrp4e-core.items.kKccDTGzWzSXCBOb").then(disease => {
+                                    this.actor.createEmbeddedDocuments("Item", [disease.toObject()])
+                                    this.script.scriptNotification("Gained " + disease.name)
+                                })
+                            }
+                            `,
+                        },
+                        {
+                            trigger: "manual",
+                            label : "Blight",
+                            script : `
+                            let difficulty = ""
+                            if (this.effect.name.includes("Moderate"))
+                                difficulty = "easy"
+                            else if (this.effect.name.includes("Severe"))
+                                difficulty = "average"
+                            else
+                                difficulty = "veasy"
+        
+                            let test = await this.actor.setupSkill(game.i18n.localize("NAME.Endurance"), {context : {failure : this.actor.name + " dies from Blight"}, fields: {difficulty}, appendTitle : " - Blight"})
+                            await test.roll();
+                            if (test.failed)
+                            {
+                                this.actor.addCondition("dead");
+                            }
+                            `,
                         }
-                    }`
+                    ]
+                }
+            }
+        },
+        "lingering": {
+            name: "WFRP4E.Symptom.Lingering",
+            icon: "modules/wfrp4e-core/icons/diseases/disease.png",
+            flags: {
+                wfrp4e: {
+                    "symptom": true
                 }
             }
         },
         "malaise": {
-            label: "Malaise",
+            name: "WFRP4E.Symptom.Malaise",
             icon: "modules/wfrp4e-core/icons/diseases/disease.png",
-            transfer: true,
             flags: {
                 wfrp4e: {
-                    "effectApplication": "actor",
-                    "effectTrigger": "prepareData",
-                    "symptom": true,
-                    "script": `
-                    if (game.user.isUniqueGM)
-                    {
-                        let fatigued = args.actor.hasCondition("fatigued")
-                        if (!fatigued)
+                    symptom : true,
+                    applicationData : {
+                        type : "document"
+                    },
+                    scriptData: [
                         {
-                            args.actor.addCondition("fatigued")
-                            ui.notifications.notify("Fatigued added to " + args.actor.name + " which cannot be removed until the Malaise symptom is gone.")
+                            trigger: "update",
+                            label : "@effect.name",
+                            script : `
+                            let fatigued = this.actor.hasCondition("fatigued")
+                            if (!fatigued)
+                            {
+                                this.actor.addCondition("fatigued")
+                                ui.notifications.notify("Fatigued added to " + this.actor.name + " which cannot be removed until the Malaise symptom is gone.")
+                            }`,
                         }
-                    }
-                    `
+                    ]
                 }
             }
         },
         "nausea": {
-            label: "Nausea",
+            name: "WFRP4E.Symptom.Nausea",
             icon: "modules/wfrp4e-core/icons/diseases/disease.png",
-            transfer: true,
             flags: {
                 wfrp4e: {
-                    "effectApplication": "actor",
-                    "effectTrigger": "rollTest",
-                    "symptom": true,
-                    "script": `
-                    if (this.actor.isOwner && args.test.result.outcome == "failure")
-                    {
-                        let applicableCharacteristics = ["ws", "bs", "s", "fel", "ag", "t", "dex"]
-                        if (applicableCharacteristics.includes(args.test.characteristicKey))
-                            this.actor.addCondition("stunned")
-    
-                    }
-                    `
+                    symptom : true,
+                    applicationData : {
+                        type : "document"
+                    },
+                    scriptData: [
+                        {
+                            trigger: "rollTest",
+                            label : "@effect.name",
+                            script : `                 
+                            if (args.test.failed)
+                            {
+                                let applicableCharacteristics = ["ws", "bs", "s", "fel", "ag", "t", "dex"];
+                                if (applicableCharacteristics.includes(args.test.characteristicKey))
+                                {
+                                    this.actor.addCondition("stunned");
+                                }
+                            }`,
+                        }
+                    ]
                 }
             }
         },
         "pox": {
-            label: "Pox",
+            name: "WFRP4E.Symptom.Pox",
             icon: "modules/wfrp4e-core/icons/diseases/disease.png",
-            transfer: true,
             flags: {
                 wfrp4e: {
-                    "effectApplication": "actor",
-                    "effectTrigger": "prefillDialog",
-                    "symptom": true,
-                    "script": `
-                       
-                        if (args.type == "characteristic" && args.item == "fel")
-                                args.prefillModifiers.modifier -= 10
-                        else if (args.type == "skill")
+                    symptom : true,
+                    applicationData : {
+                        type : "document"
+                    },
+                    scriptData: [
                         {
-                            if (args.item.characteristic.key == "fel")
-                                args.prefillModifiers.modifier -= 10
-                        }`
+                            trigger: "dialog",
+                            label : "@effect.name",
+                            script : `args.fields.modifier -= 10`,
+                            options: {
+                                dialog : {
+                                    hideScript : `return !["fel"].includes(args.characteristic)`,
+                                    activateScript : `return ["fel"].includes(args.characteristic)`,
+                                }
+                            }
+                        }
+                    ]
                 }
             }
         },
         "wounded": {
-            label: "Wounded",
+            name: "WFRP4E.Symptom.Wounded",
             icon: "modules/wfrp4e-core/icons/diseases/disease.png",
-            transfer: true,
             flags: {
                 wfrp4e: {
-                    "effectApplication": "actor",
-                    "effectTrigger": "invoke",
-                    "symptom": true,
-                    "script": `
-                        if (this.actor.isOwner)
+                    symptom : true,
+                    applicationData : {
+                        type : "document"
+                    },
+                    scriptData: [
                         {
-                            args.actor.setupSkill("Endurance", {absolute: {difficulty : "average"}}).then(setupData => {
-                                args.actor.basicTest(setupData).then(test => 
-                                    {
-                                        if (test.result.outcome == "failure")
-                                            fromUuid("Compendium.wfrp4e-core.diseases.kKccDTGzWzSXCBOb").then(disease => {
-                                                args.actor.createEmbeddedDocuments("Item", [disease.toObject()])
-                                            })
-                                    })
+                            trigger: "manual",
+                            label : "@effect.name",
+                            script : `
+                            let test = await this.actor.setupSkill(game.i18n.localize("NAME.Endurance"), {fields: {difficulty : "average"}, appendTitle : " - Wounded"})
+                            await test.roll();
+                            if (test.failed)
+                            {
+                                fromUuid("Compendium.wfrp4e-core.items.kKccDTGzWzSXCBOb").then(disease => {
+                                    this.actor.createEmbeddedDocuments("Item", [disease.toObject()])
+                                    this.script.scriptNotification("Gained " + disease.name)
                                 })
-                        }`
+                            }
+                            `,
+                        }
+                    ]
                 }
-            }
-        }
-    }
-
-    for (let obj in WFRP4E) {
-        for (let el in WFRP4E[obj]) {
-            if (typeof WFRP4E[obj][el] === "string") {
-                WFRP4E[obj][el] = game.i18n.localize(WFRP4E[obj][el])
             }
         }
     }
@@ -985,6 +1042,13 @@ Hooks.on("setup", () => {
 })
 
 Hooks.on("ready", () => {
+
+
+    for(let symptom in game.wfrp4e.config.symptomEffects)
+    {
+        game.wfrp4e.config.symptomEffects[symptom].name = game.i18n.localize(game.wfrp4e.config.symptomEffects[symptom].name);
+    }
+
     if (!game.settings.get("wfrp4e-core", "initialized") && game.user.isGM)
         new WFRP4eCoreInitWrapper().render(true)
 })

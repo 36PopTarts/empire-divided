@@ -2,26 +2,15 @@
     <div class="form-group">
         <label>{{localize "DICESONICE.system"}}</label>
         <select data-system data-dicetype="{{dicetype}}" name="appearance[{{dicetype}}][system]">
-            {{#select appearance.system}}
-            {{#each systemList as |name key|}}
-            <option value="{{key}}">{{name}}</option>
-            {{/each}}
-            {{/select}}
+            {{selectOptions systemList selected=appearance.system}}
         </select>
+        <a class="system-control" data-system-options title='{{localize "DICESONICE.Options"}}'><i class="fas fa-cog"></i></a>
     </div>
 
     <div class="form-group">
         <label>{{localize "DICESONICE.colorset"}}</label>
         <select data-colorset data-dicetype="{{dicetype}}" name="appearance[{{dicetype}}][colorset]">
-            {{#select appearance.colorset}}
-            {{#each colorsetList as |group key|}}
-            <optgroup label="{{key}}">
-                {{#each group as |name id|}}
-                <option value="{{id}}">{{name}}</option>
-                {{/each}}
-            </optgroup>
-            {{/each}}
-            {{/select}}
+            {{selectOptions colorsetList selected=appearance.colorset localize=true}}
         </select>
         <p class="notes">{{localize "DICESONICE.colorsetDesc"}}</p>
     </div>
@@ -29,33 +18,21 @@
     <div class="form-group">
         <label>{{localize "DICESONICE.texture"}}</label>
         <select data-texture data-dicetype="{{dicetype}}" name="appearance[{{dicetype}}][texture]">
-            {{#select appearance.texture}}
-            {{#each textureList as |name key|}}
-            <option value="{{key}}">{{name}}</option>
-            {{/each}}
-            {{/select}}
+            {{selectOptions textureList selected=appearance.texture}}
         </select>
     </div>
 
     <div class="form-group">
         <label>{{localize "DICESONICE.material"}}</label>
         <select data-material data-dicetype="{{dicetype}}" name="appearance[{{dicetype}}][material]">
-            {{#select appearance.material}}
-            {{#each materialList as |name key|}}
-            <option value="{{key}}">{{name}}</option>
-            {{/each}}
-            {{/select}}
+            {{selectOptions materialList selected=appearance.material}}
         </select>
     </div>
 
     <div class="form-group">
         <label>{{localize "DICESONICE.font"}}</label>
         <select data-font data-dicetype="{{dicetype}}" name="appearance[{{dicetype}}][font]">
-            {{#select appearance.font}}
-            {{#each fontList as |name key|}}
-            <option value="{{key}}">{{name}}</option>
-            {{/each}}
-            {{/select}}
+            {{selectOptions fontList selected=appearance.font}}
         </select>
     </div>
 

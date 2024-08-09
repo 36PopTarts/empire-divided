@@ -60,7 +60,8 @@
 			"sizeChangeSpeed": {
 				"title": "サイズ変化速度",
 				"hint": "サイズ変更の1サイクルにかかる時間を指定します。単位は秒です。"
-			}
+			},
+			"handledByPings": "Handled by the \"Pings\" module"
 		}
 	}
 }

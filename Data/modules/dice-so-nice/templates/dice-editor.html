@@ -1,0 +1,84 @@
+<!-- 
+Dice Editor Popup:
+
+
+1. MAIN VIEW:
+   - Large centered 3D view box that shows a representation of the dice. This is where users can click on individual dice faces to select them.
+
+2. DICE FACE SELECTION:
+   - Description: "Face selected: <Number>"
+   - Indicate which face of the dice is currently selected and will show a number corresponding to that face.
+
+3. EDITING TOOLS:
+   - Text Field: Allows users to input or edit the text label for the selected dice face.
+   - Font Dropdown: A dropdown list that lets users choose the font for the text label on the selected dice face.
+   - Label Image: 
+     - An input field where users can either type in a URL or path to an image.
+     - Beside the field, there's a button to browse and upload a local image.
+   - Background Texture:
+     - Similar to the Label Image, it has an input field for users to type in the path or URL of an image.
+     - It also has a button next to it for local image uploads.
+
+4. ACTION BUTTONS:
+   - Save: Save the current edits for the selected dice face.
+   - Reset Face: Resets any edits made to the currently selected dice face to its default state.
+   - Reset All: Resets all edits and customizations made to all dice faces.
+   - Export: Used to export the customized dice to a JSON file
+-->
+
+<form autocomplete="off" class="dice-so-nice flexcol">
+    <div id="dice-configuration-canvas-editor-container"></div>
+    <hr />
+    <span class="dsn-appearance-hint" {{{displayHint}}}>{{localize "DICESONICE.navAppearanceEditorHint"}}</span>
+    <div class="dsn-face-selected">
+        <span>{{localize "DICESONICE.faceSelected"}}</span>
+        <span class="dsn-face-selected-number"></span>
+        <input hidden type="number" name="selectedFace" value="" />
+    </div>
+    <div class="settings-list">
+        <div class="form-group">
+            <label>{{localize "DICESONICE.labelText"}}</label>
+            <div class="form-fields">
+                <input type="text" data-labelText name="labelText" value="" data-dtype="String" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label>{{localize "DICESONICE.font"}}</label>
+            <select data-font name="font">
+                {{selectOptions fontList selected=font}}
+            </select>
+        </div>
+        <div class="form-group">
+            <label>{{localize "DICESONICE.labelImage"}}</label>
+            <div class="form-fields">
+                <input type="text" data-labelImage name="labelImage" value="" data-dtype="String" />
+                <button type="button" data-uploadImage name="uploadImage">
+                    <i class="fa-solid fa-upload"></i> {{localize "DICESONICE.uploadImage"}}
+                </button>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>{{localize "DICESONICE.backgroundTexture"}}</label>
+            <div class="form-fields">
+                <input type="text" data-backgroundTexture name="backgroundTexture" value="" data-dtype="String" />
+                <button type="button" data-uploadImage name="uploadImage">
+                    <i class="fa-solid fa-upload"></i> {{localize "DICESONICE.uploadImage"}}
+                </button>
+            </div>
+        </div>
+    </div>
+    <footer class="sheet-footer flexrow">
+        <button type="submit" name="submit">
+            <i class="fa-solid fa-floppy-disk"></i> {{localize "DICESONICE.Save"}}
+        </button>
+        <button type="button" data-test name="resetFace">
+            <i class="fa-solid fa-trash"></i> {{localize "DICESONICE.ResetFace"}}
+        </button>
+        <button type="button" data-cancel name="resetAll">
+            <i class="fa-solid fa-dumpster"></i> {{localize "DICESONICE.ResetFaceAll"}}
+        </button>
+        <button type="button" data-export name="export">
+            <i class="fas fa-file-export"></i> {{localize "DICESONICE.Export"}}
+        </button>
+    </footer>
+</form>

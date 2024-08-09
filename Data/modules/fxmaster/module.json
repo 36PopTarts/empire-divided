@@ -1,36 +1,51 @@
 {
+  "id": "fxmaster",
   "name": "fxmaster",
   "title": "FXMaster",
-  "description": "<p>Adds various weather and filter effects</p>",
-  "author": "U~man, Johannes Loher (ghost#2000)",
+  "description": "Adds various particle and filter effects",
   "authors": [
-    {
-      "name": "Emmanuel Ruaud (U~man)",
-      "discord": "U~man"
-    },
     {
       "name": "Johannes Loher (ghost)",
       "email": "johannes.loher@fg4f.de",
       "discord": "ghost#2000",
       "ko-fi": "ghostfvtt"
+    },
+    {
+      "name": "Emmanuel Ruaud (U~man)",
+      "discord": "U~man"
     }
   ],
   "url": "https://github.com/ghost-fvtt/fxmaster",
-  "license": "https://raw.githubusercontent.com/ghost-fvtt/fxmaster/v2.4.0/LICENSE.md",
-  "readme": "https://raw.githubusercontent.com/ghost-fvtt/fxmaster/v2.4.0/README.md",
+  "license": "https://raw.githubusercontent.com/ghost-fvtt/fxmaster/v4.0.2/LICENSE.md",
+  "readme": "https://raw.githubusercontent.com/ghost-fvtt/fxmaster/v4.0.2/README.md",
   "bugs": "https://github.com/ghost-fvtt/fxmaster/issues",
-  "changelog": "https://raw.githubusercontent.com/ghost-fvtt/fxmaster/v2.4.0/CHANGELOG.md",
-  "version": "2.4.0",
-  "minimumCoreVersion": "0.8.5",
-  "compatibleCoreVersion": "9",
+  "changelog": "https://raw.githubusercontent.com/ghost-fvtt/fxmaster/v4.0.2/CHANGELOG.md",
+  "flags": {
+    "hotReload": {
+      "extensions": ["css", "hbs", "json"],
+      "paths": ["templates", "css", "lang"]
+    }
+  },
+  "version": "4.0.2",
+  "compatibility": {
+    "minimum": "11.299",
+    "verified": "11"
+  },
+  "minimumCoreVersion": "11.299",
+  "compatibleCoreVersion": "11",
   "scripts": ["libs/filters/pixi-filters.js"],
   "esmodules": ["fxmaster.js"],
   "styles": ["css/fxmaster.css"],
   "languages": [
     {
+      "lang": "de",
+      "name": "Deutsch",
+      "path": "./lang/de.json"
+    },
+    {
       "lang": "en",
       "name": "English",
-      "path": "lang/en.json"
+      "path": "./lang/en.json"
     },
     {
       "lang": "fr",
@@ -61,6 +76,11 @@
       "lang": "ja",
       "name": "日本語",
       "path": "lang/ja.json"
+    },
+    {
+      "lang": "zh-tw",
+      "name": "正體中文",
+      "path": "lang/zh-tw.json"
     }
   ],
   "packs": [
@@ -68,11 +88,11 @@
       "name": "fxmaster",
       "label": "FXMaster",
       "path": "packs/macros.db",
-      "entity": "Macro"
+      "type": "Macro"
     }
   ],
   "socket": true,
   "manifest": "https://github.com/ghost-fvtt/fxmaster/releases/latest/download/module.json",
-  "download": "https://github.com/ghost-fvtt/fxmaster/releases/download/v2.4.0/module.zip",
+  "download": "https://github.com/ghost-fvtt/fxmaster/releases/download/v4.0.2/module.zip",
   "manifestPlusVersion": "1.2.0"
 }

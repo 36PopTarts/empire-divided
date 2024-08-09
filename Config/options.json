@@ -16,6 +16,12 @@
   "updateChannel": "stable",
   "language": "en.core",
   "upnpLeaseDuration": null,
-  "compressStatic": "true",
-  "world": null
+  "compressStatic": true,
+  "world": null,
+  "compressSocket": true,
+  "cssTheme": "foundry",
+  "deleteNEDB": false,
+  "hotReload": false,
+  "protocol": null,
+  "telemetry": false
 }

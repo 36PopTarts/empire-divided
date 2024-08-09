@@ -1,0 +1,67 @@
+{
+	"ping": {
+		"settings": {
+			"minmovepermission": {
+				"title": "最低移動屏幕的權限",
+				"hint": "需要至少那一級權限的用戶才能使用「移動屏幕的Ping功能」。例如，選擇了助手，則只允許GM和GM助手放置「移動屏幕的Ping」。"
+			},
+			"mousebutton": {
+				"title": "放置Ping的滑鼠按鈕",
+				"hint": "持續按著這裡所指定滑鼠按鈕指定的時間（在下面配置）可以放置Ping功能。0 = 左鍵，1 =中間，2 =右鍵。（可加上Shift / Ctrl等）在旁邊欄位按下所需的滑鼠按鈕。清除請使用ESC鍵。"
+			},
+			"mousebuttonmove": {
+				"title": "「放置移動屏幕的Ping」的滑鼠按鈕",
+				"hint": "持續按著這裡所指定滑鼠按鈕指定的時間（在下面配置）可以放置Ping功能，也會移動所有玩家的屏幕到Ping的位置。0 = 左鍵，1 =中間，2 =右鍵。（可加上Shift / Ctrl等）在旁邊欄位按下所需的滑鼠按鈕。清除請使用ESC鍵。"
+			},
+			"MouseButtonturation": {
+				"title": "滑鼠按鈕持續按著時間",
+				"hint": "直到放置Ping，必須按著滑鼠按鈕多長時間(毫秒)。"
+			},
+			"key": {
+				"title": "放置Ping的快捷鍵",
+				"hint": "按下指定的鍵，會在滑鼠當前位置放置Ping。（可加上Shift / Ctrl等）在旁邊欄位按下所需的滑鼠按鈕。清除請使用ESC鍵。 "
+			},
+			"keyMove": {
+				"title": "「放置移動屏幕的Ping」的快捷鍵",
+				"hint": "按下指定的鍵，會在滑鼠當前位置放置Ping，也會移動所有玩家的屏幕到Ping的位置。（可加上Shift / Ctrl等）在旁邊欄位按下所需的滑鼠按鈕。清除請使用ESC鍵。"
+			},
+			"showName": {
+				"title": "顯示玩家名稱",
+				"hint": "在Ping下方顯示玩家名稱。"
+			},
+			"image": {
+				"title": "Ping圖片",
+				"hint": "所選的圖片會取代默認的Ping。Ping圖案會基於玩家的顏色而改變，因此除了灰階影像之外的所有東西都會看起來很糟糕。"
+			},
+			"scale": {
+				"title": "比例",
+				"hint": "相對於網格，Ping應有多大。"
+			},
+			"duration": {
+				"title": "持續時間",
+				"hint": "Ping應該顯示多長時間(秒)。"
+			},
+			"rotate": {
+				"title": "旋轉",
+				"hint": "Ping會不會旋轉。"
+			},
+			"rotateSpeed": {
+				"title": "旋轉速度",
+				"hint": "Ping每旋轉360度，應該需要多少秒。"
+			},
+			"sizechange": {
+				"title": "尺寸變化",
+				"hint": "Ping會不會改變大小。"
+			},
+			"sizechangeamount": {
+				"title": "尺寸變化大小",
+				"hint": "如果會改變，到底會變化多少。"
+			},
+			"SizechangeSpeed": {
+				"title": "尺寸變化速度",
+				"hint": "每個變化以多少秒作為一個循環。"
+			},
+			"handledByPings": "Handled by the \"Pings\" module"
+		}
+	}
+}

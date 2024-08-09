@@ -1,13 +1,13 @@
 {
-  "name": "wfrp4e-horned-rat",
+  "id": "wfrp4e-horned-rat",
   "title": "WFRP4e - The Horned Rat",
   "description": "The penultimate volume of the five-part series of the Enemy Within campaign. The Characters cannot afford to relax their guard and celebrate their victories, as a new threat emerges from beneath their feet.",
-  "version": "2.0.1",
+  "version": "5.0.4",
   "authors": [
     {
       "name": "Moo Man",
       "email": "russellt@cubicle7games.com",
-      "discord": "Moo Man#7518"
+      "discord": "moo.man"
     },
     {
       "name": "Published by Cubicle 7",
@@ -15,48 +15,100 @@
       "email": "info@cubicle7games.com"
     }
   ],
-  "system": [
-    "wfrp4e"
-  ],
+  "relationships": {
+    "systems": [
+      {
+        "id": "wfrp4e",
+        "type": "system",
+        "manifest": "https://github.com/moo-man/WFRP4e-FoundryVTT/releases/latest/download/system.json"
+      }
+    ]
+  },
   "scripts": [
     "initialization.js"
   ],
   "styles": [],
   "packs": [
     {
-      "name": "items",
-      "label": "Items (The Horned Rat)",
-      "path": "packs/horned-rat-items.db",
-      "type": "Item",
-      "system": "wfrp4e"
-    },
-    {
       "name": "actors",
       "label": "Actors (The Horned Rat)",
-      "path": "packs/horned-rat-actors.db",
+      "path": "packs/actors",
       "type": "Actor",
-      "system": "wfrp4e"
+      "system": "wfrp4e",
+      "banner": "./modules/wfrp4e-horned-rat/assets/banners/clanrats.webp",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
     },
     {
-      "label": "Scenes (The Horned Rat)",
-      "type": "Scene",
-      "name": "scenes",
-      "path": "packs/horned-rat-scenes.db",
-      "system": "wfrp4e"
+      "name": "items",
+      "label": "Items (The Horned Rat)",
+      "path": "packs/items",
+      "type": "Item",
+      "system": "wfrp4e",
+      "banner": "./modules/wfrp4e-horned-rat/assets/banners/in-karak-skygg1.webp",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
     },
     {
+      "name": "journals",
       "label": "Journals (The Horned Rat)",
       "type": "JournalEntry",
-      "name": "journals",
-      "path": "packs/horned-rat-journals.db",
-      "system": "wfrp4e"
+      "path": "packs/journals",
+      "system": "wfrp4e",
+      "banner": "./modules/wfrp4e-horned-rat/assets/banners/the-dissection.webp",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
     },
     {
       "label": "Tables (The Horned Rat)",
       "type": "RollTable",
       "name": "tables",
-      "path": "packs/horned-rat-tables.db",
-      "system": "wfrp4e"
+      "path": "packs/tables",
+      "system": "wfrp4e",
+      "banner": "./modules/wfrp4e-horned-rat/assets/banners/reavers.webp",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "scenes",
+      "label": "Scenes (The Horned Rat)",
+      "type": "Scene",
+      "path": "packs/scenes",
+      "system": "wfrp4e",
+      "banner": "./modules/wfrp4e-horned-rat/assets/banners/moon-over-mountains.webp",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    }
+  ],
+  "packFolders": [
+    {
+      "name": "The Enemy Within",
+      "sorting": "m",
+      "color": "#38005e",
+      "folders": [
+        {
+          "name": "The Horned Rat",
+          "sorting": "m",
+          "color": "#00573a",
+          "packs": [
+            "actors",
+            "items",
+            "journals",
+            "tables",
+            "scenes"
+          ]
+        }
+      ]
     }
   ],
   "flags": {
@@ -64,9 +116,13 @@
       "wfrp4e-horned-rat.actors",
       "wfrp4e-horned-rat.journals",
       "wfrp4e-horned-rat.scenes",
-      "wfrp4e-horned-rat.items",
       "wfrp4e-horned-rat.tables"
-    ]
+    ],
+    "folder": {
+      "name": "The Horned Rat",
+      "sorting": "m",
+      "color": "#00573a"
+    }
   },
   "languages": [
     {
@@ -75,12 +131,18 @@
       "path": "lang/en.json"
     }
   ],
-  "minimumCoreVersion": "0.8.6",
-  "compatibleCoreVersion": 9,
+  "media": [
+    {
+      "type": "setup",
+      "url": "./modules/wfrp4e-horned-rat/assets/setup.webp"
+    }
+  ],
+  "minimumCoreVersion": "11",
+  "compatibleCoreVersion": 11,
   "compatibility": {
-    "minimum": 9,
-    "verified": 9,
-    "maximum": 11
+    "minimum": 11,
+    "verified": 11,
+    "maximum": 12
   },
   "protected": true,
   "url": "https://foundryvtt.com/packages/wfrp4e-horned-rat/",

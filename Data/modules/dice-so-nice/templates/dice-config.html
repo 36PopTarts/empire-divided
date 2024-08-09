@@ -40,6 +40,11 @@
         <div class="tab" data-tab="preferences" data-group="dsn-main">
             <div class="settings-list">
                 <div class="form-group">
+                    <label>{{localize "DICESONICE.onlyShowMyDice"}}</label>
+                    <input type="checkbox" data-onlyShowOwnDice name="onlyShowOwnDice" data-dtype="Boolean" {{checked onlyShowOwnDice}} />
+                </div>
+
+                <div class="form-group">
                     <label>{{localize "DICESONICE.hideAfterRoll"}}</label>
                     <input type="checkbox" data-hideAfterRoll name="hideAfterRoll" data-dtype="Boolean" {{checked hideAfterRoll}} />
                 </div>
@@ -52,11 +57,7 @@
                 <div class="form-group">
                     <label>{{localize "DICESONICE.hideFX"}}</label>
                     <select data-hideFX name="hideFX">
-                        {{#select hideFX}}
-                        {{#each fxList as |name key|}}
-                        <option value="{{key}}">{{name}}</option>
-                        {{/each}}
-                        {{/select}}
+                        {{selectOptions fxList selected=hideFX}}
                     </select>
                 </div>
 
@@ -81,11 +82,7 @@
                 <div class="form-group">
                     <label>{{localize "DICESONICE.soundsSurface"}}</label>
                     <select data-soundsSurface name="soundsSurface">
-                        {{#select soundsSurface}}
-                        {{#each soundsSurfaceList as |name key|}}
-                        <option value="{{key}}">{{name}}</option>
-                        {{/each}}
-                        {{/select}}
+                        {{selectOptions soundsSurfaceList selected=soundsSurface}}
                     </select>
                 </div>
 
@@ -105,33 +102,21 @@
                 <div class="form-group">
                     <label>{{localize "DICESONICE.speed"}}</label>
                     <select data-speed name="speed">
-                        {{#select speed}}
-                        {{#each speedList as |name key|}}
-                        <option value="{{key}}">{{name}}</option>
-                        {{/each}}
-                        {{/select}}
+                        {{selectOptions speedList selected=speed}}
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label>{{localize "DICESONICE.canvasZIndex"}}</label>
                     <select data-canvasZIndex name="canvasZIndex">
-                        {{#select canvasZIndex}}
-                        {{#each canvasZIndexList as |name key|}}
-                        <option value="{{key}}">{{name}}</option>
-                        {{/each}}
-                        {{/select}}
+                        {{selectOptions canvasZIndexList selected=canvasZIndex}}
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label>{{localize "DICESONICE.throwingForce"}}</label>
                     <select data-throwingForce name="throwingForce">
-                        {{#select throwingForce}}
-                        {{#each throwingForceList as |name key|}}
-                        <option value="{{key}}">{{name}}</option>
-                        {{/each}}
-                        {{/select}}
+                        {{selectOptions throwingForceList selected=throwingForce}}
                     </select>
                 </div>
 
@@ -170,11 +155,7 @@
                 <div class="form-group">
                     <label>{{localize "DICESONICE.imageQuality"}}</label>
                     <select data-imageQuality name="imageQuality">
-                        {{#select imageQuality}}
-                        {{#each imageQualityList as |name key|}}
-                        <option value="{{key}}">{{name}}</option>
-                        {{/each}}
-                        {{/select}}
+                        {{selectOptions imageQualityList selected=imageQuality}}
                     </select>
                 </div>
 
@@ -188,11 +169,7 @@
                 <div class="form-group">
                     <label>{{localize "DICESONICE.shadowQuality"}}</label>
                     <select data-shadowQuality name="shadowQuality">
-                        {{#select shadowQuality}}
-                        {{#each shadowQualityList as |name key|}}
-                        <option value="{{key}}">{{name}}</option>
-                        {{/each}}
-                        {{/select}}
+                        {{selectOptions shadowQualityList selected=shadowQuality}}
                     </select>
                 </div>
 
@@ -204,11 +181,7 @@
                 <div class="form-group">
                     <label>{{localize "DICESONICE.antialiasing"}}</label>
                     <select data-antialiasing name="antialiasing">
-                        {{#select antialiasing}}
-                        {{#each antialiasingList as |name key|}}
-                        <option value="{{key}}">{{name}}</option>
-                        {{/each}}
-                        {{/select}}
+                        {{selectOptions antialiasingList selected=antialiasing}}
                     </select>
                 </div>
 

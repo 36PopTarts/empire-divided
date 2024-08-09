@@ -1,13 +1,13 @@
 {
-  "name": "wfrp4e-pbtt",
+  "id": "wfrp4e-pbtt",
   "title": "WFRP4e - Power Behind the Throne",
   "description": "Welcome to part three of the Enemy Within, carrying on from where Death of the Reik left off, <b>Power Behind the Throne</b> takes your brave heroes from Altdorf to the city of Middenheim, a towering city-state in the north of the Empire where trouble brews and a play for power is made.",
-  "version": "2.2.3",
+  "version": "5.0.5",
   "authors": [
     {
       "name": "Moo Man",
       "email": "russellt@cubicle7games.com",
-      "discord": "Moo Man#7518"
+      "discord": "moo.man"
     },
     {
       "name": "Published by Cubicle 7",
@@ -15,67 +15,130 @@
       "email": "info@cubicle7games.com"
     }
   ],
-  "system": [
-    "wfrp4e"
-  ],
+  "relationships": {
+    "systems": [
+      {
+        "id": "wfrp4e",
+        "type": "system",
+        "manifest": "https://github.com/moo-man/WFRP4e-FoundryVTT/releases/latest/download/system.json"
+      }
+    ]
+  },
   "scripts": [
     "initialization.js"
   ],
   "styles": [],
   "packs": [
     {
-      "name": "pbtt-items",
-      "label": "Items (Power Behind the Throne)",
-      "path": "packs/pbttitems.db",
-      "type": "Item",
-      "system": "wfrp4e"
-    },
-    {
-      "name": "pbtt-actors",
+      "name": "actors",
       "label": "Actors (Power Behind the Throne)",
-      "path": "packs/pbttactors.db",
+      "path": "packs/actors",
       "type": "Actor",
-      "system": "wfrp4e"
+      "system": "wfrp4e",
+      "banner": "./modules/wfrp4e-pbtt/assets/banners/the-templars-arms-staff.webp",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
     },
     {
-      "label": "Scenes (Power Behind the Throne)",
-      "type": "Scene",
-      "name": "pbtt-scenes",
-      "path": "packs/pbttscenes.db",
-      "system": "wfrp4e"
+      "name": "items",
+      "label": "Items (Power Behind the Throne)",
+      "path": "packs/items",
+      "type": "Item",
+      "system": "wfrp4e",
+      "banner": "./modules/wfrp4e-pbtt/assets/banners/war-wagon.webp",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
     },
     {
+      "name": "journals",
       "label": "Journals (Power Behind the Throne)",
       "type": "JournalEntry",
-      "name": "pbtt-journals",
-      "path": "packs/pbttjournals.db",
-      "system": "wfrp4e"
+      "path": "packs/journals",
+      "system": "wfrp4e",
+      "banner": "./modules/wfrp4e-pbtt/assets/banners/eternal-fire.webp",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
     },
     {
+      "name": "tables",
       "label": "Tables (Power Behind the Throne)",
       "type": "RollTable",
-      "name": "pbtt-tables",
-      "path": "packs/pbtt-tables.db",
-      "system": "wfrp4e"
+      "path": "packs/tables",
+      "system": "wfrp4e",
+      "banner": "./modules/wfrp4e-pbtt/assets/banners/the-pit.webp",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "scenes",
+      "label": "Scenes (Power Behind the Throne)",
+      "type": "Scene",
+      "path": "packs/scenes",
+      "system": "wfrp4e",
+      "banner": "./modules/wfrp4e-pbtt/assets/banners/streets.webp",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    }
+  ],
+  "packFolders": [
+    {
+      "name": "The Enemy Within",
+      "sorting": "m",
+      "color": "#38005e",
+      "folders": [
+        {
+          "name": "Power Behind the Throne",
+          "sorting": "m",
+          "color": "#008077",
+          "packs": [
+            "actors",
+            "items",
+            "journals",
+            "tables",
+            "scenes"
+          ]
+        }
+      ]
     }
   ],
   "flags": {
     "initializationPacks": [
-      "wfrp4e-pbtt.pbtt-actors",
-      "wfrp4e-pbtt.pbtt-journals",
-      "wfrp4e-pbtt.pbtt-items",
-      "wfrp4e-pbtt.pbtt-scenes",
-      "wfrp4e-pbtt.pbtt-tables"
-    ]
+      "wfrp4e-pbtt.actors",
+      "wfrp4e-pbtt.journals",
+      "wfrp4e-pbtt.scenes",
+      "wfrp4e-pbtt.tables"
+    ],
+    "folder": {
+      "name": "Power Behind the Throne",
+      "sorting": "m",
+      "color": "#008077"
+    }
   },
+  "media": [
+    {
+      "type": "setup",
+      "url": "./modules/wfrp4e-pbtt/assets/setup.webp"
+    }
+  ],
   "languages": [],
-  "minimumCoreVersion": "0.8.6",
-  "compatibleCoreVersion": 9,
+  "minimumCoreVersion": "11",
+  "compatibleCoreVersion": 11,
   "compatibility": {
-    "minimum": 9,
-    "verified": 9,
-    "maximum": 10
+    "minimum": 11,
+    "verified": 11,
+    "maximum": 12
   },
   "protected": true,
+  "url": "https://foundryvtt.com/packages/wfrp4e-pbtt/",
   "manifest": "https://foundry-c7-manifests.s3.us-east-2.amazonaws.com/wfrp4e-pbtt/module.json"
 }

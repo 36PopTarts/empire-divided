@@ -16,6 +16,9 @@ class LevelsToolTip extends BasePlaceableHUD {
     if (!this.object) return;
     let posleft = this.object.center.x - this.object.width / 2;
     let postop = this.object.center.y - this.object.height / 2;
+    if(this.object instanceof Note){
+      postop -= this.object.height / 2;
+    }
     const position = {
       width: canvas.grid.size * 1.2,
       height: canvas.grid.size * 0.8,
@@ -42,8 +45,7 @@ Hooks.on("renderSceneControls", () => {
 Hooks.on("hoverTile", (object, hovered) => {
   if (
     hovered &&
-    object.data.overhead &&
-    game.settings.get(_levelsModuleName, "enableTooltips")
+    CONFIG.Levels.settings.get("enableTooltips") && !game.Levels3DPreview?._active
   ) {
     canvas.hud.levels.bind(object);
   } else {
@@ -52,7 +54,7 @@ Hooks.on("hoverTile", (object, hovered) => {
 });
 
 Hooks.on("hoverDrawing", (object, hovered) => {
-  if (hovered && game.settings.get(_levelsModuleName, "enableTooltips")) {
+  if (hovered && CONFIG.Levels.settings.get("enableTooltips") && !game.Levels3DPreview?._active) {
     canvas.hud.levels.bind(object);
   } else {
     canvas.hud.levels.clear();
@@ -60,7 +62,7 @@ Hooks.on("hoverDrawing", (object, hovered) => {
 });
 
 Hooks.on("hoverAmbientLight", (object, hovered) => {
-  if (hovered && game.settings.get(_levelsModuleName, "enableTooltips")) {
+  if (hovered && CONFIG.Levels.settings.get("enableTooltips") && !game.Levels3DPreview?._active) {
     canvas.hud.levels.bind(object);
   } else {
     canvas.hud.levels.clear();
@@ -68,7 +70,7 @@ Hooks.on("hoverAmbientLight", (object, hovered) => {
 });
 
 Hooks.on("hoverNote", (object, hovered) => {
-  if (game.user.isGM && hovered && game.settings.get(_levelsModuleName, "enableTooltips")) {
+  if (game.user.isGM && hovered && CONFIG.Levels.settings.get("enableTooltips") && !game.Levels3DPreview?._active) {
     canvas.hud.levels.bind(object);
   } else {
     canvas.hud.levels.clear();
@@ -76,7 +78,7 @@ Hooks.on("hoverNote", (object, hovered) => {
 });
 
 Hooks.on("hoverAmbientSound", (object, hovered) => {
-  if (hovered && game.settings.get(_levelsModuleName, "enableTooltips")) {
+  if (hovered && CONFIG.Levels.settings.get("enableTooltips") && !game.Levels3DPreview?._active) {
     canvas.hud.levels.bind(object);
   } else {
     canvas.hud.levels.clear();

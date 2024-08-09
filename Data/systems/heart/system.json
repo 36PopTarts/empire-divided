@@ -1,0 +1,78 @@
+{
+    "templateVersion": 2,
+    "packs": [
+        {
+            "name": "macros",
+            "label": "Useful Heart Macros",
+            "system": "heart",
+            "path": "./packs/macros.db",
+            "type": "Macro",
+            "entity": "Macro"
+        },
+        {
+            "name": "tags",
+            "label": "Tags",
+            "system": "heart",
+            "path": "./packs/tags.db",
+            "type": "Item",
+            "entity": "Item"
+        },
+        {
+            "name": "fallouts",
+            "label": "Fallouts",
+            "system": "heart",
+            "path": "./packs/fallouts.db",
+            "type": "Item",
+            "entity": "Item"
+        },
+        {
+            "name": "classes",
+            "label": "Classes",
+            "system": "heart",
+            "path": "./packs/classes.db",
+            "type": "Item",
+            "entity": "Item"
+        },
+        {
+            "name": "callings",
+            "label": "Callings",
+            "system": "heart",
+            "path": "./packs/callings.db",
+            "type": "Item",
+            "entity": "Item"
+        }
+    ],
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "lang/en.json"
+        },
+        {
+            "lang": "es",
+            "name": "Español",
+            "path": "lang/es.json"
+        },
+        {
+            "lang": "it",
+            "name": "Italiano",
+            "path": "lang/it.json"
+        }
+    ],
+    "socket": false,
+    "version": "0.9.2",
+    "id": "heart",
+    "title": "Heart - The City Beneath",
+    "description": "A red wet heaven slumbers fitful under the city of Spire. Purchase at https://rowanrookanddecard.com/product/heart-the-city-beneath-rpg/",
+    "compatibility": {
+        "minimum": "12",
+        "verified": "12"
+    },
+    "esmodules": [
+        "heart.js"
+    ],
+    "url": "https://github.com/hitcherland/FoundryVTT-Heart",
+    "manifest": "https://github.com/hitcherland/FoundryVTT-Heart/releases/latest/download/system.json",
+    "readme": "https://raw.githubusercontent.com/hitcherland/FoundryVTT-Heart/0.9.2/README.md",
+    "download": "https://github.com/hitcherland/FoundryVTT-Heart/releases/download/0.9.2/heart.zip"
+}

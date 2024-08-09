@@ -1,4 +1,46 @@
 # Changelog
+### v1.5.9 - 11-10-2023
+Fixes:
+<ul>
+<li>Default scene config is now properly applied on new scenes</li>
+<li>Physical Gridsize can now be applied to all scenes when accessed through the 'Set View' control button</li>
+<li>When editing what UI elements to hide, other changes to scene settings are no longer reset</li>
+</ul>
+
+### v1.5.8 - 14-09-2023
+Fixes:
+<ul>
+    <li>Default user settings are no longer applied to GM users</li>
+    <li>Removed debug message that would occasionally spam the console</li>
+</ul>
+
+### v1.5.7 - 14-06-2023
+Fixes:
+<ul>
+    <li>Forgot to add the css folder to the release, preventing the module from functioning.</li>
+</ul>
+
+### v1.5.6 - 14-06-2023
+Additions:
+<ul>
+    <li>Added a scene configurator to allow easy configuration of the Lock View settings, including copying settings from one scene to another and configuring the default configuration for new scenes. Accessible through a button in the scene configuration and the module settings</li>
+    <li>Added default user settings which are applied to new or unconfigured users. By default this enables 'Enable' and 'Viewbox'</li>
+    <li>Canvas can now be rotated from the Lock View menu in the Scene Configuration and using the 'Set View' dialog (thanks to Dylancyclone)</li>
+</ul>
+
+Fixes:
+<ul>
+    <li>Fixed 'hide control button' not hiding the control button in all cases</li>
+    <li>Fixed error that would pop up when 'hide control button' was enabled and the scene configuration was closed</li>
+    <li>Hiding UI elements now only sets the element to invisible, preventing other elements from shifting around</li>
+</ul>
+
+Other:
+<ul>
+    <li>Made compatible with Foundry V11, dropped compatibility with V9</li>
+    <li>Changed 'Collapse Sidebar on Scene Load' to 'Sidebar on Scene Load' and made it a selection between 'No Change', 'Collapse' and 'Expand'</li>
+</ul>
+
 ### v1.5.4 - 14-09-2022
 Fixes:
 <ul>

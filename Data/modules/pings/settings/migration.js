@@ -9,18 +9,16 @@ export const MigrationResult = {
 function createMigrations(foundryGame) {
 	return [
 		{
-			version: '1.2.2',
-			func: async (lastVersion) => {
-				if (lastVersion) {
+			version: '1.4.1',
+			func: async () => {
+				let minMoveVal = foundryGame.settings.get(Constants.PINGS, Constants.MINIMUM_PERMISSION);
+				if (typeof minMoveVal === 'string') {
+					await foundryGame.settings.set(Constants.PINGS, Constants.MINIMUM_PERMISSION,
+						Number(minMoveVal));
+					return MigrationResult.SUCCESS;
+				} else {
 					return MigrationResult.UNNECESSARY;
 				}
-
-				if (foundryGame.settings.get(Constants.PINGS, Constants.MINIMUM_PERMISSION) === 0) {
-					await foundryGame.settings.set(Constants.PINGS, Constants.MINIMUM_PERMISSION, 1);
-				}
-
-				await foundryGame.settings.set(Constants.PINGS, Constants.LAST_VERSION, '1.2.2');
-				return MigrationResult.SUCCESS;
 			}
 		}
 	];
@@ -31,24 +29,31 @@ export async function migrate(foundryGame) {
 		foundryGame.settings.register(Constants.PINGS, 'lastVersion', {
 			config: false,
 			scope: 'client',
-			type: String,
-			default: ''
+			type: Number,
+			default: -1
 		});
-		let finalResult = undefined;
+
+		let finalResult = MigrationResult.UNNECESSARY
 		let lastVersion = foundryGame.settings.get(Constants.PINGS, Constants.LAST_VERSION);
-		for (const migration of createMigrations(foundryGame)) {
-			const result = await migration.func(lastVersion);
-			if (result === MigrationResult.FAILED) {
-				finalResult = result;
-				break;
-			} else if (finalResult !== MigrationResult.SUCCESS) {
-				finalResult = result;
-			}
-			lastVersion = migration.version;
+		if (lastVersion === -1) {
+			return MigrationResult.UNNECESSARY;
 		}
-		return finalResult === MigrationResult.SUCCESS ? lastVersion : finalResult;
+		const migrations = createMigrations(foundryGame);
+		for (let i = 0; i < migrations.length; ++i) {
+			const migration = migrations[i];
+			const result = lastVersion >= i ? MigrationResult.UNNECESSARY : await migration.func(lastVersion);
+			if (result === MigrationResult.FAILED) {
+				return MigrationResult.FAILED;
+			} else if (result === MigrationResult.SUCCESS) {
+				finalResult = migrations[migrations.length - 1].version;
+			}
+			
+			lastVersion = i;
+			await foundryGame.settings.set(Constants.PINGS, Constants.LAST_VERSION, lastVersion);
+		}
+		return finalResult;
 	} catch (e) {
 		console.error('Pings MigrationResult failed:', e);
-		return MigrationResult.FAILED;
+		return { type: MigrationResult.FAILED };
 	}
 }

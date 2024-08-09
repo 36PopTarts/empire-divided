@@ -1,0 +1,100 @@
+{
+  "timestamp": 1723165996460,
+  "os": {
+    "platform": "linux",
+    "version": "Linux Mint 20",
+    "node": "20.9.0",
+    "electron": "29.4.0"
+  },
+  "foundry": {
+    "generation": 12,
+    "build": 330,
+    "channel": "stable",
+    "hosting": null
+  },
+  "modules": {
+    "DiscordConnect": {
+      "version": "1.0.5"
+    },
+    "EasyTable": {
+      "version": "1.3.3"
+    },
+    "LockView": {
+      "version": "1.5.5"
+    },
+    "appbar": {
+      "version": "0.1.4"
+    },
+    "backgroundless-pins": {
+      "version": "1.2.03"
+    },
+    "betterroofs": {
+      "version": "1.4.3"
+    },
+    "dice-so-nice": {
+      "version": "4.5.0"
+    },
+    "foundryvtt-simple-calendar": {
+      "version": "v1.3.75"
+    },
+    "fxmaster": {
+      "version": "2.4.0"
+    },
+    "healthEstimate": {
+      "version": "28.2"
+    },
+    "image-hover": {
+      "version": "2.0.6"
+    },
+    "keybind-lib": {
+      "version": "0.3.4"
+    },
+    "levels": {
+      "version": "2.5.3"
+    },
+    "lib-wrapper": {
+      "version": "1.12.11.0"
+    },
+    "merchantsheetnpc": {
+      "version": "2.6.0"
+    },
+    "pings": {
+      "version": "1.3.0"
+    },
+    "settings-extender": {
+      "version": "1.2.0"
+    },
+    "theatre": {
+      "version": "2.2.2"
+    },
+    "wall-height": {
+      "version": "3.6.0.3"
+    },
+    "weather-control": {
+      "version": "4.1.9"
+    },
+    "wfrp4e-core": {
+      "version": "2.4.2"
+    },
+    "wfrp4e-gm-toolkit": {
+      "version": "0.9.4.4"
+    },
+    "wfrp4e-horned-rat": {
+      "version": "2.0.1"
+    },
+    "wfrp4e-pbtt": {
+      "version": "2.2.3"
+    }
+  },
+  "systems": {
+    "wfrp4e": {
+      "version": "5.3.0",
+      "playtime": 0
+    }
+  },
+  "worlds": {},
+  "playtime": {
+    "total": 0,
+    "max": 0
+  }
+}

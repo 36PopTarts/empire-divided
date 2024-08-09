@@ -1,5 +1,5 @@
 import { moduleName } from "../lockview.js";
-import { compareVersions, compatibleCore, getEnable, updateFlag, updateSettings } from "./misc.js";
+import { getEnable, updateFlag, updateSettings } from "./misc.js";
 import { getFlags, setBlocks, updatePanLock, updateZoomLock, updateBoundingBox, lockPan, lockZoom, boundingBox, _onMouseWheel_Default } from "./blocks.js";
 import * as VIEWBOX from "./viewbox.js";
 
@@ -40,45 +40,40 @@ class LockViewLayer extends CanvasLayer {
   }
 
   activate() {
-    if (!compatibleCore('10.0'))
-      CanvasLayer.prototype.activate.apply(this);
-    else {
-      // Set this layer as active
-      const wasActive = this.active;
-      this.active = true;
+    // Set this layer as active
+    const wasActive = this.active;
+    this.active = true;
 
-      // Deactivate other layers
-      for (let name of Object.keys(Canvas.layers) ) {
-        const layer = canvas[name];
-        if ( (layer !== this) && (layer instanceof InteractionLayer) ) layer.deactivate();
-      }
-      if ( wasActive ) return this;
-
-      // Assign interactivity for the active layer
-      this.interactive = false;
-      this.interactiveChildren = true;
-
-      // Re-render Scene controls
-      if ( ui.controls ) ui.controls.initialize({layer: this.constructor.layerOptions.name, tool:"resetView"});
-
-      // Call layer-specific activation procedures
-      this._activate();
-      Hooks.callAll(`activate${this.constructor.name}`, this);
+    // Deactivate other layers
+    for (let name of Object.keys(Canvas.layers) ) {
+      const layer = canvas[name];
+      if ( (layer !== this) && (layer instanceof InteractionLayer) ) layer.deactivate();
     }
+    if ( wasActive ) return this;
+
+    // Assign interactivity for the active layer
+    this.interactive = false;
+    this.interactiveChildren = true;
+
+    // Re-render Scene controls
+    if ( ui.controls ) ui.controls.initialize({layer: this.constructor.layerOptions.name, tool:"resetView"});
+
+    // Call layer-specific activation procedures
+    this._activate();
+    Hooks.callAll(`activate${this.constructor.name}`, this);
+
     return this;
   }
 
   _activate() {}
 
   deactivate() {
-    if (!compatibleCore('10.0')) CanvasLayer.prototype.deactivate.apply(this);
-    else {
-      this.active = false;
-      this.interactive = false;
-      this.interactiveChildren = false;
-      this._deactivate();
-      Hooks.callAll(`deactivate${this.constructor.name}`, this);
-    }
+    this.active = false;
+    this.interactive = false;
+    this.interactiveChildren = false;
+    this._deactivate();
+    Hooks.callAll(`deactivate${this.constructor.name}`, this);
+    
     return this;
   }
 
@@ -98,12 +93,14 @@ export function updateControlButtons() {
   const overrideSetting = overrideSettings?.control == undefined ? false : overrideSettings.control;
   const userSettings = game.settings.get(moduleName,'userSettings').filter(u => u.id == game.user.id)[0];
   const userSetting = userSettings?.control == undefined ? false : userSettings.control;
-  if ((overrideSetting == false || overrideSetting == undefined) && (userSetting == false || userSetting == undefined) && (game.user.isGM == false || canvas == null || game.settings.get(moduleName,'hideControlButton'))) return;
+  if (game.settings.get(moduleName,'hideControlButton') || (overrideSetting == false || overrideSetting == undefined) && (userSetting == false || userSetting == undefined) && (game.user.isGM == false || canvas == null)) return;
 
   getFlags();
-  ui.controls.controls.find(controls => controls.name == "LockView").tools.find(tools => tools.name == "PanLock").active = lockPan;
-  ui.controls.controls.find(controls => controls.name == "LockView").tools.find(tools => tools.name == "ZoomLock").active = lockZoom;
-  ui.controls.controls.find(controls => controls.name == "LockView").tools.find(tools => tools.name == "BoundingBox").active = boundingBox;
+  const tools = ui.controls.controls.find(controls => controls.name == "LockView").tools;
+  tools.find(tools => tools.name == "PanLock").active = lockPan;
+  tools.find(tools => tools.name == "ZoomLock").active = lockZoom;
+  tools.find(tools => tools.name == "BoundingBox").active = boundingBox;
+  tools.find(tools => tools.name == "EditViewbox").active = canvas.scene.getFlag('LockView', 'editViewbox');
   ui.controls.render();
 }
 
@@ -115,7 +112,7 @@ export function pushControlButtons(controls){
   const overrideSetting = overrideSettings?.control == undefined ? false : overrideSettings.control;
   const userSettings = game.settings.get(moduleName,'userSettings').filter(u => u.id == game.user.id)[0];
   const userSetting = userSettings?.control == undefined ? false : userSettings.control;
-  if ((overrideSetting == false || overrideSetting == undefined) && (userSetting == false || userSetting == undefined) && (game.user.isGM == false || canvas == null || game.settings.get(moduleName,'hideControlButton'))) return;
+  if (game.settings.get(moduleName,'hideControlButton') || (overrideSetting == false || overrideSetting == undefined) && (userSetting == false || userSetting == undefined) && (game.user.isGM == false || canvas == null)) return;
 
   getFlags();
 
@@ -190,10 +187,12 @@ export function pushControlButtons(controls){
         title: game.i18n.localize("LockView.ControlBtns.Label_Viewbox"),
         icon: "far fa-square",
         visible: true,
-        onClick: () => {
+        onClick: async () => {
           let currentTool = controls.find(controls => controls.name == "LockView").tools.find(tools => tools.name == "Viewbox");
           let currentState = currentTool.active;
           viewbox(currentState,currentTool);
+          await canvas.scene.setFlag('LockView', 'editViewbox', false);
+          updateControlButtons();
         },
         toggle: true,
         active: game.settings.get("LockView","viewbox")
@@ -204,8 +203,8 @@ export function pushControlButtons(controls){
         icon: "fas fa-vector-square",
         visible: true,
         onClick: () => { editViewboxConfig(controls) },
-        toggle: false,
-        active: game.settings.get("LockView","editViewbox")
+        toggle: true,
+        active: canvas.scene.getFlag('LockView', 'editViewbox')
       },
     ],
   });
@@ -215,7 +214,7 @@ export async function viewbox(currentState,currentTool=false){
   await updateSettings("viewbox",currentState);
   
   if (currentState) {
-    if (VIEWBOX.viewboxStorage == undefined || VIEWBOX.viewboxStorage.sceneId == undefined || (compatibleCore('10.0') && VIEWBOX.viewboxStorage.sceneId != canvas.scene.id) || (!compatibleCore('10.0') && VIEWBOX.viewboxStorage.sceneId != canvas.scene.data._id)) {
+    if (VIEWBOX.viewboxStorage == undefined || VIEWBOX.viewboxStorage.sceneId == undefined || VIEWBOX.viewboxStorage.sceneId != canvas.scene.id) {
       for (let i=0; i< VIEWBOX.viewbox.length; i++)
         if (VIEWBOX.viewbox[i] != undefined)
           VIEWBOX.viewbox[i].hide();
@@ -316,9 +315,9 @@ function handleMouseMove(e){
   let position = e.data.getLocalPosition(canvas.stage);
   let width = VIEWBOX.viewbox[selectedViewbox].boxWidth;
   let height = VIEWBOX.viewbox[selectedViewbox].boxHeight;
-  
+
   if (mouseMode == 'move') {
-    position.x += 20 - startOffset.x + VIEWBOX.viewbox[selectedViewbox].boxWidth/2
+    position.x += 20 - startOffset.x;// + VIEWBOX.viewbox[selectedViewbox].boxWidth/2
     position.y += 20 - startOffset.y + VIEWBOX.viewbox[selectedViewbox].boxHeight/2
 
     let payload = {
@@ -337,7 +336,7 @@ function handleMouseMove(e){
     let offset = VIEWBOX.viewbox[selectedViewbox].scaleLocation.x - position.x;
     position.scale = (width - offset)/width;
     
-    position.x = VIEWBOX.viewbox[selectedViewbox].xStorage + Math.floor(width / 2) - offset/2;
+    position.x = VIEWBOX.viewbox[selectedViewbox].xStorage - offset/2;
     position.y = VIEWBOX.viewbox[selectedViewbox].yStorage + Math.floor(height / 2) - offset*height/(2*width);
     
     width *= position.scale;
@@ -361,7 +360,7 @@ function handleMouseMove(e){
   //update viewbox
   VIEWBOX.viewbox[selectedViewbox].updateViewbox(
     {
-      x: position.x,
+      x: position.x + VIEWBOX.viewbox[selectedViewbox].boxWidth/2,
       y: position.y,
       width: width,
       height: height,
@@ -375,7 +374,7 @@ function handleMouseMove(e){
 export async function editViewboxConfig(controls) {
   let currentState = !canvas.scene.getFlag('LockView', 'editViewbox');
 
-  if (VIEWBOX.viewboxStorage == undefined || VIEWBOX.viewboxStorage.sceneId == undefined || (compatibleCore('10.0') && VIEWBOX.viewboxStorage.sceneId != canvas.scene.id) || (!compatibleCore('10.0') && VIEWBOX.viewboxStorage.sceneId != canvas.scene.data._id)) {
+  if (VIEWBOX.viewboxStorage == undefined || VIEWBOX.viewboxStorage.sceneId == undefined || VIEWBOX.viewboxStorage.sceneId != canvas.scene.id) {
     for (let i=0; i< VIEWBOX.viewbox.length; i++)
       if (VIEWBOX.viewbox[i] != undefined)
         VIEWBOX.viewbox[i].hide();
@@ -447,7 +446,7 @@ function setViewDialog(controls) {
   controls.find(controls => controls.name == "LockView").activeTool = undefined;
   mouseManager(false);
   ui.controls.render();
-  if (VIEWBOX.viewboxStorage == undefined || VIEWBOX.viewboxStorage.sceneId == undefined || (compatibleCore('10.0') && VIEWBOX.viewboxStorage.sceneId != canvas.scene.id) || (!compatibleCore('10.0') && VIEWBOX.viewboxStorage.sceneId != canvas.scene.data._id)) {
+  if (VIEWBOX.viewboxStorage == undefined || VIEWBOX.viewboxStorage.sceneId == undefined || VIEWBOX.viewboxStorage.sceneId != canvas.scene.id) {
     ui.notifications.warn(game.i18n.localize("LockView.UI.NoConnect"));
     return;
   }
@@ -458,14 +457,24 @@ function setViewDialog(controls) {
     <option value=3>${game.i18n.localize("LockView.SetView.Mode3")}</option>
     <option value=4>${game.i18n.localize("LockView.SetView.Mode4")}</option>
     <option value=5>${game.i18n.localize("LockView.SetView.Mode5")}</option>
-    <option value=6>${game.i18n.localize("LockView.SetView.Mode5")}</option>
+    <option value=6>${game.i18n.localize("LockView.SetView.Mode6")}</option>
   `;
+
   let optionsScale = `
     <option value=0>${game.i18n.localize("LockView.SetView.Scale0")}</option>
     <option value=1>${game.i18n.localize("LockView.SetView.Scale1")}</option>
     <option value=2>${game.i18n.localize("LockView.SetView.Scale2")}</option>
     <option value=3>${game.i18n.localize("LockView.SetView.Scale3")}</option>
   `;
+
+  let optionsRotate = `
+    <option value=null>${game.i18n.localize("LockView.SetView.Rotate0")}</option>
+    <option value=0>${game.i18n.localize("LockView.SetView.Rotate1")}</option>
+    <option value=90>${game.i18n.localize("LockView.SetView.Rotate2")}</option>
+    <option value=180>${game.i18n.localize("LockView.SetView.Rotate3")}</option>
+    <option value=270>${game.i18n.localize("LockView.SetView.Rotate4")}</option>
+  `;
+
   let dialogTemplate = 
   `
   <div class="form-group">
@@ -481,6 +490,14 @@ function setViewDialog(controls) {
       <div  style="flex:1"></div>
       <span style="flex:1;">
         <select style="width:200px" id="scaleOption">${optionsScale}</select>
+      </span>
+      <div  style="flex:1"></div>
+    </div>
+    <p style="margin-bottom:10px;">
+    <div style="display:flex"> 
+      <div  style="flex:1"></div>
+      <span style="flex:1;">
+        <select style="width:200px" id="rotateOption">${optionsRotate}</select>
       </span>
       <div  style="flex:1"></div>
     </div>
@@ -516,6 +533,7 @@ function setViewDialog(controls) {
         callback: (html) => {
           let option = html.find("#selectOption")[0].value;
           let scaleSett = html.find("#scaleOption")[0].value;
+          let rotateSett = html.find("#rotateOption")[0].value;
           let payload;
 
           let x = html.find("#val1")[0].value;
@@ -527,6 +545,7 @@ function setViewDialog(controls) {
               "msgType": "resetView",
               "senderId": game.userId,
               "scaleSett": scaleSett, 
+              "rotateSett": rotateSett,
               "autoScale": option,
               "scale": scale,
               "receiverId": 'all'
@@ -539,7 +558,8 @@ function setViewDialog(controls) {
               "users": "all",
               "shiftX": x,
               "shiftY": y,
-              "scaleSett": scaleSett, 
+              "scaleSett": scaleSett,
+              "rotateSett": rotateSett, 
               "scale": scale,
               "type": "grid",
             };
@@ -552,6 +572,7 @@ function setViewDialog(controls) {
               "shiftX": x,
               "shiftY": y,
               "scaleSett": scaleSett, 
+              "rotateSett": rotateSett,
               "scale": scale,
               "type": "coords"
             };

@@ -22,6 +22,10 @@ Hooks.on("ready", () => {
     }
 })
 
+Hooks.on("init", () => {
+  game.wfrp4e.trade.addGazzetteerFile("modules/wfrp4e-pbtt/trade/gazetteer.json", "river")
+})
+
 class WFRP4ePBTTInitWrapper extends FormApplication {
     render() {
         let html = `<p class="notes">Initialize WFRP4e Power Behind the Throne Module?<br><br>Import or update all Actors, Items, Journals, and Scenes into your world, sort them into folders, and place map pins</p>

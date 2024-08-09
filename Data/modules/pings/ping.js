@@ -183,9 +183,11 @@ export default class Ping extends PIXI.Container {
 
 		this.id = id;
 
+		this.color = color;
+
 		this.options = options;
 
-		const gridSize = foundryCanvas.scene.data.grid;
+		const gridSize = foundryCanvas.scene.grid.size;
 		this.pingSize = gridSize * this.options.scale;
 
 		this.pingDisplay = this.addChild(createPingDisplay(this, color));

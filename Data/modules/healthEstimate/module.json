@@ -1,79 +1,98 @@
 {
-    "name": "healthEstimate",
+    "id": "healthEstimate",
     "title": "Health Estimate",
     "description": "Gives players ability to see approximate health status of a token",
-    "version": "28.2",
-    "author": "MClemente, Shylight",
+    "authors": [
+        {
+            "name": "Matheus Clemente",
+            "discord": "mclemente"
+        }
+    ],
     "scripts": [
-        "./lib/chroma.min.js",
-        "./lib/grapick.min.js",
-        "./lib/spectrum.min.js"
+        "lib/chroma.min.js",
+        "lib/grapick.min.js",
+        "lib/spectrum.min.js"
     ],
     "esmodules": [
-        "./healthEstimate.js"
+        "module/healthEstimate.js"
     ],
     "styles": [
-        "./css/healthEstimate.css",
-        "./lib/spectrum.min.css"
-    ],
-    "packs": [
-        {
-            "name": "deathmacro",
-            "label": "Health Estimate Macros",
-            "path": "./packs/macros.db",
-            "module": "healthEstimate",
-            "type": "Macro",
-            "private": true
-        }
+        "styles/healthEstimate.css",
+        "lib/spectrum.min.css"
     ],
     "languages": [
         {
             "lang": "en",
             "name": "English",
-            "path": "./lang/en.json"
+            "path": "lang/en.json"
         },
         {
             "lang": "es",
             "name": "Español (Spanish)",
-            "path": "./lang/es.json"
+            "path": "lang/es.json"
+        },
+        {
+            "lang": "it",
+            "name": "Italiano (Italian)",
+            "path": "lang/it.json"
         },
         {
             "lang": "ko",
             "name": "한국어 (Korean)",
-            "path": "./lang/ko.json"
+            "path": "lang/ko.json"
         },
         {
             "lang": "fr",
             "name": "Français (French)",
-            "path": "./lang/fr.json"
+            "path": "lang/fr.json"
         },
         {
             "lang": "cn",
             "name": "中文 (Chinese)",
-            "path": "./lang/cn.json"
+            "path": "lang/cn.json"
         },
         {
             "lang": "zh-tw",
-            "name": "国语 (Taiwanese Mandarin)",
-            "path": "./lang/zh-tw.json"
+            "name": "正體中文 (Traditional Chinese)",
+            "path": "lang/zh-tw.json"
         },
         {
             "lang": "pt-BR",
             "name": "Português (Brasil)",
-            "path": "./lang/pt-BR.json"
+            "path": "lang/pt-BR.json"
         },
         {
             "lang": "de",
             "name": "Deutsch",
-            "path": "./lang/de.json"
+            "path": "lang/de.json"
+        },
+        {
+            "lang": "fi",
+            "name": "Suomi",
+            "path": "lang/fi.json"
+        },
+        {
+            "lang": "ru",
+            "name": "Русский",
+            "path": "lang/ru.json"
+        },
+        {
+            "lang": "ja",
+            "name": "日本語",
+            "path": "lang/ja.json"
+        },
+        {
+            "lang": "cs",
+            "name": "Čeština",
+            "path": "lang/cs.json"
         }
     ],
-    "minimumCoreVersion": "9",
-    "compatibleCoreVersion": "9",
+    "compatibility": {
+        "minimum": "12",
+        "verified": "12"
+    },
     "url": "https://github.com/mclemente/healthEstimate",
+    "version": "32.4",
     "manifest": "https://github.com/mclemente/healthEstimate/releases/latest/download/module.json",
-    "download": "https://github.com/mclemente/healthEstimate/releases/download/28.2/module.zip",
-    "license": "https://choosealicense.com/licenses/mit/",
-    "bugs": "https://github.com/mclemente/healthEstimate/issues",
-    "allowBugReporter": true
+    "download": "https://github.com/mclemente/healthEstimate/releases/download/32.4/module.zip"
 }

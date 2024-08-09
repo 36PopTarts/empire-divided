@@ -1,0 +1,34 @@
+{
+  "news": [
+    {
+      "title": "Version 12 Stable Release",
+      "caption": "Version 12 Stable has now been released! Check out our release notes for everything you need to know.",
+      "url": "https://foundryvtt.com/releases/12.324",
+      "image": "https://r2.foundryvtt.com/website-uploads-public/screen/user_70/v12-release-screenshot-2024-05-22.webp"
+    },
+    {
+      "title": "Special Announcement: Ember",
+      "caption": "Ember is a roleplaying campaign and setting with groundbreaking digital features from the creators of Foundry Virtual Tabletop. Check out our teaser page and sign up to get alerted when the Kickstarter goes live!",
+      "url": "https://foundryvtt.com/ember/",
+      "image": "https://r2.foundryvtt.com/website-uploads-public/screen/user_70/ember-news-banner-2024-05-28.webp"
+    },
+    {
+      "title": "2024 Year in Review",
+      "caption": "Join us in a look back at what we accomplished since our last anniversary celebration, and look ahead towards the exciting things we plan for during the coming year. This annual article is a great way to get some insight into what we do as a company and how we do it.",
+      "url": "https://foundryvtt.com/article/year-in-review-2024/",
+      "image": "https://r2.foundryvtt.com/website-uploads-public/screen/user_70/anniversary-triptych-banner-no-text-2024-05-22.webp"
+    },
+    {
+      "title": "Overview Video",
+      "caption": "Watch a comprehensive video overview which summarizes the features of Foundry Virtual Tabletop.",
+      "url": "https://youtu.be/_d7k8ognC0w",
+      "image": "https://r2.foundryvtt.com/website-uploads-public/screen/user_70/2023-overview-banner-2023-06-23.webp"
+    }
+  ],
+  "featuredContent": {
+    "title": "Tasha's Cauldron of Everything is Available Now",
+    "caption": "It includes the artificer, 26 new subclasses, new dynamic tokens, sidekicks, puzzles, an expanded DM’s toolkit and much more, all directly integrated in Foundry VTT.",
+    "url": "https://foundryvtt.com/packages/dnd-tashas-cauldron/",
+    "image": "https://r2.foundryvtt.com/website-uploads-public/screen/user_70/tashas-cauldron-of-everything-content-square-2024-05-24.webp"
+  }
+}

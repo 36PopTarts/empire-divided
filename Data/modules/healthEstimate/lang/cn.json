@@ -1,47 +1,117 @@
 {
 	"healthEstimate": {
 		"core": {
-			"onlyGM": {
-				"name": "仅 GM",
-				"hint": "仅对 GM 显示健康评估。"
+			"custom": {
+				"FractionHP": {
+					"name": "生命值属性数据路径",
+					"hint": "你的游戏系统可能有着与默认不同的数据路径。如果健康评估显示不正确，请手动输入数据路径（比如actor.system.health）。"
+				},
+				"FractionMath": {
+					"name": "生命值计算方式",
+					"hint": "你的游戏系统的生命值计算方式可能与默认方法不同。选择你的游戏规则的生命值计算方法。",
+					"choices": {
+						"0": "(当前生命值)/(最大生命值)",
+						"1": "(最大生命值-当前生命值)/(最大生命值)"
+					}
+				}
 			},
-			"onlyNotGM": {
-				"name": "仅玩家",
-				"hint": "仅对玩家显示健康评估。"
+			"keybinds": {
+				"markDead": {
+					"name": "标记为死亡",
+					"hint": "将所有选中的指示物标记为死亡。如果所有已选中的指示物皆为死亡状态，则他们会被标记为生存。"
+				},
+				"customEstimates": {
+					"name": "自定义健康状况",
+					"hint": "为选中的指示物设置健康状态。若留空则重置为默认健康状态。",
+					"options": {
+						"1": "指示物和人物卡",
+						"2": "仅指示物"
+					}
+				},
+				"dontMarkDead": {
+					"name": "不要标记为死亡",
+					"hint": "使NPC的生命值降为0使不会被标记为死亡(比如会被标记为失去意识)。仅当你开启{setting}设置时有效。"
+				},
+				"hideEstimates": {
+					"name": "隐藏健康状况",
+					"hint": "对玩家隐藏选中指示物的健康状况。若设置为“是”，隐藏的健康状况会发送至聊天，并为GM显示*号标记。"
+				},
+				"hideNames": {
+					"name": "隐藏姓名",
+					"hint": "当你启用{setting}设置时，隐藏指示物的姓名。"
+				},
+				"hideEstimatesAndNames": {
+					"name": "隐藏健康状况和姓名",
+					"hint": "隐藏选中指示物的健康状况和姓名。"
+				}
 			},
-			"onlyNPCs": {
-				"name": "仅NPC",
-				"hint": "仅显示 NPC 的健康评估，而不显示玩家的。此设定仅影响玩家。"
+			"isNow": "{name}现在是{desc}了。",
+			"unknownEntity": {
+				"name": "不明实体",
+				"hint": "设置隐藏角色如何呼出。{warning}",
+				"default": "不明实体",
+				"warningCUB": "如果你正在使用CUB的隐藏名称功能，将优先使用CUB功能。",
+				"warningPF2eWorkbench": "如果你正在使用PF2e Workbench的名称神秘化功能，将优先使用Workbench功能。"
 			},
-			"onlyPCs": {
-				"name": "仅玩家",
-				"hint": "仅显示 PC 的健康评估，而不显示 NPC 的。此设定仅影响玩家。"
+			"alwaysShow": {
+				"name": "总是显示健康状况",
+				"hint": "总是显示健康状况，而不是仅在鼠标悬浮时显示。"
+			},
+			"combatOnly": {
+				"name": "仅在战斗中显示",
+				"hint": "仅在战斗中显示健康状况。"
+			},
+			"showDescription": {
+				"name": "显示健康状况：用户",
+				"hint": "下列用户可以看到健康状况。",
+				"choices": {
+					"all": "所有",
+					"GM": "GM",
+					"Players": "玩家",
+					"NPC": "NPC",
+					"PC": "PC"
+				}
+			},
+			"showDescriptionTokenType": {
+				"name": "显示健康状况：指示物",
+				"hint": "显示下列指示物的健康状况。"
 			},
 			"stateNames": {
 				"name": "阶段",
-				"hint": "对玩家显示的一组描述，按照生命值从低到高排列。\n描述的数量没有限制，模组会按照数量调整显示的健康百分比。\n如果需要一个描述覆盖比其他描述更多的健康范围，则将它复制几遍即可。",
+				"hint": "A、对玩家显示的一组描述，按照生命值从低到高排列。\n描述的数量没有限制，模组会按照数量调整显示的健康百分比。\n如果需要一个描述覆盖比其他描述更多的健康范围，则将它复制几遍即可。",
 				"default": "昏迷, 濒死, 重伤, 受伤, 轻伤, 无伤"
 			},
 			"deathState": {
 				"name": "死亡状态显示",
-				"hint": "当指示物被特定状态标记时将其显示为死亡。该功能独立于宏工作。"
+				"hint": "当在战斗被标记为战败时，为指示物按{setting}的设置显示。",
+				"hint1": "当指示物受到{setting2}中指定的状态图标影响时，显示{setting}中设定的指示物。",
+				"hint2": "当指示物在战斗中被击败时，显示{setting}中设定的指示物。"
 			},
 			"deathStateName": {
 				"name": "死亡状态名称",
-				"hint": "指示物死亡时显示给玩家们的描述。合集包中有一个宏用来一或多个指示物标记为死亡。",
+				"hint": "当指示物死亡时显示的描述文本。",
 				"default": "死亡"
 			},
 			"deathMarker": {
 				"name": "死亡标记",
-				"hint": "标记死亡指示物的状态图标路径"
+				"hint": "标记死亡指示物的状态图标路径。"
 			},
 			"NPCsJustDie": {
 				"name": "NPC 立刻死亡",
-				"hint": "开启这个选项，描述列表中最差的一项便不会为NPC们显示， 他们会被显示为死亡。"
+				"hint": "未被玩家选择的角色的指示物的健康状况的最后一个阶段会被{setting}替代。有关“玩家选择的角色”的更多信息，请阅读FVTT知识库里的“用户和权限”一文中的用户配置部分。"
 			},
 			"perfectionism": {
-				"name": "完美主义",
-				"hint": "仅在目标的健康状态全满时显示最佳的描述-完全无伤。"
+				"name": "显示最佳阶段",
+				"hint": "决定何时显示最佳阶段。最佳阶段即是{setting1}中最后一项。若用户禁用了{setting2}：如果希望所有阶段颜色相同，不要使用第一个选项。",
+				"choices": {
+					"0": "当目标受伤时显示",
+					"1": "当目标未受伤时显示",
+					"2": "当目标未受伤时不显示"
+				}
+			},
+			"outputChat": {
+				"name": "将健康状况发到聊天栏",
+				"hint": "将任何健康状况的变化发到聊天栏。指示物配置为“隐藏名称”的角色将显示{setting}设置的描述。"
 			},
 			"addTemp": {
 				"name": "添加临时生命值",
@@ -49,16 +119,28 @@
 			},
 			"breakOnZeroMaxHP": {
 				"name": "在最大 HP 为 0 的指示物上隐藏",
-				"hint": "对物品指示物很有用"
+				"hint": "对物品指示物很有用。"
 			},
 			"menuSettings": {
+				"behaviorSettings": {
+					"name": "行为设置",
+					"plural": "行为设置"
+				},
+				"deathSettings": {
+					"name": "死亡设置",
+					"plural": "死亡设置"
+				},
+				"styleSettings": {
+					"name": "风格设置",
+					"plural": "风格设置"
+				},
 				"fontSize": {
 					"name": "字体大小",
 					"hint": "接受任何可用的CSS字体大小属性"
 				},
 				"useColor": {
 					"name": "使用颜色",
-					"hint": "这并不会影响设置窗口，但禁用该项会让描述以黑白显示。"
+					"hint": "健康状况黑白显示。"
 				},
 				"smoothGradient": {
 					"name": "平滑梯度",
@@ -73,37 +155,124 @@
 					"brighten": "亮色"
 				},
 				"position": {
-					"name": "位置",
+					"name": "高度",
 					"top": "顶部",
 					"middle": "中部",
-					"bottom": "底部"
+					"bottom": "底部",
+					"hint": "设置与指示物框的相对高度。负值更高，正值更低。"
 				},
 				"positionAdjustment": {
-					"name": "位置调整",
-					"hint": "与方框的相对位置。数字用以调整相对位置。 正数会使其下移，负数上升。默认值 -1 意为 “初始位置上一行”"
+					"name": "边缘调整",
+					"hint": "调整文本边缘。正值更高，负值更低。"
+				},
+				"scaleToZoom": {
+					"name": "调整健康状况缩放",
+					"hint": "根据缩放调整健康状况文字尺寸。"
+				},
+				"position2": {
+					"name": "位置",
+					"hint": "相对于指示物框架的位置。"
 				}
+			},
+			"estimates": {
+				"worst": "最糟的",
+				"best": "最好的",
+				"states": {
+					"0": "失去意识",
+					"2": "重伤",
+					"4": "轻伤",
+					"3": "受伤",
+					"5": "无伤",
+					"1": "濒死"
+				},
+				"vehicles": {
+					"1": "冒火",
+					"2": "冒烟",
+					"0": "毁坏",
+					"3": "损坏",
+					"4": "划伤",
+					"5": "完好"
+				},
+				"thresholds": {
+					"0": "毁坏",
+					"1": "破损",
+					"2": "功能完好"
+				},
+				"plural": "预估值"
+			},
+			"estimationSettings": {
+				"AddEstimate": "增加健康状况",
+				"addTable": "增加种类",
+				"default": "默认",
+				"deleteTable": "删除种类",
+				"estimate": "健康状况",
+				"jsRule": "JS规则",
+				"prioDecrease": "降低优先级",
+				"prioIncrease": "提高优先级",
+				"ignoreColor": {
+					"name": "忽略颜色",
+					"hint": "忽略这个种类表的颜色并为指示物使用下一个合法的种类表的颜色。这意味着状态会比健康状况有更高的优先级，但是仍使用健康状况的颜色。"
+				},
+				"title": "健康状况设置"
+			}
+		},
+		"cyberpunk-red-core": {
+			"useSystemStates": {
+				"name": "使用受损阶段",
+				"hint": "忽略阶段设置并使用Cyberpunk RED核心的受损状态。"
+			},
+			"unorganics": {
+				"3": "可运转",
+				"2": "故障",
+				"0": "报废",
+				"4": "未受损"
 			}
 		},
 		"dnd5e": {
 			"vehicleNames": {
-				"hint": "禁用“使用载具阈值”时显示的描述",
+				"hint": "载具健康状况描述",
 				"default": "毁坏, 破损, 受创, 刮擦, 完好"
 			}
 		},
 		"PF1": {
+			"addNonlethal": {
+				"name": "使用非致命伤害",
+				"hint": "启用时，非致命伤害将从当前生命值估算中扣除。"
+			},
 			"showExtra": {
-				"name": "瘫痪和濒死",
-				"hint": "显示“瘫痪”和“濒死”描述"
+				"name": "显示{condition1} & {condition2}",
+				"hint": "满足先决条件时显示{condition1}和{condition2}的描述。"
 			},
 			"disabledName": {
-				"name": "瘫痪",
-				"hint": "当指示物的 HP 正好为 0 时显示的描述",
+				"name": "瘫痪阶段",
+				"hint": "一个指示物刚好0生命值且受到的非致命伤害等于它当前生命值、或处于瘫痪状态时，进行显示。",
 				"default": "瘫痪"
 			},
 			"dyingName": {
-				"name": "濒死",
-				"hint": "当指示物的 HP 低于 0 时显示的描述",
-				"default": "濒死"
+				"name": "失去意识",
+				"hint": "当指示物受到高于 HP 的非致命伤害时显示此描述",
+				"default": "失去意识"
+			}
+		},
+		"PF2E": {
+			"staminaToHp": {
+				"name": "显示耐力值",
+				"hint": "将耐力值加到健康状况内。"
+			},
+			"useThreshold": {
+				"hint": "使用三阶段估算载具生命值。若开启，建议到{setting}中将阶段更改为三段。"
+			},
+			"hideHazardHP": {
+				"name": "隐藏危害的生命值估算",
+				"hint": "隐藏危害的生命值估算。"
+			},
+			"hideVehicleHP": {
+				"name": "隐藏载具估算",
+				"hint": "隐藏载具的生命值估算。"
+			},
+			"workbenchMystifier": {
+				"name": "(实验性) PF2e Workbench神秘化支持",
+				"hint": "如果启用了NPC神秘化功能，聊天输出将忽略{setting}的设置名称，若指示物名称与角色原始指示物名称不同，则改为使用指示物名称。"
 			}
 		},
 		"numenera": {
@@ -115,7 +284,7 @@
 		"starfinder": {
 			"useThreshold": {
 				"name": "使用载具阈值",
-				"hint": "启用该选项后，将会使用“阈值阶段”中的文本来分别描述在阈值之上、之下和 0 HP 时的载具状态。"
+				"hint": "请设置计算载具健康时使用的健康预估表。"
 			},
 			"thresholdNames": {
 				"name": "阈值阶段",
@@ -124,7 +293,7 @@
 			},
 			"vehicleNames": {
 				"name": "载具阶段",
-				"hint": "总是为飞船显示的描述，如果“使用载具阈值”被禁用则也为载具显示。",
+				"hint": "飞船和载具的描述",
 				"default": "毁坏, 着火, 冒烟, 受创, 刮擦, 完好"
 			},
 			"addStamina": {
@@ -135,9 +304,70 @@
 		"worldbuilding": {
 			"simpleRule": {
 				"name": "评估规则",
-				"hint": "用来计算指示物生命值分数的 JS 公式。谨慎更改。 默认为简单的递减生命值，例如：初始生命值为 10/10，受到伤害后降为 0/10。",
-				"default": "const hp = token.actor.data.data.health; return hp.value / hp.max"
+				"hint": "用来计算指示物生命值分数的 JS 公式。谨慎更改。 默认为简单的递减生命值，例如：初始生命值为 10/10，受到伤害后降为 0/10。"
 			}
+		},
+		"od6s": {
+			"vehicleNames": {
+				"name": "载具",
+				"hint": "为飞船和载具显示的描述",
+				"default": "摧毁, 严重受损, 重度受损, 轻微受损, 擦伤, 无伤"
+			},
+			"thresholdNames": {
+				"name": "Threshold Stages",
+				"hint": "The amount of stages is limited to 3, arranged from worst to best condition",
+				"default": "Wrecked, Broken, Fully Functional"
+			}
+		},
+		"swade": {
+			"vehicleNames": {
+				"hint": "载具的描述",
+				"default": "毁坏，烧毁，冒烟，散架，擦伤，完好",
+				"name": "载具"
+			},
+			"showIncap": {
+				"name": "{incap}状态效果",
+				"hint": "带有{incap}状态效果的指示物将被显示为{incap}而非实时的健康状况。这对载具或已死亡的指示物无效。"
+			},
+			"defaultWildCardMaxWounds": {
+				"name": "Wild Card默认最大受伤值",
+				"hint": "此选项用于计算被标记为Wild Card的NPC的默认最大受伤值。"
+			}
+		},
+		"custom-system-builder": {
+			"tempHP": {
+				"hint": "如果系统没有此功能、或你不希望它出现在生命预测中时，此项留空。",
+				"name": "临时生命值数据路径"
+			},
+			"FractionHP": {
+				"hint": "这大概为{dataPath1}或{dataPath2}。"
+			}
+		},
+		"cyphersystem": {
+			"impaired": {
+				"name": "受伤的PC的健康状况等级",
+				"hint": "设置追踪死亡时为受伤PC显示的最大HP水平（当前 / 最大，小数点从0.0 - 1.0）"
+			},
+			"debilitated": {
+				"name": "身体虚弱的PC的健康状况等级",
+				"hint": "设置追踪死亡时为疲惫（Debilitated）PC显示的最大HP水平（当前 / 最大，小数点从0.0 - 1.0）"
+			}
+		},
+		"notifications": {
+			"terms": {
+				"shown": {
+					"singular": "显示",
+					"plural": "显示"
+				},
+				"hidden": {
+					"singular": "隐藏",
+					"plural": "隐藏"
+				}
+			},
+			"toggleEstimate": "{tokenName}的健康状况正对玩家{term}。",
+			"toggleName": "{tokenName}的姓名正对玩家{term}。",
+			"toggleEstimateName": "{tokenName}的健康状况和姓名正对玩家{term}。",
+			"invalidFontSize": "您的字体大小设置已被重置。请查看样式设置进行更改。上一值：{fontSize}"
 		}
 	}
 }

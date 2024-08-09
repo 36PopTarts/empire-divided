@@ -8,20 +8,21 @@ window.Azzu = window.Azzu || {};
  * May only be called after the foundry game.settings object is fully initialized
  * @returns {Promise<GuiOptions>}
  */
-export default async function setupSettings(foundryGame) {
+export default async function setupSettings(foundryGame, localize) {
 	const settings = {};
-	registerPingsSettings(foundryGame, settings);
+	registerPingsSettings(foundryGame, settings, localize);
 	const migrationResult = await migrate(foundryGame);
 	if (migrationResult === MigrationResult.FAILED) {
 		alert('The settings of the "Pings" module could not be updated after you or your GM installed a new ' +
 			'version. If you encounter any issues or this message keeps showing up, please disable the module ' +
 			'and contact me on Discord (Azzurite#2004) or file an issue at ' +
-			'https://gitlab.com/foundry-azzurite/pings/issues');
-	} else if (typeof migrationResult === 'string' && migrationResult !== '1.2.2') {
+			'https://gitlab.com/foundry-azzurite/pings/issues. An error description should be in your browser ' +
+			'console, please include it when filing the issue.');
+	} else if (typeof migrationResult === 'string') {
 		ChatMessage.create({
 			speaker: {alias: 'Pings Module Notification'},
-			content: `You have updated the Pings module to at least v${migrationResult}. The module settings ` +
-				'structure has changed, so the settings were successfully migrated. You may have to reload this ' +
+			content: `You have updated the Pings module to v${migrationResult}. The module settings ` +
+				'structure has changed, so the settings were successfully migrated. You may have to reload the ' +
 				'page for the settings menu to work correctly.',
 			whisper: [game.user.id],
 			timestamp: Date.now()
@@ -31,12 +32,7 @@ export default async function setupSettings(foundryGame) {
 }
 
 
-function registerPingsSettings(foundryGame, settings) {
-
-	function localize(key) {
-		return foundryGame.i18n.localize(Constants.PINGS + '.' + key);
-	}
-
+function registerPingsSettings(foundryGame, settings, localize) {
 
 	function register(settings, key, data) {
 		const dataWithDefaults = {

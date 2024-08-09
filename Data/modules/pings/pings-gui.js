@@ -1,4 +1,5 @@
 import {MouseButtonBinding, KeyBinding} from '../settings-extender/settings-extender.js';
+import Constants from './constants.js';
 
 function isWithinPx(p1, p2, px) {
 	return Math.abs(p1.x - p2.x) <= px && Math.abs(p1.y - p2.y) <= px;
@@ -7,11 +8,11 @@ function isWithinPx(p1, p2, px) {
 const DEFAULT_PING_COLOR = 0xAAAAAA;
 
 function getUserColor(user) {
-	return user.color.replace("#", "0x") || DEFAULT_PING_COLOR;
+	return user.color;
 }
 
 function getMousePos(foundryCanvas) {
-	const mouse = foundryCanvas.app.renderer.plugins.interaction.mouse.global;
+	const mouse = foundryCanvas.app.renderer.events.pointer.global;
 	const t = foundryCanvas.stage.worldTransform;
 
 	function calcCoord(axis) {
@@ -61,11 +62,12 @@ function getMousePos(foundryCanvas) {
  * @param foundryGame
  * @param foundryHooks
  * @param {GuiOptions} options
+ * @param {function(string)} localize translate using foundry's i18n facilities
  * @param {PingCreateFunction} createPing
  * @param {function(UserPingedCallbackArg)} userPingedCallback
  * @returns {{displayUserPing: displayUserPing, displayTextPing: displayTextPing, removePing: removePing}}
  */
-export default function createPingsGui(window, foundryCanvas, foundryGame, foundryHooks, options, createPing, userPingedCallback = () => {}) {
+export default function createPingsGui(window, foundryCanvas, foundryGame, foundryHooks, options, localize, createPing, userPingedCallback = () => {}) {
 	let mouseOnCanvas = false;
 	function onMouseOverStage() {
 		mouseOnCanvas = true;
@@ -134,11 +136,18 @@ export default function createPingsGui(window, foundryCanvas, foundryGame, found
 	}
 
 	function displayPing(ping, moveCanvas = false) {
+		const pos = {x: ping.x, y: ping.y};
 		if (moveCanvas) {
-			foundryCanvas.animatePan({x: ping.x, y: ping.y});
+			foundryCanvas.animatePan(pos);
+		} else if (foundryCanvas.isOffscreen(pos)) {
+			foundryCanvas.controls.drawOffscreenPing(pos, { 
+				style: "arrow",
+				color: ping.color,
+				duration: ping.options.duration * 1000
+			});
 		}
 
-		foundryCanvas.stage.addChild(ping);
+		foundryCanvas.controls.cursors.addChild(ping);
 	}
 
 	/**
@@ -191,6 +200,26 @@ export default function createPingsGui(window, foundryCanvas, foundryGame, found
 		foundryCanvas.stage.children.filter((ping) => ping.id === id).forEach((ping) => ping.destroy());
 	}
 
+	function disableFoundryPings() {
+		libWrapper.register(Constants.PINGS, 'ControlsLayer.prototype._onLongPress', () => {}, 'OVERRIDE');
+		libWrapper.register(Constants.PINGS, 'KeybindingsConfig.prototype._addMouseControlsReference', (wrapped, ...args) => {
+			wrapped(...args);
+			const categories = args[0];
+			const coreMouseCategoryData = categories.get("core-mouse");
+			coreMouseCategoryData.actions
+				.filter(action => action.id.startsWith(`canvas-ping`))
+				.forEach(action => action.bindings = [{
+					display: localize(`settings.handledByPings`),
+					cssClasses: "uneditable",
+					isEditable: false,
+					hasConflicts: false,
+					isFirst: false
+				}]);
+			console.log(coreMouseCategoryData)
+		}, 'MIXED');
+	}
+	
+	disableFoundryPings();
 	registerListeners();
 	// when canvas is drawn again, the listeners to the stage get cleared, so register them again
 	foundryHooks.on('canvasReady', () => registerStageListeners());

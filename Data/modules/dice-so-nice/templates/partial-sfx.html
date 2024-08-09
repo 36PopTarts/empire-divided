@@ -1,12 +1,12 @@
 <li class="sfx flexrow sfx-line">
     <div class="sfx-data sfx-flex-2">
         <select data-sfx-dicetype name="sfxLine[{{id}}][diceType]">
-            {{selectOptions triggerTypeList selected=diceType nameAttr="id" labelAttr="name"}}
+            {{selectOptions triggerTypeList selected=diceType valueAttr="id" labelAttr="name"}}
         </select>
     </div>
     <div class="sfx-data sfx-flex-5">
         <select data-sfx-result data-sfx-result-dicetype="{{diceType}}" name="sfxLine[{{id}}][onResult]" multiple>
-            {{selectOptions possibleResultList selected=onResult nameAttr="id" labelAttr="id"}}
+            {{selectOptions possibleResultList selected=onResult valueAttr="id" labelAttr="id"}}
         </select>
     </div>
     <div class="sfx-data sfx-flex-3">

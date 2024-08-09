@@ -1,5 +1,5 @@
 import { forceConstrain } from "../lockview.js";
-import { getEnable, updateFlag, compatibleCore } from "./misc.js";
+import { getEnable, updateFlag } from "./misc.js";
 import { _Override, pan_Override, pan_OverrideHigherRes, onDragCanvasPan_Override, animatePan_Override } from "./overrides.js";
 import { sendUpdate } from "./socket.js";
 
@@ -8,6 +8,7 @@ export let lockZoom = false;
 export let boundingBox = false;
 export let forceInit = false;
 export let autoScale = 0;
+export let rotation = 0;
 export let excludeSidebar = false;
 export let blackenSidebar = false;
 
@@ -41,6 +42,7 @@ export function getFlags(){
     boundingBox = canvas.scene.getFlag('LockView', 'boundingBox');
     forceInit = canvas.scene.getFlag('LockView', 'forceInit');
     autoScale = canvas.scene.getFlag('LockView', 'autoScale');
+    rotation = canvas.scene.getFlag('LockView', 'rotation');
     excludeSidebar = canvas.scene.getFlag('LockView', 'excludeSidebar');
     blackenSidebar = canvas.scene.getFlag('LockView', 'blackenSidebar');
   }

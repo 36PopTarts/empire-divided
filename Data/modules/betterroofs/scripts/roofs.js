@@ -4,86 +4,58 @@
 
 class betterRoofs {
     constructor() {
-      this.fogRoofContainer
-      this.foregroundSightMaskContainers = {}
-      this.roofs
-      this.isLevels = game.modules.get('levels')?.active
-      this.DEBUG = false
-      this.isV9 = game.version >= 9
-      this.isLightspeed = this.isV9 || game.modules.get("lichtgeschwindigkeit")?.active
+        this.fogRoofContainer;
+        this.roofs;
+        this.isLevels = game.modules.get("levels")?.active;
+        this.DEBUG = false;
+        this.initializeRoofsDebounced = foundry.utils.debounce(this.initializeRoofs.bind(this), 1000);
     }
-  
-/**********************************************
- * INITIALIZE THE ROOFS FOR THE FIRST TIME *
- **********************************************/
-  
+
+    /**********************************************
+     * INITIALIZE THE ROOFS FOR THE FIRST TIME *
+     **********************************************/
+
     static get() {
         betterRoofs._instance = new betterRoofs();
         return betterRoofs._instance;
     }
 
-/************************************************************
- * INITIALIZE OR RESET THE PIXI CONTAINERS USED FOR MASKING *
- ************************************************************/
+    /************************************************************
+     * INITIALIZE OR RESET THE PIXI CONTAINERS USED FOR MASKING *
+     ************************************************************/
 
-    initializePIXIcontainers(){
+    initializePIXIcontainers() {
         this.fogRoofContainer = new PIXI.Container();
         this.fogRoofContainer.name = "fogRoofContainer";
-        this.fogRoofContainer.spriteIndex = {}
-        const oldContainer = canvas.sight.children.find(c => c.name == "fogRoofContainer")
-        if(oldContainer) canvas.sight.removeChild(oldContainer)
-        canvas.sight.addChild(this.fogRoofContainer);
-        this.roofs.forEach((t) => {
-            if(this.foregroundSightMaskContainers[t.id])t.removeChild(this.foregroundSightMaskContainers[t.id])
-            t.mask = null
-          })
-        this.foregroundSightMaskContainers = {}
-        this.roofs.forEach((t) => {
-            if(t.document.getFlag(
-              "betterroofs",
-              "brMode"
-            ) == 3){
-              t.removeChild(this.foregroundSightMaskContainers[t.id])
-              this.foregroundSightMaskContainers[t.id] = new PIXI.Container();
-              this.foregroundSightMaskContainers[t.id].name = t.id;
-              this.foregroundSightMaskContainers[t.id].x -= t.x
-              this.foregroundSightMaskContainers[t.id].y -= t.y
-              t.addChild(this.foregroundSightMaskContainers[t.id]);
+        this.fogRoofContainer.spriteIndex = {};
+        const oldContainer = canvas.masks.vision.children.find((c) => c.name == "fogRoofContainer");
+        if (oldContainer) canvas.masks.vision.removeChild(oldContainer);
+        canvas.masks.vision.addChild(this.fogRoofContainer);
+    }
+
+    /******************************************************************************************
+     * BUILD OR REFRESH THE ROOF ARRAY AND ASSIGN A BUILDING POLYGON TO EACH BETTER ROOF TILE *
+     ******************************************************************************************/
+
+    initializeRoofs() {
+        if (game.Levels3DPreview?._active && game.Levels3DPreview?.object3dSight) {
+            this.roofs = [];
+            return;
+        }
+        this.roofs = [];
+        if (!canvas.tiles?.placeables) return;
+        canvas.tiles.placeables.forEach((t) => {
+            if (t.document.getFlag("betterroofs", "brMode") && t.document.getFlag("betterroofs", "brMode") != 0) {
+                this.roofs.push(t);
             }
-            
-        })
-        
-        canvas.sight.refresh()
+        });
+
+        console.log("Roofs initialized");
     }
 
-/******************************************************************************************
- * BUILD OR REFRESH THE ROOF ARRAY AND ASSIGN A BUILDING POLYGON TO EACH BETTER ROOF TILE *
- ******************************************************************************************/
-
-    initializeRoofs(){
-        this.roofs = []
-        canvas.foreground.placeables.forEach((t) => {
-            if(t.document.getFlag("betterroofs","brMode") && t.document.getFlag("betterroofs","brMode") != 0){
-              this.roofs.push(t)
-              t.roomPoly = _betterRoofsHelpers.getRoomPoly(t,false)
-            } 
-        })
-
-        
-
-
+    static debouncedInitializeRoofs() {
+        _betterRoofs.initializeRoofsDebounced();
     }
-
-    static debouncedInitializeRoofs(){
-      if(_betterRoofs?.initializing) return
-      _betterRoofs.initializing = true
-      setTimeout(() => {
-        _betterRoofs.initializing = false
-        _betterRoofs.initializeRoofs();
-        _betterRoofs.initializePIXIcontainers();
-      },1000)
-    }
-
 }
 
 /******************************************************************************
@@ -91,22 +63,13 @@ class betterRoofs {
  ******************************************************************************/
 
 Hooks.on("updateTile", () => {
-  betterRoofs.debouncedInitializeRoofs()
+    betterRoofs.debouncedInitializeRoofs();
 });
 
 Hooks.on("createTile", () => {
-  betterRoofs.debouncedInitializeRoofs()
+    betterRoofs.debouncedInitializeRoofs();
 });
 
 Hooks.on("deleteTile", () => {
-  betterRoofs.debouncedInitializeRoofs()
+    betterRoofs.debouncedInitializeRoofs();
 });
-
-Hooks.on("deleteWall", () => {
-  betterRoofs.debouncedInitializeRoofs()
-})
-
-Hooks.on("updateWall", (wall,updates) => {
-  if("ds" in updates) return
-  betterRoofs.debouncedInitializeRoofs()
-})

@@ -1,8 +1,8 @@
 {
-    "name": "betterroofs",
+    "id": "betterroofs",
     "title": "Better Roofs",
     "description": "Vision enhancements for roofs",
-    "version": "1.4.3",
+    "version": "2.0.4",
     "authors": [
         {
             "name": "theripper93",
@@ -38,20 +38,34 @@
         }
     ],
     "scripts": [
-        "./scripts/main.js",
-        "./scripts/roofs.js",
-        "./scripts/helpers.js",
-        "./scripts/config.js",
-        "./scripts/occlusionlink.js"
+        "scripts/main.js",
+        "scripts/roofs.js",
+        "scripts/helpers.js",
+        "scripts/config.js",
+        "scripts/occlusionlink.js"
     ],
-    "minimumCoreVersion": "9",
-    "compatibleCoreVersion": "9",
     "url": "https://github.com/theripper93/Better-Roofs",
     "manifest": "https://github.com/theripper93/Better-Roofs/releases/latest/download/module.json",
-    "download": "https://github.com/theripper93/Better-Roofs/releases/download/1.4.3/module.zip",
-    "dependencies": [
-        {
-            "name": "lib-wrapper"
-        }
-    ]
+    "download": "https://github.com/theripper93/Better-Roofs/releases/download/2.0.4/module.zip",
+    "relationships": {
+        "requires": [
+            {
+                "id": "lib-wrapper",
+                "type": "module",
+                "compatibility": {}
+            }
+        ],
+        "recommends": [
+            {
+                "id": "theripper-premium-hub",
+                "type": "module",
+                "reason": "TheRipper93's Module Hub will alert you of critical updates and give you easy access to documentation in the configure settings screen",
+                "compatibility": {}
+            }
+        ]
+    },
+    "compatibility": {
+        "minimum": "12",
+        "verified": "12"
+    }
 }

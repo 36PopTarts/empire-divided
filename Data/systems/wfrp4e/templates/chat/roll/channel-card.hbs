@@ -1,0 +1,16 @@
+<div class="wfrp4e chat-card" data-actor-id="{{actorId}}" data-hide = {{hideData}}s>
+  {{> systems/wfrp4e/templates/chat/roll/test-card.hbs}}
+
+  {{#if test.result.overchannelling}}
+    <div class="card-content">
+    {{localize "Overchannelling"}}: <span class="overchannelling-count"><b>{{test.result.overchannelling}}</b></span> 
+    </div>
+  {{/if}}
+    <div class="card-content hide-spellcn">
+      {{#if (settings "useWoMChannelling")}}
+      {{localize "CHAT.ChannelledSL"}}: <span class="spellcn-count"><b>{{test.result.channelledDisplay}}</b></span> 
+      {{else}}
+      {{localize "SHEET.CN"}}: <span class="spellcn-count"><b>{{test.result.channelledDisplay}}</b></span> 
+      {{/if}}
+    </div>
+</div>

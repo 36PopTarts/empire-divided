@@ -1,0 +1,10 @@
+<div class="form-group custom-select">
+  <label>{{localize "Characteristic"}}</label>
+  <select class="change-characteristic">
+    {{#select data.characteristic}}
+      {{#each (config "characteristics") as |label char|}}
+        <option value="{{char}}">{{label}}</option>
+      {{/each}}
+    {{/select}}
+  </select>
+</div>

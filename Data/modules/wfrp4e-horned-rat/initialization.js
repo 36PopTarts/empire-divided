@@ -52,7 +52,7 @@ class WFRP4eHornedRatInitWrapper extends FormApplication {
 
 
 
-Hooks.on("setup", () => {
+Hooks.on("init", () => {
 
 
     let config = {
@@ -102,7 +102,7 @@ Hooks.on("setup", () => {
 
         symptomEffects : {
             "organFailure": {
-                label: game.i18n.localize("WFRP4E.Symptom.OrganFailure"),
+                name: game.i18n.localize("WFRP4E.Symptom.OrganFailure"),
                 icon: "modules/wfrp4e-core/icons/diseases/disease.png",
                 transfer: true,
                 flags: {
@@ -121,55 +121,153 @@ Hooks.on("setup", () => {
 
         loreEffects: {
             plague: {
-                label: "Lore of Plague",
+                name: "Lore of Plague",
                 icon: "modules/wfrp4e-horned-rat/assets/icons/plague.png",
                 transfer: true,
-                flags: {
+                flags : {
                     wfrp4e: {
-                        "effectApplication": "apply",
-                        "effectTrigger": "prefillDialog",
-                        "lore": true,
-                        "script": `args.prefillModifiers.modifier -= 20`
+                        applicationData : {
+                            documentType : "Item"
+                        },
+                        scriptData : [
+                            {
+                                trigger : "rollCastTest",
+                                label : "Apply Lore Effect",
+                                script : `
+                                if (args.test.result.castOutcome == "success" && !this.actor.statuses.has("plague"))
+                                {
+                                    let roll = await new Roll("1d10").roll();
+                                    roll.toMessage(this.script.getChatData());
+                                    this.script.scriptNotification("Lore effect added for " + roll.total + " rounds.");
+                                    this.actor.applyEffect({
+                                        effectData : [
+                                            {
+                                                name : "Lore of Plague",
+                                                duration : {
+                                                    rounds : roll.total
+                                                },
+                                                icon: this.item.img,
+                                                statuses : ["plague"],
+                                                flags : {
+                                                    wfrp4e : {
+                                                        scriptData : [
+                                                            {
+                                                                trigger : "addItems",
+                                                                label : "Add Distracting",
+                                                                script : 'let item = await fromUuid("Compendium.wfrp4e-core.items.Item.MVI0lXcg6vvtooAF"); this.actor.createEmbeddedDocuments("Item", [item], {fromEffect : this.effect.id})',
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    })
+                                }
+                                `
+                            }
+                        ]
                     }
                 }
             },
             stealth: {
-                label: "Lore of Stealth",
+                name: "Lore of Stealth",
                 icon: "modules/wfrp4e-horned-rat/assets/icons/stealth.png",
-                transfer: true,
-                flags: {
+                flags : {
                     wfrp4e: {
-                        "effectApplication": "apply",
-                        "effectTrigger": "prefillDialog",
-                        "lore": true,
-                        "script": 
-                        `
-                        if (args.type == "skill" &&  args.item.name.includes("Stealth"))
-                        {
-                        let sl = this.actor.characteristics.ag.bonus
-                        args.prefillModifiers.slBonus += sl;
-                        }
-                        `
+                        applicationData : {
+                            documentType : "Item"
+                        },
+                        scriptData : [
+                            {
+                                trigger : "rollCastTest",
+                                label : "Apply Lore Effect",
+                                script : `
+                                if (args.test.result.castOutcome == "success" && !this.actor.statuses.has("stealth"))
+                                {
+                                    let roll = await new Roll("1d10").roll();
+                                    roll.toMessage(this.script.getChatData());
+                                    this.script.scriptNotification("Lore effect added for " + roll.total + " rounds.");
+                                    this.actor.applyEffect({
+                                        effectData : [
+                                            {
+                                                name : "Lore of Stealth",
+                                                duration : {
+                                                    rounds : roll.total
+                                                },
+                                                icon: this.item.img,
+                                                statuses : ["stealth"],
+                                                flags : {
+                                                    wfrp4e : {
+                                                        scriptData : [
+                                                            {
+                                                                trigger : "addItems",
+                                                                label : "Add Stealthy",
+                                                                script : 'let item = await fromUuid("Compendium.wfrp4e-core.items.Item.OzwDT6kzoLYeeR2d"); this.actor.createEmbeddedDocuments("Item", [item], {fromEffect : this.effect.id})',
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    })
+                                }
+                                `
+                            }
+                        ]
                     }
                 }
             },
             ruin: {
-                label: "Lore of Ruin",
+                name: "Lore of Ruin",
                 icon: "modules/wfrp4e-horned-rat/assets/icons/ruin.png",
-                transfer: true,
                 flags: {
                     wfrp4e: {
-                        "effectApplication": "apply",
-                        "effectTrigger": "prefillDialog",
-                        "lore": true,
-                        "script": 
-                        `
-                        let characteristics = ["ag", "i"]
-                        if ((args.type == "characteristic" && characteristics.includes(args.item)) || (args.type == "skill" && characteristics.includes(args.item.characteristic.key))) 
-                        {
-                            args.prefillModifiers.slBonus += 1;
-                        }
-                        `
+                        applicationData : {
+                            documentType : "Item"
+                        },
+                        scriptData : [
+                            {
+                                trigger : "rollCastTest",
+                                label : "Apply Lore Effect",
+                                script : `
+                                if (args.test.result.castOutcome == "success" && !this.actor.statuses.has("ruin"))
+                                {
+                                    let roll = await new Roll("1d10").roll();
+                                    roll.toMessage(this.script.getChatData());
+                                    this.script.scriptNotification("Lore effect added for " + roll.total + " rounds.");
+                                    this.actor.applyEffect({
+                                        effectData : [
+                                            {
+                                                name : "Lore of Ruin",
+                                                duration : {
+                                                    rounds : roll.total
+                                                },
+                                                icon: this.item.img,
+                                                statuses : ["ruin"],
+                                                flags : {
+                                                    wfrp4e : {
+                                                        scriptData : [
+                                                            {
+                                                                trigger : "dialog",
+                                                                label : "Initiative or Agility based Tests",
+                                                                script : "args.fields.slBonus++;",
+                                                                options : {
+                                                                    dialog : {
+                                                                        hideScript : 'return !["ag", "i"].includes(args.characteristic)',
+                                                                        activateScript : 'return ["ag", "i"].includes(args.characteristic)'
+                                                                    }
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    })
+                                }
+                                `
+                            }
+                        ]
                     }
                 }
             }
@@ -181,26 +279,44 @@ Hooks.on("setup", () => {
 
 Hooks.on("ready", () => {
     game.wfrp4e.config.systemEffects["besmirched"] = {
-        label: "Besmirched",
+        name: "Besmirched",
         icon: "icons/svg/acid.svg",
         flags: {
             wfrp4e: {
-                "effectTrigger": "takeDamage",
-                "effectApplication": "actor",
-                "script": `
-                if (args.totalWoundLoss > 0)
-                {
-                    args.actor.setupSkill("Endurance", {absolute : {difficulty: "average"}}).then(async test => {
-                        await test.roll()
-                        if (test.result.outcome == "failure")
-                        {
-                            let festering = await fromUuid("Compendium.wfrp4e-core.diseases.kKccDTGzWzSXCBOb")
-                            args.actor.createEmbeddedDocuments("Item", [festering.toObject()])
+                scriptData : [
+                    {
+                        trigger : "takeDamage",
+                        label : "Take Damage",
+                        script : `
+                        if (args.totalWoundLoss > 0)
+                            {
+                                let test = await this.actor.setupSkill("Endurance", {fields : {difficulty: "average"}, appendTitle : " - " + this.effect.name})
+                                await test.roll()
+                                if (test.failed)
+                                {
+                                    let festering = await fromUuid("Compendium.wfrp4e-core.items.kKccDTGzWzSXCBOb")
+                                    this.actor.createEmbeddedDocuments("Item", [festering.toObject()])
+                                }
+                            })
+                        }`
+                    },
+                    {
+                        trigger : "dialog",
+                        label : "Fellowship Tests",
+                        script : `args.fields.slBonus -= 2`,
+                        options : {
+                            dialog : {
+                                hideScript : `return args.characteristic != "fel"`,
+                                activateScript : `return args.characteristic == "fel"`
+                            }
                         }
-                    })
-                }
-
-                    `
+                    },
+                    {
+                        trigger : "prePrepareData",
+                        label : "Brass 1",
+                        script : `this.actor.system.details.status.modifier = -999`,
+                    }
+                ]
             }
         }
     }

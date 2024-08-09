@@ -15,7 +15,7 @@ exports.default = {
 const Assert = (value) => (0, assert_1.default)(value);
 exports.Assert = Assert;
 
-},{"assert":23}],2:[function(require,module,exports){
+},{"assert":27}],2:[function(require,module,exports){
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -97,7 +97,7 @@ const ToConsole = (str, col, bold) => {
 };
 exports.default = Logger;
 
-},{"../Globals":1,"color":35}],5:[function(require,module,exports){
+},{"../Globals":1,"color":39}],5:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -225,6 +225,9 @@ function getTypesForSheet() {
     if (game.system.id === 'sfrpg') {
         return ['npc', 'npc2'];
     }
+    else if (game.system.id === 'gurps') {
+        return ['character'];
+    }
     return ['npc'];
 }
 Hooks.once("init", async () => {
@@ -234,13 +237,6 @@ Hooks.once("init", async () => {
         types: getTypesForSheet(),
         makeDefault: false
     });
-    // if ((<Game>game).system.id === 'Sfrpg') {
-    // 	Actors.registerSheet("sfrpg", SfrpgMerchantSheet, {
-    // 		label: "Merchant NPC",
-    // 		types: ['npc2'],
-    // 		makeDefault: false
-    // 	});
-    // }
 });
 Hooks.once("setup", () => {
     const csvParser = require('csv-parse/lib/sync');
@@ -253,10 +249,9 @@ Hooks.once("setup", () => {
     });
     console.log(records);
     // @ts-ignore
-    socket.on('module.merchantsheetnpc', (packet) => {
-        var _a;
+    game.socket.on('module.merchantsheetnpc', (packet) => {
         // @ts-ignore
-        if (!((_a = game.user) === null || _a === void 0 ? void 0 : _a.isGM) || packet === undefined) {
+        if (!game.user?.isGM || packet === undefined) {
             return;
         }
         if (packet.type === PacketType_1.default.MERCHANT_CURRENCY) {
@@ -278,7 +273,7 @@ Hooks.once("ready", () => {
     Logger_1.default.Ok("Template module is now ready.");
 });
 
-},{"./PreloadTemplates":2,"./Utils/Logger":4,"./Utils/MerchantSettings":5,"./merchant/MerchantSheet":7,"./merchant/MerchantSheetNPCHelper":8,"./merchant/model/PacketType":14,"csv-parse/lib/sync":38}],7:[function(require,module,exports){
+},{"./PreloadTemplates":2,"./Utils/Logger":4,"./Utils/MerchantSettings":5,"./merchant/MerchantSheet":7,"./merchant/MerchantSheetNPCHelper":9,"./merchant/model/PacketType":17,"csv-parse/lib/sync":42}],7:[function(require,module,exports){
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -290,92 +285,14 @@ const MerchantSheetNPCHelper_1 = __importDefault(require("./MerchantSheetNPCHelp
 const MerchantSettings_1 = __importDefault(require("../Utils/MerchantSettings"));
 const QuantityChanger_1 = __importDefault(require("./model/QuantityChanger"));
 const GeneratorWindow_1 = require("./windows/GeneratorWindow");
+const MerchantSheetHandlebarHelpers_1 = __importDefault(require("./MerchantSheetHandlebarHelpers"));
 let currencyCalculator;
 let merchantSheetNPC = new MerchantSheetNPCHelper_1.default();
 const csvParser = require('csv-parse/lib/sync');
 class MerchantSheet extends ActorSheet {
     get template() {
         currencyCalculator = merchantSheetNPC.systemCurrencyCalculator();
-        let g = game;
-        Handlebars.registerHelper('equals', function (arg1, arg2, options) {
-            // @ts-ignore
-            return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
-        });
-        Handlebars.registerHelper('inputStyle', function (options) {
-            return currencyCalculator.inputStyle();
-        });
-        Handlebars.registerHelper('sectionStyle', function (options) {
-            return currencyCalculator.sectionStyle();
-        });
-        Handlebars.registerHelper('editorStyle', function (options) {
-            return currencyCalculator.editorStyle();
-        });
-        Handlebars.registerHelper('shouldItemBeVisible', function (item, quantity, isGM, options) {
-            return isGM || (merchantSheetNPC.isItemShown(item) && quantity > 0);
-        });
-        Handlebars.registerHelper('getItemQuantity', function (quantity, options) {
-            return currencyCalculator.getQuantity(quantity);
-        });
-        Handlebars.registerHelper('getItemWeight', function (itemData, options) {
-            return currencyCalculator.getWeight(itemData);
-        });
-        Handlebars.registerHelper('getPriceCurrency', function () {
-            return currencyCalculator.currency();
-        });
-        Handlebars.registerHelper('unequals', function (arg1, arg2, options) {
-            // @ts-ignore
-            return (arg1 != arg2) ? options.fn(this) : options.inverse(this);
-        });
-        Handlebars.registerHelper('isPermissionShown', function () {
-            return currencyCalculator.isPermissionShown();
-        });
-        Handlebars.registerHelper('itemSelected', function (key) {
-            let selectedKey = game.settings.get(Globals_1.default.ModuleName, "itemCompendium");
-            console.log(key, " - ", selectedKey);
-            if (key === selectedKey) {
-                return 'selected';
-            }
-            return '';
-        });
-        Handlebars.registerHelper('getTypeLocalized', function (key) {
-            return game.i18n.localize("MERCHANTNPC." + key);
-        });
-        Handlebars.registerHelper('merchantsheetprice', function (basePrice, modifier) {
-            if (modifier === 'undefined') {
-                // @ts-ignore
-                this.actor.setFlag(Globals_1.default.ModuleName, "priceModifier", 1.0);
-                modifier = 1.0;
-            }
-            // if (!stackModifier) await this.actor.setFlag(m oduleName, "stackModifier", 20);
-            return currencyCalculator.getPriceOutputWithModifier(basePrice, modifier);
-        });
-        Handlebars.registerHelper('merchantsheetstackweight', function (weight, qty, infinity) {
-            let showStackWeight = g.settings.get(Globals_1.default.ModuleName, "showStackWeight");
-            if (showStackWeight) {
-                let value = weight * qty;
-                if (qty === Number.MAX_VALUE || value > 1000000000 || infinity) {
-                    return "/-";
-                }
-                else {
-                    return `/${value.toLocaleString('en')}`;
-                }
-            }
-            else {
-                return "";
-            }
-        });
-        Handlebars.registerHelper('merchantsheetweight', function (weight) {
-            return (Math.round(weight * 1e5) / 1e5).toString();
-        });
-        Handlebars.registerHelper('isItemShow', function (item) {
-            return merchantSheetNPC.isItemShown(item);
-        });
-        Handlebars.registerHelper('itemInfinity', function (qty, infinity) {
-            return infinity || (qty === Number.MAX_VALUE);
-        });
-        Handlebars.registerHelper('merchantNotInfinity', function (infinity) {
-            return !infinity;
-        });
+        new MerchantSheetHandlebarHelpers_1.default().registerHelpers(currencyCalculator, merchantSheetNPC);
         return getSheetTemplateName();
     }
     static get defaultOptions() {
@@ -388,24 +305,16 @@ class MerchantSheet extends ActorSheet {
         return options;
     }
     getData(options) {
-        var _a;
         // @ts-ignore
         const sheetData = super.getData();
         if (!isActorMerchant(sheetData.actor)) {
             return;
         }
         currencyCalculator = merchantSheetNPC.systemCurrencyCalculator();
-        let g = game;
         // Prepare GM Settings
-        // @ts-ignore
         let merchant = this.prepareGMSettings(sheetData.actor);
         // Prepare isGM attribute in sheet Data
-        if ((_a = g.user) === null || _a === void 0 ? void 0 : _a.isGM) {
-            sheetData.isGM = true;
-        }
-        else {
-            sheetData.isGM = false;
-        }
+        sheetData.isGM = !!game.user?.isGM;
         sheetData.isPermissionShown = sheetData.isGM && currencyCalculator.isPermissionShown();
         sheetData.limitedCurrency = this.actor.getFlag(Globals_1.default.ModuleName, "limitedCurrency");
         let priceModifier = this.actor.getFlag(Globals_1.default.ModuleName, "priceModifier");
@@ -413,24 +322,22 @@ class MerchantSheet extends ActorSheet {
         sheetData.isService = this.actor.getFlag(Globals_1.default.ModuleName, "service");
         sheetData.isBuyStack = !this.actor.getFlag(Globals_1.default.ModuleName, "hideBuyStack");
         let stackModifier = this.actor.getFlag(Globals_1.default.ModuleName, "stackModifier");
-        sheetData.totalItems = this.actor.data.items.size;
+        sheetData.totalItems = this.actor.items.size;
         sheetData.priceModifier = priceModifier;
         sheetData.stackModifier = stackModifier;
         sheetData.currencies = currencyCalculator.merchantCurrency(this.actor);
         sheetData.sections = currencyCalculator.prepareItems(this.actor.itemTypes);
         sheetData.merchant = merchant;
         sheetData.owner = sheetData.isGM;
-        // Return data for rendering
-        // @ts-ignore
         return sheetData;
     }
     prepareGMSettings(actorData) {
-        var _a;
         let g = game;
         const playerData = [];
         const observers = [];
-        let players = (_a = g.users) === null || _a === void 0 ? void 0 : _a.players;
+        let players = g.users?.players;
         let commonPlayersPermission = -1;
+        console.log(players);
         if (players === undefined) {
             return {};
         }
@@ -441,17 +348,20 @@ class MerchantSheet extends ActorSheet {
             let player = p;
             //     // get the name of the primary actor for a player
             // @ts-ignore
-            const actor = g.actors.get(player.data.character);
+            const actor = g.actors.get(player.character.id);
             //
+            console.log(actor);
             if (actor) {
-                player.actor = actor.data.name;
-                player.actorId = actor.data._id;
-                player.playerId = player.data._id;
+                // @ts-ignore
+                player.actor = actor.name;
+                player.actorId = actor.id;
+                player.playerId = player.id;
                 //
-                player.merchantPermission = merchantSheetNPC.getMerchantPermissionForPlayer(this.actor.data, player);
+                player.merchantPermission = merchantSheetNPC.getMerchantPermissionForPlayer(this.actor, player);
+                console.log(player.merchantPermission);
                 //
-                if (player.merchantPermission >= 2 && !observers.includes(actor.data._id)) {
-                    observers.push(actor.data._id);
+                if (player.merchantPermission >= 2 && !observers.includes(actor.id)) {
+                    observers.push(actor.id);
                 }
                 //Set icons and permission texts for html
                 if (commonPlayersPermission < 0) {
@@ -463,6 +373,7 @@ class MerchantSheet extends ActorSheet {
                 player.icon = merchantSheetNPC.getPermissionIcon(player.merchantPermission);
                 player.merchantPermissionDescription = merchantSheetNPC.getPermissionDescription(player.merchantPermission);
                 playerData.push(player);
+                console.log(player);
             }
         }
         return {
@@ -491,7 +402,7 @@ class MerchantSheet extends ActorSheet {
             type: type,
             data: foundry.utils.deepClone(header.dataset)
         };
-        delete itemData.data.type;
+        delete itemData.type;
         return this.actor.createEmbeddedDocuments("Item", [itemData]);
     }
     onItemEdit(event) {
@@ -586,18 +497,17 @@ class MerchantSheet extends ActorSheet {
         this._onSubmit(event);
     }
     onCyclePermissionProficiencyBulk(event) {
-        var _a;
         event.preventDefault();
         let actorData = this.actor.data;
         let field = $(event.currentTarget).parent().siblings('input[type="hidden"]');
         let newLevel = this.getNewLevel(field);
-        let users = (_a = game.users) === null || _a === void 0 ? void 0 : _a.contents;
+        let users = game.users?.contents;
         let currentPermissions = duplicate(actorData.permission);
         if (users !== undefined) {
             for (let u of users) {
-                if (u.data.role === 1 || u.data.role === 2) {
+                if (u.role === 1 || u.role === 2) {
                     // @ts-ignore
-                    currentPermissions[u.data._id] = newLevel;
+                    currentPermissions[u.id] = newLevel;
                 }
             }
             const merchantPermissions = new PermissionControl(this.actor);
@@ -789,7 +699,6 @@ class MerchantSheet extends ActorSheet {
         return document.getElementById(input).checked;
     }
     static async generateItems(actor, generatorInput) {
-        var _a, _b, _c, _d;
         let itemsToGenerate = 1;
         if (generatorInput.shopItemsRoll) {
             let shopQtyRoll = new Roll(generatorInput.shopItemsRoll);
@@ -800,7 +709,7 @@ class MerchantSheet extends ActorSheet {
             await actor.deleteEmbeddedDocuments("Item", ids);
         }
         if (itemsToGenerate === undefined) {
-            return (_a = ui.notifications) === null || _a === void 0 ? void 0 : _a.error("Could not roll a number");
+            return ui.notifications?.error("Could not roll a number");
         }
         let createItems = [];
         if (generatorInput.selected === 'table') {
@@ -808,7 +717,7 @@ class MerchantSheet extends ActorSheet {
             let rolltable = game.tables.getName(generatorInput.table);
             if (!rolltable) {
                 console.log(`Merchant sheet | No Rollable Table found with name "${generatorInput.table}".`);
-                return (_b = ui.notifications) === null || _b === void 0 ? void 0 : _b.error(`No Rollable Table found with name "${generatorInput.table}".`);
+                return ui.notifications?.error(`No Rollable Table found with name "${generatorInput.table}".`);
             }
             for (let i = 0; i < itemsToGenerate; i++) {
                 let results;
@@ -826,7 +735,7 @@ class MerchantSheet extends ActorSheet {
                     if (collection === undefined) {
                         continue;
                     }
-                    let compendium = await ((_c = game.packs) === null || _c === void 0 ? void 0 : _c.get(collection));
+                    let compendium = await game.packs?.get(collection);
                     if (compendium === undefined) {
                         continue;
                     }
@@ -840,7 +749,7 @@ class MerchantSheet extends ActorSheet {
             let compendium = await MerchantSheet.findSpellPack(generatorInput.compendium);
             if (!compendium) {
                 console.log(`Merchant sheet | No Compendium found with name "${compendium}".`);
-                return (_d = ui.notifications) === null || _d === void 0 ? void 0 : _d.error(`No Compendium found with name "${compendium}".`);
+                return ui.notifications?.error(`No Compendium found with name "${compendium}".`);
             }
             // console.log("Compendium", compendium.getData())
             if (generatorInput.importAllItems) {
@@ -907,7 +816,6 @@ class MerchantSheet extends ActorSheet {
         }
     }
     async createItemsFromCSV(actor, csvInput) {
-        var _a, _b;
         let startLine = 1;
         if (csvInput.skip) {
             startLine++;
@@ -962,7 +870,7 @@ class MerchantSheet extends ActorSheet {
                 }
                 for (let itemToStore of storeItems) {
                     // @ts-ignore
-                    if (price > 0 && (((_a = itemToStore === null || itemToStore === void 0 ? void 0 : itemToStore.data) === null || _a === void 0 ? void 0 : _a.price) === undefined || ((_b = itemToStore === null || itemToStore === void 0 ? void 0 : itemToStore.data) === null || _b === void 0 ? void 0 : _b.price) === 0)) {
+                    if (price > 0 && (itemToStore?.data?.price === undefined || itemToStore?.data?.price === 0)) {
                         // @ts-ignore
                         itemToStore.update({ [currencyCalculator.getPriceItemKey()]: price });
                     }
@@ -1021,8 +929,8 @@ class MerchantSheet extends ActorSheet {
             // @ts-ignore
             for (let extraItem of value) {
                 if (itemToUpdateQuantity !== extraItem) {
-                    let newQty = currencyCalculator.getQuantity(itemToUpdateQuantity.data.data.quantity) + currencyCalculator.getQuantity(extraItem.data.data.quantity);
-                    await itemToUpdateQuantity.update({ "data.quantity": newQty });
+                    let newQty = currencyCalculator.getQuantity(currencyCalculator.getQuantityNumber(itemToUpdateQuantity)) + currencyCalculator.getQuantity(currencyCalculator.getQuantityNumber(extraItem));
+                    await itemToUpdateQuantity.update({ "system.quantity": newQty });
                     itemsToBeDeleted.push(extraItem.id);
                 }
             }
@@ -1030,11 +938,10 @@ class MerchantSheet extends ActorSheet {
         await actor.deleteEmbeddedDocuments("Item", itemsToBeDeleted);
     }
     buyItem(event, stack = 0) {
-        var _a, _b;
         event.preventDefault();
-        console.log("Merchant sheet | Buy Item clicked");
+        Logger_1.default.Log("Buy item clicked");
         let targetGm = null;
-        (_a = game.users) === null || _a === void 0 ? void 0 : _a.forEach((u) => {
+        game.users?.forEach((u) => {
             if (u.isGM && u.active) {
                 targetGm = u;
             }
@@ -1047,17 +954,18 @@ class MerchantSheet extends ActorSheet {
             return ui.notifications.error(game.i18n.localize("MERCHANTNPC.error-noGM"));
         }
         else if (!allowNoTargetGM) {
-            gmId = targetGm.data._id;
+            gmId = targetGm.id;
         }
         else if (allowNoTargetGM) {
-            (_b = ui.notifications) === null || _b === void 0 ? void 0 : _b.info(game.i18n.localize("MERCHANTNPC.info-noGM"));
+            ui.notifications?.info(game.i18n.localize("MERCHANTNPC.info-noGM"));
         }
         if (this.token === null) {
             // @ts-ignore
             return ui.notifications.error(game.i18n.localize("MERCHANTNPC.error-noToken"));
         }
-        // @ts-ignore
-        if (!game.user.actorId) {
+        console.log(game.user?.character);
+        let actorId = game.user?.character?.id;
+        if (!actorId) {
             // @ts-ignore
             return ui.notifications.error(game.i18n.localize("MERCHANTNPC.error-noCharacter"));
         }
@@ -1066,13 +974,13 @@ class MerchantSheet extends ActorSheet {
         // @ts-ignore
         const item = this.actor.getEmbeddedDocument("Item", itemId);
         // @ts-ignore
-        if (currencyCalculator.getQuantity(item.data.data.quantity) <= 0) {
+        if (currencyCalculator.getQuantity(item.system.quantity) <= 0) {
             return (ui.notifications || new Notifications).error(game.i18n.localize("MERCHANTNPC.invalidQuantity"));
         }
         const packet = {
             type: "buy",
             // @ts-ignore
-            buyerId: game.user.actorId,
+            buyerId: actorId,
             tokenId: this.token.id,
             itemId: itemId,
             quantity: 1,
@@ -1082,9 +990,9 @@ class MerchantSheet extends ActorSheet {
         let service = this.token.actor.getFlag(Globals_1.default.ModuleName, "service");
         if (stack || event.shiftKey) {
             // @ts-ignore
-            if (currencyCalculator.getQuantity(item.data.data.quantity) < stackModifier) {
+            if (currencyCalculator.getQuantity(item.system.quantity) < stackModifier) {
                 // @ts-ignore
-                packet.quantity = currencyCalculator.getQuantity(item.data.data.quantity);
+                packet.quantity = currencyCalculator.getQuantity(item.system.quantity);
             }
             else {
                 // @ts-ignore
@@ -1244,9 +1152,8 @@ function getSheetTemplateName() {
     return './modules/' + Globals_1.default.ModuleName + '/templates/npc-sheet.html';
 }
 function isActorMerchant(actor) {
-    var _a;
     // @ts-ignore
-    return ((_a = actor._sheet) === null || _a === void 0 ? void 0 : _a.template) === getSheetTemplateName();
+    return actor._sheet?.template === getSheetTemplateName();
 }
 function checkInitModifiers(actor) {
     if (isActorMerchant(actor)) {
@@ -1261,9 +1168,13 @@ Hooks.on('createActor', async function (actor, options, data) {
 });
 // @ts-ignore
 Hooks.on('dropActorSheetData', async function (target, sheet, dragSource, user) {
-    var _a;
+    if (!isActorMerchant(target)) {
+        Logger_1.default.Log("Actor is not a merchant", target);
+        return false;
+    }
     let disableSell = target.getFlag(Globals_1.default.ModuleName, "disableSell");
     if (disableSell !== undefined && disableSell) {
+        Logger_1.default.Log("Disabled sell");
         return false;
     }
     // @ts-ignore
@@ -1271,79 +1182,188 @@ Hooks.on('dropActorSheetData', async function (target, sheet, dragSource, user) 
         if (a == b)
             return false;
     }
-    if (dragSource.type == "Item" && dragSource.actorId) {
-        if (!target.data._id) {
-            console.warn("Merchant sheet | target has no data._id?", target);
-            return;
-        }
-        if (currencyCalculator.getQuantity(dragSource.data.data.quantity) <= 0) {
-            (ui.notifications || new Notifications).error(game.i18n.localize("MERCHANTNPC.invalidQuantity"));
-            return;
-        }
-        if (target.data._id == dragSource.actorId)
-            return; // ignore dropping on self
-        let sourceActor = (_a = game.actors) === null || _a === void 0 ? void 0 : _a.get(dragSource.actorId);
-        Logger_1.default.Log("Drop item", dragSource, target);
-        if (sourceActor !== undefined && isActorMerchant(target)) {
-            let actor = sourceActor;
-            // if both source and target have the same type then allow deleting original item.
-            // this is a safety check because some game systems may allow dropping on targets
-            // that don't actually allow the GM or player to see the inventory, making the item
-            // inaccessible.
-            console.log(target);
-            // @ts-ignore
-            let buyModifier = target.getFlag(Globals_1.default.ModuleName, "buyModifier");
-            if (!buyModifier === undefined)
-                buyModifier = 0.5;
-            let itemPrice = currencyCalculator.getPriceFromItem(dragSource.data);
-            let price = currencyCalculator.priceInText(buyModifier * itemPrice);
-            var html = "<div>" + game.i18n.format('MERCHANTNPC.sell-items-player', {
-                name: dragSource.data.name,
-                price: price
-            }) + "</div>";
-            html += '<div><input name="quantity-modifier" id="quantity-modifier" type="range" min="0" max="' + currencyCalculator.getQuantity(dragSource.data.data.quantity) + '" value="1" class="slider"></div>';
-            html += '<div><label>' + game.i18n.localize("MERCHANTNPC.quantity") + ':</label> <input style="' + currencyCalculator.inputStyle() + '" type=number min="0" max="' + currencyCalculator.getQuantity(dragSource.data.data.quantity) + '" value="1" id="quantity-modifier-display"></div> <input type="hidden" id="quantity-modifier-price" value = "' + (buyModifier * itemPrice) + '"/>';
-            html += '<script>var pmSlider = document.getElementById("quantity-modifier"); var pmDisplay = document.getElementById("quantity-modifier-display"); var total = document.getElementById("quantity-modifier-total"); var price = document.getElementById("quantity-modifier-price"); pmDisplay.value = pmSlider.value; pmSlider.oninput = function() { pmDisplay.value = this.value;  total.value =this.value * price.value; }; pmDisplay.oninput = function() { pmSlider.value = this.value; };</script>';
-            html += '<div>' + game.i18n.localize("MERCHANTNPC.total") + '<input style="' + currencyCalculator.inputStyle() + '" readonly type="text"  value="' + (itemPrice * buyModifier) + '" id = "quantity-modifier-total"/> </div>';
-            let d = new Dialog({
-                title: game.i18n.localize("MERCHANTNPC.sell-item"),
-                content: html,
-                buttons: {
-                    one: {
-                        icon: '<i class="fas fa-check"></i>',
-                        label: game.i18n.localize('MERCHANTNPC.sell'),
-                        callback: () => {
-                            // @ts-ignore
-                            let quantity = MerchantSheet.getHtmlInputStringValue("quantity-modifier", document);
-                            let itemId = dragSource.data._id;
-                            // @ts-ignore
-                            let value = MerchantSheet.getHtmlInputStringValue("quantity-modifier-total", document);
-                            // @ts-ignore
-                            merchantSheetNPC.sellItem(target, dragSource, sourceActor, quantity, value).then(() => {
-                                merchantSheetNPC.moveItems(actor, target, [{ itemId, quantity }], true);
-                            }).catch(reason => {
-                                var _a;
-                                (_a = ui.notifications) === null || _a === void 0 ? void 0 : _a.error(reason);
-                                console.error(reason, reason.stack);
-                            });
-                        }
-                    },
-                    two: {
-                        icon: '<i class="fas fa-times"></i>',
-                        label: game.i18n.localize('MERCHANTNPC.cancel'),
-                        callback: () => console.log("Merchant sheet | Price Modifier Cancelled")
-                    }
-                },
-                default: "one",
-                close: () => console.log("Merchant sheet | Price Modifier Closed")
-            });
-            d.render(true);
-        }
+    let merchantDragSource = currencyCalculator.getMerchantDragSource(dragSource);
+    if (merchantDragSource === undefined || merchantDragSource == null) {
+        Logger_1.default.Log("Could not make the merchantDragSource");
+        return;
     }
+    if (!target.data._id) {
+        Logger_1.default.Log("Target has no data._id?", target);
+        return;
+    }
+    if (merchantDragSource.quantity <= 0) {
+        Logger_1.default.Log("Quantity invalid", merchantDragSource.quantity);
+        (ui.notifications || new Notifications).error(game.i18n.localize("MERCHANTNPC.invalidQuantity"));
+        return;
+    }
+    if (target.data._id == merchantDragSource.actorId) {
+        Logger_1.default.Log("Seller and buyer the same");
+        // ignore dropping on self
+        return;
+    }
+    let sourceActor = game.actors?.get(merchantDragSource.actorId);
+    if (sourceActor === undefined) {
+        Logger_1.default.Log("Seller not found");
+        return false;
+    }
+    Logger_1.default.Log("Drop item", merchantDragSource, target);
+    let actor = sourceActor;
+    // if both source and target have the same type then allow deleting original item.
+    // this is a safety check because some game systems may allow dropping on targets
+    // that don't actually allow the GM or player to see the inventory, making the item
+    // inaccessible.
+    console.log(target);
+    // @ts-ignore
+    let buyModifier = target.getFlag(Globals_1.default.ModuleName, "buyModifier");
+    if (!buyModifier === undefined)
+        buyModifier = 0.5;
+    let price = currencyCalculator.priceInText(buyModifier * merchantDragSource.itemPrice);
+    var html = "<div>" + game.i18n.format('MERCHANTNPC.sell-items-player', {
+        name: merchantDragSource.name,
+        price: price
+    }) + "</div>";
+    html += '<div><input name="quantity-modifier" id="quantity-modifier" type="range" min="0" max="' + merchantDragSource.quantity + '" value="1" class="slider"></div>';
+    html += '<div><label>' + game.i18n.localize("MERCHANTNPC.quantity") + ':</label> <input style="' + currencyCalculator.inputStyle() + '" type=number min="0" max="' + merchantDragSource.quantity + '" value="1" id="quantity-modifier-display"></div> <input type="hidden" id="quantity-modifier-price" value = "' + (buyModifier * merchantDragSource.itemPrice) + '"/>';
+    html += '<script>var pmSlider = document.getElementById("quantity-modifier"); var pmDisplay = document.getElementById("quantity-modifier-display"); var total = document.getElementById("quantity-modifier-total"); var price = document.getElementById("quantity-modifier-price"); pmDisplay.value = pmSlider.value; pmSlider.oninput = function() { pmDisplay.value = this.value;  total.value =this.value * price.value; }; pmDisplay.oninput = function() { pmSlider.value = this.value; };</script>';
+    html += '<div>' + game.i18n.localize("MERCHANTNPC.total") + '<input style="' + currencyCalculator.inputStyle() + '" readonly type="text"  value="' + (merchantDragSource.itemPrice * buyModifier) + '" id = "quantity-modifier-total"/> </div>';
+    let d = new Dialog({
+        title: game.i18n.localize("MERCHANTNPC.sell-item"),
+        content: html,
+        buttons: {
+            one: {
+                icon: '<i class="fas fa-check"></i>',
+                label: game.i18n.localize('MERCHANTNPC.sell'),
+                callback: () => {
+                    // @ts-ignore
+                    let quantity = MerchantSheet.getHtmlInputStringValue("quantity-modifier", document);
+                    let itemId = merchantDragSource?.itemId;
+                    let itemName = merchantDragSource?.name;
+                    // @ts-ignore
+                    let value = MerchantSheet.getHtmlInputStringValue("quantity-modifier-total", document);
+                    // @ts-ignore
+                    merchantSheetNPC.sellItem(target, merchantDragSource, sourceActor, quantity, value).then(() => {
+                        merchantSheetNPC.moveItems(actor, target, [{ itemId, quantity, itemName }], true);
+                    }).catch(reason => {
+                        ui.notifications?.error(reason);
+                        console.error(reason, reason.stack);
+                    });
+                }
+            },
+            two: {
+                icon: '<i class="fas fa-times"></i>',
+                label: game.i18n.localize('MERCHANTNPC.cancel'),
+                callback: () => console.log("Merchant sheet | Price Modifier Cancelled")
+            }
+        },
+        default: "one",
+        close: () => console.log("Merchant sheet | Price Modifier Closed")
+    });
+    d.render(true);
 });
 exports.default = MerchantSheet;
 
-},{"../Globals":1,"../Utils/Logger":4,"../Utils/MerchantSettings":5,"./MerchantSheetNPCHelper":8,"./model/QuantityChanger":15,"./windows/GeneratorWindow":22,"csv-parse/lib/sync":38}],8:[function(require,module,exports){
+},{"../Globals":1,"../Utils/Logger":4,"../Utils/MerchantSettings":5,"./MerchantSheetHandlebarHelpers":8,"./MerchantSheetNPCHelper":9,"./model/QuantityChanger":18,"./windows/GeneratorWindow":26,"csv-parse/lib/sync":42}],8:[function(require,module,exports){
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const Globals_1 = __importDefault(require("../Globals"));
+/**
+ * Handles setting up all handlebar helpers
+ */
+class HandlebarHelpersMerchantSheet {
+    /**
+     * Registers the handlebar helpers
+     */
+    registerHelpers(currencyCalculator, merchantSheetNPC) {
+        Handlebars.registerHelper('equals', function (arg1, arg2, options) {
+            // @ts-ignore
+            return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
+        });
+        Handlebars.registerHelper('inputStyle', function (options) {
+            return currencyCalculator.inputStyle();
+        });
+        Handlebars.registerHelper('sectionStyle', function (options) {
+            return currencyCalculator.sectionStyle();
+        });
+        Handlebars.registerHelper('editorStyle', function (options) {
+            return currencyCalculator.editorStyle();
+        });
+        Handlebars.registerHelper('shouldItemBeVisible', function (item, quantity, isGM, options) {
+            return isGM || (merchantSheetNPC.isItemShown(item) && quantity > 0);
+        });
+        Handlebars.registerHelper('getItemQuantity', function (quantity, options) {
+            return currencyCalculator.getQuantity(quantity);
+        });
+        Handlebars.registerHelper('getItemWeight', function (itemData, options) {
+            return currencyCalculator.getWeight(itemData);
+        });
+        Handlebars.registerHelper('getPriceCurrency', function () {
+            return currencyCalculator.currency();
+        });
+        Handlebars.registerHelper('unequals', function (arg1, arg2, options) {
+            // @ts-ignore
+            return (arg1 != arg2) ? options.fn(this) : options.inverse(this);
+        });
+        Handlebars.registerHelper('isPermissionShown', function () {
+            return currencyCalculator.isPermissionShown();
+        });
+        Handlebars.registerHelper('itemSelected', function (key) {
+            let selectedKey = game.settings.get(Globals_1.default.ModuleName, "itemCompendium");
+            console.log(key, " - ", selectedKey);
+            if (key === selectedKey) {
+                return 'selected';
+            }
+            return '';
+        });
+        Handlebars.registerHelper('getTypeLocalized', function (key) {
+            return game.i18n.localize("MERCHANTNPC." + key);
+        });
+        Handlebars.registerHelper('merchantsheetprice', function (basePrice, modifier) {
+            if (modifier === 'undefined') {
+                // @ts-ignore
+                this.actor.setFlag(Globals_1.default.ModuleName, "priceModifier", 1.0);
+                modifier = 1.0;
+            }
+            // if (!stackModifier) await this.actor.setFlag(m oduleName, "stackModifier", 20);
+            return currencyCalculator.getPriceOutputWithModifier(basePrice, modifier);
+        });
+        Handlebars.registerHelper('merchantsheetstackweight', function (weight, qty, infinity) {
+            let showStackWeight = game.settings?.get(Globals_1.default.ModuleName, "showStackWeight");
+            if (showStackWeight) {
+                let value = weight * qty;
+                if (qty === Number.MAX_VALUE || value > 1000000000 || infinity) {
+                    return "/-";
+                }
+                else {
+                    return `/${value.toLocaleString('en')}`;
+                }
+            }
+            else {
+                return "";
+            }
+        });
+        Handlebars.registerHelper('merchantsheetweight', function (weight) {
+            return (Math.round(weight * 1e5) / 1e5).toString();
+        });
+        Handlebars.registerHelper('isItemShow', function (item) {
+            return merchantSheetNPC.isItemShown(item);
+        });
+        Handlebars.registerHelper('itemInfinity', function (qty, infinity) {
+            return infinity || (qty === Number.MAX_VALUE);
+        });
+        Handlebars.registerHelper('merchantNotInfinity', function (infinity) {
+            return !infinity;
+        });
+        Handlebars.registerHelper('getQuantity', function (itemData, options) {
+            return currencyCalculator.getQuantityNumber(itemData);
+        });
+    }
+}
+exports.default = HandlebarHelpersMerchantSheet;
+
+},{"../Globals":1}],9:[function(require,module,exports){
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -1354,23 +1374,24 @@ const CurrencyCalculator_1 = __importDefault(require("./systems/CurrencyCalculat
 const Dnd5eCurrencyCalculator_1 = __importDefault(require("./systems/Dnd5eCurrencyCalculator"));
 const World5eCurrencyCalculator_1 = __importDefault(require("./systems/World5eCurrencyCalculator"));
 const SfrpgCurrencyCalculator_1 = __importDefault(require("./systems/SfrpgCurrencyCalculator"));
+const GurpsCurrencyCalculator_1 = __importDefault(require("./systems/GurpsCurrencyCalculator"));
 const SwadeCurrencyCalculator_1 = __importDefault(require("./systems/SwadeCurrencyCalculator"));
 const Logger_1 = __importDefault(require("../Utils/Logger"));
 const Wfrp4eCurrencyCalculator_1 = __importDefault(require("./systems/Wfrp4eCurrencyCalculator"));
 const MoveItemsPacket_1 = __importDefault(require("./model/MoveItemsPacket"));
 const MerchantCurrencyPacket_1 = __importDefault(require("./model/MerchantCurrencyPacket"));
 const CurrencyAction_1 = __importDefault(require("./model/CurrencyAction"));
+const AddItemHolder_1 = __importDefault(require("./model/AddItemHolder"));
 let currencyCalculator;
 class MerchantSheetNPCHelper {
     static getElementById(elementId) {
         return document.getElementById(elementId);
     }
     systemCurrencyCalculator() {
-        var _a;
         if (currencyCalculator === null || currencyCalculator === undefined) {
             let currencyModuleImport = game.system.id.charAt(0).toUpperCase() + game.system.id.slice(1) + "CurrencyCalculator";
             Logger_1.default.Log("System currency to get: " + currencyModuleImport);
-            if ((_a = game.modules.get("world-currency-5e")) === null || _a === void 0 ? void 0 : _a.active) {
+            if (game.modules.get("world-currency-5e")?.active) {
                 currencyCalculator = new World5eCurrencyCalculator_1.default();
                 currencyCalculator.initSettings();
             }
@@ -1392,6 +1413,10 @@ class MerchantSheetNPCHelper {
                 currencyCalculator = new Wfrp4eCurrencyCalculator_1.default();
                 currencyCalculator.initSettings();
             }
+            else if (currencyModuleImport === 'GurpsCurrencyCalculator') {
+                currencyCalculator = new GurpsCurrencyCalculator_1.default();
+                currencyCalculator.initSettings();
+            }
             else {
                 currencyCalculator = new CurrencyCalculator_1.default();
                 currencyCalculator.initSettings();
@@ -1400,13 +1425,15 @@ class MerchantSheetNPCHelper {
         return currencyCalculator;
     }
     getMerchantPermissionForPlayer(actorData, player) {
-        let defaultPermission = actorData.permission.default;
-        if (player.data._id === null) {
+        // @ts-ignore
+        let defaultPermission = actorData.ownership.default;
+        if (player.id === null) {
             return 0;
         }
-        if (player.data._id in actorData.permission) {
+        // @ts-ignore
+        if (player.id in actorData.ownership) {
             // @ts-ignore
-            return actorData.permission[player.data._id];
+            return actorData.ownership[player.id];
         }
         else if (typeof defaultPermission !== "undefined") {
             return defaultPermission;
@@ -1438,9 +1465,10 @@ class MerchantSheetNPCHelper {
         // @ts-ignore
         currentPermissions[playerId] = newLevel;
         // Save updated player permissions
-        console.log("Merchant sheet | _updatePermission ", currentPermissions, actorData.data.permission);
         // @ts-ignore
-        const merchantPermissions = new PermissionControl(actorData.data);
+        console.log("Merchant sheet | _updatePermission ", currentPermissions, actorData.ownership);
+        // @ts-ignore
+        const merchantPermissions = new PermissionControl(actorData);
         console.log("Merchant sheet | _updatePermission merchantPermissions", merchantPermissions);
         // @ts-ignore
         merchantPermissions._updateObject(event, currentPermissions);
@@ -1452,7 +1480,7 @@ class MerchantSheetNPCHelper {
         // @ts-ignore
         const item = actor.getEmbeddedDocument("Item", itemId);
         const template_file = "modules/" + Globals_1.default.ModuleName + "/templates/change_price.html";
-        const template_data = { price: currencyCalculator.getPriceFromItem(item.data) };
+        const template_data = { price: currencyCalculator.getPriceFromItem(item) };
         const rendered_html = await renderTemplate(template_file, template_data);
         let d = new Dialog({
             title: game.i18n.localize('MERCHANTNPC.priceDialog-title'),
@@ -1485,11 +1513,11 @@ class MerchantSheetNPCHelper {
         itemId = $(event.currentTarget).parents(".merchant-item").attr("data-item-id");
         actor.deleteEmbeddedDocuments("Item", [itemId]);
     }
-    onItemSummary(event, actor) {
+    async onItemSummary(event, actor) {
         event.preventDefault();
         let li = $(event.currentTarget).parents(".merchant-item"), item = actor.items.get(li.data("item-id")), 
         // @ts-ignore
-        chatData = item.getChatData({ secrets: actor.isOwner });
+        chatData = await item.getChatData({ secrets: actor.isOwner });
         // Toggle summary
         if (li.hasClass("expanded")) {
             let summary = li.children(".merchant-item-summary");
@@ -1517,13 +1545,13 @@ class MerchantSheetNPCHelper {
     }
     async changeQuantity(event, actor) {
         event.preventDefault();
-        console.log("Merchant sheet | Change quantity");
+        Logger_1.default.Log("Change quantity");
         let itemId = $(event.currentTarget).parents(".merchant-item").attr("data-item-id");
         // @ts-ignore
         const item = actor.getEmbeddedDocument("Item", itemId);
         const template_file = "modules/" + Globals_1.default.ModuleName + "/templates/change_quantity.html";
         // @ts-ignore
-        const quantity = currencyCalculator.getQuantity(item.data.data.quantity);
+        const quantity = currencyCalculator.getQuantityFromItem(item);
         const infinityActivated = (quantity === Number.MAX_VALUE ? 'checked' : '');
         // @ts-ignore
         const template_data = {
@@ -1539,20 +1567,15 @@ class MerchantSheetNPCHelper {
                     icon: '<i class="fas fa-check"></i>',
                     label: game.i18n.localize('MERCHANTNPC.update'),
                     callback: () => {
+                        let itemFound = currencyCalculator.findItemByNameForActor(actor, currencyCalculator.getNameFromItem(item));
                         // @ts-ignore
                         if (document.getElementById("quantity-infinity").checked) {
-                            actor.updateEmbeddedDocuments("Item", [{
-                                    _id: itemId,
-                                    [currencyCalculator.getQuantityKey()]: Number.MAX_VALUE
-                                }]);
+                            currencyCalculator.setQuantityForItem(actor, itemFound, Number.MAX_VALUE);
                         }
                         else {
                             // @ts-ignore
                             let newQuantity = document.getElementById("quantity-value").value;
-                            actor.updateEmbeddedDocuments("Item", [{
-                                    _id: itemId,
-                                    [currencyCalculator.getQuantityKey()]: newQuantity
-                                }]);
+                            currencyCalculator.setQuantityForItem(actor, itemFound, newQuantity);
                         }
                     }
                 },
@@ -1563,7 +1586,7 @@ class MerchantSheetNPCHelper {
                 }
             },
             default: "one",
-            close: () => console.log("Merchant sheet | Change quantity Closed")
+            close: () => Logger_1.default.Log("Change quantity Closed")
         });
         d.render(true);
     }
@@ -1571,9 +1594,9 @@ class MerchantSheetNPCHelper {
         console.log(`Buying item: ${seller}, ${buyer}, ${itemId}, ${quantity}`);
         let sellItem = seller.getEmbeddedDocument("Item", itemId);
         // If the buyer attempts to buy more then what's in stock, buy all the stock.
-        if (sellItem !== undefined && sellItem.data.data.quantity < quantity) {
+        if (sellItem !== undefined && currencyCalculator.getQuantityNumber(sellItem) < quantity) {
             // @ts-ignore
-            quantity = currencyCalculator.getQuantity(sellItem.data.data.quantity);
+            quantity = currencyCalculator.getQuantity(currencyCalculator.getQuantityNumber(sellItem));
         }
         // On negative quantity we show an error
         if (quantity < 0) {
@@ -1593,7 +1616,7 @@ class MerchantSheetNPCHelper {
         if (sellerStack !== undefined && quantity > sellerStack)
             quantity = sellerStack;
         // @ts-ignore
-        let itemCostInGold = Math.round(currencyCalculator.getPriceFromItem(sellItem.data) * sellerModifier * 100) / 100;
+        let itemCostInGold = Math.round(currencyCalculator.getPriceFromItem(sellItem) * sellerModifier * 100) / 100;
         itemCostInGold *= quantity;
         let currency = currencyCalculator.actorCurrency(buyer);
         let buyerFunds = duplicate(currency);
@@ -1658,13 +1681,12 @@ class MerchantSheetNPCHelper {
         }
     }
     errorMessageToActor(target, message) {
-        var _a;
-        // let allowNoTargetGM = (<Game>game).settings.get(Globals.ModuleName, "allowNoGM")
+        // let allowNoTargetGM = game.settings.get(Globals.ModuleName, "allowNoGM")
         // if (allowNoTargetGM) {
-        (_a = ui.notifications) === null || _a === void 0 ? void 0 : _a.error(message);
+        ui.notifications?.error(message);
         // } else {
         // 	// @ts-ignore
-        // 	(<Game>game).socket.emit(Globals.Socket, {
+        // 	game.socket.emit(Globals.Socket, {
         // 		type: "error",
         // 		targetId: target.id,
         // 		message: message
@@ -1672,7 +1694,6 @@ class MerchantSheetNPCHelper {
         // }
     }
     static buyTransactionFromPlayer(data) {
-        var _a;
         console.log("Merchant sheet | buyTransaction ", data);
         if (data.type === "buy") {
             // @ts-ignore
@@ -1683,13 +1704,16 @@ class MerchantSheetNPCHelper {
                 helper.transaction(seller.actor, buyer, data.itemId, data.quantity);
             }
             else if (!seller) {
-                (_a = ui.notifications) === null || _a === void 0 ? void 0 : _a.error(game.i18n.localize("MERCHANTNPC.playerOtherScene"));
+                ui.notifications?.error(game.i18n.localize("MERCHANTNPC.playerOtherScene"));
             }
         }
     }
     async sellItem(target, dragSource, sourceActor, quantity, totalItemsPrice) {
         let sellerFunds = currencyCalculator.actorCurrency(sourceActor);
         let chatPrice = currencyCalculator.priceInText(totalItemsPrice);
+        console.log("Add amount to Actor", sellerFunds, chatPrice, sourceActor);
+        console.log("subtract amount to Actor", sellerFunds, chatPrice, target);
+        currencyCalculator.addAmountForActor(sourceActor, sellerFunds, totalItemsPrice);
         if (target.getFlag(Globals_1.default.ModuleName, "limitedCurrency")) {
             let buyerFunds = duplicate(currencyCalculator.actorCurrency(target));
             console.log("merchant currency", target, currencyCalculator.actorCurrency(target));
@@ -1716,7 +1740,6 @@ class MerchantSheetNPCHelper {
                                 // @ts-ignore
                                 let sceneId = canvas.scene.id;
                                 // @ts-ignore
-                                Logger_1.default.Log("Scene", canvas.scene.id);
                                 if (sceneId) {
                                     packet.sceneId = sceneId;
                                 }
@@ -1734,82 +1757,76 @@ class MerchantSheetNPCHelper {
                 }
             }
         }
-        currencyCalculator.addAmountForActor(sourceActor, sellerFunds, totalItemsPrice);
         // @ts-ignore
         this.chatMessage(sourceActor, target, game.i18n.format('MERCHANTNPC.sellText', {
             seller: sourceActor.name,
             quantity: quantity,
-            itemName: dragSource.data.name,
+            itemName: dragSource.name,
             chatPrice: chatPrice
-        }), dragSource.data, false);
+        }), dragSource, false);
     }
     async moveItems(source, destination, items, deleteItemFromSource) {
         const updates = [];
         const deletes = [];
         const additions = [];
+        // @ts-ignore
         const destUpdates = [];
         const results = [];
         let allowNoTargetGM = game.settings.get(Globals_1.default.ModuleName, "allowNoGM");
         for (let i of items) {
+            console.log(i);
             // @ts-ignore
             let itemId = i.itemId;
+            let itemName = i.itemName;
             // @ts-ignore
             let quantity = Number(i.quantity);
             let item = source.getEmbeddedDocument("Item", itemId);
+            if (item === undefined) {
+                item = currencyCalculator.findItemByNameForActor(source, itemName);
+            }
             let infinity = source.getFlag(Globals_1.default.ModuleName, "infinity");
             // Move all items if we select more than the quantity.
+            console.log("Item found " + itemName, item, itemName);
             // @ts-ignore
-            if (item !== undefined && currencyCalculator.getQuantity(item.data.data.quantity) < quantity) {
+            let quantityFromItem = currencyCalculator.getQuantityFromItem(item);
+            if (quantityFromItem < quantity) {
                 // @ts-ignore
-                quantity = Number(currencyCalculator.getQuantity(item.data.data.quantity));
+                quantity = quantityFromItem;
             }
-            let newItem = duplicate(item);
+            let newItem = currencyCalculator.duplicateItemFromActor(item, source);
+            // duplicate(item);
             // @ts-ignore
-            const update = {
-                _id: itemId,
-                // @ts-ignore
-                [currencyCalculator.getQuantityKey()]: currencyCalculator.getQuantity(item.data.data.quantity) >= Number.MAX_VALUE - 10000 || infinity ? Number.MAX_VALUE : currencyCalculator.getQuantity(item.data.data.quantity) - quantity
-            };
+            let update = currencyCalculator.getUpdateObject(quantityFromItem, quantity, item, itemId, infinity);
+            // @ts-ignore
             if (update[currencyCalculator.getQuantityKey()] === 0 && !allowNoTargetGM && deleteItemFromSource) {
                 deletes.push(itemId);
             }
             else {
                 updates.push(update);
             }
-            currencyCalculator.setQuantityForItemData(newItem.data, quantity);
+            // currencyCalculator.setQuantityForItem(destination, newItem, quantity);
             results.push({
                 item: newItem,
                 quantity: quantity
             });
-            let destItem = destination.data.items.find(i => i.name == newItem.name);
-            if (destItem === undefined) {
-                additions.push(newItem);
+            let destItem = currencyCalculator.findItemByNameForActor(destination, currencyCalculator.getNameFromItem(newItem));
+            Logger_1.default.Log("move Item from source to destination with item", source, destination, itemId, item, destItem);
+            console.log("destItem", destItem);
+            if (currencyCalculator.isItemNotFound(destItem)) {
+                additions.push(new AddItemHolder_1.default(newItem, i));
             }
-            else {
-                //console.log("Existing Item");
+            else if (destItem !== undefined) {
                 // @ts-ignore
-                currencyCalculator.setQuantityForItemData(destItem.data.data, Number(currencyCalculator.getQuantity(destItem.data.data.quantity)) + Number(currencyCalculator.getQuantity(newItem.data.quantity)));
-                // @ts-ignore
-                if (currencyCalculator.getQuantity(destItem.data.data.quantity) < 0) {
-                    // @ts-ignore
-                    currencyCalculator.setQuantityForItemData(destItem.data.data, 0);
-                }
-                // @ts-ignore
-                const destUpdate = {
-                    _id: destItem.id,
-                    // @ts-ignore
-                    [currencyCalculator.getQuantityKey()]: currencyCalculator.getQuantity(destItem.data.data.quantity)
-                };
-                destUpdates.push(destUpdate);
+                currencyCalculator.updateItemAddToArray(destination, destUpdates, destItem, quantity);
             }
         }
         let packet = null;
         if (source.isOwner) {
             if (deletes.length > 0) {
-                await source.deleteEmbeddedDocuments("Item", deletes);
+                await currencyCalculator.deleteItemsOnActor(source, deletes);
             }
             if (updates.length > 0) {
-                await source.updateEmbeddedDocuments("Item", updates);
+                await currencyCalculator.updateItemsOnActor(source, updates);
             }
         }
         else if (!allowNoTargetGM) {
@@ -1819,8 +1836,8 @@ class MerchantSheetNPCHelper {
             }
             packet.deletes = deletes;
             packet.updates = updates;
-            // @ts-ignore
-            let actorLink = source.data.actorLink;
+            let actorLink = !source.isToken;
+            Logger_1.default.Log("Token control", source, actorLink);
             if (!actorLink) {
                 if (source.parent) {
                     // @ts-ignore
@@ -1830,17 +1847,25 @@ class MerchantSheetNPCHelper {
                     if (sceneId) {
                         packet.sceneId = sceneId;
                     }
-                    packet.tokenId = source.parent.id;
+                    // @ts-ignore
+                    packet.tokenId = source.token.id;
                     packet.actorLink = false;
                 }
             }
+            if (packet) {
+                // @ts-ignore
+                game.socket.emit(Globals_1.default.Socket, packet);
+            }
         }
+        console.log("Destination", destination);
         if (destination.isOwner) {
+            console.log("Destination is owner");
             if (additions.length > 0) {
-                await destination.createEmbeddedDocuments("Item", additions);
+                await currencyCalculator.addItemsToActor(destination, additions);
             }
             if (destUpdates.length > 0) {
-                await destination.updateEmbeddedDocuments("Item", destUpdates);
+                // @ts-ignore
+                await currencyCalculator.updateItemsOnActor(destination, destUpdates);
             }
         }
         else if (!allowNoTargetGM) {
@@ -1849,11 +1874,12 @@ class MerchantSheetNPCHelper {
                 packet.actorId = destination.id;
             }
             packet.additions = additions;
-            packet.updates = destUpdates;
-        }
-        if (packet) {
             // @ts-ignore
-            game.socket.emit(Globals_1.default.Socket, packet);
+            packet.updates = destUpdates;
+            if (packet) {
+                // @ts-ignore
+                game.socket.emit(Globals_1.default.Socket, packet);
+            }
         }
         return results;
     }
@@ -1881,7 +1907,6 @@ class MerchantSheetNPCHelper {
         else {
             // @ts-ignore
             let scene = await game.scenes.get(packet.sceneId);
-            Logger_1.default.Log("Scene found", scene);
             // @ts-ignore
             let token = await scene.tokens.get(packet.tokenId);
             if (token.getActor()) {
@@ -1893,16 +1918,16 @@ class MerchantSheetNPCHelper {
         }
         Logger_1.default.Log("Actor updating", actor);
         if (packet.deletes.length > 0) {
-            await actor.deleteEmbeddedDocuments("Item", packet.deletes);
+            await currencyCalculator.deleteItemsOnActor(actor, packet.deletes);
             Logger_1.default.Log("delete Items ", packet.deletes);
         }
         if (packet.updates.length > 0) {
-            Logger_1.default.Log("delete Items ", packet.updates);
-            await actor.updateEmbeddedDocuments("Item", packet.updates);
+            Logger_1.default.Log("update packet Items ", packet.updates);
+            await currencyCalculator.updateItemsOnActor(actor, packet.updates);
         }
         if (packet.additions.length > 0) {
-            Logger_1.default.Log("delete Items ", packet.additions);
-            await actor.createEmbeddedDocuments("Item", packet.additions);
+            Logger_1.default.Log("add Items ", packet.additions);
+            await currencyCalculator.addItemsToActor(actor, packet.additions);
         }
     }
     onGeneratorSelectorChanged(event) {
@@ -1921,7 +1946,7 @@ class MerchantSheetNPCHelper {
     }
     showItemToPlayers(event, actor, toggle) {
         let li = $(event.currentTarget).parents(".merchant-item"), item = actor.items.get(li.data("item-id"));
-        item === null || item === void 0 ? void 0 : item.setFlag(Globals_1.default.ModuleName, "showItem", toggle);
+        item?.setFlag(Globals_1.default.ModuleName, "showItem", toggle);
     }
     isItemShown(item) {
         let showItem = item.getFlag(Globals_1.default.ModuleName, "showItem");
@@ -1929,7 +1954,6 @@ class MerchantSheetNPCHelper {
     }
     static async updateCurrencyWithPacket(packet) {
         let actor = null;
-        Logger_1.default.Log("Packet updating currency", packet);
         if (packet.actorLink) {
             // @ts-ignore
             actor = await game.actors.get(packet.actorId);
@@ -1957,7 +1981,18 @@ class MerchantSheetNPCHelper {
 let helper = new MerchantSheetNPCHelper();
 exports.default = MerchantSheetNPCHelper;
 
-},{"../Globals":1,"../Utils/Logger":4,"./model/CurrencyAction":9,"./model/MerchantCurrencyPacket":10,"./model/MoveItemsPacket":12,"./systems/CurrencyCalculator":16,"./systems/Dnd5eCurrencyCalculator":17,"./systems/SfrpgCurrencyCalculator":18,"./systems/SwadeCurrencyCalculator":19,"./systems/Wfrp4eCurrencyCalculator":20,"./systems/World5eCurrencyCalculator":21}],9:[function(require,module,exports){
+},{"../Globals":1,"../Utils/Logger":4,"./model/AddItemHolder":10,"./model/CurrencyAction":11,"./model/MerchantCurrencyPacket":12,"./model/MoveItemsPacket":15,"./systems/CurrencyCalculator":19,"./systems/Dnd5eCurrencyCalculator":20,"./systems/GurpsCurrencyCalculator":21,"./systems/SfrpgCurrencyCalculator":22,"./systems/SwadeCurrencyCalculator":23,"./systems/Wfrp4eCurrencyCalculator":24,"./systems/World5eCurrencyCalculator":25}],10:[function(require,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class AddItemHolder {
+    constructor(newItem, origItem) {
+        this.newItem = newItem;
+        this.origItem = origItem;
+    }
+}
+exports.default = AddItemHolder;
+
+},{}],11:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var CurrencyAction;
@@ -1967,7 +2002,7 @@ var CurrencyAction;
 })(CurrencyAction || (CurrencyAction = {}));
 exports.default = CurrencyAction;
 
-},{}],10:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -1987,7 +2022,24 @@ class MerchantCurrencyPacket {
 }
 exports.default = MerchantCurrencyPacket;
 
-},{"./CurrencyAction":9,"./PacketType":14}],11:[function(require,module,exports){
+},{"./CurrencyAction":11,"./PacketType":17}],13:[function(require,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class MerchantDragSource {
+    constructor(quantity, actorId, itemPrice, name, itemId, payload, img) {
+        this.quantity = quantity;
+        this.actorId = actorId;
+        this.itemPrice = itemPrice;
+        this.name = name;
+        this.itemId = itemId;
+        this.payload = payload;
+        this.id = itemId;
+        this.img = img;
+    }
+}
+exports.default = MerchantDragSource;
+
+},{}],14:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class MerchantGenerator {
@@ -2005,7 +2057,7 @@ class MerchantGenerator {
 }
 exports.default = MerchantGenerator;
 
-},{}],12:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -2028,7 +2080,7 @@ class MoveItemsPacket extends Packet_1.default {
 }
 exports.default = MoveItemsPacket;
 
-},{"./Packet":13,"./PacketType":14}],13:[function(require,module,exports){
+},{"./Packet":16,"./PacketType":17}],16:[function(require,module,exports){
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -2042,7 +2094,7 @@ class Packet {
 }
 exports.default = Packet;
 
-},{"./PacketType":14}],14:[function(require,module,exports){
+},{"./PacketType":17}],17:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var PacketType;
@@ -2053,7 +2105,7 @@ var PacketType;
 })(PacketType || (PacketType = {}));
 exports.default = PacketType;
 
-},{}],15:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class QuantityChanger {
@@ -2066,7 +2118,7 @@ class QuantityChanger {
 }
 exports.default = QuantityChanger;
 
-},{}],16:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -2074,6 +2126,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const Logger_1 = __importDefault(require("../../Utils/Logger"));
 const HtmlHelpers_1 = __importDefault(require("../../Utils/HtmlHelpers"));
+const MerchantDragSource_1 = __importDefault(require("../model/MerchantDragSource"));
 class CurrencyCalculator {
     constructor() {
         this.initialized = false;
@@ -2128,7 +2181,7 @@ class CurrencyCalculator {
     }
     getPriceFromItem(item) {
         // @ts-ignore
-        return item.data.price;
+        return item.system.price;
     }
     getPriceItemKey() {
         return "data.price";
@@ -2140,12 +2193,18 @@ class CurrencyCalculator {
         return quantity;
     }
     getQuantityKey() {
-        return "data.quantity";
+        return "system.quantity";
     }
-    getWeight(itemData) {
-        return itemData.weight;
+    getWeight(item) {
+        // @ts-ignore
+        return item.system.weight;
     }
-    getPriceOutputWithModifier(basePrice, modifier) {
+    getQuantityNumber(itemData) {
+        return itemData.system.quantity;
+    }
+    getPriceOutputWithModifier(basePriceItem, modifier) {
+        // @ts-ignore
+        let basePrice = basePriceItem.data.data.price;
         return (Math.round(basePrice * modifier * 100) / 100).toLocaleString('en');
     }
     getPrice(priceValue) {
@@ -2154,9 +2213,16 @@ class CurrencyCalculator {
     currency() {
         return '';
     }
-    setQuantityForItemData(data, quantity) {
-        Logger_1.default.Log("Changing quantity for item and set quantity", data, quantity);
-        data.quantity = quantity;
+    setQuantityForItemData(actor, item, quantity) {
+        Logger_1.default.Log("Changing quantity for item and set quantity", item, quantity);
+        // @ts-ignore
+        actor.updateEmbeddedDocuments("Item", [
+            {
+                _id: item.id,
+                [this.getQuantityKey()]: quantity
+            }
+        ]);
+        // item.updateSource({[this.getQuantityKey()]: quantity});
     }
     inputStyle() {
         return "";
@@ -2179,10 +2245,69 @@ class CurrencyCalculator {
         let currency = HtmlHelpers_1.default.getHtmlInputNumberValue("currency-Currency", document);
         this.updateActorWithNewFunds(actor, currency);
     }
+    deleteItemsOnActor(source, deletes) {
+        return source.deleteEmbeddedDocuments("Item", deletes);
+    }
+    updateItemsOnActor(destination, destUpdates) {
+        return destination.updateEmbeddedDocuments("Item", destUpdates);
+    }
+    addItemsToActor(destination, additions) {
+        let addItems = [];
+        for (const addition of additions) {
+            addItems.push(addition);
+        }
+        return destination.createEmbeddedDocuments("Item", addItems);
+    }
+    findItemByNameForActor(destination, name) {
+        return destination.items.find(i => i.name == name);
+    }
+    isItemNotFound(destItem) {
+        return destItem === undefined;
+    }
+    updateItemAddToArray(actor, destUpdates, destItem, quantity) {
+        this.setQuantityForItemData(actor, destItem, Number(this.getQuantity(this.getQuantityNumber(destItem))) + quantity);
+        if (this.getQuantity(this.getQuantityNumber(destItem)) < 0) {
+            this.setQuantityForItemData(actor, destItem.system, 0);
+        }
+        const destUpdate = {
+            _id: destItem.id,
+            [this.getQuantityKey()]: this.getQuantity(this.getQuantityNumber(destItem))
+        };
+        destUpdates.push(destUpdate);
+    }
+    isDropAccepted(dragSource) {
+        return dragSource.type == "Item" && dragSource.actorId;
+    }
+    getMerchantDragSource(dragSource) {
+        if (dragSource.actorId === undefined || dragSource.type !== 'Item') {
+            return undefined;
+        }
+        return new MerchantDragSource_1.default(this.getQuantity(this.getQuantityNumber(dragSource)), dragSource.actorId, this.getPriceFromItem(dragSource.data), dragSource.system.name, dragSource.system.id, dragSource, dragSource.system.img);
+    }
+    getQuantityFromItem(item) {
+        return this.getQuantity(this.getQuantityNumber(item));
+    }
+    setQuantityForItem(actor, newItem, quantity) {
+        this.setQuantityForItemData(actor, newItem, quantity);
+    }
+    getNameFromItem(newItem) {
+        return newItem.name;
+    }
+    getUpdateObject(quantityFromItem, quantity, item, itemId, infinity) {
+        // @ts-ignore
+        return {
+            _id: itemId,
+            // @ts-ignore
+            [this.getQuantityKey()]: quantityFromItem >= Number.MAX_VALUE - 10000 || infinity ? Number.MAX_VALUE : quantityFromItem - quantity
+        };
+    }
+    duplicateItemFromActor(item, source) {
+        return duplicate(item);
+    }
 }
 exports.default = CurrencyCalculator;
 
-},{"../../Utils/HtmlHelpers":3,"../../Utils/Logger":4}],17:[function(require,module,exports){
+},{"../../Utils/HtmlHelpers":3,"../../Utils/Logger":4,"../model/MerchantDragSource":13}],20:[function(require,module,exports){
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -2191,6 +2316,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const CurrencyCalculator_1 = __importDefault(require("./CurrencyCalculator"));
 const Globals_1 = __importDefault(require("../../Globals"));
 const HtmlHelpers_1 = __importDefault(require("../../Utils/HtmlHelpers"));
+const Logger_1 = __importDefault(require("../../Utils/Logger"));
 let conversionRates = { "pp": 1,
     "gp": 10,
     "ep": 2,
@@ -2249,7 +2375,7 @@ class Dnd5eCurrencyCalculator extends CurrencyCalculator_1.default {
     }
     actorCurrency(actor) {
         // @ts-ignore
-        return actor.data.data.currency;
+        return actor.system.currency;
     }
     merchantCurrency(actor) {
         return [
@@ -2341,7 +2467,7 @@ class Dnd5eCurrencyCalculator extends CurrencyCalculator_1.default {
         if ((buyerFundsInCopper - itemCostInCopper) < 0) {
             throw "Could not do the transaction";
         }
-        console.log(`buyerFundsInCopper : ${buyerFundsInCopper}`);
+        Logger_1.default.Log('buyerFundsInCopper', buyerFundsInCopper);
         let buyerFunds = funds;
         buyerFunds["cp"] -= itemCostInCopper;
         this.subtractAndConvertToHigherFund(buyerFunds, "cp");
@@ -2403,7 +2529,9 @@ class Dnd5eCurrencyCalculator extends CurrencyCalculator_1.default {
         }
         this.updateActorWithNewFunds(seller, sellerFunds);
     }
-    getPriceOutputWithModifier(basePrice, modifier) {
+    getPriceOutputWithModifier(basePriceItem, modifier) {
+        // @ts-ignore
+        let basePrice = basePriceItem.system.price;
         return this.priceInText((basePrice * modifier * 100) / 100);
     }
     priceInText(itemCostInGold) {
@@ -2435,7 +2563,7 @@ class Dnd5eCurrencyCalculator extends CurrencyCalculator_1.default {
         return '';
     }
     prepareItems(items) {
-        console.log("Merchant Sheet | Prepare Features");
+        Logger_1.default.Log("Prepare Features");
         // Actions
         const features = {
             weapons: {
@@ -2522,10 +2650,10 @@ class Dnd5eCurrencyCalculator extends CurrencyCalculator_1.default {
     }
     getPriceFromItem(item) {
         // @ts-ignore
-        return item.data.price;
+        return item.system.price;
     }
     getPriceItemKey() {
-        return "data.price";
+        return "system.price";
     }
     currency() {
         return 'GP';
@@ -2541,7 +2669,346 @@ class Dnd5eCurrencyCalculator extends CurrencyCalculator_1.default {
 }
 exports.default = Dnd5eCurrencyCalculator;
 
-},{"../../Globals":1,"../../Utils/HtmlHelpers":3,"./CurrencyCalculator":16}],18:[function(require,module,exports){
+},{"../../Globals":1,"../../Utils/HtmlHelpers":3,"../../Utils/Logger":4,"./CurrencyCalculator":19}],21:[function(require,module,exports){
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const CurrencyCalculator_1 = __importDefault(require("./CurrencyCalculator"));
+const HtmlHelpers_1 = __importDefault(require("../../Utils/HtmlHelpers"));
+const Logger_1 = __importDefault(require("../../Utils/Logger"));
+const MerchantDragSource_1 = __importDefault(require("../model/MerchantDragSource"));
+class GurpsCurrencyCalculator extends CurrencyCalculator_1.default {
+    constructor() {
+        super(...arguments);
+        this.currencyName = 'Money';
+    }
+    // useEP: unknown = true;
+    async onDropItemCreate(itemData, caller) {
+        // Create a Consumable spell scroll on the Inventory tab
+        if ((itemData.type === "spell")) {
+            const scroll = await this.createScroll(itemData);
+            // @ts-ignore
+            return caller.callSuperOnDropItemCreate(scroll);
+        }
+        return caller.callSuperOnDropItemCreate(itemData);
+    }
+    async createScrollFromSpell(spell) {
+        const itemData = spell;
+        // const {actionType, description, source, activation, duration, target, range, damage, save, level} = itemData.data;
+        // @ts-ignore
+        let level = spell.data.level;
+        // @ts-ignore
+        let description = spell.data.description;
+        // @ts-ignore
+        // Get scroll data
+        // @ts-ignore
+        const scrollUuid = `Compendium.${CONFIG.DND5E.sourcePacks.ITEMS}.${CONFIG.DND5E.spellScrollIds[level]}`;
+        const scrollItem = await fromUuid(scrollUuid);
+        // @ts-ignore
+        const scrollData = scrollItem.toObject();
+        delete scrollData._id;
+        // Split the scroll description into an intro paragraph and the remaining details
+        const scrollDescription = scrollData.data.description.value;
+        const pdel = "</p>";
+        const scrollIntroEnd = scrollDescription.indexOf(pdel);
+        const scrollIntro = scrollDescription.slice(0, scrollIntroEnd + pdel.length);
+        const scrollDetails = scrollDescription.slice(scrollIntroEnd + pdel.length);
+        // Create a composite description from the scroll description and the spell details
+        const desc = `${scrollIntro}<hr/><h3>${itemData.name} (Level ${level})</h3><hr/>${description.value}<hr/><h3>Scroll Details</h3><hr/>${scrollDetails}`;
+        let clone = duplicate(itemData);
+        clone.name = `${game.i18n.localize("DND5E.SpellScroll")}: ${itemData.name}`;
+        clone.img = scrollData.img;
+        clone.type = "consumable";
+        // @ts-ignore
+        clone.data.description.value = desc.trim();
+        // @ts-ignore
+        return clone;
+    }
+    async createScroll(itemData) {
+        return this.createScrollFromSpell(itemData);
+    }
+    getItemForActor(actor, name) {
+        console.log("Find " + name + " from actor", actor);
+        // @ts-ignore
+        return actor.findEquipmentByName(name);
+    }
+    actorCurrency(actor) {
+        // @ts-ignore
+        let currencyItem = this.getItemForActor(actor, this.currencyName);
+        console.log("actor currency", currencyItem, actor);
+        if (currencyItem !== undefined) {
+            // @ts-ignore
+            return currencyItem[0].count;
+        }
+        return 0;
+    }
+    merchantCurrency(actor) {
+        return [
+            {
+                name: this.currencyName,
+                value: 0
+            }
+        ];
+    }
+    buyerHaveNotEnoughFunds(itemCostInGold, buyerFunds) {
+        // let itemCostInCopper = this.convertCurrencyToLowest({gp: itemCostInGold})
+        // let buyerFundsAsCopper = this.convertCurrencyToLowest(buyerFunds);
+        // console.log("item price > buyerFundsInCopper", itemCostInCopper, buyerFundsAsCopper)
+        return itemCostInGold > buyerFunds;
+    }
+    updateActorWithNewFunds(buyer, buyerFunds) {
+        let currencyItem = this.getItemForActor(buyer, this.currencyName);
+        console.log("update currency", currencyItem[1], buyerFunds);
+        // @ts-ignore
+        buyer.updateEqtCount(currencyItem[1], buyerFunds);
+    }
+    subtractAmountFromActor(buyer, buyerFunds, itemCostInGold) {
+        buyerFunds = this.calculateNewBuyerFunds(itemCostInGold, buyerFunds);
+        // buyerFunds = buyerFunds - itemCostInGold;
+        this.updateActorWithNewFunds(buyer, buyerFunds);
+        console.log(`Merchant sheet | Funds after purchase: ${buyerFunds}`);
+    }
+    calculateNewBuyerFunds(itemCostInGold, funds) {
+        if ((funds - itemCostInGold) < 0) {
+            throw "Could not do the transaction";
+        }
+        let buyerFunds = funds;
+        buyerFunds -= itemCostInGold;
+        return buyerFunds;
+    }
+    addAmountForActor(seller, sellerFunds, itemCostInGold) {
+        sellerFunds = Number(sellerFunds) + Number(itemCostInGold);
+        this.updateActorWithNewFunds(seller, sellerFunds);
+    }
+    getPriceOutputWithModifier(basePriceItem, modifier) {
+        // @ts-ignore
+        let basePrice = basePriceItem.data.data.eqt.cost;
+        return this.priceInText((basePrice * modifier * 100) / 100);
+    }
+    getWeight(item) {
+        // @ts-ignore
+        return item.system.eqt.weight;
+    }
+    getQuantityNumber(itemData) {
+        // @ts-ignore
+        return itemData.system.eqt.count;
+    }
+    priceInText(itemCostInGold) {
+        return '' + itemCostInGold;
+    }
+    prepareItems(items) {
+        console.log("Merchant Sheet | Prepare Features", items);
+        // Actions
+        const features = {
+            weapons: {
+                label: game.i18n.localize("MERCHANTNPC.weapons"),
+                items: [],
+                type: "weapon"
+            },
+            equipment: {
+                label: game.i18n.localize("MERCHANTNPC.equipment"),
+                items: [],
+                type: "equipment"
+            },
+            consumables: {
+                label: game.i18n.localize("MERCHANTNPC.consumables"),
+                items: [],
+                type: "consumable"
+            },
+            tools: {
+                label: game.i18n.localize("MERCHANTNPC.tools"),
+                items: [],
+                type: "tool"
+            },
+            containers: {
+                label: game.i18n.localize("MERCHANTNPC.containers"),
+                items: [],
+                type: "container"
+            },
+            loot: {
+                label: game.i18n.localize("MERCHANTNPC.loot"),
+                items: [],
+                type: "loot"
+            },
+        };
+        // @ts-ignore
+        features.weapons.items = items.weapon;
+        // features.weapons.items.sort(this.sort());
+        // @ts-ignore
+        features.equipment.items = items.equipment;
+        // features.equipment.items.sort(this.sort());
+        // @ts-ignore
+        features.consumables.items = items.consumable;
+        // features.consumables.items.sort(this.sort());
+        // @ts-ignore
+        features.tools.items = items.tool;
+        // features.tools.items.sort(this.sort());
+        // @ts-ignore
+        features.containers.items = items.backpack;
+        // features.containers.items.sort(this.sort());
+        // @ts-ignore
+        features.loot.items = items.loot;
+        // features.loot.items.sort(this.sort());
+        return features;
+    }
+    sort() {
+        return function (a, b) {
+            return a.name.localeCompare(b.name);
+        };
+    }
+    initSettings() {
+        this.registerSystemSettings();
+        super.initSettings();
+    }
+    registerSystemSettings() {
+        // game.settings.register(Globals.ModuleName, "useEP", {
+        // 	name: game.i18n.format("MERCHANTNPC.global-settings.use-ep-name"),
+        // 	hint: game.i18n.format("MERCHANTNPC.global-settings.use-ep-hint"),
+        // 	scope: "world",
+        // 	config: true,
+        // 	default: true,
+        // 	type: Boolean
+        // });
+    }
+    getPriceFromItem(item) {
+        console.log(item);
+        // @ts-ignore
+        return item.system.eqt.cost;
+    }
+    getPriceItemKey() {
+        return "data.eqt.cost";
+    }
+    currency() {
+        return this.currencyName;
+    }
+    updateMerchantCurrency(actor) {
+        let currencyInputName = "currency-" + this.currencyName;
+        console.log("find input: " + currencyInputName);
+        let currency = HtmlHelpers_1.default.getHtmlInputNumberValue(currencyInputName, document);
+        this.updateActorWithNewFunds(actor, currency);
+    }
+    deleteItemsOnActor(actor, deletes) {
+        return actor.deleteEmbeddedDocuments("Item", deletes);
+    }
+    updateItemsOnActor(actor, destUpdates) {
+        for (const destUpdate of destUpdates) {
+            if (Array.isArray(destUpdate)) {
+                // @ts-ignore
+                actor.updateEqtCount(destUpdate[1], destUpdate[0].count);
+            }
+            else {
+                // @ts-ignore
+                actor.updateEqtCount(destUpdate._id, destUpdate.count);
+            }
+        }
+        return actor.updateEmbeddedDocuments("Item", []);
+    }
+    getUpdateObject(quantityFromItem, quantity, item, itemId, infinity) {
+        if (Array.isArray(item)) {
+            // @ts-ignore
+            return {
+                _id: item[1],
+                // @ts-ignore
+                count: quantityFromItem >= Number.MAX_VALUE - 10000 || infinity ? Number.MAX_VALUE : quantityFromItem - quantity
+            };
+        }
+        return {
+            _id: itemId,
+            // @ts-ignore
+            [this.getQuantityKey()]: quantityFromItem >= Number.MAX_VALUE - 10000 || infinity ? Number.MAX_VALUE : quantityFromItem - quantity
+        };
+    }
+    getNameFromItem(newItem) {
+        if (Array.isArray(newItem)) {
+            return newItem[0].name;
+        }
+        return newItem.name;
+    }
+    setQuantityForItem(newItem, quantity) {
+        if (Array.isArray(newItem)) {
+            newItem[0].count = quantity;
+        }
+        else {
+            this.setQuantityForItemData(newItem.data, quantity);
+        }
+    }
+    setQuantityForItemData(data, quantity) {
+        // @ts-ignore
+        Logger_1.default.Log("Changing quantity for item and set quantity", data, quantity);
+        // @ts-ignore
+        data.eqt.count = quantity;
+    }
+    addItemsToActor(actor, additions) {
+        console.log("Add item", additions);
+        for (const addition of additions) {
+            console.log("Add item", addition);
+            let itemToAdd;
+            if (Array.isArray(addition.newItem)) {
+                itemToAdd = addition.origItem.data;
+            }
+            else {
+                itemToAdd = addition.newItem;
+            }
+            console.log("Add item to Actor", itemToAdd);
+            // @ts-ignore
+            actor.addNewItemData(itemToAdd);
+        }
+        return actor.createEmbeddedDocuments("Item", []);
+    }
+    findItemByNameForActor(actor, name) {
+        return this.getItemForActor(actor, name);
+    }
+    isItemNotFound(destItem) {
+        if (destItem === undefined) {
+            return true;
+        }
+        if (Array.isArray(destItem)) {
+            for (const destItemElement of destItem) {
+                if (destItemElement !== undefined) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    updateItemAddToArray(actor, destUpdates, destItem, quantity) {
+        destItem[0].count = destItem[0].count + quantity;
+        destUpdates.push(destItem);
+    }
+    getQuantityKey() {
+        return "data.eqt.count";
+    }
+    isDropAccepted(dragSource) {
+        return dragSource.type === "equipment" && dragSource.actorid;
+    }
+    getMerchantDragSource(dragSource) {
+        if (dragSource.actorid === undefined || dragSource.type !== "equipment") {
+            return undefined;
+        }
+        console.log("DragSource", dragSource);
+        return new MerchantDragSource_1.default(this.getQuantityNumber(dragSource.itemData), dragSource.actorid, this.getPriceFromItem(dragSource.itemData), dragSource.itemData.name, dragSource.id, dragSource, dragSource.itemData.img);
+    }
+    getQuantityFromItem(item) {
+        if (Array.isArray(item)) {
+            return item[0].count;
+        }
+        else {
+            return this.getQuantity(this.getQuantityNumber(item));
+        }
+    }
+    duplicateItemFromActor(item, source) {
+        let foundItem = source.data.items.find(i => i.name == this.getNameFromItem(item));
+        if (foundItem === undefined) {
+            return duplicate(item);
+        }
+        return duplicate(foundItem);
+    }
+}
+exports.default = GurpsCurrencyCalculator;
+
+},{"../../Utils/HtmlHelpers":3,"../../Utils/Logger":4,"../model/MerchantDragSource":13,"./CurrencyCalculator":19}],22:[function(require,module,exports){
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -2666,7 +3133,7 @@ class SfrpgCurrencyCalculator extends CurrencyCalculator_1.default {
     }
     getPriceFromItem(item) {
         // @ts-ignore
-        return item.data.price;
+        return item.system.price;
     }
     getPriceItemKey() {
         return "data.price";
@@ -2677,7 +3144,7 @@ class SfrpgCurrencyCalculator extends CurrencyCalculator_1.default {
 }
 exports.default = SfrpgCurrencyCalculator;
 
-},{"./CurrencyCalculator":16}],19:[function(require,module,exports){
+},{"./CurrencyCalculator":19}],23:[function(require,module,exports){
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -2737,7 +3204,7 @@ class SwadeCurrencyCalculator extends CurrencyCalculator_1.default {
     }
     getPriceFromItem(item) {
         // @ts-ignore
-        return item.data.price;
+        return item.system.price;
     }
     getPriceItemKey() {
         return "data.price";
@@ -2754,7 +3221,7 @@ class SwadeCurrencyCalculator extends CurrencyCalculator_1.default {
 }
 exports.default = SwadeCurrencyCalculator;
 
-},{"./CurrencyCalculator":16}],20:[function(require,module,exports){
+},{"./CurrencyCalculator":19}],24:[function(require,module,exports){
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -2956,7 +3423,7 @@ class Wfrp4eCurrencyCalculator extends CurrencyCalculator_1.default {
     }
     getPriceFromItem(item) {
         // @ts-ignore
-        return this.getBPprice(item.data.price);
+        return this.getBPprice(item.system.price);
     }
     getPriceItemKey() {
         return "data.price";
@@ -2970,10 +3437,13 @@ class Wfrp4eCurrencyCalculator extends CurrencyCalculator_1.default {
     setQuantityForItemData(data, quantity) {
         data.quantity.value = quantity;
     }
-    getWeight(itemData) {
-        return itemData.encumbrance.value;
+    getWeight(item) {
+        // @ts-ignore
+        return item.system.encumbrance.value;
     }
-    getPriceOutputWithModifier(basePrice, modifier) {
+    getPriceOutputWithModifier(basePriceItem, modifier) {
+        // @ts-ignore
+        let basePrice = basePriceItem.data.data.price;
         let baseAmount = this.getBPprice(basePrice);
         let priceCalculated = Math.round(Math.round(baseAmount * modifier * 100) / 100);
         // @ts-ignore
@@ -3012,7 +3482,7 @@ class Wfrp4eCurrencyCalculator extends CurrencyCalculator_1.default {
 }
 exports.default = Wfrp4eCurrencyCalculator;
 
-},{"../../Utils/Logger":4,"./CurrencyCalculator":16}],21:[function(require,module,exports){
+},{"../../Utils/Logger":4,"./CurrencyCalculator":19}],25:[function(require,module,exports){
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -3176,17 +3646,17 @@ class World5eCurrencyCalculator extends CurrencyCalculator_1.default {
         //@ts-ignore
         let standard = this.getStandard();
         //@ts-ignore
-        return n * CONFIG.DND5E.currencies.gp.conversion[standard];
+        return n * CONFIG.DND5E.currencies[standard].conversion;
     }
     standardToGp(n) {
         // @ts-ignore
         let standard = this.getStandard();
         // @ts-ignore
-        return n / CONFIG.DND5E.currencies.gp.conversion[standard];
+        return n / CONFIG.DND5E.currencies[standard].conversion;
     }
     getPriceFromItem(item) {
         // @ts-ignore
-        return this.gpToStandard(item.data.price);
+        return this.gpToStandard(item.system.price);
     }
     getPriceItemKey() {
         return "data.price";
@@ -3207,13 +3677,15 @@ class World5eCurrencyCalculator extends CurrencyCalculator_1.default {
         // @ts-ignore
         return " " + CONFIG.DND5E.currencies[standard].abbreviation;
     }
-    getPriceOutputWithModifier(basePrice, modifier) {
+    getPriceOutputWithModifier(basePriceItem, modifier) {
+        // @ts-ignore
+        let basePrice = basePriceItem.data.data.price;
         return this.gpToStandard((Math.round(basePrice * modifier * 100) / 100)).toLocaleString('en') + this.abbreviation();
     }
 }
 exports.default = World5eCurrencyCalculator;
 
-},{"../../Globals":1,"./CurrencyCalculator":16}],22:[function(require,module,exports){
+},{"../../Globals":1,"./CurrencyCalculator":19}],26:[function(require,module,exports){
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -3262,13 +3734,12 @@ class GeneratorWindow extends Application {
         html.find('.generator-selector').change(event => this.merchantSheetNPC.onGeneratorSelectorChanged(event));
         super.activateListeners(html);
         function validateInput(generatorInput) {
-            var _a, _b;
             if (generatorInput.selected === 'table' && !generatorInput.table) {
-                (_a = ui.notifications) === null || _a === void 0 ? void 0 : _a.error("For generating items a table needs to be selected");
+                ui.notifications?.error("For generating items a table needs to be selected");
                 return false;
             }
             if (generatorInput.selected === 'compendium' && !generatorInput.compendium) {
-                (_b = ui.notifications) === null || _b === void 0 ? void 0 : _b.error("For generating items a compendium needs to be selected");
+                ui.notifications?.error("For generating items a compendium needs to be selected");
                 return false;
             }
             return true;
@@ -3277,7 +3748,7 @@ class GeneratorWindow extends Application {
 }
 exports.GeneratorWindow = GeneratorWindow;
 
-},{"../../Globals":1,"../../Utils/Logger":4,"../../Utils/MerchantSettings":5,"../MerchantSheet":7,"../MerchantSheetNPCHelper":8,"../model/MerchantGenerator":11}],23:[function(require,module,exports){
+},{"../../Globals":1,"../../Utils/Logger":4,"../../Utils/MerchantSettings":5,"../MerchantSheet":7,"../MerchantSheetNPCHelper":9,"../model/MerchantGenerator":14}],27:[function(require,module,exports){
 (function (global){(function (){
 'use strict';
 
@@ -3787,7 +4258,7 @@ var objectKeys = Object.keys || function (obj) {
 };
 
 }).call(this)}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"object-assign":42,"util/":26}],24:[function(require,module,exports){
+},{"object-assign":47,"util/":30}],28:[function(require,module,exports){
 if (typeof Object.create === 'function') {
   // implementation from standard node.js 'util' module
   module.exports = function inherits(ctor, superCtor) {
@@ -3812,14 +4283,14 @@ if (typeof Object.create === 'function') {
   }
 }
 
-},{}],25:[function(require,module,exports){
+},{}],29:[function(require,module,exports){
 module.exports = function isBuffer(arg) {
   return arg && typeof arg === 'object'
     && typeof arg.copy === 'function'
     && typeof arg.fill === 'function'
     && typeof arg.readUInt8 === 'function';
 }
-},{}],26:[function(require,module,exports){
+},{}],30:[function(require,module,exports){
 (function (process,global){(function (){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -4409,7 +4880,7 @@ function hasOwnProperty(obj, prop) {
 }
 
 }).call(this)}).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./support/isBuffer":25,"_process":43,"inherits":24}],27:[function(require,module,exports){
+},{"./support/isBuffer":29,"_process":48,"inherits":28}],31:[function(require,module,exports){
 'use strict'
 
 exports.byteLength = byteLength
@@ -4561,9 +5032,9 @@ function fromByteArray (uint8) {
   return parts.join('')
 }
 
-},{}],28:[function(require,module,exports){
+},{}],32:[function(require,module,exports){
 
-},{}],29:[function(require,module,exports){
+},{}],33:[function(require,module,exports){
 (function (Buffer){(function (){
 /*!
  * The buffer module from node.js, for the browser.
@@ -6344,7 +6815,7 @@ function numberIsNaN (obj) {
 }
 
 }).call(this)}).call(this,require("buffer").Buffer)
-},{"base64-js":27,"buffer":29,"ieee754":40}],30:[function(require,module,exports){
+},{"base64-js":31,"buffer":33,"ieee754":44}],34:[function(require,module,exports){
 /* MIT license */
 var cssKeywords = require('color-name');
 
@@ -7214,7 +7685,7 @@ convert.rgb.gray = function (rgb) {
 	return [val / 255 * 100];
 };
 
-},{"color-name":33}],31:[function(require,module,exports){
+},{"color-name":37}],35:[function(require,module,exports){
 var conversions = require('./conversions');
 var route = require('./route');
 
@@ -7294,7 +7765,7 @@ models.forEach(function (fromModel) {
 
 module.exports = convert;
 
-},{"./conversions":30,"./route":32}],32:[function(require,module,exports){
+},{"./conversions":34,"./route":36}],36:[function(require,module,exports){
 var conversions = require('./conversions');
 
 /*
@@ -7393,7 +7864,7 @@ module.exports = function (fromModel) {
 };
 
 
-},{"./conversions":30}],33:[function(require,module,exports){
+},{"./conversions":34}],37:[function(require,module,exports){
 'use strict'
 
 module.exports = {
@@ -7547,13 +8018,13 @@ module.exports = {
 	"yellowgreen": [154, 205, 50]
 };
 
-},{}],34:[function(require,module,exports){
+},{}],38:[function(require,module,exports){
 /* MIT license */
 var colorNames = require('color-name');
 var swizzle = require('simple-swizzle');
 var hasOwnProperty = Object.hasOwnProperty;
 
-var reverseNames = {};
+var reverseNames = Object.create(null);
 
 // create a list of reverse color names
 for (var name in colorNames) {
@@ -7791,7 +8262,7 @@ function hexDouble(num) {
 	return (str.length < 2) ? '0' + str : str;
 }
 
-},{"color-name":33,"simple-swizzle":59}],35:[function(require,module,exports){
+},{"color-name":37,"simple-swizzle":64}],39:[function(require,module,exports){
 'use strict';
 
 var colorString = require('color-string');
@@ -8275,7 +8746,7 @@ function zeroArray(arr, length) {
 
 module.exports = Color;
 
-},{"color-convert":31,"color-string":34}],36:[function(require,module,exports){
+},{"color-convert":35,"color-string":38}],40:[function(require,module,exports){
 (function (Buffer){(function (){
 
 
@@ -8344,7 +8815,7 @@ class ResizeableBuffer{
 module.exports = ResizeableBuffer
 
 }).call(this)}).call(this,require("buffer").Buffer)
-},{"buffer":29}],37:[function(require,module,exports){
+},{"buffer":33}],41:[function(require,module,exports){
 (function (Buffer,setImmediate){(function (){
 
 /*
@@ -9616,7 +10087,7 @@ const normalizeColumnsArray = function(columns){
 }
 
 }).call(this)}).call(this,require("buffer").Buffer,require("timers").setImmediate)
-},{"./ResizeableBuffer":36,"buffer":29,"stream":61,"timers":63}],38:[function(require,module,exports){
+},{"./ResizeableBuffer":40,"buffer":33,"stream":65,"timers":67}],42:[function(require,module,exports){
 (function (Buffer){(function (){
 
 const parse = require('.')
@@ -9645,7 +10116,7 @@ module.exports = function(data, options={}){
 }
 
 }).call(this)}).call(this,require("buffer").Buffer)
-},{".":37,"buffer":29}],39:[function(require,module,exports){
+},{".":41,"buffer":33}],43:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -10144,7 +10615,7 @@ function eventTargetAgnosticAddListener(emitter, name, listener, flags) {
   }
 }
 
-},{}],40:[function(require,module,exports){
+},{}],44:[function(require,module,exports){
 /*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
   var e, m
@@ -10231,7 +10702,7 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
   buffer[offset + i - d] |= s * 128
 }
 
-},{}],41:[function(require,module,exports){
+},{}],45:[function(require,module,exports){
 if (typeof Object.create === 'function') {
   // implementation from standard node.js 'util' module
   module.exports = function inherits(ctor, superCtor) {
@@ -10260,7 +10731,18 @@ if (typeof Object.create === 'function') {
   }
 }
 
-},{}],42:[function(require,module,exports){
+},{}],46:[function(require,module,exports){
+module.exports = function isArrayish(obj) {
+	if (!obj || typeof obj === 'string') {
+		return false;
+	}
+
+	return obj instanceof Array || Array.isArray(obj) ||
+		(obj.length >= 0 && (obj.splice instanceof Function ||
+			(Object.getOwnPropertyDescriptor(obj, (obj.length - 1)) && obj.constructor.name !== 'String')));
+};
+
+},{}],47:[function(require,module,exports){
 /*
 object-assign
 (c) Sindre Sorhus
@@ -10352,7 +10834,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 	return to;
 };
 
-},{}],43:[function(require,module,exports){
+},{}],48:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -10538,7 +11020,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],44:[function(require,module,exports){
+},{}],49:[function(require,module,exports){
 'use strict';
 
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
@@ -10667,7 +11149,7 @@ createErrorType('ERR_UNKNOWN_ENCODING', function (arg) {
 createErrorType('ERR_STREAM_UNSHIFT_AFTER_END_EVENT', 'stream.unshift() after end event');
 module.exports.codes = codes;
 
-},{}],45:[function(require,module,exports){
+},{}],50:[function(require,module,exports){
 (function (process){(function (){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -10809,7 +11291,7 @@ Object.defineProperty(Duplex.prototype, 'destroyed', {
   }
 });
 }).call(this)}).call(this,require('_process'))
-},{"./_stream_readable":47,"./_stream_writable":49,"_process":43,"inherits":41}],46:[function(require,module,exports){
+},{"./_stream_readable":52,"./_stream_writable":54,"_process":48,"inherits":45}],51:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -10849,7 +11331,7 @@ function PassThrough(options) {
 PassThrough.prototype._transform = function (chunk, encoding, cb) {
   cb(null, chunk);
 };
-},{"./_stream_transform":48,"inherits":41}],47:[function(require,module,exports){
+},{"./_stream_transform":53,"inherits":45}],52:[function(require,module,exports){
 (function (process,global){(function (){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -11976,7 +12458,7 @@ function indexOf(xs, x) {
   return -1;
 }
 }).call(this)}).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../errors":44,"./_stream_duplex":45,"./internal/streams/async_iterator":50,"./internal/streams/buffer_list":51,"./internal/streams/destroy":52,"./internal/streams/from":54,"./internal/streams/state":56,"./internal/streams/stream":57,"_process":43,"buffer":29,"events":39,"inherits":41,"string_decoder/":62,"util":28}],48:[function(require,module,exports){
+},{"../errors":49,"./_stream_duplex":50,"./internal/streams/async_iterator":55,"./internal/streams/buffer_list":56,"./internal/streams/destroy":57,"./internal/streams/from":59,"./internal/streams/state":61,"./internal/streams/stream":62,"_process":48,"buffer":33,"events":43,"inherits":45,"string_decoder/":66,"util":32}],53:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -12178,7 +12660,7 @@ function done(stream, er, data) {
   if (stream._transformState.transforming) throw new ERR_TRANSFORM_ALREADY_TRANSFORMING();
   return stream.push(null);
 }
-},{"../errors":44,"./_stream_duplex":45,"inherits":41}],49:[function(require,module,exports){
+},{"../errors":49,"./_stream_duplex":50,"inherits":45}],54:[function(require,module,exports){
 (function (process,global){(function (){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -12878,7 +13360,7 @@ Writable.prototype._destroy = function (err, cb) {
   cb(err);
 };
 }).call(this)}).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../errors":44,"./_stream_duplex":45,"./internal/streams/destroy":52,"./internal/streams/state":56,"./internal/streams/stream":57,"_process":43,"buffer":29,"inherits":41,"util-deprecate":64}],50:[function(require,module,exports){
+},{"../errors":49,"./_stream_duplex":50,"./internal/streams/destroy":57,"./internal/streams/state":61,"./internal/streams/stream":62,"_process":48,"buffer":33,"inherits":45,"util-deprecate":68}],55:[function(require,module,exports){
 (function (process){(function (){
 'use strict';
 
@@ -13088,7 +13570,7 @@ var createReadableStreamAsyncIterator = function createReadableStreamAsyncIterat
 
 module.exports = createReadableStreamAsyncIterator;
 }).call(this)}).call(this,require('_process'))
-},{"./end-of-stream":53,"_process":43}],51:[function(require,module,exports){
+},{"./end-of-stream":58,"_process":48}],56:[function(require,module,exports){
 'use strict';
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -13299,7 +13781,7 @@ function () {
 
   return BufferList;
 }();
-},{"buffer":29,"util":28}],52:[function(require,module,exports){
+},{"buffer":33,"util":32}],57:[function(require,module,exports){
 (function (process){(function (){
 'use strict'; // undocumented cb() API, needed for core, not for public API
 
@@ -13407,7 +13889,7 @@ module.exports = {
   errorOrDestroy: errorOrDestroy
 };
 }).call(this)}).call(this,require('_process'))
-},{"_process":43}],53:[function(require,module,exports){
+},{"_process":48}],58:[function(require,module,exports){
 // Ported from https://github.com/mafintosh/end-of-stream with
 // permission from the author, Mathias Buus (@mafintosh).
 'use strict';
@@ -13512,12 +13994,12 @@ function eos(stream, opts, callback) {
 }
 
 module.exports = eos;
-},{"../../../errors":44}],54:[function(require,module,exports){
+},{"../../../errors":49}],59:[function(require,module,exports){
 module.exports = function () {
   throw new Error('Readable.from is not available in the browser')
 };
 
-},{}],55:[function(require,module,exports){
+},{}],60:[function(require,module,exports){
 // Ported from https://github.com/mafintosh/pump with
 // permission from the author, Mathias Buus (@mafintosh).
 'use strict';
@@ -13615,7 +14097,7 @@ function pipeline() {
 }
 
 module.exports = pipeline;
-},{"../../../errors":44,"./end-of-stream":53}],56:[function(require,module,exports){
+},{"../../../errors":49,"./end-of-stream":58}],61:[function(require,module,exports){
 'use strict';
 
 var ERR_INVALID_OPT_VALUE = require('../../../errors').codes.ERR_INVALID_OPT_VALUE;
@@ -13643,10 +14125,10 @@ function getHighWaterMark(state, options, duplexKey, isDuplex) {
 module.exports = {
   getHighWaterMark: getHighWaterMark
 };
-},{"../../../errors":44}],57:[function(require,module,exports){
+},{"../../../errors":49}],62:[function(require,module,exports){
 module.exports = require('events').EventEmitter;
 
-},{"events":39}],58:[function(require,module,exports){
+},{"events":43}],63:[function(require,module,exports){
 /*! safe-buffer. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
 /* eslint-disable node/no-deprecated-api */
 var buffer = require('buffer')
@@ -13713,7 +14195,7 @@ SafeBuffer.allocUnsafeSlow = function (size) {
   return buffer.SlowBuffer(size)
 }
 
-},{"buffer":29}],59:[function(require,module,exports){
+},{"buffer":33}],64:[function(require,module,exports){
 'use strict';
 
 var isArrayish = require('is-arrayish');
@@ -13744,18 +14226,7 @@ swizzle.wrap = function (fn) {
 	};
 };
 
-},{"is-arrayish":60}],60:[function(require,module,exports){
-module.exports = function isArrayish(obj) {
-	if (!obj || typeof obj === 'string') {
-		return false;
-	}
-
-	return obj instanceof Array || Array.isArray(obj) ||
-		(obj.length >= 0 && (obj.splice instanceof Function ||
-			(Object.getOwnPropertyDescriptor(obj, (obj.length - 1)) && obj.constructor.name !== 'String')));
-};
-
-},{}],61:[function(require,module,exports){
+},{"is-arrayish":46}],65:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -13886,7 +14357,7 @@ Stream.prototype.pipe = function(dest, options) {
   return dest;
 };
 
-},{"events":39,"inherits":41,"readable-stream/lib/_stream_duplex.js":45,"readable-stream/lib/_stream_passthrough.js":46,"readable-stream/lib/_stream_readable.js":47,"readable-stream/lib/_stream_transform.js":48,"readable-stream/lib/_stream_writable.js":49,"readable-stream/lib/internal/streams/end-of-stream.js":53,"readable-stream/lib/internal/streams/pipeline.js":55}],62:[function(require,module,exports){
+},{"events":43,"inherits":45,"readable-stream/lib/_stream_duplex.js":50,"readable-stream/lib/_stream_passthrough.js":51,"readable-stream/lib/_stream_readable.js":52,"readable-stream/lib/_stream_transform.js":53,"readable-stream/lib/_stream_writable.js":54,"readable-stream/lib/internal/streams/end-of-stream.js":58,"readable-stream/lib/internal/streams/pipeline.js":60}],66:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -14183,7 +14654,7 @@ function simpleWrite(buf) {
 function simpleEnd(buf) {
   return buf && buf.length ? this.write(buf) : '';
 }
-},{"safe-buffer":58}],63:[function(require,module,exports){
+},{"safe-buffer":63}],67:[function(require,module,exports){
 (function (setImmediate,clearImmediate){(function (){
 var nextTick = require('process/browser.js').nextTick;
 var apply = Function.prototype.apply;
@@ -14262,7 +14733,7 @@ exports.clearImmediate = typeof clearImmediate === "function" ? clearImmediate :
   delete immediateIds[id];
 };
 }).call(this)}).call(this,require("timers").setImmediate,require("timers").clearImmediate)
-},{"process/browser.js":43,"timers":63}],64:[function(require,module,exports){
+},{"process/browser.js":48,"timers":67}],68:[function(require,module,exports){
 (function (global){(function (){
 
 /**

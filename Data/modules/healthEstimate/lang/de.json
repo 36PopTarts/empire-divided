@@ -3,33 +3,33 @@
 		"core": {
 			"custom": {
 				"FractionHP": {
-					"name": "Lebenspunkte Attribut",
-					"hint": "Dein System wird nicht offiziell unterstützt, daher könnte es ein anderes Attribut nutzen, als der Standard. Ändere diesen Wert nur, wenn die Schätzung nicht angezeigt wird und du weißt, was du tust."
+					"name": "Datenpfad Lebenspunkteattribut",
+					"hint": "Möglicherweise verwendet dein Spielsystem einen anderen Datenpfad. Wenn die Schätzung nicht korrekt angezeigt wird, geben den Datenpfad für das richtige Attribut ein (z. B. actor.system.health)."
 				},
 				"FractionMath": {
 					"name": "Bruchgleichung",
-					"hint": "Dein System wird nicht offiziell unterstützt, wähle daher die Gleichung zur Schätzung des Gesundheitsanteils",
+					"hint": "Die TP-Berechnung deines Spielsystems kann sich vom Standard unterscheiden. Wählen Sie die Berechnung, die zur Schätzung des Gesundheitsanteils verwendet wird.",
 					"choices": {
-						"0": "(Aktuelle HP)/(Maximale HP)",
-						"1": "(Maximale HP - Aktuelle HP)/(Maximale HP)"
+						"0": "(Aktuelle TP)/(Maximale TP)",
+						"1": "(Maximale TP - Aktuelle TP)/(Maximale TP)"
 					}
 				}
 			},
-			"isNow": "ist jetzt",
+			"isNow": "{name} ist jetzt {desc}.",
 			"showDescription": {
 				"name": "Zeige Schätzung: Benutzer",
-				"hint": "Zeige die Schätzungen der folgenden Benutzer.",
+				"hint": "Schätzungen für die folgenden Benutzer anzeigen.",
 				"choices": {
 					"all": "Alle",
 					"GM": "Spielleiter",
 					"Players": "Spieler",
-					"NPC": "Nicht-Spieler Charaktere",
-					"PC": "Spieler Charaktere"
+					"NPC": "Nichtspielercharaktere",
+					"PC": "Spielercharaktere"
 				}
 			},
 			"showDescriptionTokenType": {
 				"name": "Zeige Schätzungen: Token",
-				"hint": "Zeige Schätzungen der folgenden Token."
+				"hint": "Schätzungen der folgenden Token zeigen."
 			},
 			"stateNames": {
 				"name": "Stufen",
@@ -37,53 +37,60 @@
 				"default": "Bewusstlos, Sterbend, Stark verwundet, Verwundet, Leicht verwundet, Nicht verwundet"
 			},
 			"deathState": {
-				"name": "Todes-Zustand bei Bedingung",
-				"hint": "Zeige Token als tot, wenn es durch eine Bedingung beeinflusst wird, die das Icon-Set der Todesmarkereinstellung nutzt. Funktioniert unabhängig vom Makro."
+				"name": "Todeszustand bei Bedingung",
+				"hint": "Zeigt den Token wie in der Einstellung {setting} definiert an, wenn sie im Kampf als besiegt markiert wurde.",
+				"hint1": "Zeigen Token wie in der Einstellung {setting} definiert, wenn es von einer Bedingung betroffen ist, die das in der Einstellung {setting2} festgelegte Symbol verwendet.",
+				"hint2": "Zeigt das Token wie in der Einstellung {setting} definiert an, wenn es im Kampf als besiegt markiert wurde."
 			},
 			"deathStateName": {
-				"name": "Todes-Zustand Name",
-				"hint": "Die Beschreibung, welche den Spielern angezeigt wird, wenn ein Token als tot markiert wird. Der Kompendium-Tab hat ein Makro, um eines oder mehrere Token als tot zu markieren.",
+				"name": "Todeszustand Name",
+				"hint": "Die Beschreibung, die angezeigt wird, wenn ein Token tot ist.",
 				"default": "Tot"
 			},
 			"deathMarker": {
-				"name": "Todes-Marker",
-				"hint": "Pfad zum Bedingungs-Icon, welches tote Tokens markiert."
+				"name": "Todesmarker",
+				"hint": "Pfad zum Zustandssymbol, das die toten Tokens markiert."
 			},
 			"NPCsJustDie": {
-				"name": "NPCs sterben sofort.",
-				"hint": "Die letzte Stufe von NPCs wird mit dem Namen des Todes-Zustands ausgetauscht."
+				"name": "NSC sterben sofort",
+				"hint": "Die letzte Stufe von Tokens, deren Akteure nicht von Spielern ausgewählt wurden, wird durch {setting} ersetzt. Weitere Informationen darüber, was \"von Spielern ausgewählt\" bedeutet, finden Sie in der Foundry-Dokumentation unter \"Users and Permissions\"."
 			},
 			"perfectionism": {
 				"name": "Perfektionismus",
-				"hint": "Zeige die bestmögliche Beschreibung nur an, wenn das Ziel in perfektem Zustand ist (es keinen Schaden erhalten hat)."
+				"hint": "Stellt ein, wie die bestmögliche Stufe, die letzte Stufe in der Option \"{setting1}\", angezeigt wird. Wenn die Option \"{setting2}\" ausgeschaltet ist und du möchtest, dass jede Stufe eine eigene Farbe hat, dann möchtest du wahrscheinlich nicht die erste Auswahlmöglichkeit benutzen.",
+				"choices": {
+					"0": "Zeige die Beschreibung selbst wenn das Ziel beschädigt ist.",
+					"1": "Zeige die Beschreibung nur, wenn das Ziel nicht beschädigt ist.",
+					"2": "Verstecke die Beschreibung komplett."
+				}
 			},
 			"outputChat": {
 				"name": "Gebe Schätzungen im Chat aus",
-				"hint": "Gibt jede Änderung der Schätzung im Chat aus. Charaktere, die mit dem \"Verstecke Schätzungen\"-Makro markiert wurden, werden als \"Unbekannte Entität\" angezeigt."
+				"hint": "Alle Schätzungsänderungen im Chat ausgeben. Charaktere, die mit der Token-Konfiguration 'Namen ausblenden' gekennzeichnet sind, werden mit der Bezeichnung aus {setting} angezeigt."
 			},
 			"addTemp": {
 				"name": "Füge temporäre Gesundheit hinzu",
-				"hint": "Schließe temporäre Gesundheit und die Berechnung der Schätzung ein.\nMit dieser Einstellung sieht ein Token, welches temporäre HP erhält, \"gesünder\" aus, solange es nicht maximale HP hat."
+				"hint": "Schließe temporäre Lebenspunkte in die Berechnung der Schätzung ein.\nWenn z.B. die Einstellung aktiviert ist, sieht der Token, welcher temporäre TP erhält, \"gesünder\" aus, es sei denn, er hat bereits die maximale Gesundheit."
 			},
 			"breakOnZeroMaxHP": {
-				"name": "Verstecke auf Tokens mit 0 HP",
+				"name": "Verstecken Schätzung bei Tokens mit maximal 0 TP",
 				"hint": "Nützlich für Objekte mit Token."
 			},
 			"menuSettings": {
 				"fontSize": {
 					"name": "Schriftgröße",
-					"hint": "Akzeptiert jede valide Eigenschaft für CSS-Schriftgrößen."
+					"hint": "Akzeptiert jede valide Eigenschaft für CSS-Schriftgrößen"
 				},
 				"useColor": {
-					"name": "Nutze Farbe",
-					"hint": "Dies betrifft nicht das Einstellungsfenster. Ohne Haken werden die Schätzungen in schwarz-weiß angezeigt."
+					"name": "Farbe verwenden",
+					"hint": "Die Schätzungen werden in Schwarz-Weiß dargestellt."
 				},
 				"smoothGradient": {
-					"name": "Weicher Farbwechsel",
-					"hint": "Ist diese Einstellung aus, wechselt die Farbe nur, wenn die nächste Beschreibung erreicht wird. Ist diese Einstellung an, spiegelt die Farbe die prozentualen HP wieder."
+					"name": "Weicher Farbverlauf",
+					"hint": "Ist diese Einstellung aus, wechselt die Farbe nur, wenn die nächste Beschreibung erreicht wird. Ist diese Einstellung an, spiegelt die Farbe die prozentualen TP wieder."
 				},
 				"deadColor": {
-					"name": "Farbe toter Tokens"
+					"name": "Farbe der toten Tokens"
 				},
 				"outline": {
 					"name": "Kontur",
@@ -91,75 +98,277 @@
 					"brighten": "Aufhellen"
 				},
 				"position": {
-					"name": "Position",
+					"name": "Höhe",
 					"top": "Oben",
 					"middle": "Mitte",
-					"bottom": "Unten"
+					"bottom": "Unten",
+					"hint": "Die Position wird relativ zum Rahmen des Tokens festgelegt. Negative Werte verschieben sie nach oben, positive nach unten."
 				},
 				"positionAdjustment": {
-					"name": "Position Anpassung",
-					"hint": "Die Position ist relativ zum Rahmen. Die Zahl lässt dich die Position relativ zum normalen Platz anpassen. Positive Zahlen setzen sie tiefer, nagative höher. Der Standardwert von -1 setzt sie auf \"1 Zeile über der ursprünglichen Position\"."
+					"name": "Randanpassung",
+					"hint": "Passen Sie den Rand des Textes an. Positive Werte verschieben ihn nach oben, negative nach unten."
+				},
+				"styleSettings": {
+					"name": "Stil Einstellung",
+					"plural": "Stil Einstellungen"
+				},
+				"deathSettings": {
+					"plural": "Todeseinstellungen",
+					"name": "Todeseinstellung"
+				},
+				"behaviorSettings": {
+					"name": "Verhaltenseinstellung",
+					"plural": "Verhaltenseinstellungen"
+				},
+				"scaleToZoom": {
+					"name": "Schätzungen zum Zoomen skalieren",
+					"hint": "Skaliert die Schätzung auf der Grundlage des Zoomabstands."
+				},
+				"position2": {
+					"name": "Position",
+					"hint": "Die Position in Relation zum Rahmen des Tokens."
+				},
+				"scaleToGridSize": {
+					"name": "Skalierung auf Rastergröße",
+					"hint": "Skaliert auf der Grundlage der Rastergröße, wobei 100px als Basiswert angenommen wird."
 				}
+			},
+			"keybinds": {
+				"markDead": {
+					"name": "Als tot markieren",
+					"hint": "Markiert alle ausgewählten Tokens als tot. Wenn alle ausgewählten Tokens bereits tot sind, werden sie auf lebendig zurückgesetzt."
+				},
+				"customEstimates": {
+					"options": {
+						"1": "Token & Akteure",
+						"2": "Nur Token"
+					},
+					"hint": "Legt benutzerdefinierte Schätzungen für die ausgewählten Token fest. Lass es leer, um es zurückzusetzen.",
+					"name": "Benutzerdefinierte Schätzungen"
+				},
+				"dontMarkDead": {
+					"name": "Nicht als tot markieren",
+					"hint": "Sorgt dafür, dass NSCs nicht als tot angezeigt werden, wenn ihre TP 0 erreichen (sie werden z.B. als bewusstlos angezeigt). Dies ist nur sinnvoll, wenn du die Einstellung {setting} verwendest."
+				},
+				"hideEstimates": {
+					"name": "Schätzungen verbergen",
+					"hint": "Versteckt die Schätzungen der ausgewählten Tokens vor den Spielern. Versteckte Schätzungen werden nicht im Chat ausgegeben, wenn die Einstellung aktiviert ist, und werden für den SL mit einem Sternchen (*) angezeigt."
+				},
+				"hideNames": {
+					"name": "Namen verbergen",
+					"hint": "Versteckt die Namen von ausgewählten Tokens, wenn die Einstellung {setting} verwendet wird."
+				},
+				"hideEstimatesAndNames": {
+					"name": "Schätzungen und Namen verbergen",
+					"hint": "Schätzungen als auch die Namen der ausgewählten Token verbergen."
+				}
+			},
+			"alwaysShow": {
+				"hint": "Macht die Schätzungen immer sichtbar, statt nur dann, wenn du den Mauszeiger über ein Token bewegst.",
+				"name": "Immer Schätzungen anzeigen"
+			},
+			"combatOnly": {
+				"name": "Nur im Kampf anzeigen",
+				"hint": "Zeigt die Schätzungen nur an, wenn ein Kampf stattfindet."
+			},
+			"unknownEntity": {
+				"default": "Unbekannte Entität",
+				"hint": "Legt fest, wie ein versteckter Charakter aufgerufen werden soll.{warning}",
+				"name": "Unbekannter Entitätenname",
+				"warningPF2eWorkbench": "Wenn Sie die Funktion von \"PF2e Workbench\" zum Verschleiern von Namen verwenden, hat diese Vorrang vor dieser Einstellung.",
+				"warningCUB": "Wenn Sie die Funktion von CUB zum Ausblenden von Namen verwenden, hat diese Vorrang vor dieser Einstellung."
+			},
+			"estimates": {
+				"states": {
+					"0": "Bewusstlos",
+					"1": "Dem Tode nah",
+					"2": "Schwerstverletzt",
+					"3": "Verletzt",
+					"4": "Leichtverletzt",
+					"5": "Unverletzt"
+				},
+				"vehicles": {
+					"0": "Zerstört",
+					"1": "Brennend",
+					"2": "Rauchend",
+					"3": "Verbeult",
+					"4": "Zerkratzt",
+					"5": "Makellos"
+				},
+				"thresholds": {
+					"0": "Zerstört",
+					"1": "Zerbrochen",
+					"2": "Voll funktionsfähig"
+				},
+				"worst": "Schlechtestes",
+				"best": "Bestes",
+				"plural": "Schätzungen"
+			},
+			"estimationSettings": {
+				"title": "Einstellungen für Schätzungen",
+				"AddEstimate": "Schätzung hinzufügen",
+				"addTable": "Tabelle hinzufügen",
+				"default": "Standard",
+				"estimate": "Schätzung",
+				"jsRule": "JavaScript Regel",
+				"prioDecrease": "Priorität verringern",
+				"prioIncrease": "Priorität erhöhen",
+				"ignoreColor": {
+					"name": "Farbe ignorieren",
+					"hint": "Ignoriert die Farben aus dieser Tabelle und verwendet die Farben aus der nächsten gültigen Tabelle für das Token. Dies ist für Bedingungen gedacht, die Vorrang vor einer Schätzung haben sollten, aber dennoch die Farbe dieser Schätzung verwenden sollten."
+				},
+				"deleteTable": "Tabelle löschen"
 			}
 		},
 		"dnd5e": {
 			"vehicleNames": {
-				"hint": "Beschreibung für Fahrzeuge, wenn \"Fahrzeug-Schwellenwert\" ausgeschaltet ist",
+				"hint": "Beschreibung für Fahrzeuge.",
 				"default": "Zerstört, Gebrochen, Ramponiert, Angekratzt, Unberührt"
 			}
 		},
 		"PF1": {
 			"addNonlethal": {
-				"name": "Nutze nicht-tödlichen Schaden",
-				"hint": "Wenn aktiviert, wird nicht-tödlicher Schaden von den aktuellen HP für die Schätzung abgezogen."
+				"name": "Nicht-tödlichen Schaden verwenden",
+				"hint": "Wenn aktiviert, wird nicht-tödlicher Schaden von den aktuellen TP für die Schätzung abgezogen."
 			},
 			"showExtra": {
-				"name": "Invalide & Sterbend",
-				"hint": "Zeige \"Invalide\" und \"Sterbend\" Beschreibungen"
+				"name": "Zeige {condition1} & {condition2}",
+				"hint": "Zeigt die Beschreibungen von {condition1} und {condition2} an, wenn ihre Voraussetzungen erfüllt sind."
 			},
 			"disabledName": {
-				"name": "Invalide",
-				"hint": "Beschreibung, welche angezeigt wird, wenn das Token präzise 0 HP hat, oder mehr nicht-tödlichen Schaden als übrige HP hat.",
-				"default": "Invalide"
+				"name": "Wankend Stufe",
+				"hint": "Wird angezeigt, wenn das Token genau 0 TP hat, der nichttödliche Schaden genau den momentanen Trefferpunkte entspricht oder den Wankend-Zustand hat.",
+				"default": "Wankend"
 			},
 			"dyingName": {
-				"name": "Sterbend",
-				"hint": "Beschreibung, welche angezeigt wird, wenn das Token weniger als 0 HP hat.",
-				"default": "Sterbend"
+				"name": "Bewusstlos Stufe",
+				"hint": "Wird angezeigt, wenn das Token mehr nichttödlichen Schaden als TP hat.",
+				"default": "Bewusstlos"
 			}
 		},
 		"numenera": {
 			"countPools": {
 				"name": "Zähle leere Pools",
-				"hint": "Zähle leere Pools, anstatt Summen ihrer Werte. Die Schätzung wird nur geändert, wenn der Pool verbraucht ist/aufgefüllt wird."
+				"hint": "Zählung leerer Pools anstelle der Summe ihrer Werte, wobei sich die Schätzung nur ändert, wenn ein Pool erschöpft ist oder aufgefüllt wird."
 			}
 		},
 		"starfinder": {
 			"useThreshold": {
-				"name": "Nutze Fahrzeug-Schwellenwerte",
-				"hint": "Wenn diese Einstellung eingeschalte3t ist, werden die Beschreibungen der \"Schwellenwert-Stufen\" für Fahrzeuge genutzt."
+				"name": "Fahrzeugschwellenwert verwenden",
+				"hint": "Legt fest, welche Schätzungstabelle bei der Berechnung für ein Fahrzeug verwendet werden soll."
 			},
 			"thresholdNames": {
-				"name": "Schwellenwert-Stufen",
-				"hint": "Die Anzahl der Stufen ist auf 3 limitiert, sortiert vom schlechtesten zum besten.",
+				"name": "Schwellenwertstufen",
+				"hint": "Die Anzahl der Stufen ist auf 3 limitiert, sortiert vom schlimmsten bis zum besten Zustand",
 				"default": "Zerstört, Gebrochen, Voll funktionsfähig"
 			},
 			"vehicleNames": {
-				"name": "Fahrzeug-Stufen",
-				"hint": "Beschreibungen, die für Raumschiffe (immer) und Fahrzeuge (wenn \"Nutze Fahrzeug-Schwellenwerte\" ausgeschaltet ist) genutzt werden.",
+				"name": "Fahrzeugstufen",
+				"hint": "Beschreibungen, die für Raumschiffe und Fahrzeuge genutzt werden.",
 				"default": "Zerstört, Brennend, Qualmend, Ramponiert, Angekratzt, Voll funktionsfähig"
 			},
 			"addStamina": {
-				"name": "Ausdauer verrechnen",
-				"hint": "Ist die Einstellung eingeschaltet, wird die Ausdauer auf die HP angerechnet."
+				"name": "Konto für Ausdauer",
+				"hint": "Wenn diese Einstellung aktiviert ist, wird die Ausdauer bei der Berechnung zu den TP addiert."
 			}
 		},
 		"worldbuilding": {
 			"simpleRule": {
 				"name": "Schätzungs-Regel",
-				"hint": "Die JS-Formel für die Berechnung der Token-Schätzung. Verändere sie mit Vorsicht! Standardmäßig wird eine abnehmende Gesundheit angenommen, bspw. startest du mit 10/10 HP und gehst bis 0/10 HP herunter, sobald du Schaden nimmst.",
-				"default": "const hp = token.actor.data.data.health; return hp.value / hp.max"
+				"hint": "Die JS-Formel für die Berechnung des Anteils an Gesundheit, den ein Token hat. Mit Vorsicht zu ändern. Standardmäßig wird von einer einfachen absteigenden Gesundheit ausgegangen, d.h. du beginnst mit 10/10 in deinem Gesundheitsfeld und gehst auf 0/10 herunter, wenn du Schaden nimmst."
 			}
+		},
+		"cyberpunk-red-core": {
+			"useSystemStates": {
+				"hint": "Ignort die Stufeneinstellung und benutzt die Wundzustände von Cyberpunk RED Core.",
+				"name": "Benutze Wundzustände"
+			},
+			"unorganics": {
+				"4": "Intakt",
+				"3": "Betriebsbereit",
+				"2": "Funktionsstörung",
+				"0": "Deaktiviert"
+			}
+		},
+		"PF2E": {
+			"staminaToHp": {
+				"name": "Ausdauer zum Schätzen",
+				"hint": "Fügen Sie der Schätzung Ausdauerpunkte hinzu."
+			},
+			"workbenchMystifier": {
+				"name": "(EXPERIMENTELL) \"PF2e Workbench\" Verschleierung Unterstützung",
+				"hint": "Wenn die Einstellungen für die NSC-Verschleierung aktiviert sind, ignorieren die Chat-Ausgaben den Namen der Einstellung {setting} und verwenden den Namen des Tokens, wenn er sich vom Namen des Prototyp-Tokens seines Akteurs unterscheidet."
+			},
+			"hideHazardHP": {
+				"name": "Schätzungen für Gefahren ausblenden",
+				"hint": "Blendet die Schätzung von Gefahren aus."
+			},
+			"hideVehicleHP": {
+				"name": "Schätzungen für Fahrzeuge ausblenden",
+				"hint": "Blendet die Schätzung vor Fahrzeugen aus."
+			}
+		},
+		"od6s": {
+			"thresholdNames": {
+				"default": "Vernichtet, beschädigt, voll funktional",
+				"name": "Schwellwertstufen",
+				"hint": "Die Anzahl der Stufen ist auf 3 limitiert, sortiert vom schlimmsten bis zum besten Zustand"
+			},
+			"vehicleNames": {
+				"hint": "Beschreibungen, die für Raumschiffe und Fahrzeuge genutzt werden.",
+				"name": "Fahrzeugstufen",
+				"default": ""
+			}
+		},
+		"swade": {
+			"vehicleNames": {
+				"name": "Fahrzeugstufen",
+				"hint": "Beschreibungen, die für Fahrzeuge benutzt werden.",
+				"default": ""
+			},
+			"defaultWildCardMaxWounds": {
+				"name": "Maximale Wunden von Platzhaltern",
+				"hint": "Dies wird verwendet, um die maximalen Wunden zu berechnen, die ein Platzhalter NSC standardmäßig für Schätzungen haben sollte."
+			},
+			"showIncap": {
+				"hint": "Tokens mit dem {incap} Statuseffekt werden als {incap} anstelle ihrer aktuellen Schätzung angezeigt. Funktioniert nicht bei Tokens, die Fahrzeuge oder tot sind.",
+				"name": "{incap} Status-Effekt"
+			}
+		},
+		"custom-system-builder": {
+			"FractionHP": {
+				"hint": "Dies wird wahrscheinlich {dataPath1} oder {dataPath2} sein."
+			},
+			"tempHP": {
+				"name": "Datenpfad für temporäre Trefferpunkte Attribut",
+				"hint": "Lassen das Feld leer, wenn das Spielsystem nicht über ein solches verfügt oder wenn du nicht möchtest, dass es zur Schätzung hinzugefügt wird."
+			}
+		},
+		"cyphersystem": {
+			"impaired": {
+				"name": "Gesundheitslevel für beeinträchtigte SC",
+				"hint": "Legt den maximalen Gesundheitszustand (aktuell / maximal, Bereich 0.0 - 1.0) fest, der für einen SC gemeldet werden kann, der auf dem \"Death Track\" beeinträchtigt ist"
+			},
+			"debilitated": {
+				"name": "Gesundheitslevel für geschwächte SC",
+				"hint": "Legt den maximalen Gesundheitszustand (aktuell / maximal, Bereich 0.0 - 1.0) fest, der für einen SC gemeldet werden kann, der auf dem \"Death Track\" geschwächt ist"
+			}
+		},
+		"notifications": {
+			"terms": {
+				"shown": {
+					"singular": "zeige",
+					"plural": "sichtbar"
+				},
+				"hidden": {
+					"singular": "versteckt",
+					"plural": "versteckt"
+				}
+			},
+			"toggleName": "{tokenName}s Name ist {term} vor den Spieler_innen.",
+			"toggleEstimate": "{tokenName}s Gesundheitseinschätzung ist {term} vor den Spieler_innen.",
+			"invalidFontSize": "Einstellung für die Schriftgröße wurde zurückgesetzt. Überprüfe die Stil-Einstellungen, um sie zu ändern. Vorheriger Wert: {fontSize}",
+			"toggleEstimateName": "{TokenName}s Gesundheitszustand und Name werden von Spielern {term}."
 		}
 	}
 }

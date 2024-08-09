@@ -2,6 +2,194 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.0.2](https://github.com/ghost-fvtt/fxmaster/compare/v4.0.1...v4.0.2) (2023-06-15)
+
+
+### Bug Fixes
+
+* make the weather mask work properly for polygon drawings ([38d8f58](https://github.com/ghost-fvtt/fxmaster/commit/38d8f58c68eded53a55d39f4e1a5da5523c54de8)), closes [#521](https://github.com/ghost-fvtt/fxmaster/issues/521)
+
+### [4.0.1](https://github.com/ghost-fvtt/fxmaster/compare/v4.0.0...v4.0.1) (2023-05-28)
+
+
+### Bug Fixes
+
+* add migration for scene weather configuration ([3df17a3](https://github.com/ghost-fvtt/fxmaster/commit/3df17a30f7132d2b24ecce77d1a9a8b9cf92db3a))
+
+## [4.0.0](https://github.com/ghost-fvtt/fxmaster/compare/v3.6.0...v4.0.0) (2023-05-28)
+
+
+### ⚠ BREAKING CHANGES
+
+* Dropped support for v10
+
+### Features
+
+* add support for v11 ([aec47f0](https://github.com/ghost-fvtt/fxmaster/commit/aec47f08b834ea89913a0505761ccda8dc2f2db9))
+
+## [3.6.0](https://github.com/ghost-fvtt/fxmaster/compare/v3.5.2...v3.6.0) (2023-03-22)
+
+
+### Features
+
+* add German localization ([97012c8](https://github.com/ghost-fvtt/fxmaster/commit/97012c8a61a08ec07309d2924a9752bbbb9fd89d))
+* add opacity option to particle effects ([afa74ce](https://github.com/ghost-fvtt/fxmaster/commit/afa74ce9e0581cadf201127497d1b9bde5c98072)), closes [#305](https://github.com/ghost-fvtt/fxmaster/issues/305)
+
+
+### Bug Fixes
+
+* don't rerender Special Effects Management on every world setting change ([5a2984e](https://github.com/ghost-fvtt/fxmaster/commit/5a2984e7dffeba9c5326483ce1aeca5a11fa6b72)), closes [#438](https://github.com/ghost-fvtt/fxmaster/issues/438)
+
+### [3.5.2](https://github.com/ghost-fvtt/fxmaster/compare/v3.5.1...v3.5.2) (2022-12-17)
+
+
+### Bug Fixes
+
+* address issue that that snow particle effect wasn’t configurable ([bfb05d8](https://github.com/ghost-fvtt/fxmaster/commit/bfb05d80dd8923cc1dbc77c706584214974de8b7))
+
+### [3.5.1](https://github.com/ghost-fvtt/fxmaster/compare/v3.5.0...v3.5.1) (2022-11-12)
+
+
+### Bug Fixes
+
+* fix issue with old scene mask not being cleared on scene change ([cd875dc](https://github.com/ghost-fvtt/fxmaster/commit/cd875dc008af5aa8611c9a7e0595bfd79453b293))
+* remove bottom border on special effect folders ([9f7f2e8](https://github.com/ghost-fvtt/fxmaster/commit/9f7f2e85aaa32295fe21d7c9ac8e7edadd9e528b))
+
+## [3.5.0](https://github.com/ghost-fvtt/fxmaster/compare/v3.4.0...v3.5.0) (2022-09-01)
+
+
+### Features
+
+* add fog filter (experimental, might change at any time, use at your own risk) ([336eea5](https://github.com/ghost-fvtt/fxmaster/commit/336eea514808dcab290247310c9da767ead2a9a7)), closes [#67](https://github.com/ghost-fvtt/fxmaster/issues/67)
+
+## [3.4.0](https://github.com/ghost-fvtt/fxmaster/compare/v3.3.0...v3.4.0) (2022-08-17)
+
+
+### Features
+
+* add compatibility with v10.278 ([358f37a](https://github.com/ghost-fvtt/fxmaster/commit/358f37ac041b61190e57fc605f03ce3294c131c9))
+
+## [3.3.0](https://github.com/ghost-fvtt/fxmaster/compare/v3.2.0...v3.3.0) (2022-08-14)
+
+
+### Features
+
+* prewarm particle effects when loading a scene ([22930c4](https://github.com/ghost-fvtt/fxmaster/commit/22930c4cb4ced78a104a23ea64e16b3d388e3426))
+
+
+### Bug Fixes
+
+* address an issue where particle effects were not properly vanishing when they were disabled ([9fef0b5](https://github.com/ghost-fvtt/fxmaster/commit/9fef0b556d0f732de2a29dd4ec1e78d0caf978ab))
+
+## [3.2.0](https://github.com/ghost-fvtt/fxmaster/compare/v3.1.5...v3.2.0) (2022-07-29)
+
+
+### Features
+
+* make filters apply to lighting ([5c3eab0](https://github.com/ghost-fvtt/fxmaster/commit/5c3eab06c262a62a88753ae526fbfdb6b5877cb5))
+
+### [3.1.5](https://github.com/ghost-fvtt/fxmaster/compare/v3.1.4...v3.1.5) (2022-07-25)
+
+
+### Bug Fixes
+
+* improve updating filters and their animations ([6b5f4d6](https://github.com/ghost-fvtt/fxmaster/commit/6b5f4d66184f9e9c58c97d53554650b7d530ffde)), closes [#176](https://github.com/ghost-fvtt/fxmaster/issues/176)
+
+### [3.1.4](https://github.com/ghost-fvtt/fxmaster/compare/v3.1.3...v3.1.4) (2022-07-24)
+
+
+### Bug Fixes
+
+* address deprecation warning about `CONFIG.fxmaster.specials` ([4f480f2](https://github.com/ghost-fvtt/fxmaster/commit/4f480f28af07e26ff409cec5e025b038a90a4813))
+* properly handle switching multiple effects with the `fxmaster.switchParticleEffect` hook ([36c42df](https://github.com/ghost-fvtt/fxmaster/commit/36c42df2f2ed15ddf5c84aa383217d187feefd8e)), closes [#320](https://github.com/ghost-fvtt/fxmaster/issues/320)
+
+### [3.1.3](https://github.com/ghost-fvtt/fxmaster/compare/v3.1.2...v3.1.3) (2022-07-22)
+
+
+### Bug Fixes
+
+* make the filter area the whole screen ([40309d8](https://github.com/ghost-fvtt/fxmaster/commit/40309d8378e9f86bcbf9fd03e29b66eb220fe8f3))
+* translate filter effect name when saving a filter as a macro ([6ba8205](https://github.com/ghost-fvtt/fxmaster/commit/6ba820569f261f922684089d50961046b0431e18))
+
+### [3.1.2](https://github.com/ghost-fvtt/fxmaster/compare/v3.1.1...v3.1.2) (2022-07-22)
+
+### [3.1.1](https://github.com/ghost-fvtt/fxmaster/compare/v3.1.0...v3.1.1) (2022-07-22)
+
+
+### Bug Fixes
+
+* update for v10.274 ([8693c3b](https://github.com/ghost-fvtt/fxmaster/commit/8693c3ba95f705787766690b1ca736d6a6ec4fe3))
+
+## [3.1.0](https://github.com/ghost-fvtt/fxmaster/compare/v3.0.0...v3.1.0) (2022-07-17)
+
+
+### Features
+
+* **lang:** update brazilian portuguese translation ([9f500dc](https://github.com/ghost-fvtt/fxmaster/commit/9f500dca283c5f2ccd2fd26b1ef31d39c8e7ef54))
+
+## [3.0.0](https://github.com/ghost-fvtt/fxmaster/compare/v2.7.0...v3.0.0) (2022-07-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* * Support for v9 has been dropped
+* Weather effects have been renamed to particle effects:
+  * The hooks `fxmaster.updateWeather`, `fxmaster.switchWeather` have been
+    replaced by `fxmaster.updateParticleEffects` and
+	`fxmaster.switchParticleEffect`. Compatibility shims exist but will be
+	removed in v4.
+  * Properties of `canvas.fxmaster` have been renamed (`weather` =>
+    `particleEffectsContainer`, `weatherEffects` => `particleEffects`,
+	`drawWeather` => `drawParticleEffects`)
+  * `CONFIG.fxmaster.weather` is deprecated and has been replaced by
+    `CONFIG.fxmaster.particleEffects`. A compatibility shim still exists
+	but it will be removed in v4.
+* The hook `fxmaster.drawWeather` has been removed
+* Many assets have been moved. For the most important things (e.g. macro
+  icons), there are migration, but not for everything.
+* The possibility to apply filters only to specific canvas layers has been
+  removed (unfortunately necessary due to changes in foundry core).
+* The implementation of the masking functionality has changed completely,
+  which very likely breaks compatibility with modules such as
+  Weather Blocker and Perfect Vision, which have been patching that
+  functionality.
+* The `updateMask` hook has been removed.
+
+### Features
+
+* add support for Foundry Virtual Tabletop v10 ([d8c48a4](https://github.com/ghost-fvtt/fxmaster/commit/d8c48a435ff42c73d9e5036b1c73cd4ba93f4766))
+
+
+### Bug Fixes
+
+* address a small issue in world migration 3 and improve french translation ([38ff166](https://github.com/ghost-fvtt/fxmaster/commit/38ff1665adf70f2f17ea7fe65b2cbdd5d3dc0b59))
+
+## [2.7.0](https://github.com/ghost-fvtt/fxmaster/compare/v2.6.0...v2.7.0) (2022-04-25)
+
+
+### Features
+
+* make the save button for the weather and filter managments disabled until a change is made ([8292b61](https://github.com/ghost-fvtt/fxmaster/commit/8292b6130b52b47844bb492238267aea7e21faea))
+
+## [2.6.0](https://github.com/ghost-fvtt/fxmaster/compare/v2.5.0...v2.6.0) (2022-04-23)
+
+
+### Features
+
+* group weather effects (animals, other, weather) and sort weather and filter effects ([a67c26c](https://github.com/ghost-fvtt/fxmaster/commit/a67c26c9268c72f929b5a017dc89d525ac8f7d3a))
+
+## [2.5.0](https://github.com/ghost-fvtt/fxmaster/compare/v2.4.0...v2.5.0) (2022-04-23)
+
+
+### Features
+
+* add line width parameter for predator filter ([621ccc7](https://github.com/ghost-fvtt/fxmaster/commit/621ccc7a2a54d2ad76fa99fb015386911b86e49d))
+
+
+### Bug Fixes
+
+* fix the old fil and predator filter vanishing over time ([3abd496](https://github.com/ghost-fvtt/fxmaster/commit/3abd4963799a6dd75961116c30ada64a01a8dac2))
+
 ## [2.4.0](https://github.com/ghost-fvtt/fxmaster/compare/v2.3.3...v2.4.0) (2022-03-24)
 
 

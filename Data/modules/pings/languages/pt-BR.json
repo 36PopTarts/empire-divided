@@ -60,7 +60,8 @@
 			"sizeChangeSpeed": {
 				"title": "Velocidade de alteração de tamanho",
 				"hint": "Quanto tempo leva em segundos um ciclo de alteração de tamanho."
-			}
+			},
+			"handledByPings": "Handled by the \"Pings\" module"
 		}
 	}
 }

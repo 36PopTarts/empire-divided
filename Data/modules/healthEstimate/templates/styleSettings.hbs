@@ -1,0 +1,105 @@
+<div class="standard-form">
+	<div class="form-group">
+		<label>{{useColor.name}}</label>
+		<div class="form-fields">
+			<input type="checkbox" name="useColor" id="useColor" {{checked useColor.value}} />
+		</div>
+		<p class="hint">{{useColor.hint}}</p>
+	</div>
+	<div class="form-group">
+		<label>{{scaleToGridSize.name}}</label>
+		<div class="form-fields">
+			<input type="checkbox" name="scaleToGridSize" id="scaleToGridSize" {{checked scaleToGridSize.value}} />
+		</div>
+		<p class="hint">{{scaleToGridSize.hint}}</p>
+	</div>
+	<div class="form-group">
+		<label>{{scaleToZoom.name}}</label>
+		<div class="form-fields">
+			<input type="checkbox" name="scaleToZoom" id="scaleToZoom" {{checked scaleToZoom.value}} />
+		</div>
+		<p class="hint">{{scaleToZoom.hint}}</p>
+	</div>
+	<div class="form-group">
+		{{#with smoothGradient}}
+			<label>{{localize name}}</label>
+			<div class="form-fields">
+				<input type="checkbox" name="smoothGradient" id="smoothGradient" {{checked value}} />
+			</div>
+			<p class="hint">{{localize hint}}</p>
+		{{/with}}
+	</div>
+	<div class="form-group gradient">
+		<span>
+			<div id="gradientExampleHE"></div>
+			<div id="gradientControlsHE"></div>
+		</span>
+		<span class="gradient-settings">
+			{{#with mode}}
+				<select name="mode" id="mode">
+					{{selectOptions select selected=selected valueAttr="key" labelAttr="value"}}
+				</select>
+			{{/with}}
+		</span>
+	</div>
+	<div class="form-group healthEstimate deadColor">
+		{{#with deadColor}}
+			<label>{{localize name}}</label>
+			<color-picker name="deadColor" value="{{value}}"></color-picker>
+		{{/with}}
+	</div>
+	<div class="form-group">
+		<span id="sampleFrameHE" class="sampleFrameHE flexcol">
+			<div id="healthEstimateSample" class="healthEstimateSample">
+				<span class="healthEstimateColor">{{deadText}}&nbsp;</span>
+				<span id="SampleAnimation" class="healthEstimateAnimate">Sample</span>
+			</div>
+		</span>
+	</div>
+	<div class="form-group">
+		<label>{{localize outline.name}}</label>
+		<div class="form-fields">
+			<select name="outlineMode" class="form-fields" id="outlineMode">
+				{{selectOptions outline.select selected=outline.selected valueAttr="key" labelAttr="value"}}
+			</select>
+			{{rangePicker name="outlineIntensity" value=outlineIntensity.value min="0" max="10" step="0.1"}}
+		</div>
+	</div>
+	<div class="form-group">
+		{{#with fontFamily}}
+			<label>{{name}}</label>
+			<select name="fontFamily" id="fontFamily">
+				{{selectOptions select selected=selected valueAttr="key" labelAttr="value"}}
+			</select>
+		{{/with}}
+	</div>
+	<div class="form-group">
+		{{#with fontSize}}
+			<label>{{localize name}}</label>
+			<div class="form-fields">
+				{{rangePicker name="fontSize" value=value min="1" max="72" step="1"}}
+			</div>
+		{{/with}}
+	</div>
+	<div class="form-group">
+		{{#with position2}}
+			<label>{{localize name}}</label>
+			<div class="form-fields">
+				<select name="position2" id="position2">
+					{{selectOptions select selected=selected valueAttr="key" labelAttr="value"}}
+				</select>
+			</div>
+			<p class="hint">{{localize hint}}</p>
+		{{/with}}
+	</div>
+	<div class="form-group">
+		{{#with position}}
+			<label>{{localize name}}</label>
+			<div class="form-fields">
+				{{rangePicker name="position" value=value min="-100" max="100" step="1"}}
+			</div>
+			<p class="hint">{{localize hint}}</p>
+		{{/with}}
+	</div>
+
+</div>

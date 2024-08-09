@@ -4,7 +4,7 @@
 			"custom": {
 				"FractionHP": {
 					"name": "Hit Points Attribute Data Path",
-					"hint": "Your system might be using another data path. If the estimate isn't showing correctly, input the data path to the correct attribute (e.g. actor.data.data.health)."
+					"hint": "Your system might be using another data path. If the estimate isn't showing correctly, input the data path to the correct attribute (e.g. actor.system.health)."
 				},
 				"FractionMath": {
 					"name": "Fraction Equation",
@@ -15,6 +15,47 @@
 					}
 				}
 			},
+			"estimates": {
+				"plural": "Estimates",
+				"worst": "Worst",
+				"best": "Best",
+				"states": {
+					"0": "Unconscious",
+					"1": "Near Death",
+					"2": "Badly Injured",
+					"3": "Injured",
+					"4": "Barely Injured",
+					"5": "Unharmed"
+				},
+				"vehicles": {
+					"0": "Wrecked",
+					"1": "Flaming",
+					"2": "Smoking",
+					"3": "Battered",
+					"4": "Scratched",
+					"5": "Pristine"
+				},
+				"thresholds": {
+					"0": "Wrecked",
+					"1": "Broken",
+					"2": "Fully Functional"
+				}
+			},
+			"estimationSettings": {
+				"title": "Estimation Settings",
+				"AddEstimate": "Add Estimate",
+				"addTable": "Add Table",
+				"default": "Default",
+				"deleteTable": "Delete Table",
+				"estimate": "Estimate",
+				"jsRule": "JS Rule",
+				"prioDecrease": "Decrease Priority",
+				"prioIncrease": "Increase Priority",
+				"ignoreColor": {
+					"name": "Ignore Color",
+					"hint": "Ignores the colors from this table and use the colors from the next valid table for the token. This is meant for conditions that should have priority over an estimate, but should still use that estimate's color."
+				}
+			},
 			"keybinds": {
 				"markDead": {
 					"name": "Mark as Dead",
@@ -22,7 +63,7 @@
 				},
 				"customEstimates": {
 					"name": "Custom Estimates",
-					"hint": "Sets custom estimates for the selected tokens. It will change every selected token to the input value. Leaving it as blank will reset it to the same value as the Stages setting.",
+					"hint": "Sets custom estimates for the selected tokens. Leave it blank to reset it.",
 					"options": {
 						"1": "Tokens & Actors",
 						"2": "Only Tokens"
@@ -30,22 +71,37 @@
 				},
 				"dontMarkDead": {
 					"name": "Don't Mark as Dead",
-					"hint": "Makes NPCs to not be shown as Dead when its HP reaches 0 (e.g. it'll show Unconscious). This is only useful if you're using the \"NPCs die immediately\" setting."
+					"hint": "Makes NPCs to not be shown as Dead when its HP reaches 0 (e.g. it'll show Unconscious). This is only useful if you're using the {setting} setting."
 				},
 				"hideEstimates": {
 					"name": "Hide Estimates",
-					"hint": "Hides the estimates of selected tokens from the players. Hidden estimates will show a \"*\" for the GM."
+					"hint": "Hides the estimates of selected tokens from the players. Hidden estimates will not be output to chat if the setting is on, and will be shown with an asterisk (*) for the GM."
 				},
 				"hideNames": {
 					"name": "Hide Names",
-					"hint": "Hides the names of selected tokens when you're using the \"Output Estimate to Chat\" setting."
+					"hint": "Hides the names of selected tokens when you're using the {setting} setting."
 				},
 				"hideEstimatesAndNames": {
 					"name": "Hide Estimates and Names",
 					"hint": "Hides both the estimates and names of selected tokens."
 				}
 			},
-			"isNow": "is now",
+			"isNow": "{name} is now {desc}.",
+			"unknownEntity": {
+				"name": "Unknown Entity Name",
+				"hint": "Sets how a hidden character shall be called.{warning}",
+				"default": "Unknown Entity",
+				"warningCUB": "If you are using CUB's feature to hide names, it will take priority over this setting.",
+				"warningPF2eWorkbench": "If you are using PF2e Workbench's feature to mystify names, it will take priority over this setting."
+			},
+			"alwaysShow": {
+				"name": "Always Show Estimates",
+				"hint": "Makes the estimates always visible instead of just when hovering over a token."
+			},
+			"combatOnly": {
+				"name": "Show Only on Combat",
+				"hint": "Shows the estimates only when a combat is active."
+			},
 			"showDescription": {
 				"name": "Show Estimates: Users",
 				"hint": "Show estimates to the following users.",
@@ -61,18 +117,14 @@
 				"name": "Show Estimates: Tokens",
 				"hint": "Show estimates of the following tokens."
 			},
-			"stateNames": {
-				"name": "Stages",
-				"hint": "An array of descriptions shown to players, arranged from worst to best possible health.\nThe amount of possible descriptions is not limited, the module will adjust the health percentage to show them proportionally to the amount.\nIf there is a need for one description to cover a higher range of health than others simply copy it several times.",
-				"default": "Unconscious, Near Death, Badly Injured, Injured, Barely Injured, Uninjured"
-			},
 			"deathState": {
 				"name": "Death State on Condition",
-				"hint": "Show token as dead when it's been affected by any condition that uses the icon set on the Death Marker setting. Works independently from the macro."
+				"hint1": "Show token as defined on the {setting} setting when it has been affected by any condition that uses the icon set on the {setting2} setting.",
+				"hint2": "Show token as defined on the {setting} setting when it has been marked as defeated on combat."
 			},
 			"deathStateName": {
 				"name": "Death State Name",
-				"hint": "The description shown to players when the token is dead. Compendium tab has a macro for marking a token (or several) as dead.",
+				"hint": "The description shown when a token is dead.",
 				"default": "Dead"
 			},
 			"deathMarker": {
@@ -81,32 +133,40 @@
 			},
 			"NPCsJustDie": {
 				"name": "NPCs die immediately",
-				"hint": "The last stage of NPCs is replaced by the Death State Name."
-			},
-			"perfectionism": {
-				"name": "Perfectionism",
-				"hint": "Only show the best possible description when the target is in perfect state - not a single damage taken."
+				"hint": "The last stage of tokens whose actors aren't selected by players is replaced by the {setting}. For more information on what \"selected by players\" means, read the User Configuration section in Foundry's \"Users and Permissions\" article."
 			},
 			"outputChat": {
 				"name": "Output Estimate to Chat",
-				"hint": "Output any estimate changes to chat. Characters flagged with the Hide Estimate macro will be shown as \"Unknown Entity\"."
+				"hint": "Output any estimate changes to chat. Characters flagged with the Hide Names token configuration will be shown as the description of the {setting} setting."
 			},
 			"addTemp": {
 				"name": "Add Temporary Health",
 				"hint": "Include temporary health points in calculating what description to show.\nE.g. with the setting turned on the token receiving temp HP will look \"healthier\" unless it's already at max health."
 			},
 			"breakOnZeroMaxHP": {
-				"name": "Hide on tokens with 0 max HP",
-				"hint": "Useful for objects with tokens"
+				"name": "Hide Estimates on Tokens with 0 Max HP",
+				"hint": "Useful for objects with tokens."
 			},
 			"menuSettings": {
+				"behaviorSettings": {
+					"name": "Behavior Setting",
+					"plural": "Behavior Settings"
+				},
+				"deathSettings": {
+					"name": "Death Setting",
+					"plural": "Death Settings"
+				},
+				"styleSettings": {
+					"name": "Style Setting",
+					"plural": "Style Settings"
+				},
 				"fontSize": {
 					"name": "Font Size",
 					"hint": "Accepts any valid property for CSS font-size"
 				},
 				"useColor": {
 					"name": "Use Color",
-					"hint": "This won't affect the settings window, but with checkmark off the descriptions will be shown in black and white."
+					"hint": "The estimates will be shown in black and white."
 				},
 				"smoothGradient": {
 					"name": "Smooth Gradient",
@@ -121,27 +181,71 @@
 					"brighten": "Brighten"
 				},
 				"position": {
-					"name": "Position",
+					"name": "Height",
+					"hint": "The height is set relative to the token's frame. Negative values push it higher; positive, lower.",
 					"top": "Top",
 					"middle": "Middle",
 					"bottom": "Bottom"
 				},
+				"position2": {
+					"name": "Position",
+					"hint": "The position relative to the token's frame."
+				},
 				"positionAdjustment": {
-					"name": "Position Adjustment",
-					"hint": "Position is set relative to the frame. The number lets you tweak the position relative to its normal place. Positive numbers push it lower, negative – higher. The default value of -1 sets it to \"1 line above initial position\"."
+					"name": "Margin Adjustment",
+					"hint": "Adjust the text's margin. Positive values push it higher; negative, lower."
+				},
+				"scaleToGridSize": {
+					"name": "Scale Estimates to Grid Size",
+					"hint": "Scales the estimate based on the grid size, assuming 100px as the baseline."
+				},
+				"scaleToZoom": {
+					"name": "Scale Estimates to Zoom",
+					"hint": "Scales the estimate based on the zoom distance."
 				}
 			}
 		},
-		"cyberpunk-red-core": {
-			"useSystemStates": {
-				"name": "Use Wound States",
-				"hint": "Ignores the Stages setting and uses the Cyberpunk RED Core's wound states."
+		"notifications": {
+			"terms": {
+				"shown": {
+					"singular": "shown",
+					"plural": "shown"
+				},
+				"hidden": {
+					"singular": "hidden",
+					"plural": "hidden"
+				}
+			},
+			"toggleEstimate": "{tokenName}'s health estimate is being {term} from players.",
+			"toggleName": "{tokenName}'s name is being {term} from players.",
+			"toggleEstimateName": "{tokenName}'s health estimate and name are being {term} from players.",
+			"invalidFontSize": "Your Font Size style setting has been reset. Check the Style Settings to change it. Previous value: {fontSize}"
+		},
+		"custom-system-builder": {
+			"FractionHP": {
+				"hint": "This will probably be {dataPath1} or {dataPath2}."
+			},
+			"tempHP": {
+				"name": "Temporary Hit Points Attribute Data Path",
+				"hint": "Leave it blank if the system doesn't have one or if you don't want it to be added to the estimation."
 			}
 		},
-		"dnd5e": {
-			"vehicleNames": {
-				"hint": "Descriptions shown for vehicles if \"Use Vehicle Threshold\" is off",
-				"default": "Wrecked, Broken, Battered, Scratched, Pristine"
+		"cyberpunk-red-core": {
+			"unorganics": {
+				"4": "Intact",
+				"3": "Operational",
+				"2": "Malfunctioning",
+				"0": "Disabled"
+			}
+		},
+		"cyphersystem": {
+			"impaired": {
+				"name": "Health level for Impaired PCs",
+				"hint": "Sets the maximum health level (current / maximum, fraction 0.0 - 1.0) that can be reported for a PC that is Impaired on the Death Track"
+			},
+			"debilitated": {
+				"name": "Health level for Debilitated PCs",
+				"hint": "Sets the maximum health level (current / maximum, fraction 0.0 - 1.0) that can be reported for a PC that is Debilitated on the Death Track"
 			}
 		},
 		"PF1": {
@@ -150,69 +254,66 @@
 				"hint": "If enabled nonlethal damage will be substracted from current health for estimation."
 			},
 			"showExtra": {
-				"name": "Disabled & Dying",
-				"hint": "Show \"Disabled\" and \"Dying\" descriptions"
+				"name": "Show {condition1} & {condition2}",
+				"hint": "Shows the {condition1} and {condition2} descriptions when their prerequisites are fulfilled."
 			},
 			"disabledName": {
-				"name": "Disabled",
-				"hint": "Description to show when token is precisely at 0 HP or has more nonlethal damage than HP remaining",
-				"default": "Disabled"
+				"name": "Staggered Stage",
+				"default": "Staggered"
 			},
 			"dyingName": {
-				"name": "Dying",
-				"hint": "Description to show when token is below 0 HP",
-				"default": "Dying"
+				"name": "Unconscious Stage",
+				"default": "Unconscious"
 			}
 		},
 		"PF2E": {
 			"staminaToHp": {
 				"name": "Stamina to Estimate",
 				"hint": "Add Stamina Points to the estimate."
+			},
+			"hideHazardHP": {
+				"name": "Hide Hazard's Estimate",
+				"hint": "Hides the estimate from Hazards."
+			},
+			"hideVehicleHP": {
+				"name": "Hide Vehicle's Estimate",
+				"hint": "Hides the estimate from Vehicles."
+			},
+			"workbenchMystifier": {
+				"name": "(EXPERIMENTAL) PF2e Workbench's Mystifier Support",
+				"hint": "If the NPC Mystification settings are enabled, Chat Outputs will ignore the {setting} setting's name and use the token's name if it is different from its actor's Prototype Token's name."
 			}
 		},
 		"numenera": {
 			"countPools": {
 				"name": "Count Empty Pools",
-				"hint": "Count empty pools instead of sum of their values, with the estimation only changing when a pool is depleted/replenished"
+				"hint": "Count empty pools instead of sum of their values, with the estimation only changing when a pool is depleted or replenished."
 			}
 		},
 		"starfinder": {
 			"useThreshold": {
 				"name": "Use Vehicle Threshold",
-				"hint": "If this setting is on, the \"Threshold Stages\" descriptions will be used for vehicles above threshold, below it, and at 0 HP respectively."
-			},
-			"thresholdNames": {
-				"name": "Threshold Stages",
-				"hint": "The amount of stages is limited to 3, arranged from worst to best condition",
-				"default": "Wrecked, Broken, Fully Functional"
-			},
-			"vehicleNames": {
-				"name": "Vehicle Stages",
-				"hint": "Descriptions shown for starships (always), and vehicles (if \"Use Vehicle Threshold\" is off)",
-				"default": "Wrecked, Flaming, Smoking, Battered, Scratched, Pristine"
+				"hint": "Defines which estimation table will be used when calculating a Vehicle's estimatives."
 			},
 			"addStamina": {
 				"name": "Account for Stamina",
-				"hint": "With this setting on Stamina will be added to HP for calculations."
+				"hint": "With this setting on, Stamina will be added to HP for calculations."
 			}
 		},
 		"worldbuilding": {
 			"simpleRule": {
 				"name": "Estimation Rule",
-				"hint": "The JS formula for calculating the fraction of health token has. Alter with caution. Default assumes simple descending health, e.g. you start with 10/10 in your health field and go down to 0/10 when taking damage.",
-				"default": "const hp = token.actor.data.data.health; return hp.value / hp.max"
+				"hint": "The JS formula for calculating the fraction of health token has. Alter with caution. Default assumes simple descending health, e.g. you start with 10/10 in your health field and go down to 0/10 when taking damage."
 			}
 		},
-		"od6s": {
-			"vehicleNames": {
-				"name": "Vehicle and Starship Stages",
-				"hint": "Descriptions shown for starships and vehicles",
-				"default": "Destroyed, Severely Damaged, Heavily Damaged, Lightly Damaged, Very Lightly Damaged, Undamaged"
+		"swade": {
+			"defaultWildCardMaxWounds": {
+				"name": "Default Wild Card's Max Wounds",
+				"hint": "This is used to calculate the max wounds a Wild Card NPC should have by default for estimations."
 			},
-			"thresholdNames": {
-				"name": "Threshold Stages",
-				"hint": "The amount of stages is limited to 3, arranged from worst to best condition",
-				"default": "Wrecked, Broken, Fully Functional"
+			"showIncap": {
+				"name": "{incap} Status Effect",
+				"hint": "Tokens with the {incap} Status Effect will be shown as {incap} instead of their current estimates. Doesn't work for tokens that are vehicles or dead."
 			}
 		}
 	}

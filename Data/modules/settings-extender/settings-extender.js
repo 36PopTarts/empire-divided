@@ -2,7 +2,7 @@
 // window.Azzu.ExtendedSettingsConfig is guaranteed to be initialized after Hooks->ready
 
 const SETTINGS_EXTENDER_VERSION = {
-	version: `1.2.0`,
+	version: `1.2.3`,
 	get major() {
 		return this.version.split(`.`)[0];
 	},
@@ -28,8 +28,9 @@ class Compatibility {
 	static getSettingsConfigModules(data) {
 		const below_0_5_3 = data.settings && data.settings.modules;
 		const between_0_5_3_and_0_6_0 = data.modules;
-		const above_0_6_1 = data.data && data.data.modules;
-		return above_0_6_1 || between_0_5_3_and_0_6_0 || below_0_5_3;
+		const between_0_6_1_and_9 = data.data && data.data.modules;
+		const above_10 = data.categories;
+		return above_10 || between_0_6_1_and_9 || between_0_5_3_and_0_6_0 || below_0_5_3;
 	}
 
 	/**
@@ -82,6 +83,13 @@ class Compatibility {
 			// constructor function breaks this equality and reverts to the pre-0.8.5 behavior
 			extraType.prototype.constructor = (val) => val;
 		}
+	}
+
+	/**
+	 * Compatibility for v14, window.mergeObject is deprecated in favor of foundry.utils.mergeObject
+	 */
+	static mergeObject(obj1, obj2) {
+		return (foundry?.utils?.mergeObject || window.mergeObject)(obj1, obj2);
 	}
 }
 
@@ -387,7 +395,7 @@ class ExtendedSettingsConfig extends SettingsConfig {
 	}
 
 	static get defaultOptions() {
-		return mergeObject(super.defaultOptions, {
+		return Compatibility.mergeObject(super.defaultOptions, {
 			baseApplication: 'SettingsConfig'
 		});
 	}
@@ -395,6 +403,10 @@ class ExtendedSettingsConfig extends SettingsConfig {
 	getData() {
 		const data = super.getData();
 		const modules = Compatibility.getSettingsConfigModules(data);
+		if (!modules) {
+			throw new Error(`settings-extender: Unsupported foundry version, file an issue at ` +
+				`https://gitlab.com/foundry-azzurite/settings-extender/-/issues/`)
+		}
 		modules.flatMap(m => m.settings).forEach(setting => {
 			const key = Compatibility.getModuleSettingKey(setting);
 			const type = Compatibility.getGameSetting(key).type;

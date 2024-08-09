@@ -3,7 +3,11 @@ import {initApi} from './api.js';
 import createPingsGui from './pings-gui.js';
 import setupSettings from './settings/settings.js';
 import Ping from './ping.js';
+import Constants from './constants.js';
 
+function localize(key) {
+	return game.i18n.localize(Constants.PINGS + '.' + key);
+}
 
 async function preRequisitesReady() {
 	return Promise.all([areSettingsLoaded(), isCanvasReady()]);
@@ -12,7 +16,7 @@ async function preRequisitesReady() {
 async function areSettingsLoaded() {
 	return new Promise(resolve => {
 		Hooks.once('ready', () => {
-			resolve(setupSettings(game));
+			resolve(setupSettings(game, localize));
 		});
 	});
 }
@@ -46,6 +50,7 @@ function addNetworkBehavior(pingsGui) {
 		game,
 		Hooks,
 		Settings,
+		localize,
 		(...args) => new Ping(canvas, CONFIG, ...args),
 		sendMessage.bind(null, MESSAGES.USER_PING)
 	);

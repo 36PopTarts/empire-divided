@@ -1,0 +1,5 @@
+2024/06/28-02:02:20.938040 7fb695ffd640 Delete type=3 #1
+2024/06/28-02:02:20.966486 7fb692ffa640 Level-0 table #5: started
+2024/06/28-02:02:20.981687 7fb692ffa640 Level-0 table #5: 1472231 bytes OK
+2024/06/28-02:02:20.982323 7fb692ffa640 Delete type=0 #3
+2024/06/28-02:02:20.983010 7fb692ffa640 Manual compaction at level-0 from '!folders!1qeAOgNviLNOVGtG' @ 72057594037927935 : 1 .. '!items.effects!zyocWSzEZEC826NS.rTIWkLVhHcMduvPJ' @ 0 : 0; will stop at (end)

@@ -1,29 +1,32 @@
 {
-  "name": "backgroundless-pins",
-  "title": "Backgroundless Pins",
-  "description": "Removes the background from map notes",
-  "authors": [
-    "Cole Schultz (cole#9640)",
-    "Kandashi"
-  ],
-  "url": "https://github.com/kandashi/FVTT-Backgroundless-Pins",
-  "flags": {},
-  "version": "1.2.03",
-  "minimumCoreVersion": "8",
-  "compatibleCoreVersion": "9",
-  "scripts": [],
-  "esmodules": [
-    "backgroundless-pins.js"
-  ],
-  "styles": [],
-  "languages": [],
-  "packs": [],
-  "system": [],
-  "dependencies": [],
-  "socket": false,
-  "manifest": "https://github.com/kandashi/FVTT-Backgroundless-Pins/releases/latest/download/module.json",
-  "download": "https://github.com/kandashi/FVTT-Backgroundless-Pins/releases/download/1.2.03/module.zip",
-  "protected": false,
-  "coreTranslation": false,
-  "library": false
+    "id": "backgroundless-pins",
+    "name": "backgroundless-pins",
+    "title": "Backgroundless Pins",
+    "description": "Removes the background from map notes",
+    "version": "1.3.0",
+    "authors": [
+        {
+            "name": "Cole Schultz",
+            "discord": "cole#9640"
+        },
+        {
+            "name": "Kandashi"
+        },
+        {
+            "name": "ghost",
+            "discord": "ghost#2000"
+        }
+    ],
+    "esmodules": [
+        "backgroundless-pins.js"
+    ],
+    "minimumCoreVersion": "10",
+    "compatibleCoreVersion": "10",
+    "compatibility": {
+        "minimum": "10",
+        "verified": "10"
+    },
+    "url": "https://github.com/kandashi/FVTT-Backgroundless-Pins",
+    "manifest": "https://github.com/kandashi/FVTT-Backgroundless-Pins/releases/latest/download/module.json",
+    "download": "https://github.com/kandashi/FVTT-Backgroundless-Pins/releases/download/1.3.0/module.zip"
 }

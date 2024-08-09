@@ -1,168 +1,145 @@
 {
-    "name": "wfrp4e-core",
-    "title": "WFRP4e - Core Content Module",
-    "description": "Official Core Rulebook content for the Warhammer Fantasy 4th Edition System. Includes all the tables, rules, bestiary, and lore you need to immerse your players into the perilous world of Warhammer.",
-    "version": "2.4.2",
-    "author": "Moo Man, Published by Cubicle 7",
-    "system": ["wfrp4e"],
-    "scripts": [
-        "wfrp4e.js",
-        "initialization.js"
+  "id": "wfrp4e-core",
+  "title": "WFRP4e - Core Rulebook",
+  "description": "Official Core Rulebook content for the Warhammer Fantasy 4th Edition System. Includes all the tables, rules, bestiary, and lore you need to immerse your players into the perilous world of Warhammer.",
+  "version": "5.0.7",
+  "authors": [
+    {
+      "name": "Moo Man",
+      "email": "russellt@cubicle7games.com",
+      "discord": "moo.man"
+    },
+    {
+      "name": "Published by Cubicle 7",
+      "url": "https://cubicle7games.com",
+      "email": "info@cubicle7games.com"
+    }
+  ],
+  "relationships": {
+    "systems": [
+      {
+        "id": "wfrp4e",
+        "type": "system",
+        "manifest": "https://github.com/moo-man/WFRP4e-FoundryVTT/releases/latest/download/system.json"
+      }
+    ]
+  },
+  "scripts": [
+    "wfrp4e.js",
+    "initialization.js"
+  ],
+  "styles": [
+    "styles.css"
+  ],
+  "packs": [
+    {
+      "name": "actors",
+      "label": "Bestiary (Core Rulebook)",
+      "system": "wfrp4e",
+      "path": "./packs/actors",
+      "type": "Actor",
+      "banner": "./modules/wfrp4e-core/assets/banners/squig.webp",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "items",
+      "label": "Items (Core Rulebook)",
+      "system": "wfrp4e",
+      "path": "./packs/items",
+      "type": "Item",
+      "banner": "./modules/wfrp4e-core/assets/banners/to-market.webp",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "journals",
+      "label": "Journals (Core Rulebook)",
+      "path": "./packs/journals",
+      "type": "JournalEntry",
+      "system": "wfrp4e",
+      "banner": "./modules/wfrp4e-core/assets/banners/coachman.webp",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "label": "Tables (Core Rulebook)",
+      "type": "RollTable",
+      "name": "tables",
+      "path": "packs/tables",
+      "system": "wfrp4e",
+      "banner": "./modules/wfrp4e-core/assets/banners/reikland-council.webp",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "scenes",
+      "label": "Scenes (Core Rulebook)",
+      "path": "./packs/scenes",
+      "type": "Scene",
+      "system": "wfrp4e",
+      "banner": "./modules/wfrp4e-core/assets/banners/bridge.webp",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    }
+  ],
+  "packFolders": [
+    {
+      "name": "Core Rulebook",
+      "sorting": "m",
+      "color": "#465967",
+      "packs": [
+        "actors",
+        "items",
+        "journals",
+        "tables",
+        "scenes"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "flags": {
+    "initializationPacks": [
+      "wfrp4e-core.journals",
+      "wfrp4e-core.scenes",
+      "wfrp4e-core.tables"
     ],
-    "styles": [
-        "styles.css"
-    ],
-    "packs": [
-        {
-            "name": "bestiary",
-            "label": "Bestiary",
-            "system": "wfrp4e",
-            "module": "wfrp4e-core",
-            "path": "./packs/bestiary.db",
-            "type": "Actor"
-        },
-        {
-            "name": "careers",
-            "label": "Careers",
-            "system": "wfrp4e",
-            "module": "wfrp4e-core",
-            "path": "./packs/careers.db",
-            "type": "Item"
-        },
-        {
-            "name": "criticals",
-            "label": "Criticals",
-            "system": "wfrp4e",
-            "module": "wfrp4e-core",
-            "path": "./packs/criticals.db",
-            "type": "Item"
-        },
-        {
-            "name": "skills",
-            "label": "Skills",
-            "system": "wfrp4e",
-            "module": "wfrp4e-core",
-            "path": "./packs/skills.db",
-            "type": "Item"
-        },
-        {
-            "name": "talents",
-            "label": "Talents",
-            "system": "wfrp4e",
-            "module": "wfrp4e-core",
-            "path": "./packs/talents.db",
-            "type": "Item"
-        },
-        {
-            "name": "traits",
-            "label": "Traits",
-            "system": "wfrp4e",
-            "module": "wfrp4e-core",
-            "path": "./packs/traits.db",
-            "type": "Item"
-        },
-        {
-            "name": "psychologies",
-            "label": "Psychologies",
-            "path": "./packs/psychologies.db",
-            "type": "Item",
-            "system": "wfrp4e",
-            "module": "wfrp4e-core"
-        },
-        {
-            "name": "mutations",
-            "label": "Mutations",
-            "path": "./packs/mutations.db",
-            "type": "Item",
-            "system": "wfrp4e",
-            "module": "wfrp4e-core"
-        },
-        {
-            "name": "injuries",
-            "label": "Injuries",
-            "path": "./packs/injuries.db",
-            "type": "Item",
-            "system": "wfrp4e",
-            "module": "wfrp4e-core"
-        },
-        {
-            "name": "diseases",
-            "label": "Diseases",
-            "path": "./packs/diseases.db",
-            "type": "Item",
-            "system": "wfrp4e",
-            "module": "wfrp4e-core"
-        },
-        {
-            "name": "spells",
-            "label": "Spells",
-            "path": "./packs/spells.db",
-            "type": "Item",
-            "system": "wfrp4e",
-            "module": "wfrp4e-core"
-        },
-        {
-            "name": "prayers",
-            "label": "Prayers",
-            "path": "./packs/prayers.db",
-            "type": "Item",
-            "system": "wfrp4e",
-            "module": "wfrp4e-core"
-        },
-        {
-            "name": "trappings",
-            "label": "Trappings",
-            "path": "./packs/trappings.db",
-            "type": "Item",
-            "system": "wfrp4e",
-            "module": "wfrp4e-core"
-        },
-        {
-            "name": "journal-entries",
-            "label": "Journals (Core)",
-            "path": "./packs/journal-entries.db",
-            "type": "JournalEntry",
-            "system": "wfrp4e",
-            "module": "wfrp4e-core"
-        },
-        {
-            "name": "maps",
-            "label": "Scenes (Core)",
-            "path": "./packs/maps.db",
-            "type": "Scene",
-            "system": "wfrp4e",
-            "module": "wfrp4e-core"
-        },
-        {
-            "label": "Career Descriptions",
-            "type": "JournalEntry",
-            "name": "career-descriptions",
-            "path": "packs/career-descriptions.db",
-            "system": "wfrp4e",
-            "module": "wfrp4e-core"
-        },
-        {
-            "label": "Tables (Core)",
-            "type": "RollTable",
-            "name": "tables",
-            "path": "packs/tables.db",
-            "system": "wfrp4e",
-            "module": "wfrp4e-core"
-        }
-    ],
-    "languages": [
-        {
-            "lang": "en",
-            "name": "English",
-            "path": "lang/en.json"
-        }
-    ],
-    "flags" : {
-        "initializationPacks" : ["wfrp4e-core.journal-entries", "wfrp4e-core.maps", "wfrp4e-core.tables"]
-      },
-    "minimumCoreVersion": "0.8.6",
-    "compatibleCoreVersion": "9",
-    "protected" : true,
-    "url": "https://foundryvtt.com/packages/wfrp4e-core/",
-    "manifest": "https://foundry-c7-manifests.s3.us-east-2.amazonaws.com/wfrp4e-core/module.json"
+    "folder": {
+      "name": "Core Rulebook",
+      "sorting": "m",
+      "color": "#465967"
+    }
+  },
+  "media": [
+    {
+      "type": "setup",
+      "url": "./modules/wfrp4e-core/assets/setup.webp"
+    }
+  ],
+  "minimumCoreVersion": "11",
+  "compatibleCoreVersion": 11,
+  "compatibility": {
+    "minimum": 11,
+    "verified": 11,
+    "maximum": 12
+  },
+  "protected": true,
+  "url": "https://foundryvtt.com/packages/wfrp4e-core/",
+  "manifest": "https://foundry-c7-manifests.s3.us-east-2.amazonaws.com/wfrp4e-core/module.json"
 }
