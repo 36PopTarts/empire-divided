@@ -9,6 +9,16 @@
             "date": 1723165986203,
             "name": "/home/crazyeyes/.local/share/FoundryVTT/Logs/debug.2024-08-08.log",
             "hash": "523eaeb96490fbff6cb5b5fd22723b0b9ee7d6b16b4204bbe9d1484750bab637"
+        },
+        {
+            "date": 1723180902797,
+            "name": "/home/crazyeyes/.local/share/FoundryVTT/Logs/debug.2024-08-09.log",
+            "hash": "975a0caa67c1919a908d0972a7bdba3ffe98a6a4c8e6a69a3df4bc60f8f13c0e"
+        },
+        {
+            "date": 1723290165671,
+            "name": "/home/crazyeyes/.local/share/FoundryVTT/Logs/debug.2024-08-10.log",
+            "hash": "2be4eca4dcbde561fa584c190b122532255acc7bc64a5359815614a6ba6fd37a"
         }
     ],
     "hashType": "sha256"

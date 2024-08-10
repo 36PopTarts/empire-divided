@@ -2818,3 +2818,119 @@
 {"level":"info","message":"Saved application configuration options to /home/crazyeyes/.local/share/FoundryVTT/Config/options.json","timestamp":"2024-08-08 20:31:33"}
 {"level":"info","message":"Shutting down Foundry Virtual Tabletop server","timestamp":"2024-08-08 20:31:36"}
 {"level":"info","message":"Shut-down success. Goodbye!","timestamp":"2024-08-08 20:31:36"}
+{"level":"info","message":"Running on Node.js - Version 20.9.0","timestamp":"2024-08-08 20:31:42"}
+{"level":"info","message":"Foundry Virtual Tabletop - Version 12 Build 330","timestamp":"2024-08-08 20:31:42"}
+{"level":"info","message":"User Data Directory - \"/home/crazyeyes/.local/share/FoundryVTT\"","timestamp":"2024-08-08 20:31:42"}
+{"level":"info","message":"Application Options:\n{\n  \"port\": 30000,\n  \"upnp\": true,\n  \"fullscreen\": false,\n  \"hostname\": null,\n  \"localHostname\": null,\n  \"routePrefix\": null,\n  \"sslCert\": null,\n  \"sslKey\": null,\n  \"awsConfig\": null,\n  \"passwordSalt\": null,\n  \"proxySSL\": false,\n  \"proxyPort\": null,\n  \"serviceConfig\": null,\n  \"updateChannel\": \"stable\",\n  \"language\": \"en.core\",\n  \"upnpLeaseDuration\": null,\n  \"compressStatic\": true,\n  \"world\": null,\n  \"compressSocket\": true,\n  \"cssTheme\": \"foundry\",\n  \"deleteNEDB\": false,\n  \"hotReload\": false,\n  \"protocol\": null,\n  \"telemetry\": false,\n  \"adminPassword\": \"••••••••••••••••\",\n  \"noBackups\": false\n}","timestamp":"2024-08-08 20:31:42"}
+{"level":"info","message":"Software license verification succeeded","timestamp":"2024-08-08 20:31:42"}
+{"level":"info","message":"Requesting UPnP port forwarding to destination port 30000","timestamp":"2024-08-08 20:31:42"}
+{"level":"info","message":"Running Electron application with version 29.4.0 using Chromium 122.0.6261.156","timestamp":"2024-08-08 20:31:42"}
+{"level":"info","message":"Server started and listening on port 30000","timestamp":"2024-08-08 20:31:42"}
+{"level":"info","message":"Created client session 43ba33eb2daca9c87ef16c3a","timestamp":"2024-08-08 20:31:42"}
+{"level":"warn","message":"The module \"DiscordConnect\" is using the old flat core compatibility fields which are deprecated in favor of the new \"compatibility\" object\nDeprecated since Version 10\nBackwards-compatible support will be removed in Version 13","timestamp":"2024-08-08 20:31:42"}
+{"level":"warn","message":"The module \"EasyTable\" is using the old flat core compatibility fields which are deprecated in favor of the new \"compatibility\" object\nDeprecated since Version 10\nBackwards-compatible support will be removed in Version 13","timestamp":"2024-08-08 20:31:42"}
+{"level":"warn","message":"The module \"appbar\" contains \"dependencies\" which is deprecated in favor of \"relationships.requires\"\nDeprecated since Version 10\nBackwards-compatible support will be removed in Version 13","timestamp":"2024-08-08 20:31:42"}
+{"level":"warn","message":"The module \"appbar\" is using the old flat core compatibility fields which are deprecated in favor of the new \"compatibility\" object\nDeprecated since Version 10\nBackwards-compatible support will be removed in Version 13","timestamp":"2024-08-08 20:31:42"}
+{"level":"warn","message":"The module \"foundryvtt-simple-calendar\" is using the old flat core compatibility fields which are deprecated in favor of the new \"compatibility\" object\nDeprecated since Version 10\nBackwards-compatible support will be removed in Version 13","timestamp":"2024-08-08 20:31:43"}
+{"level":"warn","message":"The module \"keybind-lib\" is using the old flat core compatibility fields which are deprecated in favor of the new \"compatibility\" object\nDeprecated since Version 10\nBackwards-compatible support will be removed in Version 13","timestamp":"2024-08-08 20:31:43"}
+{"level":"warn","message":"The module \"merchantsheetnpc\" is using the old flat core compatibility fields which are deprecated in favor of the new \"compatibility\" object\nDeprecated since Version 10\nBackwards-compatible support will be removed in Version 13","timestamp":"2024-08-08 20:31:43"}
+{"level":"warn","message":"The module \"theatre\" is using the old flat core compatibility fields which are deprecated in favor of the new \"compatibility\" object\nDeprecated since Version 10\nBackwards-compatible support will be removed in Version 13","timestamp":"2024-08-08 20:31:43"}
+{"level":"warn","message":"module \"theatre\" uses pack.entity which has been replaced with pack.type\nDeprecated since Version 9","timestamp":"2024-08-08 20:31:43"}
+{"level":"warn","message":"module \"wfrp4e-gm-toolkit\" contains \"system\" which is deprecated in favor of \"relationships.systems\"\nDeprecated since Version 10\nBackwards-compatible support will be removed in Version 13","timestamp":"2024-08-08 20:31:43"}
+{"level":"warn","message":"The module \"wfrp4e-gm-toolkit\" is using the old flat core compatibility fields which are deprecated in favor of the new \"compatibility\" object\nDeprecated since Version 10\nBackwards-compatible support will be removed in Version 13","timestamp":"2024-08-08 20:31:43"}
+{"level":"info","message":"Administrator authentication successful for session 43ba33eb2daca9c87ef16c3a","timestamp":"2024-08-08 20:31:46"}
+{"level":"warn","message":"The system \"wfrp4e\" is using \"gridDistance\" which is deprecated in favor of \"grid.distance\".\nDeprecated since Version 12\nBackwards-compatible support will be removed in Version 14","timestamp":"2024-08-08 20:31:46"}
+{"level":"warn","message":"The system \"wfrp4e\" is using \"gridUnits\" which is deprecated in favor of \"grid.units\".\nDeprecated since Version 12\nBackwards-compatible support will be removed in Version 14","timestamp":"2024-08-08 20:31:46"}
+{"level":"warn","message":"The world \"empire-divided\" contains \"dependencies\" which is deprecated in favor of \"relationships.requires\"\nDeprecated since Version 10\nBackwards-compatible support will be removed in Version 13","timestamp":"2024-08-08 20:31:46"}
+{"level":"warn","message":"The world \"empire-divided\" is using the old flat core compatibility fields which are deprecated in favor of the new \"compatibility\" object\nDeprecated since Version 10\nBackwards-compatible support will be removed in Version 13","timestamp":"2024-08-08 20:31:46"}
+{"level":"warn","message":"The world \"test\" contains \"dependencies\" which is deprecated in favor of \"relationships.requires\"\nDeprecated since Version 10\nBackwards-compatible support will be removed in Version 13","timestamp":"2024-08-08 20:31:46"}
+{"level":"warn","message":"The world \"test\" is using the old flat core compatibility fields which are deprecated in favor of the new \"compatibility\" object\nDeprecated since Version 10\nBackwards-compatible support will be removed in Version 13","timestamp":"2024-08-08 20:31:46"}
+{"level":"warn","message":"The system \"wfrp4e\" is using \"gridDistance\" which is deprecated in favor of \"grid.distance\".\nDeprecated since Version 12\nBackwards-compatible support will be removed in Version 14","timestamp":"2024-08-08 20:32:46"}
+{"level":"warn","message":"The system \"wfrp4e\" is using \"gridUnits\" which is deprecated in favor of \"grid.units\".\nDeprecated since Version 12\nBackwards-compatible support will be removed in Version 14","timestamp":"2024-08-08 20:32:46"}
+{"level":"warn","message":"The module \"DiscordConnect\" is using the old flat core compatibility fields which are deprecated in favor of the new \"compatibility\" object\nDeprecated since Version 10\nBackwards-compatible support will be removed in Version 13","timestamp":"2024-08-08 20:32:46"}
+{"level":"warn","message":"The module \"EasyTable\" is using the old flat core compatibility fields which are deprecated in favor of the new \"compatibility\" object\nDeprecated since Version 10\nBackwards-compatible support will be removed in Version 13","timestamp":"2024-08-08 20:32:46"}
+{"level":"warn","message":"The module \"appbar\" contains \"dependencies\" which is deprecated in favor of \"relationships.requires\"\nDeprecated since Version 10\nBackwards-compatible support will be removed in Version 13","timestamp":"2024-08-08 20:32:46"}
+{"level":"warn","message":"The module \"appbar\" is using the old flat core compatibility fields which are deprecated in favor of the new \"compatibility\" object\nDeprecated since Version 10\nBackwards-compatible support will be removed in Version 13","timestamp":"2024-08-08 20:32:46"}
+{"level":"warn","message":"The module \"foundryvtt-simple-calendar\" is using the old flat core compatibility fields which are deprecated in favor of the new \"compatibility\" object\nDeprecated since Version 10\nBackwards-compatible support will be removed in Version 13","timestamp":"2024-08-08 20:32:46"}
+{"level":"warn","message":"The module \"keybind-lib\" is using the old flat core compatibility fields which are deprecated in favor of the new \"compatibility\" object\nDeprecated since Version 10\nBackwards-compatible support will be removed in Version 13","timestamp":"2024-08-08 20:32:46"}
+{"level":"warn","message":"The module \"merchantsheetnpc\" is using the old flat core compatibility fields which are deprecated in favor of the new \"compatibility\" object\nDeprecated since Version 10\nBackwards-compatible support will be removed in Version 13","timestamp":"2024-08-08 20:32:46"}
+{"level":"warn","message":"The module \"theatre\" is using the old flat core compatibility fields which are deprecated in favor of the new \"compatibility\" object\nDeprecated since Version 10\nBackwards-compatible support will be removed in Version 13","timestamp":"2024-08-08 20:32:46"}
+{"level":"warn","message":"module \"theatre\" uses pack.entity which has been replaced with pack.type\nDeprecated since Version 9","timestamp":"2024-08-08 20:32:46"}
+{"level":"warn","message":"module \"wfrp4e-gm-toolkit\" contains \"system\" which is deprecated in favor of \"relationships.systems\"\nDeprecated since Version 10\nBackwards-compatible support will be removed in Version 13","timestamp":"2024-08-08 20:32:46"}
+{"level":"warn","message":"The module \"wfrp4e-gm-toolkit\" is using the old flat core compatibility fields which are deprecated in favor of the new \"compatibility\" object\nDeprecated since Version 10\nBackwards-compatible support will be removed in Version 13","timestamp":"2024-08-08 20:32:46"}
+{"level":"info","message":"Connected to database \"actors\"","timestamp":"2024-08-08 20:32:46"}
+{"level":"info","message":"Launching World | Loading World Data - 7%","timestamp":"2024-08-08 20:32:46"}
+{"level":"info","message":"Connected to database \"cards\"","timestamp":"2024-08-08 20:32:46"}
+{"level":"info","message":"Launching World | Loading World Data - 14%","timestamp":"2024-08-08 20:32:46"}
+{"level":"info","message":"Connected to database \"messages\"","timestamp":"2024-08-08 20:32:46"}
+{"level":"info","message":"Launching World | Loading World Data - 21%","timestamp":"2024-08-08 20:32:46"}
+{"level":"info","message":"Connected to database \"combats\"","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Launching World | Loading World Data - 29%","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Connected to database \"fog\"","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Launching World | Loading World Data - 36%","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Connected to database \"folders\"","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Launching World | Loading World Data - 43%","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Connected to database \"items\"","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Launching World | Loading World Data - 50%","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Connected to database \"journal\"","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Launching World | Loading World Data - 57%","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Connected to database \"macros\"","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Launching World | Loading World Data - 64%","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Connected to database \"playlists\"","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Launching World | Loading World Data - 71%","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Connected to database \"tables\"","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Launching World | Loading World Data - 79%","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Connected to database \"scenes\"","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Launching World | Loading World Data - 86%","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Connected to database \"settings\"","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Launching World | Loading World Data - 93%","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Connected to database \"users\"","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Launching World | Loading World Data - 100%","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Launching World | Migrating World Data - 7%","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Launching World | Migrating World Data - 14%","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Launching World | Migrating World Data - 21%","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Launching World | Migrating World Data - 29%","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Launching World | Migrating World Data - 36%","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Launching World | Migrating World Data - 43%","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Launching World | Migrating World Data - 50%","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Launching World | Migrating World Data - 57%","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Launching World | Migrating World Data - 64%","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Launching World | Migrating World Data - 71%","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Launching World | Migrating World Data - 79%","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Launching World | Migrating World Data - 86%","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Launching World | Migrating World Data - 93%","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Launching World | Migrating World Data - 100%","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Connected to database \"heart.macros\"","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Launching World | Loading Package Data - 20%","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Connected to database \"heart.tags\"","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Launching World | Loading Package Data - 40%","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Connected to database \"heart.fallouts\"","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Launching World | Loading Package Data - 60%","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Connected to database \"heart.classes\"","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Launching World | Loading Package Data - 80%","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Connected to database \"heart.callings\"","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Launching World | Loading Package Data - 100%","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Created 0 Folder documents with ids: []","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Launching World | Migrating Package Data - 20%","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Launching World | Migrating Package Data - 40%","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Launching World | Migrating Package Data - 60%","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Launching World | Migrating Package Data - 80%","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Launching World | Migrating Package Data - 100%","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Launching World | Complete","timestamp":"2024-08-08 20:32:47"}
+{"level":"info","message":"Created client session 07cd8ce5acb5ad0d383513d4","timestamp":"2024-08-08 20:33:03"}
+{"level":"info","message":"Created client session 2d3b8c038510ade0fd09efb5","timestamp":"2024-08-08 20:33:26"}
+{"ip":"::ffff:70.119.232.97","level":"info","message":"User authentication successful for user Gamemaster","session":"2d3b8c038510ade0fd09efb5","timestamp":"2024-08-08 20:33:41"}
+{"level":"info","message":"No system update for Heart - The City Beneath is currently available.","timestamp":"2024-08-08 20:33:43"}
+{"level":"info","message":"Vended World data to User [9SOg3EtHNHVS6Ogk] in 608ms","timestamp":"2024-08-08 20:33:43"}
+{"level":"info","message":"Created User with id [xSxvWh0iZqjKfDXe]","timestamp":"2024-08-08 20:34:38"}
+{"level":"info","message":"Created User with id [VL5EIkaEA1g3lm37]","timestamp":"2024-08-08 20:37:35"}
+{"level":"info","message":"Created User with id [6oDs9TTs6U2bZ5IP]","timestamp":"2024-08-08 20:39:00"}
+{"level":"info","message":"Created User with id [pnROZCWjR49epR6E]","timestamp":"2024-08-08 20:39:25"}
+{"level":"info","message":"No system update for Heart - The City Beneath is currently available.","timestamp":"2024-08-08 20:39:38"}
+{"level":"info","message":"Vended World data to User [9SOg3EtHNHVS6Ogk] in 622ms","timestamp":"2024-08-08 20:39:38"}
+{"level":"info","message":"Logged user 9SOg3EtHNHVS6Ogk out of active World","timestamp":"2024-08-08 20:39:45"}
+{"ip":"::ffff:70.119.232.97","level":"info","message":"User authentication successful for user CrazyEyes","session":"2d3b8c038510ade0fd09efb5","timestamp":"2024-08-08 20:40:09"}
+{"level":"info","message":"No system update for Heart - The City Beneath is currently available.","timestamp":"2024-08-08 20:40:10"}
+{"level":"info","message":"Vended World data to User [xSxvWh0iZqjKfDXe] in 504ms","timestamp":"2024-08-08 20:40:10"}
+{"level":"info","message":"Created Scene with id [sIcl6SwN4pkAQz3W]","timestamp":"2024-08-08 20:42:09"}
+{"level":"info","message":"Activating scene Divesse [sIcl6SwN4pkAQz3W]","timestamp":"2024-08-08 20:42:53"}
