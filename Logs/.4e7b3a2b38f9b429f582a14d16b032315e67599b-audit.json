@@ -9,6 +9,11 @@
             "date": 1723165986204,
             "name": "/home/crazyeyes/.local/share/FoundryVTT/Logs/error.2024-08-08.log",
             "hash": "99fd9c6642824434612856f823dc5876321f6ab04c17f255b6d45cd5ff8cf2a9"
+        },
+        {
+            "date": 1723309035473,
+            "name": "/home/crazyeyes/.local/share/FoundryVTT/Logs/error.2024-08-10.log",
+            "hash": "a883aa11daa9bf3cbb730a096932d4c656eb040dd4a18acca1992411d3957a40"
         }
     ],
     "hashType": "sha256"

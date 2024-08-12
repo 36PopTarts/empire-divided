@@ -1,5 +1,5 @@
 {
-  "timestamp": 1723255526435,
+  "timestamp": 1723395822803,
   "os": {
     "platform": "linux",
     "version": "Linux Mint 20",
@@ -92,7 +92,7 @@
   "systems": {
     "heart": {
       "version": "0.9.2",
-      "playtime": 409
+      "playtime": 140848
     },
     "wfrp4e": {
       "version": "7.2.4",
@@ -101,7 +101,7 @@
   },
   "worlds": {},
   "playtime": {
-    "total": 409,
-    "max": 409
+    "total": 140848,
+    "max": 140848
   }
 }

@@ -1,0 +1,248 @@
+{"level":"info","message":"Created client session c5de5f6bd5072d0e0831b92c","timestamp":"2024-08-11 00:36:05"}
+{"level":"info","message":"Created client session a24ec19fccc37deef4e4a4d1","timestamp":"2024-08-11 03:02:10"}
+{"level":"info","message":"Created client session 23d119a55816861e8183057b","timestamp":"2024-08-11 03:02:11"}
+{"level":"info","message":"Created client session 01b7dce3c5241c5b1ec2ee04","timestamp":"2024-08-11 03:02:11"}
+{"level":"info","message":"Created client session 4d8159e0742db6c10498af55","timestamp":"2024-08-11 03:02:12"}
+{"level":"info","message":"Created client session e27df1a420a6dbdf14f2fa69","timestamp":"2024-08-11 03:02:14"}
+{"level":"info","message":"Created client session a7d6f757929a2eeea4021964","timestamp":"2024-08-11 03:02:14"}
+{"level":"info","message":"Created client session f42f2ab1fd2b324769c8c993","timestamp":"2024-08-11 03:02:14"}
+{"level":"info","message":"Created client session cf022bae370941754f3719ec","timestamp":"2024-08-11 03:02:14"}
+{"level":"info","message":"Created client session 6194fd79055d759c1da2b730","timestamp":"2024-08-11 03:02:16"}
+{"level":"info","message":"Created client session af9302471bd7a72a3a22cea6","timestamp":"2024-08-11 03:02:41"}
+{"level":"info","message":"Created client session a776149c992130820c610976","timestamp":"2024-08-11 10:21:41"}
+{"level":"info","message":"Created Actor with id [VNAfJsax6nXWDzSU]","timestamp":"2024-08-11 11:05:21"}
+{"level":"info","message":"ynneth.png saved to systems/heart/assets/characters","timestamp":"2024-08-11 11:05:39"}
+{"level":"info","message":"quin.png saved to systems/heart/assets/characters","timestamp":"2024-08-11 11:05:42"}
+{"level":"info","message":"Created Item with id [sTDbzAzULn6rRJHK] in parent Actor [IQkScKc7tlBByFu7]","timestamp":"2024-08-11 11:10:48"}
+{"level":"info","message":"Created Item with id [CEvBBYVomQuT635u] in parent Actor [IQkScKc7tlBByFu7]","timestamp":"2024-08-11 11:11:32"}
+{"level":"info","message":"Created Item with id [Ey9Grx5H0w9EFEQp] in parent Actor [IQkScKc7tlBByFu7]","timestamp":"2024-08-11 11:11:56"}
+{"level":"info","message":"Deleted Item with id [Ey9Grx5H0w9EFEQp] in parent Actor [IQkScKc7tlBByFu7]","timestamp":"2024-08-11 11:12:16"}
+{"level":"info","message":"Created Item with id [mV9OABOjXF0MjRTG] in parent Actor [IQkScKc7tlBByFu7]","timestamp":"2024-08-11 11:12:17"}
+{"level":"info","message":"Created Item with id [02t1HhO6vJhvG4av] in parent Actor [VNAfJsax6nXWDzSU]","timestamp":"2024-08-11 11:14:47"}
+{"level":"info","message":"Created Item with id [N1IPK4Zm00g80K8v]","timestamp":"2024-08-11 11:16:33"}
+{"level":"info","message":"Created Item with id [7OUMeFcZKLnGCrfj] in parent Actor [VNAfJsax6nXWDzSU]","timestamp":"2024-08-11 11:16:34"}
+{"level":"info","message":"Created Folder with id [GO0Gwm16kgVcWBwl]","timestamp":"2024-08-11 11:16:55"}
+{"level":"info","message":"Created Folder with id [AENaoqgXaWb3p1Zb]","timestamp":"2024-08-11 11:17:07"}
+{"level":"info","message":"Created Folder with id [lKGSgV0I09IpdBQR]","timestamp":"2024-08-11 11:17:19"}
+{"level":"info","message":"Created Item with id [35hgtfXYXXILmcwo] in parent Actor [VNAfJsax6nXWDzSU]","timestamp":"2024-08-11 11:17:31"}
+{"level":"info","message":"Created Item with id [9J2h5GOtzewZqqzs] in parent Actor [VNAfJsax6nXWDzSU]","timestamp":"2024-08-11 11:18:06"}
+{"level":"info","message":"Created Item with id [tK8DH5eNgXA8aWNz] in parent Actor [VNAfJsax6nXWDzSU]","timestamp":"2024-08-11 11:18:44"}
+{"level":"info","message":"Created client session 3590d4b170a15fd41096dca0","timestamp":"2024-08-11 11:19:07"}
+{"level":"info","message":"Created client session 6de07c8a884985725d64be58","timestamp":"2024-08-11 11:19:25"}
+{"ip":"::ffff:162.251.9.86","level":"info","message":"User authentication successful for user Terra","session":"6de07c8a884985725d64be58","timestamp":"2024-08-11 11:19:53"}
+{"level":"info","message":"No system update for Heart - The City Beneath is currently available.","timestamp":"2024-08-11 11:19:57"}
+{"level":"info","message":"Vended World data to User [6oDs9TTs6U2bZ5IP] in 680ms","timestamp":"2024-08-11 11:19:57"}
+{"level":"info","message":"No system update for Heart - The City Beneath is currently available.","timestamp":"2024-08-11 11:21:00"}
+{"level":"info","message":"Vended World data to User [xSxvWh0iZqjKfDXe] in 614ms","timestamp":"2024-08-11 11:21:00"}
+{"level":"info","message":"Created Item with id [FVBaSj8b2ypUj3TH] in parent Actor [IQkScKc7tlBByFu7]","timestamp":"2024-08-11 11:23:50"}
+{"level":"info","message":"Created Item with id [UmJ793VaOuD3PnCW] in parent Actor [IQkScKc7tlBByFu7]","timestamp":"2024-08-11 11:25:09"}
+{"level":"info","message":"Created Actor with id [sTYxKqYLWfW3sUeG]","timestamp":"2024-08-11 11:30:15"}
+{"level":"info","message":"Created Item with id [V0WLtk8njsVxWEu8] in parent Actor [IQkScKc7tlBByFu7]","timestamp":"2024-08-11 11:31:00"}
+{"level":"info","message":"Created Item with id [7lsRD49t7SXP8OO3] in parent Actor [IQkScKc7tlBByFu7]","timestamp":"2024-08-11 11:32:00"}
+{"level":"info","message":"Created Token with id [lu3rWRB1hdzm39k1] in parent Scene [sIcl6SwN4pkAQz3W]","timestamp":"2024-08-11 11:32:46"}
+{"level":"info","message":"Created Token with id [gfN5lf3d0GO7FYQY] in parent Scene [sIcl6SwN4pkAQz3W]","timestamp":"2024-08-11 11:32:55"}
+{"level":"info","message":"Toggling game pause status to false","timestamp":"2024-08-11 11:32:58"}
+{"level":"info","message":"Toggling game pause status to true","timestamp":"2024-08-11 11:33:00"}
+{"level":"info","message":"Created Token with id [pSCG2qgJlik7DbWO] in parent Scene [sIcl6SwN4pkAQz3W]","timestamp":"2024-08-11 11:33:01"}
+{"level":"info","message":"Created Item with id [Ttsc8Gz1rSRiW75u] in parent Actor [IQkScKc7tlBByFu7]","timestamp":"2024-08-11 11:33:21"}
+{"level":"info","message":"Created Token with id [EIQUiCknb0xnGp4J] in parent Scene [sIcl6SwN4pkAQz3W]","timestamp":"2024-08-11 11:33:31"}
+{"level":"info","message":"Created Token with id [P3U85ZEgTW7yG8ZV] in parent Scene [sIcl6SwN4pkAQz3W]","timestamp":"2024-08-11 11:34:37"}
+{"level":"info","message":"Toggling game pause status to false","timestamp":"2024-08-11 11:35:27"}
+{"level":"info","message":"Toggling game pause status to true","timestamp":"2024-08-11 11:35:29"}
+{"level":"info","message":"Created Item with id [ymHa5o81HZ8uFaem] in parent Actor [IQkScKc7tlBByFu7]","timestamp":"2024-08-11 11:35:38"}
+{"level":"info","message":"Logged user xSxvWh0iZqjKfDXe out of active World","timestamp":"2024-08-11 11:38:03"}
+{"ip":"::ffff:70.119.232.97","level":"info","message":"User authentication successful for user CrazyEyes","session":"da536ae2f0c48849679cbd06","timestamp":"2024-08-11 11:38:15"}
+{"level":"info","message":"No system update for Heart - The City Beneath is currently available.","timestamp":"2024-08-11 11:38:16"}
+{"level":"info","message":"Vended World data to User [xSxvWh0iZqjKfDXe] in 599ms","timestamp":"2024-08-11 11:38:16"}
+{"level":"info","message":"Deleted 4 Token documents with ids: [gfN5lf3d0GO7FYQY,pSCG2qgJlik7DbWO,P3U85ZEgTW7yG8ZV,EIQUiCknb0xnGp4J] in parent Scene [sIcl6SwN4pkAQz3W]","timestamp":"2024-08-11 11:38:22"}
+{"level":"info","message":"Deleted Token with id [lu3rWRB1hdzm39k1] in parent Scene [sIcl6SwN4pkAQz3W]","timestamp":"2024-08-11 11:38:29"}
+{"level":"info","message":"Created Token with id [fpHHDrg74nFL9xQ8] in parent Scene [sIcl6SwN4pkAQz3W]","timestamp":"2024-08-11 11:38:37"}
+{"level":"info","message":"Deleted Token with id [fpHHDrg74nFL9xQ8] in parent Scene [sIcl6SwN4pkAQz3W]","timestamp":"2024-08-11 11:39:58"}
+{"level":"info","message":"Created Token with id [BsqT777CaGweztrR] in parent Scene [sIcl6SwN4pkAQz3W]","timestamp":"2024-08-11 11:40:01"}
+{"level":"info","message":"Deleted Token with id [BsqT777CaGweztrR] in parent Scene [sIcl6SwN4pkAQz3W]","timestamp":"2024-08-11 11:40:47"}
+{"level":"info","message":"Created Token with id [cTFAgjWWgyhWZRoL] in parent Scene [sIcl6SwN4pkAQz3W]","timestamp":"2024-08-11 11:40:49"}
+{"level":"info","message":"Deleted Token with id [cTFAgjWWgyhWZRoL] in parent Scene [sIcl6SwN4pkAQz3W]","timestamp":"2024-08-11 11:41:05"}
+{"level":"info","message":"Created Token with id [HNlxiS2ozcseZR7q] in parent Scene [sIcl6SwN4pkAQz3W]","timestamp":"2024-08-11 11:41:09"}
+{"level":"info","message":"Toggling game pause status to false","timestamp":"2024-08-11 11:42:43"}
+{"level":"info","message":"Toggling game pause status to true","timestamp":"2024-08-11 11:42:50"}
+{"level":"info","message":"No system update for Heart - The City Beneath is currently available.","timestamp":"2024-08-11 11:43:34"}
+{"level":"info","message":"Vended World data to User [6oDs9TTs6U2bZ5IP] in 629ms","timestamp":"2024-08-11 11:43:34"}
+{"level":"info","message":"Logged user 6oDs9TTs6U2bZ5IP out of active World","timestamp":"2024-08-11 11:48:05"}
+{"level":"info","message":"Created client session 334cda4b4c32ece09800097e","timestamp":"2024-08-11 11:52:13"}
+{"ip":"::ffff:162.251.9.86","level":"info","message":"User authentication successful for user Terra","session":"334cda4b4c32ece09800097e","timestamp":"2024-08-11 11:52:24"}
+{"level":"info","message":"No system update for Heart - The City Beneath is currently available.","timestamp":"2024-08-11 11:52:26"}
+{"level":"info","message":"Vended World data to User [6oDs9TTs6U2bZ5IP] in 642ms","timestamp":"2024-08-11 11:52:26"}
+{"level":"info","message":"pointer.png saved to systems/heart/assets","timestamp":"2024-08-11 11:54:37"}
+{"level":"info","message":"Created client session faabac676c7493e34bf29fc4","timestamp":"2024-08-11 12:02:15"}
+{"level":"info","message":"Created client session 6e8a96dee65d344fdbdd3332","timestamp":"2024-08-11 12:03:08"}
+{"level":"info","message":"Created client session 670677bb4cad26dfd720142b","timestamp":"2024-08-11 12:03:28"}
+{"ip":"::ffff:70.119.232.97","level":"warn","message":"User authentication failed for user CrazyEyes; invalid password","session":"670677bb4cad26dfd720142b","status":401,"timestamp":"2024-08-11 12:03:34"}
+{"ip":"::ffff:70.119.232.97","level":"info","message":"User authentication successful for user CrazyEyes","session":"670677bb4cad26dfd720142b","timestamp":"2024-08-11 12:03:42"}
+{"level":"warn","message":"The world \"empire-divided\" contains \"dependencies\" which is deprecated in favor of \"relationships.requires\"\nDeprecated since Version 10\nBackwards-compatible support will be removed in Version 13","timestamp":"2024-08-11 12:03:42"}
+{"level":"warn","message":"The world \"empire-divided\" is using the old flat core compatibility fields which are deprecated in favor of the new \"compatibility\" object\nDeprecated since Version 10\nBackwards-compatible support will be removed in Version 13","timestamp":"2024-08-11 12:03:42"}
+{"level":"warn","message":"The world \"test\" contains \"dependencies\" which is deprecated in favor of \"relationships.requires\"\nDeprecated since Version 10\nBackwards-compatible support will be removed in Version 13","timestamp":"2024-08-11 12:03:42"}
+{"level":"warn","message":"The world \"test\" is using the old flat core compatibility fields which are deprecated in favor of the new \"compatibility\" object\nDeprecated since Version 10\nBackwards-compatible support will be removed in Version 13","timestamp":"2024-08-11 12:03:42"}
+{"level":"info","message":"No system update for Heart - The City Beneath is currently available.","timestamp":"2024-08-11 12:03:43"}
+{"level":"info","message":"Vended World data to User [xSxvWh0iZqjKfDXe] in 655ms","timestamp":"2024-08-11 12:03:43"}
+{"level":"info","message":"pointer2.png saved to systems/heart/assets","timestamp":"2024-08-11 12:03:57"}
+{"level":"info","message":"Deleted Actor with id [L9hH0FENaJ0udIC6]","timestamp":"2024-08-11 12:05:32"}
+{"level":"info","message":"Created Item with id [0I0KazGzH9joJg7I] in parent Actor [VNAfJsax6nXWDzSU]","timestamp":"2024-08-11 12:08:33"}
+{"level":"info","message":"Created Item with id [GL3dWhdEnniJ42QQ] in parent Actor [VNAfJsax6nXWDzSU]","timestamp":"2024-08-11 12:12:22"}
+{"level":"info","message":"Created Item with id [HLMsQ98CtFXZM8EA] in parent Actor [VNAfJsax6nXWDzSU]","timestamp":"2024-08-11 12:14:15"}
+{"level":"info","message":"Created Item with id [fAiOtCByESjKMiDC] in parent Actor [VNAfJsax6nXWDzSU]","timestamp":"2024-08-11 12:16:41"}
+{"level":"info","message":"Created Item with id [wDQBHHA2pNEqkdpr] in parent Actor [VNAfJsax6nXWDzSU]","timestamp":"2024-08-11 12:18:12"}
+{"level":"info","message":"Created Playlist with id [qzIoHui14Lv13vTx]","timestamp":"2024-08-11 12:42:39"}
+{"level":"info","message":"Dabu Strange Moods.mp3 saved to systems/heart/assets/music","timestamp":"2024-08-11 12:47:59"}
+{"level":"info","message":"Created PlaylistSound with id [r1sRtVOTtQaxo47o] in parent Playlist [qzIoHui14Lv13vTx]","timestamp":"2024-08-11 12:48:11"}
+{"level":"info","message":"Dabu Death Spiral.mp3 saved to systems/heart/assets/music","timestamp":"2024-08-11 12:49:03"}
+{"level":"info","message":"Created PlaylistSound with id [XCzanMjgbMKWnwrM] in parent Playlist [qzIoHui14Lv13vTx]","timestamp":"2024-08-11 12:49:10"}
+{"level":"info","message":"Dabu - Simon Swerwer Forgotten Beast.mp3 saved to systems/heart/assets/music","timestamp":"2024-08-11 12:49:27"}
+{"level":"info","message":"Created PlaylistSound with id [iI8oNWUSC5DVwnMK] in parent Playlist [qzIoHui14Lv13vTx]","timestamp":"2024-08-11 12:49:37"}
+{"level":"info","message":"Dabu - Simon Swerwer Another Year.mp3 saved to systems/heart/assets/music","timestamp":"2024-08-11 12:49:57"}
+{"level":"info","message":"Created PlaylistSound with id [UHoioE1nqwhhk1T8] in parent Playlist [qzIoHui14Lv13vTx]","timestamp":"2024-08-11 12:50:04"}
+{"level":"info","message":"Created Playlist with id [nfPt12rFQrlJySoB]","timestamp":"2024-08-11 12:50:18"}
+{"level":"info","message":"Dabu - Simon Swerwer Strike The Earth-.mp3 saved to systems/heart/assets/music","timestamp":"2024-08-11 12:50:55"}
+{"level":"info","message":"Created PlaylistSound with id [XRefBnie48bgz2A9] in parent Playlist [nfPt12rFQrlJySoB]","timestamp":"2024-08-11 12:51:05"}
+{"level":"info","message":"Dabu - Simon Swerwer Hill Dwarf.mp3 saved to systems/heart/assets/music","timestamp":"2024-08-11 12:51:12"}
+{"level":"info","message":"Created PlaylistSound with id [2wx5xuszqwYHZcfS] in parent Playlist [nfPt12rFQrlJySoB]","timestamp":"2024-08-11 12:51:18"}
+{"level":"info","message":"Dabu - Águeda Macias Mountainhome.mp3 saved to systems/heart/assets/music","timestamp":"2024-08-11 12:51:27"}
+{"level":"info","message":"Created PlaylistSound with id [grkE685a36nNm2LI] in parent Playlist [nfPt12rFQrlJySoB]","timestamp":"2024-08-11 12:51:32"}
+{"level":"info","message":"Ziggurath - Tales from Southern Realms - 09 Pick your Poison.mp3 saved to systems/heart/assets/music","timestamp":"2024-08-11 12:56:58"}
+{"level":"info","message":"Created PlaylistSound with id [CKiF8VeWX5gkDUO9] in parent Playlist [nfPt12rFQrlJySoB]","timestamp":"2024-08-11 12:57:08"}
+{"level":"info","message":"Ziggurath - Tales from Southern Realms - 10 Village of the Mushroom People.mp3 saved to systems/heart/assets/music","timestamp":"2024-08-11 12:57:42"}
+{"level":"info","message":"Created PlaylistSound with id [Oncp3AICI1Kw5CMy] in parent Playlist [nfPt12rFQrlJySoB]","timestamp":"2024-08-11 12:57:50"}
+{"level":"info","message":"Ziggurath - Tales from Southern Realms - 01 Tales from Southern Realms.mp3 saved to systems/heart/assets/music","timestamp":"2024-08-11 12:58:15"}
+{"level":"info","message":"Created PlaylistSound with id [vL9axdCUFpeYF62F] in parent Playlist [qzIoHui14Lv13vTx]","timestamp":"2024-08-11 12:58:23"}
+{"level":"info","message":"Ziggurath - Tales from Southern Realms - 02 Caravan at the Break of Dawn.mp3 saved to systems/heart/assets/music","timestamp":"2024-08-11 12:58:31"}
+{"level":"info","message":"Created PlaylistSound with id [OjU46TCzOJoBxiqt] in parent Playlist [qzIoHui14Lv13vTx]","timestamp":"2024-08-11 12:58:37"}
+{"level":"info","message":"Ziggurath - Tales from Southern Realms - 07 Golden Ziggurats.mp3 saved to systems/heart/assets/music","timestamp":"2024-08-11 12:58:48"}
+{"level":"info","message":"Created PlaylistSound with id [lemRffCyOTSogdfq] in parent Playlist [qzIoHui14Lv13vTx]","timestamp":"2024-08-11 12:58:54"}
+{"level":"info","message":"Ziggurath - Tales from Southern Realms - 06 Schemes of the Grand Vizier.mp3 saved to systems/heart/assets/music","timestamp":"2024-08-11 12:59:04"}
+{"level":"info","message":"Created PlaylistSound with id [htDR9GnLVm0Ryn4C] in parent Playlist [qzIoHui14Lv13vTx]","timestamp":"2024-08-11 12:59:11"}
+{"level":"info","message":"Ziggurath - Tales from Southern Realms - 08 Assassins in the Courtyard.mp3 saved to systems/heart/assets/music","timestamp":"2024-08-11 12:59:26"}
+{"level":"info","message":"Created PlaylistSound with id [5cDy4warpeiorvUV] in parent Playlist [qzIoHui14Lv13vTx]","timestamp":"2024-08-11 12:59:33"}
+{"level":"info","message":"Ziggurath - Tales from Southern Realms - 03 Pillars of Wisdom.mp3 saved to systems/heart/assets/music","timestamp":"2024-08-11 12:59:55"}
+{"level":"info","message":"Created PlaylistSound with id [RJoKhPttHZFTHlBB] in parent Playlist [qzIoHui14Lv13vTx]","timestamp":"2024-08-11 13:00:02"}
+{"level":"info","message":"Ziggurath - Tales from Southern Realms - 04 Forbidden Obelisk.mp3 saved to systems/heart/assets/music","timestamp":"2024-08-11 13:00:09"}
+{"level":"info","message":"Created PlaylistSound with id [1rokoEuIjM3DFZAF] in parent Playlist [qzIoHui14Lv13vTx]","timestamp":"2024-08-11 13:00:15"}
+{"level":"info","message":"DIM - Compendium Reliquiae - 02 To Look Back Upon a Stony Gate.mp3 saved to systems/heart/assets/music","timestamp":"2024-08-11 13:01:24"}
+{"level":"info","message":"Created PlaylistSound with id [OLi2usA6vrl6SNv5] in parent Playlist [qzIoHui14Lv13vTx]","timestamp":"2024-08-11 13:01:36"}
+{"level":"info","message":"DIM - Compendium Reliquiae - 01 Arrow of Things Deceptive.mp3 saved to systems/heart/assets/music","timestamp":"2024-08-11 13:01:50"}
+{"level":"info","message":"Created PlaylistSound with id [ZqljuRIYn0VVky6m] in parent Playlist [nfPt12rFQrlJySoB]","timestamp":"2024-08-11 13:02:01"}
+{"level":"info","message":"DIM - Compendium Reliquiae - 03 Unto the Great Well.mp3 saved to systems/heart/assets/music","timestamp":"2024-08-11 13:02:28"}
+{"level":"info","message":"Created PlaylistSound with id [wMA0WRrRQNByOjfO] in parent Playlist [qzIoHui14Lv13vTx]","timestamp":"2024-08-11 13:02:35"}
+{"level":"info","message":"DIM - Compendium Reliquiae - 05 The Boulder in the Shade.mp3 saved to systems/heart/assets/music","timestamp":"2024-08-11 13:03:17"}
+{"level":"info","message":"Created PlaylistSound with id [chTYayfIUwiNH7Yq] in parent Playlist [nfPt12rFQrlJySoB]","timestamp":"2024-08-11 13:03:24"}
+{"level":"info","message":"DIM - Compendium Reliquiae - 08 A Beard Long and Mixed With White.mp3 saved to systems/heart/assets/music","timestamp":"2024-08-11 13:04:28"}
+{"level":"info","message":"Created PlaylistSound with id [QCIVPr4yRfJ5AdZq] in parent Playlist [nfPt12rFQrlJySoB]","timestamp":"2024-08-11 13:04:36"}
+{"level":"info","message":"DIM - Compendium Reliquiae - 04 Dwellers of That Miserable Valley.mp3 saved to systems/heart/assets/music","timestamp":"2024-08-11 13:05:19"}
+{"level":"info","message":"Created PlaylistSound with id [B2D2btNQ2ZzVtC7F] in parent Playlist [qzIoHui14Lv13vTx]","timestamp":"2024-08-11 13:05:26"}
+{"level":"info","message":"Created client session 36d785186b6074ce532e8fb6","timestamp":"2024-08-11 13:46:31"}
+{"ip":"::ffff:95.173.221.12","level":"info","message":"User authentication successful for user aomeng","session":"36d785186b6074ce532e8fb6","timestamp":"2024-08-11 13:46:46"}
+{"level":"info","message":"No system update for Heart - The City Beneath is currently available.","timestamp":"2024-08-11 13:46:48"}
+{"level":"info","message":"Vended World data to User [VL5EIkaEA1g3lm37] in 696ms","timestamp":"2024-08-11 13:46:48"}
+{"level":"info","message":"Created Item with id [IEG3KhVuAUaabUM0]","timestamp":"2024-08-11 14:00:50"}
+{"level":"info","message":"Created ChatMessage with id [Te3AW7T4Z67PEEc6]","timestamp":"2024-08-11 14:01:50"}
+{"level":"info","message":"Deleted ChatMessage with id [Te3AW7T4Z67PEEc6]","timestamp":"2024-08-11 14:01:53"}
+{"level":"info","message":"Created Item with id [pu0LehDVODKsOMW4] in parent Actor [VNAfJsax6nXWDzSU]","timestamp":"2024-08-11 14:02:07"}
+{"level":"info","message":"Created ChatMessage with id [fIBEt43HUaAb86Or]","timestamp":"2024-08-11 14:03:34"}
+{"level":"info","message":"Created Item with id [bfn3Ke25A65TxMt8] in parent Actor [VNAfJsax6nXWDzSU]","timestamp":"2024-08-11 14:05:45"}
+{"level":"info","message":"Deleted Item with id [bfn3Ke25A65TxMt8] in parent Actor [VNAfJsax6nXWDzSU]","timestamp":"2024-08-11 14:05:52"}
+{"level":"info","message":"Deleted Item with id [pu0LehDVODKsOMW4] in parent Actor [VNAfJsax6nXWDzSU]","timestamp":"2024-08-11 14:06:04"}
+{"level":"info","message":"Created Item with id [JfZ1MFBELe4slTLx] in parent Actor [VNAfJsax6nXWDzSU]","timestamp":"2024-08-11 14:06:31"}
+{"level":"info","message":"Deleted Item with id [02t1HhO6vJhvG4av] in parent Actor [VNAfJsax6nXWDzSU]","timestamp":"2024-08-11 14:06:40"}
+{"level":"info","message":"Created Item with id [K2cJ0m4GmWuvOqwR]","timestamp":"2024-08-11 14:06:50"}
+{"level":"info","message":"Created Item with id [LaV13ppvdowpl3kU] in parent Actor [IQkScKc7tlBByFu7]","timestamp":"2024-08-11 14:07:06"}
+{"level":"info","message":"Deleted Item with id [mV9OABOjXF0MjRTG] in parent Actor [IQkScKc7tlBByFu7]","timestamp":"2024-08-11 14:08:17"}
+{"level":"info","message":"Created ChatMessage with id [YgWfZqsjLHbDbHco]","timestamp":"2024-08-11 14:14:23"}
+{"level":"info","message":"Created ChatMessage with id [0UkpczPK7jsY0RnD]","timestamp":"2024-08-11 14:25:31"}
+{"level":"info","message":"Created ChatMessage with id [CzxJfnYRV7TlfBTJ]","timestamp":"2024-08-11 14:26:16"}
+{"level":"info","message":"Created ChatMessage with id [2mQ4r3SdOEvv6v1s]","timestamp":"2024-08-11 14:26:28"}
+{"level":"info","message":"Created ChatMessage with id [85UFZMvOBJ1lgI15]","timestamp":"2024-08-11 14:34:19"}
+{"level":"info","message":"Created Folder with id [39HMKe1WvCKrRV0R]","timestamp":"2024-08-11 14:34:53"}
+{"level":"info","message":"Created Item with id [8f1o4R53IEUhGxSO]","timestamp":"2024-08-11 14:35:07"}
+{"level":"info","message":"Created Item with id [xJgrB2DSvuXcZdo9] in parent Actor [VNAfJsax6nXWDzSU]","timestamp":"2024-08-11 14:35:20"}
+{"level":"info","message":"Created ChatMessage with id [vksuVgvTUnaqGgyV]","timestamp":"2024-08-11 14:39:00"}
+{"level":"info","message":"Created ChatMessage with id [UhSppJmjVIbL1JEE]","timestamp":"2024-08-11 14:42:24"}
+{"level":"info","message":"Created ChatMessage with id [US0X9XT0nNAV6Oyw]","timestamp":"2024-08-11 14:43:03"}
+{"level":"info","message":"Created ChatMessage with id [L3ib6zauQGxA977N]","timestamp":"2024-08-11 14:43:18"}
+{"level":"info","message":"Created ChatMessage with id [eG074wHtsIzHxFBv]","timestamp":"2024-08-11 14:43:23"}
+{"level":"info","message":"Created Combat with id [pYHmehAaV5gsO8yT]","timestamp":"2024-08-11 14:44:38"}
+{"level":"info","message":"Created ChatMessage with id [GCXIco3ksHxZkVYt]","timestamp":"2024-08-11 14:45:31"}
+{"level":"info","message":"Created ChatMessage with id [OO0J53RGvFKgQJrx]","timestamp":"2024-08-11 14:45:46"}
+{"level":"info","message":"Created ChatMessage with id [cxnQd5HEzsSUShyh]","timestamp":"2024-08-11 14:47:34"}
+{"level":"info","message":"Created ChatMessage with id [QI7eMR0eqpJkOWGf]","timestamp":"2024-08-11 14:48:12"}
+{"level":"info","message":"Created ChatMessage with id [oMxb4JWuSpSYRq83]","timestamp":"2024-08-11 14:48:24"}
+{"level":"info","message":"Created Item with id [uKdOenABlctQIGsi] in parent Actor [IQkScKc7tlBByFu7]","timestamp":"2024-08-11 14:50:53"}
+{"level":"info","message":"Created ChatMessage with id [k6U6f2VWP1Ebaoqx]","timestamp":"2024-08-11 14:51:55"}
+{"level":"info","message":"Created ChatMessage with id [Wcn5fc6fUviliZ9f]","timestamp":"2024-08-11 14:52:03"}
+{"level":"info","message":"Created ChatMessage with id [QBD5cO2UYMXySzsX]","timestamp":"2024-08-11 14:52:07"}
+{"level":"info","message":"Created ChatMessage with id [IuG7cfehQmRIYuI2]","timestamp":"2024-08-11 14:58:18"}
+{"level":"info","message":"Created ChatMessage with id [iTxKnfIELLDXyHdF]","timestamp":"2024-08-11 15:02:37"}
+{"level":"info","message":"Created ChatMessage with id [LeB5mNolYCEUvjEj]","timestamp":"2024-08-11 15:04:02"}
+{"level":"info","message":"Created ChatMessage with id [snWS35EdlmIDMQDO]","timestamp":"2024-08-11 15:04:07"}
+{"level":"info","message":"Created ChatMessage with id [imsiwVQB0M9NABtx]","timestamp":"2024-08-11 15:04:07"}
+{"level":"info","message":"Created ChatMessage with id [veMeMVcZQJntBiIU]","timestamp":"2024-08-11 15:04:20"}
+{"level":"info","message":"Created Item with id [5ADOoJ2KhJHnnKH0] in parent Actor [IQkScKc7tlBByFu7]","timestamp":"2024-08-11 15:06:45"}
+{"level":"info","message":"Created ChatMessage with id [KXgAO5JV0cMiNRPy]","timestamp":"2024-08-11 15:09:07"}
+{"level":"info","message":"Created ChatMessage with id [ZVLphbQZRptp0mL9]","timestamp":"2024-08-11 15:09:52"}
+{"level":"info","message":"Deleted Item with id [CEvBBYVomQuT635u] in parent Actor [IQkScKc7tlBByFu7]","timestamp":"2024-08-11 15:09:58"}
+{"level":"info","message":"Created ChatMessage with id [LHmRZTsCsjNoF9yQ]","timestamp":"2024-08-11 15:12:24"}
+{"level":"info","message":"Created ChatMessage with id [HQm9XuChbw4HcF4I]","timestamp":"2024-08-11 15:14:16"}
+{"level":"info","message":"Created ChatMessage with id [51lMQBvunIJsACi6]","timestamp":"2024-08-11 15:15:13"}
+{"level":"info","message":"Created ChatMessage with id [7Uf7aEEHYz3USYSf]","timestamp":"2024-08-11 15:15:17"}
+{"level":"info","message":"Created ChatMessage with id [S3GAEKQl0ztZNKj4]","timestamp":"2024-08-11 15:15:25"}
+{"level":"info","message":"Created ChatMessage with id [Z4v3PUfCVePl8BAG]","timestamp":"2024-08-11 15:15:25"}
+{"level":"info","message":"Created ChatMessage with id [dXNmRNMZB15WpiCh]","timestamp":"2024-08-11 15:17:21"}
+{"level":"info","message":"Created ChatMessage with id [7cjyqzAhyKrZNyp7]","timestamp":"2024-08-11 15:17:38"}
+{"level":"info","message":"Created ChatMessage with id [9IWbrhMI6ZKKI8OM]","timestamp":"2024-08-11 15:17:46"}
+{"level":"info","message":"Created ChatMessage with id [EzidnsetDPIMoqH6]","timestamp":"2024-08-11 15:18:42"}
+{"level":"info","message":"Created ChatMessage with id [xLL4ml8bghQtV4LV]","timestamp":"2024-08-11 15:19:09"}
+{"level":"info","message":"Created ChatMessage with id [DhhuIVsRn3fq5ZnD]","timestamp":"2024-08-11 15:19:10"}
+{"level":"info","message":"Created Item with id [WvonmP4hnyBAauHu] in parent Actor [IQkScKc7tlBByFu7]","timestamp":"2024-08-11 15:21:16"}
+{"level":"info","message":"Created Item with id [01luqpU4CAMYhy6A] in parent Actor [VNAfJsax6nXWDzSU]","timestamp":"2024-08-11 15:22:11"}
+{"level":"info","message":"Created ChatMessage with id [yaUFNcKxZQng3dS1]","timestamp":"2024-08-11 15:22:26"}
+{"level":"info","message":"Created ChatMessage with id [vwJQB2gwzPx7zV74]","timestamp":"2024-08-11 15:22:53"}
+{"level":"info","message":"Deleted Item with id [LaV13ppvdowpl3kU] in parent Actor [IQkScKc7tlBByFu7]","timestamp":"2024-08-11 15:39:54"}
+{"level":"info","message":"Deleted Item with id [uKdOenABlctQIGsi] in parent Actor [IQkScKc7tlBByFu7]","timestamp":"2024-08-11 15:39:57"}
+{"level":"info","message":"Created ChatMessage with id [Qiso6rPu8qzP0w4P]","timestamp":"2024-08-11 15:47:59"}
+{"level":"info","message":"Created ChatMessage with id [ahu2gR3xHA3q06nd]","timestamp":"2024-08-11 15:59:02"}
+{"level":"info","message":"Deleted Item with id [35hgtfXYXXILmcwo] in parent Actor [VNAfJsax6nXWDzSU]","timestamp":"2024-08-11 15:59:23"}
+{"level":"info","message":"Created ChatMessage with id [GVRfQW4tYC4VItE9]","timestamp":"2024-08-11 16:01:02"}
+{"level":"info","message":"Created ChatMessage with id [bv7SryBTOGZKCBDZ]","timestamp":"2024-08-11 16:10:28"}
+{"level":"info","message":"Created ChatMessage with id [99Wqr5CADthAopx3]","timestamp":"2024-08-11 16:13:43"}
+{"level":"info","message":"Created ChatMessage with id [0gKvPzk2pzhiE0xG]","timestamp":"2024-08-11 16:16:16"}
+{"level":"info","message":"Created ChatMessage with id [Ow14a6OgkILgaenQ]","timestamp":"2024-08-11 16:16:27"}
+{"level":"info","message":"Created ChatMessage with id [0KbR6tXrF9o35Dg1]","timestamp":"2024-08-11 16:22:08"}
+{"level":"info","message":"Created ChatMessage with id [0vWJy71DKDEdDD7Z]","timestamp":"2024-08-11 16:24:13"}
+{"level":"info","message":"Created ChatMessage with id [H372sSaF1nZQodXP]","timestamp":"2024-08-11 16:24:20"}
+{"level":"info","message":"Created Item with id [BgoOoSNg1tEN3bxq] in parent Actor [VNAfJsax6nXWDzSU]","timestamp":"2024-08-11 16:25:54"}
+{"level":"info","message":"Created ChatMessage with id [tWjwzvPWFVe8tWCA]","timestamp":"2024-08-11 16:27:48"}
+{"level":"info","message":"Deleted Item with id [xJgrB2DSvuXcZdo9] in parent Actor [VNAfJsax6nXWDzSU]","timestamp":"2024-08-11 16:28:26"}
+{"level":"info","message":"Created ChatMessage with id [EYib7lVEYD0dzlKL]","timestamp":"2024-08-11 16:28:39"}
+{"level":"info","message":"Created ChatMessage with id [lsdjAtkU3FpPl7CG]","timestamp":"2024-08-11 16:28:44"}
+{"level":"info","message":"Created Token with id [3bTnhB5mLbofVcwL] in parent Scene [TEfaiVngU2NlmzbI]","timestamp":"2024-08-11 16:32:00"}
+{"level":"info","message":"Created Token with id [o6Urg7CRmszXLvGu] in parent Scene [TEfaiVngU2NlmzbI]","timestamp":"2024-08-11 16:32:02"}
+{"level":"info","message":"Created Token with id [Yg8hKqK827FqLlsW] in parent Scene [TEfaiVngU2NlmzbI]","timestamp":"2024-08-11 16:32:04"}
+{"level":"info","message":"Created ChatMessage with id [KhrlqkpBUKAlt7AO]","timestamp":"2024-08-11 16:36:31"}
+{"level":"info","message":"Created ChatMessage with id [hXxMUB95rNPzOBsZ]","timestamp":"2024-08-11 16:36:55"}
+{"level":"info","message":"Created Item with id [sqokwMrgEnjR5MBm] in parent Actor [VNAfJsax6nXWDzSU]","timestamp":"2024-08-11 16:39:40"}
+{"level":"info","message":"Created ChatMessage with id [ubYqeSGnvScQte4U]","timestamp":"2024-08-11 16:43:25"}
+{"level":"info","message":"Created ChatMessage with id [KKQbtzAUMDziBOqK]","timestamp":"2024-08-11 16:43:45"}
+{"level":"info","message":"Created ChatMessage with id [nSfrln8XFmbMU0n8]","timestamp":"2024-08-11 16:43:57"}
+{"level":"info","message":"Created ChatMessage with id [bjQFQE17VixhmTqX]","timestamp":"2024-08-11 16:45:11"}
+{"level":"info","message":"Created ChatMessage with id [NDm6AJC6fOcnq2Wp]","timestamp":"2024-08-11 16:45:17"}
+{"level":"info","message":"Deleted 3 Token documents with ids: [o6Urg7CRmszXLvGu,3bTnhB5mLbofVcwL,Yg8hKqK827FqLlsW] in parent Scene [TEfaiVngU2NlmzbI]","timestamp":"2024-08-11 16:47:48"}
+{"level":"info","message":"Deleted Item with id [5ADOoJ2KhJHnnKH0] in parent Actor [IQkScKc7tlBByFu7]","timestamp":"2024-08-11 16:47:55"}
+{"level":"info","message":"Deleted Item with id [BgoOoSNg1tEN3bxq] in parent Actor [VNAfJsax6nXWDzSU]","timestamp":"2024-08-11 16:54:16"}
+{"level":"info","message":"Created Item with id [qDOswpnm0ltsHJvp] in parent Actor [VNAfJsax6nXWDzSU]","timestamp":"2024-08-11 16:56:44"}
+{"level":"info","message":"Deleted Item with id [qDOswpnm0ltsHJvp] in parent Actor [VNAfJsax6nXWDzSU]","timestamp":"2024-08-11 16:57:00"}
+{"level":"info","message":"Created Item with id [KCIq20AZtq34BYfe] in parent Actor [VNAfJsax6nXWDzSU]","timestamp":"2024-08-11 16:57:04"}
+{"level":"info","message":"Created Item with id [S61wC23IIoCTi44m] in parent Actor [VNAfJsax6nXWDzSU]","timestamp":"2024-08-11 16:57:05"}
+{"level":"info","message":"Created Item with id [G3vTbmXe2vWKnEjM] in parent Actor [VNAfJsax6nXWDzSU]","timestamp":"2024-08-11 16:57:47"}
+{"level":"info","message":"Created Item with id [Je3x4WNyUdmfXl1p] in parent Actor [VNAfJsax6nXWDzSU]","timestamp":"2024-08-11 16:57:49"}
+{"level":"info","message":"Created Item with id [mS5UukoVlpV5GZ5t] in parent Actor [IQkScKc7tlBByFu7]","timestamp":"2024-08-11 16:59:03"}
+{"level":"info","message":"No system update for Heart - The City Beneath is currently available.","timestamp":"2024-08-11 20:04:31"}
+{"level":"info","message":"Vended World data to User [6oDs9TTs6U2bZ5IP] in 765ms","timestamp":"2024-08-11 20:04:31"}
+{"level":"info","message":"Shutting down Foundry Virtual Tabletop server","timestamp":"2024-08-11 21:00:16"}
+{"level":"info","message":"Shut-down success. Goodbye!","timestamp":"2024-08-11 21:00:16"}
