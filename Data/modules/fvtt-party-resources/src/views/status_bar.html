@@ -1,0 +1,23 @@
+{{#if status_bar }}
+  {{#if resources }}
+    <section id="fvtt-party-resources-status-bar">
+
+      <ul class="clearfix">
+        {{#each resources as |r|}}
+          {{#if visible_for_players }}
+            <li class="flexrow fvtt-party-resources-resource" data-id="{{r.id}}">
+              {{#if r.use_icon}}
+                <img src="{{ r.icon }}" alt="{{ r.name }}" title="{{ r.name }}">
+              {{/if}}
+
+              <span>
+                {{ r.name }} ({{ value }}{{#if max_value}}/{{ max_value }}{{/if}})
+              </span>
+            </li>
+          {{/if}}
+        {{/each}}
+      </ul>
+
+    </section>
+  {{/if}}
+{{/if}}

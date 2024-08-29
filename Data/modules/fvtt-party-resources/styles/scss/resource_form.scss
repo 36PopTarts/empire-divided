@@ -1,0 +1,9 @@
+#add-resource-form, #edit-resource-form {
+  label {
+    &.checkbox {
+      /* Not sure why this was on 11px tbh. */
+      font-size: 14px !important;
+      margin-bottom: 5px;
+    }
+  }
+}

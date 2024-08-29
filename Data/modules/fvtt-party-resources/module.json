@@ -1,0 +1,88 @@
+{
+    "id": "fvtt-party-resources",
+    "name": "fvtt-party-resources",
+    "title": "Party Resources",
+    "description": "Create and track custom party resources.",
+    "authors": [
+        {
+            "name": "Dave Lens"
+        },
+        {
+            "name": "Kit",
+            "discord": "wlonk#6479"
+        }
+    ],
+    "url": "https://github.com/davelens/fvtt-party-resources",
+    "manifest": "https://github.com/davelens/fvtt-party-resources/releases/latest/download/module.json",
+    "download": "https://github.com/davelens/fvtt-party-resources/releases/download/1.7.0/module.zip",
+    "version": "1.7.0",
+    "minimumCoreVersion": "9",
+    "compatibleCoreVersion": "12",
+    "compatibility": {
+        "minimum": "9",
+        "verified": "12",
+        "maximum": "12"
+    },
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "languages/en.json"
+        },
+        {
+            "lang": "cn",
+            "name": "中文",
+            "path": "languages/cn.json"
+        },
+        {
+            "lang": "de",
+            "name": "Deutsch",
+            "path": "languages/de.json"
+        },
+        {
+            "lang": "fr",
+            "name": "Français",
+            "path": "languages/fr.json"
+        },
+        {
+            "lang": "ja",
+            "name": "日本語",
+            "path": "languages/ja.json"
+        },
+        {
+            "lang": "nl",
+            "name": "Nederlands",
+            "path": "languages/nl.json"
+        },
+        {
+            "lang": "pl",
+            "name": "polski",
+            "path": "languages/pl.json"
+        },
+        {
+            "lang": "ru",
+            "name": "Русский",
+            "path": "languages/ru.json"
+        },
+        {
+            "lang": "es",
+            "name": "Español",
+            "path": "languages/es.json"
+        }
+    ],
+    "esmodules": [
+        "./src/init.mjs"
+    ],
+    "styles": [
+        "./styles/css/init.css"
+    ],
+    "relationships": {
+        "requires": [
+            {
+                "id": "settings-extender",
+                "type": "module"
+            }
+        ]
+    },
+    "socket": true
+}
