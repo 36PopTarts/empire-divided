@@ -1,5 +1,5 @@
 {"_id":"03ds86jM7yJmcVXx","name":"The Traitor Unmasked","type":"Actor","parent":"fr0DWfQKUuFVhWDL","sorting":"m","sort":531250,"color":"#5e2f03","flags":{"wfrp4e-pbtt":{"initialization-parent":"Power Behind the Throne"}}}
-{"_id":"0BsLb4clE2MTurqA","name":"Middenheim NPCs","type":"Actor","parent":null,"sorting":"a","sort":450000,"color":"#ad5c00","flags":{}}
+{"_id":"0BsLb4clE2MTurqA","name":"Middenheim NPCs","type":"Actor","parent":null,"sorting":"a","sort":1000000,"color":"#ad5c00","flags":{}}
 {"_id":"0MIpj7xvY6NEdtss","name":"Karak Azgaraz","type":"JournalEntry","parent":"uaiYhFK8DZbtIU19","sorting":"a","sort":300000,"color":null,"flags":{}}
 {"_id":"0h2woGqGPI7tYegu","name":"Camp Follower","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":300000,"color":"#80654d","flags":{}}
 {"name":"Images","type":"JournalEntry","sort":8300000,"flags":{},"parent":"mDtj9tJuEIkmGvsz","sorting":"a","color":"","_id":"0hdNTncHGuzeohHo"}
@@ -48,7 +48,7 @@
 {"name":"Loot Tables","type":"RollTable","sort":1100000,"flags":{},"parent":"8quqXmxl5WgxUHgI","sorting":"a","color":"","_id":"7exNT1PyUXvcC4sP"}
 {"name":"Valuables","type":"Item","sort":800000,"flags":{},"parent":"Jr9DZCfP6SV0ZJdg","sorting":"a","color":"#cca000","_id":"7ppSF1uz1cID3cqy"}
 {"name":"Animal Traits","type":"Item","sort":1500000,"flags":{},"parent":"B1NGEkUpOPYjZbtf","sorting":"a","color":"#7a371a","_id":"7ywVkOaViZnEcW13"}
-{"_id":"81ZFw4Rjgz144G8Q","name":"Generic NPCs","type":"Actor","sort":200000,"flags":{},"parent":null,"sorting":"a","color":"#264f21"}
+{"_id":"81ZFw4Rjgz144G8Q","name":"Generic NPCs","type":"Actor","parent":null,"sorting":"a","sort":800000,"color":"#264f21","flags":{}}
 {"_id":"85eO3IGivHeAmQuo","name":"Skaven Magic","type":"JournalEntry","parent":"VvNRbbfyVXZuqzG7","sorting":"a","sort":62500,"color":"#065700","flags":{"wfrp4e-horned-rat":{"initialization-parent":"The Horned Rat Companion"}}}
 {"name":"Lore of the Little Waaagh!","type":"Item","sort":2400000,"flags":{},"parent":"YRGW5Jqs9RpDaLqn","sorting":"a","color":"#35531d","_id":"86rogfsOazeuAw3S"}
 {"name":"Ogre Maneater","type":"Item","sort":2900000,"flags":{},"parent":"FH46SuKDUeaO7cfJ","sorting":"a","color":"#5f3f25","_id":"88dHnDtRpYPObKCG"}
@@ -75,7 +75,7 @@
 {"name":"Saalenschloss","type":"JournalEntry","sort":8800000,"flags":{},"parent":"gfvxW95YPpkwZLnb","sorting":"a","color":"","_id":"BwAbSVnuqqrKxG4Q"}
 {"_id":"C5pRjgt6yjNpIBQ3","name":"Stealth","type":"Item","parent":"x4r4xaC9sYeRrMmm","sorting":"a","sort":0,"color":null,"flags":{"wfrp4e-horned-rat":{"initialization-parent":"Skaven Magic"}}}
 {"_id":"CDunpeWYhKpJ1Xmy","name":"Maps","type":"JournalEntry","sort":700000,"flags":{},"parent":null,"sorting":"m","color":"#3f3493"}
-{"_id":"CLkaC7gsUPC5R3mN","name":"PCs","type":"Actor","parent":null,"sorting":"m","sort":100000,"color":"#710e0e","flags":{}}
+{"_id":"CLkaC7gsUPC5R3mN","name":"PCs","type":"Actor","parent":null,"sorting":"m","sort":700000,"color":"#710e0e","flags":{}}
 {"name":"Dryad Shapeshifting","type":"Item","parent":"QcrOaFPGaPLI5M77","sorting":"a","sort":0,"color":null,"flags":{},"_id":"CW0WiBkXqitLY3mp"}
 {"_id":"CvXCHN29avdUCxGc","name":"Weapons","type":"Item","parent":"olgHgRo1Gf7yDakl","sorting":"a","sort":50000,"color":null,"flags":{"wfrp4e-horned-rat":{"initialization-parent":"The Horned Rat"}}}
 {"name":"I Have No Idea","type":"RollTable","sort":700000,"flags":{},"parent":"tIVl1PXcFSPDwlNN","sorting":"a","color":"","_id":"CzyKUOTTbxfphe0i"}
@@ -102,13 +102,14 @@
 {"name":"Heraldry","type":"JournalEntry","parent":null,"sorting":"a","sort":0,"color":null,"flags":{},"_id":"H21i4Pi4OZYXtQxm"}
 {"_id":"H8HGptQFI08Ivd5d","name":"The Black Hunger","type":"JournalEntry","parent":"pTj5zPKmfOJPE9a1","sorting":"m","sort":404688,"color":"#8b1313","flags":{"wfrp4e-horned-rat":{"initialization-parent":"The Horned Rat"}}}
 {"_id":"HNKLBEaiT9D77M7w","name":"The Skaven Conspiracy","type":"JournalEntry","parent":"VvNRbbfyVXZuqzG7","sorting":"a","sort":95313,"color":"#498334","flags":{"wfrp4e-horned-rat":{"initialization-parent":"The Horned Rat Companion"}}}
-{"name":"The Team","type":"Actor","parent":null,"sorting":"a","sort":0,"color":null,"flags":{},"_id":"HlKrxW53p6ijEbHK"}
+{"_id":"HlKrxW53p6ijEbHK","name":"The Team","type":"Actor","parent":null,"sorting":"a","sort":400000,"color":null,"flags":{}}
 {"_id":"HzlQAaKnrit1MRMs","name":"Initial Inquiries","type":"Actor","parent":"fr0DWfQKUuFVhWDL","sorting":"m","sort":400000,"color":"#5d134d","flags":{"wfrp4e-pbtt":{"initialization-parent":"Power Behind the Throne"}}}
 {"_id":"I3oC0nvgqcMK078b","name":"Chapter 2: Middenheim","type":"JournalEntry","parent":"xOq4e4h3j8j4DtZs","sorting":"a","sort":-50000,"color":"#102838","flags":{"wfrp4e-pbtt":{"initialization-parent":"Power Behind the Throne"}}}
 {"_id":"I3wLtYS6BxkhvXCq","name":"Chance Acquaintances","type":"Actor","parent":"iQNGmJxoCetxZccl","sorting":"a","sort":282813,"color":"#300061","flags":{"wfrp4e-horned-rat":{"initialization-parent":"The Horned Rat Companion"}}}
 {"_id":"I7s4hyP4aPeZZl61","name":"Other","type":"Item","parent":"OwpreDOBVSjPAjKX","sorting":"a","sort":0,"color":"#e07800","flags":{}}
 {"_id":"IAn7gAevS1Z5CnKd","name":"Travel","type":"JournalEntry","parent":null,"sorting":"a","sort":600000,"color":"#1e6b47","flags":{}}
-{"name":"Kammendun","type":"Actor","parent":null,"sorting":"a","sort":0,"color":null,"flags":{},"_id":"IBcxfMJ3ePoTipdS"}
+{"_id":"IBcxfMJ3ePoTipdS","name":"Kammendun","type":"Actor","parent":"IKFvSnFNbVUgQ3Yf","sorting":"a","sort":100000,"color":null,"flags":{}}
+{"_id":"IKFvSnFNbVUgQ3Yf","name":"Funeral for an Elf","type":"Actor","parent":null,"sorting":"a","sort":600000,"color":null,"flags":{}}
 {"_id":"INRBHZ5xA2IOKcGx","name":"Griffon Down","type":"Actor","parent":"PxQ2MIf7SxFgrRzm","sorting":"a","sort":837500,"color":"#007180","flags":{"wfrp4e-horned-rat":{"initialization-parent":"The Horned Rat"}}}
 {"_id":"IQwilEiSCe8ZjlZf","name":"Karstadt-Stampfs","type":"Actor","sort":400000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":"#4a582c"}
 {"_id":"IeTkJMKg24XUv4DR","name":"The Powers That Be","type":"Actor","parent":"fr0DWfQKUuFVhWDL","sorting":"m","sort":525000,"color":"#450707","flags":{"wfrp4e-pbtt":{"initialization-parent":"Power Behind the Throne"}}}
@@ -157,12 +158,12 @@
 {"name":"Fief Generator","type":"RollTable","sort":1700000,"flags":{},"parent":null,"sorting":"a","color":"","_id":"PJkmJd5XQPdUQpNE"}
 {"_id":"PZBUM3BfG0CxV3cz","name":"A Little Help From My (New) Friends","type":"JournalEntry","parent":"VvNRbbfyVXZuqzG7","sorting":"m","sort":200000,"color":"#066100","flags":{"wfrp4e-horned-rat":{"initialization-parent":"The Horned Rat Companion"}}}
 {"_id":"PfbfhkOCRbdIUBhp","name":"Monsters","type":"Actor","parent":"cEfyLchMYtoSuKxE","sorting":"a","sort":0,"color":"","flags":{}}
-{"_id":"PfoNIDzWjNaTy7cq","name":"To Export","type":"Actor","parent":null,"sorting":"a","sort":7050000,"color":null,"flags":{}}
+{"_id":"PfoNIDzWjNaTy7cq","name":"To Export","type":"Actor","parent":null,"sorting":"a","sort":1500000,"color":null,"flags":{}}
 {"_id":"PpQq0P45OK4lL5yj","name":"Ulrican Miracles","type":"Item","parent":"YeGQSBDZZPPLgfmT","sorting":"a","sort":200000,"color":null,"flags":{"wfrp4e-pbtt":{"initialization-parent":"Power Behind the Throne"}}}
 {"_id":"PpaF9s7v310YkGgG","name":"The Yellow Fang","type":"Actor","parent":"iQNGmJxoCetxZccl","sorting":"a","sort":250000,"color":"#3a5507","flags":{"wfrp4e-horned-rat":{"initialization-parent":"The Horned Rat Companion"}}}
 {"_id":"Ps9ESRgckOFHPHvC","name":"WIP","type":"Item","parent":null,"sorting":"a","sort":4100000,"color":null,"flags":{}}
 {"name":"Old","type":"RollTable","sort":1800000,"flags":{},"parent":null,"sorting":"a","color":"","_id":"PtRkJeRMkzZU0DYR"}
-{"name":"The Horned Rat","type":"Actor","parent":null,"sorting":"m","sort":-200000,"color":"#00573a","flags":{},"_id":"PxQ2MIf7SxFgrRzm"}
+{"_id":"PxQ2MIf7SxFgrRzm","name":"The Horned Rat","type":"Actor","parent":null,"sorting":"m","sort":100000,"color":"#00573a","flags":{}}
 {"_id":"Q0UfttGS2ZpKyqfG","name":"Character","type":"JournalEntry","parent":"KBFMpqeeMFWhdpSI","sorting":"a","sort":2200000,"color":"","flags":{"wfrp4e":{"initialization-parent":"Rules"}}}
 {"name":"Bretonnia","type":"RollTable","sort":2000000,"flags":{},"parent":null,"sorting":"a","color":"#761e1e","_id":"QCvopMfmguTTkLx8"}
 {"_id":"QbeCdRmvC3B2FsQt","name":"Into the Middle Mountains","type":"JournalEntry","parent":"pTj5zPKmfOJPE9a1","sorting":"m","sort":405210,"color":"#8a5700","flags":{"wfrp4e-horned-rat":{"initialization-parent":"The Horned Rat"}}}
@@ -212,7 +213,7 @@
 {"_id":"WuYKW45XIp1MG94j","name":"Luitpoldstrasse Blues","type":"JournalEntry","sort":7400000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#3b3d63"}
 {"_id":"X1ylSIix6JKqkLo4","name":"Mysterious Thefts","type":"JournalEntry","parent":"pTj5zPKmfOJPE9a1","sorting":"m","sort":370313,"color":"#938901","flags":{"wfrp4e-horned-rat":{"initialization-parent":"The Horned Rat"}}}
 {"_id":"X6ioGogBvl3x8J0I","name":"The Cover Up","type":"Actor","parent":"PxQ2MIf7SxFgrRzm","sorting":"a","sort":337500,"color":"#94008f","flags":{"wfrp4e-horned-rat":{"initialization-parent":"The Horned Rat"}}}
-{"_id":"XLndJ2I3x4vvGyT0","name":"Generic Creatures","type":"Actor","sort":300000,"flags":{},"parent":null,"sorting":"a","color":"#244c26"}
+{"_id":"XLndJ2I3x4vvGyT0","name":"Generic Creatures","type":"Actor","parent":null,"sorting":"a","sort":900000,"color":"#244c26","flags":{}}
 {"_id":"XUFucr937XktuFUt","name":"Lair of the Pawns","type":"JournalEntry","parent":null,"sorting":"a","sort":-200000,"color":null,"flags":{}}
 {"_id":"XfhUxAdPBRN3lgpw","name":"Campaign","type":"JournalEntry","parent":null,"sorting":"a","sort":750000,"color":"#2f6f66","flags":{}}
 {"_id":"Xj9kKCDM9wWXQ5u4","name":"Magic Items","type":"Item","sort":600000,"flags":{},"parent":null,"sorting":"a","color":"#c28e00"}
@@ -246,14 +247,14 @@
 {"name":"Undercity","type":"Scene","parent":"Y2EPOyNpGh1pOhQo","sorting":"a","sort":0,"color":null,"flags":{},"_id":"bg4KSAThY8QLC0Tt"}
 {"_id":"bhUpTnH6YcTtq1i2","name":"A Guide to the Middle Mountains","type":"JournalEntry","parent":"VvNRbbfyVXZuqzG7","sorting":"m","sort":100000,"color":"#830b93","flags":{"wfrp4e-horned-rat":{"initialization-parent":"The Horned Rat Companion"}}}
 {"_id":"bkvAD2bw3nvte6tw","name":"Combat Actions Test","type":"Item","parent":null,"sorting":"a","sort":4000000,"color":"#4f613d","flags":{}}
-{"_id":"c73wsFFS2dVYSKUP","name":"To Use Later","type":"Actor","sort":6850000,"flags":{},"parent":null,"sorting":"m","color":""}
+{"_id":"c73wsFFS2dVYSKUP","name":"To Use Later","type":"Actor","parent":null,"sorting":"m","sort":1400000,"color":null,"flags":{}}
 {"_id":"c8pB03MJECRvVVdb","name":"Combat","type":"JournalEntry","parent":"KBFMpqeeMFWhdpSI","sorting":"a","sort":2300000,"color":"","flags":{"wfrp4e":{"initialization-parent":"Rules"}}}
 {"name":"Teubrucke (The Docks)","type":"JournalEntry","sort":4900000,"flags":{},"parent":"nYrlPwQwhU9yHNZz","sorting":"a","color":"","_id":"cD2WV6rmxf2syVjx"}
-{"_id":"cEfyLchMYtoSuKxE","name":"Middenheim","type":"Actor","parent":null,"sorting":"a","sort":3875000,"color":"#46494e","flags":{}}
+{"_id":"cEfyLchMYtoSuKxE","name":"Middenheim","type":"Actor","parent":null,"sorting":"a","sort":1300000,"color":"#46494e","flags":{}}
 {"_id":"cGjlTxHjo741tDeJ","name":"A Little Help From My (New) Friends","type":"Actor","parent":"iQNGmJxoCetxZccl","sorting":"a","sort":283204,"color":"#066100","flags":{"wfrp4e-horned-rat":{"initialization-parent":"The Horned Rat Companion"}}}
 {"_id":"cHczBZFi7MuGKU42","name":"Tomb Blade","type":"JournalEntry","sort":7400000,"flags":{},"parent":"3D5AeQXPQFECRFtw","sorting":"a","color":"#cc6d00"}
 {"name":"Interior","type":"Scene","sort":600000,"flags":{},"parent":"ifqvWppW117y2zyP","sorting":"a","color":"#9f5c1e","_id":"cMzMOh9NsqnRhjeo"}
-{"_id":"cZf8CCfRbfZcxgzE","name":"Named NPCs","type":"Actor","sort":600000,"flags":{},"parent":null,"sorting":"m","color":"#4b7395"}
+{"_id":"cZf8CCfRbfZcxgzE","name":"Named NPCs","type":"Actor","parent":null,"sorting":"m","sort":1100000,"color":"#4b7395","flags":{}}
 {"_id":"cgVwF73JqHGJFy4a","name":"The Ritual","type":"JournalEntry","parent":"tVm4VHOzL3Kt6qVy","sorting":"m","sort":9600000,"color":"#a21010","flags":{"wfrp4e-pbtt":{"initialization-parent":"Companion"}}}
 {"name":"Songs","type":"JournalEntry","sort":5300000,"flags":{},"parent":"qkj3aSI8lXUSVEwD","sorting":"a","color":"","_id":"clNfcmkJx7Pc8RQm"}
 {"_id":"csviqL8SYxtvFBCt","name":"Karak Ranger","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":1800000,"color":"#2c4b6d","flags":{}}
@@ -275,7 +276,7 @@
 {"_id":"fajyhFU9lHRWsMFz","name":"Factions","type":"JournalEntry","sort":400000,"flags":{},"parent":"sIr7875W6CLmlLOg","sorting":"a"}
 {"_id":"feN3tPP1Vz74OJs1","name":"Bestiary","type":"Actor","parent":"iQNGmJxoCetxZccl","sorting":"a","sort":200000,"color":"#7e4401","flags":{"wfrp4e-horned-rat":{"initialization-parent":"The Horned Rat Companion"}}}
 {"_id":"fn2hBlC40Qxv88mb","name":"Purrsecution","type":"Actor","parent":"PxQ2MIf7SxFgrRzm","sorting":"a","sort":-71875,"color":"#751e80","flags":{"wfrp4e-horned-rat":{"initialization-parent":"The Horned Rat"}}}
-{"name":"Power Behind the Throne","type":"Actor","parent":null,"sorting":"m","sort":0,"color":"#014b2b","flags":{},"_id":"fr0DWfQKUuFVhWDL"}
+{"_id":"fr0DWfQKUuFVhWDL","name":"Power Behind the Throne","type":"Actor","parent":null,"sorting":"m","sort":200000,"color":"#014b2b","flags":{}}
 {"name":"Natural Weapons","type":"Item","parent":"mSls4f8JbUBSZvVU","sorting":"a","sort":0,"color":null,"flags":{},"_id":"ft0FPTbmTzhcLzF7"}
 {"name":"Character Creation","type":"RollTable","sort":1900000,"flags":{},"parent":null,"sorting":"a","color":"#325d62","_id":"fuwTWO2bTvMhDGmy"}
 {"_id":"g3314ez3uibBoK0p","name":"Archer","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":100000,"color":"#3d5908","flags":{}}
@@ -325,7 +326,7 @@
 {"_id":"mqg2YJow5QV60BUA","name":"The Oldenhaller Contract","type":"Actor","parent":"c73wsFFS2dVYSKUP","sorting":"a","sort":200000,"color":"#445700","flags":{}}
 {"name":"Villagers","type":"JournalEntry","sort":8600000,"flags":{},"parent":"gfvxW95YPpkwZLnb","sorting":"a","color":"","_id":"mwr83CyCXWfwaJts"}
 {"name":"Vassals","type":"Actor","sort":5000000,"flags":{},"parent":"7JJvX9ibeSRwPy1t","sorting":"a","color":"","_id":"mxV8BnhQRP4zjmY0"}
-{"name":"The Handover","type":"Actor","parent":null,"sorting":"a","sort":0,"color":null,"flags":{},"_id":"nAv4LEiCqoyoOmVH"}
+{"_id":"nAv4LEiCqoyoOmVH","name":"The Handover","type":"Actor","parent":null,"sorting":"a","sort":300000,"color":null,"flags":{}}
 {"_id":"nG3gkFYEAmqrI5fy","name":"Careers","type":"Item","sort":3900000,"flags":{},"parent":null,"sorting":"m","color":"#ad4500"}
 {"name":"The Ottinger Papers","type":"JournalEntry","sort":7800000,"flags":{},"parent":"tVm4VHOzL3Kt6qVy","sorting":"a","color":"#404554","_id":"nIM7VxtzVOzcOrxh"}
 {"_id":"nYrlPwQwhU9yHNZz","name":"Ubersreik","type":"JournalEntry","sort":200000,"flags":{},"parent":"evoGfpDUlvJxklnA","sorting":"a","color":"#2d628b"}
@@ -393,7 +394,7 @@
 {"name":"PC Stuff","type":"Item","sort":3000000,"flags":{},"parent":"B1NGEkUpOPYjZbtf","sorting":"a","color":"#ad6e00","_id":"v9tiL1bRoEF5secs"}
 {"_id":"vCynGq9TAr6oaXsY","name":"Handouts","type":"JournalEntry","parent":"UTvom2QsNE9UCm6u","sorting":"a","sort":0,"color":null,"flags":{"wfrp4e-pbtt":{"initialization-parent":"Appendices"}}}
 {"_id":"vRK0IdWfn1Ral4Vj","name":"Greenskins","type":"Item","sort":3100000,"flags":{},"parent":"mSls4f8JbUBSZvVU","sorting":"a","color":"#3f5c00"}
-{"_id":"vU9LPtmofGv4bHSj","name":"Luitpoldstrasse Blues","type":"Actor","sort":900000,"flags":{},"parent":null,"sorting":"m","color":"#20417e"}
+{"_id":"vU9LPtmofGv4bHSj","name":"Luitpoldstrasse Blues","type":"Actor","parent":null,"sorting":"m","sort":1200000,"color":"#20417e","flags":{}}
 {"name":"Beyond the Walls","type":"JournalEntry","sort":4300000,"flags":{},"parent":"nYrlPwQwhU9yHNZz","sorting":"a","color":"","_id":"vXrzI9150vVG2zUV"}
 {"_id":"vbqsXReXNTlGAe2X","name":"Special","type":"Item","parent":"olgHgRo1Gf7yDakl","sorting":"a","sort":0,"color":null,"flags":{"wfrp4e-horned-rat":{"initialization-parent":"The Horned Rat"}}}
 {"name":"Urban","type":"Scene","sort":400000,"flags":{},"parent":"ifqvWppW117y2zyP","sorting":"a","color":"#6f7985","_id":"vegile7w7PJN8ipB"}
@@ -424,20 +425,3 @@
 {"name":"Obscure","type":"Scene","parent":"Y2EPOyNpGh1pOhQo","sorting":"a","sort":0,"color":null,"flags":{},"_id":"zpb1LCp1rJv27sjE"}
 {"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
 {"_id":"zs8xzPuX0aIpuiCx","name":"Handouts","type":"JournalEntry","parent":"pTj5zPKmfOJPE9a1","sorting":"m","sort":605211,"color":null,"flags":{"wfrp4e-horned-rat":{"initialization-parent":"The Horned Rat"}}}
-{"name":"Funeral for an Elf","type":"Actor","parent":null,"sorting":"a","sort":0,"color":null,"flags":{},"_id":"IKFvSnFNbVUgQ3Yf"}
-{"_id":"PxQ2MIf7SxFgrRzm","name":"The Horned Rat","type":"Actor","parent":null,"sorting":"m","sort":100000,"color":"#00573a","flags":{}}
-{"_id":"fr0DWfQKUuFVhWDL","name":"Power Behind the Throne","type":"Actor","parent":null,"sorting":"m","sort":200000,"color":"#014b2b","flags":{}}
-{"_id":"nAv4LEiCqoyoOmVH","name":"The Handover","type":"Actor","parent":null,"sorting":"a","sort":300000,"color":null,"flags":{}}
-{"_id":"HlKrxW53p6ijEbHK","name":"The Team","type":"Actor","parent":null,"sorting":"a","sort":400000,"color":null,"flags":{}}
-{"_id":"IBcxfMJ3ePoTipdS","name":"Kammendun","type":"Actor","parent":null,"sorting":"a","sort":500000,"color":null,"flags":{}}
-{"_id":"IKFvSnFNbVUgQ3Yf","name":"Funeral for an Elf","type":"Actor","parent":null,"sorting":"a","sort":600000,"color":null,"flags":{}}
-{"_id":"CLkaC7gsUPC5R3mN","name":"PCs","type":"Actor","parent":null,"sorting":"m","sort":700000,"color":"#710e0e","flags":{}}
-{"_id":"81ZFw4Rjgz144G8Q","name":"Generic NPCs","type":"Actor","parent":null,"sorting":"a","sort":800000,"color":"#264f21","flags":{}}
-{"_id":"XLndJ2I3x4vvGyT0","name":"Generic Creatures","type":"Actor","parent":null,"sorting":"a","sort":900000,"color":"#244c26","flags":{}}
-{"_id":"0BsLb4clE2MTurqA","name":"Middenheim NPCs","type":"Actor","parent":null,"sorting":"a","sort":1000000,"color":"#ad5c00","flags":{}}
-{"_id":"cZf8CCfRbfZcxgzE","name":"Named NPCs","type":"Actor","parent":null,"sorting":"m","sort":1100000,"color":"#4b7395","flags":{}}
-{"_id":"vU9LPtmofGv4bHSj","name":"Luitpoldstrasse Blues","type":"Actor","parent":null,"sorting":"m","sort":1200000,"color":"#20417e","flags":{}}
-{"_id":"cEfyLchMYtoSuKxE","name":"Middenheim","type":"Actor","parent":null,"sorting":"a","sort":1300000,"color":"#46494e","flags":{}}
-{"_id":"c73wsFFS2dVYSKUP","name":"To Use Later","type":"Actor","parent":null,"sorting":"m","sort":1400000,"color":null,"flags":{}}
-{"_id":"PfoNIDzWjNaTy7cq","name":"To Export","type":"Actor","parent":null,"sorting":"a","sort":1500000,"color":null,"flags":{}}
-{"_id":"IBcxfMJ3ePoTipdS","name":"Kammendun","type":"Actor","parent":"IKFvSnFNbVUgQ3Yf","sorting":"a","sort":100000,"color":null,"flags":{}}
