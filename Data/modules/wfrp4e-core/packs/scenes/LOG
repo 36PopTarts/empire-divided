@@ -1,5 +1,3 @@
-2024/06/28-02:02:20.059412 7f9faeffa640 Delete type=3 #1
-2024/06/28-02:02:20.062185 7f9fadff9640 Level-0 table #5: started
-2024/06/28-02:02:20.063112 7f9fadff9640 Level-0 table #5: 10246 bytes OK
-2024/06/28-02:02:20.064460 7f9fadff9640 Delete type=0 #3
-2024/06/28-02:02:20.064543 7f9fadff9640 Manual compaction at level-0 from '!scenes!Bk3yufokGdVtsQag' @ 72057594037927935 : 1 .. '!scenes.notes!vGrxlojYtdObKLF6.zeEAiYH32vAIrLRa' @ 0 : 0; will stop at (end)
+2024/09/01-10:53:09.396964 7f984bbae700 Recovering log #4
+2024/09/01-10:53:09.400507 7f984bbae700 Delete type=0 #4
+2024/09/01-10:53:09.400532 7f984bbae700 Delete type=3 #2

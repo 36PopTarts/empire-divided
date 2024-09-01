@@ -6,11 +6,6 @@
     "auditLog": "/home/crazyeyes/.local/share/FoundryVTT/Logs/.76e130a0ad8b459f3e7d86cb2365729bad40ea02-audit.json",
     "files": [
         {
-            "date": 1723290165671,
-            "name": "/home/crazyeyes/.local/share/FoundryVTT/Logs/debug.2024-08-10.log",
-            "hash": "2be4eca4dcbde561fa584c190b122532255acc7bc64a5359815614a6ba6fd37a"
-        },
-        {
             "date": 1723354565562,
             "name": "/home/crazyeyes/.local/share/FoundryVTT/Logs/debug.2024-08-11.log",
             "hash": "f8c36bb0921ac15a32ca712d7662d6699d7ac106d6690b4e1d8a40bb35247ea4"
@@ -29,6 +24,11 @@
             "date": 1723979244707,
             "name": "/home/crazyeyes/.local/share/FoundryVTT/Logs/debug.2024-08-18.log",
             "hash": "ff4fb58fbc3eb548ee6f9cd8b084e80a1b52b96cf2b3eb3ee17705cafa5c19ff"
+        },
+        {
+            "date": 1725205786938,
+            "name": "/home/crazyeyes/.local/share/FoundryVTT/Logs/debug.2024-09-01.log",
+            "hash": "d128141dddcfe22ed61b04563ecc794b2bd4ac67b2bd6433a4e4e890df99e443"
         }
     ],
     "hashType": "sha256"

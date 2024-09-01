@@ -35,10 +35,11 @@
     "GMTOOLKIT.TokenHudExtension.ImportTable" : "{table} Tabelle nicht gefunden. Bitte aus dem Kompendium importieren.",
     "GMTOOLKIT.TokenHudExtension.Sufferance" : "{actor} erleidet {plight}",
   
-    "GMTOOLKIT.Dialog.Apply": "Änderungen anwenden",    
+    "GMTOOLKIT.Dialog.Apply": "Anwenden",    
     "GMTOOLKIT.Dialog.Cancel" : "Abbrechen",
     "GMTOOLKIT.Dialog.None" : "None",
     "GMTOOLKIT.Dialog.NotAssigned" : "Not Assigned",
+    "GMTOOLKIT.Dialog.ChooseTargets" : "Ziele auswählen",
 
     "GMTOOLKIT.Token.Select": "Bitte wählen Sie zuerst ein oder mehrere Token aus.",
     "GMTOOLKIT.Token.SingleSelect": "Bitte wählen Sie zunächst einen einzelnen Token aus.",
@@ -114,8 +115,8 @@
     "GMTOOLKIT.Dialog.Advantage.LoseMomentum.Title" : "Verliert Momentum am Ende der Runde {combatRound}", 
     "GMTOOLKIT.Dialog.Advantage.LoseMomentum.Button" : "Vorteil reduziert um 1",
 
-    "GMTOOLKIT.Scene.TokenNotUnrestricted" : "Token Sicht ist aktiviert und hat uneingeschränkte Sichtweite in der Szene deaktiviert {sceneName}.",
-    "GMTOOLKIT.Scene.UnrestrictedNotToken" : "Token Sicht ist deaktiviert und uneingeschränkte Sichtweite ist in der Szene aktiviert {sceneName}.", 
+    "GMTOOLKIT.Scene.TokenNotGlobal" : "Token Sicht ist aktiviert und hat uneingeschränkte Sichtweite in der Szene deaktiviert {sceneName}.",
+    "GMTOOLKIT.Scene.GlobalNotToken" : "Token Sicht ist deaktiviert und uneingeschränkte Sichtweite ist in der Szene aktiviert {sceneName}.", 
 
     "GMTOOLKIT.Settings.ScenePullActivate.name" : "Alle zur Szene ziehen",
     "GMTOOLKIT.Settings.ScenePullActivate.hint" : "Aktivieren Sie die aktuell angezeigte Szene, wenn Sie alle zu ihr ziehen.",
@@ -165,7 +166,7 @@
     "GMTOOLKIT.Settings.MakeSecretGroupTests.FallbackAdvanced.name" : "Fallback zu Characteristic Test",
     "GMTOOLKIT.Settings.MakeSecretGroupTests.FallbackAdvanced.hint" : "Teste gegen das entsprechende Merkmal, wenn ein Charakter nicht die richtige Fortgeschrittenen-Fertigkeit hat. Grundfertigkeitstests greifen immer zurück.",
     "GMTOOLKIT.Settings.GroupTest.FallbackAdjustDifficulty.name" : "Schwierigkeitsgrad bei Fallback anpassen",
-    "GMTOOLKIT.Settings.GroupTest.FallbackAdjustDifficulty.hint" : "Wenn der Charakter keine fortgeschrittene Fähigkeit für den Gruppentest hat, erhöht sich die Schwierigkeit des Tests um diese Anzahl von Stufen (z.B. 2 macht einen durchschnittlichen (+20) Test schwierig (+10)). Die Standard-Systemschwierigkeit wird angewendet, wenn der Rollendialog umgangen wird. Wenn 0, wird keine Anpassung vorgenommen.",
+    "GMTOOLKIT.Settings.GroupTest.FallbackAdjustDifficulty.hint" : "Wenn der Charakter keine fortgeschrittene Fähigkeit für den Gruppentest hat, erhöht sich die Schwierigkeit des Tests um diese Anzahl von Stufen (z.B. 2 macht einen durchschnittlichen (+20) Test schwierig (-10)). Die Standard-Systemschwierigkeit wird angewendet, wenn der Rollendialog umgangen wird. Wenn 0, wird keine Anpassung vorgenommen.",
     "GMTOOLKIT.Message.MakeSecretGroupTest.NoPermission" : "Nur GMs können geheime Gruppentests durchführen!",
     "GMTOOLKIT.Message.MakeSecretGroupTest.NoGroup" : "Keine Charakter, für den ein Test gemacht werden muss. Überprüfen Sie Ihre Gruppenauswahlkriterien.",
     "GMTOOLKIT.Message.MakeSecretGroupTest.AbortAdvancedSkillTest" : "{character} hat kein {skill}. Abbruch des Tests für fortgeschrittene Fähigkeiten.",
@@ -181,7 +182,6 @@
     "GMTOOLKIT.Dialog.MakeSecretGroupTest.SpecifySkillPlaceholder" : "Fertigkeit (Spezialisierung)",
     "GMTOOLKIT.Dialog.MakeSecretGroupTest.SetSpecialisation" : "... und Spezialisierung einstellen",
     "GMTOOLKIT.Dialog.MakeSecretGroupTest.SetSpecialisationPlaceholder" : "Spezialisierung",
-    "GMTOOLKIT.Dialog.MakeSecretGroupTest.ChooseTargets" : "Ziele auswählen",
     "GMTOOLKIT.Dialog.MakeSecretGroupTest.SetTestParameters" : "Testparameter festlegen",
     "GMTOOLKIT.Dialog.MakeSecretGroupTest.RollTitle" : "{skill} Test ({actor})",
     "GMTOOLKIT.Dialog.MakeSecretGroupTest.RollTitleFallback" : "{characteristic} Test for {skill} ({actor})",
@@ -260,10 +260,13 @@
     "GMTOOLKIT.Macro.ToggleSceneVisibilityandLight": "Szenensichtbarkeit und Licht umschalten",
     "GMTOOLKIT.Macro.SetTokenVisionandLight": "Token Sicht und Licht einstellen",
     "GMTOOLKIT.Macro.PullEveryonetoScene": "Alle zum Schauplatz ziehen",
+    "GMTOOLKIT.Macro.ChangeScenetoYards": "Change Scene To Yards",
     "GMTOOLKIT.Macro.Simplyd100": "Einfach d100",
     "GMTOOLKIT.Macro.GMToolbox": "GM Toolbox",
+    "GMTOOLKIT.Macro.GMToolkitSettings": "GM Toolkit Settings",
     "GMTOOLKIT.Macro.ToggleCompendiumPackVisibility": "Sichtbarkeit des Kompendiumspacks umschalten",
     "GMTOOLKIT.Macro.CheckConditions": "Zustände prüfen",
+    "GMTOOLKIT.Macro.LaunchDamageConsole": "Launch Damage Console",
     
     "GMTOOLKIT.Table.DarkWhispers": "Dunkles Geflüster",
 
@@ -278,6 +281,26 @@
     "GMTOOLKIT.Settings.Maintenance.menu.hint" : "Ersetzen Sie importierte GM-Toolkit-Makros und/oder Tabellen durch die neuesten Kompendium-Versionen.", 
     "GMTOOLKIT.Settings.Maintenance.menu.label" : "Update GM Toolkit-Inhalt",
 
+    "GMTOOLKIT.Damage.Dialog.Title" : "Damage Console",
+    "GMTOOLKIT.Damage.Message.Abort" : "Damage Console closed. No harm inflicted.",
+    "GMTOOLKIT.Damage.Message.CannotApplyDamage" : "Cannot apply damage to {character}.",
+    "GMTOOLKIT.Damage.Message.At0Wounds" : "At 0 Wounds",
+    "GMTOOLKIT.Damage.Dialog.SetDamageCriteria" : "Set Damage Criteria",
+    "GMTOOLKIT.Damage.Dialog.DamageFormula.Label" : "Damage",
+    "GMTOOLKIT.Damage.Dialog.DamageFormula.Hint" : "A whole number or roll formula for the amount of damage to apply",
+    "GMTOOLKIT.Damage.Dialog.RandomiseDamage.Label" : "Roll damage for each target",
+    "GMTOOLKIT.Damage.Dialog.RandomiseDamage.Hint" : "Randomise damage for each target if a valid dice roll formula is provided",
+    "GMTOOLKIT.Damage.Dialog.HitLocation.Label" : "Hit Location",
+    "GMTOOLKIT.Damage.Dialog.HitLocation.Hint" : "Choose 'Roll' to randomise hit location or for non-humanoid creatures",
+    "GMTOOLKIT.Damage.Dialog.RandomiseHitLocation.Label" : "Roll hit location for each target",
+    "GMTOOLKIT.Damage.Dialog.RandomiseHitLocation.Hint" : "Randomise hit location for each target if 'Roll' is selected",
+    "GMTOOLKIT.Damage.Dialog.IgnoreTB.Label" : "Ignore TB",
+    "GMTOOLKIT.Damage.Dialog.IgnoreTB.Hint" : "Ignore Toughness Bonus",
+    "GMTOOLKIT.Damage.Dialog.IgnoreAP.Label" : "Ignore AP",
+    "GMTOOLKIT.Damage.Dialog.IgnoreAP.Hint" : "Ignore Armour Points",
+    "GMTOOLKIT.Damage.Dialog.MinimumOne.Label" : "Minimum 1 Damage",
+    "GMTOOLKIT.Damage.Dialog.MinimumOne.Hint" : "Apply at least 1 point of damage after any armour and Toughness Bonus reductions",
+    
     "ROLL.AstoundingSuccess" : "Erstaunlicher Erfolg. 'Ja, perfekt!'",
     "ROLL.ImpressiveSuccess" : "Beeindruckender Erfolg. 'Ja, und ...'",
     "ROLL.Success" : "Success. 'Ja.'",
@@ -285,6 +308,17 @@
     "ROLL.AstoundingFailure" : "Erstaunliches Scheitern. 'Auf keinen Fall!'",
     "ROLL.ImpressiveFailure" : "Beeindruckendes Scheitern. 'Nein, und ...'",
     "ROLL.Failure" : "Failure. 'Nein'",
-    "ROLL.MarginalFailure" : "Knappes Scheitern. 'Nein, aber ...'"
+    "ROLL.MarginalFailure" : "Knappes Scheitern. 'Nein, aber ...'", 
+
+    "GMTOOLKIT.Message.Welcome.VersionIsActive" : "GM Toolkit {version} is active.",
+    "GMTOOLKIT.Message.Welcome.ReleaseNotes" : "Release Notes",
+    "GMTOOLKIT.Message.Welcome.ContentUpdateWarning" : "Updating macros or tables will delete existing GM Toolkit content. Any customizations will be lost if not saved under a different name.",
+    "GMTOOLKIT.Message.Welcome.UpdateMacros" : "Update Macros",
+    "GMTOOLKIT.Message.Welcome.UpdateTables" : "Update Tables",
+
+    "GMTOOLKIT.Dialog.QuickSettings.Title" : "GM Toolkit Settings",
+
+    "GMTOOLKIT.ChatFlavour.Title" : "Edit Message Flavour",
+    "GMTOOLKIT.ChatFlavour.Placeholder" : "Briefly describe the message context"
 
 }

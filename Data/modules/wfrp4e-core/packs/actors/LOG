@@ -1,5 +1,3 @@
-2024/06/28-02:02:19.605508 7f769bffb640 Delete type=3 #1
-2024/06/28-02:02:19.659946 7f73fbfff640 Level-0 table #5: started
-2024/06/28-02:02:19.674873 7f73fbfff640 Level-0 table #5: 1033766 bytes OK
-2024/06/28-02:02:19.675562 7f73fbfff640 Delete type=0 #3
-2024/06/28-02:02:19.676389 7f73fbfff640 Manual compaction at level-0 from '!actors!28MwFcDPwpcO12kt' @ 72057594037927935 : 1 .. '!actors.items.effects!zzdOpKqBC28J66Mn.xcWf1rXGb9qR9uJd.qPjT5EO2Y83wUzVx' @ 0 : 0; will stop at (end)
+2024/09/01-10:53:09.335306 7f984b3ad700 Recovering log #4
+2024/09/01-10:53:09.339076 7f984b3ad700 Delete type=0 #4
+2024/09/01-10:53:09.339103 7f984b3ad700 Delete type=3 #2

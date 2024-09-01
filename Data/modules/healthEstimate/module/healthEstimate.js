@@ -90,6 +90,21 @@ function disableCheckbox(checkbox, boolean) {
 	checkbox.prop("disabled", !boolean);
 }
 
+/**
+ * Repositions the token's elevation tooltip.
+ * @param {Token} token 	The token being refreshed
+ * @param {Boolean} force 	Flag that enforces the default position. It is meant to avoid conflict with any modules that change the value.
+ */
+function repositionTooltip(token, force = false) {
+	const tooltipPosition = game.healthEstimate.tooltipPosition;
+	const docWidth = token.document.width;
+	const { width } = token.getSize();
+	const offset = 0.35 / Math.max(1, docWidth);
+	if (tooltipPosition === "left") token.tooltip.x = width * (-offset);
+	else if (force && tooltipPosition === "default") token.tooltip.x = width / 2;
+	else if (tooltipPosition === "right") token.tooltip.x = width * (1 + offset);
+}
+
 // Modified code from Health Monitor by Jesse Vo (jessev14)
 // License: MIT
 
@@ -424,7 +439,7 @@ class HealthEstimateHooks {
 	static onCanvasPan(canvas, constrained) {
 		const scale = () => {
 			const zoomLevel = Math.min(1, canvas.stage.scale.x);
-			if (zoomLevel < 1 && game.healthEstimate.lastZoom !== zoomLevel) {
+			if (game.healthEstimate.lastZoom !== zoomLevel) {
 				canvas.tokens?.placeables
 					.filter((t) => t.healthEstimate?.visible)
 					.forEach((token) => {
@@ -492,8 +507,9 @@ class HealthEstimateHooks {
 	// TOKEN //
 	// /////////
 
-	static refreshToken(token) {
+	static refreshToken(token, flags) {
 		game.healthEstimate._handleOverlay(token, game.healthEstimate.showCondition(token.hover));
+		if (flags.refreshSize && game.healthEstimate.tooltipPosition) repositionTooltip(token);
 	}
 
 	static onCombatStart(combat, updateData) {
@@ -3077,6 +3093,21 @@ const registerSettings = function () {
 			canvas.scene?.tokens.forEach((token) => token.object.refresh());
 		},
 	});
+	addSetting("core.tooltipPosition", {
+		config: !game.modules.get("elevation-module")?.active,
+		type: String,
+		default: "default",
+		choices: {
+			left: "healthEstimate.core.tooltipPosition.options.left",
+			default: "healthEstimate.core.tooltipPosition.options.default",
+			right: "healthEstimate.core.tooltipPosition.options.right",
+		},
+		onChange: (value) => {
+			game.healthEstimate.tooltipPosition = value;
+			canvas.tokens?.placeables.forEach((token) => repositionTooltip(token, true));
+		},
+	});
+
 	addSetting("core.outputChat", {
 		hint: f("core.outputChat.hint", { setting: t("core.unknownEntity.name") }),
 		type: Boolean,
@@ -3671,10 +3702,11 @@ class HealthEstimate {
 			if (hovered) {
 				const { desc, color, stroke } = this.getEstimation(token);
 				if (desc !== undefined && color && stroke) {
-					const y = token.tooltip.y + this.height;
+					const { width } = token.getSize();
+					const y = -2 + this.height;
 					const position = { a: 0, b: 1, c: 2 }[this.position];
-					const x = token.tooltip.x * position;
-					const config = { desc, color, stroke, x, y };
+					const x = (width / 2) * position;
+					const config = { desc, color, stroke, width, x, y };
 					if (!token.healthEstimate?._texture) {
 						this._createHealthEstimate(token, config);
 					} else this._updateHealthEstimate(token, config);
@@ -3725,12 +3757,12 @@ class HealthEstimate {
 	 * @param {EstimateConfig} config
 	 */
 	_createHealthEstimate(token, config = {}) {
-		const { desc, color, stroke, x, y } = config;
+		const { desc, color, stroke, width, x, y } = config;
 		const style = this._getUserTextStyle(color, stroke);
 		token.healthEstimate = token.addChild(new PIXI.Text(desc, style));
 		token.healthEstimate.scale.set(0.25);
 		token.healthEstimate.anchor.set(0.5, 1);
-		token.healthEstimate.position.set(token.tooltip.x, x + y);
+		token.healthEstimate.position.set(width / 2, x + y);
 	}
 
 	/**
@@ -3739,13 +3771,13 @@ class HealthEstimate {
 	 * @param {EstimateConfig} config
 	 */
 	_updateHealthEstimate(token, config = {}) {
-		const { desc, color, stroke, x, y } = config;
+		const { desc, color, stroke, width, x, y } = config;
 		token.healthEstimate.style.fontSize = this.scaledFontSize;
 		token.healthEstimate.text = desc;
 		token.healthEstimate.style.fill = color;
 		token.healthEstimate.style.stroke = stroke;
 		token.healthEstimate.visible = true;
-		token.healthEstimate.position.set(token.tooltip.x, x + y);
+		token.healthEstimate.position.set(width / 2, x + y);
 	}
 
 	/**
@@ -4080,6 +4112,8 @@ class HealthEstimate {
 		this.outline = sGet("core.variables.outline");
 		this.deadColor = sGet("core.variables.deadColor");
 		this.deadOutline = sGet("core.variables.deadOutline");
+
+		this.tooltipPosition = game.modules.get("elevation-module")?.active ? null : sGet("core.tooltipPosition");
 	}
 }
 

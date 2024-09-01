@@ -26,7 +26,7 @@
     "GMTOOLKIT.Settings.Advantage.Automate.CombatLeave.hint" : "コンバットトラッカーから削除されたときにトークンの優位をクリアする、戦闘終了時ではない。",
 
     "GMTOOLKIT.Settings.TokenHudExtensions.Enabled.name" : "トークンHUD拡張の許可",
-    "GMTOOLKIT.Settings.TokenHudExtensions.Enabled.hint" : "操作中のトークンHUDに、主要な属性値や技能をツールチップとインタラクションを作成。既定値は許可。",
+    "GMTOOLKIT.Settings.TokenHudExtensions.Enabled.hint" : "操作中のトークンHUDに、主要な能力値や技能をツールチップとインタラクションを作成。既定値は許可。",
     "GMTOOLKIT.Settings.TokenHudExtensions.AlwaysShowInitiative.name" : "トークンのHUD拡張で、常に機転を表示する",
     "GMTOOLKIT.Settings.TokenHudExtensions.AlwaysShowInitiative.hint" : "無効にすると、機転と敏捷のツールチップとショートカットは有効なシーンでのみ使用できる。既定値は有効。",
     "GMTOOLKIT.TokenHudExtension.StatusChanged" : "{targetName}の{targetStatus}が、{originalStatus}から{newStatus}に変更された",
@@ -35,10 +35,11 @@
     "GMTOOLKIT.TokenHudExtension.ImportTable" : "{table}が見つかりません。事典からインポートしてください。",
     "GMTOOLKIT.TokenHudExtension.Sufferance" : "{actor}は{plight}を受けた",
 
-    "GMTOOLKIT.Dialog.Apply": "変更を適用",
+    "GMTOOLKIT.Dialog.Apply": "適用",
     "GMTOOLKIT.Dialog.Cancel" : "取消",
-    "GMTOOLKIT.Dialog.None" : "None",
-    "GMTOOLKIT.Dialog.NotAssigned" : "Not Assigned",
+    "GMTOOLKIT.Dialog.None" : "なし",
+    "GMTOOLKIT.Dialog.NotAssigned" : "選択されていない",
+    "GMTOOLKIT.Dialog.ChooseTargets" : "目標の選択",
 
     "GMTOOLKIT.Token.Select": "最初にトークンを一つ以上選択してください。",
     "GMTOOLKIT.Token.SingleSelect": "最初にトークンを一つ選択してください。",
@@ -114,8 +115,8 @@
     "GMTOOLKIT.Dialog.Advantage.LoseMomentum.Title" : "ラウンド{combatRound}、終了時の優位喪失",
     "GMTOOLKIT.Dialog.Advantage.LoseMomentum.Button" : "優位を1失う",
 
-    "GMTOOLKIT.Scene.TokenNotUnrestricted" : "{sceneName}でトークンの視界が有効になり、視界範囲の制限解除が無効になりました。",
-    "GMTOOLKIT.Scene.UnrestrictedNotToken" : "{sceneName}でトークンの視界が無効になり、視界範囲の制限解除が有効になりました。",
+    "GMTOOLKIT.Scene.TokenNotGlobal" : "{sceneName}でトークンの視界が有効になり、視界範囲の制限解除が無効になりました。",
+    "GMTOOLKIT.Scene.GlobalNotToken" : "{sceneName}でトークンの視界が無効になり、視界範囲の制限解除が有効になりました。",
 
     "GMTOOLKIT.Settings.ScenePullActivate.name" : "シーンに全員引き寄せる",
     "GMTOOLKIT.Settings.ScenePullActivate.hint" : "現在表示しているシーンに全員を引き寄せるときは、シーンを有効にする。",
@@ -154,8 +155,8 @@
     "GMTOOLKIT.Settings.SessionTurnover.SessionID.hint" : "経験値追加時の理由を変数「%session%」で置き換える。セッションの終幕処理を実行すると、数値は自動的に増加されます。もしくは手で解り易いフレーズを入力する（例、「エピソード2.3」、「儀式のクライマックス」など）。",
     "GMTOOLKIT.Settings.SessionTurnover.HoldingScene.name" : "固定シーン",
     "GMTOOLKIT.Settings.SessionTurnover.HoldingScene.hint" : "セッション間で自動的に移行するシーンの名前。Session Turnover処理で起動されます。シーン変更しない場合は空白にします。ランディングページやキャンペーンのハブとして使用されます。",
-    "GMTOOLKIT.Settings.SessionTurnover.DefaultParty.name" : "Default Group Selection",
-    "GMTOOLKIT.Settings.SessionTurnover.DefaultParty.hint" : "Choose 'party' (default) to only include characters assigned to players, or 'company' to also include player-owned characters (such as hirelings, henchmen and familiars).",
+    "GMTOOLKIT.Settings.SessionTurnover.DefaultParty.name" : "デフォルトのグループ選択",
+    "GMTOOLKIT.Settings.SessionTurnover.DefaultParty.hint" : "プレイヤーに割り当てられているキャラクターのみを対象とする場合は「パーティ」を選択、プレイヤーに所有権があるノンプレイヤーキャラクターやクリーチャー（雇用、ヘンチマン、使い魔など）も含める場合は「仲間」を選択する。",
 
     "GMTOOLKIT.Dialog.SessionTurnover.UpdateSessionID.Title" : "セッションIDの更新",
     "GMTOOLKIT.Dialog.SessionTurnover.UpdateSessionID.CurrentSession" : "現在のセッションIDは「{thisSession}」です。",
@@ -181,11 +182,10 @@
     "GMTOOLKIT.Dialog.MakeSecretGroupTest.SpecifySkillPlaceholder" : "技能 (専門分野)",
     "GMTOOLKIT.Dialog.MakeSecretGroupTest.SetSpecialisation" : "……さらに専門分野を設定",
     "GMTOOLKIT.Dialog.MakeSecretGroupTest.SetSpecialisationPlaceholder" : "専門分野",
-    "GMTOOLKIT.Dialog.MakeSecretGroupTest.ChooseTargets" : "目標の選択",
     "GMTOOLKIT.Dialog.MakeSecretGroupTest.SetTestParameters" : "テストのオプション設定",
-    "GMTOOLKIT.Dialog.MakeSecretGroupTest.RollTitle" : "{skill} Test ({actor})",
-    "GMTOOLKIT.Dialog.MakeSecretGroupTest.RollTitleFallback" : "{characteristic} Test for {skill} ({actor})",
-    "GMTOOLKIT.Dialog.MakeSecretGroupTest.RollTitleSummary" : "Group Test: ",
+    "GMTOOLKIT.Dialog.MakeSecretGroupTest.RollTitle" : "{skill} テスト ({actor})",
+    "GMTOOLKIT.Dialog.MakeSecretGroupTest.RollTitleFallback" : "{characteristic} テスト for {skill} ({actor})",
+    "GMTOOLKIT.Dialog.MakeSecretGroupTest.RollTitleSummary" : "グループテスト: ",
 
     "GMTOOLKIT.Settings.GroupTest.menu.name" : "グループテスト設定",
     "GMTOOLKIT.Settings.GroupTest.menu.label" : "グループテストのオプションを設定する",
@@ -221,12 +221,12 @@
     "GMTOOLKIT.Dialog.DarkWhispers.Title" : "暗黒のささやき",
     "GMTOOLKIT.Dialog.DarkWhispers.WhisperTargets" : "闇の神々に選ばれたのは誰か？",
     "GMTOOLKIT.Dialog.DarkWhispers.WhisperMessage": "何を問いかけるか？",
-    "GMTOOLKIT.Dialog.DarkWhispers.SendPublic" : "Announce",
+    "GMTOOLKIT.Dialog.DarkWhispers.SendPublic" : "宣告",
     "GMTOOLKIT.Dialog.DarkWhispers.SendWhisper" : "さ　さ　や　く",
-    "GMTOOLKIT.Dialog.DarkWhispers.NoCorruption" : "No Corruption to spend on offer.",
+    "GMTOOLKIT.Dialog.DarkWhispers.NoCorruption" : "捧げる堕落点が無い",
     "GMTOOLKIT.Dialog.DarkWhispers.HasCorruption" : "交渉する相手。",
     "GMTOOLKIT.Dialog.DarkWhispers.ImportTable" : "GM Toolkitの事典から「暗黒のささやき表」をインポートすると、ここで「暗黒のささやき表」の文面を見ることが出来ます。",
-    "GMTOOLKIT.Dialog.DarkWhispers.PlayerTooltip" : "Assigned to: {assignedUser}\nOwned by: {playerOwners}", 
+    "GMTOOLKIT.Dialog.DarkWhispers.PlayerTooltip" : "{assignedUser}に割り当てられた\n所有者: {playerOwners}", 
     "GMTOOLKIT.Dialog.DarkWhispers.SendToOwners" : "所有権を持つプレイヤー全てに送信（割り当てられているプレイヤーだけでなく）。",
 
     "GMTOOLKIT.Message.DarkWhispers.Accept" : "囁きを受け入れる",
@@ -235,16 +235,16 @@
     "GMTOOLKIT.Message.DarkWhispers.Rejected" : "<p>{currentUser}は闇の神々からの取引を拒絶した。</p>",
 
     "GMTOOLKIT.Message.CheckConditions.WaitForEndOfRound" : "戦闘ラウンドの終了を待って、「状態のチェック」を実施してください。",
-    "GMTOOLKIT.Dialog.CheckConditions.For" : " for {name}",
-    "GMTOOLKIT.Dialog.CheckConditions.Skill" : "{title} Test ({skill})",
-    "GMTOOLKIT.Dialog.CheckConditions.Fallback" : "{title} Test ({char})",
+    "GMTOOLKIT.Dialog.CheckConditions.For" : " …{name}",
+    "GMTOOLKIT.Dialog.CheckConditions.Skill" : "{title} テスト ({skill})",
+    "GMTOOLKIT.Dialog.CheckConditions.Fallback" : "{title} テスト ({char})",
     
     "GMTOOLKIT.Settings.DarkWhispers.message.name" : "「暗黒のささやき」雛型",
     "GMTOOLKIT.Settings.DarkWhispers.message.hint" : "ゲームに合わせて「暗黒のささやき」の音色を選んでください。",
     "GMTOOLKIT.Settings.DarkWhispers.message.taunt" : "<p><strong>闇の神々はあなたが悩んでいるのを見ている。</strong></p><p><em>些細な好意で、あなたの堕落を一つ解放してくれるだろう。</em></p><blockquote>{message}</blockquote><p>それにどんな害が有るのだろうか？この申し出を受けて、混沌の瀬戸際から一歩戻るのだ。</p>",
     "GMTOOLKIT.Settings.DarkWhispers.message.threat" : "<p><strong>「暗黒のささやき」が耳にから離れない。。。 </strong></p><p><em>このメッセージを受け取ったことは、誰にも明かしてはいけない。</em></p><blockquote>{message}</blockquote><p>指示に従えば、君は堕落ポイントを１減らせるだろう。</p>",
-    "GMTOOLKIT.Settings.DarkWhispers.DefaultGroup.name" : "Default Group Selection",
-    "GMTOOLKIT.Settings.DarkWhispers.DefaultGroup.hint" : "Choose 'party' (default) to only include characters assigned to players, or 'company' to also include player-owned characters (such as hirelings, henchmen and familiars). Individual characters can be de-selected in the Group Test dialog.", 
+    "GMTOOLKIT.Settings.DarkWhispers.DefaultGroup.name" : "テスト対象の既定値",
+    "GMTOOLKIT.Settings.DarkWhispers.DefaultGroup.hint" : "プレイヤーに割り当てられているキャラクターのみを対象とする場合は「party」を選択、プレイヤーに所有権があるノンプレイヤーキャラクターやクリーチャー（雇用やヘンチマン、使い魔など）も含める場合は「company」を選択する。 Individual characters can be de-selected in the Group Test dialog.", 
     "GMTOOLKIT.Notification.NoActor" : "キャラクターが選択されていないか、{currentuser}に割り当てられていない。",
     "GMTOOLKIT.Notification.UserMustBePlayer" : "「{action}」はプレイヤーだけが実行できる。",
 
@@ -260,10 +260,13 @@
     "GMTOOLKIT.Macro.ToggleSceneVisibilityandLight": "シーンの視界と光源の切替",
     "GMTOOLKIT.Macro.SetTokenVisionandLight": "トークンの視界と光源を設定",
     "GMTOOLKIT.Macro.PullEveryonetoScene": "全員をシーンに引き寄せる",
+    "GMTOOLKIT.Macro.ChangeScenetoYards": "シーン縮尺をヤードに変更",
     "GMTOOLKIT.Macro.Simplyd100": "100面ダイス",
     "GMTOOLKIT.Macro.GMToolbox": "GM Toolbox",
+    "GMTOOLKIT.Macro.GMToolkitSettings": "GM Toolkit 設定",
     "GMTOOLKIT.Macro.ToggleCompendiumPackVisibility": "百科事典の表示状態切替",
     "GMTOOLKIT.Macro.CheckConditions": "状態のチェック",
+    "GMTOOLKIT.Macro.LaunchDamageConsole": "ダメージコンソール起動",
     
     "GMTOOLKIT.Table.DarkWhispers": "暗黒のささやき",
 
@@ -273,11 +276,31 @@
 
     "GMTOOLKIT.Dialog.Maintenance.Hint": "「GM Toolkit」マクロディレクトリやロール表フォルダの全てのマクロとロール表を削除し、最新の事典版をインポートする。<br><br>カスタマイズした内容は全て失われます。残しておく必要がある場合、先にGM Toolkitフォルダからそれらを移動してください。",
     "GMTOOLKIT.Dialog.Maintenance.Macros": "マクロ",
-    "GMTOOLKIT.Dialog.Maintenance.Tables": "テーブル",
+    "GMTOOLKIT.Dialog.Maintenance.Tables": "ロール表",
     "GMTOOLKIT.Settings.Maintenance.menu.name" : "モジュール管理",
     "GMTOOLKIT.Settings.Maintenance.menu.hint" : "インポートした「GM Toolkit」のマクロやロール表を、事典の最新版に置き換える。", 
     "GMTOOLKIT.Settings.Maintenance.menu.label" : "GM Toolkitのコンテンツ更新",
 
+    "GMTOOLKIT.Damage.Dialog.Title" : "ダメージコンソール",
+    "GMTOOLKIT.Damage.Message.Abort" : "ダメージコンソール終了。被害はなかった。",
+    "GMTOOLKIT.Damage.Message.CannotApplyDamage" : "{character}にダメージを与えられなかった。",
+    "GMTOOLKIT.Damage.Message.At0Wounds" : "0 耐久値で",
+    "GMTOOLKIT.Damage.Dialog.SetDamageCriteria" : "ダメージ処理を設定",
+    "GMTOOLKIT.Damage.Dialog.DamageFormula.Label" : "ダメージ",
+    "GMTOOLKIT.Damage.Dialog.DamageFormula.Hint" : "与えるダメージの数値やロール数式",
+    "GMTOOLKIT.Damage.Dialog.RandomiseDamage.Label" : "対象ごとにダメージをロール",
+    "GMTOOLKIT.Damage.Dialog.RandomiseDamage.Hint" : "ロールの数式が記載されている場合、対象ごとにダメージをランダム化する",
+    "GMTOOLKIT.Damage.Dialog.HitLocation.Label" : "命中部位",
+    "GMTOOLKIT.Damage.Dialog.HitLocation.Hint" : "命中部位をランダムで決める場合や、人型でないクリーチャーならば「ロール」を選択する",
+    "GMTOOLKIT.Damage.Dialog.RandomiseHitLocation.Label" : "対象ごとに命中部位をロール",
+    "GMTOOLKIT.Damage.Dialog.RandomiseHitLocation.Hint" : "「ロール」選択中なら対象ごとに命中部位をランダム化する",
+    "GMTOOLKIT.Damage.Dialog.IgnoreTB.Label" : "【頑+】無視",
+    "GMTOOLKIT.Damage.Dialog.IgnoreTB.Hint" : "【頑健力】ボーナスを無視",
+    "GMTOOLKIT.Damage.Dialog.IgnoreAP.Label" : "AP無視",
+    "GMTOOLKIT.Damage.Dialog.IgnoreAP.Hint" : "アーマー・ポイントを無視",
+    "GMTOOLKIT.Damage.Dialog.MinimumOne.Label" : "最低１点のダメ―ジ",
+    "GMTOOLKIT.Damage.Dialog.MinimumOne.Hint" : "【頑+】とAPを差し引いた後でも最低１点を与える",
+    
     "ROLL.AstoundingSuccess" : "超大成功。「イエス、文句なしにな！」",
     "ROLL.ImpressiveSuccess" : "大成功。「イエス。しかも……」",
     "ROLL.Success" : "成功。「イエス。まあ……」",
@@ -285,6 +308,17 @@
     "ROLL.AstoundingFailure" : "小失敗。「ノー。いや……」",
     "ROLL.ImpressiveFailure" : "失敗。「ノー」",
     "ROLL.Failure" : "大失敗。「ノー。しくじったな……」",
-    "ROLL.MarginalFailure" : "超大失敗。「ノー。かすりもしねえ！」"
+    "ROLL.MarginalFailure" : "超大失敗。「ノー。かすりもしねえ！」", 
+
+    "GMTOOLKIT.Message.Welcome.VersionIsActive" : "GM Toolkit {version} は動作中です。",
+    "GMTOOLKIT.Message.Welcome.ReleaseNotes" : "リリースノート",
+    "GMTOOLKIT.Message.Welcome.ContentUpdateWarning" : "マクロやロール表をアップデートすると現在存在しているGM Toolkitのコンテンツを削除します。別名で保存されていなければカスタマイズした内容は全て失われます。",
+    "GMTOOLKIT.Message.Welcome.UpdateMacros" : "マクロをアップデート",
+    "GMTOOLKIT.Message.Welcome.UpdateTables" : "表をアップデート",
+
+    "GMTOOLKIT.Dialog.QuickSettings.Title" : "GM Toolkit設定",
+
+    "GMTOOLKIT.ChatFlavour.Title" : "メッセージのフレーバーを編集",
+    "GMTOOLKIT.ChatFlavour.Placeholder" : "メッセージの意図を簡潔に説明"
 
 }

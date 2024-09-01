@@ -6,9 +6,99 @@ All notable changes to this project will be documented in this file.  The format
 ## Unreleased
 See [Issue Backlog](../../issues) and [Roadmap](../../milestones).
 
+## [Version 7.1.1](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/releases/tag/v7.1.1)  (2024-08-12)
+* *Fixed* Maintenance utility not loading when (RollTable) content version flag is missing
+
+## [Version 7.1.0](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/releases/tag/v7.1.0)  (2024-08-12)
+* *Added* compatibility for Foundry VTT v12. This is a **breaking** change:
+  * v11 is no longer supported beyond GM Toolkit v7.0.3.
+  * v12 the minimum version required for GM Toolkit.
+  * Full details can be found in [#270](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/270)
+* *Fixed* Japanese translation anomalies (thanks @doumoku!) [#271](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/271)
+
+## [Version 7.0.3](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/releases/tag/v7.0.3)  (2024-06-11)
+* *Added* pack compiler to release workflow to ensure compendium packs are included in module package. [#265](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/265)
+* *Added* max compatibility to prevent installation on FVTT v12. 
+
+## [Version 7.0.0](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/releases/tag/v7.0.0)  (2024-06-11)
+* *Changed* compendium packs from `nedb` to `leveldb` format.  This database format is used from Foundry v11, and this change breaks GM Toolkit compatibility with earlier versions of Foundry. [#247](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/247)
+* Fix Group Test to work with roll dialog changes from WFRP4e 7.1.5.
+* *Changed* **minimum compatibility requirements** to Foundry VTT v11.315 and WFRP4e 7.1.5.
+* *Updated* package dependencies and linting rules. [#248](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/248)
+* *Updated* Japanese translations (thanks @doumoku!) [#245](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/245)
+* *Fixed* incorrect notification of Advantage change when condition is applied outside of combat. [#249](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/249)
+* *Fixed* Make Secret Group Tests to clean up temporarily stored results after posting test results to chat [#255](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/255)
+* *Added* feature to delegate group test rolls for assigned characters to active (logged-in) players.
+  * The GM will need to select the "Bypass Roll Dialog" option when making a Group Test.
+  * Players should complete their rolls before the GM to have their roll results included in the summary group test result message.
+* *Fixed* group advantage for actors where GM is not explicitly an owner. Thanks @Forien! [#237](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/237) [#250](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/250) [#262](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/262)
+* *Fixed* example in Group Test settings for fallback difficulty adjustment.
+* *Added* check to prevent advantage gain when Group Advantage is enabled and opposed test should not generate advantage when using Token Action HUD WFRP4e. Thanks @Forien! [#263](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/263)
+
+## [Version 6.0.5](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/releases/tag/6.0.5)  (2023-09-03)
+* *Added* compatibility for FVTT v11. [#241](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/241)
+* *Updated* word-wrap dependency version. [#238](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/238)
+
+## [Version 6.0.4](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/releases/tag/6.0.4)  (2023-06-04)
+* *Added* compatibility for FVTT v11. [#228](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/228)
+* *Changed* **minimum compatibility requirements** to Foundry VTT v10.291 and WFRP4e 6.5.7.
+* *Added* support for setting non-integer default ranges for normal and dark vision. [#223](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/223) 
+* *Changed* Group Test actor roll test functions to avoid deprecated system roll test functions. [#226](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/226)
+* *Added* v11 support for Toggle Compendium Pack Visibility, based on ownership permissions. [#225](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/225) 
+
+## [Version 6.0.3](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/releases/tag/6.0.3)  (2023-04-25)
+* *Fixed* issue where Advantage was not applied on opposed or unopposed tests. [#217](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/217)
+* *Added* macro to change scene grid to 2 yards, keeping lighting at scale. Useful for maps created for other game systems that have a grid of 5ft, or any other grid size.  Thanks @AncAinu! [#189](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/189)
+* *Changed* Set Token Vision and Light Macro to improve appearance, including reducing animation intensity, speed and luminosity for various light effects and reverting tint and monochrome effect on Night Vision. [#219](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/219)
+
+## [Version 6.0.2](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/releases/tag/6.0.2)  (2023-04-17)
+* *Changed* **minimum compatibility requirements** to Foundry VTT v10.291 and WFRP4e 6.4.0.
+* *Added* compatibility with `Engaged` pseudo-condition, so that when a character becomes Engaged and this condition is added, they do not lose their Advantage. [#206](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/206)
+* *Added* a new context menu option to chat messages to edit flavour text. [#207](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/207)
+* *Added* a quick launch macro to easily access GM Toolkit Settings without having to navigate Foundry configuration menus. [#203](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/203)
+* *Fixed* issue where Add XP macro uses default group setting for Group Tests rather than Session Turnover. [#201](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/201)
+*  *Fixed* issue where a character would gain an advantage boost for their first melee or ranged strike when using the Dual Wielder talent. [#205](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/205)
+*  *Fixed* issue where an actor is identified as being in combat even though they are not in the combat tracker, leading to a false notification that an Advantage update is pending for winning an opposed test. [#213](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/213)
+
+## [Version 6.0.1](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/releases/tag/6.0.1) (2022-10-13)
+* *Changed* **minimum compatibility requirements** to Foundry VTT v10.288 and WFRP4e 6.1.4.
+* *Added* headline features (with wiki links) to README to make it easier for users to get an overview of what's available in the Toolkit suite. [`2da77fa`](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/commit/2da77fa27c40ce9f93d5234ba519b25da0df5e55) [#178](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/178) [#197](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/197) 
+* *Added* advice about replacing macro hotbar shortcuts to avoid compatibility issues. [#181](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/181)
+* *Fixed* issue where Launch Damage Console was not translated in Toolkit Maintenance dialog. [#177](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/177)
+* *Fixed* issue where Toolkit Maintenance would not show compendium versions of macros. [#176](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/176)
+* *Fixed* issue where the game would not be paused for connected players when the GM ran the Session Turnover macro. [#182](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/182)
+* *Added* Polish localization. Thanks [@twisniowski](https://github.com/twisniowski) and [@silentmark](https://github.com/silentmark)! [#188](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/188)
+* *Fixed* error when applying damage or making ranged attacks outside of combat when using group advantage. Thanks [@silentmark](https://github.com/silentmark)! [`a186651`](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/188/commits/a186651)
+* *Added* version and download stat shields to README, to make it easy to see key install data for users and repo owners. [#190](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/190)
+* *Fixed* module setting for Spectator notifications to *not* be suppressed by default. Unassigned characters were still being overlooked when experiencing issues with some macros that require an assigned actor. [#192](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/192)
+* *Fixed* issue where the Add Advantage macro would be capped when using Group Advantage. [#194](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/194)
+* *Added* welcome message and invitation to feedback that is shown to GMs when updating or first installing the module. The message is saved in the chat log and confirms the installed version, links to release notes and provides quick access buttons to update macro and table content. [#196](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/196)
+
+## [Version 6.0.0](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/releases/tag/6.0.0)  (2022-09-06)
+- *Changed* Group Test setup form to clear or restore custom skill field if a skill is chosen from the skill list dropdown. [#160](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/160)
+- *Fixed* an issue where you could gain advantage if you did not initiate an opposed test when Group Advantage is being used. [#159](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/159)
+- *Added* the [Damage Console](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/168), from which GMs can quickly set and apply damage to one or more actors without starting a combat, opposed or other test. [#158](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/158)
+- *Changed* GM Toolbox to include a new *Launch Damage Console* macro. This will need to be re-imported to take effect. [`a0366a9`](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/168/commits/a0366a9ff5acc9217ebc44a168067f1ed10e9027)
+- *Changed* version numbering to bring in step with WFRP4e system major versioning. GM Toolkit jumps from 0.9.5 to 6.0.0 in this release, with no v1-v5 version in between. 
+
+## [Version 0.9.5](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/releases/tag/v0.9.5)  (2022-08-24)
+- *Added* compatibility for Foundry VTT v10. This is a **breaking change**: 
+  - v9 is no longer supported beyond GM Toolkit [v0.9.4.4](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/releases/tag/v0.9.4.4).
+  - v10 the minimum version required for GM Toolkit.
+  - Full details can be found in [#156](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/156).
+  - Nearly all macros have been updated. These can be re-imported using the `Update GM Toolkit`  module setting.
+- *Removed* extra console logging in maintenance and group test applications. [#75d6dd](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/commit/75d6dd540a7d8dbe6a3cb9d6be940a33552dbd03)
+- *Added* initial support for vision modes, as well as sight saturation and colour to be able to leverage v10 vision changes in Set Token Vision and Light.
+- *Changed* Advantage handling to deal with Tokens primarily, and Combatants for setting flags (which is used for Lose Momentum). Actor documents are no longer supported.
+- *Fixed* Dark Whispers table to draw from all entries when using the `/table darkwhispers` chat command. This did not affect using the Rolltable or Send Dark Whispers macro.
+
 ## [Version 0.9.4.4](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/releases/tag/v0.9.4.4)  (2022-08-07)
 - *Fixed* regression that prevented Group Advantage from updating in some cases. It should now update correctly whether using the Advantage macros or completing an automated process, such as outmanoeuvring or winning an opposed test.
-
+- *Added* linting rules to help improve code consistency and readability. 
+  - These are applied in all modules, apps and macro scripts. 
+  - Reimport macros from the Settings menu to use updated versions.
+- *Changed* prompt for Add XP macro to suppress `%sessionID%` variable and empty `()` if no session ID or next session date, respectively, are set.
+ 
 ## [Version 0.9.4.3](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/releases/tag/v0.9.4.3)  (2022-08-01)
 - *Fixed* issue where players would see permission errors during advantage updates on other users' actors. [#150](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/150) 
 - *Added* new option to set `party` (player-assigned: default) or `company` (player-owned) actors as default group type for **Session Turnover** macros. [#151](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/151)
@@ -21,7 +111,7 @@ See [Issue Backlog](../../issues) and [Roadmap](../../milestones).
 ## [Version 0.9.4.2](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/releases/tag/v0.9.4.2)  (2022-07-29)
 - *Added* localization improvements for Condition Check and Secret Group Test macros. (Thanks @Txus5012!) [[#141](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/141)] 
 - *Added* German localization. (Thanks 24Nomad!) [[#143](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/143)] 
-- *Fixed* compatibilty issue with Babele. [[#135](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/135)] [[#146](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/146)] 
+- *Fixed* compatibility issue with Babele. [[#135](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/135)] [[#146](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/146)] 
 
 ## [Version 0.9.4-1](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/releases/tag/v0.9.4-1)  (2022-07-23)
 - *Fixed* an issue where the Token Hud Extension would not display, even if enabled in module settings. [[#132](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/132)] 
@@ -38,7 +128,7 @@ Advantage
 
 Group and Player Management
 - *Added* error notification on startup if there are players that do not have characters assigned (spectators). [[#102](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/102)]
-- *Added* group selection utility for consistency when setting defaults in macros and other functionality. The utilty returns an array of users, actors, tokens or combatants, and can be filtered by user logged-in status, scene presence, and whether targeted or selected as a token.  [[#61](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/61)]
+- *Added* group selection utility for consistency when setting defaults in macros and other functionality. The utility returns an array of users, actors, tokens or combatants, and can be filtered by user logged-in status, scene presence, and whether targeted or selected as a token.  [[#61](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/issues/61)]
 
 Group Tests
 - *Fixed* issue where Assistant GMs could not make secret (party) group tests. [[#124](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/pull/124)]
@@ -138,8 +228,8 @@ Other
 ## [Version 0.8.0](https://github.com/Jagusti/fvtt-wfrp4e-gmtoolkit/releases/tag/v0.8.0)  (2021-12-31)
 - *Changed* Advantage scripts to handle non-token characters. 
 - *Added* option to automate changes to Advantage when a character deals or is dealt combat damage in opposed contests. 
-- *Added* option for sticky notifications for Advantage updates. This is introduced to provide better visibility of automated changes to Advantage, so that any related amendnents are not missed. 
-  - The option is disabled by default. Foundry supports a limit of 3 notification popups being displayed, so these should be cleared down each turn. Other notifications are typically queued and will appear after the on-screen popus are dismissed.
+- *Added* option for sticky notifications for Advantage updates. This is introduced to provide better visibility of automated changes to Advantage, so that any related amendments are not missed. 
+  - The option is disabled by default. Foundry supports a limit of 3 notification popups being displayed, so these should be cleared down each turn. Other notifications are typically queued and will appear after the on-screen popups are dismissed.
   - When enabled, Advantage related info popups will persist until manually dismissed. 
   - A copy of the notification is also kept in the console session. These are lost when the application or browser is refreshed or shut down, or the console log is cleared. 
 - *Added* localisation support for new Advantage messaging.

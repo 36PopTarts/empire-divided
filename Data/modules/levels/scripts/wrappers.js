@@ -27,6 +27,10 @@ export function registerWrappers() {
         computeUI(placeable);
     });
 
+    Hooks.on("refreshAmbientSound", (placeable) => {
+        computeUI(placeable);
+    });
+
     libWrapper.register(
         LevelsConfig.MODULE_ID,
         "CONFIG.Tile.objectClass.prototype.isVisible",
@@ -98,10 +102,6 @@ export function registerWrappers() {
         },
         "WRAPPER",
     );
-
-    libWrapper.register(LevelsConfig.MODULE_ID, "RegionBehavior.prototype.active", function a(wrapped, ...args) {
-        return wrapped(...args) && false;
-    }, "WRAPPER");
 
     libWrapper.register(LevelsConfig.MODULE_ID, "CanvasVisibility.prototype._createVisibilityTestConfig", LevelsConfig.handlers.SightHandler._createVisibilityTestConfig, "OVERRIDE", { perf_mode: "FAST" });
 

@@ -1,5 +1,3 @@
-2024/06/28-02:02:25.538838 7fd468ff8640 Delete type=3 #1
-2024/06/28-02:02:25.542482 7fd467bff640 Level-0 table #5: started
-2024/06/28-02:02:25.543928 7fd467bff640 Level-0 table #5: 61634 bytes OK
-2024/06/28-02:02:25.544347 7fd467bff640 Delete type=0 #3
-2024/06/28-02:02:25.544447 7fd467bff640 Manual compaction at level-0 from '!folders!9bdnsv5iFt2p3bb0' @ 72057594037927935 : 1 .. '!items.effects!tp8b2Dv2yNQSxKkN.T9KPGotTwVgmJ7Ga' @ 0 : 0; will stop at (end)
+2024/09/01-10:53:09.566552 7f984abac700 Recovering log #4
+2024/09/01-10:53:09.570560 7f984abac700 Delete type=0 #4
+2024/09/01-10:53:09.570587 7f984abac700 Delete type=3 #2
