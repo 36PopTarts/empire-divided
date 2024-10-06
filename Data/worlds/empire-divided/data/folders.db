@@ -128,6 +128,7 @@
 {"_id":"Jr9DZCfP6SV0ZJdg","name":"Random 'Treasure'","type":"Item","sort":200000,"flags":{},"parent":null,"sorting":"a","color":"#af9c74"}
 {"_id":"KBFMpqeeMFWhdpSI","name":"Rules","type":"JournalEntry","parent":null,"sorting":"m","sort":400000,"color":"#1b651e","flags":{}}
 {"_id":"KN6Ta1P6q4WGPqtN","name":"Haalstein","type":"Scene","sort":750000,"flags":{},"parent":null,"sorting":"a","color":"#a35f00"}
+{"name":"Yellow Fang","type":"Actor","parent":null,"sorting":"a","sort":0,"color":"#b89000","flags":{},"_id":"KWMxJ7R7fFHMCReh"}
 {"_id":"KXxwxDsLcPhOIK1h","name":"The Peasants' Tournament","type":"JournalEntry","parent":"hRh4ENgO4oLtD0If","sorting":"a","sort":100000,"color":"#e68600","flags":{}}
 {"_id":"KaIcg6ijnAYwqKiS","name":"Sorry Gents","type":"Actor","parent":"c73wsFFS2dVYSKUP","sorting":"a","sort":400000,"color":"#731212","flags":{}}
 {"_id":"Kft8Ng9HfLOd35El","name":"New Animal Rules","type":"JournalEntry","sort":100000,"flags":{},"parent":"NOyJwiypgeV7mEJh","sorting":"a","color":"#6b3000"}
@@ -426,4 +427,3 @@
 {"name":"Obscure","type":"Scene","parent":"Y2EPOyNpGh1pOhQo","sorting":"a","sort":0,"color":null,"flags":{},"_id":"zpb1LCp1rJv27sjE"}
 {"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
 {"_id":"zs8xzPuX0aIpuiCx","name":"Handouts","type":"JournalEntry","parent":"pTj5zPKmfOJPE9a1","sorting":"m","sort":605211,"color":null,"flags":{"wfrp4e-horned-rat":{"initialization-parent":"The Horned Rat"}}}
-{"name":"Yellow Fang","type":"Actor","parent":null,"sorting":"a","sort":0,"color":"#b89000","flags":{},"_id":"KWMxJ7R7fFHMCReh"}
