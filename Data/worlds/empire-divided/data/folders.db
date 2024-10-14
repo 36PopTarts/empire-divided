@@ -137,6 +137,7 @@
 {"name":"Minor Encounters","type":"JournalEntry","parent":"lUyL3SvOXg2BFpv2","sorting":"a","sort":0,"color":null,"flags":{},"_id":"KyRXwOjQ3W4XV30X"}
 {"_id":"LTtJRkvww0wtpyCb","name":"Halberdier","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":800000,"color":"#4f4f4f","flags":{}}
 {"_id":"LaUWtwaJi9qsofyf","name":"Events by Day","type":"JournalEntry","parent":"UVKlZleP9AfhqPXy","sorting":"m","sort":0,"color":"","flags":{}}
+{"name":"Dwarf Talents","type":"Item","parent":"B1NGEkUpOPYjZbtf","sorting":"a","sort":0,"color":"#3f4b73","flags":{},"_id":"LgXdF2vwbe9wYXWc"}
 {"_id":"LsKPmbgYSGmbeFvx","name":"Liebwitzs","type":"Actor","sort":1200000,"flags":{},"parent":"cZf8CCfRbfZcxgzE","sorting":"a","color":""}
 {"_id":"M8rfTRP6ZXaJXHiz","name":"The Jade Sceptre: A Gamemaster's Guide","type":"JournalEntry","parent":"UcNpjukIpiZkjgIv","sorting":"m","sort":250000,"color":"#034f35","flags":{"wfrp4e-pbtt":{"initialization-parent":"Companion"}}}
 {"name":"Events","type":"JournalEntry","parent":"UVKlZleP9AfhqPXy","sorting":"a","sort":0,"color":null,"flags":{},"_id":"ME9OxKb5OauaE5Br"}
@@ -427,6 +428,8 @@
 {"name":"Obscure","type":"Scene","parent":"Y2EPOyNpGh1pOhQo","sorting":"a","sort":0,"color":null,"flags":{},"_id":"zpb1LCp1rJv27sjE"}
 {"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
 {"_id":"zs8xzPuX0aIpuiCx","name":"Handouts","type":"JournalEntry","parent":"pTj5zPKmfOJPE9a1","sorting":"m","sort":605211,"color":null,"flags":{"wfrp4e-horned-rat":{"initialization-parent":"The Horned Rat"}}}
-{"name":"Dwarf Talents","type":"Item","parent":"B1NGEkUpOPYjZbtf","sorting":"a","sort":0,"color":"#3f4b73","flags":{},"_id":"LgXdF2vwbe9wYXWc"}
-{"name":"Iron Breaker (DPG)","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#616161","flags":{},"_id":"zzy5vPoSonVEB8xc"}
 {"_id":"zzy5vPoSonVEB8xc","name":"Iron Breaker (DPG)","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":850000,"color":"#616161","flags":{}}
+{"name":"Export","type":"Item","parent":null,"sorting":"a","sort":0,"color":null,"flags":{},"_id":"QQia1cVm3nEa6YaO"}
+{"$$deleted":true,"_id":"QQia1cVm3nEa6YaO"}
+{"name":"Dwarf Alternate Ranks","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#475576","flags":{},"_id":"rlNlllWX7X5Ply1d"}
+{"name":"Doom Priest","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#d17000","flags":{},"_id":"B9hPjS2R9YGPJ2Ny"}
