@@ -417,6 +417,7 @@
 {"_id":"xJqXEX8DBW74nqgP","name":"The Ordo Impedimentae","type":"JournalEntry","parent":"pTj5zPKmfOJPE9a1","sorting":"m","sort":231250,"color":"#53035e","flags":{"wfrp4e-horned-rat":{"initialization-parent":"The Horned Rat"}}}
 {"_id":"xLkqS65tTqXTJiwi","name":"Merchants","type":"Actor","sort":200000,"flags":{},"parent":"81ZFw4Rjgz144G8Q","sorting":"a","color":"#994500"}
 {"name":"Power Behind the Throne","type":"JournalEntry","parent":null,"sorting":"m","sort":0,"color":"#014b2b","flags":{},"_id":"xOq4e4h3j8j4DtZs"}
+{"name":"Dwarf Items","type":"Item","parent":"B1NGEkUpOPYjZbtf","sorting":"a","sort":0,"color":"#314872","flags":{},"_id":"xU8sdM07G2wKGWAj"}
 {"_id":"xeg3gSX34lWS8L4B","name":"Moving","type":"JournalEntry","sort":2400000,"flags":{"wfrp4e":{"initialization-parent":"Rules"}},"parent":"KBFMpqeeMFWhdpSI","sorting":"m","color":""}
 {"_id":"y2b8VuEsVN1UFiv9","name":"Careers","type":"JournalEntry","sort":100000,"flags":{},"parent":"Kft8Ng9HfLOd35El","sorting":"a","color":"#694121"}
 {"name":"NPCs","type":"JournalEntry","parent":"jsAKzmzu9XIh3Q9e","sorting":"a","sort":0,"color":null,"flags":{},"_id":"yB7s0OOrS3UGCVZv"}
@@ -431,4 +432,3 @@
 {"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
 {"_id":"zs8xzPuX0aIpuiCx","name":"Handouts","type":"JournalEntry","parent":"pTj5zPKmfOJPE9a1","sorting":"m","sort":605211,"color":null,"flags":{"wfrp4e-horned-rat":{"initialization-parent":"The Horned Rat"}}}
 {"_id":"zzy5vPoSonVEB8xc","name":"Iron Breaker (DPG)","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":850000,"color":"#616161","flags":{}}
-{"name":"Dwarf Items","type":"Item","parent":"B1NGEkUpOPYjZbtf","sorting":"a","sort":0,"color":"#314872","flags":{},"_id":"xU8sdM07G2wKGWAj"}
