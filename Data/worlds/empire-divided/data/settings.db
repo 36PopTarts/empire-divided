@@ -1,4 +1,4 @@
-{"_id":"0PkXfPm7AwZB3Zdx","key":"fvtt-party-resources.interrogation","value":"13"}
+{"_id":"0PkXfPm7AwZB3Zdx","key":"fvtt-party-resources.interrogation","value":"14"}
 {"key":"weather-control.useCelcius","value":"true","_id":"0Tu9etOT7sZrAQ59"}
 {"key":"fvtt-party-resources.codebreaking_system_name","value":"\"\"","_id":"0cifurb7bF1mHayl"}
 {"_id":"0wVXyBT5uUPnMGub","key":"wfrp4e.testAbove100","value":"false"}
@@ -44,7 +44,7 @@
 {"key":"wfrp4e.soundPath","value":"\"Sound\\\\system-sounds\"","_id":"BfMiohe5JXgYbgwT"}
 {"key":"fvtt-party-resources.evidence-score_icon","value":"\"Images/Icons/Age%20of%20Reckoning%20Icons/1571.png\"","_id":"BrB6bKbxDiGEE1nD"}
 {"key":"wfrp4e.mooRangedDamage","value":"false","_id":"Bs2bkauhHPYk9xEG"}
-{"_id":"C69BJ1ZfytNnQrK2","key":"fvtt-party-resources.total-progress","value":"54"}
+{"_id":"C69BJ1ZfytNnQrK2","key":"fvtt-party-resources.total-progress","value":"75"}
 {"key":"JB2A_DnD5e.runonlyonce","value":"true","_id":"C9zxVYMHXT07k0AO"}
 {"key":"fvtt-party-resources.interrogation_system_name","value":"\"\"","_id":"CPxLsyeY9Iuu7kKZ"}
 {"key":"healthEstimate.core.deathState","value":"false","_id":"CX8gOISNFatxcfHf"}
@@ -86,12 +86,12 @@
 {"key":"fvtt-party-resources.research_use_icon","value":"true","_id":"O9fXc4G4V0wSEAS1"}
 {"_id":"OCmx2vUzm5IQQUDp","key":"core.sheetClasses","value":"{\"Actor\":{\"npc\":\"wfrp4e.ActorSheetWfrp4eNPC\"}}"}
 {"key":"healthEstimate.core.menuSettings.smoothGradient","value":"true","_id":"OLemUFLP6EBVrrXR"}
-{"_id":"Oqoc5e02J4QdrheU","key":"foundryvtt-simple-calendar.current-date","value":"{\"year\":2512,\"month\":12,\"day\":12,\"seconds\":64808}"}
+{"_id":"Oqoc5e02J4QdrheU","key":"foundryvtt-simple-calendar.current-date","value":"{\"year\":2512,\"month\":12,\"day\":13,\"seconds\":46812}"}
 {"_id":"Or5nuSfeG5akwyTn","key":"fvtt-party-resources.resource_list","value":"[\"interrogation\",\"information-gathering\",\"codebreaking\",\"research\",\"evidence-score\",\"total-progress\"]"}
 {"key":"levels.hideElevation","value":"1","_id":"OwT4TpNYU4S2YU1R"}
 {"_id":"P4dvOPjSwddTvIEo","key":"wfrp4e.channelingNegativeSLTests","value":"true"}
 {"_id":"P7PahR6yHrn5q3ZL","key":"levels.tokenElevScale","value":"false"}
-{"_id":"PXpUOouvKrN87F7U","key":"fvtt-party-resources.evidence-score","value":"-3"}
+{"_id":"PXpUOouvKrN87F7U","key":"fvtt-party-resources.evidence-score","value":"-2"}
 {"key":"fvtt-party-resources.research_max","value":"null","_id":"Prl0en0hr75t7Qad"}
 {"key":"wall-height.migrateTokenHeight","value":"false","_id":"Q0r8fTdtb71Z8SuI"}
 {"key":"calendar-weather.moonDisplay","value":"false","_id":"QOQ6x7BCUfn5Lgvy"}
@@ -110,8 +110,8 @@
 {"_id":"UTfOP9PFgxd7eA23","key":"core.tokenDragPreview","value":"false"}
 {"key":"fvtt-party-resources.research_notify_chat_decrement_message","value":"\"A resource value has decreased.\"","_id":"VExMgKboRcx73cbc"}
 {"_id":"VydyA0P3zORcIhCi","key":"wfrp4e.weaponLength","value":"true"}
-{"_id":"W0mCfULJXgyg8QSI","key":"weather-control.weatherData","value":"{\"version\":1,\"climate\":{\"isVolcanic\":false,\"name\":\"temperate\",\"humidity\":0,\"baseTemperature\":0,\"temperatureRange\":{\"max\":90,\"min\":-20}},\"currentDate\":{\"raw\":{\"year\":2512,\"month\":12,\"weekdays\":[\"Wellentag\",\"Aubentag\",\"Marktag\",\"Backertag\",\"Bezahltag\",\"Konistag\",\"Angestag\",\"Festag\"],\"currentWeekdayIndex\":2,\"day\":12,\"hour\":18,\"minute\":0,\"second\":8},\"display\":{\"fullDate\":\"Vorhexen 12, 2512 IC\",\"time\":\"18:00:08\"}},\"temp\":59,\"lastTemp\":59,\"precipitation\":\"Completely overcast; light drizzles possible.\"}"}
-{"_id":"XdF7KActkJ1faUwO","key":"core.time","value":"86847444008"}
+{"_id":"W0mCfULJXgyg8QSI","key":"weather-control.weatherData","value":"{\"version\":1,\"climate\":{\"isVolcanic\":false,\"name\":\"temperate\",\"humidity\":0,\"baseTemperature\":0,\"temperatureRange\":{\"max\":90,\"min\":-20}},\"currentDate\":{\"raw\":{\"year\":2512,\"month\":12,\"weekdays\":[\"Wellentag\",\"Aubentag\",\"Marktag\",\"Backertag\",\"Bezahltag\",\"Konistag\",\"Angestag\",\"Festag\"],\"currentWeekdayIndex\":3,\"day\":13,\"hour\":13,\"minute\":0,\"second\":12},\"display\":{\"fullDate\":\"Vorhexen 13, 2512 IC\",\"time\":\"13:00:12\"}},\"temp\":63,\"lastTemp\":63,\"precipitation\":\"Torrential rains today.\",\"tempRange\":{\"max\":90,\"min\":-20}}"}
+{"_id":"XdF7KActkJ1faUwO","key":"core.time","value":"86847512412"}
 {"_id":"YI1ukkg6FBfdlDTP","key":"combat-carousel.imageType","value":"\"token\""}
 {"key":"wfrp4e.mooConditionTriggers","value":"false","_id":"YOYb3LcFvuoZzfiX"}
 {"key":"fvtt-party-resources.information-gathering_notify_chat","value":"false","_id":"YbOC5kxlfJeTRKEA"}
@@ -207,55 +207,9 @@
 {"_id":"xMS7vzz6i1tKJS2v","key":"fvtt-party-resources.codebreaking_player_managed","value":"true"}
 {"key":"fvtt-party-resources.interrogation_position","value":"1","_id":"xo1ZCyQ0w8gadoBW"}
 {"_id":"xyo3I0NChksJ4Pyf","key":"about-time.calendar","value":"\"0\""}
-{"_id":"yL1KL2PI3jPLVrDA","key":"fvtt-party-resources.information-gathering","value":"19"}
+{"_id":"yL1KL2PI3jPLVrDA","key":"fvtt-party-resources.information-gathering","value":"32"}
 {"key":"betterroofs.fogVisibility","value":"0.7","_id":"yMkVNPVzrzxYYVer"}
 {"key":"combat-carousel.bar1Title","value":"\"Wounds\"","_id":"zKu1nk0OJF9cIKp6"}
 {"key":"fxmaster.specialEffects","value":"[]","_id":"zNtGyKyxQd1XkdZx"}
 {"key":"wfrp4e-gm-toolkit.scenePullActivate","value":"\"never\"","_id":"zfQwGiEfWd5JssWu"}
 {"key":"combat-carousel.bar1Attribute","value":"\"attributes.wounds\"","_id":"zmy4ZEACyGT4niZA"}
-{"_id":"yL1KL2PI3jPLVrDA","key":"fvtt-party-resources.information-gathering","value":"20"}
-{"_id":"yL1KL2PI3jPLVrDA","key":"fvtt-party-resources.information-gathering","value":"21"}
-{"_id":"yL1KL2PI3jPLVrDA","key":"fvtt-party-resources.information-gathering","value":"22"}
-{"_id":"yL1KL2PI3jPLVrDA","key":"fvtt-party-resources.information-gathering","value":"23"}
-{"_id":"yL1KL2PI3jPLVrDA","key":"fvtt-party-resources.information-gathering","value":"24"}
-{"_id":"yL1KL2PI3jPLVrDA","key":"fvtt-party-resources.information-gathering","value":"25"}
-{"_id":"yL1KL2PI3jPLVrDA","key":"fvtt-party-resources.information-gathering","value":"26"}
-{"_id":"yL1KL2PI3jPLVrDA","key":"fvtt-party-resources.information-gathering","value":"27"}
-{"_id":"yL1KL2PI3jPLVrDA","key":"fvtt-party-resources.information-gathering","value":"28"}
-{"_id":"yL1KL2PI3jPLVrDA","key":"fvtt-party-resources.information-gathering","value":"29"}
-{"_id":"yL1KL2PI3jPLVrDA","key":"fvtt-party-resources.information-gathering","value":"30"}
-{"_id":"yL1KL2PI3jPLVrDA","key":"fvtt-party-resources.information-gathering","value":"31"}
-{"_id":"yL1KL2PI3jPLVrDA","key":"fvtt-party-resources.information-gathering","value":"32"}
-{"_id":"C69BJ1ZfytNnQrK2","key":"fvtt-party-resources.total-progress","value":"75"}
-{"_id":"Oqoc5e02J4QdrheU","key":"foundryvtt-simple-calendar.current-date","value":"{\"year\":2512,\"month\":12,\"day\":13,\"seconds\":21600}"}
-{"_id":"XdF7KActkJ1faUwO","key":"core.time","value":"86847487200"}
-{"_id":"W0mCfULJXgyg8QSI","key":"weather-control.weatherData","value":"{\"version\":1,\"climate\":{\"isVolcanic\":false,\"name\":\"temperate\",\"humidity\":0,\"baseTemperature\":0,\"temperatureRange\":{\"max\":90,\"min\":-20}},\"currentDate\":{\"raw\":{\"year\":2512,\"month\":12,\"weekdays\":[\"Wellentag\",\"Aubentag\",\"Marktag\",\"Backertag\",\"Bezahltag\",\"Konistag\",\"Angestag\",\"Festag\"],\"currentWeekdayIndex\":3,\"day\":13,\"hour\":6,\"minute\":0,\"second\":0},\"display\":{\"fullDate\":\"Vorhexen 13, 2512 IC\",\"time\":\"06:00:00\"}},\"temp\":59,\"lastTemp\":59,\"precipitation\":\"Completely overcast; light drizzles possible.\"}"}
-{"_id":"W0mCfULJXgyg8QSI","key":"weather-control.weatherData","value":"{\"version\":1,\"climate\":{\"isVolcanic\":false,\"name\":\"temperate\",\"humidity\":0,\"baseTemperature\":0,\"temperatureRange\":{\"max\":90,\"min\":-20}},\"currentDate\":{\"raw\":{\"year\":2512,\"month\":12,\"weekdays\":[\"Wellentag\",\"Aubentag\",\"Marktag\",\"Backertag\",\"Bezahltag\",\"Konistag\",\"Angestag\",\"Festag\"],\"currentWeekdayIndex\":3,\"day\":13,\"hour\":6,\"minute\":0,\"second\":0},\"display\":{\"fullDate\":\"Vorhexen 13, 2512 IC\",\"time\":\"06:00:00\"}},\"temp\":63,\"lastTemp\":63,\"precipitation\":\"Torrential rains today.\",\"tempRange\":{\"max\":90,\"min\":-20}}"}
-{"_id":"W0mCfULJXgyg8QSI","key":"weather-control.weatherData","value":"{\"version\":1,\"climate\":{\"isVolcanic\":false,\"name\":\"temperate\",\"humidity\":0,\"baseTemperature\":0,\"temperatureRange\":{\"max\":90,\"min\":-20}},\"currentDate\":{\"raw\":{\"year\":2512,\"month\":12,\"weekdays\":[\"Wellentag\",\"Aubentag\",\"Marktag\",\"Backertag\",\"Bezahltag\",\"Konistag\",\"Angestag\",\"Festag\"],\"currentWeekdayIndex\":3,\"day\":13,\"hour\":6,\"minute\":0,\"second\":0},\"display\":{\"fullDate\":\"Vorhexen 13, 2512 IC\",\"time\":\"06:00:00\"}},\"temp\":63,\"lastTemp\":63,\"precipitation\":\"Torrential rains today.\",\"tempRange\":{\"max\":90,\"min\":-20}}"}
-{"_id":"0PkXfPm7AwZB3Zdx","key":"fvtt-party-resources.interrogation","value":"14"}
-{"_id":"Oqoc5e02J4QdrheU","key":"foundryvtt-simple-calendar.current-date","value":"{\"year\":2512,\"month\":12,\"day\":13,\"seconds\":21606}"}
-{"_id":"W0mCfULJXgyg8QSI","key":"weather-control.weatherData","value":"{\"version\":1,\"climate\":{\"isVolcanic\":false,\"name\":\"temperate\",\"humidity\":0,\"baseTemperature\":0,\"temperatureRange\":{\"max\":90,\"min\":-20}},\"currentDate\":{\"raw\":{\"year\":2512,\"month\":12,\"weekdays\":[\"Wellentag\",\"Aubentag\",\"Marktag\",\"Backertag\",\"Bezahltag\",\"Konistag\",\"Angestag\",\"Festag\"],\"currentWeekdayIndex\":3,\"day\":13,\"hour\":6,\"minute\":0,\"second\":6},\"display\":{\"fullDate\":\"Vorhexen 13, 2512 IC\",\"time\":\"06:00:06\"}},\"temp\":63,\"lastTemp\":63,\"precipitation\":\"Torrential rains today.\",\"tempRange\":{\"max\":90,\"min\":-20}}"}
-{"_id":"Oqoc5e02J4QdrheU","key":"foundryvtt-simple-calendar.current-date","value":"{\"year\":2512,\"month\":12,\"day\":13,\"seconds\":21612}"}
-{"_id":"W0mCfULJXgyg8QSI","key":"weather-control.weatherData","value":"{\"version\":1,\"climate\":{\"isVolcanic\":false,\"name\":\"temperate\",\"humidity\":0,\"baseTemperature\":0,\"temperatureRange\":{\"max\":90,\"min\":-20}},\"currentDate\":{\"raw\":{\"year\":2512,\"month\":12,\"weekdays\":[\"Wellentag\",\"Aubentag\",\"Marktag\",\"Backertag\",\"Bezahltag\",\"Konistag\",\"Angestag\",\"Festag\"],\"currentWeekdayIndex\":3,\"day\":13,\"hour\":6,\"minute\":0,\"second\":12},\"display\":{\"fullDate\":\"Vorhexen 13, 2512 IC\",\"time\":\"06:00:12\"}},\"temp\":63,\"lastTemp\":63,\"precipitation\":\"Torrential rains today.\",\"tempRange\":{\"max\":90,\"min\":-20}}"}
-{"_id":"PXpUOouvKrN87F7U","key":"fvtt-party-resources.evidence-score","value":"-2"}
-{"_id":"Oqoc5e02J4QdrheU","key":"foundryvtt-simple-calendar.current-date","value":"{\"year\":2512,\"month\":12,\"day\":13,\"seconds\":25212}"}
-{"_id":"XdF7KActkJ1faUwO","key":"core.time","value":"86847490812"}
-{"_id":"W0mCfULJXgyg8QSI","key":"weather-control.weatherData","value":"{\"version\":1,\"climate\":{\"isVolcanic\":false,\"name\":\"temperate\",\"humidity\":0,\"baseTemperature\":0,\"temperatureRange\":{\"max\":90,\"min\":-20}},\"currentDate\":{\"raw\":{\"year\":2512,\"month\":12,\"weekdays\":[\"Wellentag\",\"Aubentag\",\"Marktag\",\"Backertag\",\"Bezahltag\",\"Konistag\",\"Angestag\",\"Festag\"],\"currentWeekdayIndex\":3,\"day\":13,\"hour\":7,\"minute\":0,\"second\":12},\"display\":{\"fullDate\":\"Vorhexen 13, 2512 IC\",\"time\":\"07:00:12\"}},\"temp\":63,\"lastTemp\":63,\"precipitation\":\"Torrential rains today.\",\"tempRange\":{\"max\":90,\"min\":-20}}"}
-{"_id":"Oqoc5e02J4QdrheU","key":"foundryvtt-simple-calendar.current-date","value":"{\"year\":2512,\"month\":12,\"day\":13,\"seconds\":28812}"}
-{"_id":"XdF7KActkJ1faUwO","key":"core.time","value":"86847494412"}
-{"_id":"W0mCfULJXgyg8QSI","key":"weather-control.weatherData","value":"{\"version\":1,\"climate\":{\"isVolcanic\":false,\"name\":\"temperate\",\"humidity\":0,\"baseTemperature\":0,\"temperatureRange\":{\"max\":90,\"min\":-20}},\"currentDate\":{\"raw\":{\"year\":2512,\"month\":12,\"weekdays\":[\"Wellentag\",\"Aubentag\",\"Marktag\",\"Backertag\",\"Bezahltag\",\"Konistag\",\"Angestag\",\"Festag\"],\"currentWeekdayIndex\":3,\"day\":13,\"hour\":8,\"minute\":0,\"second\":12},\"display\":{\"fullDate\":\"Vorhexen 13, 2512 IC\",\"time\":\"08:00:12\"}},\"temp\":63,\"lastTemp\":63,\"precipitation\":\"Torrential rains today.\",\"tempRange\":{\"max\":90,\"min\":-20}}"}
-{"_id":"Oqoc5e02J4QdrheU","key":"foundryvtt-simple-calendar.current-date","value":"{\"year\":2512,\"month\":12,\"day\":13,\"seconds\":32412}"}
-{"_id":"XdF7KActkJ1faUwO","key":"core.time","value":"86847498012"}
-{"_id":"W0mCfULJXgyg8QSI","key":"weather-control.weatherData","value":"{\"version\":1,\"climate\":{\"isVolcanic\":false,\"name\":\"temperate\",\"humidity\":0,\"baseTemperature\":0,\"temperatureRange\":{\"max\":90,\"min\":-20}},\"currentDate\":{\"raw\":{\"year\":2512,\"month\":12,\"weekdays\":[\"Wellentag\",\"Aubentag\",\"Marktag\",\"Backertag\",\"Bezahltag\",\"Konistag\",\"Angestag\",\"Festag\"],\"currentWeekdayIndex\":3,\"day\":13,\"hour\":9,\"minute\":0,\"second\":12},\"display\":{\"fullDate\":\"Vorhexen 13, 2512 IC\",\"time\":\"09:00:12\"}},\"temp\":63,\"lastTemp\":63,\"precipitation\":\"Torrential rains today.\",\"tempRange\":{\"max\":90,\"min\":-20}}"}
-{"_id":"Oqoc5e02J4QdrheU","key":"foundryvtt-simple-calendar.current-date","value":"{\"year\":2512,\"month\":12,\"day\":13,\"seconds\":36012}"}
-{"_id":"XdF7KActkJ1faUwO","key":"core.time","value":"86847501612"}
-{"_id":"W0mCfULJXgyg8QSI","key":"weather-control.weatherData","value":"{\"version\":1,\"climate\":{\"isVolcanic\":false,\"name\":\"temperate\",\"humidity\":0,\"baseTemperature\":0,\"temperatureRange\":{\"max\":90,\"min\":-20}},\"currentDate\":{\"raw\":{\"year\":2512,\"month\":12,\"weekdays\":[\"Wellentag\",\"Aubentag\",\"Marktag\",\"Backertag\",\"Bezahltag\",\"Konistag\",\"Angestag\",\"Festag\"],\"currentWeekdayIndex\":3,\"day\":13,\"hour\":10,\"minute\":0,\"second\":12},\"display\":{\"fullDate\":\"Vorhexen 13, 2512 IC\",\"time\":\"10:00:12\"}},\"temp\":63,\"lastTemp\":63,\"precipitation\":\"Torrential rains today.\",\"tempRange\":{\"max\":90,\"min\":-20}}"}
-{"_id":"Oqoc5e02J4QdrheU","key":"foundryvtt-simple-calendar.current-date","value":"{\"year\":2512,\"month\":12,\"day\":13,\"seconds\":39612}"}
-{"_id":"XdF7KActkJ1faUwO","key":"core.time","value":"86847505212"}
-{"_id":"W0mCfULJXgyg8QSI","key":"weather-control.weatherData","value":"{\"version\":1,\"climate\":{\"isVolcanic\":false,\"name\":\"temperate\",\"humidity\":0,\"baseTemperature\":0,\"temperatureRange\":{\"max\":90,\"min\":-20}},\"currentDate\":{\"raw\":{\"year\":2512,\"month\":12,\"weekdays\":[\"Wellentag\",\"Aubentag\",\"Marktag\",\"Backertag\",\"Bezahltag\",\"Konistag\",\"Angestag\",\"Festag\"],\"currentWeekdayIndex\":3,\"day\":13,\"hour\":11,\"minute\":0,\"second\":12},\"display\":{\"fullDate\":\"Vorhexen 13, 2512 IC\",\"time\":\"11:00:12\"}},\"temp\":63,\"lastTemp\":63,\"precipitation\":\"Torrential rains today.\",\"tempRange\":{\"max\":90,\"min\":-20}}"}
-{"_id":"Oqoc5e02J4QdrheU","key":"foundryvtt-simple-calendar.current-date","value":"{\"year\":2512,\"month\":12,\"day\":13,\"seconds\":43212}"}
-{"_id":"XdF7KActkJ1faUwO","key":"core.time","value":"86847508812"}
-{"_id":"W0mCfULJXgyg8QSI","key":"weather-control.weatherData","value":"{\"version\":1,\"climate\":{\"isVolcanic\":false,\"name\":\"temperate\",\"humidity\":0,\"baseTemperature\":0,\"temperatureRange\":{\"max\":90,\"min\":-20}},\"currentDate\":{\"raw\":{\"year\":2512,\"month\":12,\"weekdays\":[\"Wellentag\",\"Aubentag\",\"Marktag\",\"Backertag\",\"Bezahltag\",\"Konistag\",\"Angestag\",\"Festag\"],\"currentWeekdayIndex\":3,\"day\":13,\"hour\":12,\"minute\":0,\"second\":12},\"display\":{\"fullDate\":\"Vorhexen 13, 2512 IC\",\"time\":\"12:00:12\"}},\"temp\":63,\"lastTemp\":63,\"precipitation\":\"Torrential rains today.\",\"tempRange\":{\"max\":90,\"min\":-20}}"}
-{"_id":"Oqoc5e02J4QdrheU","key":"foundryvtt-simple-calendar.current-date","value":"{\"year\":2512,\"month\":12,\"day\":13,\"seconds\":46812}"}
-{"_id":"XdF7KActkJ1faUwO","key":"core.time","value":"86847512412"}
-{"_id":"W0mCfULJXgyg8QSI","key":"weather-control.weatherData","value":"{\"version\":1,\"climate\":{\"isVolcanic\":false,\"name\":\"temperate\",\"humidity\":0,\"baseTemperature\":0,\"temperatureRange\":{\"max\":90,\"min\":-20}},\"currentDate\":{\"raw\":{\"year\":2512,\"month\":12,\"weekdays\":[\"Wellentag\",\"Aubentag\",\"Marktag\",\"Backertag\",\"Bezahltag\",\"Konistag\",\"Angestag\",\"Festag\"],\"currentWeekdayIndex\":3,\"day\":13,\"hour\":13,\"minute\":0,\"second\":12},\"display\":{\"fullDate\":\"Vorhexen 13, 2512 IC\",\"time\":\"13:00:12\"}},\"temp\":63,\"lastTemp\":63,\"precipitation\":\"Torrential rains today.\",\"tempRange\":{\"max\":90,\"min\":-20}}"}
