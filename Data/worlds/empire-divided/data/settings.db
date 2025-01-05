@@ -110,7 +110,11 @@
 {"_id":"UTfOP9PFgxd7eA23","key":"core.tokenDragPreview","value":"false"}
 {"key":"fvtt-party-resources.research_notify_chat_decrement_message","value":"\"A resource value has decreased.\"","_id":"VExMgKboRcx73cbc"}
 {"_id":"VydyA0P3zORcIhCi","key":"wfrp4e.weaponLength","value":"true"}
+<<<<<<< HEAD
 {"_id":"W0mCfULJXgyg8QSI","key":"weather-control.weatherData","value":"{\"version\":1,\"climate\":{\"isVolcanic\":false,\"name\":\"temperate\",\"humidity\":0,\"baseTemperature\":0,\"temperatureRange\":{\"max\":90,\"min\":-20}},\"currentDate\":{\"raw\":{\"year\":2512,\"month\":12,\"weekdays\":[\"Wellentag\",\"Aubentag\",\"Marktag\",\"Backertag\",\"Bezahltag\",\"Konistag\",\"Angestag\",\"Festag\"],\"currentWeekdayIndex\":3,\"day\":13,\"hour\":13,\"minute\":0,\"second\":12},\"display\":{\"fullDate\":\"Vorhexen 13, 2512 IC\",\"time\":\"13:00:12\"}},\"temp\":63,\"lastTemp\":63,\"precipitation\":\"Torrential rains today.\",\"tempRange\":{\"max\":90,\"min\":-20}}"}
+=======
+{"_id":"W0mCfULJXgyg8QSI","key":"weather-control.weatherData","value":"{\"version\":1,\"climate\":{\"isVolcanic\":false,\"name\":\"temperate\",\"humidity\":0,\"baseTemperature\":0,\"temperatureRange\":{\"max\":90,\"min\":-20}},\"currentDate\":{\"raw\":{\"year\":2512,\"month\":12,\"weekdays\":[\"Wellentag\",\"Aubentag\",\"Marktag\",\"Backertag\",\"Bezahltag\",\"Konistag\",\"Angestag\",\"Festag\"],\"currentWeekdayIndex\":3,\"day\":13,\"hour\":13,\"minute\":0,\"second\":12},\"display\":{\"fullDate\":\"Vorhexen 13, 2512 IC\",\"time\":\"13:00:12\"}},\"temp\":63,\"lastTemp\":63,\"precipitation\":\"Torrential rains today.\"}"}
+>>>>>>> dcab1b203292edd523d25d10672124dc114f8c83
 {"_id":"XdF7KActkJ1faUwO","key":"core.time","value":"86847512412"}
 {"_id":"YI1ukkg6FBfdlDTP","key":"combat-carousel.imageType","value":"\"token\""}
 {"key":"wfrp4e.mooConditionTriggers","value":"false","_id":"YOYb3LcFvuoZzfiX"}
