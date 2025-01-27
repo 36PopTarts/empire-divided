@@ -159,6 +159,7 @@
 {"_id":"O8yWTiDFk7shvres","name":"Undercity Encounters","type":"Actor","parent":"PxQ2MIf7SxFgrRzm","sorting":"a","sort":-75000,"color":"#8f0000","flags":{"wfrp4e-horned-rat":{"initialization-parent":"The Horned Rat"}}}
 {"_id":"OS35FRH46F2FHEeY","name":"History of the Skaven","type":"Actor","parent":"iQNGmJxoCetxZccl","sorting":"a","sort":100000,"color":"#00334d","flags":{"wfrp4e-horned-rat":{"initialization-parent":"The Horned Rat Companion"}}}
 {"_id":"OoWpOvPwNvOPcW9A","name":"Lore of Slaanesh","type":"Item","parent":"YeGQSBDZZPPLgfmT","sorting":"a","sort":100000,"color":null,"flags":{"wfrp4e-pbtt":{"initialization-parent":"Power Behind the Throne"}}}
+{"name":"Power Familiar","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#6a492a","flags":{},"_id":"OpY7iDYuMn4Zjs3X"}
 {"_id":"OrdQTl1VKXMa8n5S","name":"The Grim, Dark Forests","type":"JournalEntry","sort":200000,"flags":{"wfrp4e":{"initialization-parent":"Reikland"}},"parent":"J8dQ6pBcs8qRN8Bk","sorting":"m","color":"#385029"}
 {"_id":"OwpreDOBVSjPAjKX","name":"Alcohol","type":"Item","sort":3600000,"flags":{},"parent":"lryP0lc1Adinz7aR","sorting":"a","color":""}
 {"name":"Generic","type":"Actor","parent":"cEfyLchMYtoSuKxE","sorting":"a","sort":0,"color":null,"flags":{},"_id":"PJTPnMG5VZJgFnWM"}
@@ -241,6 +242,7 @@
 {"_id":"ZK9yfI65ezHrdWW1","name":"The Cursed and Fetid Marshlands","type":"JournalEntry","sort":300000,"flags":{"wfrp4e":{"initialization-parent":"Reikland"}},"parent":"J8dQ6pBcs8qRN8Bk","sorting":"m","color":"#434730"}
 {"_id":"ZOk2UEDxrYsJRAHl","name":"Owler","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":1300000,"color":"#700f0f","flags":{}}
 {"name":"Random Encounters","type":"RollTable","sort":2100000,"flags":{},"parent":null,"sorting":"a","color":"#a66121","_id":"ZaJDYHtNBQWYr1L1"}
+{"_id":"Zdl0klB3WN9Hl2PX","name":"Rituals","type":"Item","parent":"YRGW5Jqs9RpDaLqn","sorting":"a","sort":0,"color":"#e69100","flags":{}}
 {"_id":"ZkvGbobsuORkPdgv","name":"The Green Man","type":"JournalEntry","parent":"uaiYhFK8DZbtIU19","sorting":"a","sort":200000,"color":"#304f32","flags":{}}
 {"name":"Morrslieb","type":"RollTable","sort":1400000,"flags":{},"parent":"tIVl1PXcFSPDwlNN","sorting":"a","color":"#2d5a20","_id":"ZzLCWpKskz28YO3B"}
 {"_id":"a6yC1PgoWfTSila7","name":"Unterfraus","type":"JournalEntry","parent":"XmsLUIRyWoGbSZ2D","sorting":"a","sort":0,"color":null,"flags":{"wfrp4e-horned-rat":{"initialization-parent":"The Stolen Village"}}}
@@ -438,6 +440,3 @@
 {"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
 {"_id":"zs8xzPuX0aIpuiCx","name":"Handouts","type":"JournalEntry","parent":"pTj5zPKmfOJPE9a1","sorting":"m","sort":605211,"color":null,"flags":{"wfrp4e-horned-rat":{"initialization-parent":"The Horned Rat"}}}
 {"_id":"zzy5vPoSonVEB8xc","name":"Iron Breaker (DPG)","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":850000,"color":"#616161","flags":{}}
-{"name":"Power Familiar","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":0,"color":"#6a492a","flags":{},"_id":"OpY7iDYuMn4Zjs3X"}
-{"name":"Rituals","type":"Item","parent":"YRGW5Jqs9RpDaLqn","sorting":"a","sort":0,"color":"#eba000","flags":{},"_id":"Zdl0klB3WN9Hl2PX"}
-{"_id":"Zdl0klB3WN9Hl2PX","name":"Rituals","type":"Item","parent":"YRGW5Jqs9RpDaLqn","sorting":"a","sort":0,"color":"#e69100","flags":{}}
