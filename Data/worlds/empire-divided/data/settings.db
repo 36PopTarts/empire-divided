@@ -213,3 +213,9 @@
 {"key":"fxmaster.specialEffects","value":"[]","_id":"zNtGyKyxQd1XkdZx"}
 {"key":"wfrp4e-gm-toolkit.scenePullActivate","value":"\"never\"","_id":"zfQwGiEfWd5JssWu"}
 {"key":"combat-carousel.bar1Attribute","value":"\"attributes.wounds\"","_id":"zmy4ZEACyGT4niZA"}
+{"_id":"Oqoc5e02J4QdrheU","key":"foundryvtt-simple-calendar.current-date","value":"{\"year\":2512,\"month\":12,\"day\":14,\"seconds\":61200}"}
+{"_id":"XdF7KActkJ1faUwO","key":"core.time","value":"86847613200"}
+{"_id":"W0mCfULJXgyg8QSI","key":"weather-control.weatherData","value":"{\"version\":1,\"climate\":{\"isVolcanic\":false,\"name\":\"temperate\",\"humidity\":0,\"baseTemperature\":0,\"temperatureRange\":{\"max\":90,\"min\":-20}},\"currentDate\":{\"raw\":{\"year\":2512,\"month\":12,\"weekdays\":[\"Wellentag\",\"Aubentag\",\"Marktag\",\"Backertag\",\"Bezahltag\",\"Konistag\",\"Angestag\",\"Festag\"],\"currentWeekdayIndex\":4,\"day\":14,\"hour\":17,\"minute\":0,\"second\":0},\"display\":{\"fullDate\":\"Vorhexen 14, 2512 IC\",\"time\":\"17:00:00\"}},\"temp\":64,\"lastTemp\":64,\"precipitation\":\"Scattered clouds, but mostly clear today.\"}"}
+{"_id":"Oqoc5e02J4QdrheU","key":"foundryvtt-simple-calendar.current-date","value":"{\"year\":2512,\"month\":12,\"day\":14,\"seconds\":64800}"}
+{"_id":"XdF7KActkJ1faUwO","key":"core.time","value":"86847616800"}
+{"_id":"W0mCfULJXgyg8QSI","key":"weather-control.weatherData","value":"{\"version\":1,\"climate\":{\"isVolcanic\":false,\"name\":\"temperate\",\"humidity\":0,\"baseTemperature\":0,\"temperatureRange\":{\"max\":90,\"min\":-20}},\"currentDate\":{\"raw\":{\"year\":2512,\"month\":12,\"weekdays\":[\"Wellentag\",\"Aubentag\",\"Marktag\",\"Backertag\",\"Bezahltag\",\"Konistag\",\"Angestag\",\"Festag\"],\"currentWeekdayIndex\":4,\"day\":14,\"hour\":18,\"minute\":0,\"second\":0},\"display\":{\"fullDate\":\"Vorhexen 14, 2512 IC\",\"time\":\"18:00:00\"}},\"temp\":64,\"lastTemp\":64,\"precipitation\":\"Scattered clouds, but mostly clear today.\"}"}
