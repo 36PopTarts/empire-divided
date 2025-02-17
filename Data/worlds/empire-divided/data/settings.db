@@ -86,7 +86,7 @@
 {"key":"fvtt-party-resources.research_use_icon","value":"true","_id":"O9fXc4G4V0wSEAS1"}
 {"_id":"OCmx2vUzm5IQQUDp","key":"core.sheetClasses","value":"{\"Actor\":{\"npc\":\"wfrp4e.ActorSheetWfrp4eNPC\"}}"}
 {"key":"healthEstimate.core.menuSettings.smoothGradient","value":"true","_id":"OLemUFLP6EBVrrXR"}
-{"_id":"Oqoc5e02J4QdrheU","key":"foundryvtt-simple-calendar.current-date","value":"{\"year\":2512,\"month\":12,\"day\":14,\"seconds\":57600}"}
+{"_id":"Oqoc5e02J4QdrheU","key":"foundryvtt-simple-calendar.current-date","value":"{\"year\":2512,\"month\":12,\"day\":14,\"seconds\":64800}"}
 {"_id":"Or5nuSfeG5akwyTn","key":"fvtt-party-resources.resource_list","value":"[\"interrogation\",\"information-gathering\",\"codebreaking\",\"research\",\"evidence-score\",\"total-progress\"]"}
 {"key":"levels.hideElevation","value":"1","_id":"OwT4TpNYU4S2YU1R"}
 {"_id":"P4dvOPjSwddTvIEo","key":"wfrp4e.channelingNegativeSLTests","value":"true"}
@@ -110,8 +110,8 @@
 {"_id":"UTfOP9PFgxd7eA23","key":"core.tokenDragPreview","value":"false"}
 {"key":"fvtt-party-resources.research_notify_chat_decrement_message","value":"\"A resource value has decreased.\"","_id":"VExMgKboRcx73cbc"}
 {"_id":"VydyA0P3zORcIhCi","key":"wfrp4e.weaponLength","value":"true"}
-{"_id":"W0mCfULJXgyg8QSI","key":"weather-control.weatherData","value":"{\"version\":1,\"climate\":{\"isVolcanic\":false,\"name\":\"temperate\",\"humidity\":0,\"baseTemperature\":0,\"temperatureRange\":{\"max\":90,\"min\":-20}},\"currentDate\":{\"raw\":{\"year\":2512,\"month\":12,\"weekdays\":[\"Wellentag\",\"Aubentag\",\"Marktag\",\"Backertag\",\"Bezahltag\",\"Konistag\",\"Angestag\",\"Festag\"],\"currentWeekdayIndex\":4,\"day\":14,\"hour\":16,\"minute\":0,\"second\":0},\"display\":{\"fullDate\":\"Vorhexen 14, 2512 IC\",\"time\":\"16:00:00\"}},\"temp\":64,\"lastTemp\":64,\"precipitation\":\"Scattered clouds, but mostly clear today.\"}"}
-{"_id":"XdF7KActkJ1faUwO","key":"core.time","value":"86847609600"}
+{"_id":"W0mCfULJXgyg8QSI","key":"weather-control.weatherData","value":"{\"version\":1,\"climate\":{\"isVolcanic\":false,\"name\":\"temperate\",\"humidity\":0,\"baseTemperature\":0,\"temperatureRange\":{\"max\":90,\"min\":-20}},\"currentDate\":{\"raw\":{\"year\":2512,\"month\":12,\"weekdays\":[\"Wellentag\",\"Aubentag\",\"Marktag\",\"Backertag\",\"Bezahltag\",\"Konistag\",\"Angestag\",\"Festag\"],\"currentWeekdayIndex\":4,\"day\":14,\"hour\":18,\"minute\":0,\"second\":0},\"display\":{\"fullDate\":\"Vorhexen 14, 2512 IC\",\"time\":\"18:00:00\"}},\"temp\":64,\"lastTemp\":64,\"precipitation\":\"Scattered clouds, but mostly clear today.\"}"}
+{"_id":"XdF7KActkJ1faUwO","key":"core.time","value":"86847616800"}
 {"_id":"YI1ukkg6FBfdlDTP","key":"combat-carousel.imageType","value":"\"token\""}
 {"key":"wfrp4e.mooConditionTriggers","value":"false","_id":"YOYb3LcFvuoZzfiX"}
 {"key":"fvtt-party-resources.information-gathering_notify_chat","value":"false","_id":"YbOC5kxlfJeTRKEA"}
@@ -213,9 +213,7 @@
 {"key":"fxmaster.specialEffects","value":"[]","_id":"zNtGyKyxQd1XkdZx"}
 {"key":"wfrp4e-gm-toolkit.scenePullActivate","value":"\"never\"","_id":"zfQwGiEfWd5JssWu"}
 {"key":"combat-carousel.bar1Attribute","value":"\"attributes.wounds\"","_id":"zmy4ZEACyGT4niZA"}
-{"_id":"Oqoc5e02J4QdrheU","key":"foundryvtt-simple-calendar.current-date","value":"{\"year\":2512,\"month\":12,\"day\":14,\"seconds\":61200}"}
-{"_id":"XdF7KActkJ1faUwO","key":"core.time","value":"86847613200"}
-{"_id":"W0mCfULJXgyg8QSI","key":"weather-control.weatherData","value":"{\"version\":1,\"climate\":{\"isVolcanic\":false,\"name\":\"temperate\",\"humidity\":0,\"baseTemperature\":0,\"temperatureRange\":{\"max\":90,\"min\":-20}},\"currentDate\":{\"raw\":{\"year\":2512,\"month\":12,\"weekdays\":[\"Wellentag\",\"Aubentag\",\"Marktag\",\"Backertag\",\"Bezahltag\",\"Konistag\",\"Angestag\",\"Festag\"],\"currentWeekdayIndex\":4,\"day\":14,\"hour\":17,\"minute\":0,\"second\":0},\"display\":{\"fullDate\":\"Vorhexen 14, 2512 IC\",\"time\":\"17:00:00\"}},\"temp\":64,\"lastTemp\":64,\"precipitation\":\"Scattered clouds, but mostly clear today.\"}"}
-{"_id":"Oqoc5e02J4QdrheU","key":"foundryvtt-simple-calendar.current-date","value":"{\"year\":2512,\"month\":12,\"day\":14,\"seconds\":64800}"}
-{"_id":"XdF7KActkJ1faUwO","key":"core.time","value":"86847616800"}
-{"_id":"W0mCfULJXgyg8QSI","key":"weather-control.weatherData","value":"{\"version\":1,\"climate\":{\"isVolcanic\":false,\"name\":\"temperate\",\"humidity\":0,\"baseTemperature\":0,\"temperatureRange\":{\"max\":90,\"min\":-20}},\"currentDate\":{\"raw\":{\"year\":2512,\"month\":12,\"weekdays\":[\"Wellentag\",\"Aubentag\",\"Marktag\",\"Backertag\",\"Bezahltag\",\"Konistag\",\"Angestag\",\"Festag\"],\"currentWeekdayIndex\":4,\"day\":14,\"hour\":18,\"minute\":0,\"second\":0},\"display\":{\"fullDate\":\"Vorhexen 14, 2512 IC\",\"time\":\"18:00:00\"}},\"temp\":64,\"lastTemp\":64,\"precipitation\":\"Scattered clouds, but mostly clear today.\"}"}
+{"_id":"Oqoc5e02J4QdrheU","key":"foundryvtt-simple-calendar.current-date","value":"{\"year\":2512,\"month\":12,\"day\":14,\"seconds\":64806}"}
+{"_id":"W0mCfULJXgyg8QSI","key":"weather-control.weatherData","value":"{\"version\":1,\"climate\":{\"isVolcanic\":false,\"name\":\"temperate\",\"humidity\":0,\"baseTemperature\":0,\"temperatureRange\":{\"max\":90,\"min\":-20}},\"currentDate\":{\"raw\":{\"year\":2512,\"month\":12,\"weekdays\":[\"Wellentag\",\"Aubentag\",\"Marktag\",\"Backertag\",\"Bezahltag\",\"Konistag\",\"Angestag\",\"Festag\"],\"currentWeekdayIndex\":4,\"day\":14,\"hour\":18,\"minute\":0,\"second\":6},\"display\":{\"fullDate\":\"Vorhexen 14, 2512 IC\",\"time\":\"18:00:06\"}},\"temp\":64,\"lastTemp\":64,\"precipitation\":\"Scattered clouds, but mostly clear today.\"}"}
+{"_id":"Oqoc5e02J4QdrheU","key":"foundryvtt-simple-calendar.current-date","value":"{\"year\":2512,\"month\":12,\"day\":14,\"seconds\":64812}"}
+{"_id":"W0mCfULJXgyg8QSI","key":"weather-control.weatherData","value":"{\"version\":1,\"climate\":{\"isVolcanic\":false,\"name\":\"temperate\",\"humidity\":0,\"baseTemperature\":0,\"temperatureRange\":{\"max\":90,\"min\":-20}},\"currentDate\":{\"raw\":{\"year\":2512,\"month\":12,\"weekdays\":[\"Wellentag\",\"Aubentag\",\"Marktag\",\"Backertag\",\"Bezahltag\",\"Konistag\",\"Angestag\",\"Festag\"],\"currentWeekdayIndex\":4,\"day\":14,\"hour\":18,\"minute\":0,\"second\":12},\"display\":{\"fullDate\":\"Vorhexen 14, 2512 IC\",\"time\":\"18:00:12\"}},\"temp\":64,\"lastTemp\":64,\"precipitation\":\"Scattered clouds, but mostly clear today.\"}"}
