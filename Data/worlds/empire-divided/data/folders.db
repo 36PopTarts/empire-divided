@@ -440,3 +440,4 @@
 {"_id":"zpbMB5khH90d68Lk","name":"River Patrol Crew","type":"Actor","sort":100000,"flags":{},"parent":"vifFIN67OZxpVSov","sorting":"a","color":"#35405a"}
 {"_id":"zs8xzPuX0aIpuiCx","name":"Handouts","type":"JournalEntry","parent":"pTj5zPKmfOJPE9a1","sorting":"m","sort":605211,"color":null,"flags":{"wfrp4e-horned-rat":{"initialization-parent":"The Horned Rat"}}}
 {"_id":"zzy5vPoSonVEB8xc","name":"Iron Breaker (DPG)","type":"Item","parent":"nG3gkFYEAmqrI5fy","sorting":"a","sort":850000,"color":"#616161","flags":{}}
+{"name":"Windhund","type":"Actor","parent":null,"sorting":"a","sort":0,"color":"#9b009e","flags":{},"_id":"elnZaOPFni3XVaGg"}
