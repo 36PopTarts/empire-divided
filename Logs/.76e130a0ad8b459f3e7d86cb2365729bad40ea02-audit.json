@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 5
+    },
+    "auditLog": "/home/crazyeyes/.local/share/FoundryVTT/Logs/.76e130a0ad8b459f3e7d86cb2365729bad40ea02-audit.json",
+    "files": [
+        {
+            "date": 1744564997749,
+            "name": "/home/crazyeyes/.local/share/FoundryVTT/Logs/debug.2025-04-13.log",
+            "hash": "2320d916e056341188850e8eb8cf18b9452b5ae10090f673a9c0c43231b1af42"
+        }
+    ],
+    "hashType": "sha256"
+}

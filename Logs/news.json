@@ -1,0 +1,34 @@
+{
+  "news": [
+    {
+      "title": "The Official Marketplace is Live!",
+      "caption": "The official Foundry VTT Marketplace is now live! This brand new store brings together your favorite TTRPG content creators and publishers into a centralized shopping experience that links seamlessly to your existing Foundry Virtual Tabletop user account.",
+      "url": "https://foundryvtt.store/",
+      "image": "https://r2.foundryvtt.com/website-uploads-public/screen/user_70/fvtt-marketplace-banner-no-sale-2025-02-28.webp"
+    },
+    {
+      "title": "Version 12 Stable Release",
+      "caption": "Version 12 Stable has now been released! Check out our release notes for everything you need to know.",
+      "url": "https://foundryvtt.com/releases/12.324",
+      "image": "https://r2.foundryvtt.com/website-uploads-public/screen/user_70/v12-release-screenshot-2024-05-22.webp"
+    },
+    {
+      "title": "2024 Year in Review",
+      "caption": "Join us in a look back at what we accomplished since our last anniversary celebration, and look ahead towards the exciting things we plan for during the coming year. This annual article is a great way to get some insight into what we do as a company and how we do it.",
+      "url": "https://foundryvtt.com/article/year-in-review-2024/",
+      "image": "https://r2.foundryvtt.com/website-uploads-public/screen/user_70/anniversary-triptych-banner-no-text-2024-05-22.webp"
+    },
+    {
+      "title": "Overview Video",
+      "caption": "Watch a comprehensive video overview which summarizes the features of Foundry Virtual Tabletop.",
+      "url": "https://youtu.be/_d7k8ognC0w",
+      "image": "https://r2.foundryvtt.com/website-uploads-public/screen/user_70/2023-overview-banner-2023-06-23.webp"
+    }
+  ],
+  "featuredContent": {
+    "title": "The 2024 Player's Handbook",
+    "caption": "Play D&D 5th Edition your way with optimized rules for character creation and advancement, exploration, combat, equipment, spells, and much more. Create fantastic heroes from an expanded selection of character origins, classes, and subclasses, revised and balanced for maximum fun.",
+    "url": "https://foundryvtt.com/packages/dnd-players-handbook",
+    "image": "https://r2.foundryvtt.com/website-uploads-public/screen/user_70/phb-featured-block-image-2024-10-04.webp"
+  }
+}
