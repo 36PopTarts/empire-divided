@@ -8,7 +8,7 @@
   "sslCert": null,
   "sslKey": null,
   "awsConfig": null,
-  "dataPath": "/home/crazyeyes/.local/share/FoundryVTT",
+  "dataPath": "/home/crazyeyes/.local/share/FoundryVTT/WHFRP",
   "passwordSalt": null,
   "proxySSL": false,
   "proxyPort": null,
