@@ -213,3 +213,20 @@
 {"key":"fxmaster.specialEffects","value":"[]","_id":"zNtGyKyxQd1XkdZx"}
 {"key":"wfrp4e-gm-toolkit.scenePullActivate","value":"\"never\"","_id":"zfQwGiEfWd5JssWu"}
 {"key":"combat-carousel.bar1Attribute","value":"\"attributes.wounds\"","_id":"zmy4ZEACyGT4niZA"}
+{"_id":"Kg7Pr6hpFV4Au7pd","key":"fvtt-party-resources.codebreaking","value":"11"}
+{"_id":"Kg7Pr6hpFV4Au7pd","key":"fvtt-party-resources.codebreaking","value":"12"}
+{"_id":"Kg7Pr6hpFV4Au7pd","key":"fvtt-party-resources.codebreaking","value":"13"}
+{"_id":"Kg7Pr6hpFV4Au7pd","key":"fvtt-party-resources.codebreaking","value":"14"}
+{"_id":"yL1KL2PI3jPLVrDA","key":"fvtt-party-resources.information-gathering","value":"40"}
+{"_id":"yL1KL2PI3jPLVrDA","key":"fvtt-party-resources.information-gathering","value":"40"}
+{"_id":"yL1KL2PI3jPLVrDA","key":"fvtt-party-resources.information-gathering","value":"41"}
+{"_id":"yL1KL2PI3jPLVrDA","key":"fvtt-party-resources.information-gathering","value":"42"}
+{"_id":"yL1KL2PI3jPLVrDA","key":"fvtt-party-resources.information-gathering","value":"43"}
+{"_id":"yL1KL2PI3jPLVrDA","key":"fvtt-party-resources.information-gathering","value":"44"}
+{"_id":"h5oVpqsv6tByV7Pm","key":"fvtt-party-resources.research","value":"31"}
+{"_id":"h5oVpqsv6tByV7Pm","key":"fvtt-party-resources.research","value":"32"}
+{"_id":"h5oVpqsv6tByV7Pm","key":"fvtt-party-resources.research","value":"33"}
+{"_id":"h5oVpqsv6tByV7Pm","key":"fvtt-party-resources.research","value":"34"}
+{"_id":"Oqoc5e02J4QdrheU","key":"foundryvtt-simple-calendar.current-date","value":"{\"year\":2512,\"month\":12,\"day\":15,\"seconds\":43200}"}
+{"_id":"XdF7KActkJ1faUwO","key":"core.time","value":"86847681600"}
+{"_id":"W0mCfULJXgyg8QSI","key":"weather-control.weatherData","value":"{\"version\":1,\"climate\":{\"isVolcanic\":false,\"name\":\"temperate\",\"humidity\":0,\"baseTemperature\":0,\"temperatureRange\":{\"max\":90,\"min\":-20}},\"currentDate\":{\"raw\":{\"year\":2512,\"month\":12,\"weekdays\":[\"Wellentag\",\"Aubentag\",\"Marktag\",\"Backertag\",\"Bezahltag\",\"Konistag\",\"Angestag\",\"Festag\"],\"currentWeekdayIndex\":5,\"day\":15,\"hour\":12,\"minute\":0,\"second\":0},\"display\":{\"fullDate\":\"Vorhexen 15, 2512 IC\",\"time\":\"12:00:00\"}},\"temp\":60,\"lastTemp\":60,\"precipitation\":\"Torrential rains today.\"}"}
